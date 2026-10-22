@@ -1,0 +1,645 @@
+{
+ "sid": "MERLION-8874",
+ "facts": {
+  "danger_signs.responsive": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 19,
+   "ts": "2026-10-15 20:16"
+  },
+  "danger_signs.chest_pain_now": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-15 20:13"
+  },
+  "danger_signs.breathing_difficulty": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-15 20:13"
+  },
+  "danger_signs.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-15 20:13"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "injury",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 4,
+      "ts": "2026-10-15 20:13"
+     },
+     "text": {
+      "value": "landed on his right hip",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 17,
+      "ts": "2026-10-15 20:16"
+     },
+     "onset": {
+      "value": "an hour ago",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 4,
+      "ts": "2026-10-15 20:13"
+     },
+     "onset_abs": {
+      "value": "~2026-10-15 19:13",
+      "status": "reported",
+      "who": "derived",
+      "turn": 4,
+      "ts": "2026-10-15 20:13"
+     }
+    },
+    {
+     "category": "limb_pain_or_swelling",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 8,
+      "ts": "2026-10-15 20:14"
+     },
+     "text": {
+      "value": "in a lot of pain from his hip",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 8,
+      "ts": "2026-10-15 20:14"
+     },
+     "pain_rating": {
+      "value": 7,
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 10,
+      "ts": "2026-10-15 20:14"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 8
+  },
+  "complaint.category": {
+   "value": [
+    "injury",
+    "limb_pain_or_swelling"
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 17,
+   "ts": "2026-10-15 20:16"
+  },
+  "complaint.text": {
+   "value": "landed on his right hip",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 17,
+   "ts": "2026-10-15 20:16"
+  },
+  "complaint.onset": {
+   "value": "an hour ago",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 4,
+   "ts": "2026-10-15 20:13"
+  },
+  "E.mechanism": {
+   "value": "fall",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 17,
+   "ts": "2026-10-15 20:16"
+  },
+  "patient.sex": {
+   "value": "male",
+   "status": "probable",
+   "who": "caregiver",
+   "turn": 13,
+   "ts": "2026-10-15 20:15"
+  },
+  "complaint.onset_abs": {
+   "value": "~2026-10-15 19:13 (from 'an hour ago' said 20:13)",
+   "status": "reported",
+   "who": "derived",
+   "turn": 4,
+   "ts": "2026-10-15 20:13"
+  },
+  "patient.age": {
+   "value": 87,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 5,
+   "ts": "2026-10-15 20:13"
+  },
+  "patient.age_group": {
+   "value": "older_adult",
+   "status": "reported",
+   "who": "derived",
+   "turn": 5,
+   "ts": "2026-10-15 20:13"
+  },
+  "complaint.fever": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 6,
+   "ts": "2026-10-15 20:14"
+  },
+  "infection.rash": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 6,
+   "ts": "2026-10-15 20:14"
+  },
+  "infection.travel_14d": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 7,
+   "ts": "2026-10-15 20:14"
+  },
+  "infection.contacts": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 7,
+   "ts": "2026-10-15 20:14"
+  },
+  "ams.changed_from_baseline": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 9,
+   "ts": "2026-10-15 20:14"
+  },
+  "complaint.pain_rating": {
+   "value": 7,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 17,
+   "ts": "2026-10-15 20:16"
+  },
+  "complaint.pain_latest": {
+   "value": 7,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 10,
+   "ts": "2026-10-15 20:14"
+  },
+  "M.anticoagulant": {
+   "value": true,
+   "status": "confirmed",
+   "who": "caregiver",
+   "turn": 11,
+   "ts": "2026-10-15 20:15"
+  },
+  "M.medications": {
+   "value": [
+    "warfarin",
+    "blood pressure pill (name not known)"
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 11,
+   "ts": "2026-10-15 20:15"
+  },
+  "A.allergies": {
+   "value": [
+    "penicillin (rash)"
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 12,
+   "ts": "2026-10-15 20:15"
+  },
+  "history.conditions": {
+   "value": [
+    "irregular heartbeat",
+    "high blood pressure"
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 12,
+   "ts": "2026-10-15 20:15"
+  },
+  "identity.name": {
+   "value": "Tan Ah Kow",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 13,
+   "ts": "2026-10-15 20:15"
+  },
+  "identity.dob": {
+   "value": "02 Jan 1939",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 13,
+   "ts": "2026-10-15 20:15"
+  },
+  "complaint.testicular_or_scrotal_pain": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 14,
+   "ts": "2026-10-15 20:15"
+  },
+  "complaint.possible_pelvis_femur_fracture_or_dislocation": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 15,
+   "ts": "2026-10-15 20:15"
+  },
+  "E.head_strike": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 16,
+   "ts": "2026-10-15 20:15"
+  },
+  "E.fall_height_meters": {
+   "value": 0.8,
+   "status": "probable",
+   "who": "caregiver",
+   "turn": 17,
+   "ts": "2026-10-15 20:16"
+  },
+  "E.loc": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 19,
+   "ts": "2026-10-15 20:16"
+  },
+  "L.last_intake": {
+   "value": "porridge for lunch at 1pm",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 20,
+   "ts": "2026-10-15 20:16"
+  },
+  "L.last_intake_abs": {
+   "value": "~2026-10-15 13:00 (from 'porridge for lunch at 1pm' said 20:16)",
+   "status": "reported",
+   "who": "derived",
+   "turn": 20,
+   "ts": "2026-10-15 20:16"
+  }
+ },
+ "attempts": {
+  "danger_signs.responsive": 1,
+  "danger_signs.chest_pain_now": 2,
+  "danger_signs.breathing_difficulty": 1,
+  "danger_signs.heavy_bleeding": 1,
+  "complaint.category": 1,
+  "complaint.text": 1,
+  "complaint.onset": 1,
+  "patient.age": 1,
+  "complaint.fever": 1,
+  "infection.rash": 1,
+  "infection.travel_14d": 1,
+  "infection.contacts": 1,
+  "ams.changed_from_baseline": 2,
+  "complaint.pain_rating": 1,
+  "complaint.compartment_syndrome_symptoms": 1,
+  "M.anticoagulant": 1,
+  "M.medications": 1,
+  "A.allergies": 1,
+  "history.conditions": 1,
+  "identity.name": 1,
+  "identity.dob": 1,
+  "complaint.testicular_or_scrotal_pain": 1,
+  "complaint.possible_pelvis_femur_fracture_or_dislocation": 1,
+  "E.abdominal_trauma": 3,
+  "E.head_strike": 1,
+  "E.loc": 1,
+  "L.last_intake": 1
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "Is the patient awake and responding to you normally, and does the patient have any chest pain right now?",
+   "ts": "2026-10-15 20:13:05",
+   "kind": "question",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, he is awake and talking to me. I don't know if he has chest pain.",
+   "ts": "2026-10-15 20:13:07",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "bot",
+   "text": "Since he's talking with you, could you ask him whether his chest hurts or feels tight right now?",
+   "ts": "2026-10-15 20:13:15",
+   "kind": "question",
+   "slot": "dyn:danger_signs.chest_pain_now"
+  },
+  {
+   "role": "caregiver",
+   "text": "He says no, his chest doesn't hurt or feel tight.",
+   "ts": "2026-10-15 20:13:17",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.chest_pain_now"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you for asking him. Is he having any trouble breathing right now, and is he bleeding heavily anywhere?",
+   "ts": "2026-10-15 20:13:24",
+   "kind": "question",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, he isn't having trouble breathing and there is no heavy bleeding.",
+   "ts": "2026-10-15 20:13:26",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding"
+  },
+  {
+   "role": "bot",
+   "text": "What is the main problem that brings him in today? Please tell me in your own words, and when it started.",
+   "ts": "2026-10-15 20:13:33",
+   "kind": "question",
+   "slot": "dyn:complaint.category+complaint.text+complaint.onset"
+  },
+  {
+   "role": "caregiver",
+   "text": "My father fell down four steps at home an hour ago and landed on his right hip. He can't stand up and is in a lot of pain.",
+   "ts": "2026-10-15 20:13:34",
+   "kind": "answer",
+   "slot": "dyn:complaint.category+complaint.text+complaint.onset"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you for telling me what happened. How old is your father?",
+   "ts": "2026-10-15 20:13:50",
+   "kind": "question",
+   "slot": "dyn:patient.age"
+  },
+  {
+   "role": "caregiver",
+   "text": "He is 87 years old.",
+   "ts": "2026-10-15 20:13:51",
+   "kind": "answer",
+   "slot": "dyn:patient.age"
+  },
+  {
+   "role": "bot",
+   "text": "Has your father had a fever, and if you took his temperature, what was it? Have you noticed any new rash on him?",
+   "ts": "2026-10-15 20:14:01",
+   "kind": "question",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, he hasn't had a fever and I haven't seen any new rashes.",
+   "ts": "2026-10-15 20:14:03",
+   "kind": "answer",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "bot",
+   "text": "In the last two weeks, has he travelled overseas, or been around anyone who was sick with something catching?",
+   "ts": "2026-10-15 20:14:09",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, he hasn't traveled or been around anyone sick.",
+   "ts": "2026-10-15 20:14:10",
+   "kind": "answer",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "bot",
+   "text": "Compared with how your father usually is, does he seem more confused, more sleepy than normal, or just not quite himself?",
+   "ts": "2026-10-15 20:14:18",
+   "kind": "question",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "caregiver",
+   "text": "He is awake and talking, but he's in a lot of pain from his hip.",
+   "ts": "2026-10-15 20:14:20",
+   "kind": "answer",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "bot",
+   "text": "Thanks, that helps. Apart from the pain, is he his normal self, or does anything about the way he's thinking or acting seem different from usual?",
+   "ts": "2026-10-15 20:14:34",
+   "kind": "question",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "caregiver",
+   "text": "He is awake and talking, but he's in a lot of pain. I don't see anything else different about his behavior.",
+   "ts": "2026-10-15 20:14:35",
+   "kind": "answer",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "bot",
+   "text": "Got it, no other changes. On a scale from 0 to 10, where 10 is the worst pain imaginable, how bad is his hip pain right now, and is it getting worse and worse, with his hip or leg feeling tight or hard?",
+   "ts": "2026-10-15 20:14:44",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating+complaint.compartment_syndrome_symptoms"
+  },
+  {
+   "role": "caregiver",
+   "text": "His pain is a 7 out of 10. I'm not sure if it's getting worse or if it feels tight or hard.",
+   "ts": "2026-10-15 20:14:45",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_rating+complaint.compartment_syndrome_symptoms"
+  },
+  {
+   "role": "bot",
+   "text": "Thanks, that's noted. Does he take a blood thinner, like warfarin, apixaban, rivaroxaban or clopidogrel, and what other medicines does he take regularly? You can also send a photo of the boxes.",
+   "ts": "2026-10-15 20:14:55",
+   "kind": "question",
+   "slot": "dyn:M.anticoagulant+M.medications"
+  },
+  {
+   "role": "caregiver",
+   "text": "He takes a small pill to thin his blood called warfarin. He also takes a blood pressure pill, but I don't know the name of it.",
+   "ts": "2026-10-15 20:14:57",
+   "kind": "answer",
+   "slot": "dyn:M.anticoagulant+M.medications"
+  },
+  {
+   "role": "system",
+   "text": "floor: at least ESI-2  rules: ['B-30.anticoagulated-trauma']",
+   "ts": "2026-10-15 20:15:02",
+   "kind": "floor"
+  },
+  {
+   "role": "bot",
+   "text": "Got it, warfarin and a blood pressure pill. Is he allergic to anything, especially any medicines, and does he have any ongoing health problems, like heart trouble, diabetes or past strokes?",
+   "ts": "2026-10-15 20:15:05",
+   "kind": "question",
+   "slot": "dyn:A.allergies+history.conditions"
+  },
+  {
+   "role": "caregiver",
+   "text": "He is allergic to penicillin, which gives him a rash. He has an irregular heartbeat and high blood pressure.",
+   "ts": "2026-10-15 20:15:07",
+   "kind": "answer",
+   "slot": "dyn:A.allergies+history.conditions"
+  },
+  {
+   "role": "bot",
+   "text": "Penicillin allergy, irregular heartbeat and high blood pressure, noted. What is his full name and date of birth?",
+   "ts": "2026-10-15 20:15:12",
+   "kind": "question",
+   "slot": "dyn:identity.name+identity.dob"
+  },
+  {
+   "role": "caregiver",
+   "text": "His name is Tan Ah Kow and he was born on 02 Jan 1939.",
+   "ts": "2026-10-15 20:15:13",
+   "kind": "answer",
+   "slot": "dyn:identity.name+identity.dob"
+  },
+  {
+   "role": "bot",
+   "text": "That's enough for the hospital team to prepare. Show the code MERLION-8874 at the counter when you arrive. I'll ask a few more things while you're on the way; tell me straight away if anything changes.",
+   "ts": "2026-10-15 20:15:19",
+   "kind": "ack"
+  },
+  {
+   "role": "bot",
+   "text": "Is he having any pain in his testicles or scrotum?",
+   "ts": "2026-10-15 20:15:24",
+   "kind": "question",
+   "slot": "dyn:complaint.testicular_or_scrotal_pain"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, he is not.",
+   "ts": "2026-10-15 20:15:25",
+   "kind": "answer",
+   "slot": "dyn:complaint.testicular_or_scrotal_pain"
+  },
+  {
+   "role": "bot",
+   "text": "Can he stand or put any weight on his leg, and does that leg look shorter, turned outwards, or is his hip or thigh out of its usual shape?",
+   "ts": "2026-10-15 20:15:30",
+   "kind": "question",
+   "slot": "dyn:complaint.possible_pelvis_femur_fracture_or_dislocation"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, he cannot stand. I'm not sure if his leg looks different or out of shape.",
+   "ts": "2026-10-15 20:15:32",
+   "kind": "answer",
+   "slot": "dyn:complaint.possible_pelvis_femur_fracture_or_dislocation"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you. When it happened, did he hurt his belly or hit his head?",
+   "ts": "2026-10-15 20:15:43",
+   "kind": "question",
+   "slot": "dyn:E.abdominal_trauma+E.head_strike"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, he didn't hit his head and I don't know if he hurt his belly.",
+   "ts": "2026-10-15 20:15:45",
+   "kind": "answer",
+   "slot": "dyn:E.abdominal_trauma+E.head_strike"
+  },
+  {
+   "role": "bot",
+   "text": "When it happened, did his stomach area bump or knock against anything, like the floor, a step or a piece of furniture?",
+   "ts": "2026-10-15 20:15:51",
+   "kind": "question",
+   "slot": "dyn:E.abdominal_trauma"
+  },
+  {
+   "role": "caregiver",
+   "text": "He fell down 4 steps and landed on his right hip.",
+   "ts": "2026-10-15 20:15:52",
+   "kind": "answer",
+   "slot": "dyn:E.abdominal_trauma"
+  },
+  {
+   "role": "bot",
+   "text": "Got it, he landed on his right hip. As he tumbled down the steps, did his tummy get knocked at all, or does he have any pain or bruising on his tummy now?",
+   "ts": "2026-10-15 20:16:06",
+   "kind": "question",
+   "slot": "dyn:E.abdominal_trauma"
+  },
+  {
+   "role": "caregiver",
+   "text": "I'm not sure if his tummy was hit or if there is any bruising there.",
+   "ts": "2026-10-15 20:16:07",
+   "kind": "answer",
+   "slot": "dyn:E.abdominal_trauma"
+  },
+  {
+   "role": "bot",
+   "text": "That's okay, thank you. When he fell, did he pass out or black out, even for a moment?",
+   "ts": "2026-10-15 20:16:16",
+   "kind": "question",
+   "slot": "dyn:E.loc"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, he didn't have a blackout or pass out. He is awake and talking.",
+   "ts": "2026-10-15 20:16:17",
+   "kind": "answer",
+   "slot": "dyn:E.loc"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you. When did he last eat or drink anything, and what was it?",
+   "ts": "2026-10-15 20:16:23",
+   "kind": "question",
+   "slot": "dyn:L.last_intake"
+  },
+  {
+   "role": "caregiver",
+   "text": "He had some porridge for lunch at 1pm.",
+   "ts": "2026-10-15 20:16:24",
+   "kind": "answer",
+   "slot": "dyn:L.last_intake"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you - that's everything. Show the code MERLION-8874 at the counter when you arrive.",
+   "ts": "2026-10-15 20:16:26",
+   "kind": "ack"
+  }
+ ],
+ "stage": "rest",
+ "floor": "at least ESI-2",
+ "phase": "enroute",
+ "created": "2026-10-15 20:12",
+ "pending_slot": "dyn:L.last_intake",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {},
+ "considered": [
+  "B-02.severe-pain-consider",
+  "B-25.pelvis-femur-fracture-consider"
+ ],
+ "qr_ready": true,
+ "qr_turn": 13,
+ "said_done": true
+}

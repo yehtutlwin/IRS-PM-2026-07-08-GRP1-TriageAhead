@@ -1,0 +1,144 @@
+{
+ "persona_backend": "ollama",
+ "persona_model": "gemma4:12b",
+ "interview": {
+  "interview_mode": "dynamic",
+  "backend": "ollama",
+  "model": "gemma4:12b",
+  "dyn_max_fields": 4,
+  "temperature": "0"
+ },
+ "tag": "v2p-fair-local-interview-local-persona-t0",
+ "cost_usd": {
+  "interview": 0,
+  "persona": 0
+ },
+ "results": [
+  {
+   "sorry": 2,
+   "you_event": 0,
+   "after_report_not_for_nurse": 0,
+   "report_ok": true,
+   "questions": 19,
+   "questions_to_report": 15,
+   "reasks": 4,
+   "floor": "at least ESI-2",
+   "floor_ok": true,
+   "rules_ok": true,
+   "fired": [
+    "B-30.anticoagulated-trauma"
+   ],
+   "hits": 9,
+   "total": 9,
+   "misses": [],
+   "danger_miss": false,
+   "persona": "P1-fall-anticoag",
+   "run": 1,
+   "session": "KOPI-8450",
+   "turns": 19,
+   "transcript": "sessions-task-i-20261015-2012-v2p-fair-local-interview-local-persona-t0/KOPI-8450.transcript.txt"
+  },
+  {
+   "sorry": 1,
+   "you_event": 0,
+   "after_report_not_for_nurse": 0,
+   "report_ok": true,
+   "questions": 22,
+   "questions_to_report": 13,
+   "reasks": 9,
+   "floor": "at least ESI-2",
+   "floor_ok": true,
+   "rules_ok": true,
+   "fired": [
+    "B-38.pregnant-chest-pain-breathlessness-abdo-pain-or-headache"
+   ],
+   "hits": 5,
+   "total": 6,
+   "misses": [
+    "complaint.fever: want=False got=None"
+   ],
+   "danger_miss": false,
+   "persona": "P3-abdo-pregnant",
+   "run": 1,
+   "session": "VANDA-7481",
+   "turns": 22,
+   "transcript": "sessions-task-i-20261015-2012-v2p-fair-local-interview-local-persona-t0/VANDA-7481.transcript.txt"
+  },
+  {
+   "sorry": 1,
+   "you_event": 0,
+   "after_report_not_for_nurse": 0,
+   "report_ok": true,
+   "questions": 17,
+   "questions_to_report": 16,
+   "reasks": 6,
+   "floor": "at least ESI-2",
+   "floor_ok": true,
+   "rules_ok": true,
+   "fired": [
+    "B-05.stroke-signs"
+   ],
+   "hits": 4,
+   "total": 6,
+   "misses": [
+    "stroke.speech_change: want=True got=None",
+    "stroke.arm_weakness: want=True got=None"
+   ],
+   "danger_miss": false,
+   "persona": "P6-stroke-resolved",
+   "run": 1,
+   "session": "ORCHID-7944",
+   "turns": 17,
+   "transcript": "sessions-task-i-20261015-2012-v2p-fair-local-interview-local-persona-t0/ORCHID-7944.transcript.txt"
+  },
+  {
+   "sorry": 1,
+   "you_event": 0,
+   "after_report_not_for_nurse": 0,
+   "report_ok": true,
+   "questions": 19,
+   "questions_to_report": 17,
+   "reasks": 5,
+   "floor": null,
+   "floor_ok": true,
+   "rules_ok": true,
+   "fired": [],
+   "hits": 5,
+   "total": 7,
+   "misses": [
+    "complaint.trauma: want=False got=None",
+    "history.gout: want=True got=None"
+   ],
+   "danger_miss": false,
+   "persona": "P6-acute-gout",
+   "run": 1,
+   "session": "RAFFLES-1596",
+   "turns": 19,
+   "transcript": "sessions-task-i-20261015-2012-v2p-fair-local-interview-local-persona-t0/RAFFLES-1596.transcript.txt"
+  },
+  {
+   "sorry": 0,
+   "you_event": 0,
+   "after_report_not_for_nurse": 0,
+   "report_ok": true,
+   "questions": 13,
+   "questions_to_report": 11,
+   "reasks": 1,
+   "floor": "at least ESI-2",
+   "floor_ok": false,
+   "rules_ok": true,
+   "fired": [
+    "B-12.increasing-respiratory-effort"
+   ],
+   "hits": 7,
+   "total": 7,
+   "misses": [],
+   "danger_miss": false,
+   "persona": "P9-breathing-no-pain",
+   "run": 1,
+   "session": "LOTUS-1424",
+   "turns": 13,
+   "transcript": "sessions-task-i-20261015-2012-v2p-fair-local-interview-local-persona-t0/LOTUS-1424.transcript.txt"
+  }
+ ]
+}

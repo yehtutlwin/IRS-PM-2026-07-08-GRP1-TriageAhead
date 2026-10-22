@@ -1,0 +1,424 @@
+{
+ "sid": "KOPI-4354",
+ "facts": {
+  "danger_signs.responsive": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-19 02:20"
+  },
+  "danger_signs.chest_pain_now": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-19 02:20"
+  },
+  "danger_signs.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-19 02:21"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "breathing",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 2,
+      "ts": "2026-10-19 02:21"
+     },
+     "text": {
+      "value": "having a harder time breathing and has to pause while speaking",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 2,
+      "ts": "2026-10-19 02:21"
+     },
+     "onset": {
+      "value": "over the last hour",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 4,
+      "ts": "2026-10-19 02:23"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2
+  },
+  "complaint.category": {
+   "value": [
+    "breathing"
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 4,
+   "ts": "2026-10-19 02:23"
+  },
+  "complaint.text": {
+   "value": "having a harder time breathing and has to pause while speaking",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-19 02:21"
+  },
+  "patient.sex": {
+   "value": "male",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-19 02:21"
+  },
+  "E.mechanism": {
+   "value": "none",
+   "status": "reported",
+   "who": "derived",
+   "turn": 2,
+   "ts": "2026-10-19 02:21"
+  },
+  "danger_signs.breathing_difficulty": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-19 02:22"
+  },
+  "complaint.shortness_of_breath": {
+   "value": true,
+   "status": "reported",
+   "who": "derived",
+   "turn": 3,
+   "ts": "2026-10-19 02:22"
+  },
+  "complaint.onset": {
+   "value": "over the last hour",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 4,
+   "ts": "2026-10-19 02:23"
+  },
+  "patient.age": {
+   "value": 6,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 4,
+   "ts": "2026-10-19 02:23"
+  },
+  "patient.age_group": {
+   "value": "child",
+   "status": "reported",
+   "who": "derived",
+   "turn": 4,
+   "ts": "2026-10-19 02:23"
+  },
+  "complaint.fever": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 5,
+   "ts": "2026-10-19 02:24"
+  },
+  "infection.contacts": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 11,
+   "ts": "2026-10-19 02:31"
+  },
+  "complaint.increasing_respiratory_effort": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 15,
+   "ts": "2026-10-19 02:32"
+  },
+  "M.medications": {
+   "value": [
+    "blue asthma inhaler"
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 16,
+   "ts": "2026-10-19 02:32"
+  },
+  "A.allergies": {
+   "value": [],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 16,
+   "ts": "2026-10-19 02:32"
+  }
+ },
+ "attempts": {
+  "danger_signs.responsive": 1,
+  "danger_signs.chest_pain_now": 1,
+  "danger_signs.breathing_difficulty": 2,
+  "danger_signs.heavy_bleeding": 1,
+  "complaint.category": 1,
+  "complaint.onset": 1,
+  "patient.age": 1,
+  "complaint.fever": 1,
+  "infection.rash": 3,
+  "infection.travel_14d": 3,
+  "infection.contacts": 2,
+  "ams.changed_from_baseline": 3,
+  "complaint.pain_rating": 1,
+  "complaint.increasing_respiratory_effort": 1,
+  "M.medications": 1,
+  "A.allergies": 1,
+  "history.conditions": 1
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "Is the patient awake and responding to you normally? Also, is he or she experiencing any chest pain, trouble breathing, or heavy bleeding right now?",
+   "ts": "2026-10-19 02:19:47",
+   "kind": "question",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, the patient is awake and responding normally. No, the patient is not having chest pain right now.",
+   "ts": "2026-10-19 02:19:47",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "bot",
+   "text": "I'm glad to hear they are alert. Is the patient having any trouble breathing or heavy bleeding right now? Also, what is the main reason you are bringing them in?",
+   "ts": "2026-10-19 02:20:59",
+   "kind": "question",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, the patient is having trouble breathing right now. No, the patient is not bleeding heavily right now. My son is having a harder time breathing and has to pause while speaking.",
+   "ts": "2026-10-19 02:20:59",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category"
+  },
+  {
+   "role": "bot",
+   "text": "I understand he is struggling to speak. Could you describe how his breathing is currently?",
+   "ts": "2026-10-19 02:22:11",
+   "kind": "question",
+   "slot": "dyn:danger_signs.breathing_difficulty"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, the patient is having trouble breathing right now.",
+   "ts": "2026-10-19 02:22:11",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.breathing_difficulty"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. When did his breathing difficulty start, and how old is your son?",
+   "ts": "2026-10-19 02:23:20",
+   "kind": "question",
+   "slot": "dyn:complaint.onset+patient.age"
+  },
+  {
+   "role": "caregiver",
+   "text": "You are the father of a 6-year-old boy whose breathing has become harder over the last hour. The patient is 6 years old.",
+   "ts": "2026-10-19 02:23:20",
+   "kind": "answer",
+   "slot": "dyn:complaint.onset+patient.age"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear he's struggling. Does he have a fever, and have you noticed any new rashes on his body?",
+   "ts": "2026-10-19 02:24:30",
+   "kind": "question",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, the patient does not have fever. I do not know whether the patient has a rash.",
+   "ts": "2026-10-19 02:24:30",
+   "kind": "answer",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Have you noticed any new rashes or spots on his skin?",
+   "ts": "2026-10-19 02:25:39",
+   "kind": "question",
+   "slot": "dyn:infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient has a rash.",
+   "ts": "2026-10-19 02:25:39",
+   "kind": "answer",
+   "slot": "dyn:infection.rash"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Can you check his skin to see if there are any new spots or rashes?",
+   "ts": "2026-10-19 02:26:47",
+   "kind": "question",
+   "slot": "dyn:infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient has a rash.",
+   "ts": "2026-10-19 02:26:47",
+   "kind": "answer",
+   "slot": "dyn:infection.rash"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Has he traveled outside the country or been around anyone who is sick in the last two weeks?",
+   "ts": "2026-10-19 02:27:57",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient travelled in the last 14 days. I do not know of any sick contacts.",
+   "ts": "2026-10-19 02:27:57",
+   "kind": "answer",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Has he been on any trips outside of the country in the last two weeks?",
+   "ts": "2026-10-19 02:29:05",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient travelled in the last 14 days.",
+   "ts": "2026-10-19 02:29:05",
+   "kind": "answer",
+   "slot": "dyn:infection.travel_14d"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. To clarify, has he been on any trips outside of the country in the last 14 days?",
+   "ts": "2026-10-19 02:30:13",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient travelled in the last 14 days.",
+   "ts": "2026-10-19 02:30:13",
+   "kind": "answer",
+   "slot": "dyn:infection.travel_14d"
+  },
+  {
+   "role": "bot",
+   "text": "Has he been around anyone who has been sick or had a contagious illness lately?",
+   "ts": "2026-10-19 02:31:21",
+   "kind": "question",
+   "slot": "dyn:infection.contacts"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know of any sick contacts.",
+   "ts": "2026-10-19 02:31:21",
+   "kind": "answer",
+   "slot": "dyn:infection.contacts"
+  },
+  {
+   "role": "bot",
+   "text": "Is he acting differently than usual, such as being more confused or very sleepy?",
+   "ts": "2026-10-19 02:32:30",
+   "kind": "question",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient is acting differently from usual.",
+   "ts": "2026-10-19 02:32:30",
+   "kind": "answer",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "bot",
+   "text": "Is he acting differently than usual, such as being more confused or very sleepy?",
+   "ts": "2026-10-19 02:32:36",
+   "kind": "question",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient is acting differently from usual.",
+   "ts": "2026-10-19 02:32:36",
+   "kind": "answer",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "bot",
+   "text": "Is he acting differently than usual, such as being confused or very sleepy?",
+   "ts": "2026-10-19 02:32:41",
+   "kind": "question",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient is acting differently from usual.",
+   "ts": "2026-10-19 02:32:41",
+   "kind": "answer",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. On a scale of 0 to 10, how much pain is he in right now, and is his breathing getting harder than it was earlier?",
+   "ts": "2026-10-19 02:32:47",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating+complaint.increasing_respiratory_effort"
+  },
+  {
+   "role": "caregiver",
+   "text": "The pain score was not provided. Yes, the patient has increasing difficulty breathing.",
+   "ts": "2026-10-19 02:32:47",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_rating+complaint.increasing_respiratory_effort"
+  },
+  {
+   "role": "system",
+   "text": "floor: at least ESI-2  rules: ['B-12.increasing-respiratory-effort']",
+   "ts": "2026-10-19 02:32:51",
+   "kind": "floor"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear his breathing is getting harder. Does he take any regular medications or have any known allergies?",
+   "ts": "2026-10-19 02:32:54",
+   "kind": "question",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "caregiver",
+   "text": "He uses a blue asthma inhaler. The patient has no known allergies.",
+   "ts": "2026-10-19 02:32:54",
+   "kind": "answer",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "bot",
+   "text": "Does he have any other ongoing medical conditions?",
+   "ts": "2026-10-19 02:33:01",
+   "kind": "question",
+   "slot": "dyn:history.conditions"
+  }
+ ],
+ "stage": "floor",
+ "floor": "at least ESI-2",
+ "phase": "enroute",
+ "created": "2026-10-19 02:18",
+ "pending_slot": "dyn:history.conditions",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {}
+}

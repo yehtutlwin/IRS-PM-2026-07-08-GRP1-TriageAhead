@@ -1,0 +1,28 @@
+arm B, form handbook, persona P14-child-knee-cut, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  What is the main reason the patient is seeking care today?
+A1  He fell running across the playground and cut his right knee. It's about 3 centimetres long.
+
+Q2  Is the patient currently showing any signs of severe distress, such as heavy bleeding that won't stop, or is he having any trouble breathing?
+A2  No.
+
+Q3  Is the patient's wound bleeding heavily or is it a deep wound that might need stitches?
+A3  No, it's just a cut on his knee.
+
+Q4  How old is the patient?
+A4  He's 6.
+
+Q5  Is the child's wound a simple cut that only needs a dressing, or will it require a procedure like stitches or a staple?
+A5  No, it's just a cut on his knee.
+
+Q6  Is the child's wound a simple cut that only needs a dressing, or will it require a procedure like stitches or a staple?
+A6  No, it's just a cut on his knee.
+
+Q7  Does the child have any other symptoms or concerns, such as a fever, difficulty breathing, or any other injuries from the fall?
+A7  No, it's just a cut on his knee.
+
+Q8  Does the child have any other symptoms or concerns, such as a fever, difficulty breathing, or any other injuries from the fall?
+A8  No, it's just a cut on his knee.
+
+DECISION {"decision": "level 5", "reason": "The patient is a stable child with a minor laceration that requires only a simple procedure (dressing) and no other resources or high-risk indicators.", "citation": "page 20, Table 5-2"}
+OUTCOME level 5 | expected None | pass True | label None | max prompt tokens 29942

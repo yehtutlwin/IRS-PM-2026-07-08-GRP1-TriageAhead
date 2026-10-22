@@ -1,0 +1,38 @@
+{"t": "03:33:35", "kind": "engine", "note": "session MERLION-2587 started (web)"}
+{"t": "03:33:36", "kind": "question", "slot": "red_flags.screen", "text": "Is the patient awake and responding normally, and are they experiencing any severe chest pain, trouble breathing, or heavy bleeding right now?"}
+{"t": "03:33:37", "kind": "answer", "slot": "red_flags.screen", "text": "He is awake but only responding with confused words. There is no chest pain, trouble breathing, or heavy bleeding."}
+{"t": "03:33:40", "kind": "extract", "writes": [["red_flags.responsive", false], ["red_flags.chest_pain_now", false], ["red_flags.breathing_difficulty", false], ["red_flags.heavy_bleeding", false], ["ams.changed_from_baseline", true]]}
+{"t": "03:33:40", "kind": "floor", "floor": "at least ESI-2", "fired": ["B-01.new-altered-mental-status"], "sources": ["ESI v5 p.12 (New Onset Confusion, Lethargy, or Disorientation)"]}
+{"t": "03:33:40", "kind": "advice", "text": "Based on what you just told me, please call 995 NOW if you are not already with paramedics. I have put this at the top of the hospital report."}
+{"t": "03:33:42", "kind": "question", "slot": "complaint.main", "text": "Can you tell me what happened, when it started, and how bad the pain is on a scale of 0 to 10?"}
+{"t": "03:33:43", "kind": "answer", "slot": "complaint.main", "text": "He was working outside in the sun for four hours and started feeling dizzy and nauseous before collapsing. I don't know how bad his pain is."}
+{"t": "03:33:45", "kind": "extract", "writes": [["complaint.text", "dizzy and nauseous", "dizziness"], ["complaint.onset", "after four hours of working in the sun", "dizziness"]]}
+{"t": "03:33:45", "kind": "extract", "writes": [["E.mechanism", "none"]], "via": "derived-non-injury"}
+{"t": "03:33:47", "kind": "question", "slot": "stroke.screen", "text": "At any point today, did you notice his face drooping, an arm becoming weak or numb, or his speech becoming slurred or strange?"}
+{"t": "03:33:48", "kind": "answer", "slot": "stroke.screen", "text": "He is responding with only confused words. I don't know if his face drooped or his arm became weak."}
+{"t": "03:33:49", "kind": "extract", "writes": [["ams.changed_from_baseline", true], ["stroke.speech_change", true]]}
+{"t": "03:33:51", "kind": "question", "slot": "stroke.screen", "text": "Did you notice his face drooping on one side or his arm becoming weak or numb at any point today?"}
+{"t": "03:33:52", "kind": "answer", "slot": "stroke.screen", "text": "I don't know."}
+{"t": "03:33:53", "kind": "extract", "writes": []}
+{"t": "03:33:55", "kind": "question", "slot": "stroke.screen", "text": "Could you please tell me if you noticed any drooping on one side of his face or any weakness in his arm at any point today?"}
+{"t": "03:34:00", "kind": "answer", "slot": "stroke.screen", "text": "I don't know."}
+{"t": "03:34:01", "kind": "extract", "writes": []}
+{"t": "03:34:02", "kind": "question", "slot": "complaint.main", "text": "On a scale of 0 to 10, how bad is his pain right now?"}
+{"t": "03:34:04", "kind": "answer", "slot": "complaint.main", "text": "I don't know. He is only responding with confused words."}
+{"t": "03:34:05", "kind": "extract", "writes": [["ams.changed_from_baseline", true]]}
+{"t": "03:34:07", "kind": "question", "slot": "complaint.main", "text": "Can you give me a rough idea of how much pain he is in on a scale of 0 to 10?"}
+{"t": "03:34:08", "kind": "answer", "slot": "complaint.main", "text": "I don't know. He is confused and only responding with words that don't make sense."}
+{"t": "03:34:09", "kind": "extract", "writes": [["ams.changed_from_baseline", true]]}
+{"t": "03:34:10", "kind": "question", "slot": "M.medications", "text": "Does he take any regular medications?"}
+{"t": "03:34:11", "kind": "answer", "slot": "M.medications", "text": "I don't know."}
+{"t": "03:34:12", "kind": "extract", "writes": []}
+{"t": "03:34:12", "kind": "extract", "writes": [["M.medications", null]], "via": "dont-know"}
+{"t": "03:34:14", "kind": "question", "slot": "allergies_and_history", "text": "Does he have any allergies to medication or other medical conditions, such as heart problems, diabetes, or a weakened immune system?"}
+{"t": "03:34:15", "kind": "answer", "slot": "allergies_and_history", "text": "I don't know his medications, allergies, or medical history."}
+{"t": "03:34:16", "kind": "extract", "writes": []}
+{"t": "03:34:16", "kind": "extract", "writes": [["A.allergies", null], ["history.conditions", null], ["history.immunocompromised", null], ["history.pregnant_or_postpartum", null]], "via": "dont-know"}
+{"t": "03:34:18", "kind": "question", "slot": "infection.screen", "text": "Has he had a fever, any rashes, traveled abroad in the last two weeks, or been in contact with anyone who is sick?"}
+{"t": "03:34:19", "kind": "answer", "slot": "infection.screen", "text": "I don't know if he had a fever or a rash, and I don't know about his travel or contact with anyone sick."}
+{"t": "03:34:20", "kind": "extract", "writes": []}
+{"t": "03:34:20", "kind": "extract", "writes": [["infection.fever", null], ["infection.rash", null], ["infection.travel_14d", null], ["infection.contacts", null]], "via": "dont-know"}
+{"t": "03:34:22", "kind": "question", "slot": "wrapup", "text": "Could you tell me his name, date of birth, and when he last had something to eat or drink?"}

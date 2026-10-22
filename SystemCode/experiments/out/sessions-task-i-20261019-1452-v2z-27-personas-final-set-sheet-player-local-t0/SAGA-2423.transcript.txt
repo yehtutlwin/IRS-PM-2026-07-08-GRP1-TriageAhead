@@ -1,0 +1,33 @@
+session SAGA-2423   started 2026-10-19 14:09   (generated from messages)
+
+14:09:44  BOT  Is the patient awake and responding to you normally? Also, is he or she experiencing any chest pain, trouble breathing, or heavy bleeding right now?   [slot dyn:danger_signs.responsive+danger_signs.chest_pain_now]
+14:09:44  THEM He's awake but slow to answer. No chest pain.   [slot dyn:danger_signs.responsive+danger_signs.chest_pain_now]
+14:09:54  BOT  I understand. Is he having any trouble breathing or is there any heavy bleeding? Also, what is the main reason you are bringing him in today?   [slot dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category]
+14:09:54  THEM Breathing normally. No. He has cirrhosis. Over two days his belly has got more swollen, his eyes more yellow, and he's sleepy and confused; today he can't say the date and his hands shake.   [slot dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category]
+14:10:14  BOT  I'm sorry to hear about his condition. When did these symptoms first start?   [slot dyn:complaint.onset]
+14:10:14  THEM Over the past two days.   [slot dyn:complaint.onset]
+14:10:30  BOT  I'm sorry to hear he's feeling this way. How old is he, and was there an injury or specific event that caused these symptoms?   [slot dyn:E.mechanism+patient.age+patient.sex]
+14:10:30  THEM No injury. 58. Male.   [slot dyn:E.mechanism+patient.age+patient.sex]
+14:10:38  BOT  I understand. Does he have a fever or a new rash?   [slot dyn:complaint.fever+infection.rash]
+14:10:38  THEM No fever. No rash.   [slot dyn:complaint.fever+infection.rash]
+14:10:45  BOT  Has he traveled outside the country or been in contact with anyone who has been sick in the last two weeks?   [slot dyn:infection.travel_14d+infection.contacts]
+14:10:45  THEM No.   [slot dyn:infection.travel_14d+infection.contacts]
+14:10:52  BOT  Is he having any pain or burning when he goes to the bathroom, or is his urine cloudy or smelly?   [slot dyn:complaint.uti_symptoms]
+14:10:52  THEM I don't know.   [slot dyn:complaint.uti_symptoms]
+14:10:58  BOT  Is he more confused or harder to wake up than usual?   [slot dyn:ams.changed_from_baseline]
+14:10:58  THEM Yes, much more confused and sleepy than usual.   [slot dyn:ams.changed_from_baseline]
+14:11:11  SYS  floor: at least ESI-2  rules: ['B-01.new-altered-mental-status'] (floor)
+14:11:14  BOT  I understand he is very sleepy. What medications does he take regularly, and does he have any allergies to medicines?   [slot dyn:M.medications+A.allergies]
+14:11:14  THEM Lactulose, spironolactone and furosemide; he missed several lactulose doses this week. None.   [slot dyn:M.medications+A.allergies]
+14:11:22  BOT  I understand he's been very sleepy. Does he have any known allergies to medications?   [slot dyn:A.allergies]
+14:11:22  THEM None.   [slot dyn:A.allergies]
+14:11:38  BOT  I have noted the medications and lack of allergies. Could you please tell me the patient's full name and date of birth?   [slot dyn:identity.name+identity.dob]
+14:11:38  THEM Rajan Kumar. 7 July 1968.   [slot dyn:identity.name+identity.dob]
+14:11:42  BOT  That's enough for the hospital team to prepare. Show the code SAGA-2423 at the counter when you arrive. I'll ask a few more things while you're on the way; tell me straight away if anything changes. (ack)
+14:11:46  BOT  On a scale from 0 to 10, where 10 is the worst pain imaginable, how bad is the pain he is feeling right now?   [slot dyn:complaint.pain_rating]
+14:11:46  THEM Mild belly discomfort, 3 out of 10.   [slot dyn:complaint.pain_rating]
+14:12:02  BOT  I've noted the belly discomfort. Is he also experiencing any pain in his testicles or scrotum?   [slot dyn:complaint.testicular_or_scrotal_pain]
+14:12:02  THEM I don't know.   [slot dyn:complaint.testicular_or_scrotal_pain]
+14:12:08  BOT  I understand. When was the last time he had anything to eat or drink, and what did he have?   [slot dyn:L.last_intake]
+14:12:08  THEM A small bowl of rice at noon.   [slot dyn:L.last_intake]
+14:12:21  BOT  Thank you - that's everything. Show the code SAGA-2423 at the counter when you arrive. (ack)

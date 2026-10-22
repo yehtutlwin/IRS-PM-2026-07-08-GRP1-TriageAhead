@@ -1,0 +1,60 @@
+{"t": "17:56:27", "kind": "engine", "note": "session OTTER-2437 started (web)"}
+{"t": "17:56:29", "kind": "question", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "Is the patient awake and responding to you normally? Also, are they currently experiencing any chest pain, trouble breathing, or heavy bleeding?", "fields": ["danger_signs.responsive", "danger_signs.chest_pain_now"], "offered": ["danger_signs.responsive", "danger_signs.chest_pain_now", "danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text"]}
+{"t": "17:56:29", "kind": "answer", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "Yes, she's awake and talking. No."}
+{"t": "17:56:34", "kind": "extract", "writes": [["danger_signs.responsive", true], ["danger_signs.chest_pain_now", false]]}
+{"t": "17:56:38", "kind": "question", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category+complaint.text", "text": "I'm glad she's awake. Is she having any trouble breathing or is there any heavy bleeding? Also, could you tell me what the main problem is and what's happening?", "fields": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text"], "offered": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text", "complaint.onset", "E.mechanism"]}
+{"t": "17:56:38", "kind": "answer", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category+complaint.text", "text": "No. My sister told me today she's been thinking about killing herself."}
+{"t": "17:56:43", "kind": "extract", "writes": [["danger_signs.breathing_difficulty", false], ["danger_signs.heavy_bleeding", false], ["complaint.category", "mental_health"], ["complaint.text", "sister told me today she's been thinking about killing herself."]]}
+{"t": "17:56:44", "kind": "extract", "writes": [["E.mechanism", "none"]], "via": "derived-non-injury"}
+{"t": "17:56:47", "kind": "question", "slot": "dyn:complaint.onset+patient.age", "text": "I understand. How long has she been feeling this way, and could you tell me her age?", "fields": ["complaint.onset", "patient.age"], "offered": ["complaint.onset", "patient.age", "patient.sex", "complaint.fever", "infection.rash", "infection.travel_14d"]}
+{"t": "17:56:47", "kind": "answer", "slot": "dyn:complaint.onset+patient.age", "text": "She told me today. She's 31."}
+{"t": "17:56:51", "kind": "extract", "writes": [["complaint.onset", "today"], ["patient.age", 31]]}
+{"t": "17:56:54", "kind": "question", "slot": "dyn:patient.sex", "text": "I've noted that. To help the team, could you tell me if your sister is currently pregnant?", "fields": ["patient.sex"], "offered": ["patient.sex", "history.pregnant", "history.postpartum", "complaint.fever", "infection.rash", "infection.travel_14d"]}
+{"t": "17:56:54", "kind": "answer", "slot": "dyn:patient.sex", "text": "She's a woman, my sister."}
+{"t": "17:56:58", "kind": "extract", "writes": [["patient.sex", "female"]]}
+{"t": "17:57:00", "kind": "question", "slot": "dyn:history.pregnant", "text": "I understand. Is your sister currently pregnant?", "fields": ["history.pregnant"], "offered": ["history.pregnant", "history.postpartum", "complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts"]}
+{"t": "17:57:00", "kind": "answer", "slot": "dyn:history.pregnant", "text": "I don't know."}
+{"t": "17:57:04", "kind": "extract", "writes": []}
+{"t": "17:57:04", "kind": "extract", "writes": [["history.pregnant", null]], "via": "dont-know"}
+{"t": "17:57:07", "kind": "question", "slot": "dyn:history.postpartum+complaint.fever", "text": "I understand you aren't sure about the pregnancy. Has she given birth in the last few weeks, and does she have a fever?", "fields": ["history.postpartum", "complaint.fever"], "offered": ["history.postpartum", "complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts", "ams.changed_from_baseline"]}
+{"t": "17:57:07", "kind": "answer", "slot": "dyn:history.postpartum+complaint.fever", "text": "I don't know."}
+{"t": "17:57:10", "kind": "extract", "writes": []}
+{"t": "17:57:10", "kind": "extract", "writes": [["history.postpartum", null], ["complaint.fever", null]], "via": "dont-know"}
+{"t": "17:57:13", "kind": "question", "slot": "dyn:infection.rash+infection.travel_14d", "text": "I understand. Does she have any new rashes, or has she traveled outside the country in the last two weeks?", "fields": ["infection.rash", "infection.travel_14d"], "offered": ["infection.rash", "infection.travel_14d", "infection.contacts", "ams.changed_from_baseline", "complaint.pain_rating", "complaint.danger_to_self_or_others"]}
+{"t": "17:57:13", "kind": "answer", "slot": "dyn:infection.rash+infection.travel_14d", "text": "I don't know."}
+{"t": "17:57:17", "kind": "extract", "writes": []}
+{"t": "17:57:17", "kind": "extract", "writes": [["infection.rash", null], ["infection.travel_14d", null]], "via": "dont-know"}
+{"t": "17:57:20", "kind": "question", "slot": "dyn:infection.contacts+ams.changed_from_baseline", "text": "Has she been in contact with anyone who has an infectious illness recently, or has she seemed more confused or sleepy than usual?", "fields": ["infection.contacts", "ams.changed_from_baseline"], "offered": ["infection.contacts", "ams.changed_from_baseline", "complaint.pain_rating", "complaint.danger_to_self_or_others", "complaint.known_toxic_ingestion", "complaint.post_ictal_after_seizure"]}
+{"t": "17:57:20", "kind": "answer", "slot": "dyn:infection.contacts+ams.changed_from_baseline", "text": "I don't know."}
+{"t": "17:57:24", "kind": "extract", "writes": []}
+{"t": "17:57:24", "kind": "extract", "writes": [["infection.contacts", null], ["ams.changed_from_baseline", null]], "via": "dont-know"}
+{"t": "17:57:27", "kind": "question", "slot": "dyn:complaint.pain_rating", "text": "On a scale of 0 to 10, where 10 is the worst pain imaginable, how bad is her pain right now?", "fields": ["complaint.pain_rating"], "offered": ["complaint.pain_rating", "complaint.danger_to_self_or_others", "complaint.known_toxic_ingestion", "complaint.post_ictal_after_seizure", "M.medications", "A.allergies"]}
+{"t": "17:57:27", "kind": "answer", "slot": "dyn:complaint.pain_rating", "text": "I don't know."}
+{"t": "17:57:30", "kind": "extract", "writes": []}
+{"t": "17:57:33", "kind": "question", "slot": "dyn:complaint.pain_rating", "text": "I understand. To help the team, can you estimate how severe her pain is on a scale of 0 to 10?", "fields": ["complaint.pain_rating"], "offered": ["complaint.pain_rating"]}
+{"t": "17:57:33", "kind": "answer", "slot": "dyn:complaint.pain_rating", "text": "I don't know."}
+{"t": "17:57:35", "kind": "extract", "writes": []}
+{"t": "17:57:39", "kind": "question", "slot": "dyn:complaint.pain_rating", "text": "I understand it's hard to say. If you had to guess, how much is her pain bothering her on a scale of 0 to 10?", "fields": ["complaint.pain_rating"], "offered": ["complaint.pain_rating"]}
+{"t": "17:57:39", "kind": "answer", "slot": "dyn:complaint.pain_rating", "text": "I don't know."}
+{"t": "17:57:41", "kind": "extract", "writes": []}
+{"t": "17:57:45", "kind": "question", "slot": "dyn:complaint.danger_to_self_or_others", "text": "I understand. Has she said or done anything that makes you concerned she might hurt herself or anyone else?", "fields": ["complaint.danger_to_self_or_others"], "offered": ["complaint.danger_to_self_or_others", "complaint.known_toxic_ingestion", "complaint.post_ictal_after_seizure", "M.medications", "A.allergies", "history.conditions"]}
+{"t": "17:57:45", "kind": "answer", "slot": "dyn:complaint.danger_to_self_or_others", "text": "Yes, she said she wants to kill herself."}
+{"t": "17:57:49", "kind": "extract", "writes": [["complaint.danger_to_self_or_others", true]]}
+{"t": "17:57:49", "kind": "floor", "floor": "at least ESI-2", "fired": ["B-09.suicidal-or-homicidal"], "sources": ["ESI v5 p.12; p.15 (Mental and Behavioral Health)"]}
+{"t": "17:57:52", "kind": "question", "slot": "dyn:M.medications+A.allergies", "text": "I'm sorry to hear she's feeling this way. Does she have any known allergies or take any regular medications?", "fields": ["M.medications", "A.allergies"], "offered": ["M.medications", "A.allergies", "history.conditions", "identity.name", "identity.dob"]}
+{"t": "17:57:52", "kind": "answer", "slot": "dyn:M.medications+A.allergies", "text": "I don't know."}
+{"t": "17:57:55", "kind": "extract", "writes": []}
+{"t": "17:57:55", "kind": "extract", "writes": [["M.medications", null], ["A.allergies", null]], "via": "dont-know"}
+{"t": "17:57:58", "kind": "question", "slot": "dyn:history.conditions", "text": "I understand. Does she have any ongoing medical conditions?", "fields": ["history.conditions"], "offered": ["history.conditions", "identity.name", "identity.dob"]}
+{"t": "17:57:58", "kind": "answer", "slot": "dyn:history.conditions", "text": "I don't know."}
+{"t": "17:58:01", "kind": "extract", "writes": []}
+{"t": "17:58:01", "kind": "extract", "writes": [["history.conditions", null]], "via": "dont-know"}
+{"t": "17:58:04", "kind": "question", "slot": "dyn:identity.name+identity.dob", "text": "I understand. Could you please tell me her full name and date of birth?", "fields": ["identity.name", "identity.dob"], "offered": ["identity.name", "identity.dob"]}
+{"t": "17:58:04", "kind": "answer", "slot": "dyn:identity.name+identity.dob", "text": "Grace Lee. I'm not sure of the date, she's 31."}
+{"t": "17:58:09", "kind": "extract", "writes": [["identity.name", "Grace Lee"], ["patient.age", 31]]}
+{"t": "17:58:11", "kind": "question", "slot": "dyn:identity.dob", "text": "I understand. Could you tell me her date of birth?", "fields": ["identity.dob"], "offered": ["identity.dob"]}
+{"t": "17:58:11", "kind": "answer", "slot": "dyn:identity.dob", "text": "I'm not sure of the date, she's 31."}
+{"t": "17:58:15", "kind": "extract", "writes": [["patient.age", 31]]}
+{"t": "17:58:15", "kind": "extract", "writes": [["identity.dob", null]], "via": "dont-know"}
+{"t": "17:58:15", "kind": "engine", "note": "floor settled - report ready; remaining questions continue"}
+{"t": "17:58:18", "kind": "question", "slot": "dyn:L.last_intake", "text": "When was the last time she had anything to eat or drink?", "fields": ["L.last_intake"], "offered": ["L.last_intake"]}

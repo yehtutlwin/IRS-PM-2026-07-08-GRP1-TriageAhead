@@ -1,0 +1,28 @@
+arm B, form rules, persona P7-heat-stroke, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  Is the patient awake and responding normally?
+A1  He's awake, but he is only responding with confused words.
+
+Q2  Is the patient currently having a medical emergency like a heart attack, a stroke, or a severe allergic reaction?
+A2  I don't know.
+
+Q3  Is the patient having any trouble breathing right now?
+A3  He's breathing, and I don't see him struggling.
+
+Q4  Is the patient bleeding heavily right now?
+A4  No bleeding.
+
+Q5  Is the patient's confusion a new change from how he usually is?
+A5  Yes, he is usually fine.
+
+Q6  Is the patient's confusion, drowsiness, or disorientation a new change from his usual mental state?
+A6  Yes, he is confused and only says confused words, but he is normally fine.
+
+Q7  Is the patient in severe pain or distress?
+A7  He is not struggling to breathe, but he is very weak and confused.
+
+Q8  Is the patient's confusion, drowsiness, or disorientation a new change from his usual mental state?
+A8  Yes, he is confused and only says confused words, but he is normally fine.
+
+DECISION {"decision": "at least ESI-2", "reason": "The patient is experiencing a new onset of confusion, drowsiness, or disorientation, which is a high-risk situation.", "citation": "ESI v5 p.12 (New Onset Confusion, Lethargy, or Disorientation); Rule B-01"}
+OUTCOME level 2 or floor | expected ESI-1 | pass False | label missing fact | max prompt tokens 43872

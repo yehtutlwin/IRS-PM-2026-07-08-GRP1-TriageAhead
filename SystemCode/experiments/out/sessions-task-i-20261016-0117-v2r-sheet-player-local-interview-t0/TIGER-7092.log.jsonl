@@ -1,0 +1,55 @@
+{"t": "00:54:10", "kind": "engine", "note": "session TIGER-7092 started (web)"}
+{"t": "00:54:14", "kind": "question", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "Is the patient awake and responding to you normally? Also, is he or she experiencing any chest pain, trouble breathing, or heavy bleeding right now?", "fields": ["danger_signs.responsive", "danger_signs.chest_pain_now"], "offered": ["danger_signs.responsive", "danger_signs.chest_pain_now", "danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text"]}
+{"t": "00:54:14", "kind": "answer", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "Yes, he's awake and talking. No chest pain."}
+{"t": "00:54:19", "kind": "extract", "writes": [["danger_signs.responsive", true], ["danger_signs.chest_pain_now", false]]}
+{"t": "00:54:22", "kind": "question", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category", "text": "I'm glad he's awake. Is he having any trouble breathing or is there any heavy bleeding? Also, what is the main reason you are bringing him in today?", "fields": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category"], "offered": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text", "complaint.onset", "E.mechanism"]}
+{"t": "00:54:22", "kind": "answer", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category", "text": "No, he's breathing fine. No bleeding. He fell down 4 steps at home and landed on his right hip. He can't stand."}
+{"t": "00:54:38", "kind": "extract", "writes": [["danger_signs.breathing_difficulty", false], ["danger_signs.heavy_bleeding", false], ["complaint.category", "injury"], ["complaint.text", "He fell down 4 steps at home and landed on his right hip. He can't stand."], ["E.mechanism", "fall"]]}
+{"t": "00:54:41", "kind": "question", "slot": "dyn:complaint.onset+patient.age", "text": "I understand he can't stand after the fall. When did this happen, and how old is he?", "fields": ["complaint.onset", "patient.age"], "offered": ["complaint.onset", "patient.age", "patient.sex", "complaint.fever", "infection.rash", "infection.travel_14d"]}
+{"t": "00:54:41", "kind": "answer", "slot": "dyn:complaint.onset+patient.age", "text": "About an hour ago. He's 87."}
+{"t": "00:54:46", "kind": "extract", "writes": [["complaint.onset", "About an hour ago"], ["patient.age", 87]]}
+{"t": "00:54:49", "kind": "question", "slot": "dyn:patient.sex", "text": "I've noted his age and the fall. Is he a man or a woman?", "fields": ["patient.sex"], "offered": ["patient.sex", "complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts", "ams.changed_from_baseline"]}
+{"t": "00:54:49", "kind": "answer", "slot": "dyn:patient.sex", "text": "He's a man, my father."}
+{"t": "00:54:53", "kind": "extract", "writes": [["patient.sex", "male"]]}
+{"t": "00:54:56", "kind": "question", "slot": "dyn:complaint.fever", "text": "Does he have a fever or any new rashes?", "fields": ["complaint.fever"], "offered": ["complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts", "ams.changed_from_baseline", "complaint.pain_rating"]}
+{"t": "00:54:56", "kind": "answer", "slot": "dyn:complaint.fever", "text": "No fever."}
+{"t": "00:54:59", "kind": "extract", "writes": [["complaint.fever", false]]}
+{"t": "00:55:02", "kind": "question", "slot": "dyn:infection.rash", "text": "I understand. Has he developed any new rashes?", "fields": ["infection.rash"], "offered": ["infection.rash", "infection.travel_14d", "infection.contacts", "ams.changed_from_baseline", "complaint.pain_rating", "M.anticoagulant"]}
+{"t": "00:55:02", "kind": "answer", "slot": "dyn:infection.rash", "text": "No rash."}
+{"t": "00:55:06", "kind": "extract", "writes": [["infection.rash", false]]}
+{"t": "00:55:09", "kind": "question", "slot": "dyn:infection.travel_14d+infection.contacts", "text": "I'm sorry to hear about his fall. Has he traveled outside the country or been in contact with anyone who has been sick in the last two weeks?", "fields": ["infection.travel_14d", "infection.contacts"], "offered": ["infection.travel_14d", "infection.contacts", "ams.changed_from_baseline", "complaint.pain_rating", "M.anticoagulant", "complaint.compartment_syndrome_symptoms"]}
+{"t": "00:55:09", "kind": "answer", "slot": "dyn:infection.travel_14d+infection.contacts", "text": "No, he hasn't travelled. No, nobody sick around him."}
+{"t": "00:55:14", "kind": "extract", "writes": [["infection.travel_14d", false], ["infection.contacts", false]]}
+{"t": "00:55:18", "kind": "question", "slot": "dyn:ams.changed_from_baseline+complaint.pain_rating", "text": "I'm sorry to hear about his fall. On a scale of 0 to 10, how bad is his pain right now, and have you noticed him acting more confused or sleepy than usual?", "fields": ["ams.changed_from_baseline", "complaint.pain_rating"], "offered": ["ams.changed_from_baseline", "complaint.pain_rating", "M.anticoagulant", "complaint.compartment_syndrome_symptoms", "E.fall_height_meters", "M.medications"]}
+{"t": "00:55:18", "kind": "answer", "slot": "dyn:ams.changed_from_baseline+complaint.pain_rating", "text": "No, he's as alert as usual. He says the pain is 7 out of 10."}
+{"t": "00:55:23", "kind": "extract", "writes": [["ams.changed_from_baseline", false], ["complaint.pain_rating", 7]]}
+{"t": "00:55:23", "kind": "engine", "consider": ["B-02.severe-pain-consider"]}
+{"t": "00:55:26", "kind": "question", "slot": "dyn:M.anticoagulant+complaint.compartment_syndrome_symptoms", "text": "Does he take any blood thinners or medications to prevent clots? Also, is the pain in his limb getting worse or does the area feel very tight or hard?", "fields": ["M.anticoagulant", "complaint.compartment_syndrome_symptoms"], "offered": ["M.anticoagulant", "complaint.compartment_syndrome_symptoms", "E.fall_height_meters", "M.medications", "A.allergies", "history.conditions"]}
+{"t": "00:55:26", "kind": "answer", "slot": "dyn:M.anticoagulant+complaint.compartment_syndrome_symptoms", "text": "Yes, I checked the box, it's warfarin. The hip hurts a lot but it's not getting worse by the minute."}
+{"t": "00:55:44", "kind": "extract", "writes": [["M.anticoagulant", true], ["confirm.M.anticoagulant", "warfarin"], ["complaint.compartment_syndrome_symptoms", false]]}
+{"t": "00:55:44", "kind": "floor", "floor": "at least ESI-2", "fired": ["B-30.anticoagulated-trauma"], "sources": [["CDC Field Triage Guidelines (MMWR 2012 vol. 61 no. 1), Step Four special considerations, p.14 of the report (PDF p.16) (sources/CDC-Field-Triage-2011-MMWR.pdf)", "NICE NG232 (2023), recommendation 1.5.13 (PDF p.21) (sources/NICE-NG232-main-guideline.pdf)"]]}
+{"t": "00:55:48", "kind": "question", "slot": "dyn:M.medications+A.allergies", "text": "I've noted he's on warfarin. What other medications does he take regularly, and does he have any allergies to medicines?", "fields": ["M.medications", "A.allergies"], "offered": ["M.medications", "A.allergies", "history.conditions", "identity.name", "identity.dob"]}
+{"t": "00:55:48", "kind": "answer", "slot": "dyn:M.medications+A.allergies", "text": "He takes a small pill to thin his blood, and a blood pressure pill, I don't know its name. He's allergic to penicillin, it gives him a rash."}
+{"t": "00:55:54", "kind": "extract", "writes": [["confirm.M.anticoagulant", "warfarin"]], "via": "dropped-not-stated"}
+{"t": "00:55:54", "kind": "extract", "writes": [["M.medications", ["warfarin", "blood pressure pill"]], ["A.allergies", ["penicillin (rash)"]]]}
+{"t": "00:55:57", "kind": "question", "slot": "dyn:history.conditions", "text": "I've noted the medications and the penicillin allergy. Does he have any other ongoing medical conditions?", "fields": ["history.conditions"], "offered": ["history.conditions", "identity.name", "identity.dob"]}
+{"t": "00:55:57", "kind": "answer", "slot": "dyn:history.conditions", "text": "He has an irregular heartbeat and high blood pressure."}
+{"t": "00:56:11", "kind": "extract", "writes": [["history.conditions", ["irregular heartbeat", "high blood pressure"]]]}
+{"t": "00:56:14", "kind": "question", "slot": "dyn:identity.name+identity.dob", "text": "I've noted his heart and blood pressure conditions. Could you please tell me his full name and date of birth?", "fields": ["identity.name", "identity.dob"], "offered": ["identity.name", "identity.dob"]}
+{"t": "00:56:14", "kind": "answer", "slot": "dyn:identity.name+identity.dob", "text": "Tan Ah Kow. 2 January 1939."}
+{"t": "00:56:18", "kind": "extract", "writes": [["identity.name", "Tan Ah Kow"], ["identity.dob", "2 January 1939"]]}
+{"t": "00:56:18", "kind": "engine", "note": "floor settled - report ready; remaining questions continue"}
+{"t": "00:56:22", "kind": "question", "slot": "dyn:complaint.possible_pelvis_femur_fracture_or_dislocation", "text": "Can he put any weight on the leg, and does the leg look shorter or turned outwards?", "fields": ["complaint.possible_pelvis_femur_fracture_or_dislocation"], "offered": ["complaint.possible_pelvis_femur_fracture_or_dislocation", "E.abdominal_trauma", "E.head_strike", "E.loc", "L.last_intake"]}
+{"t": "00:56:22", "kind": "answer", "slot": "dyn:complaint.possible_pelvis_femur_fracture_or_dislocation", "text": "He can't put any weight on the leg."}
+{"t": "00:56:36", "kind": "extract", "writes": [["complaint.possible_pelvis_femur_fracture_or_dislocation", true]]}
+{"t": "00:56:36", "kind": "engine", "consider": ["B-25.pelvis-femur-fracture-consider"]}
+{"t": "00:56:40", "kind": "question", "slot": "dyn:E.abdominal_trauma+E.head_strike", "text": "I understand he can't put weight on it. Was there any blow to his belly or did he hit his head when it happened?", "fields": ["E.abdominal_trauma", "E.head_strike"], "offered": ["E.abdominal_trauma", "E.head_strike", "E.loc", "L.last_intake"]}
+{"t": "00:56:40", "kind": "answer", "slot": "dyn:E.abdominal_trauma+E.head_strike", "text": "No, he landed on his hip. No, he didn't hit his head."}
+{"t": "00:56:44", "kind": "extract", "writes": [["E.abdominal_trauma", false], ["E.head_strike", false]]}
+{"t": "00:56:47", "kind": "question", "slot": "dyn:E.loc", "text": "Did he pass out or black out at any point when it happened?", "fields": ["E.loc"], "offered": ["E.loc", "L.last_intake"]}
+{"t": "00:56:47", "kind": "answer", "slot": "dyn:E.loc", "text": "No, he didn't black out."}
+{"t": "00:56:51", "kind": "extract", "writes": [["E.loc", false]]}
+{"t": "00:56:54", "kind": "question", "slot": "dyn:L.last_intake", "text": "I'm sorry to hear that. When was the last time he had anything to eat or drink?", "fields": ["L.last_intake"], "offered": ["L.last_intake"]}
+{"t": "00:56:54", "kind": "answer", "slot": "dyn:L.last_intake", "text": "He had porridge for lunch at 1pm."}
+{"t": "00:57:10", "kind": "extract", "writes": [["L.last_intake", "porridge for lunch at 1pm"]]}
+{"t": "00:57:10", "kind": "engine", "note": "interview complete - no open fields"}

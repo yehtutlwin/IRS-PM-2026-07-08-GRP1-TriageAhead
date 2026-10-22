@@ -1,0 +1,3738 @@
+{
+ "cases": 185,
+ "every_fact_askable": 47,
+ "only_clinician_or_bridge_missing": 147,
+ "by_kind": {
+  "clinician-only": 61,
+  "measurement": 384,
+  "through a bridge": 29,
+  "never opened": 30,
+  "derived": 14,
+  "volunteered only": 14
+ },
+ "rows": [
+  {
+   "case": "ch9 3",
+   "facts": 9,
+   "not_reached": [
+    {
+     "field": "obs.avpu",
+     "why": "clinician-only",
+     "detail": ""
+    },
+    {
+     "field": "obs.intubated",
+     "why": "clinician-only",
+     "detail": ""
+    },
+    {
+     "field": "obs.requires_lifesaving_intervention",
+     "why": "clinician-only",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 7",
+   "facts": 10,
+   "not_reached": [
+    {
+     "field": "obs.avpu",
+     "why": "clinician-only",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "obs.requires_lifesaving_intervention",
+     "why": "clinician-only",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 30",
+   "facts": 8,
+   "not_reached": [
+    {
+     "field": "obs.avpu",
+     "why": "clinician-only",
+     "detail": ""
+    },
+    {
+     "field": "obs.intubated",
+     "why": "clinician-only",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 42",
+   "facts": 11,
+   "not_reached": [
+    {
+     "field": "obs.avpu",
+     "why": "clinician-only",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 51",
+   "facts": 6,
+   "not_reached": [
+    {
+     "field": "obs.cardiac_or_pulmonary_arrest",
+     "why": "clinician-only",
+     "detail": ""
+    },
+    {
+     "field": "obs.requires_lifesaving_intervention",
+     "why": "clinician-only",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 43",
+   "facts": 8,
+   "not_reached": [
+    {
+     "field": "complaint.stroke_signs",
+     "why": "through a bridge",
+     "detail": "stroke.arm_weakness, stroke.balance_loss, stroke.face_droop, stroke.speech_change, stroke.vision_change"
+    }
+   ]
+  },
+  {
+   "case": "ch9 44",
+   "facts": 8,
+   "not_reached": [
+    {
+     "field": "complaint.stroke_signs",
+     "why": "through a bridge",
+     "detail": "stroke.arm_weakness, stroke.balance_loss, stroke.face_droop, stroke.speech_change, stroke.vision_change"
+    }
+   ]
+  },
+  {
+   "case": "ch9 50",
+   "facts": 4,
+   "not_reached": [
+    {
+     "field": "complaint.extremity_neurovascular_compromise",
+     "why": "through a bridge",
+     "detail": "limb.cannot_move_digits, limb.cast_too_tight, limb.cold_pale_blue, limb.numb_tingling"
+    }
+   ]
+  },
+  {
+   "case": "ch9 76",
+   "facts": 5,
+   "not_reached": []
+  },
+  {
+   "case": "ch9 84",
+   "facts": 12,
+   "not_reached": [
+    {
+     "field": "complaint.danger_to_self_or_others",
+     "why": "never opened",
+     "detail": "trigger"
+    },
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 93",
+   "facts": 8,
+   "not_reached": []
+  },
+  {
+   "case": "ch9 25",
+   "facts": 9,
+   "not_reached": []
+  },
+  {
+   "case": "ch9 18",
+   "facts": 5,
+   "not_reached": []
+  },
+  {
+   "case": "ch9 77",
+   "facts": 11,
+   "not_reached": [
+    {
+     "field": "vitals.temp_c",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 83",
+   "facts": 10,
+   "not_reached": []
+  },
+  {
+   "case": "ch9 89",
+   "facts": 7,
+   "not_reached": []
+  },
+  {
+   "case": "ch9 91",
+   "facts": 10,
+   "not_reached": [
+    {
+     "field": "complaint.extremity_neurovascular_compromise",
+     "why": "through a bridge",
+     "detail": "limb.cannot_move_digits, limb.cast_too_tight, limb.cold_pale_blue, limb.numb_tingling"
+    }
+   ]
+  },
+  {
+   "case": "ch9 10",
+   "facts": 8,
+   "not_reached": []
+  },
+  {
+   "case": "ch9 36",
+   "facts": 12,
+   "not_reached": [
+    {
+     "field": "complaint.extremity_neurovascular_compromise",
+     "why": "through a bridge",
+     "detail": "limb.cannot_move_digits, limb.cast_too_tight, limb.cold_pale_blue, limb.numb_tingling"
+    }
+   ]
+  },
+  {
+   "case": "ch9 1",
+   "facts": 7,
+   "not_reached": []
+  },
+  {
+   "case": "ch9 4",
+   "facts": 9,
+   "not_reached": [
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.temp_c",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 5",
+   "facts": 7,
+   "not_reached": []
+  },
+  {
+   "case": "ch9 9",
+   "facts": 9,
+   "not_reached": [
+    {
+     "field": "patient.immunizations_incomplete",
+     "why": "never opened",
+     "detail": "trigger"
+    }
+   ]
+  },
+  {
+   "case": "ch9 12",
+   "facts": 12,
+   "not_reached": [
+    {
+     "field": "vitals.temp_c",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 13",
+   "facts": 12,
+   "not_reached": [
+    {
+     "field": "vitals.temp_c",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 19",
+   "facts": 15,
+   "not_reached": [
+    {
+     "field": "complaint.chills_or_rigors",
+     "why": "never opened",
+     "detail": "trigger"
+    },
+    {
+     "field": "vitals.temp_c",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 20",
+   "facts": 14,
+   "not_reached": [
+    {
+     "field": "vitals.temp_c",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 21",
+   "facts": 5,
+   "not_reached": []
+  },
+  {
+   "case": "ch9 24",
+   "facts": 8,
+   "not_reached": [
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.temp_c",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 26",
+   "facts": 10,
+   "not_reached": [
+    {
+     "field": "vitals.temp_c",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 29",
+   "facts": 9,
+   "not_reached": [
+    {
+     "field": "complaint.extremity_neurovascular_compromise",
+     "why": "through a bridge",
+     "detail": "limb.cannot_move_digits, limb.cast_too_tight, limb.cold_pale_blue, limb.numb_tingling"
+    }
+   ]
+  },
+  {
+   "case": "ch9 34",
+   "facts": 8,
+   "not_reached": [
+    {
+     "field": "vitals.temp_c",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 40",
+   "facts": 10,
+   "not_reached": [
+    {
+     "field": "vitals.temp_c",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 46",
+   "facts": 10,
+   "not_reached": []
+  },
+  {
+   "case": "ch9 47",
+   "facts": 8,
+   "not_reached": [
+    {
+     "field": "obs.subtle_mental_status_change",
+     "why": "through a bridge",
+     "detail": "ams.changed_from_baseline"
+    },
+    {
+     "field": "patient.age_months",
+     "why": "derived",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 54",
+   "facts": 11,
+   "not_reached": [
+    {
+     "field": "vitals.temp_c",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 56",
+   "facts": 12,
+   "not_reached": [
+    {
+     "field": "complaint.vomiting",
+     "why": "never opened",
+     "detail": "trigger"
+    },
+    {
+     "field": "vitals.temp_c",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 63",
+   "facts": 4,
+   "not_reached": []
+  },
+  {
+   "case": "ch9 94",
+   "facts": 8,
+   "not_reached": []
+  },
+  {
+   "case": "ch9 95",
+   "facts": 8,
+   "not_reached": [
+    {
+     "field": "obs.confusion_lethargy_disorientation",
+     "why": "through a bridge",
+     "detail": "ams.changed_from_baseline"
+    },
+    {
+     "field": "history.baseline_mental_status",
+     "why": "never opened",
+     "detail": "trigger"
+    },
+    {
+     "field": "obs.new_confusion_lethargy_disorientation",
+     "why": "through a bridge",
+     "detail": "ams.changed_from_baseline, danger_signs.responsive"
+    }
+   ]
+  },
+  {
+   "case": "ch9 97",
+   "facts": 8,
+   "not_reached": [
+    {
+     "field": "obs.subtle_mental_status_change",
+     "why": "through a bridge",
+     "detail": "ams.changed_from_baseline"
+    },
+    {
+     "field": "patient.age_months",
+     "why": "derived",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 98",
+   "facts": 7,
+   "not_reached": [
+    {
+     "field": "patient.age_months",
+     "why": "derived",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch10 A 1",
+   "facts": 12,
+   "not_reached": [
+    {
+     "field": "history.pregnant",
+     "why": "never opened",
+     "detail": "trigger"
+    },
+    {
+     "field": "history.postpartum",
+     "why": "never opened",
+     "detail": "trigger"
+    },
+    {
+     "field": "vitals.temp_c",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch10 A 2",
+   "facts": 12,
+   "not_reached": [
+    {
+     "field": "complaint.extremity_neurovascular_compromise",
+     "why": "through a bridge",
+     "detail": "limb.cannot_move_digits, limb.cast_too_tight, limb.cold_pale_blue, limb.numb_tingling"
+    },
+    {
+     "field": "vitals.temp_c",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch10 A 4",
+   "facts": 7,
+   "not_reached": []
+  },
+  {
+   "case": "ch10 A 5",
+   "facts": 13,
+   "not_reached": [
+    {
+     "field": "complaint.pain_cause_class",
+     "why": "never opened",
+     "detail": "trigger"
+    },
+    {
+     "field": "vitals.temp_c",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch10 A 7",
+   "facts": 5,
+   "not_reached": []
+  },
+  {
+   "case": "ch10 A 8",
+   "facts": 11,
+   "not_reached": [
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch10 A 9",
+   "facts": 12,
+   "not_reached": [
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.temp_c",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch10 A 10",
+   "facts": 11,
+   "not_reached": [
+    {
+     "field": "obs.severe_respiratory_distress",
+     "why": "clinician-only",
+     "detail": ""
+    },
+    {
+     "field": "obs.requires_lifesaving_intervention",
+     "why": "clinician-only",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch10 A 11",
+   "facts": 7,
+   "not_reached": [
+    {
+     "field": "obs.subtle_mental_status_change",
+     "why": "through a bridge",
+     "detail": "ams.changed_from_baseline"
+    }
+   ]
+  },
+  {
+   "case": "ch10 A 13",
+   "facts": 12,
+   "not_reached": [
+    {
+     "field": "obs.subtle_mental_status_change",
+     "why": "through a bridge",
+     "detail": "ams.changed_from_baseline"
+    },
+    {
+     "field": "patient.age_months",
+     "why": "derived",
+     "detail": ""
+    },
+    {
+     "field": "vitals.temp_c",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch10 A 14",
+   "facts": 8,
+   "not_reached": []
+  },
+  {
+   "case": "ch10 A 15",
+   "facts": 11,
+   "not_reached": [
+    {
+     "field": "obs.subtle_mental_status_change",
+     "why": "through a bridge",
+     "detail": "ams.changed_from_baseline"
+    },
+    {
+     "field": "patient.age_months",
+     "why": "derived",
+     "detail": ""
+    },
+    {
+     "field": "vitals.temp_c",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch10 A 16",
+   "facts": 13,
+   "not_reached": [
+    {
+     "field": "obs.new_confusion_lethargy_disorientation",
+     "why": "derived",
+     "detail": ""
+    },
+    {
+     "field": "vitals.temp_c",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch10 A 17",
+   "facts": 13,
+   "not_reached": [
+    {
+     "field": "obs.subtle_mental_status_change",
+     "why": "derived",
+     "detail": ""
+    },
+    {
+     "field": "vitals.temp_c",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch10 A 18",
+   "facts": 14,
+   "not_reached": [
+    {
+     "field": "vitals.hypotension",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "obs.hypoperfusion_signs",
+     "why": "clinician-only",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.ecg_abnormal",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch10 A 19",
+   "facts": 11,
+   "not_reached": [
+    {
+     "field": "vitals.temp_c",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch10 A 20",
+   "facts": 6,
+   "not_reached": []
+  },
+  {
+   "case": "ch10 A 21",
+   "facts": 14,
+   "not_reached": [
+    {
+     "field": "complaint.shortness_of_breath",
+     "why": "through a bridge",
+     "detail": "danger_signs.breathing_difficulty"
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch10 A 22",
+   "facts": 14,
+   "not_reached": [
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.temp_c",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "obs.hemodynamically_unstable",
+     "why": "volunteered only",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch10 A 23",
+   "facts": 8,
+   "not_reached": []
+  },
+  {
+   "case": "ch10 A 24",
+   "facts": 11,
+   "not_reached": [
+    {
+     "field": "vitals.hypotension",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "obs.hypoperfusion_signs",
+     "why": "clinician-only",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch10 A 25",
+   "facts": 8,
+   "not_reached": []
+  },
+  {
+   "case": "ch10 B 1",
+   "facts": 11,
+   "not_reached": [
+    {
+     "field": "vitals.temp_c",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch10 B 2",
+   "facts": 6,
+   "not_reached": [
+    {
+     "field": "complaint.sexual_assault",
+     "why": "volunteered only",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch10 B 4",
+   "facts": 11,
+   "not_reached": [
+    {
+     "field": "vitals.temp_c",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch10 B 5",
+   "facts": 7,
+   "not_reached": [
+    {
+     "field": "obs.cardiac_or_pulmonary_arrest",
+     "why": "clinician-only",
+     "detail": ""
+    },
+    {
+     "field": "obs.intubated",
+     "why": "clinician-only",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch10 B 7",
+   "facts": 5,
+   "not_reached": []
+  },
+  {
+   "case": "ch10 B 9",
+   "facts": 8,
+   "not_reached": [
+    {
+     "field": "complaint.stroke_signs",
+     "why": "derived",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch10 B 10",
+   "facts": 14,
+   "not_reached": [
+    {
+     "field": "complaint.extremity_neurovascular_compromise",
+     "why": "through a bridge",
+     "detail": "limb.cannot_move_digits, limb.cast_too_tight, limb.cold_pale_blue, limb.numb_tingling"
+    },
+    {
+     "field": "vitals.temp_c",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch10 B 11",
+   "facts": 10,
+   "not_reached": []
+  },
+  {
+   "case": "ch10 B 12",
+   "facts": 13,
+   "not_reached": [
+    {
+     "field": "vitals.temp_c",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch10 B 13",
+   "facts": 12,
+   "not_reached": [
+    {
+     "field": "complaint.extremity_neurovascular_compromise",
+     "why": "through a bridge",
+     "detail": "limb.cannot_move_digits, limb.cast_too_tight, limb.cold_pale_blue, limb.numb_tingling"
+    },
+    {
+     "field": "vitals.temp_c",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch10 B 14",
+   "facts": 9,
+   "not_reached": [
+    {
+     "field": "complaint.pain_cause_class",
+     "why": "never opened",
+     "detail": "trigger"
+    }
+   ]
+  },
+  {
+   "case": "ch10 B 15",
+   "facts": 7,
+   "not_reached": [
+    {
+     "field": "M.anticoagulant",
+     "why": "never opened",
+     "detail": "trigger"
+    }
+   ]
+  },
+  {
+   "case": "ch10 B 16",
+   "facts": 9,
+   "not_reached": [
+    {
+     "field": "complaint.stroke_signs",
+     "why": "through a bridge",
+     "detail": "stroke.arm_weakness, stroke.balance_loss, stroke.face_droop, stroke.speech_change, stroke.vision_change"
+    },
+    {
+     "field": "obs.confusion_lethargy_disorientation",
+     "why": "through a bridge",
+     "detail": "ams.changed_from_baseline"
+    },
+    {
+     "field": "history.baseline_mental_status",
+     "why": "never opened",
+     "detail": "trigger"
+    },
+    {
+     "field": "obs.new_confusion_lethargy_disorientation",
+     "why": "through a bridge",
+     "detail": "ams.changed_from_baseline, danger_signs.responsive"
+    }
+   ]
+  },
+  {
+   "case": "ch10 B 17",
+   "facts": 6,
+   "not_reached": []
+  },
+  {
+   "case": "ch10 B 20",
+   "facts": 13,
+   "not_reached": [
+    {
+     "field": "obs.requires_lifesaving_intervention",
+     "why": "clinician-only",
+     "detail": ""
+    },
+    {
+     "field": "vitals.hypotension",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "obs.hemodynamically_unstable",
+     "why": "volunteered only",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch10 B 21",
+   "facts": 15,
+   "not_reached": [
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch10 B 22",
+   "facts": 7,
+   "not_reached": []
+  },
+  {
+   "case": "ch10 B 24",
+   "facts": 10,
+   "not_reached": [
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.temp_c",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch10 B 25",
+   "facts": 11,
+   "not_reached": [
+    {
+     "field": "obs.severe_respiratory_distress",
+     "why": "clinician-only",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 2",
+   "facts": 12,
+   "not_reached": [
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2_is_patients_norm",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "obs.respiratory_compromise_signs",
+     "why": "clinician-only",
+     "detail": ""
+    },
+    {
+     "field": "obs.requires_lifesaving_intervention",
+     "why": "clinician-only",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 6",
+   "facts": 15,
+   "not_reached": [
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.temp_c",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 8",
+   "facts": 13,
+   "not_reached": [
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 11",
+   "facts": 11,
+   "not_reached": [
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 14",
+   "facts": 11,
+   "not_reached": [
+    {
+     "field": "patient.age_months",
+     "why": "derived",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 15",
+   "facts": 16,
+   "not_reached": [
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 16",
+   "facts": 15,
+   "not_reached": [
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.temp_c",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.hypotension",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "obs.hypoperfusion_signs",
+     "why": "clinician-only",
+     "detail": ""
+    },
+    {
+     "field": "obs.hemodynamically_unstable",
+     "why": "volunteered only",
+     "detail": ""
+    },
+    {
+     "field": "obs.requires_lifesaving_intervention",
+     "why": "clinician-only",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 17",
+   "facts": 11,
+   "not_reached": [
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 22",
+   "facts": 15,
+   "not_reached": [
+    {
+     "field": "vitals.temp_c",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "obs.severe_respiratory_distress",
+     "why": "clinician-only",
+     "detail": ""
+    },
+    {
+     "field": "obs.requires_lifesaving_intervention",
+     "why": "clinician-only",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 23",
+   "facts": 12,
+   "not_reached": [
+    {
+     "field": "vitals.temp_c",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 27",
+   "facts": 10,
+   "not_reached": [
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 28",
+   "facts": 6,
+   "not_reached": []
+  },
+  {
+   "case": "ch9 31",
+   "facts": 8,
+   "not_reached": [
+    {
+     "field": "complaint.amputation_partial_or_complete",
+     "why": "volunteered only",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 32",
+   "facts": 13,
+   "not_reached": [
+    {
+     "field": "vitals.temp_c",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 33",
+   "facts": 13,
+   "not_reached": [
+    {
+     "field": "complaint.shortness_of_breath",
+     "why": "through a bridge",
+     "detail": "danger_signs.breathing_difficulty"
+    },
+    {
+     "field": "vitals.temp_c",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 35",
+   "facts": 6,
+   "not_reached": []
+  },
+  {
+   "case": "ch9 37",
+   "facts": 14,
+   "not_reached": [
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.extreme_heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.hypotension",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "obs.hypoperfusion_signs",
+     "why": "clinician-only",
+     "detail": ""
+    },
+    {
+     "field": "obs.hemodynamically_unstable",
+     "why": "volunteered only",
+     "detail": ""
+    },
+    {
+     "field": "obs.requires_lifesaving_intervention",
+     "why": "clinician-only",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 38",
+   "facts": 6,
+   "not_reached": []
+  },
+  {
+   "case": "ch9 39",
+   "facts": 5,
+   "not_reached": []
+  },
+  {
+   "case": "ch9 41",
+   "facts": 16,
+   "not_reached": [
+    {
+     "field": "vitals.temp_c",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 45",
+   "facts": 13,
+   "not_reached": [
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.temp_c",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 48",
+   "facts": 17,
+   "not_reached": [
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.hypotension",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "obs.hypoperfusion_signs",
+     "why": "clinician-only",
+     "detail": ""
+    },
+    {
+     "field": "obs.hemodynamically_unstable",
+     "why": "volunteered only",
+     "detail": ""
+    },
+    {
+     "field": "obs.requires_lifesaving_intervention",
+     "why": "clinician-only",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 49",
+   "facts": 14,
+   "not_reached": [
+    {
+     "field": "vitals.temp_c",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 52",
+   "facts": 12,
+   "not_reached": [
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.temp_c",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 53",
+   "facts": 7,
+   "not_reached": []
+  },
+  {
+   "case": "ch9 55",
+   "facts": 7,
+   "not_reached": [
+    {
+     "field": "complaint.infection_signs",
+     "why": "never opened",
+     "detail": "trigger"
+    }
+   ]
+  },
+  {
+   "case": "ch9 57",
+   "facts": 10,
+   "not_reached": [
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 58",
+   "facts": 10,
+   "not_reached": [
+    {
+     "field": "vitals.temp_c",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 59",
+   "facts": 15,
+   "not_reached": [
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.hypotension",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "obs.hypoperfusion_signs",
+     "why": "clinician-only",
+     "detail": ""
+    },
+    {
+     "field": "obs.hemodynamically_unstable",
+     "why": "volunteered only",
+     "detail": ""
+    },
+    {
+     "field": "obs.requires_lifesaving_intervention",
+     "why": "clinician-only",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 60",
+   "facts": 13,
+   "not_reached": [
+    {
+     "field": "vitals.temp_c",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 61",
+   "facts": 15,
+   "not_reached": [
+    {
+     "field": "vitals.temp_c",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 62",
+   "facts": 8,
+   "not_reached": [
+    {
+     "field": "patient.age_months",
+     "why": "derived",
+     "detail": ""
+    },
+    {
+     "field": "vitals.temp_c",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 64",
+   "facts": 5,
+   "not_reached": []
+  },
+  {
+   "case": "ch9 65",
+   "facts": 12,
+   "not_reached": [
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 66",
+   "facts": 8,
+   "not_reached": [
+    {
+     "field": "vitals.extreme_heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.profound_hypotension",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "obs.requires_lifesaving_intervention",
+     "why": "clinician-only",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 67",
+   "facts": 7,
+   "not_reached": [
+    {
+     "field": "limb.numb_tingling",
+     "why": "never opened",
+     "detail": "trigger"
+    }
+   ]
+  },
+  {
+   "case": "ch9 68",
+   "facts": 17,
+   "not_reached": [
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 69",
+   "facts": 12,
+   "not_reached": [
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.hypotension",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "obs.hemodynamically_unstable",
+     "why": "volunteered only",
+     "detail": ""
+    },
+    {
+     "field": "obs.requires_lifesaving_intervention",
+     "why": "clinician-only",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 70",
+   "facts": 8,
+   "not_reached": []
+  },
+  {
+   "case": "ch9 71",
+   "facts": 18,
+   "not_reached": [
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.hypotension",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "obs.hypoperfusion_signs",
+     "why": "clinician-only",
+     "detail": ""
+    },
+    {
+     "field": "obs.hemodynamically_unstable",
+     "why": "volunteered only",
+     "detail": ""
+    },
+    {
+     "field": "obs.requires_lifesaving_intervention",
+     "why": "clinician-only",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 72",
+   "facts": 11,
+   "not_reached": [
+    {
+     "field": "vitals.temp_c",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 73",
+   "facts": 7,
+   "not_reached": [
+    {
+     "field": "complaint.psychotic_or_violent",
+     "why": "volunteered only",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 74",
+   "facts": 14,
+   "not_reached": [
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 75",
+   "facts": 12,
+   "not_reached": [
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 78",
+   "facts": 15,
+   "not_reached": [
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 79",
+   "facts": 12,
+   "not_reached": [
+    {
+     "field": "vitals.temp_c",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "obs.hemodynamically_unstable",
+     "why": "volunteered only",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 80",
+   "facts": 13,
+   "not_reached": [
+    {
+     "field": "vitals.temp_c",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 81",
+   "facts": 8,
+   "not_reached": [
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.temp_c",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 82",
+   "facts": 6,
+   "not_reached": []
+  },
+  {
+   "case": "ch9 85",
+   "facts": 12,
+   "not_reached": [
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 86",
+   "facts": 7,
+   "not_reached": []
+  },
+  {
+   "case": "ch9 87",
+   "facts": 13,
+   "not_reached": [
+    {
+     "field": "vitals.temp_c",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 88",
+   "facts": 6,
+   "not_reached": []
+  },
+  {
+   "case": "ch9 90",
+   "facts": 12,
+   "not_reached": [
+    {
+     "field": "vitals.temp_c",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 92",
+   "facts": 14,
+   "not_reached": [
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2_is_patients_norm",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "obs.respiratory_compromise_signs",
+     "why": "clinician-only",
+     "detail": ""
+    },
+    {
+     "field": "obs.severe_respiratory_distress",
+     "why": "clinician-only",
+     "detail": ""
+    },
+    {
+     "field": "obs.requires_lifesaving_intervention",
+     "why": "clinician-only",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 96",
+   "facts": 12,
+   "not_reached": [
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.temp_c",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 99",
+   "facts": 12,
+   "not_reached": [
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch9 100",
+   "facts": 15,
+   "not_reached": [
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.hypotension",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.profound_hypotension",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "obs.hypoperfusion_signs",
+     "why": "clinician-only",
+     "detail": ""
+    },
+    {
+     "field": "obs.hemodynamically_unstable",
+     "why": "volunteered only",
+     "detail": ""
+    },
+    {
+     "field": "obs.requires_lifesaving_intervention",
+     "why": "clinician-only",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch10 A 3",
+   "facts": 8,
+   "not_reached": [
+    {
+     "field": "obs.hypoperfusion_signs",
+     "why": "clinician-only",
+     "detail": ""
+    },
+    {
+     "field": "obs.requires_lifesaving_intervention",
+     "why": "clinician-only",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch10 A 6",
+   "facts": 5,
+   "not_reached": []
+  },
+  {
+   "case": "ch10 A 12",
+   "facts": 11,
+   "not_reached": [
+    {
+     "field": "vitals.temp_c",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch10 B 3",
+   "facts": 5,
+   "not_reached": []
+  },
+  {
+   "case": "ch10 B 6",
+   "facts": 12,
+   "not_reached": [
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch10 B 8",
+   "facts": 4,
+   "not_reached": []
+  },
+  {
+   "case": "ch10 B 18",
+   "facts": 11,
+   "not_reached": [
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.temp_c",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "ch10 B 19",
+   "facts": 7,
+   "not_reached": []
+  },
+  {
+   "case": "ch10 B 23",
+   "facts": 10,
+   "not_reached": [
+    {
+     "field": "vitals.sbp",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.temp_c",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "appA ch2 q1",
+   "facts": 3,
+   "not_reached": [
+    {
+     "field": "obs.cardiac_or_pulmonary_arrest",
+     "why": "clinician-only",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "appA ch2 q2",
+   "facts": 3,
+   "not_reached": []
+  },
+  {
+   "case": "appA ch2 q3",
+   "facts": 3,
+   "not_reached": []
+  },
+  {
+   "case": "appA ch2 q4",
+   "facts": 4,
+   "not_reached": [
+    {
+     "field": "patient.age_months",
+     "why": "never opened",
+     "detail": "trigger"
+    }
+   ]
+  },
+  {
+   "case": "appA ch2 q5",
+   "facts": 7,
+   "not_reached": [
+    {
+     "field": "E.high_speed",
+     "why": "clinician-only",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "appA ch2 q6",
+   "facts": 6,
+   "not_reached": [
+    {
+     "field": "patient.age_months",
+     "why": "never opened",
+     "detail": "trigger"
+    },
+    {
+     "field": "obs.avpu",
+     "why": "clinician-only",
+     "detail": ""
+    },
+    {
+     "field": "complaint.known_toxic_ingestion",
+     "why": "never opened",
+     "detail": "trigger"
+    }
+   ]
+  },
+  {
+   "case": "appA ch3 q1",
+   "facts": 6,
+   "not_reached": []
+  },
+  {
+   "case": "appA ch3 q2",
+   "facts": 8,
+   "not_reached": [
+    {
+     "field": "complaint.shortness_of_breath",
+     "why": "through a bridge",
+     "detail": "danger_signs.breathing_difficulty"
+    },
+    {
+     "field": "obs.cannot_manage_secretions",
+     "why": "clinician-only",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "appA ch3 q3",
+   "facts": 6,
+   "not_reached": [
+    {
+     "field": "complaint.stroke_signs",
+     "why": "through a bridge",
+     "detail": "stroke.arm_weakness, stroke.balance_loss, stroke.face_droop, stroke.speech_change, stroke.vision_change"
+    }
+   ]
+  },
+  {
+   "case": "appA ch3 q4",
+   "facts": 7,
+   "not_reached": []
+  },
+  {
+   "case": "appA ch3 q5",
+   "facts": 8,
+   "not_reached": [
+    {
+     "field": "patient.has_ovaries",
+     "why": "never opened",
+     "detail": "rule gate: B-42.unilateral-lower-quadrant-pain-torsion-or-ectopic-consider"
+    }
+   ]
+  },
+  {
+   "case": "appA ch3 q6",
+   "facts": 11,
+   "not_reached": [
+    {
+     "field": "complaint.extremity_neurovascular_compromise",
+     "why": "through a bridge",
+     "detail": "limb.cannot_move_digits, limb.cast_too_tight, limb.cold_pale_blue, limb.numb_tingling"
+    },
+    {
+     "field": "obs.confusion_lethargy_disorientation",
+     "why": "through a bridge",
+     "detail": "ams.changed_from_baseline"
+    },
+    {
+     "field": "obs.new_confusion_lethargy_disorientation",
+     "why": "through a bridge",
+     "detail": "ams.changed_from_baseline, danger_signs.responsive"
+    },
+    {
+     "field": "history.baseline_mental_status",
+     "why": "never opened",
+     "detail": "trigger"
+    }
+   ]
+  },
+  {
+   "case": "appA ch3 q7",
+   "facts": 8,
+   "not_reached": [
+    {
+     "field": "patient.age_months",
+     "why": "derived",
+     "detail": ""
+    },
+    {
+     "field": "obs.subtle_mental_status_change",
+     "why": "through a bridge",
+     "detail": "ams.changed_from_baseline"
+    }
+   ]
+  },
+  {
+   "case": "appA ch3 q8",
+   "facts": 9,
+   "not_reached": []
+  },
+  {
+   "case": "appA ch3 q9",
+   "facts": 10,
+   "not_reached": [
+    {
+     "field": "E.body_region",
+     "why": "never opened",
+     "detail": "trigger"
+    },
+    {
+     "field": "complaint.vomiting",
+     "why": "never opened",
+     "detail": "trigger"
+    },
+    {
+     "field": "complaint.neck_pain",
+     "why": "never opened",
+     "detail": "rule gate: B-33.headache-with-neck-pain-or-nuchal-rigidity"
+    }
+   ]
+  },
+  {
+   "case": "appA ch3 q10",
+   "facts": 6,
+   "not_reached": []
+  },
+  {
+   "case": "appA ch3 q11",
+   "facts": 10,
+   "not_reached": [
+    {
+     "field": "obs.hypoperfusion_signs",
+     "why": "clinician-only",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "appA ch3 q12",
+   "facts": 8,
+   "not_reached": [
+    {
+     "field": "patient.age_months",
+     "why": "never opened",
+     "detail": "trigger"
+    },
+    {
+     "field": "obs.new_confusion_lethargy_disorientation",
+     "why": "through a bridge",
+     "detail": "ams.changed_from_baseline, danger_signs.responsive"
+    }
+   ]
+  },
+  {
+   "case": "appA ch3 q13",
+   "facts": 8,
+   "not_reached": []
+  },
+  {
+   "case": "appA ch3 q14",
+   "facts": 8,
+   "not_reached": [
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.hypotension",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "obs.hypoperfusion_signs",
+     "why": "clinician-only",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "appA ch3 q15",
+   "facts": 12,
+   "not_reached": [
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "obs.hemodynamically_unstable",
+     "why": "volunteered only",
+     "detail": ""
+    },
+    {
+     "field": "obs.requires_lifesaving_intervention",
+     "why": "clinician-only",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "appA ch4 q4",
+   "facts": 4,
+   "not_reached": []
+  },
+  {
+   "case": "appA ch4 q7",
+   "facts": 7,
+   "not_reached": [
+    {
+     "field": "patient.has_ovaries",
+     "why": "never opened",
+     "detail": "rule gate: B-42.unilateral-lower-quadrant-pain-torsion-or-ectopic-consider"
+    },
+    {
+     "field": "complaint.possible_ectopic_pregnancy",
+     "why": "never opened",
+     "detail": "trigger"
+    }
+   ]
+  },
+  {
+   "case": "appA ch4 q8",
+   "facts": 6,
+   "not_reached": []
+  },
+  {
+   "case": "appA ch4 q9",
+   "facts": 8,
+   "not_reached": [
+    {
+     "field": "obs.intubated",
+     "why": "clinician-only",
+     "detail": ""
+    },
+    {
+     "field": "obs.avpu",
+     "why": "clinician-only",
+     "detail": ""
+    },
+    {
+     "field": "vitals.hypotension",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "appA ch4 q10",
+   "facts": 5,
+   "not_reached": []
+  },
+  {
+   "case": "appA ch5 q1",
+   "facts": 12,
+   "not_reached": [
+    {
+     "field": "patient.age_months",
+     "why": "derived",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "obs.subtle_mental_status_change",
+     "why": "through a bridge",
+     "detail": "ams.changed_from_baseline"
+    }
+   ]
+  },
+  {
+   "case": "appA ch5 q2",
+   "facts": 10,
+   "not_reached": [
+    {
+     "field": "patient.age_months",
+     "why": "derived",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "appA ch5 q4",
+   "facts": 9,
+   "not_reached": [
+    {
+     "field": "obs.ill_appearing",
+     "why": "clinician-only",
+     "detail": ""
+    },
+    {
+     "field": "vitals.temp_c",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "appA ch5 q6",
+   "facts": 8,
+   "not_reached": [
+    {
+     "field": "patient.age_months",
+     "why": "never opened",
+     "detail": "trigger"
+    },
+    {
+     "field": "E.body_region",
+     "why": "never opened",
+     "detail": "trigger"
+    }
+   ]
+  },
+  {
+   "case": "appA ch6 q1",
+   "facts": 5,
+   "not_reached": [
+    {
+     "field": "patient.age_months",
+     "why": "never opened",
+     "detail": "trigger"
+    },
+    {
+     "field": "complaint.rash",
+     "why": "clinician-only",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "appA ch6 q2",
+   "facts": 15,
+   "not_reached": [
+    {
+     "field": "patient.age_months",
+     "why": "derived",
+     "detail": ""
+    },
+    {
+     "field": "complaint.rash",
+     "why": "clinician-only",
+     "detail": ""
+    },
+    {
+     "field": "complaint.petechial_or_purpuric_rash",
+     "why": "clinician-only",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "obs.ineffective_tissue_perfusion",
+     "why": "clinician-only",
+     "detail": ""
+    },
+    {
+     "field": "obs.ineffective_respiratory_pattern",
+     "why": "clinician-only",
+     "detail": ""
+    },
+    {
+     "field": "obs.requires_lifesaving_intervention",
+     "why": "clinician-only",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "appA ch6 q3",
+   "facts": 10,
+   "not_reached": [
+    {
+     "field": "patient.age_months",
+     "why": "never opened",
+     "detail": "trigger"
+    },
+    {
+     "field": "complaint.rash",
+     "why": "clinician-only",
+     "detail": ""
+    },
+    {
+     "field": "vitals.temp_c",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "appA ch6 q4",
+   "facts": 11,
+   "not_reached": [
+    {
+     "field": "patient.age_months",
+     "why": "never opened",
+     "detail": "trigger"
+    },
+    {
+     "field": "complaint.rash",
+     "why": "clinician-only",
+     "detail": ""
+    },
+    {
+     "field": "obs.anaphylaxis",
+     "why": "clinician-only",
+     "detail": ""
+    },
+    {
+     "field": "vitals.respiratory_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.heart_rate",
+     "why": "measurement",
+     "detail": ""
+    },
+    {
+     "field": "vitals.spo2",
+     "why": "measurement",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "case": "appA ch6 q5",
+   "facts": 7,
+   "not_reached": [
+    {
+     "field": "patient.age_months",
+     "why": "never opened",
+     "detail": "trigger"
+    },
+    {
+     "field": "complaint.rash",
+     "why": "clinician-only",
+     "detail": ""
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,446 @@
+{
+ "sid": "OTTER-3632",
+ "facts": {
+  "danger_signs.responsive": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-19 03:21"
+  },
+  "danger_signs.chest_pain_now": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-19 03:21"
+  },
+  "danger_signs.breathing_difficulty": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-19 03:22"
+  },
+  "danger_signs.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-19 03:22"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "request",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 2,
+      "ts": "2026-10-19 03:22"
+     },
+     "text": {
+      "value": "emergency contraception after unprotected sex",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 2,
+      "ts": "2026-10-19 03:22"
+     },
+     "onset": {
+      "value": "yesterday",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 3,
+      "ts": "2026-10-19 03:22"
+     },
+     "onset_abs": {
+      "value": "~2026-10-18 (time unknown)",
+      "status": "reported",
+      "who": "derived",
+      "turn": 3,
+      "ts": "2026-10-19 03:22"
+     },
+     "pain_rating": {
+      "value": 0,
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 15,
+      "ts": "2026-10-19 03:23"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2
+  },
+  "complaint.category": {
+   "value": [
+    "request"
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 15,
+   "ts": "2026-10-19 03:23"
+  },
+  "complaint.text": {
+   "value": "emergency contraception after unprotected sex",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-19 03:22"
+  },
+  "E.mechanism": {
+   "value": "none",
+   "status": "reported",
+   "who": "derived",
+   "turn": 2,
+   "ts": "2026-10-19 03:22"
+  },
+  "complaint.onset": {
+   "value": "yesterday",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-19 03:22"
+  },
+  "patient.age": {
+   "value": 18,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-19 03:22"
+  },
+  "patient.sex": {
+   "value": "female",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-19 03:22"
+  },
+  "complaint.onset_abs": {
+   "value": "~2026-10-18 (time unknown) (from 'yesterday' said 03:22)",
+   "status": "reported",
+   "who": "derived",
+   "turn": 3,
+   "ts": "2026-10-19 03:22"
+  },
+  "patient.age_group": {
+   "value": "adult",
+   "status": "reported",
+   "who": "derived",
+   "turn": 3,
+   "ts": "2026-10-19 03:22"
+  },
+  "history.pregnant": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 4,
+   "ts": "2026-10-19 03:22"
+  },
+  "history.postpartum": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 4,
+   "ts": "2026-10-19 03:22"
+  },
+  "complaint.fever": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 5,
+   "ts": "2026-10-19 03:22"
+  },
+  "infection.contacts": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 11,
+   "ts": "2026-10-19 03:22"
+  },
+  "complaint.pain_rating": {
+   "value": 0,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 15,
+   "ts": "2026-10-19 03:23"
+  },
+  "complaint.pain_latest": {
+   "value": 0,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 15,
+   "ts": "2026-10-19 03:23"
+  },
+  "A.allergies": {
+   "value": [],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 16,
+   "ts": "2026-10-19 03:23"
+  }
+ },
+ "attempts": {
+  "danger_signs.responsive": 1,
+  "danger_signs.chest_pain_now": 1,
+  "danger_signs.breathing_difficulty": 1,
+  "danger_signs.heavy_bleeding": 1,
+  "complaint.category": 1,
+  "complaint.text": 1,
+  "complaint.onset": 1,
+  "patient.age": 1,
+  "patient.sex": 1,
+  "history.pregnant": 1,
+  "history.postpartum": 1,
+  "complaint.fever": 1,
+  "infection.rash": 3,
+  "infection.travel_14d": 3,
+  "infection.contacts": 1,
+  "ams.changed_from_baseline": 3,
+  "complaint.pain_rating": 1,
+  "M.medications": 2,
+  "A.allergies": 1
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "Is the patient awake and responding to you normally? Also, is he or she experiencing any chest pain, trouble breathing, or heavy bleeding right now?",
+   "ts": "2026-10-19 03:21:47",
+   "kind": "question",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, the patient is awake and responding normally. No, the patient is not having chest pain right now.",
+   "ts": "2026-10-19 03:21:47",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "bot",
+   "text": "I'm glad to hear they are alert. Is the patient having any trouble breathing or heavy bleeding, and could you tell me what the main problem is that brings you in today?",
+   "ts": "2026-10-19 03:21:55",
+   "kind": "question",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category+complaint.text"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, the patient is not having trouble breathing right now. No, the patient is not bleeding heavily right now. I am asking about emergency contraception after unprotected sex.",
+   "ts": "2026-10-19 03:21:55",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category+complaint.text"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. To help the team prepare, could you tell me how old the patient is, what their sex is, and when the incident occurred?",
+   "ts": "2026-10-19 03:22:04",
+   "kind": "question",
+   "slot": "dyn:complaint.onset+patient.age+patient.sex"
+  },
+  {
+   "role": "caregiver",
+   "text": "You are an 18-year-old woman asking about emergency contraception after unprotected sex yesterday. The patient is 18 years old. The patient is female.",
+   "ts": "2026-10-19 03:22:04",
+   "kind": "answer",
+   "slot": "dyn:complaint.onset+patient.age+patient.sex"
+  },
+  {
+   "role": "bot",
+   "text": "To help the team prepare, do you know if she is currently pregnant or if she has given birth in the last few weeks?",
+   "ts": "2026-10-19 03:22:12",
+   "kind": "question",
+   "slot": "dyn:history.pregnant+history.postpartum"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-19 03:22:12",
+   "kind": "answer",
+   "slot": "dyn:history.pregnant+history.postpartum"
+  },
+  {
+   "role": "bot",
+   "text": "Does she have a fever or any new rashes?",
+   "ts": "2026-10-19 03:22:18",
+   "kind": "question",
+   "slot": "dyn:complaint.fever"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, the patient does not have fever.",
+   "ts": "2026-10-19 03:22:18",
+   "kind": "answer",
+   "slot": "dyn:complaint.fever"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Does she have any new rashes, or has she traveled abroad or been in contact with anyone who is sick in the last two weeks?",
+   "ts": "2026-10-19 03:22:25",
+   "kind": "question",
+   "slot": "dyn:infection.rash+infection.travel_14d"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient has a rash. I do not know whether the patient travelled in the last 14 days.",
+   "ts": "2026-10-19 03:22:25",
+   "kind": "answer",
+   "slot": "dyn:infection.rash+infection.travel_14d"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Does she have any new rashes on her skin?",
+   "ts": "2026-10-19 03:22:31",
+   "kind": "question",
+   "slot": "dyn:infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient has a rash.",
+   "ts": "2026-10-19 03:22:31",
+   "kind": "answer",
+   "slot": "dyn:infection.rash"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. To clarify, have you noticed any new rashes on her skin?",
+   "ts": "2026-10-19 03:22:37",
+   "kind": "question",
+   "slot": "dyn:infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient has a rash.",
+   "ts": "2026-10-19 03:22:37",
+   "kind": "answer",
+   "slot": "dyn:infection.rash"
+  },
+  {
+   "role": "bot",
+   "text": "Has she traveled outside of the country in the last two weeks?",
+   "ts": "2026-10-19 03:22:42",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient travelled in the last 14 days.",
+   "ts": "2026-10-19 03:22:42",
+   "kind": "answer",
+   "slot": "dyn:infection.travel_14d"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. To make sure we have all the details, has she traveled outside of the country in the last 14 days?",
+   "ts": "2026-10-19 03:22:48",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient travelled in the last 14 days.",
+   "ts": "2026-10-19 03:22:48",
+   "kind": "answer",
+   "slot": "dyn:infection.travel_14d"
+  },
+  {
+   "role": "bot",
+   "text": "Has she been in contact with anyone who has an infectious illness in the last two weeks?",
+   "ts": "2026-10-19 03:22:54",
+   "kind": "question",
+   "slot": "dyn:infection.contacts"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know of any sick contacts.",
+   "ts": "2026-10-19 03:22:54",
+   "kind": "answer",
+   "slot": "dyn:infection.contacts"
+  },
+  {
+   "role": "bot",
+   "text": "Is she acting differently than usual, such as being more confused or unusually sleepy?",
+   "ts": "2026-10-19 03:23:00",
+   "kind": "question",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient is acting differently from usual.",
+   "ts": "2026-10-19 03:23:00",
+   "kind": "answer",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Is she acting differently than usual, such as being more confused or very sleepy?",
+   "ts": "2026-10-19 03:23:06",
+   "kind": "question",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient is acting differently from usual.",
+   "ts": "2026-10-19 03:23:06",
+   "kind": "answer",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Is she having any trouble staying awake or seems confused lately?",
+   "ts": "2026-10-19 03:23:12",
+   "kind": "question",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient is acting differently from usual.",
+   "ts": "2026-10-19 03:23:12",
+   "kind": "answer",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "bot",
+   "text": "On a scale from 0 to 10, where 10 is the worst pain imaginable, how bad is her pain right now?",
+   "ts": "2026-10-19 03:23:17",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "The value is 0.",
+   "ts": "2026-10-19 03:23:17",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "Does she have any allergies to medications, and what medicines does she take regularly?",
+   "ts": "2026-10-19 03:23:24",
+   "kind": "question",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know what medicines the patient takes. The patient has no known allergies.",
+   "ts": "2026-10-19 03:23:24",
+   "kind": "answer",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Could you tell me the names of any medications she takes on a regular basis?",
+   "ts": "2026-10-19 03:23:30",
+   "kind": "question",
+   "slot": "dyn:M.medications"
+  }
+ ],
+ "stage": "floor",
+ "floor": null,
+ "phase": "enroute",
+ "created": "2026-10-19 03:21",
+ "pending_slot": "dyn:M.medications",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {}
+}

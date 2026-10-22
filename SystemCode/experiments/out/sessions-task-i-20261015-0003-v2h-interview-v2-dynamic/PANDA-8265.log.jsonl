@@ -1,0 +1,78 @@
+{"t": "23:44:20", "kind": "engine", "note": "session PANDA-8265 started (web)"}
+{"t": "23:44:24", "kind": "question", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "I'm here to help get the right team ready. Is the person awake and responding to you, and are they currently having any chest pain, trouble breathing, or heavy bleeding?", "fields": ["danger_signs.responsive", "danger_signs.chest_pain_now"], "offered": ["danger_signs.responsive", "danger_signs.chest_pain_now", "danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text"]}
+{"t": "23:44:25", "kind": "answer", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "I'm awake. No chest pain, trouble breathing, or bleeding."}
+{"t": "23:44:28", "kind": "extract", "writes": [["danger_signs.responsive", true], ["danger_signs.chest_pain_now", false]]}
+{"t": "23:44:31", "kind": "question", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category+complaint.text", "text": "I'm glad to hear they are awake. Just to be sure, are they having any trouble breathing or heavy bleeding right now, and could you tell me what the main problem is?", "fields": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text"], "offered": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text", "complaint.onset", "E.mechanism"]}
+{"t": "23:44:32", "kind": "answer", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category+complaint.text", "text": "No bleeding. The main problem is constant lower abdominal pain that's getting worse."}
+{"t": "23:44:36", "kind": "extract", "writes": [["danger_signs.breathing_difficulty", false]], "via": "dropped-not-stated"}
+{"t": "23:44:36", "kind": "extract", "writes": [["danger_signs.heavy_bleeding", false], ["complaint.category", "abdominal_pain"], ["complaint.text", "constant lower abdominal pain that's getting worse"]]}
+{"t": "23:44:36", "kind": "extract", "writes": [["E.mechanism", "none"]], "via": "derived-non-injury"}
+{"t": "23:44:39", "kind": "question", "slot": "dyn:danger_signs.breathing_difficulty", "text": "I understand the pain is getting worse. Is the person having any trouble breathing right now?", "fields": ["danger_signs.breathing_difficulty"], "offered": ["danger_signs.breathing_difficulty"]}
+{"t": "23:44:40", "kind": "answer", "slot": "dyn:danger_signs.breathing_difficulty", "text": "No, I'm not having trouble breathing."}
+{"t": "23:44:42", "kind": "extract", "writes": [["danger_signs.breathing_difficulty", false]]}
+{"t": "23:44:45", "kind": "question", "slot": "dyn:complaint.onset+patient.age+patient.sex", "text": "I'm sorry to hear about the pain. To help the team prepare, could you tell me how old the patient is, what their sex is, and when the pain first started?", "fields": ["complaint.onset", "patient.age", "patient.sex"], "offered": ["complaint.onset", "patient.age", "patient.sex", "complaint.fever", "infection.rash", "infection.travel_14d"]}
+{"t": "23:44:47", "kind": "answer", "slot": "dyn:complaint.onset+patient.age+patient.sex", "text": "I'm 40 years old and the pain started this morning."}
+{"t": "23:44:49", "kind": "extract", "writes": [["patient.age", 40], ["complaint.onset", "this morning"]]}
+{"t": "23:44:52", "kind": "question", "slot": "dyn:patient.sex", "text": "Thank you for that information. To help the team, could you tell me if the patient is male or female?", "fields": ["patient.sex"], "offered": ["patient.sex"]}
+{"t": "23:44:53", "kind": "answer", "slot": "dyn:patient.sex", "text": "I'm female."}
+{"t": "23:44:56", "kind": "extract", "writes": [["patient.sex", "female"]]}
+{"t": "23:44:59", "kind": "question", "slot": "dyn:history.pregnant+history.postpartum", "text": "Thank you. To help the medical team, could you tell me if you are currently pregnant or have given birth in the last few weeks?", "fields": ["history.pregnant", "history.postpartum"], "offered": ["history.pregnant", "history.postpartum", "complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts"]}
+{"t": "23:45:00", "kind": "answer", "slot": "dyn:history.pregnant+history.postpartum", "text": "I'm 28 weeks pregnant."}
+{"t": "23:45:02", "kind": "extract", "writes": [["history.pregnant", true]]}
+{"t": "23:45:03", "kind": "floor", "floor": "at least ESI-2", "fired": ["B-38.pregnant-chest-pain-breathlessness-abdo-pain-or-headache"], "sources": ["ESI v5 p.14"]}
+{"t": "23:45:03", "kind": "engine", "consider": ["B-17.abdo-pain-pregnant-or-postpartum"]}
+{"t": "23:45:05", "kind": "question", "slot": "dyn:complaint.fever+infection.rash", "text": "I'm sorry to hear about the pain. Do you have a fever, and have you noticed any new rashes on your skin?", "fields": ["complaint.fever", "infection.rash"], "offered": ["complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts", "complaint.uti_symptoms", "ams.changed_from_baseline"]}
+{"t": "23:45:07", "kind": "answer", "slot": "dyn:complaint.fever+infection.rash", "text": "No fever. No rashes."}
+{"t": "23:45:10", "kind": "extract", "writes": [["complaint.fever", false], ["infection.rash", false]]}
+{"t": "23:45:12", "kind": "question", "slot": "dyn:infection.travel_14d+infection.contacts", "text": "I've noted that. Have you traveled outside the country or been in contact with anyone who has been sick in the last two weeks?", "fields": ["infection.travel_14d", "infection.contacts"], "offered": ["infection.travel_14d", "infection.contacts", "complaint.uti_symptoms", "ams.changed_from_baseline", "complaint.pain_rating", "complaint.infection_signs"]}
+{"t": "23:45:14", "kind": "answer", "slot": "dyn:infection.travel_14d+infection.contacts", "text": "No. No."}
+{"t": "23:45:17", "kind": "extract", "writes": [["infection.travel_14d", false], ["infection.contacts", false]], "via": "dropped-not-stated"}
+{"t": "23:45:17", "kind": "extract", "writes": []}
+{"t": "23:45:19", "kind": "question", "slot": "dyn:infection.travel_14d", "text": "Thank you for that information. Have you traveled outside of the country in the last two weeks?", "fields": ["infection.travel_14d"], "offered": ["infection.travel_14d"]}
+{"t": "23:45:20", "kind": "answer", "slot": "dyn:infection.travel_14d", "text": "No, I haven't."}
+{"t": "23:45:23", "kind": "extract", "writes": [["infection.travel_14d", false]], "via": "dropped-not-stated"}
+{"t": "23:45:23", "kind": "extract", "writes": []}
+{"t": "23:45:25", "kind": "question", "slot": "dyn:infection.travel_14d", "text": "I understand. Just to be clear, have you traveled outside of the country in the last 14 days?", "fields": ["infection.travel_14d"], "offered": ["infection.travel_14d"]}
+{"t": "23:45:28", "kind": "answer", "slot": "dyn:infection.travel_14d", "text": "No, I haven't."}
+{"t": "23:45:30", "kind": "extract", "writes": [["infection.travel_14d", false]], "via": "dropped-not-stated"}
+{"t": "23:45:30", "kind": "extract", "writes": []}
+{"t": "23:45:33", "kind": "question", "slot": "dyn:infection.contacts", "text": "Have you been around anyone who has been sick with a contagious illness lately?", "fields": ["infection.contacts"], "offered": ["infection.contacts"]}
+{"t": "23:45:36", "kind": "answer", "slot": "dyn:infection.contacts", "text": "No, I haven't."}
+{"t": "23:45:39", "kind": "extract", "writes": [["infection.contacts", false]], "via": "dropped-not-stated"}
+{"t": "23:45:39", "kind": "extract", "writes": []}
+{"t": "23:45:41", "kind": "question", "slot": "dyn:infection.contacts", "text": "I understand. Have you been near anyone who has been sick with a contagious illness lately?", "fields": ["infection.contacts"], "offered": ["infection.contacts"]}
+{"t": "23:45:44", "kind": "answer", "slot": "dyn:infection.contacts", "text": "No, I haven't."}
+{"t": "23:45:46", "kind": "extract", "writes": [["infection.contacts", false]], "via": "dropped-not-stated"}
+{"t": "23:45:46", "kind": "extract", "writes": []}
+{"t": "23:45:49", "kind": "question", "slot": "dyn:complaint.uti_symptoms", "text": "I'm sorry to hear about your abdominal pain. Are you having any issues like burning or pain when you pee, or is your urine cloudy or smelly?", "fields": ["complaint.uti_symptoms"], "offered": ["complaint.uti_symptoms", "ams.changed_from_baseline", "complaint.pain_rating", "complaint.infection_signs", "complaint.possible_ectopic_pregnancy", "complaint.shortness_of_breath"]}
+{"t": "23:45:50", "kind": "answer", "slot": "dyn:complaint.uti_symptoms", "text": "I don't know."}
+{"t": "23:45:53", "kind": "extract", "writes": []}
+{"t": "23:45:53", "kind": "extract", "writes": [["complaint.uti_symptoms", null]], "via": "dont-know"}
+{"t": "23:45:56", "kind": "question", "slot": "dyn:ams.changed_from_baseline+complaint.pain_rating", "text": "I understand. To help the team prepare, on a scale of 0 to 10, how would you rate your pain right now? Also, have you noticed any changes in your mental state, like feeling more confused or sleepy than usual?", "fields": ["ams.changed_from_baseline", "complaint.pain_rating"], "offered": ["ams.changed_from_baseline", "complaint.pain_rating", "complaint.infection_signs", "complaint.possible_ectopic_pregnancy", "complaint.shortness_of_breath", "complaint.known_toxic_ingestion"]}
+{"t": "23:45:57", "kind": "answer", "slot": "dyn:ams.changed_from_baseline+complaint.pain_rating", "text": "It's an 8 out of 10. No, I don't feel confused or sleepy."}
+{"t": "23:46:01", "kind": "extract", "writes": [["complaint.pain_rating", 8], ["ams.changed_from_baseline", false]]}
+{"t": "23:46:01", "kind": "engine", "consider": ["B-02.severe-pain-consider"]}
+{"t": "23:46:04", "kind": "question", "slot": "dyn:complaint.infection_signs", "text": "I've noted your pain level. Have you noticed any signs of infection, like a wound that is red, hot, swollen, or oozing?", "fields": ["complaint.infection_signs"], "offered": ["complaint.infection_signs", "complaint.pain_cause_class", "complaint.possible_ectopic_pregnancy", "complaint.shortness_of_breath", "complaint.known_toxic_ingestion", "complaint.severe_flank_pain"]}
+{"t": "23:46:05", "kind": "answer", "slot": "dyn:complaint.infection_signs", "text": "No, I don't have any."}
+{"t": "23:46:08", "kind": "extract", "writes": [["complaint.infection_signs", false]], "via": "dropped-not-stated"}
+{"t": "23:46:08", "kind": "extract", "writes": []}
+{"t": "23:46:10", "kind": "question", "slot": "dyn:complaint.infection_signs", "text": "I understand. To make sure we have all the details, has a doctor ever told you that you have an infection?", "fields": ["complaint.infection_signs"], "offered": ["complaint.infection_signs"]}
+{"t": "23:46:12", "kind": "answer", "slot": "dyn:complaint.infection_signs", "text": "No, I don't have any infections."}
+{"t": "23:46:14", "kind": "extract", "writes": [["complaint.infection_signs", false]]}
+{"t": "23:46:18", "kind": "question", "slot": "dyn:complaint.pain_cause_class+complaint.possible_ectopic_pregnancy", "text": "I'm sorry to hear about your pain. Do you have a known medical condition causing this, or have you had any issues with your period or bleeding lately?", "fields": ["complaint.pain_cause_class", "complaint.possible_ectopic_pregnancy"], "offered": ["complaint.pain_cause_class", "complaint.possible_ectopic_pregnancy", "complaint.shortness_of_breath", "complaint.known_toxic_ingestion", "complaint.severe_flank_pain", "complaint.vomiting"]}
+{"t": "23:46:19", "kind": "answer", "slot": "dyn:complaint.pain_cause_class+complaint.possible_ectopic_pregnancy", "text": "No other conditions. No bleeding."}
+{"t": "23:46:21", "kind": "extract", "writes": [["complaint.possible_ectopic_pregnancy", false]]}
+{"t": "23:46:24", "kind": "question", "slot": "dyn:complaint.pain_cause_class", "text": "I'm sorry to hear about your pain. Do you have any known medical conditions, like kidney stones or other chronic illnesses, that cause this?", "fields": ["complaint.pain_cause_class"], "offered": ["complaint.pain_cause_class"]}
+{"t": "23:46:25", "kind": "answer", "slot": "dyn:complaint.pain_cause_class", "text": "No, I have no other conditions besides my pregnancy."}
+{"t": "23:46:28", "kind": "extract", "writes": [["history.conditions", ["pregnancy"]]]}
+{"t": "23:46:31", "kind": "question", "slot": "dyn:complaint.pain_cause_class", "text": "I understand you're experiencing pain. To help the team, is there a specific known condition, like kidney stones or a chronic illness, that causes this pain?", "fields": ["complaint.pain_cause_class"], "offered": ["complaint.pain_cause_class"]}
+{"t": "23:46:33", "kind": "answer", "slot": "dyn:complaint.pain_cause_class", "text": "No, I have no other conditions besides my pregnancy."}
+{"t": "23:46:35", "kind": "extract", "writes": [["history.conditions", ["pregnancy"]]]}
+{"t": "23:46:38", "kind": "question", "slot": "dyn:complaint.shortness_of_breath+complaint.vomiting", "text": "I understand. Are you having any trouble breathing or have you been vomiting?", "fields": ["complaint.shortness_of_breath", "complaint.vomiting"], "offered": ["complaint.shortness_of_breath", "complaint.known_toxic_ingestion", "complaint.severe_flank_pain", "complaint.vomiting", "M.medications", "A.allergies"]}
+{"t": "23:46:39", "kind": "answer", "slot": "dyn:complaint.shortness_of_breath+complaint.vomiting", "text": "No, no trouble breathing. No vomiting."}
+{"t": "23:46:42", "kind": "extract", "writes": [["complaint.shortness_of_breath", false], ["complaint.vomiting", false]]}
+{"t": "23:46:45", "kind": "question", "slot": "dyn:complaint.known_toxic_ingestion+complaint.severe_flank_pain", "text": "I'm sorry to hear about the pain. Have you taken anything that could be poisonous or more medicine than you should have, and is the pain located in your side or back?", "fields": ["complaint.known_toxic_ingestion", "complaint.severe_flank_pain"], "offered": ["complaint.known_toxic_ingestion", "complaint.severe_flank_pain", "M.medications", "A.allergies", "history.immunocompromised", "identity.name"]}
+{"t": "23:46:47", "kind": "answer", "slot": "dyn:complaint.known_toxic_ingestion+complaint.severe_flank_pain", "text": "No, just my pregnancy vitamins. The pain is in my lower abdomen."}
+{"t": "23:46:50", "kind": "extract", "writes": [["complaint.known_toxic_ingestion", false]], "via": "dropped-not-stated"}
+{"t": "23:46:50", "kind": "extract", "writes": [["complaint.text", "The pain is in my lower abdomen."]]}
+{"t": "23:46:53", "kind": "question", "slot": "dyn:complaint.known_toxic_ingestion", "text": "I understand the pain is in your lower abdomen. To make sure we have everything, have you taken any extra medicine or anything else that could be harmful?", "fields": ["complaint.known_toxic_ingestion"], "offered": ["complaint.known_toxic_ingestion"]}

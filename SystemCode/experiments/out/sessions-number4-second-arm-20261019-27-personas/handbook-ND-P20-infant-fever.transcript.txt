@@ -1,0 +1,43 @@
+arm B, form handbook, persona ND-P20-infant-fever, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  What is the main reason the patient is seeking care today?
+A1  My six-week-old baby has a fever.
+
+Q2  What is the baby's temperature?
+A2  The thermometer showed 38.3 degrees Celsius.
+
+Q3  Is the baby alert and following commands, or is the baby showing any other signs of distress like difficulty breathing or being very lethargic?
+A3  She is sleepier and feeding less than usual.
+
+Q4  Is the baby's breathing labored, and does she have any other signs of distress like a very fast heart rate or a very fast breathing rate?
+A4  I don't know.
+
+Q5  Is the baby's heart rate or breathing rate very fast, or is she making any grunting or gasping sounds?
+A5  I don't know.
+
+Q6  Is the baby's breathing labored, or is she making any grunting or gasping sounds?
+A6  I don't know.
+
+Q7  Is the baby's breathing labored, or is she making any grunting or gasping sounds?
+A7  I don't know.
+
+Q8  Is the baby's breathing labored, or is she making any grunting or gasping sounds?
+A8  I don't know.
+
+Q9  Is the baby's breathing labored, or is she making any grunting or gasping sounds?
+A9  I don't know.
+
+Q10  Is the baby's breathing labored, or is she making any grunting or gasping sounds?
+A10  I don't know.
+
+Q11  Is the baby's breathing labored, or is she making any grunting or gasping sounds?
+A11  I don't know.
+
+Q12  Is the baby's breathing labored, or is she making any grunting or gasping sounds?
+A12  I don't know.
+
+Q13  Is the baby's breathing labored, or is she making any grunting or gasping sounds?
+A13  I don't know.
+
+DECISION {"decision": "level 2", "reason": "The patient is an infant under 3 months of age with a fever over 38.0\u00b0C (100.4\u00b0F), which meets the criteria for ESI level 2.", "citation": "page 30"}
+OUTCOME level 2 or floor | expected at least ESI-2 | pass True | label None | max prompt tokens 30084

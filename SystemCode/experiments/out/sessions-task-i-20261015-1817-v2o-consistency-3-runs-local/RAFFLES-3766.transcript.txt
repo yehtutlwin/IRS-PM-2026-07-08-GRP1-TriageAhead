@@ -1,0 +1,33 @@
+session RAFFLES-3766   started 2026-10-15 18:14   (generated from messages)
+
+18:15:02  BOT  Is the patient awake and responding to you? Also, is he or she currently experiencing chest pain, difficulty breathing, or heavy bleeding?   [slot dyn:danger_signs.responsive+danger_signs.chest_pain_now]
+18:15:03  THEM He is awake and talking normally. He has no pain and is experiencing more shortness of breath than usual.   [slot dyn:danger_signs.responsive+danger_signs.chest_pain_now]
+18:15:13  BOT  I understand he is having more trouble breathing than usual. Is he struggling to catch his breath right now, and is there any heavy bleeding?   [slot dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding]
+18:15:14  THEM He is more short of breath than usual, but he can still speak in full sentences. There is no bleeding.   [slot dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding]
+18:15:23  BOT  I've noted the breathing issues. Could you tell me what the main problem is that brings him in today and when it first started?   [slot dyn:complaint.category+complaint.onset]
+18:15:25  THEM He has been more short of breath than usual since this morning.   [slot dyn:complaint.category+complaint.onset]
+18:15:32  BOT  I've noted that. Could you tell me his age and if he is male or female?   [slot dyn:patient.age+patient.sex]
+18:15:33  THEM He is a 72-year-old male.   [slot dyn:patient.age+patient.sex]
+18:15:40  BOT  I've noted those details. Does he have a fever or any new rashes on his skin?   [slot dyn:complaint.fever+infection.rash]
+18:15:42  THEM He has no fever and no rash.   [slot dyn:complaint.fever+infection.rash]
+18:15:50  BOT  I've noted that. Has he traveled outside the country or been in contact with anyone who is sick in the last two weeks?   [slot dyn:infection.travel_14d+infection.contacts]
+18:15:51  THEM No, he has had no travel and no contact with anyone ill.   [slot dyn:infection.travel_14d+infection.contacts]
+18:15:59  BOT  I've noted that. Is he feeling more confused or sleepy than usual, and is he struggling to catch his breath?   [slot dyn:ams.changed_from_baseline+complaint.shortness_of_breath]
+18:16:01  THEM He is awake and talking normally, but he has been more short of breath than usual since this morning.   [slot dyn:ams.changed_from_baseline+complaint.shortness_of_breath]
+18:16:08  BOT  I understand he is struggling to breathe. Does he seem more confused or sleepy than usual?   [slot dyn:ams.changed_from_baseline]
+18:16:09  THEM No, he is awake and talking normally.   [slot dyn:ams.changed_from_baseline]
+18:16:24  BOT  I've noted that he is alert. On a scale of 0 to 10, how bad is his pain right now, and is his breathing getting harder than it was earlier?   [slot dyn:complaint.pain_rating+complaint.increasing_respiratory_effort]
+18:16:26  THEM He has no pain. He has been more short of breath than usual since this morning.   [slot dyn:complaint.pain_rating+complaint.increasing_respiratory_effort]
+18:16:30  SYS  floor: at least ESI-2  rules: ['B-12.increasing-respiratory-effort'] (floor)
+18:16:33  BOT  I've noted his breathing is worse today. What medications does he take regularly, and does he have any allergies to medicines?   [slot dyn:M.medications+A.allergies]
+18:16:35  THEM He takes a water pill (frusemide) and an inhaler. He has no allergies.   [slot dyn:M.medications+A.allergies]
+18:16:42  BOT  I've noted his medications. Does he have any other ongoing medical conditions?   [slot dyn:history.conditions]
+18:16:43  THEM He has heart failure and COPD.   [slot dyn:history.conditions]
+18:16:57  BOT  Thank you for that information. Could you please tell me the patient's full name and date of birth?   [slot dyn:identity.name+identity.dob]
+18:16:59  THEM His name is Mr. Lim. His date of birth is 03 Mar 1954.   [slot dyn:identity.name+identity.dob]
+18:17:03  BOT  That's enough for the hospital team to prepare. Show the code RAFFLES-3766 at the counter when you arrive. I'll ask a few more things while you're on the way; tell me straight away if anything changes. (ack)
+18:17:06  BOT  Is he currently struggling to breathe, such as breathing very fast, wheezing, or only being able to say a few words at a time?   [slot dyn:complaint.respiratory_distress_signs]
+18:17:07  THEM He is more short of breath than usual, but he can still speak in full sentences and is not wheezing.   [slot dyn:complaint.respiratory_distress_signs]
+18:17:21  BOT  I understand he can still speak in full sentences. When was the last time he had something to eat or drink?   [slot dyn:L.last_intake]
+18:17:23  THEM He last ate toast at 8am.   [slot dyn:L.last_intake]
+18:17:33  BOT  Thank you - that's everything. Show the code RAFFLES-3766 at the counter when you arrive. (ack)

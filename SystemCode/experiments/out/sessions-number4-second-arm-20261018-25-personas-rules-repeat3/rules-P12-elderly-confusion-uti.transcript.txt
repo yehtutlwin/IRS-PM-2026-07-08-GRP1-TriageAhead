@@ -1,0 +1,43 @@
+arm B, form rules, persona P12-elderly-confusion-uti, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  Is the patient awake and responding normally?
+A1  She answers when I talk to her, but she is not acting like herself. She is sleeping more than usual and is mixed up about the time and where she is.
+
+Q2  Is she currently having any chest pain?
+A2  No chest pain.
+
+Q3  Is she having any trouble breathing right now?
+A3  No, her breathing is fine.
+
+Q4  Is she bleeding heavily right now?
+A4  No.
+
+Q5  Is the patient's confusion or mixed-up behavior a new change from her usual mental state?
+A5  Yes, she's mixed up about the time and where she is. That's not like her.
+
+Q6  Is the patient's confusion or mixed-up behavior a new change from her usual mental state?
+A6  Yes, she's mixed up about the time and where she is. That's not like her.
+
+Q7  How old is the patient?
+A7  She's 72.
+
+Q8  Is the patient's confusion or mixed-up behavior a new change from her usual mental state?
+A8  Yes, she's mixed up about the time and where she is. That's not like her.
+
+Q9  Is the patient's confusion or mixed-up behavior a new change from her usual mental state?
+A9  Yes, she's mixed up about the time and where she is. That's not like her.
+
+Q10  Is the patient's confusion or mixed-up behavior a new change from her usual mental state?
+A10  Yes, she's mixed up about the time and where she is. That's not like her.
+
+Q11  Is the patient in any severe pain or distress?
+A11  She says it hurts to pee. She is not in any other distress.
+
+Q12  Does she have any other symptoms, such as a fever, a cough, or a cough with a lot of phlegm?
+A12  I haven't taken her temperature. I don't know.
+
+Q13  Does she have any other symptoms, such as a fever, a cough, or a cough with a lot of phlegm?
+A13  I haven't taken her temperature. I don't know.
+
+DECISION {"done": true, "decision": "at least ESI-2", "reason": "The patient is experiencing a new onset of confusion, lethargy, or disorientation, which is a high-risk situation.", "citation": "ESI v5 p.12 (New Onset Confusion, Lethargy, or Disorientation); Rule B-01"}
+OUTCOME level 2 or floor | expected at least ESI-2 | pass True | label None | max prompt tokens 44120

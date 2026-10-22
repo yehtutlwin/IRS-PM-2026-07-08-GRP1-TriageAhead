@@ -1,0 +1,329 @@
+{
+ "sid": "DURIAN-3466",
+ "facts": {
+  "red_flags.responsive": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-09-26 03:47"
+  },
+  "red_flags.chest_pain_now": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-09-26 03:47"
+  },
+  "red_flags.breathing_difficulty": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-09-26 03:47"
+  },
+  "red_flags.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-09-26 03:47"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "abdominal_pain",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "persona",
+      "turn": 2,
+      "ts": "2026-09-26 03:47"
+     },
+     "text": {
+      "value": "mild abdominal discomfort",
+      "status": "reported",
+      "who": "persona",
+      "turn": 5,
+      "ts": "2026-09-26 03:47"
+     },
+     "onset": {
+      "value": "over the past two days",
+      "status": "reported",
+      "who": "persona",
+      "turn": 2,
+      "ts": "2026-09-26 03:47"
+     },
+     "pain_rating": {
+      "value": 3,
+      "status": "reported",
+      "who": "persona",
+      "turn": 2,
+      "ts": "2026-09-26 03:47"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 2
+  },
+  "complaint.text": {
+   "value": "mild abdominal discomfort",
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-09-26 03:47"
+  },
+  "complaint.category": {
+   "value": [
+    "abdominal_pain"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-09-26 03:47"
+  },
+  "complaint.onset": {
+   "value": "over the past two days",
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-09-26 03:47"
+  },
+  "complaint.pain_rating": {
+   "value": 3,
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-09-26 03:47"
+  },
+  "complaint.pain_latest": {
+   "value": 3,
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-09-26 03:47"
+  },
+  "E.mechanism": {
+   "value": "none",
+   "status": "reported",
+   "who": "derived",
+   "turn": 2,
+   "ts": "2026-09-26 03:47"
+  },
+  "M.medications": {
+   "value": [
+    "lactulose",
+    "spironolactone",
+    "furosemide"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-09-26 03:47"
+  },
+  "A.allergies": {
+   "value": [],
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-09-26 03:47"
+  },
+  "confirm.M.anticoagulant": {
+   "value": null,
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-09-26 03:47"
+  },
+  "history.conditions": {
+   "value": [
+    "cirrhosis",
+    "chronic hepatitis B"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 4,
+   "ts": "2026-09-26 03:47"
+  },
+  "history.immunocompromised": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 4,
+   "ts": "2026-09-26 03:47"
+  },
+  "history.pregnant_or_postpartum": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 4,
+   "ts": "2026-09-26 03:47"
+  },
+  "infection.fever": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-09-26 03:47"
+  },
+  "infection.rash": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-09-26 03:47"
+  },
+  "infection.travel_14d": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-09-26 03:47"
+  },
+  "infection.contacts": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-09-26 03:47"
+  },
+  "L.last_intake": {
+   "value": "small bowl of rice at noon",
+   "status": "reported",
+   "who": "persona",
+   "turn": 6,
+   "ts": "2026-09-26 03:47"
+  },
+  "identity.name": {
+   "value": null,
+   "status": "reported",
+   "who": "persona",
+   "turn": 6,
+   "ts": "2026-09-26 03:47"
+  },
+  "identity.dob": {
+   "value": "July 7, 1968",
+   "status": "reported",
+   "who": "persona",
+   "turn": 6,
+   "ts": "2026-09-26 03:47"
+  },
+  "patient.age": {
+   "value": 58,
+   "status": "probable",
+   "who": "derived",
+   "turn": 6,
+   "ts": "2026-09-26 03:47"
+  }
+ },
+ "attempts": {
+  "red_flags.screen": 1,
+  "complaint.main": 1,
+  "M.medications": 1,
+  "allergies_and_history": 1,
+  "infection.screen": 1,
+  "wrapup": 1
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "Are you awake and responding normally without severe chest pain, trouble breathing, or heavy bleeding right now?",
+   "ts": "2026-09-26 03:47:05",
+   "kind": "question",
+   "slot": "red_flags.screen"
+  },
+  {
+   "role": "caregiver",
+   "text": "He is awake and breathing normally but answers slowly; there is no chest pain, trouble breathing, vomiting of blood, or black stools.",
+   "ts": "2026-09-26 03:47:06",
+   "kind": "answer",
+   "slot": "red_flags.screen"
+  },
+  {
+   "role": "bot",
+   "text": "Can you tell me what happened, when it started, and how bad the pain is on a scale of 0 to 10?",
+   "ts": "2026-09-26 03:47:09",
+   "kind": "question",
+   "slot": "complaint.main"
+  },
+  {
+   "role": "caregiver",
+   "text": "His symptoms started over the past two days with increasing abdominal swelling, yellow eyes, and confusion. He reports mild abdominal discomfort, rating it 3/10.",
+   "ts": "2026-09-26 03:47:09",
+   "kind": "answer",
+   "slot": "complaint.main"
+  },
+  {
+   "role": "bot",
+   "text": "Do you take any regular medications?",
+   "ts": "2026-09-26 03:47:12",
+   "kind": "question",
+   "slot": "M.medications"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, he takes lactulose, spironolactone, and furosemide, though he missed several doses of lactulose this week. He has no known allergies and is not on blood thinners.",
+   "ts": "2026-09-26 03:47:13",
+   "kind": "answer",
+   "slot": "M.medications"
+  },
+  {
+   "role": "bot",
+   "text": "Could you please tell us about any other medical conditions, such as heart problems, diabetes, pregnancy, or if your immune system is weakened?",
+   "ts": "2026-09-26 03:47:15",
+   "kind": "question",
+   "slot": "allergies_and_history"
+  },
+  {
+   "role": "caregiver",
+   "text": "He has cirrhosis caused by chronic hepatitis B. There are no other mentioned medical conditions like heart problems, diabetes, pregnancy, or a weakened immune system in his history.",
+   "ts": "2026-09-26 03:47:16",
+   "kind": "answer",
+   "slot": "allergies_and_history"
+  },
+  {
+   "role": "bot",
+   "text": "Could you please tell us if he has had any fever, rash, overseas travel in the last two weeks, or contact with anyone who is infectious?",
+   "ts": "2026-09-26 03:47:18",
+   "kind": "question",
+   "slot": "infection.screen"
+  },
+  {
+   "role": "caregiver",
+   "text": "He has no fever and reports only mild abdominal discomfort. He has not mentioned a rash, overseas travel, or contact with anyone who is infectious.",
+   "ts": "2026-09-26 03:47:19",
+   "kind": "answer",
+   "slot": "infection.screen"
+  },
+  {
+   "role": "bot",
+   "text": "Could you please tell us when he last ate or drank, along with his name and date of birth for our records?",
+   "ts": "2026-09-26 03:47:22",
+   "kind": "question",
+   "slot": "wrapup"
+  },
+  {
+   "role": "caregiver",
+   "text": "He last ate a small bowl of rice at noon. His name is not provided in my description, but his date of birth is July 7, 1968.",
+   "ts": "2026-09-26 03:47:23",
+   "kind": "answer",
+   "slot": "wrapup"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you - that's everything for now. Show the code DURIAN-3466 at the counter when you arrive.",
+   "ts": "2026-09-26 03:47:24",
+   "kind": "ack"
+  }
+ ],
+ "active_ids": [],
+ "floor": null,
+ "phase": "enroute",
+ "opened": [],
+ "created": "2026-09-26 03:47",
+ "pending_slot": "wrapup",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {},
+ "said_done": true
+}

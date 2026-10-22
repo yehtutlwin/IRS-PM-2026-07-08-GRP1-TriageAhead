@@ -1,0 +1,52 @@
+arm B, form rules, persona P1-fall-anticoag, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  Is the patient awake and responding normally?
+A1  Yes, he's awake and talking. He's as alert as usual.
+
+Q2  Is the patient experiencing chest pain right now?
+A2  No chest pain.
+
+Q3  Is the patient having any trouble breathing right now?
+A3  No, he's breathing fine.
+
+Q4  Is the patient bleeding heavily right now?
+A4  No bleeding.
+
+Q5  What is the main reason the patient is coming to the emergency department?
+A5  He fell down 4 steps at home and landed on his right hip. He can't stand.
+
+Q6  Is the patient's hip or leg numb, cold, pale, or blue, or is he unable to move his toes or foot?
+A6  I don't know.
+
+Q7  How old is the patient?
+A7  He's 87.
+
+Q8  Was the fall from the stairs a result of a trip or a fall from a height, or was there any other mechanism like a car accident or a hit from a vehicle?
+A8  He fell down 4 steps at home and landed on his right hip.
+
+Q9  Is the patient's hip or leg feeling numb, cold, pale, or blue, or is he unable to move his toes or foot?
+A9  I don't know.
+
+Q10  Is the patient's hip or leg feeling numb, cold, pale, or blue, or is he unable to move his toes or foot?
+A10  I don't know.
+
+Q11  Is the patient's hip or leg feeling numb, cold, pale, or blue, or is he unable to move his toes or foot?
+A11  I don't know.
+
+Q12  Is the patient's hip or leg feeling numb, cold, pale, or blue, or is he unable to move his toes or foot?
+A12  I don't know.
+
+Q13  Can he bear any weight on the leg at all, or is it a large joint like the hip or femur that seems to be out of place or very painful?
+A13  He can't put any weight on the leg. The hip hurts a lot, but it's not getting worse by the minute.
+
+Q14  Is the patient's hip or leg feeling numb, cold, pale, or blue, or is he unable to move his toes or foot?
+A14  I don't know.
+
+Q15  Is the patient's hip or leg feeling numb, cold, pale, or blue, or is he unable to move his toes or foot?
+A15  I don't know.
+
+Q16  Is the patient's hip or leg feeling numb, cold, pale, or blue, or is he unable to move his toes or foot?
+A16  I don't know.
+
+DECISION {"decision": "unparsed", "reason": "turn limit reached without a decision"}
+OUTCOME no decision in 16 questions | expected at least ESI-2 | pass False | label missing fact | max prompt tokens 44205

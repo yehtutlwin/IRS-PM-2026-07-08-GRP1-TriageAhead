@@ -1,0 +1,358 @@
+{
+ "sid": "EAGLE-6170",
+ "facts": {
+  "red_flags.responsive": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-09-26 03:39"
+  },
+  "red_flags.chest_pain_now": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-09-26 03:39"
+  },
+  "red_flags.breathing_difficulty": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-09-26 03:39"
+  },
+  "red_flags.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-09-26 03:39"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "fever",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "persona",
+      "turn": 2,
+      "ts": "2026-09-26 03:39"
+     },
+     "text": {
+      "value": "fever and shivering",
+      "status": "reported",
+      "who": "persona",
+      "turn": 2,
+      "ts": "2026-09-26 03:39"
+     },
+     "onset": {
+      "value": "this afternoon",
+      "status": "reported",
+      "who": "persona",
+      "turn": 2,
+      "ts": "2026-09-26 03:39"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 2
+  },
+  "complaint.category": {
+   "value": [
+    "fever"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-09-26 03:39"
+  },
+  "complaint.text": {
+   "value": "fever and shivering",
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-09-26 03:39"
+  },
+  "complaint.onset": {
+   "value": "this afternoon",
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-09-26 03:39"
+  },
+  "E.mechanism": {
+   "value": "none",
+   "status": "reported",
+   "who": "derived",
+   "turn": 2,
+   "ts": "2026-09-26 03:39"
+  },
+  "infection.fever": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 4,
+   "ts": "2026-09-26 03:39"
+  },
+  "complaint.fever": {
+   "value": true,
+   "status": "reported",
+   "who": "derived",
+   "turn": 3,
+   "ts": "2026-09-26 03:39"
+  },
+  "M.medications": {
+   "value": [
+    "capecitabine",
+    "omeprazole"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-09-26 03:39"
+  },
+  "A.allergies": {
+   "value": [],
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-09-26 03:39"
+  },
+  "history.conditions": {
+   "value": [],
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-09-26 03:39"
+  },
+  "history.immunocompromised": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 6,
+   "ts": "2026-09-26 03:39"
+  },
+  "history.pregnant_or_postpartum": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 6,
+   "ts": "2026-09-26 03:39"
+  },
+  "infection.rash": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 7,
+   "ts": "2026-09-26 03:40"
+  },
+  "infection.travel_14d": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 7,
+   "ts": "2026-09-26 03:40"
+  },
+  "infection.contacts": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 7,
+   "ts": "2026-09-26 03:40"
+  },
+  "identity.name": {
+   "value": "[Name not provided]",
+   "status": "reported",
+   "who": "persona",
+   "turn": 8,
+   "ts": "2026-09-26 03:40"
+  },
+  "identity.dob": {
+   "value": "30 Jun 1975",
+   "status": "reported",
+   "who": "persona",
+   "turn": 8,
+   "ts": "2026-09-26 03:40"
+  },
+  "L.last_intake": {
+   "value": "tea at 4pm",
+   "status": "reported",
+   "who": "persona",
+   "turn": 8,
+   "ts": "2026-09-26 03:40"
+  },
+  "L.last_intake_abs": {
+   "value": "~2026-09-26 16:00 (from 'tea at 4pm' said 03:40)",
+   "status": "reported",
+   "who": "derived",
+   "turn": 8,
+   "ts": "2026-09-26 03:40"
+  },
+  "patient.age": {
+   "value": 51,
+   "status": "reported",
+   "who": "derived",
+   "turn": 8,
+   "ts": "2026-09-26 03:40"
+  }
+ },
+ "attempts": {
+  "red_flags.responsive": 1,
+  "red_flags.chest_pain_now": 1,
+  "red_flags.breathing_difficulty": 1,
+  "red_flags.heavy_bleeding": 1,
+  "complaint.category": 1,
+  "complaint.text": 1,
+  "complaint.onset": 1,
+  "complaint.pain_rating": 3,
+  "M.medications": 1,
+  "A.allergies": 1,
+  "history.conditions": 1,
+  "history.immunocompromised": 2,
+  "history.pregnant_or_postpartum": 1,
+  "infection.rash": 1,
+  "infection.travel_14d": 1,
+  "infection.contacts": 1,
+  "L.last_intake": 1,
+  "identity.name": 1,
+  "identity.dob": 1
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "I'm here to help get you prepared for the hospital. Is the patient awake and responding normally, and are they currently experiencing any chest pain, trouble breathing, or heavy bleeding?",
+   "ts": "2026-09-26 03:39:22",
+   "kind": "question",
+   "slot": "dyn:red_flags.responsive+red_flags.chest_pain_now+red_flags.breathing_difficulty+red_flags.heavy_bleeding"
+  },
+  {
+   "role": "caregiver",
+   "text": "She is awake and talking. She isn't having any chest pain, trouble breathing, or heavy bleeding.",
+   "ts": "2026-09-26 03:39:23",
+   "kind": "answer",
+   "slot": "dyn:red_flags.responsive+red_flags.chest_pain_now+red_flags.breathing_difficulty+red_flags.heavy_bleeding"
+  },
+  {
+   "role": "bot",
+   "text": "I'm glad to hear she is alert. Could you tell me what happened, when it started, and how severe the pain is on a scale of 0 to 10?",
+   "ts": "2026-09-26 03:39:28",
+   "kind": "question",
+   "slot": "dyn:complaint.category+complaint.text+complaint.onset+complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "She's been having a fever and shivering since this afternoon. I'm not sure about the pain level.",
+   "ts": "2026-09-26 03:39:29",
+   "kind": "answer",
+   "slot": "dyn:complaint.category+complaint.text+complaint.onset+complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "I understand she's had a fever and shivering since this afternoon. Since you aren't sure about the pain level, could you describe any other symptoms she's having or how uncomfortable she feels?",
+   "ts": "2026-09-26 03:39:34",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "She is very tired and has been shivering. She is awake and talking, but she's been feeling unwell since the fever started this afternoon.",
+   "ts": "2026-09-26 03:39:36",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear she's feeling so unwell. Even if it's not a sharp pain, could you describe how uncomfortable she is or give a general sense of her distress level?",
+   "ts": "2026-09-26 03:39:40",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "She's very tired and shivering from the fever. She is awake and talking, but she's clearly not feeling well.",
+   "ts": "2026-09-26 03:39:41",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry she's feeling so poorly. Does she take any regular medications, and does she have any known allergies or other medical conditions like diabetes or heart problems?",
+   "ts": "2026-09-26 03:39:45",
+   "kind": "question",
+   "slot": "dyn:M.medications+A.allergies+history.conditions+history.immunocompromised"
+  },
+  {
+   "role": "caregiver",
+   "text": "She takes capecitabine and omeprazole. She has no known allergies and no other medical conditions like diabetes or heart problems.",
+   "ts": "2026-09-26 03:39:47",
+   "kind": "answer",
+   "slot": "dyn:M.medications+A.allergies+history.conditions+history.immunocompromised"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry she's feeling so poorly. Could you tell me if she has any conditions that affect her immune system or if she is currently pregnant or recently gave birth?",
+   "ts": "2026-09-26 03:39:51",
+   "kind": "question",
+   "slot": "dyn:history.immunocompromised+history.pregnant_or_postpartum"
+  },
+  {
+   "role": "caregiver",
+   "text": "She is currently undergoing chemotherapy for breast cancer. She is not pregnant.",
+   "ts": "2026-09-26 03:39:53",
+   "kind": "answer",
+   "slot": "dyn:history.immunocompromised+history.pregnant_or_postpartum"
+  },
+  {
+   "role": "system",
+   "text": "floor: at least ESI-2  rules: ['B-07.immunocompromised-fever']",
+   "ts": "2026-09-26 03:39:55",
+   "kind": "floor"
+  },
+  {
+   "role": "bot",
+   "text": "I've noted her chemotherapy treatment. Has she had any recent rashes, traveled abroad in the last two weeks, or been in contact with anyone who is sick?",
+   "ts": "2026-09-26 03:39:57",
+   "kind": "question",
+   "slot": "dyn:infection.rash+infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, she hasn't had any rashes, no recent travel, and no contact with anyone sick.",
+   "ts": "2026-09-26 03:39:59",
+   "kind": "answer",
+   "slot": "dyn:infection.rash+infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you for that information. To help the team prepare, could you tell me when she last ate or drank anything, along with her full name and date of birth?",
+   "ts": "2026-09-26 03:40:03",
+   "kind": "question",
+   "slot": "dyn:L.last_intake+identity.name+identity.dob"
+  },
+  {
+   "role": "caregiver",
+   "text": "Her name is [Name not provided] and her date of birth is 30 Jun 1975. She last drank some tea at 4pm.",
+   "ts": "2026-09-26 03:40:04",
+   "kind": "answer",
+   "slot": "dyn:L.last_intake+identity.name+identity.dob"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you - that's everything for now. Show the code EAGLE-6170 at the counter when you arrive.",
+   "ts": "2026-09-26 03:40:07",
+   "kind": "ack"
+  }
+ ],
+ "active_ids": [],
+ "floor": "at least ESI-2",
+ "phase": "enroute",
+ "opened": [],
+ "created": "2026-09-26 03:39",
+ "pending_slot": "dyn:L.last_intake+identity.name+identity.dob",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {},
+ "said_done": true
+}

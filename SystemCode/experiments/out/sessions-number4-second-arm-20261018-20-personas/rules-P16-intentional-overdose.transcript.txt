@@ -1,0 +1,52 @@
+arm B, form rules, persona P16-intentional-overdose, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  Is the patient awake and responding normally?
+A1  Yes, he's awake and talking.
+
+Q2  Is the patient experiencing chest pain right now?
+A2  I don't know.
+
+Q3  Is the patient having any trouble breathing right now?
+A3  I don't know.
+
+Q4  Is the patient bleeding heavily right now?
+A4  I don't know.
+
+Q5  Is the patient's breathing difficult or are they struggling to breathe?
+A5  I don't know.
+
+Q6  Is the patient's breathing difficult or are they struggling to breathe?
+A6  I don't know.
+
+Q7  Is the patient's breathing difficult or are they struggling to breathe?
+A7  I don't know.
+
+Q8  What is the main reason the patient is coming to the emergency department?
+A8  My friend took an overdose of pills on purpose.
+
+Q9  Is the patient's breathing difficult or are they struggling to breathe?
+A9  I don't know.
+
+Q10  Is the patient's breathing difficult or are they struggling to breathe?
+A10  I don't know.
+
+Q11  Is the patient's breathing difficult or are they struggling to breathe?
+A11  I don't know.
+
+Q12  Is the patient's breathing difficult or are they struggling to breathe?
+A12  I don't know.
+
+Q13  Is the patient's breathing difficult or are they struggling to breathe?
+A13  I don't know.
+
+Q14  Is the patient's breathing difficult or are they struggling to breathe?
+A14  I don't know.
+
+Q15  Is the patient's breathing pattern unusual, such as very slow, very fast, or irregular?
+A15  I don't know.
+
+Q16  Is the patient's breathing pattern unusual, such as very slow, very fast, or irregular?
+A16  I don't know.
+
+DECISION {"decision": "unparsed", "reason": "turn limit reached without a decision"}
+OUTCOME no decision in 16 questions | expected at least ESI-2 | pass False | label missing fact | max prompt tokens 44027

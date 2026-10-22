@@ -1,0 +1,49 @@
+arm B, form handbook, persona P22-teen-threatening-family, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  What is the main reason the patient is seeking care today?
+A1  My son was out of control at home tonight, shouting and hitting things and threatening to kill the family.
+
+Q2  Is your son currently threatening to harm himself or anyone else, or is he currently in a state of active physical violence?
+A2  He's awake and answering, he's calm now.
+
+Q3  How old is your son?
+A3  He's 17.
+
+Q4  Is your son currently experiencing any physical symptoms, such as difficulty breathing, chest pain, or a head injury?
+A4  No, he's never had any medical problems.
+
+Q5  Is your son currently experiencing any mental health concerns, such as being actively suicidal, homicidal, or in a psychotic state?
+A5  He was out of control at home tonight, shouting and hitting things and threatening to kill us. He's calm now.
+
+Q6  Is your son currently experiencing any new confusion, lethargy, or disorientation?
+A6  Yes, he's awake and answering, he's calm now.
+
+Q7  Can you describe his behavior more specifically? For example, is he currently acting in a way that suggests he is a danger to himself or others right now?
+A7  He was out of control at home tonight, shouting and hitting things and threatening to kill us. He's calm now.
+
+Q8  Is your son currently in a state of severe pain or distress?
+A8  Yes, he's awake and answering, he's calm now.
+
+Q9  Is your son currently in a state of severe physical or psychological distress, or is he currently in a state of severe pain?
+A9  He's awake and answering, he's calm now.
+
+Q10  Is your son currently in a state of severe physical or psychological distress, or is he currently in a state of severe pain?
+A10  He's awake and answering, he's calm now.
+
+Q11  Is your son currently in a state of severe pain or distress (physical or psychological)?
+A11  He's awake and answering, he's calm now.
+
+Q12  Is your son currently in a state of severe pain or distress (physical or psychological)?
+A12  He's awake and answering, he's calm now.
+
+Q13  Is your son currently in a state of severe pain or distress (physical or psychological)?
+A13  He's awake and answering, he's calm now.
+
+Q14  Is your son currently in a state of severe physical or psychological distress, or is he currently in a state of severe pain?
+A14  He's awake and answering, he's calm now.
+
+Q15  Is your son currently in a state of severe physical or psychological distress, or is he currently in a state of severe pain?
+A15  He's awake and answering, he's calm now.
+
+DECISION {"done": true, "decision": "level 2", "reason": "The patient is a minor who was recently in a state of severe psychological distress and is being evaluated for a mental health crisis (suicidal/homicidal behavior), which constitutes a high-risk situation.", "citation": "page 15, Mental and Behavioral Health"}
+OUTCOME level 2 or floor | expected at least ESI-2 | pass True | label None | max prompt tokens 30271

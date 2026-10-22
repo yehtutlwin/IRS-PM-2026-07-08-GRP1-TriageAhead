@@ -1,0 +1,37 @@
+{"t": "03:32:42", "kind": "engine", "note": "session TIGER-8025 started (web)"}
+{"t": "03:32:44", "kind": "question", "slot": "red_flags.screen", "text": "Is the patient awake and responding normally, and are they experiencing any severe chest pain, trouble breathing, or heavy bleeding right now?"}
+{"t": "03:32:45", "kind": "answer", "slot": "red_flags.screen", "text": "I'm awake and responding, but I'm in a lot of pain. No, I don't have any chest pain, breathing trouble, or bleeding."}
+{"t": "03:32:47", "kind": "extract", "writes": [["red_flags.responsive", true]]}
+{"t": "03:32:48", "kind": "question", "slot": "red_flags.screen", "text": "Can you tell me if you are currently experiencing any chest pain, trouble breathing, or heavy bleeding?"}
+{"t": "03:32:49", "kind": "answer", "slot": "red_flags.screen", "text": "No, I don't have any chest pain, breathing trouble, or heavy bleeding."}
+{"t": "03:32:51", "kind": "extract", "writes": [["red_flags.chest_pain_now", false], ["red_flags.breathing_difficulty", false], ["red_flags.heavy_bleeding", false]]}
+{"t": "03:32:53", "kind": "question", "slot": "complaint.main", "text": "Could you tell me what happened, when it started, and how you would rate the pain from 0 to 10?"}
+{"t": "03:32:54", "kind": "answer", "slot": "complaint.main", "text": "I woke up with sudden, severe pain in my right big toe joint. It's an 8/10."}
+{"t": "03:32:57", "kind": "extract", "writes": [["complaint.category", "other", "toe_pain"], ["complaint.text", "sudden, severe pain in my right big toe joint", "toe_pain"], ["complaint.onset", "woke up", "toe_pain"], ["complaint.pain_rating", 8, "toe_pain"]]}
+{"t": "03:32:57", "kind": "engine", "consider": ["B-02.severe-pain-consider"]}
+{"t": "03:32:57", "kind": "extract", "writes": [["complaint.category", "toe_pain->other"]], "via": "normalised"}
+{"t": "03:32:59", "kind": "question", "slot": "stroke.screen", "text": "At any point today, did you notice any drooping on one side of your face, weakness or numbness in an arm, or any slurred or strange speech?"}
+{"t": "03:33:00", "kind": "answer", "slot": "stroke.screen", "text": "No, I didn't have any of those symptoms."}
+{"t": "03:33:02", "kind": "extract", "writes": [["stroke.face_droop", false], ["stroke.arm_weakness", false], ["stroke.speech_change", false]]}
+{"t": "03:33:03", "kind": "question", "slot": "complaint.main", "text": "Could you tell me what caused the pain or if anything specific happened to your toe?"}
+{"t": "03:33:05", "kind": "answer", "slot": "complaint.main", "text": "There was no fall or other injury. I had a large seafood dinner and several beers yesterday."}
+{"t": "03:33:06", "kind": "extract", "writes": [["E.mechanism", "none"]]}
+{"t": "03:33:07", "kind": "question", "slot": "M.medications", "text": "Do you take any regular medications?"}
+{"t": "03:33:08", "kind": "answer", "slot": "M.medications", "text": "I take amlodipine for my high blood pressure."}
+{"t": "03:33:10", "kind": "extract", "writes": [["M.medications", ["amlodipine"]]]}
+{"t": "03:33:11", "kind": "question", "slot": "allergies_and_history", "text": "Do you have any allergies to medications or other medical conditions, such as heart problems, diabetes, or are you currently pregnant?"}
+{"t": "03:33:12", "kind": "answer", "slot": "allergies_and_history", "text": "I have no known allergies. I have high blood pressure and I'm not pregnant."}
+{"t": "03:33:14", "kind": "extract", "writes": [["A.allergies", []], ["history.conditions", ["high blood pressure"]], ["history.pregnant_or_postpartum", false]]}
+{"t": "03:33:16", "kind": "question", "slot": "allergies_and_history", "text": "Do you have any conditions that affect your immune system?"}
+{"t": "03:33:16", "kind": "answer", "slot": "allergies_and_history", "text": "I don't know."}
+{"t": "03:33:18", "kind": "extract", "writes": []}
+{"t": "03:33:19", "kind": "question", "slot": "allergies_and_history", "text": "Could you tell me more about whether you have any conditions that might affect your immune system?"}
+{"t": "03:33:24", "kind": "answer", "slot": "allergies_and_history", "text": "I don't know."}
+{"t": "03:33:25", "kind": "extract", "writes": []}
+{"t": "03:33:26", "kind": "question", "slot": "infection.screen", "text": "Have you had a fever, a rash, traveled abroad, or been in contact with anyone who is sick in the last two weeks?"}
+{"t": "03:33:28", "kind": "answer", "slot": "infection.screen", "text": "No, I don't have a fever, rash, or any contact with sick people. I haven't traveled anywhere recently."}
+{"t": "03:33:30", "kind": "extract", "writes": [["infection.fever", false], ["infection.rash", false], ["infection.travel_14d", false], ["infection.contacts", false]]}
+{"t": "03:33:31", "kind": "question", "slot": "wrapup", "text": "Could you please tell me when you last ate or drank something, and provide your name and date of birth for the hospital's records?"}
+{"t": "03:33:33", "kind": "answer", "slot": "wrapup", "text": "I had dinner at 9pm last night. My name isn't in my profile, but my date of birth is 18 Feb 1974."}
+{"t": "03:33:35", "kind": "extract", "writes": [["L.last_intake", "9pm last night"], ["identity.name", null], ["identity.dob", "18 Feb 1974"]]}
+{"t": "03:33:35", "kind": "engine", "note": "interview complete - no open slots"}

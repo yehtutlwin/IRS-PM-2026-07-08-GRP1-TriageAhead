@@ -1,0 +1,66 @@
+========================================================================
+PRE-ARRIVAL INTAKE REPORT       session OTTER-8193   (prototype output)
+========================================================================
+Patient AS DECLARED by caregiver: Tan Ah Kow, DOB 2 jan 1939
+>> NOT verified by the system - confirm name/DOB against the patient. <<
+------------------------------------------------------------------------
+FLOOR: AT LEAST ESI-2 - computed WITHOUT vitals
+    rule B-30.anticoagulated-trauma
+      source: CDC Field Triage Guidelines (MMWR 2012 vol. 61 no. 1), Step Four special considerations, p.14 of the report (PDF p.16) · NICE NG232 (2023), recommendation 1.5.13 (PDF p.21)
+CONSIDER FLAGS (handbook: judgment, not automatic):
+    B-02.severe-pain-consider  [ESI v5 p.12 (Severe Pain or Distress)]
+    B-25.pelvis-femur-fracture-consider  [ESI v5 p.15]
+CONTEXT NOTES (handbook background for reading other findings; not a flag):
+    B-27.geriatric-trauma-caution  "Occult hypoperfusion with normal vital signs is associated with age greater than 55, and so a careful assessment should be made in the older patient"  [ESI v5 p.15 (Trauma, older adults)]
+    B-52.geriatric-vitals-medication-context-consider  "Consider vital signs in the context of medications before assigning an ESI level"  [ESI v5 p.11 (Geriatric Considerations note)]
+Pending decision points: C (resources), D (vitals not available pre-arrival)
+This is a floor, not a final level. Nurse assessment prevails.
+PRACTICE SIGNAL (learned from past visits; does not change the floor above):
+    Most similar past visits (age 87, injury, fall, anticoagulated) were ESI 1 or 2.
+------------------------------------------------------------------------
+COMPLAINTS (in order reported; first = presenting)
+  1. injury  (presenting)                [caregiver - turn 2 - reported]
+       text              = 'fell down 4 steps at home abt an hour ago. landed on his right hip, cant stand' [caregiver - turn 2 - reported]
+       onset             = 'an hour ago'                     [caregiver - turn 2 - reported]
+       pain_rating       = 7                                 [caregiver - turn 7 - reported]
+
+PATIENT
+  age                    = 87                                     [caregiver - turn 3 - reported]
+  sex                    = 'male'                                 [caregiver - turn 4 - reported]
+
+EVENTS & CONTEXT
+  mechanism              = 'fall'                                 [caregiver - turn 2 - reported]
+  head_strike            = False                                  [caregiver - turn 14 - reported]
+  loc                    = False                                  [caregiver - turn 15 - reported]
+
+A - ALLERGIES
+  allergies              = ['penicillin (rash)']                  [caregiver - turn 10 - reported]
+
+M - MEDICATIONS
+  medications            = ['blood thinner', 'blood pressure medicine', 'warfarin'] [derived - turn 10 - reported]
+  anticoagulant          = True                                   [caregiver - turn 9 - confirmed]
+
+P - PAST HISTORY
+  conditions             = ['irregular heart beat', 'high blood pressure'] [caregiver - turn 11 - reported]
+
+L - LAST INTAKE
+  last_intake            = 'porridge at lunch, 1pm'               [caregiver - turn 16 - reported]
+
+INFECTION SCREEN
+  fever                  = False                                  [caregiver - turn 5 - reported]
+  rash                   = False                                  [caregiver - turn 5 - reported]
+  travel_14d             = False                                  [caregiver - turn 6 - reported]
+  contacts               = False                                  [caregiver - turn 6 - reported]
+
+DANGER SIGNS (asked first)
+  responsive             = True                                   [caregiver - turn 1 - reported]
+  chest_pain_now         = False                                  [caregiver - turn 1 - reported]
+  breathing_difficulty   = False                                  [caregiver - turn 1 - reported]
+  heavy_bleeding         = False                                  [caregiver - turn 1 - reported]
+
+NOT COLLECTED (not asked, or not answered):
+  history.immunocompromised
+
+Advisory only. All items caregiver/patient-reported unless marked confirmed.
+This report never assigns a final triage level; only the nurse does.
+========================================================================

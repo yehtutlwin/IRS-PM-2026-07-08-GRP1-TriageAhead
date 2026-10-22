@@ -1,0 +1,97 @@
+{"t": "00:12:08", "kind": "engine", "note": "session OTTER-9107 started (web)"}
+{"t": "00:12:10", "kind": "question", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "I'm here to help get information for the medical team. Is the patient awake and responding to you, and are they experiencing any chest pain, trouble breathing, or heavy bleeding right now?", "fields": ["danger_signs.responsive", "danger_signs.chest_pain_now"], "offered": ["danger_signs.responsive", "danger_signs.chest_pain_now", "danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text"]}
+{"t": "00:12:11", "kind": "answer", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "I'm awake. No chest pain, breathing okay, and no bleeding."}
+{"t": "00:12:14", "kind": "extract", "writes": [["danger_signs.responsive", true]]}
+{"t": "00:12:16", "kind": "question", "slot": "dyn:danger_signs.chest_pain_now", "text": "I'm sorry, I missed that part. To be clear, are you feeling any pain in your chest right now?", "fields": ["danger_signs.chest_pain_now"], "offered": ["danger_signs.chest_pain_now"]}
+{"t": "00:12:17", "kind": "answer", "slot": "dyn:danger_signs.chest_pain_now", "text": "No, just the pain in my lower abdomen."}
+{"t": "00:12:20", "kind": "extract", "writes": [["danger_signs.chest_pain_now", false]]}
+{"t": "00:12:23", "kind": "question", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category", "text": "I'm sorry to hear about the pain in your abdomen. To help the team, are you having any trouble breathing or any heavy bleeding right now, and what is the main reason for your visit today?", "fields": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category"], "offered": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text", "complaint.onset", "E.mechanism"]}
+{"t": "00:12:25", "kind": "answer", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category", "text": "No bleeding. The pain in my lower abdomen is getting worse."}
+{"t": "00:12:28", "kind": "extract", "writes": [["danger_signs.heavy_bleeding", false], ["complaint.category", "abdominal_pain"], ["complaint.text", "pain in my lower abdomen is getting worse"]]}
+{"t": "00:12:28", "kind": "extract", "writes": [["E.mechanism", "none"]], "via": "derived-non-injury"}
+{"t": "00:12:31", "kind": "question", "slot": "dyn:danger_signs.breathing_difficulty", "text": "I understand the pain is getting worse. Are you having any trouble breathing right now?", "fields": ["danger_signs.breathing_difficulty"], "offered": ["danger_signs.breathing_difficulty"]}
+{"t": "00:12:32", "kind": "answer", "slot": "dyn:danger_signs.breathing_difficulty", "text": "No, I'm not having any trouble breathing."}
+{"t": "00:12:35", "kind": "extract", "writes": [["danger_signs.breathing_difficulty", false]]}
+{"t": "00:12:38", "kind": "question", "slot": "dyn:complaint.onset+patient.age+patient.sex", "text": "I'm sorry to hear about the pain. To help the team prepare, how old are you, and when did this pain start?", "fields": ["complaint.onset", "patient.age", "patient.sex"], "offered": ["complaint.onset", "patient.age", "patient.sex", "complaint.fever", "infection.rash", "infection.travel_14d"]}
+{"t": "00:12:39", "kind": "answer", "slot": "dyn:complaint.onset+patient.age+patient.sex", "text": "I'm 40. The pain started this morning."}
+{"t": "00:12:42", "kind": "extract", "writes": [["patient.age", 40], ["complaint.onset", "this morning"]]}
+{"t": "00:12:44", "kind": "question", "slot": "dyn:patient.sex", "text": "To help the medical team, are you male or female?", "fields": ["patient.sex"], "offered": ["patient.sex"]}
+{"t": "00:12:45", "kind": "answer", "slot": "dyn:patient.sex", "text": "I'm female."}
+{"t": "00:12:48", "kind": "extract", "writes": [["patient.sex", "female"]]}
+{"t": "00:12:50", "kind": "question", "slot": "dyn:history.pregnant+history.postpartum", "text": "Thank you for that information. To help the team, are you currently pregnant or have you given birth in the last few weeks?", "fields": ["history.pregnant", "history.postpartum"], "offered": ["history.pregnant", "history.postpartum", "complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts"]}
+{"t": "00:12:51", "kind": "answer", "slot": "dyn:history.pregnant+history.postpartum", "text": "I'm 28 weeks pregnant."}
+{"t": "00:12:54", "kind": "extract", "writes": [["history.pregnant", true]]}
+{"t": "00:12:54", "kind": "floor", "floor": "at least ESI-2", "fired": ["B-38.pregnant-chest-pain-breathlessness-abdo-pain-or-headache"], "sources": ["ESI v5 p.14"]}
+{"t": "00:12:54", "kind": "engine", "consider": ["B-17.abdo-pain-pregnant-or-postpartum"]}
+{"t": "00:12:57", "kind": "question", "slot": "dyn:M.medications+A.allergies", "text": "I've noted that you are 28 weeks pregnant. To help the team prepare, do you have any allergies to medications, and are you currently taking any regular medicines?", "fields": ["M.medications", "A.allergies"], "offered": ["M.medications", "A.allergies", "history.conditions", "identity.name", "identity.dob"]}
+{"t": "00:12:58", "kind": "answer", "slot": "dyn:M.medications+A.allergies", "text": "No allergies. Only my pregnancy vitamins."}
+{"t": "00:13:01", "kind": "extract", "writes": [["A.allergies", []]]}
+{"t": "00:13:03", "kind": "question", "slot": "dyn:M.medications", "text": "I've noted that you have no allergies. Besides your vitamins, are you taking any other medications on a regular basis?", "fields": ["M.medications"], "offered": ["M.medications"]}
+{"t": "00:13:04", "kind": "answer", "slot": "dyn:M.medications", "text": "No, just my pregnancy vitamins."}
+{"t": "00:13:07", "kind": "extract", "writes": [["M.medications", ["pregnancy vitamins"]]]}
+{"t": "00:13:10", "kind": "question", "slot": "dyn:history.conditions", "text": "I've noted that you only take your pregnancy vitamins. Do you have any other ongoing medical conditions?", "fields": ["history.conditions"], "offered": ["history.conditions", "identity.name", "identity.dob"]}
+{"t": "00:13:11", "kind": "answer", "slot": "dyn:history.conditions", "text": "No other conditions. Just the pregnancy."}
+{"t": "00:13:14", "kind": "extract", "writes": [["history.conditions", ["pregnancy"]]]}
+{"t": "00:13:16", "kind": "question", "slot": "dyn:identity.name", "text": "I've noted that. Could you please tell me your full name?", "fields": ["identity.name"], "offered": ["identity.name", "identity.dob"]}
+{"t": "00:13:17", "kind": "answer", "slot": "dyn:identity.name", "text": "It's [Name Not Provided]."}
+{"t": "00:13:20", "kind": "extract", "writes": [["identity.name", "[Name Not Provided]"]]}
+{"t": "00:13:23", "kind": "question", "slot": "dyn:identity.dob", "text": "Thank you. Could you please tell me your date of birth?", "fields": ["identity.dob"], "offered": ["identity.dob"]}
+{"t": "00:13:24", "kind": "answer", "slot": "dyn:identity.dob", "text": "September 3, 1986."}
+{"t": "00:13:27", "kind": "extract", "writes": [["identity.dob", "1986-09-03"]]}
+{"t": "00:13:27", "kind": "engine", "note": "floor settled - report ready; remaining questions continue"}
+{"t": "00:13:29", "kind": "question", "slot": "dyn:complaint.fever+infection.rash", "text": "I have your details. Do you have a fever or have you noticed any new rashes?", "fields": ["complaint.fever", "infection.rash"], "offered": ["complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts", "complaint.uti_symptoms", "ams.changed_from_baseline"]}
+{"t": "00:13:31", "kind": "answer", "slot": "dyn:complaint.fever+infection.rash", "text": "No fever. No rash."}
+{"t": "00:13:34", "kind": "extract", "writes": [["complaint.fever", false], ["infection.rash", false]]}
+{"t": "00:13:37", "kind": "question", "slot": "dyn:infection.travel_14d+infection.contacts", "text": "Thank you for confirming that. Have you traveled outside the country or been in contact with anyone who has been sick in the last two weeks?", "fields": ["infection.travel_14d", "infection.contacts"], "offered": ["infection.travel_14d", "infection.contacts", "complaint.uti_symptoms", "ams.changed_from_baseline", "complaint.pain_rating", "complaint.infection_signs"]}
+{"t": "00:13:38", "kind": "answer", "slot": "dyn:infection.travel_14d+infection.contacts", "text": "No. No one has been sick."}
+{"t": "00:13:41", "kind": "extract", "writes": [["infection.travel_14d", false], ["infection.contacts", false]]}
+{"t": "00:13:44", "kind": "question", "slot": "dyn:complaint.uti_symptoms", "text": "I've noted that. Are you experiencing any burning or pain when you pee, or have you noticed your urine smelling or looking cloudy?", "fields": ["complaint.uti_symptoms"], "offered": ["complaint.uti_symptoms", "ams.changed_from_baseline", "complaint.pain_rating", "complaint.infection_signs", "complaint.possible_ectopic_pregnancy", "complaint.shortness_of_breath"]}
+{"t": "00:13:45", "kind": "answer", "slot": "dyn:complaint.uti_symptoms", "text": "No, I haven't noticed any of that."}
+{"t": "00:13:48", "kind": "extract", "writes": [["complaint.uti_symptoms", false]]}
+{"t": "00:13:51", "kind": "question", "slot": "dyn:ams.changed_from_baseline", "text": "I've noted that. Have you or the patient noticed any changes in their mental state, such as being more confused or sleepy than usual?", "fields": ["ams.changed_from_baseline"], "offered": ["ams.changed_from_baseline", "complaint.pain_rating", "complaint.infection_signs", "complaint.possible_ectopic_pregnancy", "complaint.shortness_of_breath", "complaint.known_toxic_ingestion"]}
+{"t": "00:13:52", "kind": "answer", "slot": "dyn:ams.changed_from_baseline", "text": "No, I don't feel confused or sleepy."}
+{"t": "00:13:55", "kind": "extract", "writes": [["ams.changed_from_baseline", false]]}
+{"t": "00:13:58", "kind": "question", "slot": "dyn:complaint.pain_rating+complaint.infection_signs", "text": "I've noted that. On a scale of 0 to 10, where 10 is the worst pain imaginable, how bad is your pain right now? Also, have you noticed any signs of infection, like a wound that is red, hot, or swollen?", "fields": ["complaint.pain_rating", "complaint.infection_signs"], "offered": ["complaint.pain_rating", "complaint.infection_signs", "complaint.possible_ectopic_pregnancy", "complaint.shortness_of_breath", "complaint.known_toxic_ingestion", "complaint.severe_flank_pain"]}
+{"t": "00:14:00", "kind": "answer", "slot": "dyn:complaint.pain_rating+complaint.infection_signs", "text": "It's an 8 out of 10. No, I don't have any rashes or wounds."}
+{"t": "00:14:03", "kind": "extract", "writes": [["complaint.pain_rating", 8]]}
+{"t": "00:14:03", "kind": "engine", "consider": ["B-02.severe-pain-consider"]}
+{"t": "00:14:05", "kind": "question", "slot": "dyn:complaint.infection_signs", "text": "I understand. Has a doctor ever told you that you have an infection?", "fields": ["complaint.infection_signs"], "offered": ["complaint.infection_signs"]}
+{"t": "00:14:07", "kind": "answer", "slot": "dyn:complaint.infection_signs", "text": "No, I haven't."}
+{"t": "00:14:09", "kind": "extract", "writes": [["complaint.infection_signs", false]]}
+{"t": "00:14:13", "kind": "question", "slot": "dyn:complaint.pain_cause_class+complaint.possible_ectopic_pregnancy", "text": "I'm sorry to hear about your pain. Do you have a known medical condition causing this, and since you're pregnant, have you had any bleeding or belly pain?", "fields": ["complaint.pain_cause_class", "complaint.possible_ectopic_pregnancy"], "offered": ["complaint.pain_cause_class", "complaint.possible_ectopic_pregnancy", "complaint.shortness_of_breath", "complaint.known_toxic_ingestion", "complaint.severe_flank_pain", "complaint.vomiting"]}
+{"t": "00:14:14", "kind": "answer", "slot": "dyn:complaint.pain_cause_class+complaint.possible_ectopic_pregnancy", "text": "No other conditions. I have constant lower abdominal pain, and no bleeding."}
+{"t": "00:14:17", "kind": "extract", "writes": [["complaint.possible_ectopic_pregnancy", false]], "via": "dropped-not-stated"}
+{"t": "00:14:17", "kind": "extract", "writes": []}
+{"t": "00:14:20", "kind": "question", "slot": "dyn:complaint.pain_cause_class", "text": "I'm sorry to hear about your constant pain. Do you have any known medical conditions, like kidney stones or sickle cell disease, that cause this?", "fields": ["complaint.pain_cause_class"], "offered": ["complaint.pain_cause_class"]}
+{"t": "00:14:21", "kind": "answer", "slot": "dyn:complaint.pain_cause_class", "text": "No, just my pregnancy."}
+{"t": "00:14:24", "kind": "extract", "writes": [["complaint.possible_ectopic_pregnancy", true]]}
+{"t": "00:14:26", "kind": "question", "slot": "dyn:complaint.pain_cause_class", "text": "I understand you're experiencing pain from your pregnancy. Aside from that, is there any other known medical condition, like a kidney stone or a blood disorder, that causes this pain?", "fields": ["complaint.pain_cause_class"], "offered": ["complaint.pain_cause_class"]}
+{"t": "00:14:28", "kind": "answer", "slot": "dyn:complaint.pain_cause_class", "text": "No, I have no other conditions. Just the pregnancy."}
+{"t": "00:14:30", "kind": "extract", "writes": [["complaint.pain_cause_class", null]]}
+{"t": "00:14:33", "kind": "question", "slot": "dyn:complaint.shortness_of_breath+complaint.vomiting", "text": "I understand. Are you having any trouble breathing or have you been vomiting?", "fields": ["complaint.shortness_of_breath", "complaint.vomiting"], "offered": ["complaint.shortness_of_breath", "complaint.known_toxic_ingestion", "complaint.severe_flank_pain", "complaint.vomiting", "history.immunocompromised", "complaint.vaginal_bleeding"]}
+{"t": "00:14:34", "kind": "answer", "slot": "dyn:complaint.shortness_of_breath+complaint.vomiting", "text": "No, no trouble breathing or vomiting."}
+{"t": "00:14:37", "kind": "extract", "writes": [["complaint.shortness_of_breath", false], ["complaint.vomiting", false]]}
+{"t": "00:14:40", "kind": "question", "slot": "dyn:complaint.known_toxic_ingestion+complaint.severe_flank_pain", "text": "I'm sorry to hear that. Have you taken any medications or substances that could be poisonous, or are you experiencing any severe pain in your side or back?", "fields": ["complaint.known_toxic_ingestion", "complaint.severe_flank_pain"], "offered": ["complaint.known_toxic_ingestion", "complaint.severe_flank_pain", "history.immunocompromised", "complaint.vaginal_bleeding", "complaint.pain_refractory_constant_or_maximal_onset", "complaint.unilateral_lower_quadrant_pain"]}
+{"t": "00:14:41", "kind": "answer", "slot": "dyn:complaint.known_toxic_ingestion+complaint.severe_flank_pain", "text": "Just my pregnancy vitamins. The pain is in my lower abdomen."}
+{"t": "00:14:44", "kind": "extract", "writes": [["complaint.known_toxic_ingestion", false]], "via": "dropped-not-stated"}
+{"t": "00:14:44", "kind": "extract", "writes": [["complaint.severe_flank_pain", false]]}
+{"t": "00:14:47", "kind": "question", "slot": "dyn:complaint.known_toxic_ingestion", "text": "I understand the pain is in your lower abdomen. Have you taken more of a medicine than you should have or anything that could be poisonous?", "fields": ["complaint.known_toxic_ingestion"], "offered": ["complaint.known_toxic_ingestion"]}
+{"t": "00:14:48", "kind": "answer", "slot": "dyn:complaint.known_toxic_ingestion", "text": "No, I haven't taken anything. Just my pregnancy vitamins."}
+{"t": "00:14:51", "kind": "extract", "writes": [["complaint.known_toxic_ingestion", false]]}
+{"t": "00:14:54", "kind": "question", "slot": "dyn:history.immunocompromised+complaint.vaginal_bleeding", "text": "I'm sorry to hear about the pain. Are you currently taking any medications that weaken your immune system, and have you had any vaginal bleeding?", "fields": ["history.immunocompromised", "complaint.vaginal_bleeding"], "offered": ["history.immunocompromised", "complaint.vaginal_bleeding", "complaint.pain_refractory_constant_or_maximal_onset", "complaint.unilateral_lower_quadrant_pain", "E.abdominal_trauma", "L.last_intake"]}
+{"t": "00:14:56", "kind": "answer", "slot": "dyn:history.immunocompromised+complaint.vaginal_bleeding", "text": "No medications except pregnancy vitamins. No bleeding."}
+{"t": "00:14:58", "kind": "extract", "writes": [["history.immunocompromised", false]], "via": "dropped-not-stated"}
+{"t": "00:14:58", "kind": "extract", "writes": [["complaint.vaginal_bleeding", false]]}
+{"t": "00:15:01", "kind": "question", "slot": "dyn:history.immunocompromised", "text": "I understand. Has a doctor ever told you that you have a weakened immune system or a condition that makes it harder for you to fight off infections?", "fields": ["history.immunocompromised"], "offered": ["history.immunocompromised"]}
+{"t": "00:15:02", "kind": "answer", "slot": "dyn:history.immunocompromised", "text": "No, I have no other conditions."}
+{"t": "00:15:05", "kind": "extract", "writes": [["history.immunocompromised", false]], "via": "dropped-not-stated"}
+{"t": "00:15:05", "kind": "extract", "writes": []}
+{"t": "00:15:08", "kind": "question", "slot": "dyn:history.immunocompromised", "text": "I understand. To be clear, have you ever been told by a doctor that you have a condition that makes it harder for your body to fight off infections?", "fields": ["history.immunocompromised"], "offered": ["history.immunocompromised"]}
+{"t": "00:15:10", "kind": "answer", "slot": "dyn:history.immunocompromised", "text": "No, I have no other conditions."}
+{"t": "00:15:12", "kind": "extract", "writes": [["history.immunocompromised", false]], "via": "dropped-not-stated"}
+{"t": "00:15:12", "kind": "extract", "writes": []}
+{"t": "00:15:16", "kind": "question", "slot": "dyn:complaint.pain_refractory_constant_or_maximal_onset+complaint.unilateral_lower_quadrant_pain", "text": "I've noted that. Is the pain in your belly constant and not getting better with medicine, and is it located on just one side of your lower belly?", "fields": ["complaint.pain_refractory_constant_or_maximal_onset", "complaint.unilateral_lower_quadrant_pain"], "offered": ["complaint.pain_refractory_constant_or_maximal_onset", "complaint.unilateral_lower_quadrant_pain", "E.abdominal_trauma", "L.last_intake"]}
+{"t": "00:15:17", "kind": "answer", "slot": "dyn:complaint.pain_refractory_constant_or_maximal_onset+complaint.unilateral_lower_quadrant_pain", "text": "Yes, the pain is constant. It's in my lower abdomen."}
+{"t": "00:15:20", "kind": "extract", "writes": [["complaint.pain_refractory_constant_or_maximal_onset", true], ["complaint.text", "pain in my lower abdomen"]]}
+{"t": "00:15:20", "kind": "engine", "consider": ["B-20.abdo-pain-refractory-constant-maximal"]}
+{"t": "00:15:23", "kind": "question", "slot": "dyn:complaint.unilateral_lower_quadrant_pain", "text": "Thank you for that. To clarify, is the pain located only on one side of your lower belly?", "fields": ["complaint.unilateral_lower_quadrant_pain"], "offered": ["complaint.unilateral_lower_quadrant_pain"]}

@@ -1,0 +1,436 @@
+{
+ "sid": "MERLION-1744",
+ "facts": {
+  "red_flags.responsive": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-09-26 03:43"
+  },
+  "red_flags.chest_pain_now": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-09-26 03:43"
+  },
+  "red_flags.breathing_difficulty": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-09-26 03:43"
+  },
+  "red_flags.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-09-26 03:43"
+  },
+  "E.mechanism": {
+   "value": "fall",
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-09-26 03:44"
+  },
+  "E.head_strike": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-09-26 03:44"
+  },
+  "E.loc": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-09-26 03:44"
+  },
+  "E.fall_height_meters": {
+   "value": 1.2,
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-09-26 03:44"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "injury_fall",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "persona",
+      "turn": 2,
+      "ts": "2026-09-26 03:44"
+     },
+     "text": {
+      "value": "fell down four steps at home and landed on his right hip",
+      "status": "reported",
+      "who": "persona",
+      "turn": 2,
+      "ts": "2026-09-26 03:44"
+     },
+     "onset": {
+      "value": "about an hour ago",
+      "status": "reported",
+      "who": "persona",
+      "turn": 2,
+      "ts": "2026-09-26 03:44"
+     },
+     "pain_rating": {
+      "value": 7,
+      "status": "reported",
+      "who": "persona",
+      "turn": 2,
+      "ts": "2026-09-26 03:44"
+     },
+     "onset_abs": {
+      "value": "~2026-09-26 02:44",
+      "status": "reported",
+      "who": "derived",
+      "turn": 2,
+      "ts": "2026-09-26 03:44"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 2
+  },
+  "complaint.category": {
+   "value": [
+    "injury_fall"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-09-26 03:44"
+  },
+  "complaint.text": {
+   "value": "fell down four steps at home and landed on his right hip",
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-09-26 03:44"
+  },
+  "complaint.onset": {
+   "value": "about an hour ago",
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-09-26 03:44"
+  },
+  "complaint.pain_rating": {
+   "value": 7,
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-09-26 03:44"
+  },
+  "complaint.pain_latest": {
+   "value": 7,
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-09-26 03:44"
+  },
+  "complaint.onset_abs": {
+   "value": "~2026-09-26 02:44 (from 'about an hour ago' said 03:44)",
+   "status": "reported",
+   "who": "derived",
+   "turn": 2,
+   "ts": "2026-09-26 03:44"
+  },
+  "limb.numb_tingling": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-09-26 03:44"
+  },
+  "limb.cold_pale_blue": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-09-26 03:44"
+  },
+  "limb.cannot_move_digits": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-09-26 03:44"
+  },
+  "limb.cast_too_tight": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-09-26 03:44"
+  },
+  "M.medications": {
+   "value": [
+    "warfarin",
+    "blood pressure pill I cannot name"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 4,
+   "ts": "2026-09-26 03:44"
+  },
+  "confirm.M.anticoagulant": {
+   "value": "warfarin",
+   "status": "reported",
+   "who": "persona",
+   "turn": 4,
+   "ts": "2026-09-26 03:44"
+  },
+  "history.conditions": {
+   "value": [
+    "irregular heartbeat",
+    "high blood pressure"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 4,
+   "ts": "2026-09-26 03:44"
+  },
+  "M.anticoagulant": {
+   "value": true,
+   "status": "confirmed",
+   "who": "caregiver",
+   "turn": 4,
+   "ts": "2026-09-26 03:44"
+  },
+  "A.allergies": {
+   "value": [
+    "penicillin"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-09-26 03:44"
+  },
+  "history.pregnant_or_postpartum": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-09-26 03:44"
+  },
+  "history.immunocompromised": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-09-26 03:44"
+  },
+  "infection.fever": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 6,
+   "ts": "2026-09-26 03:44"
+  },
+  "infection.rash": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 6,
+   "ts": "2026-09-26 03:44"
+  },
+  "infection.travel_14d": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 6,
+   "ts": "2026-09-26 03:44"
+  },
+  "infection.contacts": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 6,
+   "ts": "2026-09-26 03:44"
+  },
+  "L.last_intake": {
+   "value": "porridge at 1pm",
+   "status": "reported",
+   "who": "persona",
+   "turn": 7,
+   "ts": "2026-09-26 03:44"
+  },
+  "identity.name": {
+   "value": "Mr. Tan Ah Kow",
+   "status": "reported",
+   "who": "persona",
+   "turn": 7,
+   "ts": "2026-09-26 03:44"
+  },
+  "identity.dob": {
+   "value": "January 2, 1939",
+   "status": "reported",
+   "who": "persona",
+   "turn": 7,
+   "ts": "2026-09-26 03:44"
+  },
+  "L.last_intake_abs": {
+   "value": "~2026-09-26 13:00 (from 'porridge at 1pm' said 03:44)",
+   "status": "reported",
+   "who": "derived",
+   "turn": 7,
+   "ts": "2026-09-26 03:44"
+  },
+  "patient.age": {
+   "value": 87,
+   "status": "probable",
+   "who": "derived",
+   "turn": 7,
+   "ts": "2026-09-26 03:44"
+  }
+ },
+ "attempts": {
+  "red_flags.screen": 1,
+  "complaint.main": 1,
+  "limb.screen": 1,
+  "M.medications": 1,
+  "allergies_and_history": 1,
+  "infection.screen": 1,
+  "wrapup": 1
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "Are you currently experiencing severe chest pain, trouble breathing, or heavy bleeding?",
+   "ts": "2026-09-26 03:43:54",
+   "kind": "question",
+   "slot": "red_flags.screen"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, he is not having chest pain, trouble breathing, or heavy bleeding. He is awake and talking with no head strike or blackout.",
+   "ts": "2026-09-26 03:43:55",
+   "kind": "answer",
+   "slot": "red_flags.screen"
+  },
+  {
+   "role": "bot",
+   "text": "Can you tell us what happened, when it started, and how bad the pain is on a scale of 0 to 10?",
+   "ts": "2026-09-26 03:43:57",
+   "kind": "question",
+   "slot": "complaint.main"
+  },
+  {
+   "role": "caregiver",
+   "text": "My father fell down four steps at home about an hour ago and landed on his right hip. His pain is currently 7 out of 10.",
+   "ts": "2026-09-26 03:43:58",
+   "kind": "answer",
+   "slot": "complaint.main"
+  },
+  {
+   "role": "bot",
+   "text": "Are his fingers or toes numb, cold, pale, blue, or unable to move, and does the cast feel too tight?",
+   "ts": "2026-09-26 03:44:01",
+   "kind": "question",
+   "slot": "limb.screen"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know about his fingers or toes or the cast because he wasn't wearing one. He is awake and talking right now.",
+   "ts": "2026-09-26 03:44:02",
+   "kind": "answer",
+   "slot": "limb.screen"
+  },
+  {
+   "role": "bot",
+   "text": "Do you know if he takes any regular medications?",
+   "ts": "2026-09-26 03:44:04",
+   "kind": "question",
+   "slot": "M.medications"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, he takes a small pill to thin his blood called warfarin and another blood pressure pill I cannot name. He also has conditions including irregular heartbeat and high blood pressure.",
+   "ts": "2026-09-26 03:44:05",
+   "kind": "answer",
+   "slot": "M.medications"
+  },
+  {
+   "role": "system",
+   "text": "floor: at least ESI-2  rules: ['B-30.anticoagulated-trauma']",
+   "ts": "2026-09-26 03:44:06",
+   "kind": "floor"
+  },
+  {
+   "role": "bot",
+   "text": "Do you have any allergies to medicines, are you pregnant or recently postpartum, or do you have any conditions affecting your immune system?",
+   "ts": "2026-09-26 03:44:07",
+   "kind": "question",
+   "slot": "allergies_and_history"
+  },
+  {
+   "role": "caregiver",
+   "text": "I am allergic to penicillin because it causes a rash. I am not pregnant and do not have any conditions affecting my immune system.",
+   "ts": "2026-09-26 03:44:08",
+   "kind": "answer",
+   "slot": "allergies_and_history"
+  },
+  {
+   "role": "bot",
+   "text": "Do you have any fever, rash, overseas travel in the last two weeks, or contact with anyone who is infectious?",
+   "ts": "2026-09-26 03:44:10",
+   "kind": "question",
+   "slot": "infection.screen"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, there is no fever, rash, recent overseas travel, or contact with anyone who is infectious.",
+   "ts": "2026-09-26 03:44:11",
+   "kind": "answer",
+   "slot": "infection.screen"
+  },
+  {
+   "role": "bot",
+   "text": "Could you please tell me when you last ate or drank, along with your name and date of birth for our hospital records?",
+   "ts": "2026-09-26 03:44:13",
+   "kind": "question",
+   "slot": "wrapup"
+  },
+  {
+   "role": "caregiver",
+   "text": "My father last had porridge at 1pm. His name is Mr. Tan Ah Kow and his date of birth is January 2, 1939.",
+   "ts": "2026-09-26 03:44:14",
+   "kind": "answer",
+   "slot": "wrapup"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you - that's everything for now. Show the code MERLION-1744 at the counter when you arrive.",
+   "ts": "2026-09-26 03:44:16",
+   "kind": "ack"
+  }
+ ],
+ "active_ids": [
+  "E.trauma_detail",
+  "limb.screen"
+ ],
+ "floor": "at least ESI-2",
+ "phase": "enroute",
+ "opened": [],
+ "created": "2026-09-26 03:43",
+ "pending_slot": "wrapup",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {},
+ "considered": [
+  "B-02.severe-pain-consider",
+  "B-27.geriatric-trauma-caution",
+  "B-52.geriatric-vitals-medication-context-consider"
+ ],
+ "said_done": true
+}

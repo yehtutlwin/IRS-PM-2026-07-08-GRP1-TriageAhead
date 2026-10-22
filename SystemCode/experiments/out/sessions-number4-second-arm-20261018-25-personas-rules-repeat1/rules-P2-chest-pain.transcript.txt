@@ -1,0 +1,52 @@
+arm B, form rules, persona P2-chest-pain, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  Is the patient awake and responding normally?
+A1  Yes, I'm awake, I'm the patient.
+
+Q2  Are you experiencing any chest pain right now?
+A2  Yes, I have pressure in the middle of my chest right now.
+
+Q3  Are you having any trouble breathing right now?
+A3  I'm a bit breathless when I walk, but I can talk.
+
+Q4  Are you bleeding heavily right now?
+A4  No.
+
+Q5  Is the chest pressure you feel accompanied by any other symptoms like sweating, nausea, or a feeling of impending doom?
+A5  I feel sweaty. I don't have nausea or a feeling of impending doom.
+
+Q6  Is the chest pressure you feel a result of a known medical condition, or is it a new and sudden occurrence?
+A6  No.
+
+Q7  Is the chest pressure you feel a result of a known medical condition, or is it a new and sudden occurrence?
+A7  No.
+
+Q8  Is the chest pressure you feel a result of a known medical condition, or is it a new and sudden occurrence?
+A8  No.
+
+Q9  Is the chest pressure you feel a result of a known medical condition, or is it a new and sudden occurrence?
+A9  No.
+
+Q10  Is the chest pressure you feel a result of a known medical condition, or is it a new and sudden occurrence?
+A10  No.
+
+Q11  Is the chest pressure you feel a result of a known medical condition, or is it a new and sudden occurrence?
+A11  No.
+
+Q12  Is the chest pressure you feel a result of a known medical condition, or is it a new and sudden occurrence?
+A12  No.
+
+Q13  Is the chest pressure you feel a result of a known medical condition, or is it a new and sudden occurrence?
+A13  No.
+
+Q14  Is the chest pressure you feel a result of a known medical condition, or is it a new and sudden occurrence?
+A14  No.
+
+Q15  Is the chest pressure you feel a result of a known medical condition, or is it a new and sudden occurrence?
+A15  No.
+
+Q16  Is the chest pressure you feel a result of a known medical condition, or is it a new and sudden occurrence?
+A16  No.
+
+DECISION {"decision": "unparsed", "reason": "turn limit reached without a decision"}
+OUTCOME no decision in 16 questions | expected at least ESI-2 | pass False | label missing fact | max prompt tokens 44102

@@ -1,0 +1,395 @@
+{
+ "persona_backend": "ollama",
+ "persona_model": "gemma4:12b",
+ "interview": {
+  "interview_mode": "dynamic",
+  "backend": "ollama",
+  "model": "gemma4:12b",
+  "dyn_max_fields": 4
+ },
+ "tag": "v2o-consistency-3-runs-local",
+ "cost_usd": {
+  "interview": 0,
+  "persona": 0
+ },
+ "results": [
+  {
+   "sorry": 2,
+   "you_event": 0,
+   "after_report_not_for_nurse": 0,
+   "report_ok": true,
+   "questions": 18,
+   "questions_to_report": 14,
+   "reasks": 4,
+   "floor": "at least ESI-2",
+   "floor_ok": true,
+   "rules_ok": true,
+   "fired": [
+    "B-30.anticoagulated-trauma"
+   ],
+   "hits": 9,
+   "total": 9,
+   "misses": [],
+   "danger_miss": false,
+   "persona": "P1-fall-anticoag",
+   "run": 1,
+   "session": "EAGLE-2517",
+   "turns": 18,
+   "transcript": "sessions-task-i-20261015-1817-v2o-consistency-3-runs-local/EAGLE-2517.transcript.txt"
+  },
+  {
+   "sorry": 0,
+   "you_event": 0,
+   "after_report_not_for_nurse": 0,
+   "report_ok": true,
+   "questions": 22,
+   "questions_to_report": 18,
+   "reasks": 6,
+   "floor": "at least ESI-2",
+   "floor_ok": true,
+   "rules_ok": true,
+   "fired": [
+    "B-30.anticoagulated-trauma"
+   ],
+   "hits": 9,
+   "total": 9,
+   "misses": [],
+   "danger_miss": false,
+   "persona": "P1-fall-anticoag",
+   "run": 2,
+   "session": "VANDA-5127",
+   "turns": 22,
+   "transcript": "sessions-task-i-20261015-1817-v2o-consistency-3-runs-local/VANDA-5127.transcript.txt"
+  },
+  {
+   "sorry": 2,
+   "you_event": 0,
+   "after_report_not_for_nurse": 0,
+   "report_ok": true,
+   "questions": 21,
+   "questions_to_report": 17,
+   "reasks": 5,
+   "floor": "at least ESI-2",
+   "floor_ok": true,
+   "rules_ok": true,
+   "fired": [
+    "B-30.anticoagulated-trauma"
+   ],
+   "hits": 9,
+   "total": 9,
+   "misses": [],
+   "danger_miss": false,
+   "persona": "P1-fall-anticoag",
+   "run": 3,
+   "session": "ORCHID-2680",
+   "turns": 21,
+   "transcript": "sessions-task-i-20261015-1817-v2o-consistency-3-runs-local/ORCHID-2680.transcript.txt"
+  },
+  {
+   "sorry": 0,
+   "you_event": 0,
+   "after_report_not_for_nurse": 0,
+   "report_ok": true,
+   "questions": 22,
+   "questions_to_report": 15,
+   "reasks": 10,
+   "floor": "at least ESI-2",
+   "floor_ok": true,
+   "rules_ok": true,
+   "fired": [
+    "B-38.pregnant-chest-pain-breathlessness-abdo-pain-or-headache"
+   ],
+   "hits": 5,
+   "total": 6,
+   "misses": [
+    "complaint.fever: want=False got=None"
+   ],
+   "danger_miss": false,
+   "persona": "P3-abdo-pregnant",
+   "run": 1,
+   "session": "ORCHID-1041",
+   "turns": 22,
+   "transcript": "sessions-task-i-20261015-1817-v2o-consistency-3-runs-local/ORCHID-1041.transcript.txt"
+  },
+  {
+   "sorry": 1,
+   "you_event": 0,
+   "after_report_not_for_nurse": 0,
+   "report_ok": true,
+   "questions": 22,
+   "questions_to_report": 13,
+   "reasks": 10,
+   "floor": "at least ESI-2",
+   "floor_ok": true,
+   "rules_ok": true,
+   "fired": [
+    "B-38.pregnant-chest-pain-breathlessness-abdo-pain-or-headache"
+   ],
+   "hits": 5,
+   "total": 6,
+   "misses": [
+    "complaint.fever: want=False got=None"
+   ],
+   "danger_miss": false,
+   "persona": "P3-abdo-pregnant",
+   "run": 2,
+   "session": "TIGER-6332",
+   "turns": 22,
+   "transcript": "sessions-task-i-20261015-1817-v2o-consistency-3-runs-local/TIGER-6332.transcript.txt"
+  },
+  {
+   "sorry": 1,
+   "you_event": 0,
+   "after_report_not_for_nurse": 0,
+   "report_ok": true,
+   "questions": 21,
+   "questions_to_report": 13,
+   "reasks": 8,
+   "floor": "at least ESI-2",
+   "floor_ok": true,
+   "rules_ok": true,
+   "fired": [
+    "B-38.pregnant-chest-pain-breathlessness-abdo-pain-or-headache"
+   ],
+   "hits": 5,
+   "total": 6,
+   "misses": [
+    "complaint.fever: want=False got=None"
+   ],
+   "danger_miss": false,
+   "persona": "P3-abdo-pregnant",
+   "run": 3,
+   "session": "LOTUS-9447",
+   "turns": 21,
+   "transcript": "sessions-task-i-20261015-1817-v2o-consistency-3-runs-local/LOTUS-9447.transcript.txt"
+  },
+  {
+   "sorry": 2,
+   "you_event": 0,
+   "after_report_not_for_nurse": 0,
+   "report_ok": true,
+   "questions": 16,
+   "questions_to_report": 15,
+   "reasks": 4,
+   "floor": "at least ESI-2",
+   "floor_ok": true,
+   "rules_ok": true,
+   "fired": [
+    "B-05.stroke-signs"
+   ],
+   "hits": 6,
+   "total": 6,
+   "misses": [],
+   "danger_miss": false,
+   "persona": "P6-stroke-resolved",
+   "run": 1,
+   "session": "BAOBAB-1786",
+   "turns": 16,
+   "transcript": "sessions-task-i-20261015-1817-v2o-consistency-3-runs-local/BAOBAB-1786.transcript.txt"
+  },
+  {
+   "sorry": 1,
+   "you_event": 0,
+   "after_report_not_for_nurse": 0,
+   "report_ok": true,
+   "questions": 15,
+   "questions_to_report": 14,
+   "reasks": 3,
+   "floor": "at least ESI-2",
+   "floor_ok": true,
+   "rules_ok": true,
+   "fired": [
+    "B-05.stroke-signs"
+   ],
+   "hits": 4,
+   "total": 6,
+   "misses": [
+    "stroke.speech_change: want=True got=None",
+    "stroke.arm_weakness: want=True got=None"
+   ],
+   "danger_miss": false,
+   "persona": "P6-stroke-resolved",
+   "run": 2,
+   "session": "EAGLE-5489",
+   "turns": 15,
+   "transcript": "sessions-task-i-20261015-1817-v2o-consistency-3-runs-local/EAGLE-5489.transcript.txt"
+  },
+  {
+   "sorry": 1,
+   "you_event": 0,
+   "after_report_not_for_nurse": 0,
+   "report_ok": true,
+   "questions": 15,
+   "questions_to_report": 14,
+   "reasks": 3,
+   "floor": "at least ESI-2",
+   "floor_ok": true,
+   "rules_ok": true,
+   "fired": [
+    "B-05.stroke-signs"
+   ],
+   "hits": 5,
+   "total": 6,
+   "misses": [
+    "stroke.arm_weakness: want=True got=None"
+   ],
+   "danger_miss": false,
+   "persona": "P6-stroke-resolved",
+   "run": 3,
+   "session": "LION-5657",
+   "turns": 15,
+   "transcript": "sessions-task-i-20261015-1817-v2o-consistency-3-runs-local/LION-5657.transcript.txt"
+  },
+  {
+   "sorry": 1,
+   "you_event": 0,
+   "after_report_not_for_nurse": 0,
+   "report_ok": true,
+   "questions": 17,
+   "questions_to_report": 15,
+   "reasks": 4,
+   "floor": null,
+   "floor_ok": true,
+   "rules_ok": true,
+   "fired": [],
+   "hits": 5,
+   "total": 7,
+   "misses": [
+    "complaint.trauma: want=False got=None",
+    "history.gout: want=True got=None"
+   ],
+   "danger_miss": false,
+   "persona": "P6-acute-gout",
+   "run": 1,
+   "session": "LOTUS-7649",
+   "turns": 17,
+   "transcript": "sessions-task-i-20261015-1817-v2o-consistency-3-runs-local/LOTUS-7649.transcript.txt"
+  },
+  {
+   "sorry": 2,
+   "you_event": 0,
+   "after_report_not_for_nurse": 0,
+   "report_ok": true,
+   "questions": 17,
+   "questions_to_report": 15,
+   "reasks": 5,
+   "floor": null,
+   "floor_ok": true,
+   "rules_ok": true,
+   "fired": [],
+   "hits": 5,
+   "total": 7,
+   "misses": [
+    "complaint.trauma: want=False got=None",
+    "history.gout: want=True got=None"
+   ],
+   "danger_miss": false,
+   "persona": "P6-acute-gout",
+   "run": 2,
+   "session": "LOTUS-8232",
+   "turns": 17,
+   "transcript": "sessions-task-i-20261015-1817-v2o-consistency-3-runs-local/LOTUS-8232.transcript.txt"
+  },
+  {
+   "sorry": 3,
+   "you_event": 0,
+   "after_report_not_for_nurse": 0,
+   "report_ok": true,
+   "questions": 17,
+   "questions_to_report": 15,
+   "reasks": 4,
+   "floor": null,
+   "floor_ok": true,
+   "rules_ok": true,
+   "fired": [],
+   "hits": 5,
+   "total": 7,
+   "misses": [
+    "complaint.trauma: want=False got=None",
+    "history.gout: want=True got=None"
+   ],
+   "danger_miss": false,
+   "persona": "P6-acute-gout",
+   "run": 3,
+   "session": "RAFFLES-9366",
+   "turns": 17,
+   "transcript": "sessions-task-i-20261015-1817-v2o-consistency-3-runs-local/RAFFLES-9366.transcript.txt"
+  },
+  {
+   "sorry": 0,
+   "you_event": 0,
+   "after_report_not_for_nurse": 0,
+   "report_ok": true,
+   "questions": 18,
+   "questions_to_report": 16,
+   "reasks": 5,
+   "floor": "at least ESI-2",
+   "floor_ok": false,
+   "rules_ok": true,
+   "fired": [
+    "B-12.increasing-respiratory-effort"
+   ],
+   "hits": 6,
+   "total": 7,
+   "misses": [
+    "danger_signs.breathing_difficulty: want=True got=False"
+   ],
+   "danger_miss": false,
+   "persona": "P9-breathing-no-pain",
+   "run": 1,
+   "session": "MERLION-5265",
+   "turns": 18,
+   "transcript": "sessions-task-i-20261015-1817-v2o-consistency-3-runs-local/MERLION-5265.transcript.txt"
+  },
+  {
+   "sorry": 1,
+   "you_event": 0,
+   "after_report_not_for_nurse": 0,
+   "report_ok": true,
+   "questions": 15,
+   "questions_to_report": 13,
+   "reasks": 2,
+   "floor": "at least ESI-2",
+   "floor_ok": false,
+   "rules_ok": true,
+   "fired": [
+    "B-12.increasing-respiratory-effort"
+   ],
+   "hits": 7,
+   "total": 7,
+   "misses": [],
+   "danger_miss": false,
+   "persona": "P9-breathing-no-pain",
+   "run": 2,
+   "session": "SAGA-7814",
+   "turns": 15,
+   "transcript": "sessions-task-i-20261015-1817-v2o-consistency-3-runs-local/SAGA-7814.transcript.txt"
+  },
+  {
+   "sorry": 0,
+   "you_event": 0,
+   "after_report_not_for_nurse": 0,
+   "report_ok": true,
+   "questions": 14,
+   "questions_to_report": 12,
+   "reasks": 1,
+   "floor": "at least ESI-2",
+   "floor_ok": false,
+   "rules_ok": true,
+   "fired": [
+    "B-12.increasing-respiratory-effort"
+   ],
+   "hits": 6,
+   "total": 7,
+   "misses": [
+    "danger_signs.breathing_difficulty: want=True got=False"
+   ],
+   "danger_miss": false,
+   "persona": "P9-breathing-no-pain",
+   "run": 3,
+   "session": "RAFFLES-3766",
+   "turns": 14,
+   "transcript": "sessions-task-i-20261015-1817-v2o-consistency-3-runs-local/RAFFLES-3766.transcript.txt"
+  }
+ ]
+}

@@ -1,0 +1,52 @@
+arm B, form rules, persona P11-asthma-worsening, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  Is the patient awake and responding normally?
+A1  Yes, she's awake and she can answer.
+
+Q2  Is the patient having any chest pain right now?
+A2  No chest pain.
+
+Q3  Is the patient having any trouble breathing right now?
+A3  Yes, she's struggling, wheezing a lot, and can't get her breath. It's getting worse and she's working harder and harder to breathe.
+
+Q4  Is she bleeding heavily right now?
+A4  No.
+
+Q5  Is the patient's breathing becoming harder over time, or is she working harder and harder to breathe?
+A5  Yes, it's getting worse, she's working harder and harder to breathe.
+
+Q6  Is the patient's breathing so severe that she needs immediate medical intervention, such as oxygen or a breathing tube, to help her breathe?
+A6  The last time she was in the hospital for her asthma, she needed a breathing tube.
+
+Q7  Is the patient's breathing so severe that she needs immediate medical intervention, such as oxygen or a breathing tube, to help her breathe?
+A7  The last time she was in the hospital for her asthma, she needed a breathing tube.
+
+Q8  Is the patient's breathing so severe that she needs immediate medical intervention, such as oxygen or a breathing tube, to help her breathe, right now?
+A8  She is struggling and wheezing a lot. The last time she was in the hospital for her asthma, she needed a breathing tube.
+
+Q9  Is the patient's breathing so severe that she needs immediate medical intervention, such as oxygen or a breathing tube, to help her breathe, right now?
+A9  She is struggling and wheezing a lot. The last time she was in the hospital for her asthma, she needed a breathing tube.
+
+Q10  Is the patient's breathing so severe that she needs immediate medical intervention, such as oxygen or a breathing tube, to help her breathe, right now?
+A10  She is struggling and wheezing a lot. The last time she was in the hospital for her asthma, she needed a breathing tube.
+
+Q11  Is she currently struggling so much to breathe that she needs immediate medical intervention, such as oxygen or a breathing tube, to help her right now?
+A11  She's struggling, she's wheezing a lot, and she's working harder and harder to breathe.
+
+Q12  Is the patient's breathing so severe that she needs immediate medical intervention, such as oxygen or a breathing tube, to help her right now?
+A12  She is struggling and wheezing a lot. The last time she was in the hospital for her asthma, she needed a breathing tube.
+
+Q13  Is the patient's breathing so severe that she needs immediate medical intervention, such as oxygen or a breathing tube, to help her right now?
+A13  She is struggling and wheezing a lot. The last time she was in the hospital for her asthma, she needed a breathing tube.
+
+Q14  Is the patient's breathing so severe that she needs immediate medical intervention, such as oxygen or a breathing tube, to help her right now?
+A14  She is struggling and wheezing a lot. The last time she was in the hospital for her asthma, she needed a breathing tube.
+
+Q15  Is the patient's breathing so severe that she needs immediate medical intervention, such as oxygen or a breathing tube, to help her right now?
+A15  She is struggling and wheezing a lot. The last time she was in the hospital for her asthma, she needed a breathing tube.
+
+Q16  Is the patient's breathing so severe that she needs immediate medical intervention, such as oxygen or a breathing tube, to help her right now?
+A16  She is struggling and wheezing a lot. The last time she was in the hospital for her asthma, she needed a breathing tube.
+
+DECISION {"decision": "unparsed", "reason": "turn limit reached without a decision"}
+OUTCOME no decision in 16 questions | expected at least ESI-2 | pass False | label model error | max prompt tokens 44405

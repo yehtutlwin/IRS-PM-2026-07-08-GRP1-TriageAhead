@@ -1,0 +1,19 @@
+session RAFFLES-2025   started 2026-09-26 03:50   (generated from messages)
+
+03:50:44  BOT  To make sure we can help you right away, are you awake and responding normally, or do you have severe chest pain, trouble breathing, or heavy bleeding at this moment?   [slot dyn:red_flags.responsive+red_flags.chest_pain_now+red_flags.breathing_difficulty+red_flags.heavy_bleeding]
+03:50:45  THEM He is not responding normally; he is confused, very weak, and speaking only in confused words. He has no chest pain, trouble breathing, or heavy bleeding at this moment.   [slot dyn:red_flags.responsive+red_flags.chest_pain_now+red_flags.breathing_difficulty+red_flags.heavy_bleeding]
+03:50:47  SYS  floor: at least ESI-2  rules: ['B-01.new-altered-mental-status'] (floor)
+03:50:47  BOT  Based on what you just told me, please call 995 NOW if you are not already with paramedics. I have put this at the top of the hospital report. (advice)
+03:50:48  BOT  Since he is not responding normally, can you tell the hospital team what happened to him and when it started?   [slot dyn:complaint.category]
+03:50:49  THEM He collapsed while doing heavy outdoor work in direct sun after working for about four hours with very little water intake. His symptoms of headache, nausea, dizziness, confusion, and vomiting began before he fell to the ground approximately four hours ago.   [slot dyn:complaint.category]
+03:50:53  BOT  Did you notice his face drooping, an arm going weak or numb, or slurred speech at any point today? Also, on a scale of 0 to 10, how bad is the pain from his headache?   [slot dyn:stroke.face_droop+stroke.arm_weakness+stroke.speech_change+complaint.pain_rating]
+03:50:54  THEM I did not see him droop, have weakness, or slur his speech before he collapsed. He does not know enough right now to rate his pain.   [slot dyn:stroke.face_droop+stroke.arm_weakness+stroke.speech_change+complaint.pain_rating]
+03:50:57  BOT  Since he cannot rate his pain right now, could you please tell us if he takes any regular medications or has any known allergies or medical conditions like heart problems or diabetes?   [slot dyn:complaint.pain_rating+M.medications+A.allergies+history.conditions]
+03:50:57  THEM I do not know his medications, allergies, or medical history. He is currently too confused to provide that information.   [slot dyn:complaint.pain_rating+M.medications+A.allergies+history.conditions]
+03:51:00  BOT  Since he is too confused to rate his pain right now, could you tell us if he has any known medical conditions like heart problems or diabetes?   [slot dyn:complaint.pain_rating+history.immunocompromised]
+03:51:01  THEM I don't know his medications, allergies, or medical history. We have not been told if he has any known medical conditions like heart problems or diabetes.   [slot dyn:complaint.pain_rating+history.immunocompromised]
+03:51:04  BOT  Could you please tell us if he is pregnant or postpartum, and if he has had any fever, rash, recent overseas travel, or contact with anyone infectious?   [slot dyn:history.pregnant_or_postpartum+infection.fever+infection.rash+infection.travel_14d]
+03:51:05  THEM He is not pregnant or postpartum as he is a man. He does not have a rash, has not traveled overseas, and I do not know if he has had contact with anyone infectious.   [slot dyn:history.pregnant_or_postpartum+infection.fever+infection.rash+infection.travel_14d]
+03:51:08  BOT  Could you please provide his name and date of birth for our records?   [slot dyn:identity.name+identity.dob]
+03:51:08  THEM I don't know his name or date of birth; those details are unknown. We have moved him to the shade while waiting for the ambulance.   [slot dyn:identity.name+identity.dob]
+03:51:10  BOT  Thank you - that's everything for now. Show the code RAFFLES-2025 at the counter when you arrive. (ack)

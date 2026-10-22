@@ -1,0 +1,44 @@
+{"t": "20:47:06", "kind": "engine", "note": "session EAGLE-6291 started (web)"}
+{"t": "20:47:09", "kind": "question", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "Is the patient awake and responding to you normally? Also, is he or she experiencing any chest pain, trouble breathing, or heavy bleeding right now?", "fields": ["danger_signs.responsive", "danger_signs.chest_pain_now"], "offered": ["danger_signs.responsive", "danger_signs.chest_pain_now", "danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text"]}
+{"t": "20:47:09", "kind": "answer", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "Yes, she's awake and talking. No chest pain."}
+{"t": "20:47:14", "kind": "extract", "writes": [["danger_signs.responsive", true], ["danger_signs.chest_pain_now", false]]}
+{"t": "20:47:17", "kind": "question", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category", "text": "I'm glad she's awake. Is she having any trouble breathing or is there any heavy bleeding? Also, what is the main reason you are bringing her in today?", "fields": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category"], "offered": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text", "complaint.onset", "E.mechanism"]}
+{"t": "20:47:17", "kind": "answer", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category", "text": "No trouble breathing. No. She's had a fever since this afternoon, 38.6 on our thermometer, shivering and very tired. She's on chemotherapy for breast cancer."}
+{"t": "20:47:33", "kind": "extract", "writes": [["danger_signs.breathing_difficulty", false], ["danger_signs.heavy_bleeding", false], ["complaint.category", "fever"], ["complaint.text", "She's had a fever since this afternoon, 38.6 on our thermometer, shivering and very tired."], ["complaint.fever", true], ["history.immunocompromised", true]]}
+{"t": "20:47:33", "kind": "floor", "floor": "at least ESI-2", "fired": ["B-07.immunocompromised-fever"], "sources": ["ESI v5 p.12 (chemotherapy example)"]}
+{"t": "20:47:33", "kind": "extract", "writes": [["E.mechanism", "none"]], "via": "derived-non-injury"}
+{"t": "20:47:37", "kind": "question", "slot": "dyn:complaint.onset+patient.age", "text": "I see she has a fever. How long has she been feeling this way, and how old is she?", "fields": ["complaint.onset", "patient.age"], "offered": ["complaint.onset", "patient.age", "patient.sex", "M.medications", "A.allergies", "history.conditions"]}
+{"t": "20:47:37", "kind": "answer", "slot": "dyn:complaint.onset+patient.age", "text": "Since this afternoon. She's 51."}
+{"t": "20:47:41", "kind": "extract", "writes": [["complaint.onset", "this afternoon"], ["patient.age", 51]]}
+{"t": "20:47:44", "kind": "question", "slot": "dyn:patient.sex", "text": "I've noted her age and the fever. To help the team, could you tell me her name and date of birth?", "fields": ["patient.sex"], "offered": ["patient.sex", "M.medications", "A.allergies", "history.conditions", "identity.name", "identity.dob"]}
+{"t": "20:47:44", "kind": "answer", "slot": "dyn:patient.sex", "text": "Female."}
+{"t": "20:47:47", "kind": "extract", "writes": [["patient.sex", "female"]]}
+{"t": "20:47:50", "kind": "question", "slot": "dyn:M.medications+identity.name+identity.dob", "text": "I've noted that. Could you please tell me her full name and date of birth?", "fields": ["M.medications", "identity.name", "identity.dob"], "offered": ["M.medications", "A.allergies", "history.conditions", "identity.name", "identity.dob"]}
+{"t": "20:47:50", "kind": "answer", "slot": "dyn:M.medications+identity.name+identity.dob", "text": "The chemo tablets, capecitabine, and omeprazole. Chen Li Hua. 30 June 1975."}
+{"t": "20:47:56", "kind": "extract", "writes": [["M.medications", ["chemo tablets", "capecitabine", "omeprazole"]], ["identity.name", "Chen Li Hua"], ["identity.dob", "30 June 1975"]]}
+{"t": "20:47:58", "kind": "question", "slot": "dyn:A.allergies", "text": "I have her details. Does she have any allergies, especially to medications?", "fields": ["A.allergies"], "offered": ["A.allergies", "history.conditions"]}
+{"t": "20:47:58", "kind": "answer", "slot": "dyn:A.allergies", "text": "None."}
+{"t": "20:48:02", "kind": "extract", "writes": [["A.allergies", []]]}
+{"t": "20:48:04", "kind": "question", "slot": "dyn:history.conditions", "text": "I've noted that. Does she have any other ongoing medical conditions?", "fields": ["history.conditions"], "offered": ["history.conditions"]}
+{"t": "20:48:04", "kind": "answer", "slot": "dyn:history.conditions", "text": "Breast cancer, on chemotherapy."}
+{"t": "20:48:16", "kind": "extract", "writes": [["history.conditions", ["Breast cancer", "chemotherapy"]]]}
+{"t": "20:48:16", "kind": "engine", "note": "floor settled - report ready; remaining questions continue"}
+{"t": "20:48:19", "kind": "question", "slot": "dyn:history.pregnant+history.postpartum", "text": "Is she currently pregnant or has she given birth in the last few weeks?", "fields": ["history.pregnant", "history.postpartum"], "offered": ["history.pregnant", "history.postpartum", "infection.rash", "infection.travel_14d", "infection.contacts", "vitals.temp_c"]}
+{"t": "20:48:19", "kind": "answer", "slot": "dyn:history.pregnant+history.postpartum", "text": "No."}
+{"t": "20:48:23", "kind": "extract", "writes": [["history.pregnant", false], ["history.postpartum", false]]}
+{"t": "20:48:26", "kind": "question", "slot": "dyn:infection.rash+infection.travel_14d", "text": "I see. Has she developed any new rashes, or has she traveled outside the country in the last two weeks?", "fields": ["infection.rash", "infection.travel_14d"], "offered": ["infection.rash", "infection.travel_14d", "infection.contacts", "vitals.temp_c", "complaint.pain_rating", "L.last_intake"]}
+{"t": "20:48:26", "kind": "answer", "slot": "dyn:infection.rash+infection.travel_14d", "text": "No rash. No."}
+{"t": "20:48:30", "kind": "extract", "writes": [["infection.rash", false], ["infection.travel_14d", false]]}
+{"t": "20:48:33", "kind": "question", "slot": "dyn:infection.contacts", "text": "Has she been in contact with anyone who has an infectious illness in the last two weeks?", "fields": ["infection.contacts"], "offered": ["infection.contacts", "vitals.temp_c", "complaint.pain_rating", "L.last_intake"]}
+{"t": "20:48:33", "kind": "answer", "slot": "dyn:infection.contacts", "text": "No."}
+{"t": "20:48:36", "kind": "extract", "writes": [["infection.contacts", false]]}
+{"t": "20:48:39", "kind": "question", "slot": "dyn:vitals.temp_c", "text": "I've noted that. Have you taken her temperature, and if so, what was it?", "fields": ["vitals.temp_c"], "offered": ["vitals.temp_c", "complaint.pain_rating", "L.last_intake"]}
+{"t": "20:48:39", "kind": "answer", "slot": "dyn:vitals.temp_c", "text": "38.6."}
+{"t": "20:48:43", "kind": "extract", "writes": [["vitals.temp_c", 38.6]]}
+{"t": "20:48:46", "kind": "question", "slot": "dyn:complaint.pain_rating", "text": "I've noted the temperature. On a scale of 0 to 10, where 10 is the worst pain imaginable, how bad is her pain right now?", "fields": ["complaint.pain_rating"], "offered": ["complaint.pain_rating", "L.last_intake"]}
+{"t": "20:48:46", "kind": "answer", "slot": "dyn:complaint.pain_rating", "text": "She has no pain, 0."}
+{"t": "20:48:49", "kind": "extract", "writes": [["complaint.pain_rating", 0]]}
+{"t": "20:48:53", "kind": "question", "slot": "dyn:L.last_intake", "text": "I've noted that she isn't in any pain. When was the last time she had anything to eat or drink?", "fields": ["L.last_intake"], "offered": ["L.last_intake"]}
+{"t": "20:48:53", "kind": "answer", "slot": "dyn:L.last_intake", "text": "Some tea at 4pm."}
+{"t": "20:49:04", "kind": "extract", "writes": [["L.last_intake", "Some tea at 4pm"]]}
+{"t": "20:49:04", "kind": "engine", "note": "interview complete - no open fields"}

@@ -1,0 +1,474 @@
+{
+ "sid": "EAGLE-3954",
+ "facts": {
+  "danger_signs.responsive": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-19 12:01"
+  },
+  "danger_signs.chest_pain_now": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-19 12:01"
+  },
+  "danger_signs.breathing_difficulty": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-19 12:01"
+  },
+  "danger_signs.heavy_bleeding": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-19 12:01"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "vaginal_bleeding",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 2,
+      "ts": "2026-10-19 12:01"
+     },
+     "text": {
+      "value": "My partner gave birth eight days ago and is bleeding heavily.",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 2,
+      "ts": "2026-10-19 12:01"
+     },
+     "onset": {
+      "value": "an hour ago",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 3,
+      "ts": "2026-10-19 12:02"
+     },
+     "onset_abs": {
+      "value": "~2026-10-19 11:02",
+      "status": "reported",
+      "who": "derived",
+      "turn": 3,
+      "ts": "2026-10-19 12:02"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2
+  },
+  "complaint.category": {
+   "value": [
+    "vaginal_bleeding"
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-19 12:02"
+  },
+  "complaint.text": {
+   "value": "My partner gave birth eight days ago and is bleeding heavily.",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-19 12:01"
+  },
+  "E.mechanism": {
+   "value": "none",
+   "status": "reported",
+   "who": "derived",
+   "turn": 2,
+   "ts": "2026-10-19 12:01"
+  },
+  "complaint.onset": {
+   "value": "an hour ago",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-19 12:02"
+  },
+  "complaint.onset_abs": {
+   "value": "~2026-10-19 11:02 (from 'an hour ago' said 12:02)",
+   "status": "reported",
+   "who": "derived",
+   "turn": 3,
+   "ts": "2026-10-19 12:02"
+  },
+  "patient.age": {
+   "value": 29,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 4,
+   "ts": "2026-10-19 12:02"
+  },
+  "patient.age_group": {
+   "value": "adult",
+   "status": "reported",
+   "who": "derived",
+   "turn": 4,
+   "ts": "2026-10-19 12:02"
+  },
+  "patient.sex": {
+   "value": "female",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 5,
+   "ts": "2026-10-19 12:02"
+  },
+  "history.postpartum": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 5,
+   "ts": "2026-10-19 12:02"
+  },
+  "history.pregnant": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 6,
+   "ts": "2026-10-19 12:02"
+  },
+  "complaint.fever": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 7,
+   "ts": "2026-10-19 12:02"
+  },
+  "infection.rash": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 8,
+   "ts": "2026-10-19 12:02"
+  },
+  "infection.travel_14d": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 8,
+   "ts": "2026-10-19 12:02"
+  },
+  "infection.contacts": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 9,
+   "ts": "2026-10-19 12:02"
+  },
+  "ams.changed_from_baseline": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 9,
+   "ts": "2026-10-19 12:02"
+  },
+  "complaint.infection_signs": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 10,
+   "ts": "2026-10-19 12:02"
+  },
+  "M.anticoagulant": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 13,
+   "ts": "2026-10-19 12:03"
+  },
+  "complaint.shortness_of_breath": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 13,
+   "ts": "2026-10-19 12:03"
+  },
+  "M.medications": {
+   "value": [
+    "Iron tablets"
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 14,
+   "ts": "2026-10-19 12:03"
+  }
+ },
+ "attempts": {
+  "danger_signs.responsive": 1,
+  "danger_signs.chest_pain_now": 1,
+  "danger_signs.breathing_difficulty": 1,
+  "danger_signs.heavy_bleeding": 1,
+  "complaint.category": 1,
+  "complaint.text": 1,
+  "complaint.onset": 1,
+  "patient.age": 2,
+  "patient.sex": 1,
+  "history.pregnant": 2,
+  "history.postpartum": 1,
+  "complaint.fever": 1,
+  "infection.rash": 1,
+  "infection.travel_14d": 1,
+  "infection.contacts": 1,
+  "ams.changed_from_baseline": 1,
+  "complaint.pain_rating": 3,
+  "complaint.infection_signs": 1,
+  "M.anticoagulant": 1,
+  "complaint.shortness_of_breath": 1,
+  "M.medications": 1,
+  "A.allergies": 3,
+  "history.conditions": 1,
+  "history.immunocompromised": 1
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "Is the patient awake and responding to you normally? Also, is he or she experiencing any chest pain, trouble breathing, or heavy bleeding right now?",
+   "ts": "2026-10-19 12:01:43",
+   "kind": "question",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, the patient is awake and can respond. No chest pain",
+   "ts": "2026-10-19 12:01:43",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "bot",
+   "text": "I'm glad they are awake. Is the patient having any trouble breathing or heavy bleeding, and can you tell me what the main problem is?",
+   "ts": "2026-10-19 12:01:51",
+   "kind": "question",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category+complaint.text"
+  },
+  {
+   "role": "caregiver",
+   "text": "Breathing normally Yes, heavy vaginal bleeding My partner gave birth eight days ago and is bleeding heavily.",
+   "ts": "2026-10-19 12:01:51",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category+complaint.text"
+  },
+  {
+   "role": "bot",
+   "text": "I understand she is bleeding heavily. When did this bleeding start, and how old is your partner?",
+   "ts": "2026-10-19 12:02:01",
+   "kind": "question",
+   "slot": "dyn:complaint.onset+patient.age"
+  },
+  {
+   "role": "caregiver",
+   "text": "Started an hour ago She is twenty-nine.",
+   "ts": "2026-10-19 12:02:01",
+   "kind": "answer",
+   "slot": "dyn:complaint.onset+patient.age"
+  },
+  {
+   "role": "bot",
+   "text": "I have her age as 29. Could you just confirm her date of birth for our records?",
+   "ts": "2026-10-19 12:02:07",
+   "kind": "question",
+   "slot": "dyn:patient.age"
+  },
+  {
+   "role": "caregiver",
+   "text": "She is twenty-nine.",
+   "ts": "2026-10-19 12:02:07",
+   "kind": "answer",
+   "slot": "dyn:patient.age"
+  },
+  {
+   "role": "bot",
+   "text": "I have noted her age. To help the team, can you confirm she is female and has recently given birth?",
+   "ts": "2026-10-19 12:02:14",
+   "kind": "question",
+   "slot": "dyn:patient.sex+history.pregnant+history.postpartum"
+  },
+  {
+   "role": "caregiver",
+   "text": "She is female. She gave birth eight days ago.",
+   "ts": "2026-10-19 12:02:14",
+   "kind": "answer",
+   "slot": "dyn:patient.sex+history.pregnant+history.postpartum"
+  },
+  {
+   "role": "bot",
+   "text": "I understand she gave birth recently. To clarify for the team, was she pregnant before this most recent birth?",
+   "ts": "2026-10-19 12:02:21",
+   "kind": "question",
+   "slot": "dyn:history.pregnant"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-19 12:02:21",
+   "kind": "answer",
+   "slot": "dyn:history.pregnant"
+  },
+  {
+   "role": "bot",
+   "text": "Does she have a fever or any new rashes?",
+   "ts": "2026-10-19 12:02:27",
+   "kind": "question",
+   "slot": "dyn:complaint.fever"
+  },
+  {
+   "role": "caregiver",
+   "text": "No",
+   "ts": "2026-10-19 12:02:27",
+   "kind": "answer",
+   "slot": "dyn:complaint.fever"
+  },
+  {
+   "role": "bot",
+   "text": "I've noted there is no fever. Has she had any new rashes, or has she traveled abroad or been in contact with anyone who is sick in the last two weeks?",
+   "ts": "2026-10-19 12:02:35",
+   "kind": "question",
+   "slot": "dyn:infection.rash+infection.travel_14d"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-19 12:02:35",
+   "kind": "answer",
+   "slot": "dyn:infection.rash+infection.travel_14d"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Has she been in contact with anyone who is sick lately, and is she acting confused or unusually sleepy?",
+   "ts": "2026-10-19 12:02:41",
+   "kind": "question",
+   "slot": "dyn:infection.contacts+ams.changed_from_baseline"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-19 12:02:41",
+   "kind": "answer",
+   "slot": "dyn:infection.contacts+ams.changed_from_baseline"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. On a scale of 0 to 10, where 10 is the worst pain imaginable, how bad is her pain right now? Also, are there any signs of infection, like a wound that is red, hot, or swollen?",
+   "ts": "2026-10-19 12:02:49",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating+complaint.infection_signs"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-19 12:02:49",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_rating+complaint.infection_signs"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. To help the team, how would you describe her pain level on a scale of 0 to 10, where 10 is the worst possible?",
+   "ts": "2026-10-19 12:02:56",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-19 12:02:56",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "I understand it's hard to say. If you had to estimate, how much is she struggling with the pain on a scale of 0 to 10?",
+   "ts": "2026-10-19 12:03:02",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-19 12:03:02",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Is she currently having any trouble breathing, and does she take any blood thinners or medications to prevent clots?",
+   "ts": "2026-10-19 12:03:08",
+   "kind": "question",
+   "slot": "dyn:M.anticoagulant+complaint.shortness_of_breath"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-19 12:03:08",
+   "kind": "answer",
+   "slot": "dyn:M.anticoagulant+complaint.shortness_of_breath"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. To help the team prepare, could you tell me what medications she takes regularly and if she has any allergies, especially to medicines?",
+   "ts": "2026-10-19 12:03:15",
+   "kind": "question",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "caregiver",
+   "text": "Iron tablets Unknown",
+   "ts": "2026-10-19 12:03:15",
+   "kind": "answer",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "bot",
+   "text": "Does she have any allergies to medications?",
+   "ts": "2026-10-19 12:03:21",
+   "kind": "question",
+   "slot": "dyn:A.allergies"
+  },
+  {
+   "role": "caregiver",
+   "text": "Unknown",
+   "ts": "2026-10-19 12:03:21",
+   "kind": "answer",
+   "slot": "dyn:A.allergies"
+  },
+  {
+   "role": "bot",
+   "text": "I understand about the iron. Does she have any allergies to medications?",
+   "ts": "2026-10-19 12:03:27",
+   "kind": "question",
+   "slot": "dyn:A.allergies"
+  },
+  {
+   "role": "caregiver",
+   "text": "Unknown",
+   "ts": "2026-10-19 12:03:27",
+   "kind": "answer",
+   "slot": "dyn:A.allergies"
+  },
+  {
+   "role": "bot",
+   "text": "Does she have any ongoing medical conditions or is she taking any medications that weaken her immune system?",
+   "ts": "2026-10-19 12:03:32",
+   "kind": "question",
+   "slot": "dyn:history.conditions+history.immunocompromised"
+  }
+ ],
+ "stage": "floor",
+ "floor": null,
+ "phase": "enroute",
+ "created": "2026-10-19 12:01",
+ "pending_slot": "dyn:history.conditions+history.immunocompromised",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {}
+}

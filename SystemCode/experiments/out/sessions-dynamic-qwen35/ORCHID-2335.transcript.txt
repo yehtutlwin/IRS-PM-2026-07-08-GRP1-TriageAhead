@@ -1,0 +1,16 @@
+session ORCHID-2335   started 2026-09-26 03:48   (generated from messages)
+
+03:48:21  BOT  Are you awake and responding normally right now? Also, are you having severe chest pain, trouble breathing, or heavy bleeding?   [slot dyn:red_flags.responsive+red_flags.chest_pain_now+red_flags.breathing_difficulty+red_flags.heavy_bleeding]
+03:48:22  THEM Yes, I am awake and answering between breaths. I do not have chest pain, trouble breathing, or heavy bleeding.   [slot dyn:red_flags.responsive+red_flags.chest_pain_now+red_flags.breathing_difficulty+red_flags.heavy_bleeding]
+03:48:25  BOT  Thank you for confirming that. Can you tell me what happened and when it started?   [slot dyn:complaint.category]
+03:48:26  THEM It started this morning with constant lower abdominal pain, now 8/10 and getting worse. I am 28 weeks pregnant and have no bleeding or fever.   [slot dyn:complaint.category]
+03:48:28  SYS  floor: at least ESI-2  rules: ['B-17.abdo-pain-pregnant-or-postpartum', 'B-38.pregnant-chest-pain-breathlessness-abdo-pain-or-headache'] (floor)
+03:48:29  BOT  Thank you for sharing that information. Do you take any regular medications?   [slot dyn:M.medications]
+03:48:29  THEM No, just pregnancy vitamins. I don't have any other conditions or allergies.   [slot dyn:M.medications]
+03:48:32  BOT  Do you have any other medical conditions, such as heart problems or diabetes, or are you taking any medicines that might cause an allergic reaction?   [slot dyn:history.immunocompromised]
+03:48:33  THEM No, I have no other conditions besides my pregnancy and take no medications except vitamins. I have no allergies.   [slot dyn:history.immunocompromised]
+03:48:36  BOT  To help our team prepare, have you had any recent fevers, rashes, traveled overseas in the last two weeks, or been around anyone who is sick? Also, do you have any other conditions like heart problems or diabetes that might affect your immune system?   [slot dyn:history.immunocompromised+infection.rash+infection.travel_14d+infection.contacts]
+03:48:37  THEM No fever, rash, travel, or sick contacts. No other conditions besides my pregnancy.   [slot dyn:history.immunocompromised+infection.rash+infection.travel_14d+infection.contacts]
+03:48:40  BOT  Thank you for that information. To help our team prepare, could you please tell us when you last ate or drank, and also provide your name and date of birth?   [slot dyn:L.last_intake+identity.name+identity.dob]
+03:48:41  THEM I had dinner last night. My name is not listed here, but my date of birth is September 3rd, 1986.   [slot dyn:L.last_intake+identity.name+identity.dob]
+03:48:42  BOT  Thank you - that's everything for now. Show the code ORCHID-2335 at the counter when you arrive. (ack)

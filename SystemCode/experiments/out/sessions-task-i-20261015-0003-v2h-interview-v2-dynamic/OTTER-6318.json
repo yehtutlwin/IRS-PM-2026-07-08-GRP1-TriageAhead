@@ -1,0 +1,519 @@
+{
+ "sid": "OTTER-6318",
+ "facts": {
+  "danger_signs.responsive": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-10-14 23:54"
+  },
+  "danger_signs.chest_pain_now": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-10-14 23:54"
+  },
+  "danger_signs.breathing_difficulty": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-10-14 23:54"
+  },
+  "danger_signs.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-10-14 23:54"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "limb_pain_or_swelling",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "persona",
+      "turn": 3,
+      "ts": "2026-10-14 23:54"
+     },
+     "text": {
+      "value": "in a lot of pain",
+      "status": "reported",
+      "who": "persona",
+      "turn": 14,
+      "ts": "2026-10-14 23:55"
+     },
+     "onset": {
+      "value": "during the night",
+      "status": "reported",
+      "who": "persona",
+      "turn": 4,
+      "ts": "2026-10-14 23:54"
+     },
+     "pain_rating": {
+      "value": 8,
+      "status": "reported",
+      "who": "persona",
+      "turn": 8,
+      "ts": "2026-10-14 23:55"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 3
+  },
+  "complaint.category": {
+   "value": [
+    "limb_pain_or_swelling"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 14,
+   "ts": "2026-10-14 23:55"
+  },
+  "complaint.text": {
+   "value": "in a lot of pain",
+   "status": "reported",
+   "who": "persona",
+   "turn": 14,
+   "ts": "2026-10-14 23:55"
+  },
+  "complaint.onset": {
+   "value": "during the night",
+   "status": "reported",
+   "who": "persona",
+   "turn": 4,
+   "ts": "2026-10-14 23:54"
+  },
+  "E.mechanism": {
+   "value": "none",
+   "status": "reported",
+   "who": "persona",
+   "turn": 4,
+   "ts": "2026-10-14 23:54"
+  },
+  "patient.age": {
+   "value": 52,
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-10-14 23:54"
+  },
+  "patient.sex": {
+   "value": "male",
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-10-14 23:54"
+  },
+  "patient.age_group": {
+   "value": "adult",
+   "status": "reported",
+   "who": "derived",
+   "turn": 5,
+   "ts": "2026-10-14 23:54"
+  },
+  "complaint.fever": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 6,
+   "ts": "2026-10-14 23:54"
+  },
+  "infection.rash": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 6,
+   "ts": "2026-10-14 23:54"
+  },
+  "infection.travel_14d": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 7,
+   "ts": "2026-10-14 23:54"
+  },
+  "infection.contacts": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 7,
+   "ts": "2026-10-14 23:54"
+  },
+  "complaint.pain_rating": {
+   "value": 8,
+   "status": "reported",
+   "who": "persona",
+   "turn": 14,
+   "ts": "2026-10-14 23:55"
+  },
+  "complaint.pain_latest": {
+   "value": 8,
+   "status": "reported",
+   "who": "persona",
+   "turn": 8,
+   "ts": "2026-10-14 23:55"
+  },
+  "ams.changed_from_baseline": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 9,
+   "ts": "2026-10-14 23:55"
+  },
+  "M.medications": {
+   "value": [
+    "amlodipine"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 10,
+   "ts": "2026-10-14 23:55"
+  },
+  "history.conditions": {
+   "value": "high blood pressure",
+   "status": "reported",
+   "who": "persona",
+   "turn": 10,
+   "ts": "2026-10-14 23:55"
+  },
+  "A.allergies": {
+   "value": [],
+   "status": "reported",
+   "who": "persona",
+   "turn": 10,
+   "ts": "2026-10-14 23:55"
+  },
+  "history.immunocompromised": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 12,
+   "ts": "2026-10-14 23:55"
+  },
+  "identity.dob": {
+   "value": "18 Feb 1974",
+   "status": "reported",
+   "who": "persona",
+   "turn": 13,
+   "ts": "2026-10-14 23:55"
+  },
+  "complaint.testicular_or_scrotal_pain": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 16,
+   "ts": "2026-10-14 23:55"
+  },
+  "L.last_intake": {
+   "value": "dinner at 9pm",
+   "status": "reported",
+   "who": "persona",
+   "turn": 17,
+   "ts": "2026-10-14 23:56"
+  },
+  "L.last_intake_abs": {
+   "value": "~2026-10-14 21:00 (from 'dinner at 9pm' said 23:56)",
+   "status": "reported",
+   "who": "derived",
+   "turn": 17,
+   "ts": "2026-10-14 23:56"
+  }
+ },
+ "attempts": {
+  "danger_signs.responsive": 1,
+  "danger_signs.chest_pain_now": 2,
+  "danger_signs.breathing_difficulty": 1,
+  "danger_signs.heavy_bleeding": 1,
+  "complaint.category": 1,
+  "complaint.onset": 1,
+  "E.mechanism": 1,
+  "patient.age": 1,
+  "patient.sex": 1,
+  "complaint.fever": 1,
+  "infection.rash": 1,
+  "infection.travel_14d": 1,
+  "infection.contacts": 1,
+  "ams.changed_from_baseline": 2,
+  "complaint.pain_rating": 1,
+  "M.medications": 1,
+  "A.allergies": 1,
+  "history.immunocompromised": 2,
+  "identity.name": 3,
+  "identity.dob": 1,
+  "complaint.testicular_or_scrotal_pain": 1,
+  "L.last_intake": 1
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "I'm here to help get information for the medical team. Is the patient awake and responding normally, and are they currently experiencing chest pain, trouble breathing, or heavy bleeding?",
+   "ts": "2026-10-14 23:54:08",
+   "kind": "question",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "caregiver",
+   "text": "I'm awake and responding, but I have no chest pain, breathing trouble, or bleeding.",
+   "ts": "2026-10-14 23:54:10",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry, just to be clear, are you feeling any pain in your chest at this moment?",
+   "ts": "2026-10-14 23:54:15",
+   "kind": "question",
+   "slot": "dyn:danger_signs.chest_pain_now"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I don't have any chest pain.",
+   "ts": "2026-10-14 23:54:16",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.chest_pain_now"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Are you having any trouble breathing or heavy bleeding right now? Also, could you tell me the main reason you are coming in today?",
+   "ts": "2026-10-14 23:54:22",
+   "kind": "question",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I don't have any breathing trouble or bleeding. I'm here because of severe pain in my right big toe.",
+   "ts": "2026-10-14 23:54:23",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear about your toe. When did this pain start and did you do anything specific that caused the injury?",
+   "ts": "2026-10-14 23:54:30",
+   "kind": "question",
+   "slot": "dyn:complaint.onset+E.mechanism"
+  },
+  {
+   "role": "caregiver",
+   "text": "It started suddenly during the night. I didn't fall or have any other injury.",
+   "ts": "2026-10-14 23:54:31",
+   "kind": "answer",
+   "slot": "dyn:complaint.onset+E.mechanism"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear about your toe. To help the team prepare, could you tell me your age and if you are male or female?",
+   "ts": "2026-10-14 23:54:37",
+   "kind": "question",
+   "slot": "dyn:patient.age+patient.sex"
+  },
+  {
+   "role": "caregiver",
+   "text": "I'm 52 years old and I'm a man.",
+   "ts": "2026-10-14 23:54:39",
+   "kind": "answer",
+   "slot": "dyn:patient.age+patient.sex"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you for that information. Do you have a fever or have you noticed any new rashes?",
+   "ts": "2026-10-14 23:54:44",
+   "kind": "question",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I don't have a fever or any rashes.",
+   "ts": "2026-10-14 23:54:45",
+   "kind": "answer",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you for confirming that. Have you traveled outside the country in the last two weeks, or been in contact with anyone who has been sick?",
+   "ts": "2026-10-14 23:54:51",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-14 23:54:52",
+   "kind": "answer",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. To help the team prepare, how would you describe the pain on a scale of 0 to 10, and have you noticed any changes in your mental clarity or alertness lately?",
+   "ts": "2026-10-14 23:54:58",
+   "kind": "question",
+   "slot": "dyn:ams.changed_from_baseline+complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "The pain is an 8 out of 10. I'm just tired and irritable because of the pain.",
+   "ts": "2026-10-14 23:54:59",
+   "kind": "answer",
+   "slot": "dyn:ams.changed_from_baseline+complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear you're feeling so uncomfortable. Aside from the pain, have you or anyone around you noticed you acting confused or unusually sleepy lately?",
+   "ts": "2026-10-14 23:55:05",
+   "kind": "question",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I'm not confused or sleepy. I'm just in a lot of pain and it's making me irritable.",
+   "ts": "2026-10-14 23:55:06",
+   "kind": "answer",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry you're in so much pain. To help the team, could you tell me what medications you take regularly and if you have any allergies, especially to medicines?",
+   "ts": "2026-10-14 23:55:12",
+   "kind": "question",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "caregiver",
+   "text": "I take amlodipine for my high blood pressure. I have no known allergies.",
+   "ts": "2026-10-14 23:55:13",
+   "kind": "answer",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you for sharing that. To help the medical team prepare, are you currently being treated for any conditions that weaken your immune system, such as cancer or an organ transplant?",
+   "ts": "2026-10-14 23:55:20",
+   "kind": "question",
+   "slot": "dyn:history.immunocompromised"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I'm not.",
+   "ts": "2026-10-14 23:55:21",
+   "kind": "answer",
+   "slot": "dyn:history.immunocompromised"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. To be sure, has a doctor ever told you that you have a weakened immune system or a condition that makes it harder for you to fight off infections?",
+   "ts": "2026-10-14 23:55:26",
+   "kind": "question",
+   "slot": "dyn:history.immunocompromised"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-14 23:55:28",
+   "kind": "answer",
+   "slot": "dyn:history.immunocompromised"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you for that information. Could you please tell me your full name and date of birth?",
+   "ts": "2026-10-14 23:55:32",
+   "kind": "question",
+   "slot": "dyn:identity.name+identity.dob"
+  },
+  {
+   "role": "caregiver",
+   "text": "My name is not provided, but my date of birth is 18 Feb 1974.",
+   "ts": "2026-10-14 23:55:33",
+   "kind": "answer",
+   "slot": "dyn:identity.name+identity.dob"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry, I missed your name earlier. Could you please tell me your full name?",
+   "ts": "2026-10-14 23:55:39",
+   "kind": "question",
+   "slot": "dyn:identity.name"
+  },
+  {
+   "role": "caregiver",
+   "text": "I'm not giving you my name right now, I'm in a lot of pain. My name is not in your records.",
+   "ts": "2026-10-14 23:55:40",
+   "kind": "answer",
+   "slot": "dyn:identity.name"
+  },
+  {
+   "role": "bot",
+   "text": "I understand you're in a lot of pain. Could you please tell me your first and last name so the team can identify your file?",
+   "ts": "2026-10-14 23:55:46",
+   "kind": "question",
+   "slot": "dyn:identity.name"
+  },
+  {
+   "role": "caregiver",
+   "text": "I'm not telling you my name, I just want someone to help with this pain.",
+   "ts": "2026-10-14 23:55:47",
+   "kind": "answer",
+   "slot": "dyn:identity.name"
+  },
+  {
+   "role": "bot",
+   "text": "That's enough for the hospital team to prepare. Show the code OTTER-6318 at the counter when you arrive. I'll ask a few more things while you're on the way; tell me straight away if anything changes.",
+   "ts": "2026-10-14 23:55:49",
+   "kind": "ack"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear about your pain. To help the team prepare, is the pain located in your testicles or scrotum?",
+   "ts": "2026-10-14 23:55:52",
+   "kind": "question",
+   "slot": "dyn:complaint.testicular_or_scrotal_pain"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, the pain is in the joint at the base of my right big toe.",
+   "ts": "2026-10-14 23:55:53",
+   "kind": "answer",
+   "slot": "dyn:complaint.testicular_or_scrotal_pain"
+  },
+  {
+   "role": "bot",
+   "text": "I understand the pain is in your toe. To help the team prepare, when was the last time you had anything to eat or drink?",
+   "ts": "2026-10-14 23:55:59",
+   "kind": "question",
+   "slot": "dyn:L.last_intake"
+  },
+  {
+   "role": "caregiver",
+   "text": "I had dinner at 9pm.",
+   "ts": "2026-10-14 23:56:00",
+   "kind": "answer",
+   "slot": "dyn:L.last_intake"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you - that's everything. Show the code OTTER-6318 at the counter when you arrive.",
+   "ts": "2026-10-14 23:56:03",
+   "kind": "ack"
+  }
+ ],
+ "stage": "rest",
+ "floor": null,
+ "phase": "enroute",
+ "opened": [],
+ "created": "2026-10-14 23:54",
+ "pending_slot": "dyn:L.last_intake",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {},
+ "considered": [
+  "B-02.severe-pain-consider"
+ ],
+ "qr_ready": true,
+ "qr_turn": 15,
+ "said_done": true
+}

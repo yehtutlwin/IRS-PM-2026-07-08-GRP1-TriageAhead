@@ -1,0 +1,401 @@
+{
+ "sid": "EAGLE-4789",
+ "facts": {
+  "danger_signs.responsive": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-19 01:41"
+  },
+  "danger_signs.chest_pain_now": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-19 01:41"
+  },
+  "danger_signs.breathing_difficulty": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-19 01:42"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "wound",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 2,
+      "ts": "2026-10-19 01:42"
+     },
+     "text": {
+      "value": "stuck my finger with a used needle at work",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 4,
+      "ts": "2026-10-19 01:44"
+     },
+     "onset": {
+      "value": "25 minutes ago",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 4,
+      "ts": "2026-10-19 01:44"
+     },
+     "onset_abs": {
+      "value": "~2026-10-19 01:19",
+      "status": "reported",
+      "who": "derived",
+      "turn": 4,
+      "ts": "2026-10-19 01:44"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2
+  },
+  "complaint.category": {
+   "value": [
+    "wound"
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 4,
+   "ts": "2026-10-19 01:44"
+  },
+  "danger_signs.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-19 01:43"
+  },
+  "complaint.text": {
+   "value": "stuck my finger with a used needle at work",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 4,
+   "ts": "2026-10-19 01:44"
+  },
+  "complaint.onset": {
+   "value": "25 minutes ago",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 4,
+   "ts": "2026-10-19 01:44"
+  },
+  "complaint.onset_abs": {
+   "value": "~2026-10-19 01:19 (from '25 minutes ago' said 01:44)",
+   "status": "reported",
+   "who": "derived",
+   "turn": 4,
+   "ts": "2026-10-19 01:44"
+  },
+  "E.mechanism": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 6,
+   "ts": "2026-10-19 01:47"
+  },
+  "patient.age": {
+   "value": 32,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 7,
+   "ts": "2026-10-19 01:48"
+  },
+  "patient.age_group": {
+   "value": "adult",
+   "status": "reported",
+   "who": "derived",
+   "turn": 7,
+   "ts": "2026-10-19 01:48"
+  },
+  "history.pregnant": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 10,
+   "ts": "2026-10-19 01:51"
+  },
+  "history.postpartum": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 10,
+   "ts": "2026-10-19 01:51"
+  },
+  "complaint.fever": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 11,
+   "ts": "2026-10-19 01:52"
+  }
+ },
+ "attempts": {
+  "danger_signs.responsive": 1,
+  "danger_signs.chest_pain_now": 1,
+  "danger_signs.breathing_difficulty": 1,
+  "danger_signs.heavy_bleeding": 2,
+  "complaint.category": 1,
+  "complaint.text": 1,
+  "complaint.onset": 1,
+  "E.mechanism": 2,
+  "patient.age": 2,
+  "patient.sex": 3,
+  "history.pregnant": 1,
+  "history.postpartum": 1,
+  "complaint.fever": 1,
+  "infection.rash": 3,
+  "infection.travel_14d": 3,
+  "infection.contacts": 2
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "Is the patient awake and responding to you normally? Also, is he or she experiencing any chest pain, trouble breathing, or heavy bleeding right now?",
+   "ts": "2026-10-19 01:40:54",
+   "kind": "question",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, the patient is awake and responding normally. No, the patient is not having chest pain right now.",
+   "ts": "2026-10-19 01:40:54",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "bot",
+   "text": "I'm glad to hear they are alert. Is the patient having any trouble breathing or heavy bleeding right now? Also, what is the main reason you are bringing them in?",
+   "ts": "2026-10-19 01:42:06",
+   "kind": "question",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, the patient is not having trouble breathing right now. No, the patient is not bleeding heavily right now. I accidentally stuck my finger with a used needle at work.",
+   "ts": "2026-10-19 01:42:06",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category"
+  },
+  {
+   "role": "bot",
+   "text": "I understand about the needle. Just to confirm, is there any heavy bleeding from the wound right now?",
+   "ts": "2026-10-19 01:43:18",
+   "kind": "question",
+   "slot": "dyn:danger_signs.heavy_bleeding"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, the patient is not bleeding heavily right now.",
+   "ts": "2026-10-19 01:43:18",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.heavy_bleeding"
+  },
+  {
+   "role": "bot",
+   "text": "I've noted the needle stick. Could you tell me more about the wound and exactly when it happened?",
+   "ts": "2026-10-19 01:44:28",
+   "kind": "question",
+   "slot": "dyn:complaint.text+complaint.onset"
+  },
+  {
+   "role": "caregiver",
+   "text": "I accidentally stuck my finger with a used needle at work. About 25 minutes ago, after drawing blood from a patient, you accidentally stuck your left index finger with the used hollow-bore needle.",
+   "ts": "2026-10-19 01:44:28",
+   "kind": "answer",
+   "slot": "dyn:complaint.text+complaint.onset"
+  },
+  {
+   "role": "bot",
+   "text": "I've noted that it happened while drawing blood. Could you tell me the patient's age and if they are male or female?",
+   "ts": "2026-10-19 01:45:45",
+   "kind": "question",
+   "slot": "dyn:E.mechanism+patient.age+patient.sex"
+  },
+  {
+   "role": "caregiver",
+   "text": "The patient is 32 years old. The patient\u2019s sex has not been specified as male or female.",
+   "ts": "2026-10-19 01:45:45",
+   "kind": "answer",
+   "slot": "dyn:E.mechanism+patient.age+patient.sex"
+  },
+  {
+   "role": "bot",
+   "text": "Could you tell me more about how the needle actually entered the skin?",
+   "ts": "2026-10-19 01:46:53",
+   "kind": "question",
+   "slot": "dyn:E.mechanism"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-19 01:46:53",
+   "kind": "answer",
+   "slot": "dyn:E.mechanism"
+  },
+  {
+   "role": "bot",
+   "text": "Could you tell me the patient's age?",
+   "ts": "2026-10-19 01:48:01",
+   "kind": "question",
+   "slot": "dyn:patient.age"
+  },
+  {
+   "role": "caregiver",
+   "text": "The patient is 32 years old.",
+   "ts": "2026-10-19 01:48:01",
+   "kind": "answer",
+   "slot": "dyn:patient.age"
+  },
+  {
+   "role": "bot",
+   "text": "Is the patient a man or a woman?",
+   "ts": "2026-10-19 01:49:09",
+   "kind": "question",
+   "slot": "dyn:patient.sex"
+  },
+  {
+   "role": "caregiver",
+   "text": "The patient\u2019s sex has not been specified as male or female.",
+   "ts": "2026-10-19 01:49:09",
+   "kind": "answer",
+   "slot": "dyn:patient.sex"
+  },
+  {
+   "role": "bot",
+   "text": "Is the patient a man or a woman?",
+   "ts": "2026-10-19 01:50:17",
+   "kind": "question",
+   "slot": "dyn:patient.sex"
+  },
+  {
+   "role": "caregiver",
+   "text": "The patient\u2019s sex has not been specified as male or female.",
+   "ts": "2026-10-19 01:50:17",
+   "kind": "answer",
+   "slot": "dyn:patient.sex"
+  },
+  {
+   "role": "bot",
+   "text": "Is the patient pregnant or has she given birth in the last few weeks?",
+   "ts": "2026-10-19 01:51:26",
+   "kind": "question",
+   "slot": "dyn:history.pregnant+history.postpartum"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-19 01:51:26",
+   "kind": "answer",
+   "slot": "dyn:history.pregnant+history.postpartum"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Does the patient have a fever or any new rashes?",
+   "ts": "2026-10-19 01:52:36",
+   "kind": "question",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, the patient does not have fever. I do not know whether the patient has a rash.",
+   "ts": "2026-10-19 01:52:36",
+   "kind": "answer",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Is there any new rash on the patient's skin?",
+   "ts": "2026-10-19 01:53:46",
+   "kind": "question",
+   "slot": "dyn:infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient has a rash.",
+   "ts": "2026-10-19 01:53:46",
+   "kind": "answer",
+   "slot": "dyn:infection.rash"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Can you check if there are any new rashes or spots on the skin?",
+   "ts": "2026-10-19 01:54:55",
+   "kind": "question",
+   "slot": "dyn:infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient has a rash.",
+   "ts": "2026-10-19 01:54:55",
+   "kind": "answer",
+   "slot": "dyn:infection.rash"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Has the patient traveled outside the country or been in contact with anyone who is sick in the last two weeks?",
+   "ts": "2026-10-19 01:56:04",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient travelled in the last 14 days. I do not know of any sick contacts.",
+   "ts": "2026-10-19 01:56:04",
+   "kind": "answer",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "bot",
+   "text": "To help the team, has the patient traveled outside of the country in the last two weeks?",
+   "ts": "2026-10-19 01:57:13",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient travelled in the last 14 days.",
+   "ts": "2026-10-19 01:57:13",
+   "kind": "answer",
+   "slot": "dyn:infection.travel_14d"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. To be clear, has the patient been on any trips outside the country in the last 14 days?",
+   "ts": "2026-10-19 01:58:23",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient travelled in the last 14 days.",
+   "ts": "2026-10-19 01:58:23",
+   "kind": "answer",
+   "slot": "dyn:infection.travel_14d"
+  },
+  {
+   "role": "bot",
+   "text": "Has the patient been around anyone who has been sick or had a contagious illness lately?",
+   "ts": "2026-10-19 01:59:34",
+   "kind": "question",
+   "slot": "dyn:infection.contacts"
+  }
+ ],
+ "stage": "floor",
+ "floor": null,
+ "phase": "enroute",
+ "created": "2026-10-19 01:40",
+ "pending_slot": "dyn:infection.contacts",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {}
+}

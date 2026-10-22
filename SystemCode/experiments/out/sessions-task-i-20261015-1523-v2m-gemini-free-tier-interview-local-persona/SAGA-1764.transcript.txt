@@ -1,0 +1,13 @@
+session SAGA-1764   started 2026-10-15 15:45   (generated from messages)
+
+15:46:00  BOT  Hello. Is the patient awake and responding to you normally, and do they have chest pain right now? Also, what is the main problem that brings them in today?   [slot dyn:danger_signs.responsive+danger_signs.chest_pain_now+complaint.category]
+15:46:02  THEM I'm awake. No chest pain, but I have constant lower abdominal pain that's getting worse.   [slot dyn:danger_signs.responsive+danger_signs.chest_pain_now+complaint.category]
+15:46:42  BOT  Thanks for letting me know about the abdominal pain. Are you having trouble breathing or bleeding heavily right now? And when did the pain start?   [slot dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.onset]
+15:46:43  THEM No bleeding. It started this morning and is getting worse.   [slot dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.onset]
+15:47:27  BOT  Okay, no bleeding. Are you finding it hard to breathe?   [slot dyn:danger_signs.breathing_difficulty]
+15:47:28  THEM No, I'm not having trouble breathing.   [slot dyn:danger_signs.breathing_difficulty]
+15:48:06  BOT  Okay, no trouble breathing. How old is the patient, and is the patient male or female? Also, does the patient have a fever?   [slot dyn:patient.age+patient.sex+complaint.fever]
+15:48:08  THEM I'm 40 and female. No fever.   [slot dyn:patient.age+patient.sex+complaint.fever]
+15:48:54  BOT  Okay, you're 40 and female, and no fever. How old are you?   [slot dyn:patient.age]
+15:48:55  THEM I'm 40.   [slot dyn:patient.age]
+15:49:43  BOT  Are you male or female?   [slot dyn:patient.sex]

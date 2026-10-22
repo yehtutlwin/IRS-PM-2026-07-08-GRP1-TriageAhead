@@ -1,0 +1,393 @@
+{
+ "sid": "LION-4434",
+ "facts": {
+  "red_flags.responsive": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-09-26 03:36"
+  },
+  "red_flags.chest_pain_now": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-09-26 03:36"
+  },
+  "red_flags.breathing_difficulty": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-09-26 03:36"
+  },
+  "red_flags.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-09-26 03:36"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "chest_pain",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "persona",
+      "turn": 1,
+      "ts": "2026-09-26 03:36"
+     },
+     "text": {
+      "value": "pressure in the center of my chest",
+      "status": "reported",
+      "who": "persona",
+      "turn": 1,
+      "ts": "2026-09-26 03:36"
+     },
+     "pain_rating": {
+      "value": 6,
+      "status": "reported",
+      "who": "persona",
+      "turn": 2,
+      "ts": "2026-09-26 03:36"
+     },
+     "onset": {
+      "value": "40 minutes ago",
+      "status": "reported",
+      "who": "persona",
+      "turn": 2,
+      "ts": "2026-09-26 03:36"
+     },
+     "onset_abs": {
+      "value": "~2026-09-26 02:56",
+      "status": "reported",
+      "who": "derived",
+      "turn": 2,
+      "ts": "2026-09-26 03:36"
+     }
+    },
+    {
+     "category": "breathing",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "persona",
+      "turn": 1,
+      "ts": "2026-09-26 03:36"
+     },
+     "text": {
+      "value": "a bit breathless",
+      "status": "reported",
+      "who": "persona",
+      "turn": 1,
+      "ts": "2026-09-26 03:36"
+     },
+     "pain_rating": {
+      "value": null,
+      "status": "reported",
+      "who": "persona",
+      "turn": 1,
+      "ts": "2026-09-26 03:36"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 1
+  },
+  "complaint.category": {
+   "value": [
+    "chest_pain",
+    "breathing"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-09-26 03:36"
+  },
+  "complaint.text": {
+   "value": "a bit breathless",
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-09-26 03:36"
+  },
+  "chest_pain_suspicious": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-09-26 03:36"
+  },
+  "complaint.acs_suspicion": {
+   "value": true,
+   "status": "reported",
+   "who": "derived",
+   "turn": 1,
+   "ts": "2026-09-26 03:36"
+  },
+  "E.mechanism": {
+   "value": "none",
+   "status": "reported",
+   "who": "derived",
+   "turn": 1,
+   "ts": "2026-09-26 03:36"
+  },
+  "complaint.onset": {
+   "value": "40 minutes ago",
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-09-26 03:36"
+  },
+  "complaint.pain_rating": {
+   "value": 6,
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-09-26 03:36"
+  },
+  "complaint.pain_latest": {
+   "value": 6,
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-09-26 03:36"
+  },
+  "complaint.onset_abs": {
+   "value": "~2026-09-26 02:56 (from '40 minutes ago' said 03:36)",
+   "status": "reported",
+   "who": "derived",
+   "turn": 2,
+   "ts": "2026-09-26 03:36"
+  },
+  "M.medications": {
+   "value": [],
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-09-26 03:36"
+  },
+  "A.allergies": {
+   "value": [],
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-09-26 03:36"
+  },
+  "history.conditions": {
+   "value": [],
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-09-26 03:36"
+  },
+  "history.immunocompromised": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-09-26 03:36"
+  },
+  "history.pregnant_or_postpartum": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 4,
+   "ts": "2026-09-26 03:36"
+  },
+  "infection.fever": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-09-26 03:36"
+  },
+  "infection.rash": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-09-26 03:36"
+  },
+  "infection.travel_14d": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-09-26 03:36"
+  },
+  "infection.contacts": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-09-26 03:36"
+  },
+  "identity.name": {
+   "value": null,
+   "status": "reported",
+   "who": "persona",
+   "turn": 6,
+   "ts": "2026-09-26 03:36"
+  },
+  "identity.dob": {
+   "value": "1975-05-14",
+   "status": "reported",
+   "who": "persona",
+   "turn": 6,
+   "ts": "2026-09-26 03:36"
+  },
+  "L.last_intake": {
+   "value": "toast for breakfast at 8am",
+   "status": "reported",
+   "who": "persona",
+   "turn": 6,
+   "ts": "2026-09-26 03:36"
+  },
+  "L.last_intake_abs": {
+   "value": "~2026-09-26 08:00 (from 'toast for breakfast at 8am' said 03:36)",
+   "status": "reported",
+   "who": "derived",
+   "turn": 6,
+   "ts": "2026-09-26 03:36"
+  },
+  "patient.age": {
+   "value": 51,
+   "status": "reported",
+   "who": "derived",
+   "turn": 6,
+   "ts": "2026-09-26 03:36"
+  }
+ },
+ "attempts": {
+  "red_flags.responsive": 1,
+  "red_flags.chest_pain_now": 1,
+  "red_flags.breathing_difficulty": 1,
+  "red_flags.heavy_bleeding": 1,
+  "complaint.onset": 1,
+  "complaint.pain_rating": 1,
+  "M.medications": 1,
+  "A.allergies": 1,
+  "history.conditions": 1,
+  "history.immunocompromised": 1,
+  "history.pregnant_or_postpartum": 1,
+  "infection.fever": 1,
+  "infection.rash": 1,
+  "infection.travel_14d": 1,
+  "infection.contacts": 1,
+  "L.last_intake": 1,
+  "identity.name": 1,
+  "identity.dob": 1
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "I'm here to help get your information to the team. Is the patient awake and responding, and are they currently experiencing any chest pain, trouble breathing, or heavy bleeding?",
+   "ts": "2026-09-26 03:36:23",
+   "kind": "question",
+   "slot": "dyn:red_flags.responsive+red_flags.chest_pain_now+red_flags.breathing_difficulty+red_flags.heavy_bleeding"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, I'm awake. I have pressure in the center of my chest and I'm a bit breathless.",
+   "ts": "2026-09-26 03:36:24",
+   "kind": "answer",
+   "slot": "dyn:red_flags.responsive+red_flags.chest_pain_now+red_flags.breathing_difficulty+red_flags.heavy_bleeding"
+  },
+  {
+   "role": "system",
+   "text": "floor: at least ESI-2  rules: ['B-04.chest-pain-acs-suspect']",
+   "ts": "2026-09-26 03:36:29",
+   "kind": "floor"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear you're feeling this way. Could you tell me when the chest pressure started and how severe it feels on a scale of 0 to 10?",
+   "ts": "2026-09-26 03:36:31",
+   "kind": "question",
+   "slot": "dyn:complaint.onset+complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "It started about 40 minutes ago. It's a 6 out of 10.",
+   "ts": "2026-09-26 03:36:33",
+   "kind": "answer",
+   "slot": "dyn:complaint.onset+complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry you're in pain. Do you take any regular medications, and do you have any allergies or other medical conditions like heart problems or diabetes?",
+   "ts": "2026-09-26 03:36:37",
+   "kind": "question",
+   "slot": "dyn:M.medications+A.allergies+history.conditions+history.immunocompromised"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I don't take any medications and I have no allergies or known conditions.",
+   "ts": "2026-09-26 03:36:39",
+   "kind": "answer",
+   "slot": "dyn:M.medications+A.allergies+history.conditions+history.immunocompromised"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you for sharing that. Are you currently pregnant or have you given birth recently?",
+   "ts": "2026-09-26 03:36:43",
+   "kind": "question",
+   "slot": "dyn:history.pregnant_or_postpartum"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I'm not pregnant.",
+   "ts": "2026-09-26 03:36:44",
+   "kind": "answer",
+   "slot": "dyn:history.pregnant_or_postpartum"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you for that information. Have you had a fever, any rashes, traveled outside the country in the last two weeks, or been in contact with anyone who is sick?",
+   "ts": "2026-09-26 03:36:48",
+   "kind": "question",
+   "slot": "dyn:infection.fever+infection.rash+infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I haven't had a fever, no rashes, and I haven't traveled or been around anyone sick.",
+   "ts": "2026-09-26 03:36:49",
+   "kind": "answer",
+   "slot": "dyn:infection.fever+infection.rash+infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you for confirming those details. To help the team prepare, could you tell me your name, date of birth, and when you last had something to eat or drink?",
+   "ts": "2026-09-26 03:36:54",
+   "kind": "question",
+   "slot": "dyn:L.last_intake+identity.name+identity.dob"
+  },
+  {
+   "role": "caregiver",
+   "text": "My name isn't on file yet, but I was born May 14, 1975. I had some toast for breakfast at 8am.",
+   "ts": "2026-09-26 03:36:55",
+   "kind": "answer",
+   "slot": "dyn:L.last_intake+identity.name+identity.dob"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you - that's everything for now. Show the code LION-4434 at the counter when you arrive.",
+   "ts": "2026-09-26 03:36:57",
+   "kind": "ack"
+  }
+ ],
+ "active_ids": [],
+ "floor": "at least ESI-2",
+ "phase": "enroute",
+ "opened": [],
+ "created": "2026-09-26 03:36",
+ "pending_slot": "dyn:L.last_intake+identity.name+identity.dob",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {},
+ "said_done": true
+}

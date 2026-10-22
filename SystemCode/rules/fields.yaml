@@ -1,0 +1,1014 @@
+# rules/fields.yaml - every field (named fact) the rules read, the interview collects or a bridge uses.
+# PROCESS: authored with added insight. The NAMES and MEANINGS here are design choices; the LIST of fields that must
+# appear here is derived (every field used in rules/criteria.yaml, rules/bridges.yaml or the interview), and
+# rules/validate.py fails if a used field is missing or an entry is used nowhere. Who reads each field, and whether
+# a caregiver can supply it, is NOT written here: it is computed into rules/derived/fields-index.yaml by rules/derive.py.
+# STATUS: meanings drafted by an AI agent on 4 Oct 2026 from the rules' quoted handbook sentences and the interview's
+# instructions; rewritten in full on 10 Oct 2026 (every entry: yes, no, neighbours; ask on every caregiver-answerable
+# field; value meanings). NOT yet reviewed by a person; the `ask` wordings are what a caregiver will hear and need a
+# nurse's read before issue #57 switches them on. Knowledge base and extraction design v2 (issues #55, #13).
+#
+# NAMING RULE for a new field:
+#   <area>.<name>, lower case, words joined by underscores.
+#   area = who can know the fact or what it is about:
+#     patient (who the patient is) | complaint (what is wrong now, as a caregiver can report it) | E (events: how an injury
+#     happened) | M (medicines) | A (allergies) | history (background) | L (last intake) | infection (infection screen) |
+#     danger_signs (the caregiver's danger-sign answers) | identity | obs (only a clinician can observe it) | vitals (a measurement)
+#     | a short lay-sign area (stroke, limb, ams, eye) for everyday signs that feed one clinical field through a bridge.
+#   A yes/no field is named for the finding being present. A number carries its unit in the name (fall_height_meters, temp_c).
+#   One fact has one name. Before adding a field, search this file for the fact under another name.
+#   Entries marked alias_of or naming_note are known breaches of this rule in v1, kept until the re-extraction settles them.
+# HOW PROGRAMS USE THIS FILE (knowledge base v2): the NAMES are read by rules/derive.py and rules/validate.py. The free text
+# (meaning, ask, values) is written to become prompt input under issue #57: the interview model is given the open fields
+# with their `meaning` and `ask` and writes its own question in its own words (bundling related fields, using the name,
+# skipping what was already said); `ask` is the reference wording of what the field asks in everyday terms, not a script.
+# It is also the fallback when no model is available and the baseline the model's phrasing is compared with. The
+# extraction step receives `meaning` to decide what an answer fills. The model is free in how it asks and bound in what
+# it writes back: only the fields defined here, under the rules below.
+# Until #57 lands the text is read by people only. Rules the extraction prompt must carry (from the recorded session
+# RAFFLES-3638, issue #73): a yes/no field is written true only when the caregiver states the finding, false only when the
+# caregiver denies it, and left empty when the answer does not address it; a value the model deduces rather than hears
+# (not pregnant because the patient is 60) is written with status `probable`, never `reported`; free text is appended,
+# never overwritten; a caregiver's answer is read against every open field, not only the ones just asked.
+# KEYS (nothing in this file is derived; what is derived about a field is in rules/derived/):
+#   meaning        authored, optional. What the gloss does not say: what counts as no, how the field differs from its
+#                  neighbours, how it is reached. Never repeats the gloss. For people only; no program reads it.
+#   gloss          authored (13 Oct 2026). The one-line definition handed to fact extraction
+#                  (prototype/extraction.py), beside the field's name, type and values; also the field's label on the review
+#                  site. Plain words, no file talk, no references. Until today that step was given the first sentence of
+#                  `meaning`, cut at the first full stop; the two are now separate properties on purpose.
+#   type, values   authored, following the rules' comparisons. Read by fact extraction (shape and allowed values).
+#                  Each allowed value of a choice field is defined once in rules/terms.yaml (kind option, scoped to the field)
+#                  with its source or reason; fact extraction is given that definition with the value (14 Oct 2026;
+#                  value_meanings on the field until then).
+#   ask            authored reference wording. The agenda hands it to the interview model, which writes its own question;
+#                  it is the fallback wording when no model is available. Present on every field a caregiver can answer.
+#   ask_policy     authored (decision #74): always = asked of every patient; when_applicable = asked when its trigger
+#                  (rules/triggers.yaml) holds or a rule that reads it is still possible; volunteered_only = never asked
+#                  unprompted. Read through the derived agenda by the engine's open-questions step and by the report.
+#   asked_with     authored. The field this one is naturally asked with; the agenda places it right after it; the engine
+#                  bundles them.
+#   stated_only    authored (11 Oct 2026, after the second reading). Words of which one must appear in the caregiver's answer
+#                  for the extraction step to keep a write to this field; a guard against deduction.
+#   purpose        authored. For a field asked for the nurse rather than for a rule: why it is collected. Keeps the field in
+#                  the agenda; such a field also carries source + span or an authored reason (rules/validate.py).
+#   feeds          authored declaration of the bridge (rules/bridges.yaml) this everyday sign feeds; the validator checks the
+#                  two agree; the engine reads the bridges file, not this.
+#   terms          the fuzzy terms (rules/terms.yaml) this field's definition rests on; the validator checks they exist and that
+#                  the term lists the field back.
+#   source, span, provenance, authored, notes, naming_note   for people and the review site; the validator checks presence.
+#   The trigger of a when_applicable question lives in rules/triggers.yaml (moved out of this file on 13 Oct 2026).
+
+
+fields:
+  patient.age:
+    meaning: "Asked early: it decides which rules apply (child, older adult) and how other questions are worded. A stated age and a derived age that differ are both kept and both shown to the nurse."
+    gloss: "Age in whole years, as the caregiver states it or as derived from the date of birth"
+    type: number
+    ask: "How old is the patient?"
+    ask_policy: always
+  patient.age_months:
+    meaning: "The handbook's fever rules for infants are in months (under 1, 1 to 3, 3 and over)."
+    gloss: "Age in months, for a child under three years; derived from the age or date of birth when possible"
+    type: number
+    ask: "For a baby or toddler: how many months old?"
+    ask_policy: when_applicable
+    asked_with: patient.age
+  patient.age_days:
+    meaning: "The handbook's strictest fever rules are at under 28 days and under 90 days."
+    gloss: "Age in days, for a baby under three months; derived from the date of birth when possible"
+    type: number
+    ask: "For a newborn: how many days or weeks old?"
+    ask_policy: when_applicable
+    asked_with: patient.age
+  patient.age_group:
+    meaning: "Only the level-1 rule for a floppy infant (A-13) reads it. Not asked: the engine derives it from the age in days, months or years whenever one is known (prototype/engine.py, derive); a clinician's on-sight band only when no age exists."
+    gloss: "Broad age band: infant (under 1 year), child (1 to 17), adult (18 to 64), older adult (65 and over)"
+    type: enum
+    terms: [infant, child, adult, older_adult]
+    values:
+    - infant
+    - child
+    - adult
+    - older_adult
+    source: "ESI v5 p.24 (Table 6-1, Normal Vital Signs for Pediatric Patients by Age Groups); p.23 (Fig 6-1, row '> 18 y')"
+    span: "Infant, 1–12 months"
+    provenance: operationalized
+    notes: "The handbook's groups: term neonate to <1 month; infant, 1-12 months; toddler, 1-3 years; preschooler, 3-5 years; school age, 5-12 years; adolescent, 12-18 years. Two choices are ours: a neonate counts as an infant for the flaccid-infant rule (the handbook's 'Flaccid infant', p.9, defines no age), and 65 for older adult follows rule B-43's reading of 'elderly' (the trauma rule B-27 uses 55 for its own purpose). Authored 4 Oct 2026 without a source; sourced and made derived 13 Oct 2026."
+  patient.sex:
+    meaning: "Collected to decide whether the pregnancy and ovary questions apply and for the nurse report; no rule reads it directly. `other` covers anyone the caregiver does not place as male or female; the pregnancy questions then apply."
+    gloss: "The patient's sex as the caregiver states it"
+    type: enum
+    values:
+    - female
+    - male
+    - other
+    ask: "Is the patient male or female?"
+    ask_policy: always
+    purpose: "gates the pregnancy and ovary questions; nurse report"
+    authored: "Decision #76: collected so that the pregnancy and ovary questions are asked only where they apply; the handbook names gender among what the triage nurse considers (ESI v4, PDF page 22)."
+    asked_with: patient.age
+  patient.has_ovaries:
+    meaning: "True by default for a female patient unless an operation is reported; asked only when the complaint is one-sided lower abdominal pain. False for a male patient without asking."
+    gloss: "The patient is a girl or woman who has not had both ovaries removed, so ovarian torsion or an ectopic pregnancy is possible"
+    type: bool
+    ask: "Has the patient had an operation to remove the ovaries or the womb?"
+    ask_policy: when_applicable
+    stated_only: [ovar, womb, uterus, hysterectom, oophorectom]
+  patient.immunizations_incomplete:
+    meaning: "The handbook names it as a reason to consider level 2 for a child with fever and no obvious source. 'Not sure' counts as yes with lower certainty."
+    gloss: "A child who has not had all the vaccinations due for their age, or whose caregiver does not know"
+    type: bool
+    ask: "Are the child's vaccinations up to date for their age?"
+    ask_policy: when_applicable
+  identity.name:
+    meaning: "Lets the nurse match the report to the person at the counter."
+    gloss: "The patient's full name as the caregiver gives it; not verified"
+    type: text
+    ask: "What is the patient's full name?"
+    purpose: "identity: lets the nurse match the report to the person"
+    authored: "Design decision (design/design-record.md): identity as declared, never verified; the nurse matches the report to the person at the counter. No instrument is cited."
+    ask_policy: always
+  identity.dob:
+    meaning: "Age is derived from it; a year alone is accepted and gives an approximate age, marked as such."
+    gloss: "The patient's date of birth as the caregiver gives it; not verified"
+    type: text
+    ask: "What is the patient's date of birth?"
+    purpose: "identity; the age the rules read is derived from it"
+    authored: "Design decision: the date of birth as declared gives the age (nine rules read patient.age) and, with the name, identifies the patient. No instrument is cited."
+    ask_policy: always
+    asked_with: identity.name
+  complaint.category:
+    meaning: "Not a place for findings: a cut, a swelling or a bruise is text under the problem, not a new category. `injury` means the problem is an injury (any mechanism); how it happened is E.mechanism, so the same fact is not written twice. Choose the most specific value that fits: `wound`, `burn`, `head_injury` or `limb_pain_or_swelling` before `injury`; `request` before `other`; a value is `other` only when nothing else fits (rule added 11 Oct 2026 after two readers chose differently in 37 practice cases)."
+    gloss: "The kind of problem the patient has come with, one entry per problem; a patient can have more than one and the first stated is the presenting one"
+    type: enum
+    values:
+    - chest_pain
+    - abdominal_pain
+    - injury
+    - breathing
+    - fever
+    - sore_throat
+    - dizziness
+    - nosebleed
+    - eye_problem
+    - headache
+    - neuro_symptoms
+    - wound
+    - burn
+    - head_injury
+    - limb_pain_or_swelling
+    - back_pain
+    - skin_problem
+    - ear_problem
+    - dental
+    - vomiting_or_diarrhoea
+    - urinary_problem
+    - vaginal_bleeding
+    - pregnancy_related
+    - allergic_reaction
+    - mental_health
+    - poisoning_or_overdose
+    - request
+    - other
+    ask: "What is the main problem that brings the patient in today?"
+    notes: "Extended 10 Oct 2026 from the categories the practice cases describe (issues #67, #77); a value is added only when the cases or the handbook name it, never for a single rare visit."
+    ask_policy: always
+  complaint.text:
+    meaning: "New details are added to it; it is never overwritten."
+    gloss: "The problem in the caregiver's own words, including findings that have no field of their own (a cut, a swelling, a bruise, a limp)"
+    type: text
+    ask: "Can you describe what is wrong, in your own words?"
+    purpose: "handover history: the problem in the caregiver's own words"
+    authored: "Every triage history begins with the problem in the person's own words; the handbook's practice cases all open with it. The field also carries findings that have no field of their own. No instrument is needed or cited."
+    ask_policy: always
+    asked_with: complaint.category
+  complaint.onset:
+    meaning: "Kept as text; the nurse reads it."
+    gloss: "When the problem started, as the caregiver says it: a clock time, 'this morning', 'three days ago', 'just now'"
+    type: text
+    ask: "When did it start?"
+    purpose: "handover history: when it started"
+    source: "ESI v5 p.14 (Abdominal pain)"
+    span: "onset, accompanying symptoms and current vital signs are important elements in determining the presence or absence of a high-risk situation"
+    notes: "The handbook names onset for abdominal pain; it is asked of every complaint because the nurse reads it for all of them (an authored generalisation)."
+    ask_policy: always
+    asked_with: complaint.category
+  complaint.pain_rating:
+    meaning: "Written 0 when pain is clearly denied for the problem being discussed; left empty when pain was not mentioned. 'No pain' said about one thing (the chest) is not a 0 for another (the ankle)."
+    gloss: "How bad the pain is, from 0 (no pain) to 10 (the worst imaginable), as the patient or caregiver rates it"
+    type: number
+    ask: "On a scale from 0 to 10, where 10 is the worst pain imaginable, how bad is the pain right now?"
+    ask_policy: always
+  complaint.pain_cause_class:
+    meaning: "Written only when the caregiver names the condition or a doctor has diagnosed it; not inferred from the pain itself."
+    gloss: "A cause of severe pain that the handbook names as a body-wide disruption needing urgent relief"
+    type: enum
+    values:
+    - renal_colic
+    - cancer
+    - sickle_cell_crisis
+    ask: "Does the patient have a known condition behind this pain, such as kidney stones, cancer, or sickle cell disease?"
+    ask_policy: when_applicable
+  complaint.acs_suspicion:
+    meaning: "The handbook names no features; the features used here (pressure or squeezing, spreading to the arm, neck or jaw, with sweating or breathlessness, in an adult) are a clinical choice that still needs review. Written only when such features are reported, never from chest pain alone."
+    gloss: "Chest pain that could be a heart attack or unstable angina (acute coronary syndrome): pressure or tightness in the chest, spreading to the arm, jaw or back, with sweating, nausea or breathlessness, or the caregiver says 'heart attack'"
+    type: bool
+    ask: "Does the chest pain feel like pressure or squeezing, does it spread to the arm, neck or jaw, and is there sweating or breathlessness with it?"
+    ask_policy: when_applicable
+  complaint.stroke_signs:
+    meaning: "The handbook also names loss of speech or understanding, loss of purposeful movement, failure to recognise things or people. Fed by the everyday-sign fields stroke.*; written directly only when the caregiver uses the word stroke or names these signs. Also true when the signs have passed (a possible mini-stroke)."
+    gloss: "Signs of a stroke: one side of the face drooping, an arm or leg weak or numb, slurred or strange speech, sudden loss of balance or vision, sudden confusion; also when the signs have passed"
+    type: bool
+    ask: "Has there been any drooping of the face, weakness or numbness of an arm or leg, slurred or strange speech, or sudden loss of vision or balance, even if it has passed?"
+    ask_policy: volunteered_only
+  complaint.possible_ectopic_pregnancy:
+    meaning: "Written from those facts together, with status probable; confirmed only by a clinician."
+    gloss: "A pregnancy growing outside the womb is possible: a woman who is or may be in early pregnancy, or has missed a period, and has lower abdominal pain or vaginal bleeding"
+    type: bool
+    ask: "Could the patient be in early pregnancy or have missed a period, and is there belly pain or any bleeding?"
+    ask_policy: when_applicable
+    stated_only: [pregnan, period, missed, ectopic, spotting, bleed]
+  complaint.fever:
+    meaning: "One name since 10 Oct 2026 (the v1 infection screen wrote it as infection.fever); it is the first item of the infection screen. A felt fever counts as yes with lower certainty; the measured value, if any, goes in vitals.temp_c."
+    gloss: "The patient has a fever: measured at or above 38 degrees Celsius, or felt hot by the caregiver without a thermometer"
+    type: bool
+    terms: [fever_felt]
+    ask: "Does the patient have a fever? If you have measured it, what was the temperature?"
+    ask_policy: always
+    purpose: "infection screen for isolation (its first item; the screen's other questions are asked with it); handover"
+    source: ["Mount Sinai Health System, Infectious Diseases Screening Tool for Patients at Triage/Registration (updated 25 Mar 2025; accessed 13 Oct 2026), https://www.mountsinai.org/files/MSHealth/Assets/HS/About/Coronavirus/MSHS-Infectious-Diseases-Screening-Tool.pdf"]
+    span: "Do you have a fever"
+    notes: "Purpose added 16 Oct 2026: without it the field counted as feeding only level-setting rules and was dropped once the floor was set, so a persona whose floor settled early (pregnancy, stroke) was never asked about fever (runs v2o, v2p, v2r, v2s: the fever denial missing in every run)."
+  complaint.fever_no_obvious_source:
+    meaning: "The handbook's reason to consider level 2 for a child of three months or more. False when the caregiver names a likely cause."
+    gloss: "A child's fever with nothing obvious to explain it: no cold or cough, no earache, no sore throat, no rash, no known infection"
+    type: bool
+    ask: "Apart from the fever, is there anything that explains it, such as a cold, a cough, an earache, a sore throat or a rash?"
+    ask_policy: when_applicable
+  complaint.infection_signs:
+    meaning: "Read with transplant and pregnancy rules."
+    gloss: "Signs of infection other than fever: a wound that is red, hot, swollen or discharging; foul-smelling discharge; or a doctor has said there is an infection"
+    type: bool
+    ask: "Is there any sign of infection, such as a wound that is red, hot, swollen or oozing, or has a doctor said there is an infection?"
+    ask_policy: when_applicable
+  complaint.danger_to_self_or_others:
+    meaning: "True whenever the caregiver reports thoughts, a plan or an attempt, not only an attempt. Asked with care and only when the complaint or the story suggests it."
+    gloss: "The patient is thinking about, has planned, or has tried harming themselves, or is threatening to harm someone else"
+    type: bool
+    ask: "Has the patient said or done anything that suggests they might hurt themselves or someone else?"
+    ask_policy: when_applicable
+    stated_only: [hurt, harm, kill, suicid, die, end it, overdose, jump, threat]
+  complaint.needle_stick_healthcare_worker:
+    meaning: "Time matters: treatment to prevent infection works best within hours."
+    gloss: "A health-care worker who has been pricked or cut by a used needle or sharp, or splashed with blood"
+    type: bool
+    ask: "Is the patient a health-care worker who was pricked by a used needle or exposed to someone's blood?"
+    ask_policy: volunteered_only
+  complaint.sexual_assault:
+    meaning: "Asked only when the story suggests it, with care; no detail is needed for the field."
+    gloss: "The patient reports a sexual assault, recent or not"
+    type: bool
+    ask: "Has the patient been sexually assaulted?"
+    ask_policy: volunteered_only
+    stated_only: [assault, rape, raped, forced, abused, molest]
+  complaint.increasing_respiratory_effort:
+    meaning: "Differs from complaint.shortness_of_breath (a feeling) and complaint.respiratory_distress_signs (what can be seen now)."
+    gloss: "Breathing is getting harder over time: the patient is working more and more to breathe, compared with earlier today or when the problem started"
+    type: bool
+    ask: "Is the breathing getting harder than it was earlier?"
+    ask_policy: when_applicable
+  complaint.respiratory_distress_signs:
+    meaning: "The handbook's list for decision point B. For a child the specific signs are obs.grunting_belly_breathing_or_retractions."
+    gloss: "Signs of difficult breathing a caregiver can see or hear now: fast breathing, able to speak only two or three words at a time, sitting upright and leaning forward on the hands to breathe, an audible wheeze"
+    type: bool
+    ask: "Right now, is the patient breathing fast, able to say only a few words at a time, sitting forward to breathe, or wheezing so you can hear it?"
+    ask_policy: when_applicable
+  complaint.shortness_of_breath:
+    meaning: "Read with the pregnancy rule. The feeling only; what can be seen is complaint.respiratory_distress_signs."
+    gloss: "The patient feels short of breath or says breathing is difficult, now or since the problem started"
+    type: bool
+    ask: "Is the patient short of breath?"
+    ask_policy: when_applicable
+  complaint.postpartum_hemorrhage:
+    meaning: "Fed by complaint.heavy_vaginal_bleeding when history.postpartum is true (bridge BR-13); written directly when the caregiver says the bleeding since the birth is heavy."
+    gloss: "Heavy vaginal bleeding in the weeks after giving birth, with the same heaviness as complaint.heavy_vaginal_bleeding"
+    type: bool
+    ask: "Since giving birth, is the bleeding heavy: soaking a pad in an hour, or passing large clots?"
+    ask_policy: when_applicable
+  complaint.vaginal_bleeding:
+    meaning: "Heavy bleeding is complaint.heavy_vaginal_bleeding; bleeding after childbirth is complaint.postpartum_hemorrhage. Read with abdominal pain."
+    gloss: "Any vaginal bleeding outside a normal period, of any amount"
+    type: bool
+    ask: "Is there any vaginal bleeding that is not a normal period?"
+    ask_policy: when_applicable
+  complaint.heavy_vaginal_bleeding:
+    meaning: "Lighter bleeding is complaint.vaginal_bleeding, which this fact implies (bridge EN.heavy-bleeding-is-bleeding). The pregnancy rule B-39 reads it together with abnormal vital signs and infection signs, so that rule cannot fire before arrival; after childbirth it feeds complaint.postpartum_hemorrhage (bridge BR-13). One fact, one name: the v1 field ob.heavy_bleeding was merged into this one on 13 Oct 2026."
+    gloss: "Heavy vaginal bleeding: soaking through a pad in an hour, clots the size of a plum, bright red bleeding that does not slow down, or bleeding that increased after it had eased"
+    type: bool
+    ask: "How heavy is the bleeding: soaking a pad in an hour, clots the size of a plum, or bright red bleeding that is not slowing down?"
+    feeds: "complaint.postpartum_hemorrhage, complaint.vaginal_bleeding"
+    ask_policy: when_applicable
+  complaint.brisk_or_posterior_bleeding:
+    meaning: "An ordinary nosebleed that stops is false. Read with blood thinners and clotting disorders."
+    gloss: "A nosebleed that is fast, will not stop with pressure, or runs down the back of the throat (a bleed from the back of the nose)"
+    type: bool
+    ask: "Is the nosebleed fast or impossible to stop by pinching the nose, or is blood running down the back of the throat?"
+    ask_policy: when_applicable
+  complaint.button_battery_or_magnet_ingestion:
+    meaning: "Time-critical in the handbook; the rule fires on suspicion."
+    gloss: "A swallowed button battery (a flat coin-shaped battery) or a strong magnet, or a reasonable suspicion of one (a child found with an opened device)"
+    type: bool
+    ask: "Could the patient have swallowed a button battery or a small magnet?"
+    ask_policy: when_applicable
+  complaint.known_toxic_ingestion:
+    meaning: "Unexplained symptoms that could be a poisoning are obs.unexplained_ams_breathing_or_rhythm_change instead."
+    gloss: "The patient is known or strongly suspected to have swallowed, inhaled or been given something poisonous, or taken more of a medicine than prescribed, on purpose or by accident"
+    type: bool
+    ask: "Has the patient swallowed, taken or been given anything that could be poisonous, or more of a medicine than they should have?"
+    ask_policy: when_applicable
+  complaint.pain_refractory_constant_or_maximal_onset:
+    meaning: "Read with abdominal pain; the handbook lists these as questions for the nurse."
+    gloss: "Abdominal pain with any one of: does not ease with painkillers, is constant rather than coming and going, or was at its worst the moment it began"
+    type: bool
+    ask: "Is the belly pain there all the time without easing, has it not improved with painkillers, or was it at its very worst the moment it started?"
+    ask_policy: when_applicable
+  complaint.unilateral_lower_quadrant_pain:
+    meaning: "Read with patient.has_ovaries for the torsion and ectopic-pregnancy rule."
+    gloss: "Pain low in the abdomen on one side only (right or left)"
+    type: bool
+    ask: "Is the pain low down in the belly, on one side only?"
+    ask_policy: when_applicable
+  complaint.testicular_or_scrotal_pain:
+    meaning: "The handbook asks for immediate evaluation for torsion; sudden severe pain in a boy or young man is the typical case."
+    gloss: "Pain in a testicle or the scrotum, of any onset"
+    type: bool
+    ask: "Is there pain in the testicles or the scrotum?"
+    ask_policy: when_applicable
+  complaint.severe_flank_pain:
+    meaning: "Milder flank pain is text under the complaint."
+    gloss: "Severe pain in the flank: the side of the back between the lowest rib and the hip, often coming in waves (kidney-stone pain)"
+    type: bool
+    ask: "Is there severe pain in the side of the back, between the ribs and the hip?"
+    ask_policy: when_applicable
+  complaint.uti_symptoms:
+    meaning: "Read with age 65 and over, back pain, chills and vomiting."
+    gloss: "Symptoms of a urine infection: burning or pain on passing urine, passing urine much more often or urgently, cloudy or foul-smelling urine, or lower belly pressure"
+    type: bool
+    ask: "Does it burn or hurt to pass urine, is the patient going much more often, or is the urine cloudy or smelly?"
+    ask_policy: when_applicable
+  complaint.back_pain:
+    meaning: "Two handbook sentences read it: urine-infection symptoms with back pain and chills (any location, kidney infection feared) and headache with lower back pain (meningitis feared). One field since 10 Oct 2026; v1 had complaint.back_pain and complaint.lower_back_pain side by side."
+    gloss: "Back pain, with where it is"
+    type: enum
+    values:
+    - none
+    - lower
+    - upper_or_middle
+    ask: "Is there any back pain, and if so is it low down in the back or higher up?"
+    ask_policy: when_applicable
+  complaint.chills_or_rigors:
+    meaning: "A sign of a body-wide infection; read with urinary symptoms."
+    gloss: "Shivering or shaking chills: the body shaking with cold, often with a fever"
+    type: bool
+    ask: "Has the patient had shivering or shaking chills?"
+    ask_policy: when_applicable
+  complaint.extremity_neurovascular_compromise:
+    meaning: "Fed by the everyday-sign fields limb.*; any one sign makes it true."
+    gloss: "An arm or leg below an injury whose blood supply or nerves are in trouble: numb, tingling, cold, pale or blue, no pulse that can be felt, or fingers or toes that cannot move"
+    type: bool
+    ask: "Below the injury, are the fingers or toes numb, tingling, cold, pale or blue, or unable to move?"
+    ask_policy: volunteered_only
+  complaint.compartment_syndrome_symptoms:
+    meaning: "Different from complaint.extremity_neurovascular_compromise (loss of feeling, colour or movement), though the two can occur together."
+    gloss: "Severe and worsening pain in an injured or cast limb, out of proportion to the injury, with the limb feeling tight or hard, and pain on stretching the fingers or toes"
+    type: bool
+    ask: "Is the pain in the injured limb getting worse and worse, out of all proportion to the injury, with the limb feeling tight or hard?"
+    ask_policy: when_applicable
+  complaint.possible_pelvis_femur_fracture_or_dislocation:
+    gloss: "A possible broken pelvis or thigh bone, or a dislocated hip or other large joint: cannot bear weight, the leg looks shorter or turned outwards, the hip or thigh looks out of shape, or severe pain in the hip or pelvis after a fall or crash"
+    type: bool
+    ask: "Can the patient put weight on the leg? Does the leg look shorter or turned outwards, or the hip or thigh look out of shape?"
+    ask_policy: when_applicable
+  complaint.amputation_partial_or_complete:
+    meaning: "Any size counts."
+    gloss: "A body part (finger, toe, hand, foot, limb) cut off completely, or hanging by skin or tissue"
+    type: bool
+    ask: "Has any part of the body been cut off, or is it hanging by the skin?"
+    ask_policy: volunteered_only
+  complaint.atso_elements_count:
+    meaning: "Counted by bridge BR-28 from those six fields, which are what the interview asks; not asked by name. Two or more is the consider flag (our reading of 'constellation'; under clinical review in issue #66)."
+    gloss: "How many of six eye findings are present: altered vision; double vision, unequal pupils or a bulging eye; a red eye; unbearable pain; an eye injury; floaters or flashes. Counted from the eye fields; write only when the caregiver gives a number"
+    type: number
+    terms: [eye_constellation]
+  complaint.post_ictal_after_seizure:
+    meaning: "A seizure that is still happening is obs.active_seizure; fully recovered after a known epilepsy seizure is false."
+    gloss: "The patient has had a seizure (fit, convulsion) in the last hours and is still drowsy, confused or not back to normal afterwards"
+    type: bool
+    ask: "Has the patient had a fit or seizure just now, and are they still drowsy or confused after it?"
+    ask_policy: when_applicable
+  complaint.headache_thunderclap:
+    meaning: "The handbook's most concerning headache (bleeding in the brain is feared). A headache that built up over hours is false."
+    gloss: "A headache that came on suddenly and reached its worst within a minute or so, often described as the worst headache ever or like a blow to the head"
+    type: bool
+    ask: "Did the headache come on suddenly and reach its worst within a minute or so, like a blow to the head?"
+    ask_policy: when_applicable
+  complaint.neck_pain:
+    meaning: "The handbook reads it as a possible sign of meningitis or bleeding in the head, which is why it matters only together with the headache. The clinician's test of it is obs.nuchal_rigidity."
+    gloss: "Neck pain or a stiff neck that comes with a headache"
+    type: bool
+    ask: "Is there neck pain or a stiff neck with the headache?"
+    ask_policy: when_applicable
+  complaint.vomiting:
+    meaning: "Read with headache and with urinary symptoms; on its own it is text under the complaint."
+    gloss: "The patient has vomited since the problem started"
+    type: bool
+    ask: "Has the patient been vomiting?"
+    ask_policy: when_applicable
+  complaint.severe_psychological_distress:
+    meaning: "Written when the caregiver describes one of these or the patient's state matches; ordinary worry or crying is false. Whether one example alone means level 2 is under clinical review (issue #66)."
+    gloss: "Severe emotional distress: distraught after a sexual assault, behavioural outbursts or combativeness, a survivor of sexual or domestic violence, an acute grief reaction, suicidal thoughts, plan or attempt, the loss of a pregnancy"
+    type: bool
+    ask: "Is the patient extremely distressed: for example beside themselves after an assault or a loss, lashing out, or unable to be calmed?"
+    ask_policy: volunteered_only
+  complaint.psychotic_or_violent:
+    meaning: "Thoughts of self-harm are complaint.danger_to_self_or_others."
+    gloss: "The patient is out of touch with reality (hearing or seeing things that are not there, fixed false beliefs, severe confusion of this kind) or is violent or threatening violence now"
+    type: bool
+    ask: "Is the patient seeing or hearing things that are not there, saying things that make no sense, or being violent or threatening?"
+    ask_policy: volunteered_only
+  E.mechanism:
+    meaning: "`fall` includes a slip or trip from standing; `road_accident` any vehicle, motorcycle, bicycle or pedestrian crash; `assault` being hit, kicked or attacked; `penetrating_trauma` a stab, gunshot or impalement; `none` when there was no injury. Other mechanisms (a burn, a bite, a sports collision) are described in complaint.text until the list is extended."
+    gloss: "How the injury happened"
+    type: enum
+    values:
+    - fall
+    - road_accident
+    - assault
+    - penetrating_trauma
+    - none
+    ask: "How did the injury happen?"
+    purpose: "handover history (E of AMPLE: events related to the injury); four rules read it"
+    source: "StatPearls, Trauma Secondary Survey (Zemaitis MR, Planas JH, Waseem M; updated 2023; Bookshelf ID NBK441902), section AMPLE History, https://www.ncbi.nlm.nih.gov/books/NBK441902/ (verified 4 Oct 2026)"
+    span: "This mnemonic device can be used for obtaining a quick, focused history: Allergy; Medications; Previous medical history or illness/pregnancy; Last Meal; Events/environment related to injury"
+    ask_policy: always
+    asked_with: complaint.category
+  E.body_region:
+    meaning: "The head, neck, chest and abdomen are the regions the handbook's rules read; `other` covers the limbs, buttocks and back below the chest."
+    gloss: "Where on the body a penetrating injury (stab, gunshot, impalement) is"
+    type: enum
+    values:
+    - head
+    - neck
+    - chest
+    - abdomen
+    - other
+    ask: "Where on the body is the wound: head, neck, chest, belly, or elsewhere?"
+    ask_policy: when_applicable
+  E.fall_height_meters:
+    meaning: "0 for a fall from standing (slipped, tripped, fell while walking); a bed or chair is under 1; stairs are given as a number of steps in the text and estimated at about 0.2 metres a step. Only one rule reads it, at 6 metres or more (about two storeys)."
+    gloss: "How far the patient fell, in metres"
+    type: number
+    ask: "Did the patient fall from standing, or from a height such as a ladder, a window or stairs? Roughly how high?"
+    ask_policy: when_applicable
+  E.vehicle_ejection:
+    meaning: "Climbing out afterwards is false."
+    gloss: "In a crash, the patient was thrown out of the vehicle (or off a motorcycle or bicycle at speed)"
+    type: bool
+    ask: "In the crash, was the patient thrown out of the vehicle?"
+    ask_policy: when_applicable
+  E.mechanical_extrication:
+    meaning: "Being helped out by hand is false."
+    gloss: "The patient had to be cut or prised out of a vehicle with tools by rescuers"
+    type: bool
+    ask: "Did rescuers have to cut the patient out of the vehicle?"
+    ask_policy: when_applicable
+  E.abdominal_trauma:
+    meaning: "Read with abdominal pain; the handbook lists it as a question for the nurse."
+    gloss: "A blow, crush, kick, fall onto, or penetrating injury to the abdomen (belly or flanks)"
+    type: bool
+    ask: "Was there a blow or injury to the belly?"
+    ask_policy: when_applicable
+  E.head_strike:
+    meaning: "No handbook rule reads it (the fifth edition has no head-injury criterion; issue #10); collected for the nurse and for the supplemented blood-thinner rule."
+    gloss: "The patient hit their head in the injury, as the caregiver saw or was told"
+    type: bool
+    ask: "Did the patient hit their head?"
+    purpose: "collected after an injury; no rule reads it yet (see issue #10)"
+    source: "NICE NG232 Head injury: assessment and early management (2023), recommendation 1.2.3 (remote advice services), PDF page 7"
+    span: "Remote advice services (for example, NHS 111) should refer people who have sustained a head injury to a hospital emergency department if there are any of these risk factors"
+    provenance: transcribed
+    notes: "Whether the head was struck is the premise of the guideline's remote-advice recommendation, which is the situation this interview is in. The fifth edition of the handbook has no head-injury criterion (issue #10); the supplemented blood-thinner rule B-30 cites the same guideline."
+    ask_policy: when_applicable
+  E.loc:
+    meaning: "No handbook rule reads it (issue #10); collected for the nurse."
+    gloss: "The patient lost consciousness, even briefly, at the time of the injury: passed out, blacked out, or could not be woken for a moment"
+    type: bool
+    ask: "Did the patient pass out or black out, even for a moment, when it happened?"
+    purpose: "collected after an injury; no rule reads it yet (see issue #10)"
+    source: "NICE NG232 Head injury: assessment and early management (2023), recommendation 1.2.3 (remote advice services), PDF page 7"
+    span: "any loss of consciousness ('knocked out') because of the injury, from which the person has now recovered"
+    provenance: transcribed
+    notes: "The first risk factor the guideline gives a remote advice service for referring a head injury to an emergency department. The fifth edition of the handbook has no head-injury criterion (issue #10)."
+    ask_policy: when_applicable
+  M.medications:
+    meaning: "An empty list means the caregiver said there are none; not asked means the field is empty, not an empty list. The blood-thinner, beta-blocker and immune-suppressing facts are derived from this list."
+    gloss: "The medicines the patient takes, as the caregiver names them, including over-the-counter ones and anything taken today; a photo of the boxes is accepted"
+    type: list
+    ask: "What medicines does the patient take regularly? You can also send a photo of the boxes."
+    purpose: "handover history (M of AMPLE); the blood-thinner, beta-blocker and immune-suppressing facts are derived from it"
+    source: "StatPearls, Trauma Secondary Survey (Zemaitis MR, Planas JH, Waseem M; updated 2023; Bookshelf ID NBK441902), section AMPLE History, https://www.ncbi.nlm.nih.gov/books/NBK441902/ (verified 4 Oct 2026)"
+    span: "This mnemonic device can be used for obtaining a quick, focused history: Allergy; Medications; Previous medical history or illness/pregnancy; Last Meal; Events/environment related to injury"
+    notes: "The handbook expects this history at triage: ESI v4 (AHRQ 2012), PDF page 22: 'Considering the patient's brief subjective and objective assessment, past medical history, allergies, medications, age, and gender, how many different resources will be used'. It bears on levels 3 to 5 through resource prediction, which the system does not compute before arrival. The choice of AMPLE as the handover format the interview collects was reviewed and decided by Ye Htut Lwin (confirmed 13 Oct 2026); the items under it are transcribed from the source."
+    ask_policy: always
+  M.anticoagulant:
+    meaning: "Carries a certainty: probable from a description ('a pill that thins the blood'), confirmed from a named medicine or a yes to a direct question. The head-injury rule needs confirmed."
+    gloss: "The patient takes a blood thinner (anticoagulant or antiplatelet: warfarin, apixaban, rivaroxaban, dabigatran, clopidogrel, and others)"
+    type: bool
+    terms: [blood_thinner]
+    ask: "Does the patient take a blood thinner, a medicine to prevent clots, such as warfarin, apixaban, rivaroxaban or clopidogrel?"
+    ask_policy: when_applicable
+    stated_only: [thin, clot, warfarin, coumadin, marevan, apixaban, eliquis, rivaroxaban, xarelto, dabigatran, pradaxa, clopidogrel, plavix, heparin, clexane, enoxaparin, anticoag]
+  M.beta_blocker:
+    meaning: "Shown to the nurse as a context note: it can keep the heart rate normal when the body would otherwise race."
+    gloss: "The patient takes a beta-blocker (names ending in -olol: atenolol, bisoprolol, metoprolol, propranolol, carvedilol)"
+    type: bool
+    stated_only: [olol, beta, blocker, nebivolol, labetalol, sotalol]
+    terms: [beta_blocker]
+    ask: "Does the patient take a heart or blood-pressure medicine whose name ends in -olol, such as atenolol, bisoprolol or metoprolol?"
+    ask_policy: volunteered_only
+  M.immunosuppressant_or_steroid:
+    meaning: "Shown to the nurse as a context note. The illness side of the same fact is history.immunocompromised."
+    gloss: "The patient takes a medicine that weakens the immune system: long-term steroid tablets (prednisolone), transplant medicines, chemotherapy, biologic injections for arthritis or bowel disease"
+    type: bool
+    stated_only: [steroid, prednis, dexameth, chemo, transplant, biologic, methotrex, azathio, tacrolimus, ciclosporin, cyclosporin, mycophenol, rituximab, adalimumab, infliximab, etanercept, immun]
+    terms: [immune_weakening_medicine]
+    ask: "Does the patient take steroid tablets long term, transplant medicines, chemotherapy, or injections that suppress the immune system?"
+    ask_policy: volunteered_only
+  A.allergies:
+    meaning: "An empty list means the caregiver said there are none."
+    gloss: "Known allergies, especially to medicines, as the caregiver names them, with the reaction if known"
+    type: list
+    ask: "Does the patient have any allergies, especially to medicines?"
+    purpose: "handover history (A of AMPLE)"
+    source: "StatPearls, Trauma Secondary Survey (Zemaitis MR, Planas JH, Waseem M; updated 2023; Bookshelf ID NBK441902), section AMPLE History, https://www.ncbi.nlm.nih.gov/books/NBK441902/ (verified 4 Oct 2026)"
+    span: "This mnemonic device can be used for obtaining a quick, focused history: Allergy; Medications; Previous medical history or illness/pregnancy; Last Meal; Events/environment related to injury"
+    notes: "The handbook expects this history at triage: ESI v4 (AHRQ 2012), PDF page 22: 'Considering the patient's brief subjective and objective assessment, past medical history, allergies, medications, age, and gender, how many different resources will be used'. It bears on levels 3 to 5 through resource prediction, which the system does not compute before arrival. The choice of AMPLE as the handover format the interview collects was reviewed and decided by Ye Htut Lwin (confirmed 13 Oct 2026); the items under it are transcribed from the source."
+    ask_policy: always
+    asked_with: M.medications
+  history.conditions:
+    meaning: "An empty list means the caregiver said there are none. Several rule facts (immune weakness, transplant, clotting disorder) are also read from this list when named."
+    gloss: "Existing medical conditions the patient is known to have, as the caregiver names them (diabetes, heart disease, asthma, kidney disease, cancer, and so on)"
+    type: list
+    ask: "Does the patient have any ongoing medical conditions?"
+    purpose: "handover history (P of AMPLE)"
+    source: "StatPearls, Trauma Secondary Survey (Zemaitis MR, Planas JH, Waseem M; updated 2023; Bookshelf ID NBK441902), section AMPLE History, https://www.ncbi.nlm.nih.gov/books/NBK441902/ (verified 4 Oct 2026)"
+    span: "This mnemonic device can be used for obtaining a quick, focused history: Allergy; Medications; Previous medical history or illness/pregnancy; Last Meal; Events/environment related to injury"
+    notes: "The handbook expects this history at triage: ESI v4 (AHRQ 2012), PDF page 22: 'Considering the patient's brief subjective and objective assessment, past medical history, allergies, medications, age, and gender, how many different resources will be used'. It bears on levels 3 to 5 through resource prediction, which the system does not compute before arrival. The choice of AMPLE as the handover format the interview collects was reviewed and decided by Ye Htut Lwin (confirmed 13 Oct 2026); the items under it are transcribed from the source."
+    ask_policy: always
+    asked_with: M.medications
+  history.immunocompromised:
+    meaning: "Read with fever. The medicine side of the same fact is M.immunosuppressant_or_steroid; either makes this true."
+    gloss: "The patient's defences against infection are weakened by an illness or a treatment: chemotherapy or other cancer treatment, an organ transplant, HIV, long-term steroids, no spleen, or a doctor has said the immune system is weak"
+    type: bool
+    terms: [weakened_immune_system]
+    ask: "Is the patient being treated for cancer, have they had an organ transplant, do they have HIV, or do they take steroids or any medicine that weakens their defences against infection? Or has a doctor said their immune system is weak?"
+    ask_policy: always
+    asked_with: M.medications
+    stated_only: [immun, chemo, cancer, transplant, hiv, aids, steroid, prednis, spleen, defence, defense]
+  history.pregnant:
+    meaning: "Not to be deduced from age or sex: written only when stated or denied. Split from the bundled pregnant-or-postpartum fact on 10 Oct 2026 (rules B-38 and B-39 read this fact alone, as their sentences say)."
+    gloss: "The patient is pregnant now, at any stage, as the caregiver states it"
+    type: bool
+    ask: "Is the patient pregnant?"
+    ask_policy: when_applicable
+    stated_only: [pregnan, expecting, weeks along, trimester, mengandung, hamil, 怀孕, கர்ப்ப]
+  history.postpartum:
+    meaning: "Written only when stated or denied. Read together with history.pregnant by the rules that say \"pregnant or postpartum\" (B-17, B-37) and alone by the postpartum-bleeding bridge."
+    gloss: "The patient gave birth recently (the handbook gives no time limit; the usual clinical meaning is within six weeks)"
+    type: bool
+    terms: [recently_gave_birth]
+    ask: "Has the patient given birth in the last few weeks?"
+    ask_policy: when_applicable
+    asked_with: history.pregnant
+    stated_only: [gave birth, given birth, delivered, delivery, postpartum, post-partum, after the birth, newborn, baby, bersalin, 产后, 生了]
+  history.transplant_recipient_or_listed:
+    meaning: "Read with fever and signs of infection or rejection. The waiting-list part alone is history.on_transplant_list."
+    gloss: "The patient has had an organ transplant (kidney, liver, heart, lung, bone marrow) or is on a waiting list for one"
+    type: bool
+    ask: "Has the patient had an organ transplant, or are they waiting for one?"
+    ask_policy: when_applicable
+    stated_only: [transplant, donor, graft, waiting list]
+  complaint.transplant_rejection_signs:
+    meaning: "Which signs count still needs clinical review. Added 4 Oct 2026 from the handbook's 'infection or rejection' (p.15)."
+    gloss: "A transplant recipient with signs that the organ may be being rejected, as the caregiver reports them: for a kidney, less urine, swelling, pain over the graft; for any organ, fever, feeling unwell, or the transplant team has warned of rejection"
+    type: bool
+    ask: "Has anything changed that the transplant team told you to watch for, such as less urine, swelling or pain over the transplant, or feeling unwell?"
+    notes: "Added 4 Oct 2026 with the rebuild: the handbook's transplant sentence says 'infection or rejection' (p.15)."
+    ask_policy: when_applicable
+  history.on_transplant_list:
+    meaning: "The handbook says such patients are usually considered high risk (a consider flag). Also makes history.transplant_recipient_or_listed true."
+    gloss: "The patient is on a waiting list for an organ transplant"
+    type: bool
+    ask: "Is the patient on a waiting list for an organ transplant?"
+    ask_policy: volunteered_only
+    stated_only: [transplant, waiting list, donor]
+  history.thrombocytopenia_or_clotting_disorder:
+    meaning: "Read with a brisk nosebleed and with head injury. Blood thinners are a separate fact, M.anticoagulant."
+    gloss: "A doctor has said the patient has a low platelet count or a bleeding or clotting disorder (haemophilia, von Willebrand disease, and others)"
+    type: bool
+    ask: "Has a doctor ever said the patient has a low platelet count or a bleeding or clotting disorder, such as haemophilia?"
+    ask_policy: when_applicable
+  history.recent_covid_infection:
+    meaning: "Shown to the nurse as a context note with chest pain: it raises the risk of a heart problem."
+    gloss: "The patient has had COVID-19 in the last few weeks (the handbook gives no time limit)"
+    type: bool
+    terms: [recent_covid]
+    ask: "Has the patient had COVID-19 recently?"
+    ask_policy: when_applicable
+  history.baseline_mental_status:
+    meaning: "When it is unknown, the handbook says to treat confusion, drowsiness or disorientation as new. Set to `known` when the caregiver knows the patient well; `unknown` for a stranger or a patient found alone."
+    gloss: "Whether the patient's usual mental state is known to the person answering, so that a change can be recognised"
+    type: enum
+    values:
+    - known
+    - unknown
+    ask: "Do you know the patient well enough to say how alert and clear-headed they usually are?"
+    ask_policy: when_applicable
+  L.last_intake:
+    meaning: "For the nurse and for any procedure that needs an empty stomach."
+    gloss: "When the patient last ate or drank, and what; a clock time or a phrase ('lunch at twelve')"
+    type: text
+    ask: "When did the patient last eat or drink, and what was it?"
+    purpose: "handover history (L of AMPLE)"
+    source: "StatPearls, Trauma Secondary Survey (Zemaitis MR, Planas JH, Waseem M; updated 2023; Bookshelf ID NBK441902), section AMPLE History, https://www.ncbi.nlm.nih.gov/books/NBK441902/ (verified 4 Oct 2026)"
+    span: "This mnemonic device can be used for obtaining a quick, focused history: Allergy; Medications; Previous medical history or illness/pregnancy; Last Meal; Events/environment related to injury"
+    ask_policy: always
+  infection.rash:
+    meaning: "For isolation decisions at the counter (measles, chickenpox); no handbook rule reads it."
+    gloss: "A new rash that appeared with this illness, anywhere on the body"
+    type: bool
+    ask: "Is there a new rash?"
+    purpose: "infection screen for isolation"
+    source: ["ESI v5 p.23 (pediatric fever)", "Mount Sinai Health System, Infectious Diseases Screening Tool for Patients at Triage/Registration (updated 25 Mar 2025; accessed 13 Oct 2026), https://www.mountsinai.org/files/MSHealth/Assets/HS/About/Coronavirus/MSHS-Infectious-Diseases-Screening-Tool.pdf", "CDC, Core Infection Prevention and Control Practices, section 5e Minimizing Potential Exposures (last reviewed 12 Apr 2024; accessed 13 Oct 2026), https://www.cdc.gov/infection-control/hcp/core-practices/index.html"]
+    span: "The patient presenting with a fever, non-petechial rash, and incomplete immunizations should prompt the triage nurse to consider isolation."
+    notes: "The screening tool asks 'Do you have any of the following symptoms (check all that apply)? Fever or chills? Rash?'. The CDC core practice: 'early detection and management (e.g., ... isolation precautions ...) of potentially infectious persons at initial points of patient encounter in outpatient settings (e.g., triage areas, emergency departments ...)'."
+    ask_policy: always
+    asked_with: complaint.fever
+  infection.travel_14d:
+    meaning: "For isolation decisions; no handbook rule reads it."
+    gloss: "The patient has travelled outside the country in the last 14 days"
+    type: bool
+    terms: [recent_travel]
+    ask: "Has the patient travelled overseas in the last two weeks?"
+    purpose: "infection screen for isolation"
+    source: ["Mount Sinai Health System, Infectious Diseases Screening Tool for Patients at Triage/Registration (updated 25 Mar 2025; accessed 13 Oct 2026), https://www.mountsinai.org/files/MSHealth/Assets/HS/About/Coronavirus/MSHS-Infectious-Diseases-Screening-Tool.pdf", "CDC, Core Infection Prevention and Control Practices, section 5e Minimizing Potential Exposures (last reviewed 12 Apr 2024; accessed 13 Oct 2026), https://www.cdc.gov/infection-control/hcp/core-practices/index.html"]
+    span: "Have you traveled outside the U.S. in the past 3 weeks?"
+    notes: "Authored choice to flag for the nurse's read: our window is two weeks; the screening tool asks about the past three weeks."
+    ask_policy: always
+    asked_with: complaint.fever
+  infection.contacts:
+    meaning: "For isolation decisions; no handbook rule reads it. 'Everyone at home is well' is a no."
+    gloss: "The patient has been in contact with someone who has an infectious illness (for example chickenpox, measles, tuberculosis, COVID-19) in the last two weeks"
+    type: bool
+    terms: [recent_contact]
+    ask: "Has the patient been in contact with anyone who has an infectious illness in the last two weeks?"
+    purpose: "infection screen for isolation"
+    source: ["Mount Sinai Health System, Infectious Diseases Screening Tool for Patients at Triage/Registration (updated 25 Mar 2025; accessed 13 Oct 2026), https://www.mountsinai.org/files/MSHealth/Assets/HS/About/Coronavirus/MSHS-Infectious-Diseases-Screening-Tool.pdf", "CDC, Core Infection Prevention and Control Practices, section 5e Minimizing Potential Exposures (last reviewed 12 Apr 2024; accessed 13 Oct 2026), https://www.cdc.gov/infection-control/hcp/core-practices/index.html"]
+    span: "Have you had close contact with someone who has Measles, Chickenpox, Mumps, Mpox, or any other known unusual highly infectious disease in the past 3 weeks?"
+    notes: "Authored choice to flag for the nurse's read: our window is two weeks; the screening tool asks about the past three weeks."
+    ask_policy: always
+    asked_with: complaint.fever
+  danger_signs.responsive:
+    meaning: "No means the patient cannot be woken or is not responding normally: it triggers the call-995 advice and, through bridge BR-01.not-responding, counts as altered mental status for the rule B-01 (floor at least ESI-2). The level-1 rule for unresponsiveness needs a clinician's observation (obs.avpu) and is left to the nurse at the door. A caregiver's repeated unprompted 'she is alert' is this field being stated again, not an answer to another question."
+    gloss: "The patient is awake and responding normally, as the caregiver sees it"
+    type: bool
+    ask: "Is the patient awake and responding to you normally?"
+    feeds: "obs.new_confusion_lethargy_disorientation"
+    purpose: "danger-sign screen; 'no' triggers the call-995 advice and feeds the altered-mental-status rule through a bridge; the level-1 rules need a clinician's observation"
+    source: "ESI v5 p.6 (Decision Point A, definition of unresponsiveness)"
+    span: "Unresponsiveness is defined as a patient who either: 1. Is nonverbal and not following commands (acutely) OR 2. Requires noxious stimulus (P or U on AVPU scale)"
+    provenance: operationalized
+    notes: "The danger-sign screen is our lay reading of the handbook's decision point A, asked first because A comes first; the handbook's criteria there are a clinician's findings, so the caregiver's answer routes the interview and the call-995 advice and does not fire the level-1 rule. Awake and responding normally, as the caregiver sees it, is the lay form of this definition; a 'no' triggers the call-995 advice and feeds rule B-01 through bridge BR-01.not-responding, while the level-1 rule A-01 waits for the nurse's AVPU."
+    ask_policy: always
+  danger_signs.chest_pain_now:
+    meaning: "Yes opens the chest-pain questions (complaint.acs_suspicion). 'No pain' said here is about the chest only."
+    gloss: "The patient has chest pain right now"
+    type: bool
+    ask: "Does the patient have chest pain right now?"
+    purpose: "danger-sign screen"
+    source: "ESI v5 p.12 (Decision Point B, examples of high-risk situations)"
+    span: "Active chest pain, suspicious for acute coronary syndrome but does not require an immediate lifesaving intervention"
+    provenance: operationalized
+    notes: "The danger-sign screen is our lay reading of the handbook's decision point A, asked first because A comes first; the handbook's criteria there are a clinician's findings, so the caregiver's answer routes the interview and the call-995 advice and does not fire the level-1 rule. Chest pain now opens the chest-pain questions that decide the acute-coronary-syndrome rule B-04; the handbook names it among the high-risk situations and, with instability, the level-1 ones."
+    ask_policy: always
+  danger_signs.breathing_difficulty:
+    meaning: "Yes opens the breathing questions and implies complaint.shortness_of_breath (bridge EN.breathing-difficulty-now-is-shortness-of-breath)."
+    gloss: "The patient is having trouble breathing right now, as the caregiver sees it"
+    type: bool
+    ask: "Is the patient having trouble breathing right now?"
+    feeds: "complaint.shortness_of_breath"
+    purpose: "danger-sign screen"
+    source: "ESI v5 p.6 (Decision Point A, clinical presentations requiring lifesaving interventions)"
+    span: "Clinical presentations requiring lifesaving interventions include the following: intubated, unresponsive, pulselessness, apneic, severe respiratory distress, profound hypotension or hypoglycemia."
+    provenance: operationalized
+    notes: "The danger-sign screen is our lay reading of the handbook's decision point A, asked first because A comes first; the handbook's criteria there are a clinician's findings, so the caregiver's answer routes the interview and the call-995 advice and does not fire the level-1 rule. Trouble breathing now is the caregiver's view of severe respiratory distress; it opens the breathing questions and implies complaint.shortness_of_breath (bridge)."
+    ask_policy: always
+  danger_signs.heavy_bleeding:
+    meaning: "Yes with a wound triggers the call-995 advice."
+    gloss: "The patient is bleeding heavily right now from anywhere: blood that soaks through a cloth or will not stop with pressure"
+    type: bool
+    ask: "Is the patient bleeding heavily right now?"
+    purpose: "danger-sign screen"
+    source: ["ESI v5 p.6 (Decision Point A, lifesaving interventions)", "ESI v4 (AHRQ 2012) PDF page 18, Table 2-1 Immediate Life-saving Interventions"]
+    span: "hemodynamic interventions such as fluid resuscitation or blood products"
+    provenance: operationalized
+    notes: "The danger-sign screen is our lay reading of the handbook's decision point A, asked first because A comes first; the handbook's criteria there are a clinician's findings, so the caregiver's answer routes the interview and the call-995 advice and does not fire the level-1 rule. The fourth edition's table of lifesaving interventions lists 'Control of major bleeding' under hemodynamics; the fifth names the interventions it calls for. Heavy bleeding now, as the caregiver sees it, is the lay sign of that."
+    ask_policy: always
+  stroke.face_droop:
+    meaning: "One of the stroke signs (FAST); feeds complaint.stroke_signs."
+    gloss: "One side of the face is drooping or the smile is uneven, new today"
+    type: bool
+    ask: "Is one side of the face drooping, or is the smile uneven?"
+    feeds: "complaint.stroke_signs"
+    ask_policy: when_applicable
+  stroke.arm_weakness:
+    meaning: "One of the stroke signs; feeds complaint.stroke_signs."
+    gloss: "One arm (or leg) is weak, numb or will not lift, new today"
+    type: bool
+    ask: "Is one arm or leg weak or numb, or does it drift down when raised?"
+    feeds: "complaint.stroke_signs"
+    ask_policy: when_applicable
+  stroke.speech_change:
+    meaning: "One of the stroke signs; feeds complaint.stroke_signs."
+    gloss: "Speech is slurred, jumbled or missing, or the patient cannot understand what is said, new today"
+    type: bool
+    ask: "Is the speech slurred or strange, or is the patient not understanding you?"
+    feeds: "complaint.stroke_signs"
+    ask_policy: when_applicable
+  stroke.vision_change:
+    meaning: "One of the stroke signs (bridge BR-05) and the 'altered vision' of the handbook's six eye findings (bridge BR-28): one observation, one field, two consumers. Double vision is eye.double_vision_pupil_or_bulge."
+    gloss: "Sudden loss or change of vision in one or both eyes, new today"
+    type: bool
+    ask: "Has there been a sudden loss or change of vision?"
+    feeds: "complaint.stroke_signs, complaint.atso_elements_count"
+    ask_policy: when_applicable
+  stroke.balance_loss:
+    meaning: "Feeds complaint.stroke_signs."
+    gloss: "Sudden loss of balance or coordination, dizziness with trouble walking, new today"
+    type: bool
+    ask: "Has the patient suddenly lost balance or coordination?"
+    feeds: "complaint.stroke_signs"
+    ask_policy: when_applicable
+  eye.double_vision_pupil_or_bulge:
+    meaning: "One of the handbook's six eye findings (p.13: 'sudden diplopia, anisocoria, or exophthalmos'); counted into complaint.atso_elements_count by bridge BR-28."
+    gloss: "Sudden double vision, pupils of different sizes, or an eye that bulges or sticks out, new with this problem"
+    type: bool
+    ask: "Is there sudden double vision, are the pupils different sizes, or does one eye bulge?"
+    feeds: "complaint.atso_elements_count"
+    ask_policy: when_applicable
+  eye.red:
+    meaning: "One of the handbook's six eye findings ('red eye'); counted into complaint.atso_elements_count by bridge BR-28."
+    gloss: "The eye is red"
+    type: bool
+    ask: "Is the eye red?"
+    feeds: "complaint.atso_elements_count"
+    ask_policy: when_applicable
+  eye.intolerable_pain:
+    meaning: "One of the handbook's six eye findings ('distress/pain (specifically intolerable pain)'); counted into complaint.atso_elements_count by bridge BR-28. The 0 to 10 rating is complaint.pain_rating; this field is the caregiver's own word that the pain is unbearable."
+    gloss: "Eye pain the patient cannot bear, as the caregiver or patient describes it"
+    type: bool
+    ask: "Is the eye pain unbearable?"
+    feeds: "complaint.atso_elements_count"
+    ask_policy: when_applicable
+  eye.injury:
+    meaning: "One of the handbook's six eye findings ('eye trauma'); counted into complaint.atso_elements_count by bridge BR-28."
+    gloss: "The eye was injured: a blow, a scratch, something in it, or a chemical or dust splashed into it"
+    type: bool
+    ask: "Was the eye injured, or did something get into it?"
+    feeds: "complaint.atso_elements_count"
+    ask_policy: when_applicable
+  eye.floaters_or_flashes:
+    meaning: "One of the handbook's six eye findings ('floaters and flashers'); counted into complaint.atso_elements_count by bridge BR-28."
+    gloss: "New floaters (specks or threads drifting across the vision) or flashes of light"
+    type: bool
+    ask: "Are there new floating specks or flashes of light in the vision?"
+    feeds: "complaint.atso_elements_count"
+    ask_policy: when_applicable
+  limb.numb_tingling:
+    meaning: "Feeds complaint.extremity_neurovascular_compromise."
+    gloss: "Fingers or toes below an injury are numb or tingling"
+    type: bool
+    ask: "Are the fingers or toes below the injury numb or tingling?"
+    feeds: "complaint.extremity_neurovascular_compromise"
+    ask_policy: when_applicable
+  limb.cold_pale_blue:
+    meaning: "Feeds complaint.extremity_neurovascular_compromise (bridge BR-24; wording from the plaster-cast patient pages quoted there)."
+    gloss: "Fingers or toes below an injury have turned pale (white) or blue, or feel cold, compared with the other side"
+    type: bool
+    ask: "Are the fingers or toes below the injury cold, pale or blue?"
+    feeds: "complaint.extremity_neurovascular_compromise"
+    ask_policy: when_applicable
+  limb.cannot_move_digits:
+    meaning: "Feeds complaint.extremity_neurovascular_compromise."
+    gloss: "The patient cannot move the fingers or toes below an injury"
+    type: bool
+    ask: "Can the patient move the fingers or toes below the injury?"
+    feeds: "complaint.extremity_neurovascular_compromise"
+    ask_policy: when_applicable
+  limb.cast_too_tight:
+    meaning: "Feeds complaint.extremity_neurovascular_compromise (and points to compartment syndrome)."
+    gloss: "A cast, splint or tight bandage on the limb feels too tight, with increasing pain, swelling or numbness beyond it"
+    type: bool
+    ask: "If there is a cast or splint, does it feel too tight, with the pain or swelling getting worse?"
+    feeds: "complaint.extremity_neurovascular_compromise"
+    ask_policy: when_applicable
+  ams.changed_from_baseline:
+    meaning: "Feeds the mental-status fields for adults and children. No means the patient is as alert and clear as usual."
+    gloss: "Mental state changed from the patient's usual: more confused, not making sense, unusually drowsy or hard to wake, or newly agitated, according to someone who knows them. Tired, irritable or 'not myself' from pain while thinking clearly is not this"
+    type: bool
+    ask: "Compared with how the patient usually is, are they more confused, not making sense, or unusually sleepy and hard to wake?"
+    feeds: "obs.new_confusion_lethargy_disorientation, obs.subtle_mental_status_change, obs.confusion_lethargy_disorientation"
+    ask_policy: always
+  obs.new_confusion_lethargy_disorientation:
+    meaning: "The handbook also counts unusual sleepiness, agitation and aggression as altered mental status. Reached from a caregiver through ams.changed_from_baseline; a clinician confirms it on arrival."
+    gloss: "New confusion, drowsiness or disorientation: a change from how the patient usually is"
+    type: bool
+    naming_note: "named obs. but read by a rule tagged reported; reached through the bridges from ams.changed_from_baseline and from danger_signs.responsive"
+  obs.confusion_lethargy_disorientation:
+    meaning: "Implied by ams.changed_from_baseline (bridge EN.changed-baseline-is-altered-now). Read with history.baseline_mental_status: when nobody knows the usual state, the handbook treats it as new. Reached from a caregiver's description; a clinician confirms it."
+    gloss: "The patient is confused, drowsy, disoriented or agitated now, whether or not it is new"
+    type: bool
+    ask: "Is the patient confused, unusually drowsy, or not making sense?"
+    naming_note: "named obs. but read by rules tagged reported"
+    ask_policy: when_applicable
+  obs.subtle_mental_status_change:
+    meaning: "Reached from ams.changed_from_baseline for a child; the handbook treats it as high risk (under clinical review, issue #66)."
+    gloss: "A child who is 'not right' to the people who know them: less alert, less playful, quieter, harder to rouse than usual, even if still awake and answering"
+    type: bool
+    naming_note: "named obs. but read by a rule tagged reported; reached through the ams bridge"
+  obs.nuchal_rigidity:
+    meaning: "A clinician's finding that a caregiver can also test; read with headache."
+    gloss: "A stiff neck: the patient cannot bend the chin to the chest, or it hurts to try"
+    type: bool
+    ask: "Can the patient bend the head forward and touch the chin to the chest, or is the neck too stiff or painful to do it?"
+    naming_note: "named obs. but read by a rule tagged reported"
+    ask_policy: when_applicable
+  obs.grunting_belly_breathing_or_retractions:
+    meaning: "The handbook's signs of respiratory distress in a child; a caregiver can see them."
+    gloss: "A child who grunts with each breath out, breathes with the belly going in and out hard, or whose skin pulls in between or below the ribs or at the neck with each breath"
+    type: bool
+    ask: "When the child breathes, do they grunt with each breath, does the belly go in and out hard, or does the skin pull in between or below the ribs?"
+    naming_note: "named obs. but read by a rule tagged reported"
+    ask_policy: when_applicable
+  obs.avpu:
+    meaning: "P or U is level 1. Not asked of a caregiver; danger_signs.responsive is the caregiver's version."
+    gloss: "Responsiveness on the AVPU scale as a clinician assesses it: Alert; responds to Voice; responds only to Pain; Unresponsive"
+    type: enum
+    values:
+    - A
+    - V
+    - P
+    - U
+  obs.nonverbal_acute:
+    meaning: "Part of the handbook's definition of unresponsive, with obs.not_following_commands."
+    gloss: "The patient has suddenly become unable to speak (not their usual state)"
+    type: bool
+  obs.not_following_commands:
+    meaning: "Part of the handbook's definition of unresponsive, with obs.nonverbal_acute."
+    gloss: "The patient does not follow simple instructions ('squeeze my hand')"
+    type: bool
+  obs.cardiac_or_pulmonary_arrest:
+    meaning: "A clinician's finding; a caregiver's 'not breathing' is danger_signs.responsive = no with breathing difficulty and triggers 995 advice."
+    gloss: "The heart or breathing has stopped, or is about to"
+    type: bool
+  obs.apneic:
+    meaning: "A clinician's finding at decision point A."
+    gloss: "The patient is not breathing"
+    type: bool
+  obs.pulseless:
+    meaning: "A clinician's finding at decision point A."
+    gloss: "No pulse can be felt"
+    type: bool
+  obs.severe_respiratory_distress:
+    meaning: "A clinician's judgement; lesser distress is complaint.respiratory_distress_signs."
+    gloss: "The patient is struggling severely to breathe and needs an immediate intervention (oxygen support, a breathing tube)"
+    type: bool
+  obs.airway_occluded_or_ineffective_clearance:
+    meaning: "A clinician's finding."
+    gloss: "The airway is blocked, or the patient cannot clear it (choking, obstructed by swelling, blood or vomit)"
+    type: bool
+  obs.active_seizure:
+    meaning: "A clinician's finding; a seizure that has ended is complaint.post_ictal_after_seizure."
+    gloss: "The patient is having a seizure now"
+    type: bool
+  obs.respiratory_compromise_signs:
+    meaning: "A clinician's finding."
+    gloss: "Signs that breathing is failing, seen together with an oxygen reading under 90 percent: blue lips, exhaustion, confusion from low oxygen"
+    type: bool
+  obs.anaphylaxis:
+    meaning: "A clinician's finding; a caregiver's report of it is urgent and triggers 995 advice."
+    gloss: "A severe allergic reaction affecting breathing or circulation: throat or tongue swelling, wheeze, collapse, after a known trigger"
+    type: bool
+  obs.hypoperfusion_signs:
+    meaning: "A clinician's finding at decision points A and B."
+    gloss: "Signs that blood is not reaching the tissues: pale, cold, clammy or mottled skin, slow capillary refill, weak pulse, confusion"
+    type: bool
+  obs.flaccid:
+    meaning: "A clinician's finding at decision point A."
+    gloss: "A floppy infant with no muscle tone who does not resist handling"
+    type: bool
+  obs.requires_lifesaving_intervention:
+    meaning: "The general level-1 rule and the qualifier on the chest-pain, pregnancy and penetrating-trauma level-1 rules."
+    gloss: "The clinician judges that the patient needs an immediate life-saving intervention (airway, breathing, circulation, or an emergency medicine)"
+    type: bool
+  obs.intubated:
+    meaning: "A clinician's finding at decision point A."
+    gloss: "The patient arrives with a breathing tube in place (placed by ambulance staff)"
+    type: bool
+  obs.hemodynamically_unstable:
+    meaning: "A clinician's finding; false is needed for the stable penetrating-trauma rule, so it is read as 'no signs of instability' before arrival."
+    gloss: "Blood pressure and circulation are unstable: low or falling blood pressure with signs of shock"
+    type: bool
+  obs.ineffective_tissue_perfusion:
+    meaning: "A clinician's finding at decision point A."
+    gloss: "Blood flow to the tissues is inadequate (nursing term for shock)"
+    type: bool
+  obs.ineffective_respiratory_pattern:
+    meaning: "A clinician's finding at decision point A."
+    gloss: "The pattern of breathing is not moving enough air (gasping, very slow or irregular breathing)"
+    type: bool
+  obs.impaired_gas_exchange:
+    meaning: "A clinician's finding at decision point A."
+    gloss: "The lungs are not getting enough oxygen into the blood or carbon dioxide out"
+    type: bool
+  obs.stridor:
+    meaning: "A clinician's finding; a caregiver's 'noisy breathing in' should be reported to the nurse as text."
+    gloss: "A harsh, high-pitched noise on breathing in, from a narrowed upper airway"
+    type: bool
+  obs.cannot_manage_secretions:
+    meaning: "A clinician's finding, read with stridor."
+    gloss: "The patient is drooling or cannot swallow their own saliva (a sign of a swollen or blocked throat)"
+    type: bool
+  obs.sepsis_signs:
+    meaning: "A clinician's finding, read with abdominal pain."
+    gloss: "Signs of a severe, body-wide infection: fever or low temperature with fast heart rate, fast breathing, confusion, mottled skin"
+    type: bool
+  obs.unexplained_ams_breathing_or_rhythm_change:
+    meaning: "A clinician's judgement; a known ingestion is complaint.known_toxic_ingestion."
+    gloss: "An unexplained change in mental state, difficulty breathing, a changed breathing pattern, or a changed heart rate or rhythm that could be a poisoning"
+    type: bool
+  vitals.spo2:
+    meaning: "Read at under 90 (level 1 with respiratory compromise) and under 92 (danger zone). A home reading reported by a caregiver is accepted with lower certainty."
+    gloss: "Oxygen saturation, in percent, from a pulse oximeter"
+    type: number
+    ask: "If you have a finger oxygen meter, what does it read?"
+    ask_policy: volunteered_only
+  vitals.spo2_is_patients_norm:
+    meaning: "Set from the history or by the clinician."
+    gloss: "A low oxygen reading that is normal for this patient (for example chronic lung disease), so it does not by itself mean level 1"
+    type: bool
+  vitals.heart_rate:
+    meaning: "Read against the age-banded danger zones at decision point D. A home reading is accepted with lower certainty."
+    gloss: "Heart rate, beats per minute, measured"
+    type: number
+  vitals.respiratory_rate:
+    meaning: "Read against the age-banded danger zones at decision point D."
+    gloss: "Breaths per minute, counted"
+    type: number
+  vitals.sbp:
+    meaning: "Read at under 90 and over 150 for a pregnant or postpartum patient. A home reading is accepted with lower certainty."
+    gloss: "Systolic blood pressure (the upper number), in mmHg, measured"
+    type: number
+    ask: "If you have a blood pressure reading, what is the upper number?"
+    ask_policy: volunteered_only
+  vitals.temp_c:
+    meaning: "Read against the infant and child fever thresholds (38, 38.5, 39, and under 36). A reading in Fahrenheit is converted; 'feels hot' without a reading is complaint.fever only."
+    gloss: "Body temperature in degrees Celsius, measured with a thermometer"
+    type: number
+    ask: "If you measured the temperature, what was it?"
+    ask_policy: when_applicable
+  vitals.hypotension:
+    meaning: "Read with signs of poor perfusion at decision point A."
+    gloss: "Blood pressure is low for the patient's age, as the clinician judges it"
+    type: bool
+  vitals.profound_hypotension:
+    meaning: "Level 1 on its own."
+    gloss: "Blood pressure is very low, far below normal for age, as the clinician judges it"
+    type: bool
+  vitals.profound_hypoglycemia:
+    meaning: "Level 1 on its own."
+    gloss: "Blood sugar is very low (a glucose reading well below normal, with symptoms)"
+    type: bool
+  vitals.extreme_heart_rate:
+    meaning: "Level 1 on its own."
+    gloss: "Heart rate is extremely slow or extremely fast for the patient's age, as the clinician judges it"
+    type: bool
+  vitals.ecg_abnormal:
+    meaning: "Read with chest pain; cannot exist before arrival."
+    gloss: "The heart tracing (ECG) taken at triage is abnormal"
+    type: bool
+  vitals.abnormal_for_patient:
+    meaning: "Read with heavy vaginal bleeding in pregnancy; cannot exist before arrival."
+    gloss: "The measured vital signs are abnormal for this patient, as the clinician judges them"
+    type: bool

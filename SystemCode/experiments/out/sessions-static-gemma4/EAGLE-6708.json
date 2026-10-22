@@ -1,0 +1,482 @@
+{
+ "sid": "EAGLE-6708",
+ "facts": {
+  "red_flags.responsive": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-09-26 03:31"
+  },
+  "red_flags.chest_pain_now": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-09-26 03:31"
+  },
+  "red_flags.breathing_difficulty": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-09-26 03:31"
+  },
+  "red_flags.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-09-26 03:31"
+  },
+  "stroke.speech_change": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-09-26 03:31"
+  },
+  "stroke.arm_weakness": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-09-26 03:31"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "other",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "persona",
+      "turn": 3,
+      "ts": "2026-09-26 03:31"
+     },
+     "text": {
+      "value": "no pain",
+      "status": "reported",
+      "who": "persona",
+      "turn": 3,
+      "ts": "2026-09-26 03:31"
+     },
+     "onset": {
+      "value": "9am",
+      "status": "reported",
+      "who": "persona",
+      "turn": 3,
+      "ts": "2026-09-26 03:31"
+     },
+     "pain_rating": {
+      "value": 0,
+      "status": "reported",
+      "who": "persona",
+      "turn": 3,
+      "ts": "2026-09-26 03:31"
+     },
+     "onset_abs": {
+      "value": "~2026-09-26 09:00",
+      "status": "reported",
+      "who": "derived",
+      "turn": 3,
+      "ts": "2026-09-26 03:31"
+     }
+    },
+    {
+     "category": "neuro_symptoms",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "persona",
+      "turn": 5,
+      "ts": "2026-09-26 03:31"
+     },
+     "text": {
+      "value": "left arm weak",
+      "status": "reported",
+      "who": "persona",
+      "turn": 5,
+      "ts": "2026-09-26 03:31"
+     },
+     "onset": {
+      "value": "9am",
+      "status": "reported",
+      "who": "persona",
+      "turn": 5,
+      "ts": "2026-09-26 03:31"
+     },
+     "onset_abs": {
+      "value": "~2026-09-26 09:00",
+      "status": "reported",
+      "who": "derived",
+      "turn": 5,
+      "ts": "2026-09-26 03:31"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 5
+  },
+  "complaint.text": {
+   "value": "left arm weak",
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-09-26 03:31"
+  },
+  "complaint.category": {
+   "value": [
+    "other",
+    "neuro_symptoms"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-09-26 03:31"
+  },
+  "complaint.onset": {
+   "value": "9am",
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-09-26 03:31"
+  },
+  "complaint.pain_rating": {
+   "value": 0,
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-09-26 03:31"
+  },
+  "complaint.pain_latest": {
+   "value": 0,
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-09-26 03:31"
+  },
+  "complaint.onset_abs": {
+   "value": "~2026-09-26 09:00 (from '9am' said 03:31)",
+   "status": "reported",
+   "who": "derived",
+   "turn": 3,
+   "ts": "2026-09-26 03:31"
+  },
+  "complaint.stroke_signs": {
+   "value": true,
+   "status": "reported",
+   "who": "derived",
+   "turn": 3,
+   "ts": "2026-09-26 03:31"
+  },
+  "stroke.face_droop": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 4,
+   "ts": "2026-09-26 03:31"
+  },
+  "M.medications": {
+   "value": [
+    "aspirin"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 7,
+   "ts": "2026-09-26 03:31"
+  },
+  "A.allergies": {
+   "value": [],
+   "status": "reported",
+   "who": "persona",
+   "turn": 8,
+   "ts": "2026-09-26 03:31"
+  },
+  "history.conditions": {
+   "value": [
+    "stroke"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 10,
+   "ts": "2026-09-26 03:31"
+  },
+  "history.pregnant_or_postpartum": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 9,
+   "ts": "2026-09-26 03:31"
+  },
+  "infection.fever": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 11,
+   "ts": "2026-09-26 03:31"
+  },
+  "infection.rash": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 11,
+   "ts": "2026-09-26 03:31"
+  },
+  "infection.travel_14d": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 11,
+   "ts": "2026-09-26 03:31"
+  },
+  "infection.contacts": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 11,
+   "ts": "2026-09-26 03:31"
+  },
+  "identity.name": {
+   "value": "Mrs. Lim",
+   "status": "reported",
+   "who": "persona",
+   "turn": 12,
+   "ts": "2026-09-26 03:32"
+  },
+  "identity.dob": {
+   "value": "15 Mar 1938",
+   "status": "reported",
+   "who": "persona",
+   "turn": 12,
+   "ts": "2026-09-26 03:32"
+  },
+  "L.last_intake": {
+   "value": "8am",
+   "status": "reported",
+   "who": "persona",
+   "turn": 12,
+   "ts": "2026-09-26 03:32"
+  },
+  "L.last_intake_abs": {
+   "value": "~2026-09-26 08:00 (from '8am' said 03:32)",
+   "status": "reported",
+   "who": "derived",
+   "turn": 12,
+   "ts": "2026-09-26 03:32"
+  },
+  "patient.age": {
+   "value": 88,
+   "status": "reported",
+   "who": "derived",
+   "turn": 12,
+   "ts": "2026-09-26 03:32"
+  }
+ },
+ "attempts": {
+  "red_flags.screen": 2,
+  "complaint.main": 3,
+  "stroke.screen": 1,
+  "M.medications": 1,
+  "allergies_and_history": 3,
+  "infection.screen": 1,
+  "wrapup": 1
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "Is the patient awake and responding normally, and are they experiencing any severe chest pain, trouble breathing, or heavy bleeding right now?",
+   "ts": "2026-09-26 03:31:07",
+   "kind": "question",
+   "slot": "red_flags.screen"
+  },
+  {
+   "role": "caregiver",
+   "text": "She is awake and talking clearly now. She is not experiencing any chest pain, trouble breathing, or bleeding.",
+   "ts": "2026-09-26 03:31:09",
+   "kind": "answer",
+   "slot": "red_flags.screen"
+  },
+  {
+   "role": "bot",
+   "text": "Is she currently experiencing any chest pain, trouble breathing, or heavy bleeding?",
+   "ts": "2026-09-26 03:31:11",
+   "kind": "question",
+   "slot": "red_flags.screen"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, she isn't experiencing any pain, breathing issues, or bleeding right now.",
+   "ts": "2026-09-26 03:31:12",
+   "kind": "answer",
+   "slot": "red_flags.screen"
+  },
+  {
+   "role": "bot",
+   "text": "Could you tell me what happened, when it started, and how severe the pain is on a scale of 0 to 10?",
+   "ts": "2026-09-26 03:31:16",
+   "kind": "question",
+   "slot": "complaint.main"
+  },
+  {
+   "role": "caregiver",
+   "text": "Her speech became slurred and her left arm went weak at 9am, but it lasted 45 minutes and passed. She has no pain right now (0/10).",
+   "ts": "2026-09-26 03:31:18",
+   "kind": "answer",
+   "slot": "complaint.main"
+  },
+  {
+   "role": "system",
+   "text": "floor: at least ESI-2  rules: ['B-05.stroke-signs']",
+   "ts": "2026-09-26 03:31:20",
+   "kind": "floor"
+  },
+  {
+   "role": "bot",
+   "text": "Did you notice her face drooping on one side at any point today?",
+   "ts": "2026-09-26 03:31:22",
+   "kind": "question",
+   "slot": "stroke.screen"
+  },
+  {
+   "role": "caregiver",
+   "text": "I didn't notice any facial drooping, but her speech was slurred and her left arm went weak.",
+   "ts": "2026-09-26 03:31:23",
+   "kind": "answer",
+   "slot": "stroke.screen"
+  },
+  {
+   "role": "bot",
+   "text": "Could you tell me more about how her symptoms started or what she was doing when they began?",
+   "ts": "2026-09-26 03:31:26",
+   "kind": "question",
+   "slot": "complaint.main"
+  },
+  {
+   "role": "caregiver",
+   "text": "Around 9am, her speech became slurred and her left arm went weak so she couldn't lift her teacup. It lasted about 45 minutes and then passed completely.",
+   "ts": "2026-09-26 03:31:28",
+   "kind": "answer",
+   "slot": "complaint.main"
+  },
+  {
+   "role": "bot",
+   "text": "Can you describe what she was doing or what triggered the symptoms when they first started?",
+   "ts": "2026-09-26 03:31:33",
+   "kind": "question",
+   "slot": "complaint.main"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-09-26 03:31:34",
+   "kind": "answer",
+   "slot": "complaint.main"
+  },
+  {
+   "role": "bot",
+   "text": "Does she take any regular medications?",
+   "ts": "2026-09-26 03:31:36",
+   "kind": "question",
+   "slot": "M.medications"
+  },
+  {
+   "role": "caregiver",
+   "text": "She takes one aspirin daily.",
+   "ts": "2026-09-26 03:31:37",
+   "kind": "answer",
+   "slot": "M.medications"
+  },
+  {
+   "role": "bot",
+   "text": "Does she have any allergies to medication or other medical conditions like heart problems, diabetes, or pregnancy?",
+   "ts": "2026-09-26 03:31:40",
+   "kind": "question",
+   "slot": "allergies_and_history"
+  },
+  {
+   "role": "caregiver",
+   "text": "She has no allergies and her only other condition is a stroke she had two years ago.",
+   "ts": "2026-09-26 03:31:41",
+   "kind": "answer",
+   "slot": "allergies_and_history"
+  },
+  {
+   "role": "bot",
+   "text": "Is she currently pregnant or in the postpartum period?",
+   "ts": "2026-09-26 03:31:44",
+   "kind": "question",
+   "slot": "allergies_and_history"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, she is not.",
+   "ts": "2026-09-26 03:31:45",
+   "kind": "answer",
+   "slot": "allergies_and_history"
+  },
+  {
+   "role": "bot",
+   "text": "Could you let me know if she has any conditions that affect her immune system?",
+   "ts": "2026-09-26 03:31:48",
+   "kind": "question",
+   "slot": "allergies_and_history"
+  },
+  {
+   "role": "caregiver",
+   "text": "She had a stroke two years ago.",
+   "ts": "2026-09-26 03:31:49",
+   "kind": "answer",
+   "slot": "allergies_and_history"
+  },
+  {
+   "role": "bot",
+   "text": "Has she had a fever, a rash, traveled abroad, or been in contact with anyone who is unwell in the last two weeks?",
+   "ts": "2026-09-26 03:31:52",
+   "kind": "question",
+   "slot": "infection.screen"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, she hasn't had a fever, a rash, traveled, or been in contact with anyone unwell.",
+   "ts": "2026-09-26 03:31:53",
+   "kind": "answer",
+   "slot": "infection.screen"
+  },
+  {
+   "role": "bot",
+   "text": "Could you please tell me her name, date of birth, and when she last had something to eat or drink?",
+   "ts": "2026-09-26 03:31:56",
+   "kind": "question",
+   "slot": "wrapup"
+  },
+  {
+   "role": "caregiver",
+   "text": "Her name is Mrs. Lim, her date of birth is 15 Mar 1938, and she last ate breakfast at 8am.",
+   "ts": "2026-09-26 03:31:57",
+   "kind": "answer",
+   "slot": "wrapup"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you - that's everything for now. Show the code EAGLE-6708 at the counter when you arrive.",
+   "ts": "2026-09-26 03:32:00",
+   "kind": "ack"
+  }
+ ],
+ "active_ids": [
+  "stroke.screen"
+ ],
+ "floor": "at least ESI-2",
+ "phase": "enroute",
+ "opened": [],
+ "created": "2026-09-26 03:31",
+ "pending_slot": "wrapup",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {},
+ "considered": [
+  "B-52.geriatric-vitals-medication-context-consider"
+ ],
+ "said_done": true
+}

@@ -1,0 +1,409 @@
+{
+ "sid": "SAGA-7182",
+ "facts": {
+  "danger_signs.responsive": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-19 00:42"
+  },
+  "danger_signs.chest_pain_now": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-19 00:42"
+  },
+  "danger_signs.breathing_difficulty": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-19 00:43"
+  },
+  "danger_signs.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-19 00:43"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "neuro_symptoms",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 2,
+      "ts": "2026-10-19 00:43"
+     },
+     "text": {
+      "value": "Her speech became slurred and her right arm became weak, but she is back to normal now.",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 3,
+      "ts": "2026-10-19 00:44"
+     },
+     "onset": {
+      "value": "10 this morning",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 4,
+      "ts": "2026-10-19 00:46"
+     },
+     "onset_abs": {
+      "value": "~2026-10-19 morning",
+      "status": "reported",
+      "who": "derived",
+      "turn": 4,
+      "ts": "2026-10-19 00:46"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2
+  },
+  "complaint.category": {
+   "value": [
+    "neuro_symptoms"
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 4,
+   "ts": "2026-10-19 00:46"
+  },
+  "E.mechanism": {
+   "value": "none",
+   "status": "reported",
+   "who": "derived",
+   "turn": 2,
+   "ts": "2026-10-19 00:43"
+  },
+  "complaint.text": {
+   "value": "Her speech became slurred and her right arm became weak, but she is back to normal now.",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-19 00:44"
+  },
+  "complaint.onset": {
+   "value": "10 this morning",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 4,
+   "ts": "2026-10-19 00:46"
+  },
+  "complaint.onset_abs": {
+   "value": "~2026-10-19 morning (from '10 this morning' said 00:46)",
+   "status": "reported",
+   "who": "derived",
+   "turn": 4,
+   "ts": "2026-10-19 00:46"
+  },
+  "patient.age": {
+   "value": 81,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 5,
+   "ts": "2026-10-19 00:47"
+  },
+  "patient.sex": {
+   "value": "female",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 5,
+   "ts": "2026-10-19 00:47"
+  },
+  "patient.age_group": {
+   "value": "older_adult",
+   "status": "reported",
+   "who": "derived",
+   "turn": 5,
+   "ts": "2026-10-19 00:47"
+  },
+  "complaint.fever": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 6,
+   "ts": "2026-10-19 00:48"
+  },
+  "infection.contacts": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 12,
+   "ts": "2026-10-19 00:55"
+  },
+  "stroke.vision_change": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 14,
+   "ts": "2026-10-19 00:57"
+  }
+ },
+ "attempts": {
+  "danger_signs.responsive": 1,
+  "danger_signs.chest_pain_now": 1,
+  "danger_signs.breathing_difficulty": 1,
+  "danger_signs.heavy_bleeding": 1,
+  "complaint.category": 1,
+  "complaint.text": 1,
+  "complaint.onset": 2,
+  "patient.age": 1,
+  "patient.sex": 1,
+  "complaint.fever": 1,
+  "infection.rash": 3,
+  "infection.travel_14d": 3,
+  "infection.contacts": 2,
+  "stroke.vision_change": 2,
+  "ams.changed_from_baseline": 3,
+  "complaint.pain_rating": 1,
+  "stroke.face_droop": 1
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "Is the patient awake and responding to you normally? Also, is he or she experiencing any chest pain, trouble breathing, or heavy bleeding right now?",
+   "ts": "2026-10-19 00:41:41",
+   "kind": "question",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, the patient is awake and responding normally. No, the patient is not having chest pain right now.",
+   "ts": "2026-10-19 00:41:41",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "bot",
+   "text": "I'm glad to hear they are alert. Is the patient having any trouble breathing or heavy bleeding right now? Also, what is the main reason you are bringing them in?",
+   "ts": "2026-10-19 00:42:53",
+   "kind": "question",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, the patient is not having trouble breathing right now. No, the patient is not bleeding heavily right now. Her speech became slurred and her right arm became weak, but she is back to normal now.",
+   "ts": "2026-10-19 00:42:53",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category"
+  },
+  {
+   "role": "bot",
+   "text": "I understand her speech and arm felt weak. Can you tell me more about what happened and exactly when these symptoms started?",
+   "ts": "2026-10-19 00:44:04",
+   "kind": "question",
+   "slot": "dyn:complaint.text+complaint.onset"
+  },
+  {
+   "role": "caregiver",
+   "text": "Her speech became slurred and her right arm became weak, but she is back to normal now. At 10 this morning her words became slurred and her right arm went weak for about 20 minutes.",
+   "ts": "2026-10-19 00:44:04",
+   "kind": "answer",
+   "slot": "dyn:complaint.text+complaint.onset"
+  },
+  {
+   "role": "bot",
+   "text": "Could you tell me exactly what time these symptoms first began today?",
+   "ts": "2026-10-19 00:45:14",
+   "kind": "question",
+   "slot": "dyn:complaint.onset"
+  },
+  {
+   "role": "caregiver",
+   "text": "At 10 this morning her words became slurred and her right arm went weak for about 20 minutes.",
+   "ts": "2026-10-19 00:45:14",
+   "kind": "answer",
+   "slot": "dyn:complaint.onset"
+  },
+  {
+   "role": "bot",
+   "text": "I understand she is feeling better now. How old is she?",
+   "ts": "2026-10-19 00:46:32",
+   "kind": "question",
+   "slot": "dyn:patient.age+patient.sex"
+  },
+  {
+   "role": "caregiver",
+   "text": "The patient is 81 years old. The patient is female.",
+   "ts": "2026-10-19 00:46:32",
+   "kind": "answer",
+   "slot": "dyn:patient.age+patient.sex"
+  },
+  {
+   "role": "bot",
+   "text": "I see. Does she have a fever or any new rashes on her skin?",
+   "ts": "2026-10-19 00:47:41",
+   "kind": "question",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, the patient does not have fever. I do not know whether the patient has a rash.",
+   "ts": "2026-10-19 00:47:41",
+   "kind": "answer",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Does she have any new rashes on her skin?",
+   "ts": "2026-10-19 00:48:52",
+   "kind": "question",
+   "slot": "dyn:infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient has a rash.",
+   "ts": "2026-10-19 00:48:52",
+   "kind": "answer",
+   "slot": "dyn:infection.rash"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Can you check if there are any new rashes on her skin?",
+   "ts": "2026-10-19 00:50:00",
+   "kind": "question",
+   "slot": "dyn:infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient has a rash.",
+   "ts": "2026-10-19 00:50:00",
+   "kind": "answer",
+   "slot": "dyn:infection.rash"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Has she traveled outside the country or been in contact with anyone who is sick in the last two weeks?",
+   "ts": "2026-10-19 00:51:08",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient travelled in the last 14 days. I do not know of any sick contacts.",
+   "ts": "2026-10-19 00:51:08",
+   "kind": "answer",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. To clarify, has she traveled outside of the country in the last 14 days?",
+   "ts": "2026-10-19 00:52:18",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient travelled in the last 14 days.",
+   "ts": "2026-10-19 00:52:18",
+   "kind": "answer",
+   "slot": "dyn:infection.travel_14d"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. To make sure we have the right information, has she gone on any trips outside the country in the last 14 days?",
+   "ts": "2026-10-19 00:53:27",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient travelled in the last 14 days.",
+   "ts": "2026-10-19 00:53:27",
+   "kind": "answer",
+   "slot": "dyn:infection.travel_14d"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Has she been in contact with anyone who has a contagious illness in the last two weeks?",
+   "ts": "2026-10-19 00:54:36",
+   "kind": "question",
+   "slot": "dyn:infection.contacts"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know of any sick contacts.",
+   "ts": "2026-10-19 00:54:36",
+   "kind": "answer",
+   "slot": "dyn:infection.contacts"
+  },
+  {
+   "role": "bot",
+   "text": "Has she had any sudden changes in her vision or seemed more confused or sleepy than usual?",
+   "ts": "2026-10-19 00:55:45",
+   "kind": "question",
+   "slot": "dyn:stroke.vision_change+ams.changed_from_baseline"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient is acting differently from usual.",
+   "ts": "2026-10-19 00:55:45",
+   "kind": "answer",
+   "slot": "dyn:stroke.vision_change+ams.changed_from_baseline"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Has she had any sudden changes or problems with her vision?",
+   "ts": "2026-10-19 00:56:55",
+   "kind": "question",
+   "slot": "dyn:stroke.vision_change"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-19 00:56:55",
+   "kind": "answer",
+   "slot": "dyn:stroke.vision_change"
+  },
+  {
+   "role": "bot",
+   "text": "Is she acting differently than usual, such as being more confused or harder to wake up?",
+   "ts": "2026-10-19 00:58:03",
+   "kind": "question",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient is acting differently from usual.",
+   "ts": "2026-10-19 00:58:03",
+   "kind": "answer",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "bot",
+   "text": "Is she acting differently than usual, such as being more confused or harder to wake up?",
+   "ts": "2026-10-19 00:59:12",
+   "kind": "question",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient is acting differently from usual.",
+   "ts": "2026-10-19 00:59:12",
+   "kind": "answer",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Is she currently experiencing any pain, and have you noticed any drooping on one side of her face?",
+   "ts": "2026-10-19 01:00:21",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating+stroke.face_droop"
+  }
+ ],
+ "stage": "floor",
+ "floor": null,
+ "phase": "enroute",
+ "created": "2026-10-19 00:41",
+ "pending_slot": "dyn:complaint.pain_rating+stroke.face_droop",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {}
+}

@@ -1,0 +1,247 @@
+{
+ "sid": "TIGER-7604",
+ "facts": {
+  "danger_signs.responsive": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-15 14:00"
+  },
+  "danger_signs.chest_pain_now": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-15 14:00"
+  },
+  "L.last_intake": {
+   "value": "porridge at 1pm",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-15 14:00"
+  },
+  "L.last_intake_abs": {
+   "value": "~2026-10-15 13:00 (from 'porridge at 1pm' said 14:00)",
+   "status": "reported",
+   "who": "derived",
+   "turn": 2,
+   "ts": "2026-10-15 14:00"
+  },
+  "danger_signs.breathing_difficulty": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-15 14:01"
+  },
+  "danger_signs.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-15 14:01"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "injury",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 3,
+      "ts": "2026-10-15 14:01"
+     },
+     "text": {
+      "value": "fell down 4 steps at home abt an hour ago. landed on right hip, cant stand",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 3,
+      "ts": "2026-10-15 14:01"
+     },
+     "onset": {
+      "value": "an hour ago",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 3,
+      "ts": "2026-10-15 14:01"
+     },
+     "onset_abs": {
+      "value": "~2026-10-15 13:01",
+      "status": "reported",
+      "who": "derived",
+      "turn": 3,
+      "ts": "2026-10-15 14:01"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3
+  },
+  "complaint.category": {
+   "value": [
+    "injury"
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-15 14:01"
+  },
+  "complaint.text": {
+   "value": "fell down 4 steps at home abt an hour ago. landed on right hip, cant stand",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-15 14:01"
+  },
+  "complaint.onset": {
+   "value": "an hour ago",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-15 14:01"
+  },
+  "E.mechanism": {
+   "value": "fall",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-15 14:01"
+  },
+  "complaint.onset_abs": {
+   "value": "~2026-10-15 13:01 (from 'an hour ago' said 14:01)",
+   "status": "reported",
+   "who": "derived",
+   "turn": 3,
+   "ts": "2026-10-15 14:01"
+  },
+  "patient.age": {
+   "value": 87,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 4,
+   "ts": "2026-10-15 14:01"
+  },
+  "patient.sex": {
+   "value": "male",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 4,
+   "ts": "2026-10-15 14:01"
+  },
+  "patient.age_group": {
+   "value": "older_adult",
+   "status": "reported",
+   "who": "derived",
+   "turn": 4,
+   "ts": "2026-10-15 14:01"
+  },
+  "complaint.fever": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 5,
+   "ts": "2026-10-15 14:01"
+  }
+ },
+ "attempts": {
+  "danger_signs.responsive": 1,
+  "danger_signs.chest_pain_now": 2,
+  "danger_signs.breathing_difficulty": 1,
+  "danger_signs.heavy_bleeding": 1,
+  "complaint.category": 1,
+  "patient.age": 1,
+  "patient.sex": 1,
+  "complaint.fever": 1,
+  "infection.rash": 2
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "Is the patient awake and responding to you normally? Also, is he/she currently experiencing any chest pain, trouble breathing, or heavy bleeding?",
+   "ts": "2026-10-15 14:00:43",
+   "kind": "question",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "caregiver",
+   "text": "yes awake, talking. no chest pain. breathing ok",
+   "ts": "2026-10-15 14:00:43",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "bot",
+   "text": "I understand they are breathing okay. Just to be certain, is the patient experiencing any chest pain at this moment?",
+   "ts": "2026-10-15 14:00:48",
+   "kind": "question",
+   "slot": "dyn:danger_signs.chest_pain_now"
+  },
+  {
+   "role": "caregiver",
+   "text": "no chest pain. breathing ok. porridge at 1pm",
+   "ts": "2026-10-15 14:00:48",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.chest_pain_now"
+  },
+  {
+   "role": "bot",
+   "text": "I've noted the breathing is okay. Is the patient currently experiencing any heavy bleeding, and could you tell me the main reason you are bringing them in today?",
+   "ts": "2026-10-15 14:00:55",
+   "kind": "question",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category"
+  },
+  {
+   "role": "caregiver",
+   "text": "breathing ok. no bleeding. fell down 4 steps at home abt an hour ago. landed on right hip, cant stand",
+   "ts": "2026-10-15 14:00:55",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category"
+  },
+  {
+   "role": "bot",
+   "text": "I've noted the fall. Could you tell me the patient's age and if they are male or female?",
+   "ts": "2026-10-15 14:01:03",
+   "kind": "question",
+   "slot": "dyn:patient.age+patient.sex"
+  },
+  {
+   "role": "caregiver",
+   "text": "87, male",
+   "ts": "2026-10-15 14:01:03",
+   "kind": "answer",
+   "slot": "dyn:patient.age+patient.sex"
+  },
+  {
+   "role": "bot",
+   "text": "I've noted those details. Does he have a fever or any new rashes on his skin?",
+   "ts": "2026-10-15 14:01:10",
+   "kind": "question",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "no fever no rash",
+   "ts": "2026-10-15 14:01:10",
+   "kind": "answer",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "bot",
+   "text": "I see. Does he have any new rashes on his skin?",
+   "ts": "2026-10-15 14:01:16",
+   "kind": "question",
+   "slot": "dyn:infection.rash"
+  }
+ ],
+ "stage": "floor",
+ "floor": null,
+ "phase": "enroute",
+ "created": "2026-10-15 14:00",
+ "pending_slot": "dyn:infection.rash",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {}
+}

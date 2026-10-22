@@ -1,0 +1,454 @@
+{
+ "sid": "ORCHID-4119",
+ "facts": {
+  "red_flags.responsive": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-09-26 03:50"
+  },
+  "ams.changed_from_baseline": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-09-26 03:50"
+  },
+  "red_flags.chest_pain_now": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-09-26 03:50"
+  },
+  "red_flags.breathing_difficulty": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-09-26 03:50"
+  },
+  "red_flags.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-09-26 03:50"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "other",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "persona",
+      "turn": 2,
+      "ts": "2026-09-26 03:50"
+     },
+     "text": {
+      "value": "sudden, severe pain at the base of my right big toe after eating seafood and drinking beer yesterday",
+      "status": "reported",
+      "who": "persona",
+      "turn": 2,
+      "ts": "2026-09-26 03:50"
+     },
+     "onset": {
+      "value": "woke up tonight",
+      "status": "reported",
+      "who": "persona",
+      "turn": 2,
+      "ts": "2026-09-26 03:50"
+     },
+     "pain_rating": {
+      "value": 8,
+      "status": "reported",
+      "who": "persona",
+      "turn": 3,
+      "ts": "2026-09-26 03:50"
+     }
+    },
+    {
+     "category": "chest_pain",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "persona",
+      "turn": 6,
+      "ts": "2026-09-26 03:50"
+     },
+     "onset": {
+      "value": "suddenly when I woke up during the night",
+      "status": "reported",
+      "who": "persona",
+      "turn": 6,
+      "ts": "2026-09-26 03:50"
+     },
+     "pain_rating": {
+      "value": 8,
+      "status": "reported",
+      "who": "persona",
+      "turn": 6,
+      "ts": "2026-09-26 03:50"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 6
+  },
+  "complaint.category": {
+   "value": [
+    "other",
+    "chest_pain"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 6,
+   "ts": "2026-09-26 03:50"
+  },
+  "complaint.text": {
+   "value": "sudden, severe pain at the base of my right big toe after eating seafood and drinking beer yesterday",
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-09-26 03:50"
+  },
+  "complaint.onset": {
+   "value": "suddenly when I woke up during the night",
+   "status": "reported",
+   "who": "persona",
+   "turn": 6,
+   "ts": "2026-09-26 03:50"
+  },
+  "stroke.face_droop": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-09-26 03:50"
+  },
+  "stroke.arm_weakness": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-09-26 03:50"
+  },
+  "stroke.speech_change": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-09-26 03:50"
+  },
+  "complaint.pain_rating": {
+   "value": 8,
+   "status": "reported",
+   "who": "persona",
+   "turn": 6,
+   "ts": "2026-09-26 03:50"
+  },
+  "complaint.pain_latest": {
+   "value": 8,
+   "status": "reported",
+   "who": "persona",
+   "turn": 6,
+   "ts": "2026-09-26 03:50"
+  },
+  "M.medications": {
+   "value": [
+    "amlodipine"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 9,
+   "ts": "2026-09-26 03:50"
+  },
+  "confirm.M.anticoagulant": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 4,
+   "ts": "2026-09-26 03:50"
+  },
+  "A.allergies": {
+   "value": [],
+   "status": "reported",
+   "who": "persona",
+   "turn": 9,
+   "ts": "2026-09-26 03:50"
+  },
+  "infection.fever": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-09-26 03:50"
+  },
+  "infection.rash": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-09-26 03:50"
+  },
+  "history.conditions": {
+   "value": [
+    "high blood pressure"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 9,
+   "ts": "2026-09-26 03:50"
+  },
+  "infection.travel_14d": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 7,
+   "ts": "2026-09-26 03:50"
+  },
+  "infection.contacts": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 7,
+   "ts": "2026-09-26 03:50"
+  },
+  "L.last_intake": {
+   "value": "9pm",
+   "status": "reported",
+   "who": "persona",
+   "turn": 7,
+   "ts": "2026-09-26 03:50"
+  },
+  "L.last_intake_abs": {
+   "value": "~2026-09-26 21:00 (from '9pm' said 03:50)",
+   "status": "reported",
+   "who": "derived",
+   "turn": 7,
+   "ts": "2026-09-26 03:50"
+  },
+  "identity.name": {
+   "value": null,
+   "status": "reported",
+   "who": "persona",
+   "turn": 10,
+   "ts": "2026-09-26 03:50"
+  },
+  "identity.dob": {
+   "value": null,
+   "status": "reported",
+   "who": "persona",
+   "turn": 10,
+   "ts": "2026-09-26 03:50"
+  },
+  "patient.age": {
+   "value": 52,
+   "status": "probable",
+   "who": "derived",
+   "turn": 8,
+   "ts": "2026-09-26 03:50"
+  },
+  "history.immunocompromised": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 9,
+   "ts": "2026-09-26 03:50"
+  },
+  "history.pregnant_or_postpartum": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 10,
+   "ts": "2026-09-26 03:50"
+  }
+ },
+ "attempts": {
+  "red_flags.responsive": 1,
+  "red_flags.chest_pain_now": 1,
+  "red_flags.breathing_difficulty": 1,
+  "red_flags.heavy_bleeding": 1,
+  "complaint.category": 1,
+  "stroke.face_droop": 1,
+  "stroke.arm_weakness": 1,
+  "stroke.speech_change": 1,
+  "complaint.pain_rating": 1,
+  "E.mechanism": 3,
+  "M.medications": 1,
+  "A.allergies": 1,
+  "history.conditions": 1,
+  "infection.travel_14d": 1,
+  "infection.contacts": 1,
+  "L.last_intake": 1,
+  "history.immunocompromised": 2,
+  "identity.name": 1,
+  "identity.dob": 1,
+  "history.pregnant_or_postpartum": 1
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "Is the person awake and responding normally right now?",
+   "ts": "2026-09-26 03:50:07",
+   "kind": "question",
+   "slot": "dyn:red_flags.responsive"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, I am awake and answering your questions clearly, though I am feeling tired and irritable due to the severe pain.",
+   "ts": "2026-09-26 03:50:08",
+   "kind": "answer",
+   "slot": "dyn:red_flags.responsive"
+  },
+  {
+   "role": "bot",
+   "text": "I understand you are feeling tired and irritable due to the pain. Are you having any severe chest pain, trouble breathing, or heavy bleeding right now? Also, what happened that brought you in today?",
+   "ts": "2026-09-26 03:50:10",
+   "kind": "question",
+   "slot": "dyn:red_flags.chest_pain_now+red_flags.breathing_difficulty+red_flags.heavy_bleeding+complaint.category"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I have no chest pain, trouble breathing, or heavy bleeding. I woke up tonight with sudden, severe pain at the base of my right big toe after eating seafood and drinking beer yesterday.",
+   "ts": "2026-09-26 03:50:11",
+   "kind": "answer",
+   "slot": "dyn:red_flags.chest_pain_now+red_flags.breathing_difficulty+red_flags.heavy_bleeding+complaint.category"
+  },
+  {
+   "role": "bot",
+   "text": "Have you noticed your face drooping, arm weakness, or slurred speech today? Also, on a scale of 0 to 10, how bad is the pain right now?",
+   "ts": "2026-09-26 03:50:15",
+   "kind": "question",
+   "slot": "dyn:stroke.face_droop+stroke.arm_weakness+stroke.speech_change+complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I have not noticed any face drooping, arm weakness, or slurred speech. The pain in my right big toe is currently 8/10.",
+   "ts": "2026-09-26 03:50:16",
+   "kind": "answer",
+   "slot": "dyn:stroke.face_droop+stroke.arm_weakness+stroke.speech_change+complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "You mentioned waking up with sudden pain after eating seafood and drinking beer yesterday; besides that, do you take any regular medications?",
+   "ts": "2026-09-26 03:50:19",
+   "kind": "question",
+   "slot": "dyn:E.mechanism+M.medications"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, I take amlodipine for high blood pressure. I am not taking allopurinol or blood thinners.",
+   "ts": "2026-09-26 03:50:20",
+   "kind": "answer",
+   "slot": "dyn:E.mechanism+M.medications"
+  },
+  {
+   "role": "bot",
+   "text": "You mentioned taking amlodipine; do you have any allergies to medicines? Also, besides the pain in your toe, is there anything else going on right now?",
+   "ts": "2026-09-26 03:50:23",
+   "kind": "question",
+   "slot": "dyn:E.mechanism+A.allergies"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I have no known allergies. Besides the severe pain in my right big toe, I have no fever, chills, rash, chest pain, or breathing trouble.",
+   "ts": "2026-09-26 03:50:24",
+   "kind": "answer",
+   "slot": "dyn:E.mechanism+A.allergies"
+  },
+  {
+   "role": "bot",
+   "text": "You mentioned waking up tonight with severe pain; could you tell me exactly when the pain started and rate it from 0 to 10?",
+   "ts": "2026-09-26 03:50:27",
+   "kind": "question",
+   "slot": "dyn:E.mechanism"
+  },
+  {
+   "role": "caregiver",
+   "text": "The pain started suddenly when I woke up during the night, and I rate it as an 8 out of 10.",
+   "ts": "2026-09-26 03:50:27",
+   "kind": "answer",
+   "slot": "dyn:E.mechanism"
+  },
+  {
+   "role": "bot",
+   "text": "Do you have any other medical conditions like heart problems or diabetes? Have you traveled overseas or been around anyone sick in the last two weeks? Also, when did you last eat or drink today?",
+   "ts": "2026-09-26 03:50:30",
+   "kind": "question",
+   "slot": "dyn:history.conditions+infection.travel_14d+infection.contacts+L.last_intake"
+  },
+  {
+   "role": "caregiver",
+   "text": "I take amlodipine for high blood pressure. I have not traveled overseas or been around anyone sick recently. I last ate dinner at 9pm and have not eaten or drunk anything since then.",
+   "ts": "2026-09-26 03:50:31",
+   "kind": "answer",
+   "slot": "dyn:history.conditions+infection.travel_14d+infection.contacts+L.last_intake"
+  },
+  {
+   "role": "bot",
+   "text": "Could you please provide your full name and date of birth for our records?",
+   "ts": "2026-09-26 03:50:34",
+   "kind": "question",
+   "slot": "dyn:history.immunocompromised+identity.name+identity.dob"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know my full name. My date of birth is February 18, 1974.",
+   "ts": "2026-09-26 03:50:35",
+   "kind": "answer",
+   "slot": "dyn:history.immunocompromised+identity.name+identity.dob"
+  },
+  {
+   "role": "bot",
+   "text": "Do you have any allergies to medicines or other conditions like heart problems, diabetes, or anything that affects your immune system?",
+   "ts": "2026-09-26 03:50:37",
+   "kind": "question",
+   "slot": "dyn:history.immunocompromised"
+  },
+  {
+   "role": "caregiver",
+   "text": "I have no known allergies. My only condition is high blood pressure, which I treat with amlodipine; I do not have diabetes, heart problems, or immune issues.",
+   "ts": "2026-09-26 03:50:38",
+   "kind": "answer",
+   "slot": "dyn:history.immunocompromised"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you for sharing that. Are you currently pregnant or have you recently given birth?",
+   "ts": "2026-09-26 03:50:41",
+   "kind": "question",
+   "slot": "dyn:history.pregnant_or_postpartum"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I am a 52-year-old man. I do not need to answer regarding pregnancy as I am male.",
+   "ts": "2026-09-26 03:50:42",
+   "kind": "answer",
+   "slot": "dyn:history.pregnant_or_postpartum"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you - that's everything for now. Show the code ORCHID-4119 at the counter when you arrive.",
+   "ts": "2026-09-26 03:50:43",
+   "kind": "ack"
+  }
+ ],
+ "active_ids": [
+  "stroke.screen"
+ ],
+ "floor": null,
+ "phase": "enroute",
+ "opened": [],
+ "created": "2026-09-26 03:50",
+ "pending_slot": "dyn:history.pregnant_or_postpartum",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {},
+ "considered": [
+  "B-02.severe-pain-consider"
+ ],
+ "said_done": true
+}

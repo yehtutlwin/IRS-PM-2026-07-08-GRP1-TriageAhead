@@ -1,0 +1,373 @@
+{
+ "sid": "MERLION-2587",
+ "facts": {
+  "red_flags.responsive": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-09-26 03:33"
+  },
+  "red_flags.chest_pain_now": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-09-26 03:33"
+  },
+  "red_flags.breathing_difficulty": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-09-26 03:33"
+  },
+  "red_flags.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-09-26 03:33"
+  },
+  "ams.changed_from_baseline": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 7,
+   "ts": "2026-09-26 03:34"
+  },
+  "obs.new_confusion_lethargy_disorientation": {
+   "value": true,
+   "status": "reported",
+   "who": "derived",
+   "turn": 1,
+   "ts": "2026-09-26 03:33"
+  },
+  "obs.subtle_mental_status_change": {
+   "value": true,
+   "status": "reported",
+   "who": "derived",
+   "turn": 1,
+   "ts": "2026-09-26 03:33"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "dizziness",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "persona",
+      "turn": 2,
+      "ts": "2026-09-26 03:33"
+     },
+     "text": {
+      "value": "dizzy and nauseous",
+      "status": "reported",
+      "who": "persona",
+      "turn": 2,
+      "ts": "2026-09-26 03:33"
+     },
+     "onset": {
+      "value": "after four hours of working in the sun",
+      "status": "reported",
+      "who": "persona",
+      "turn": 2,
+      "ts": "2026-09-26 03:33"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 2
+  },
+  "complaint.text": {
+   "value": "dizzy and nauseous",
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-09-26 03:33"
+  },
+  "complaint.category": {
+   "value": [
+    "dizziness"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-09-26 03:33"
+  },
+  "complaint.onset": {
+   "value": "after four hours of working in the sun",
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-09-26 03:33"
+  },
+  "E.mechanism": {
+   "value": "none",
+   "status": "reported",
+   "who": "derived",
+   "turn": 2,
+   "ts": "2026-09-26 03:33"
+  },
+  "stroke.speech_change": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-09-26 03:33"
+  },
+  "complaint.stroke_signs": {
+   "value": true,
+   "status": "reported",
+   "who": "derived",
+   "turn": 3,
+   "ts": "2026-09-26 03:33"
+  },
+  "M.medications": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 8,
+   "ts": "2026-09-26 03:34"
+  },
+  "A.allergies": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 9,
+   "ts": "2026-09-26 03:34"
+  },
+  "history.conditions": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 9,
+   "ts": "2026-09-26 03:34"
+  },
+  "history.immunocompromised": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 9,
+   "ts": "2026-09-26 03:34"
+  },
+  "history.pregnant_or_postpartum": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 9,
+   "ts": "2026-09-26 03:34"
+  },
+  "infection.fever": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 10,
+   "ts": "2026-09-26 03:34"
+  },
+  "infection.rash": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 10,
+   "ts": "2026-09-26 03:34"
+  },
+  "infection.travel_14d": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 10,
+   "ts": "2026-09-26 03:34"
+  },
+  "infection.contacts": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 10,
+   "ts": "2026-09-26 03:34"
+  }
+ },
+ "attempts": {
+  "red_flags.screen": 1,
+  "complaint.main": 3,
+  "stroke.screen": 3,
+  "M.medications": 1,
+  "allergies_and_history": 1,
+  "infection.screen": 1,
+  "wrapup": 1
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "Is the patient awake and responding normally, and are they experiencing any severe chest pain, trouble breathing, or heavy bleeding right now?",
+   "ts": "2026-09-26 03:33:36",
+   "kind": "question",
+   "slot": "red_flags.screen"
+  },
+  {
+   "role": "caregiver",
+   "text": "He is awake but only responding with confused words. There is no chest pain, trouble breathing, or heavy bleeding.",
+   "ts": "2026-09-26 03:33:37",
+   "kind": "answer",
+   "slot": "red_flags.screen"
+  },
+  {
+   "role": "system",
+   "text": "floor: at least ESI-2  rules: ['B-01.new-altered-mental-status']",
+   "ts": "2026-09-26 03:33:40",
+   "kind": "floor"
+  },
+  {
+   "role": "bot",
+   "text": "Based on what you just told me, please call 995 NOW if you are not already with paramedics. I have put this at the top of the hospital report.",
+   "ts": "2026-09-26 03:33:40",
+   "kind": "advice"
+  },
+  {
+   "role": "bot",
+   "text": "Can you tell me what happened, when it started, and how bad the pain is on a scale of 0 to 10?",
+   "ts": "2026-09-26 03:33:42",
+   "kind": "question",
+   "slot": "complaint.main"
+  },
+  {
+   "role": "caregiver",
+   "text": "He was working outside in the sun for four hours and started feeling dizzy and nauseous before collapsing. I don't know how bad his pain is.",
+   "ts": "2026-09-26 03:33:43",
+   "kind": "answer",
+   "slot": "complaint.main"
+  },
+  {
+   "role": "bot",
+   "text": "At any point today, did you notice his face drooping, an arm becoming weak or numb, or his speech becoming slurred or strange?",
+   "ts": "2026-09-26 03:33:47",
+   "kind": "question",
+   "slot": "stroke.screen"
+  },
+  {
+   "role": "caregiver",
+   "text": "He is responding with only confused words. I don't know if his face drooped or his arm became weak.",
+   "ts": "2026-09-26 03:33:48",
+   "kind": "answer",
+   "slot": "stroke.screen"
+  },
+  {
+   "role": "bot",
+   "text": "Did you notice his face drooping on one side or his arm becoming weak or numb at any point today?",
+   "ts": "2026-09-26 03:33:51",
+   "kind": "question",
+   "slot": "stroke.screen"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-09-26 03:33:52",
+   "kind": "answer",
+   "slot": "stroke.screen"
+  },
+  {
+   "role": "bot",
+   "text": "Could you please tell me if you noticed any drooping on one side of his face or any weakness in his arm at any point today?",
+   "ts": "2026-09-26 03:33:55",
+   "kind": "question",
+   "slot": "stroke.screen"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-09-26 03:34:00",
+   "kind": "answer",
+   "slot": "stroke.screen"
+  },
+  {
+   "role": "bot",
+   "text": "On a scale of 0 to 10, how bad is his pain right now?",
+   "ts": "2026-09-26 03:34:02",
+   "kind": "question",
+   "slot": "complaint.main"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know. He is only responding with confused words.",
+   "ts": "2026-09-26 03:34:04",
+   "kind": "answer",
+   "slot": "complaint.main"
+  },
+  {
+   "role": "bot",
+   "text": "Can you give me a rough idea of how much pain he is in on a scale of 0 to 10?",
+   "ts": "2026-09-26 03:34:07",
+   "kind": "question",
+   "slot": "complaint.main"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know. He is confused and only responding with words that don't make sense.",
+   "ts": "2026-09-26 03:34:08",
+   "kind": "answer",
+   "slot": "complaint.main"
+  },
+  {
+   "role": "bot",
+   "text": "Does he take any regular medications?",
+   "ts": "2026-09-26 03:34:10",
+   "kind": "question",
+   "slot": "M.medications"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-09-26 03:34:11",
+   "kind": "answer",
+   "slot": "M.medications"
+  },
+  {
+   "role": "bot",
+   "text": "Does he have any allergies to medication or other medical conditions, such as heart problems, diabetes, or a weakened immune system?",
+   "ts": "2026-09-26 03:34:14",
+   "kind": "question",
+   "slot": "allergies_and_history"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know his medications, allergies, or medical history.",
+   "ts": "2026-09-26 03:34:15",
+   "kind": "answer",
+   "slot": "allergies_and_history"
+  },
+  {
+   "role": "bot",
+   "text": "Has he had a fever, any rashes, traveled abroad in the last two weeks, or been in contact with anyone who is sick?",
+   "ts": "2026-09-26 03:34:18",
+   "kind": "question",
+   "slot": "infection.screen"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know if he had a fever or a rash, and I don't know about his travel or contact with anyone sick.",
+   "ts": "2026-09-26 03:34:19",
+   "kind": "answer",
+   "slot": "infection.screen"
+  },
+  {
+   "role": "bot",
+   "text": "Could you tell me his name, date of birth, and when he last had something to eat or drink?",
+   "ts": "2026-09-26 03:34:22",
+   "kind": "question",
+   "slot": "wrapup"
+  }
+ ],
+ "active_ids": [
+  "stroke.screen"
+ ],
+ "floor": "at least ESI-2",
+ "phase": "enroute",
+ "opened": [],
+ "created": "2026-09-26 03:33",
+ "pending_slot": "wrapup",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {},
+ "advised995": true
+}

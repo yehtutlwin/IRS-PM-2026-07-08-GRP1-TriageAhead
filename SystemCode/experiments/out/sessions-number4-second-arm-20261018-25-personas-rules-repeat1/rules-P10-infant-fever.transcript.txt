@@ -1,0 +1,31 @@
+arm B, form rules, persona P10-infant-fever, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  Is the patient awake and responding normally?
+A1  Yes, he's awake. He's acting like his usual self.
+
+Q2  Is the patient experiencing any chest pain right now?
+A2  No.
+
+Q3  Is the patient having any trouble breathing right now?
+A3  No, he's breathing normally.
+
+Q4  Is the patient bleeding heavily right now?
+A4  No bleeding.
+
+Q5  What is the main reason the patient is coming to the emergency department?
+A5  My baby has a fever. I called the paediatrician and she told me to bring him in.
+
+Q6  How old is your baby?
+A6  He's two weeks old.
+
+Q7  What is the baby's temperature?
+A7  He has a fever, but I don't remember the exact number.
+
+Q8  Is the baby's fever a new development, or has he been having it for a while?
+A8  I noticed it today.
+
+Q9  Is the baby's fever accompanied by any other symptoms, like a rash, a cough, or any difficulty feeding?
+A9  No, there is no rash. He is acting like himself and feeding normally.
+
+DECISION {"decision": "at least ESI-2", "reason": "The patient is an infant under 28 days old with a fever, which is a high-risk situation.", "citation": "ESI v5 p.23 (Pediatric Vital Signs); p.6 (Pediatric Fever Considerations)"}
+OUTCOME level 2 or floor | expected at least ESI-2 | pass True | label None | max prompt tokens 43875

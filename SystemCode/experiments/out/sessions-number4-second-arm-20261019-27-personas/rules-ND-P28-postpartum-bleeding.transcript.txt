@@ -1,0 +1,16 @@
+arm B, form rules, persona ND-P28-postpartum-bleeding, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  Is the patient awake and responding normally?
+A1  Yes, the patient is awake and can respond.
+
+Q2  Is the patient having chest pain right now?
+A2  No, there is no chest pain.
+
+Q3  Is the patient having trouble breathing right now?
+A3  She is breathing normally.
+
+Q4  Is the patient bleeding heavily right now?
+A4  Yes, she is bleeding heavily. She gave birth eight days ago and is bleeding heavily.
+
+DECISION {"decision": "ESI-1 indicator", "reason": "The patient is experiencing heavy bleeding following a recent birth, which is a high-risk situation that may require immediate intervention.", "citation": "ESI v5 p.14 (Obstetrical and Gynecological Concerns); Rule A-18.pregnancy-hemodynamic-instability-lifesaving"}
+OUTCOME level 1 | expected at least ESI-2 | pass True | label None | max prompt tokens 43710

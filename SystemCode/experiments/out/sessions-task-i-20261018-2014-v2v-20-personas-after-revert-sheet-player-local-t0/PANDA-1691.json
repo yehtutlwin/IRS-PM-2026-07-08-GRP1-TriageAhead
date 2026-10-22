@@ -1,0 +1,540 @@
+{
+ "sid": "PANDA-1691",
+ "facts": {
+  "danger_signs.responsive": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-18 19:42"
+  },
+  "danger_signs.chest_pain_now": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-18 19:42"
+  },
+  "danger_signs.breathing_difficulty": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-18 19:42"
+  },
+  "danger_signs.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-18 19:42"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "neuro_symptoms",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 2,
+      "ts": "2026-10-18 19:42"
+     },
+     "text": {
+      "value": "her speech suddenly went slurred and her left arm went weak, she couldn't lift her teacup",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 3,
+      "ts": "2026-10-18 19:42"
+     },
+     "onset": {
+      "value": "Around 9 this morning",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 3,
+      "ts": "2026-10-18 19:42"
+     },
+     "onset_abs": {
+      "value": "~2026-10-18 morning",
+      "status": "reported",
+      "who": "derived",
+      "turn": 3,
+      "ts": "2026-10-18 19:42"
+     },
+     "pain_rating": {
+      "value": 0,
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 9,
+      "ts": "2026-10-18 19:43"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2
+  },
+  "complaint.category": {
+   "value": [
+    "neuro_symptoms"
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 9,
+   "ts": "2026-10-18 19:43"
+  },
+  "E.mechanism": {
+   "value": "none",
+   "status": "reported",
+   "who": "derived",
+   "turn": 2,
+   "ts": "2026-10-18 19:42"
+  },
+  "complaint.text": {
+   "value": "her speech suddenly went slurred and her left arm went weak, she couldn't lift her teacup",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-18 19:42"
+  },
+  "complaint.onset": {
+   "value": "Around 9 this morning",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-18 19:42"
+  },
+  "complaint.onset_abs": {
+   "value": "~2026-10-18 morning (from 'Around 9 this morning' said 19:42)",
+   "status": "reported",
+   "who": "derived",
+   "turn": 3,
+   "ts": "2026-10-18 19:42"
+  },
+  "patient.age": {
+   "value": 88,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 4,
+   "ts": "2026-10-18 19:43"
+  },
+  "patient.sex": {
+   "value": "female",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 4,
+   "ts": "2026-10-18 19:43"
+  },
+  "patient.age_group": {
+   "value": "older_adult",
+   "status": "reported",
+   "who": "derived",
+   "turn": 4,
+   "ts": "2026-10-18 19:43"
+  },
+  "complaint.fever": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 5,
+   "ts": "2026-10-18 19:43"
+  },
+  "infection.rash": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 5,
+   "ts": "2026-10-18 19:43"
+  },
+  "infection.travel_14d": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 6,
+   "ts": "2026-10-18 19:43"
+  },
+  "infection.contacts": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 6,
+   "ts": "2026-10-18 19:43"
+  },
+  "stroke.vision_change": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 7,
+   "ts": "2026-10-18 19:43"
+  },
+  "ams.changed_from_baseline": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 8,
+   "ts": "2026-10-18 19:43"
+  },
+  "complaint.pain_rating": {
+   "value": 0,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 9,
+   "ts": "2026-10-18 19:43"
+  },
+  "complaint.pain_latest": {
+   "value": 0,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 9,
+   "ts": "2026-10-18 19:43"
+  },
+  "stroke.face_droop": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 9,
+   "ts": "2026-10-18 19:43"
+  },
+  "stroke.arm_weakness": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 10,
+   "ts": "2026-10-18 19:43"
+  },
+  "stroke.speech_change": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 10,
+   "ts": "2026-10-18 19:43"
+  },
+  "complaint.stroke_signs": {
+   "value": true,
+   "status": "reported",
+   "who": "derived",
+   "turn": 10,
+   "ts": "2026-10-18 19:43"
+  },
+  "M.medications": {
+   "value": [
+    "aspirin"
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 11,
+   "ts": "2026-10-18 19:44"
+  },
+  "A.allergies": {
+   "value": [],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 12,
+   "ts": "2026-10-18 19:44"
+  },
+  "history.conditions": {
+   "value": [
+    "stroke"
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 13,
+   "ts": "2026-10-18 19:44"
+  },
+  "identity.name": {
+   "value": "Lim Ah Mui",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 14,
+   "ts": "2026-10-18 19:44"
+  },
+  "identity.dob": {
+   "value": "15 March 1938",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 14,
+   "ts": "2026-10-18 19:44"
+  },
+  "L.last_intake": {
+   "value": "Breakfast at 8am",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 15,
+   "ts": "2026-10-18 19:44"
+  },
+  "L.last_intake_abs": {
+   "value": "~2026-10-18 08:00 (from 'Breakfast at 8am' said 19:44)",
+   "status": "reported",
+   "who": "derived",
+   "turn": 15,
+   "ts": "2026-10-18 19:44"
+  }
+ },
+ "attempts": {
+  "danger_signs.responsive": 1,
+  "danger_signs.chest_pain_now": 1,
+  "danger_signs.breathing_difficulty": 1,
+  "danger_signs.heavy_bleeding": 1,
+  "complaint.category": 1,
+  "complaint.text": 1,
+  "complaint.onset": 1,
+  "patient.age": 1,
+  "patient.sex": 1,
+  "complaint.fever": 1,
+  "infection.rash": 1,
+  "infection.travel_14d": 1,
+  "infection.contacts": 1,
+  "stroke.vision_change": 1,
+  "ams.changed_from_baseline": 2,
+  "complaint.pain_rating": 1,
+  "stroke.face_droop": 1,
+  "stroke.arm_weakness": 1,
+  "stroke.speech_change": 1,
+  "M.medications": 1,
+  "A.allergies": 2,
+  "history.conditions": 1,
+  "identity.name": 1,
+  "identity.dob": 1,
+  "L.last_intake": 1
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "Is the patient awake and responding to you normally? Also, is he or she experiencing any chest pain, trouble breathing, or heavy bleeding right now?",
+   "ts": "2026-10-18 19:42:23",
+   "kind": "question",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, she's awake and talking clearly now. No chest pain.",
+   "ts": "2026-10-18 19:42:23",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "bot",
+   "text": "I'm glad she's talking clearly. Is she having any trouble breathing or is there any heavy bleeding right now? Also, what is the main reason you are bringing her in?",
+   "ts": "2026-10-18 19:42:31",
+   "kind": "question",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category"
+  },
+  {
+   "role": "caregiver",
+   "text": "No. This morning her speech suddenly went slurred and her left arm went weak, she couldn't lift her teacup. It lasted about 45 minutes and then passed completely.",
+   "ts": "2026-10-18 19:42:31",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category"
+  },
+  {
+   "role": "bot",
+   "text": "I understand the symptoms passed, but could you describe what happened in your own words and tell me exactly what time it started today?",
+   "ts": "2026-10-18 19:42:45",
+   "kind": "question",
+   "slot": "dyn:complaint.text+complaint.onset"
+  },
+  {
+   "role": "caregiver",
+   "text": "This morning her speech suddenly went slurred and her left arm went weak, she couldn't lift her teacup. It lasted about 45 minutes and then passed completely. Around 9 this morning.",
+   "ts": "2026-10-18 19:42:45",
+   "kind": "answer",
+   "slot": "dyn:complaint.text+complaint.onset"
+  },
+  {
+   "role": "bot",
+   "text": "I have that information. How old is she?",
+   "ts": "2026-10-18 19:43:01",
+   "kind": "question",
+   "slot": "dyn:patient.age+patient.sex"
+  },
+  {
+   "role": "caregiver",
+   "text": "She's 88. Female.",
+   "ts": "2026-10-18 19:43:01",
+   "kind": "answer",
+   "slot": "dyn:patient.age+patient.sex"
+  },
+  {
+   "role": "bot",
+   "text": "I've noted her age. Does she have a fever or any new rashes on her skin?",
+   "ts": "2026-10-18 19:43:08",
+   "kind": "question",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "No fever. No rash.",
+   "ts": "2026-10-18 19:43:08",
+   "kind": "answer",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "bot",
+   "text": "Has she traveled outside the country or been in contact with anyone who is sick in the last two weeks?",
+   "ts": "2026-10-18 19:43:15",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "caregiver",
+   "text": "No.",
+   "ts": "2026-10-18 19:43:15",
+   "kind": "answer",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "bot",
+   "text": "I've noted that. Has she had any sudden changes in her vision or is she acting more confused or sleepy than usual?",
+   "ts": "2026-10-18 19:43:22",
+   "kind": "question",
+   "slot": "dyn:stroke.vision_change+ams.changed_from_baseline"
+  },
+  {
+   "role": "caregiver",
+   "text": "No change in her vision that I know of. No, she's as clear as usual now.",
+   "ts": "2026-10-18 19:43:22",
+   "kind": "answer",
+   "slot": "dyn:stroke.vision_change+ams.changed_from_baseline"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Is she acting more confused, not making sense, or more sleepy than usual?",
+   "ts": "2026-10-18 19:43:30",
+   "kind": "question",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, she's as clear as usual now.",
+   "ts": "2026-10-18 19:43:30",
+   "kind": "answer",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "bot",
+   "text": "I've noted that. On a scale of 0 to 10, how much pain is she in right now, and does one side of her face look droopy or uneven?",
+   "ts": "2026-10-18 19:43:45",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating+stroke.face_droop"
+  },
+  {
+   "role": "caregiver",
+   "text": "She has no pain, 0 out of 10. I didn't notice her face drooping.",
+   "ts": "2026-10-18 19:43:45",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_rating+stroke.face_droop"
+  },
+  {
+   "role": "bot",
+   "text": "I'm glad she's not in pain. Does she have any weakness or numbness in her arms or legs, and is her speech clear and easy to understand?",
+   "ts": "2026-10-18 19:43:53",
+   "kind": "question",
+   "slot": "dyn:stroke.arm_weakness+stroke.speech_change"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, her left arm went weak, she couldn't lift her cup; it's back to normal now. Yes, her speech was slurred during the episode; it's normal now.",
+   "ts": "2026-10-18 19:43:53",
+   "kind": "answer",
+   "slot": "dyn:stroke.arm_weakness+stroke.speech_change"
+  },
+  {
+   "role": "system",
+   "text": "floor: at least ESI-2  rules: ['B-05.stroke-signs']",
+   "ts": "2026-10-18 19:43:58",
+   "kind": "floor"
+  },
+  {
+   "role": "bot",
+   "text": "I've noted that. What medications does she take regularly, and does she have any allergies to medicines?",
+   "ts": "2026-10-18 19:44:01",
+   "kind": "question",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "caregiver",
+   "text": "One aspirin daily, nothing else. None.",
+   "ts": "2026-10-18 19:44:01",
+   "kind": "answer",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "bot",
+   "text": "I've noted the aspirin. Just to confirm, does she have any allergies to medications?",
+   "ts": "2026-10-18 19:44:08",
+   "kind": "question",
+   "slot": "dyn:A.allergies"
+  },
+  {
+   "role": "caregiver",
+   "text": "None.",
+   "ts": "2026-10-18 19:44:08",
+   "kind": "answer",
+   "slot": "dyn:A.allergies"
+  },
+  {
+   "role": "bot",
+   "text": "Does she have any other ongoing medical conditions?",
+   "ts": "2026-10-18 19:44:14",
+   "kind": "question",
+   "slot": "dyn:history.conditions"
+  },
+  {
+   "role": "caregiver",
+   "text": "She had a stroke two years ago.",
+   "ts": "2026-10-18 19:44:14",
+   "kind": "answer",
+   "slot": "dyn:history.conditions"
+  },
+  {
+   "role": "bot",
+   "text": "I've noted her history. Could you please tell me her full name and date of birth?",
+   "ts": "2026-10-18 19:44:28",
+   "kind": "question",
+   "slot": "dyn:identity.name+identity.dob"
+  },
+  {
+   "role": "caregiver",
+   "text": "Lim Ah Mui. 15 March 1938.",
+   "ts": "2026-10-18 19:44:28",
+   "kind": "answer",
+   "slot": "dyn:identity.name+identity.dob"
+  },
+  {
+   "role": "bot",
+   "text": "That's enough for the hospital team to prepare. Show the code PANDA-1691 at the counter when you arrive. I'll ask a few more things while you're on the way; tell me straight away if anything changes.",
+   "ts": "2026-10-18 19:44:33",
+   "kind": "ack"
+  },
+  {
+   "role": "bot",
+   "text": "When was the last time she had anything to eat or drink?",
+   "ts": "2026-10-18 19:44:35",
+   "kind": "question",
+   "slot": "dyn:L.last_intake"
+  },
+  {
+   "role": "caregiver",
+   "text": "Breakfast at 8am.",
+   "ts": "2026-10-18 19:44:35",
+   "kind": "answer",
+   "slot": "dyn:L.last_intake"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you - that's everything. Show the code PANDA-1691 at the counter when you arrive.",
+   "ts": "2026-10-18 19:44:39",
+   "kind": "ack"
+  }
+ ],
+ "stage": "rest",
+ "floor": "at least ESI-2",
+ "phase": "enroute",
+ "created": "2026-10-18 19:42",
+ "pending_slot": "dyn:L.last_intake",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {},
+ "qr_ready": true,
+ "qr_turn": 14,
+ "said_done": true
+}

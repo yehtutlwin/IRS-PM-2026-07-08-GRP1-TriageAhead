@@ -1,0 +1,15 @@
+session DURIAN-3466   started 2026-09-26 03:47   (generated from messages)
+
+03:47:05  BOT  Are you awake and responding normally without severe chest pain, trouble breathing, or heavy bleeding right now?   [slot red_flags.screen]
+03:47:06  THEM He is awake and breathing normally but answers slowly; there is no chest pain, trouble breathing, vomiting of blood, or black stools.   [slot red_flags.screen]
+03:47:09  BOT  Can you tell me what happened, when it started, and how bad the pain is on a scale of 0 to 10?   [slot complaint.main]
+03:47:09  THEM His symptoms started over the past two days with increasing abdominal swelling, yellow eyes, and confusion. He reports mild abdominal discomfort, rating it 3/10.   [slot complaint.main]
+03:47:12  BOT  Do you take any regular medications?   [slot M.medications]
+03:47:13  THEM Yes, he takes lactulose, spironolactone, and furosemide, though he missed several doses of lactulose this week. He has no known allergies and is not on blood thinners.   [slot M.medications]
+03:47:15  BOT  Could you please tell us about any other medical conditions, such as heart problems, diabetes, pregnancy, or if your immune system is weakened?   [slot allergies_and_history]
+03:47:16  THEM He has cirrhosis caused by chronic hepatitis B. There are no other mentioned medical conditions like heart problems, diabetes, pregnancy, or a weakened immune system in his history.   [slot allergies_and_history]
+03:47:18  BOT  Could you please tell us if he has had any fever, rash, overseas travel in the last two weeks, or contact with anyone who is infectious?   [slot infection.screen]
+03:47:19  THEM He has no fever and reports only mild abdominal discomfort. He has not mentioned a rash, overseas travel, or contact with anyone who is infectious.   [slot infection.screen]
+03:47:22  BOT  Could you please tell us when he last ate or drank, along with his name and date of birth for our records?   [slot wrapup]
+03:47:23  THEM He last ate a small bowl of rice at noon. His name is not provided in my description, but his date of birth is July 7, 1968.   [slot wrapup]
+03:47:24  BOT  Thank you - that's everything for now. Show the code DURIAN-3466 at the counter when you arrive. (ack)

@@ -1,0 +1,52 @@
+arm B, form handbook, persona ND-P23-elderly-confusion, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  What is the main reason the patient is seeking care today?
+A1  My husband is suddenly confused. He became confused this afternoon and kept asking where he was.
+
+Q2  Is he currently able to follow commands or speak to you?
+A2  Yes, he is awake and can respond.
+
+Q3  Is his confusion a new change from his normal mental state?
+A3  Yes, he is normally alert and knows where he is. He suddenly became confused this afternoon and kept asking where he was.
+
+Q4  Is he experiencing any other symptoms, such as chest pain, difficulty breathing, or severe pain?
+A4  No breathing difficulty noticed.
+
+Q5  Does he have any other symptoms like a severe headache, facial drooping, or weakness on one side of his body?
+A5  I don't know.
+
+Q6  Does he have any other symptoms like a severe headache, facial drooping, or weakness on one side of his body?
+A6  I don't know.
+
+Q7  Does he have any other symptoms like a severe headache, facial drooping, or weakness on one side of his body?
+A7  I don't know.
+
+Q8  Does he have any other symptoms like a severe headache, facial drooping, or weakness on one side of his body?
+A8  I don't know.
+
+Q9  Does he have any other symptoms like a severe headache, facial drooping, or weakness on one side of his body?
+A9  I don't know.
+
+Q10  Does he have any other symptoms like a severe headache, facial drooping, or weakness on one side of his body?
+A10  I don't know.
+
+Q11  Does he have any other symptoms like a severe headache, facial drooping, or weakness on one side of his body?
+A11  I don't know.
+
+Q12  Does he have any other symptoms like a severe headache, facial drooping, or weakness on one side of his body?
+A12  I don't know.
+
+Q13  Does he have any other symptoms like a severe headache, facial drooping, or weakness on one side of his body?
+A13  I don't know.
+
+Q14  Does he have any other symptoms like a severe headache, facial drooping, or weakness on one side of his body?
+A14  I don't know.
+
+Q15  Does he have any other symptoms like a severe headache, facial drooping, or weakness on one side of his body?
+A15  I don't know.
+
+Q16  Does he have any other symptoms like a severe headache, facial drooping, or weakness on one side of his body?
+A16  I don't know.
+
+DECISION {"decision": "unparsed", "reason": "turn limit reached without a decision"}
+OUTCOME no decision in 16 questions | expected at least ESI-2 | pass False | label missing fact | max prompt tokens 30180

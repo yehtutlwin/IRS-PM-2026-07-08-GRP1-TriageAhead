@@ -1,0 +1,33 @@
+session PANDA-2043   started 2026-10-16 00:57   (generated from messages)
+
+00:57:14  BOT  Is the patient awake and responding to you normally? Also, is he or she experiencing any chest pain, trouble breathing, or heavy bleeding right now?   [slot dyn:danger_signs.responsive+danger_signs.chest_pain_now]
+00:57:14  THEM Yes, I'm awake, I'm the patient. Yes, I have pressure in the middle of my chest right now.   [slot dyn:danger_signs.responsive+danger_signs.chest_pain_now]
+00:57:25  BOT  I understand you're feeling chest pressure. Are you having any trouble breathing or are you bleeding heavily right now?   [slot dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding]
+00:57:25  THEM A bit breathless when I walk, but I can talk. No.   [slot dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding]
+00:57:33  BOT  I understand. What is the main problem that brings you in today, and when did this chest pressure start?   [slot dyn:complaint.category+complaint.onset]
+00:57:33  THEM Pressure in the centre of my chest spreading to my left arm, and I feel sweaty. About 40 minutes ago.   [slot dyn:complaint.category+complaint.onset]
+00:57:47  BOT  I'm sorry to hear about the discomfort. Could you tell me the patient's age and if they are male or female?   [slot dyn:patient.age+patient.sex]
+00:57:47  THEM I'm 51. Female.   [slot dyn:patient.age+patient.sex]
+00:57:55  BOT  Is she currently pregnant or has she given birth in the last few weeks?   [slot dyn:history.pregnant+history.postpartum]
+00:57:55  THEM No, I'm not pregnant.   [slot dyn:history.pregnant+history.postpartum]
+00:58:07  BOT  To clarify, have you given birth in the last few weeks?   [slot dyn:history.postpartum]
+00:58:07  THEM I don't know.   [slot dyn:history.postpartum]
+00:58:15  BOT  I understand. Does she have a fever or any new rashes on her skin?   [slot dyn:complaint.fever+infection.rash]
+00:58:15  THEM No fever. No rash.   [slot dyn:complaint.fever+infection.rash]
+00:58:24  BOT  I've noted that. Has she traveled outside the country or been in contact with anyone who is sick in the last two weeks?   [slot dyn:infection.travel_14d+infection.contacts]
+00:58:24  THEM No.   [slot dyn:infection.travel_14d+infection.contacts]
+00:58:32  BOT  I've noted that. Is she acting differently than usual, such as being more confused or very sleepy? Also, on a scale of 0 to 10, how bad is her pain right now?   [slot dyn:ams.changed_from_baseline+complaint.pain_rating]
+00:58:32  THEM No, I'm clear-headed. 6 out of 10.   [slot dyn:ams.changed_from_baseline+complaint.pain_rating]
+00:58:40  BOT  Does her chest pain feel like pressure or squeezing, and is she having any trouble breathing?   [slot dyn:complaint.acs_suspicion+complaint.shortness_of_breath]
+00:58:40  THEM Yes, it feels like pressure and it goes into my left arm, and I'm sweaty. A bit breathless when walking.   [slot dyn:complaint.acs_suspicion+complaint.shortness_of_breath]
+00:58:46  SYS  floor: at least ESI-2  rules: ['B-04.chest-pain-acs-suspect'] (floor)
+00:58:49  BOT  I've noted the pressure and the pain in her arm. Does she have any allergies to medications, and what medicines does she take regularly?   [slot dyn:M.medications+A.allergies]
+00:58:49  THEM I don't take any regular medicines. No allergies.   [slot dyn:M.medications+A.allergies]
+00:58:57  BOT  I've noted that she has no allergies or regular medications. Could you tell me her full name, date of birth, and if she has any ongoing medical conditions?   [slot dyn:history.conditions+identity.name+identity.dob]
+00:58:57  THEM No known conditions. Lee Mei Ling. 14 May 1975.   [slot dyn:history.conditions+identity.name+identity.dob]
+00:59:02  BOT  That's enough for the hospital team to prepare. Show the code PANDA-2043 at the counter when you arrive. I'll ask a few more things while you're on the way; tell me straight away if anything changes. (ack)
+00:59:05  BOT  Has she had COVID-19 recently? Also, when was the last time she had something to eat or drink?   [slot dyn:history.recent_covid_infection+L.last_intake]
+00:59:05  THEM Toast at 8am.   [slot dyn:history.recent_covid_infection+L.last_intake]
+00:59:13  BOT  Has she had COVID-19 recently?   [slot dyn:history.recent_covid_infection]
+00:59:13  THEM I don't know.   [slot dyn:history.recent_covid_infection]
+00:59:17  BOT  Thank you - that's everything. Show the code PANDA-2043 at the counter when you arrive. (ack)

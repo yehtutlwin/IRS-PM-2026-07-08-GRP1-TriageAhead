@@ -1,0 +1,52 @@
+arm B, form rules, persona ND-P29-pregnant-headache, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  Is the patient awake and responding normally?
+A1  Yes, the patient is awake and can respond.
+
+Q2  Is the patient having chest pain right now?
+A2  No, there is no chest pain.
+
+Q3  Is the patient having trouble breathing right now?
+A3  No, there is no breathing difficulty.
+
+Q4  Is the patient bleeding heavily right now?
+A4  No bleeding.
+
+Q5  What is the main reason the patient is coming to the emergency department?
+A5  I am thirty weeks pregnant and have had a severe headache and blurred vision since this morning.
+
+Q6  How long has the headache and blurred vision been going on?
+A6  Since this morning.
+
+Q7  Are you currently experiencing any other symptoms, such as high blood pressure, swelling in your face or hands, or any other concerns?
+A7  I don't know.
+
+Q8  Are you currently experiencing any other symptoms, such as swelling in your face or hands, or any other concerns?
+A8  I don't know.
+
+Q9  Are you experiencing any other symptoms like a sudden increase in blood pressure, or any other concerns?
+A9  I don't know.
+
+Q10  Is the headache a 'thunderclap' headache (a severe, rapid-onset headache that reached its peak within a minute or so)?
+A10  I don't know.
+
+Q11  Are you currently experiencing any other symptoms, such as a sudden increase in blood pressure, or any other concerns?
+A11  I don't know.
+
+Q12  Are you currently experiencing any vision changes, such as double vision or a loss of vision?
+A12  I have had blurred vision since this morning.
+
+Q13  Are you currently experiencing any other symptoms, such as a sudden increase in blood pressure, or any other concerns?
+A13  I don't know.
+
+Q14  Are you currently experiencing any other symptoms, such as a sudden increase in blood pressure, or any other concerns?
+A14  I don't know.
+
+Q15  Are you currently experiencing any other symptoms, such as a sudden increase in blood pressure, or any other concerns?
+A15  I don't know.
+
+Q16  Are you currently experiencing any other symptoms, such as a sudden increase in blood pressure, or any other concerns?
+A16  I don't know.
+
+DECISION {"decision": "unparsed", "reason": "turn limit reached without a decision"}
+OUTCOME no decision in 16 questions | expected at least ESI-2 | pass False | label missing fact | max prompt tokens 44103

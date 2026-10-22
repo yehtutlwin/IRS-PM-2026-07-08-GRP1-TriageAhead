@@ -1,0 +1,449 @@
+{
+ "sid": "EAGLE-8077",
+ "facts": {
+  "danger_signs.responsive": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-18 18:02"
+  },
+  "danger_signs.chest_pain_now": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-18 18:02"
+  },
+  "patient.sex": {
+   "value": "female",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-18 18:02"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "injury",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 2,
+      "ts": "2026-10-18 18:02"
+     },
+     "text": {
+      "value": "hurt herself",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 5,
+      "ts": "2026-10-18 18:03"
+     },
+     "onset": {
+      "value": "today",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 5,
+      "ts": "2026-10-18 18:03"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2
+  },
+  "complaint.category": {
+   "value": [
+    "injury"
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 5,
+   "ts": "2026-10-18 18:03"
+  },
+  "danger_signs.breathing_difficulty": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-18 18:02"
+  },
+  "danger_signs.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 4,
+   "ts": "2026-10-18 18:02"
+  },
+  "complaint.text": {
+   "value": "hurt herself",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 5,
+   "ts": "2026-10-18 18:03"
+  },
+  "complaint.onset": {
+   "value": "today",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 5,
+   "ts": "2026-10-18 18:03"
+  },
+  "E.mechanism": {
+   "value": "fall",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 5,
+   "ts": "2026-10-18 18:03"
+  },
+  "patient.age": {
+   "value": 58,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 6,
+   "ts": "2026-10-18 18:03"
+  },
+  "patient.age_group": {
+   "value": "adult",
+   "status": "reported",
+   "who": "derived",
+   "turn": 6,
+   "ts": "2026-10-18 18:03"
+  },
+  "history.pregnant": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 7,
+   "ts": "2026-10-18 18:03"
+  },
+  "history.postpartum": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 8,
+   "ts": "2026-10-18 18:03"
+  },
+  "complaint.fever": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 8,
+   "ts": "2026-10-18 18:03"
+  },
+  "infection.rash": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 9,
+   "ts": "2026-10-18 18:03"
+  },
+  "infection.travel_14d": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 10,
+   "ts": "2026-10-18 18:03"
+  },
+  "infection.contacts": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 10,
+   "ts": "2026-10-18 18:03"
+  },
+  "ams.changed_from_baseline": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 11,
+   "ts": "2026-10-18 18:03"
+  },
+  "M.anticoagulant": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 15,
+   "ts": "2026-10-18 18:04"
+  },
+  "complaint.compartment_syndrome_symptoms": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 16,
+   "ts": "2026-10-18 18:04"
+  },
+  "E.fall_height_meters": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 16,
+   "ts": "2026-10-18 18:04"
+  }
+ },
+ "attempts": {
+  "danger_signs.responsive": 1,
+  "danger_signs.chest_pain_now": 1,
+  "danger_signs.breathing_difficulty": 2,
+  "danger_signs.heavy_bleeding": 2,
+  "complaint.category": 1,
+  "complaint.text": 1,
+  "complaint.onset": 1,
+  "E.mechanism": 1,
+  "patient.age": 1,
+  "history.pregnant": 1,
+  "history.postpartum": 1,
+  "complaint.fever": 1,
+  "infection.rash": 1,
+  "infection.travel_14d": 1,
+  "infection.contacts": 1,
+  "ams.changed_from_baseline": 1,
+  "complaint.pain_rating": 3,
+  "M.anticoagulant": 1,
+  "complaint.compartment_syndrome_symptoms": 1,
+  "E.fall_height_meters": 1,
+  "M.medications": 1,
+  "A.allergies": 1
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "Is the patient awake and responding to you normally? Also, are they currently experiencing any chest pain, trouble breathing, or heavy bleeding?",
+   "ts": "2026-10-18 18:02:15",
+   "kind": "question",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, she's awake and talking. No.",
+   "ts": "2026-10-18 18:02:15",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "bot",
+   "text": "I'm glad she's awake. Is she having any trouble breathing or is there any heavy bleeding? Also, what is the main reason you are bringing her in today?",
+   "ts": "2026-10-18 18:02:23",
+   "kind": "question",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category"
+  },
+  {
+   "role": "caregiver",
+   "text": "No. My wife fell today and hurt herself.",
+   "ts": "2026-10-18 18:02:23",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category"
+  },
+  {
+   "role": "bot",
+   "text": "I understand she fell. Is she having any difficulty breathing right now?",
+   "ts": "2026-10-18 18:02:38",
+   "kind": "question",
+   "slot": "dyn:danger_signs.breathing_difficulty"
+  },
+  {
+   "role": "caregiver",
+   "text": "No.",
+   "ts": "2026-10-18 18:02:38",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.breathing_difficulty"
+  },
+  {
+   "role": "bot",
+   "text": "Is she bleeding heavily anywhere right now?",
+   "ts": "2026-10-18 18:02:52",
+   "kind": "question",
+   "slot": "dyn:danger_signs.heavy_bleeding"
+  },
+  {
+   "role": "caregiver",
+   "text": "No.",
+   "ts": "2026-10-18 18:02:52",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.heavy_bleeding"
+  },
+  {
+   "role": "bot",
+   "text": "I'm glad she's breathing okay. Can you tell me more about her injury, how it happened, and when it started?",
+   "ts": "2026-10-18 18:02:59",
+   "kind": "question",
+   "slot": "dyn:complaint.text+complaint.onset+E.mechanism"
+  },
+  {
+   "role": "caregiver",
+   "text": "My wife fell today and hurt herself. Today. She fell.",
+   "ts": "2026-10-18 18:02:59",
+   "kind": "answer",
+   "slot": "dyn:complaint.text+complaint.onset+E.mechanism"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear about her fall. How old is your wife?",
+   "ts": "2026-10-18 18:03:14",
+   "kind": "question",
+   "slot": "dyn:patient.age"
+  },
+  {
+   "role": "caregiver",
+   "text": "She's 58.",
+   "ts": "2026-10-18 18:03:14",
+   "kind": "answer",
+   "slot": "dyn:patient.age"
+  },
+  {
+   "role": "bot",
+   "text": "Is she currently pregnant?",
+   "ts": "2026-10-18 18:03:20",
+   "kind": "question",
+   "slot": "dyn:history.pregnant"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 18:03:20",
+   "kind": "answer",
+   "slot": "dyn:history.pregnant"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Has she given birth in the last few weeks, and does she have a fever?",
+   "ts": "2026-10-18 18:03:26",
+   "kind": "question",
+   "slot": "dyn:history.postpartum+complaint.fever"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 18:03:26",
+   "kind": "answer",
+   "slot": "dyn:history.postpartum+complaint.fever"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Does she have any new rashes on her skin?",
+   "ts": "2026-10-18 18:03:33",
+   "kind": "question",
+   "slot": "dyn:infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 18:03:33",
+   "kind": "answer",
+   "slot": "dyn:infection.rash"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Has she traveled outside the country or been in contact with anyone who is sick in the last two weeks?",
+   "ts": "2026-10-18 18:03:39",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 18:03:39",
+   "kind": "answer",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "bot",
+   "text": "Is she acting differently than usual, such as being more confused or unusually sleepy?",
+   "ts": "2026-10-18 18:03:46",
+   "kind": "question",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 18:03:46",
+   "kind": "answer",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "bot",
+   "text": "On a scale from 0 to 10, where 10 is the worst pain imaginable, how bad is her pain right now?",
+   "ts": "2026-10-18 18:03:53",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 18:03:53",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Can you describe how much pain she is in on a scale of 0 to 10?",
+   "ts": "2026-10-18 18:03:59",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 18:03:59",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "I understand it's hard to say. Is her pain very severe, or is it more of a mild discomfort?",
+   "ts": "2026-10-18 18:04:04",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 18:04:04",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "Does she take any blood thinners or medications to prevent blood clots?",
+   "ts": "2026-10-18 18:04:09",
+   "kind": "question",
+   "slot": "dyn:M.anticoagulant"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, she doesn't take blood thinners.",
+   "ts": "2026-10-18 18:04:09",
+   "kind": "answer",
+   "slot": "dyn:M.anticoagulant"
+  },
+  {
+   "role": "bot",
+   "text": "Is the pain in her limb getting worse or does the limb feel very tight or hard? Also, did she fall from a standing position or from a height like a ladder or stairs?",
+   "ts": "2026-10-18 18:04:17",
+   "kind": "question",
+   "slot": "dyn:complaint.compartment_syndrome_symptoms+E.fall_height_meters"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 18:04:17",
+   "kind": "answer",
+   "slot": "dyn:complaint.compartment_syndrome_symptoms+E.fall_height_meters"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Could you tell me what medications she takes regularly and if she has any allergies, especially to medicines?",
+   "ts": "2026-10-18 18:04:24",
+   "kind": "question",
+   "slot": "dyn:M.medications+A.allergies"
+  }
+ ],
+ "stage": "floor",
+ "floor": null,
+ "phase": "enroute",
+ "created": "2026-10-18 18:02",
+ "pending_slot": "dyn:M.medications+A.allergies",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {}
+}

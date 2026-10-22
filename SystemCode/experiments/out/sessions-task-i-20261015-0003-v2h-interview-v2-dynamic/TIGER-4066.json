@@ -1,0 +1,563 @@
+{
+ "sid": "TIGER-4066",
+ "facts": {
+  "danger_signs.responsive": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 8,
+   "ts": "2026-10-15 00:02"
+  },
+  "danger_signs.chest_pain_now": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-10-15 00:01"
+  },
+  "danger_signs.breathing_difficulty": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-10-15 00:01"
+  },
+  "danger_signs.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-10-15 00:01"
+  },
+  "complaint.text": {
+   "value": "short of breath",
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-10-15 00:01"
+  },
+  "complaint.shortness_of_breath": {
+   "value": true,
+   "status": "reported",
+   "who": "derived",
+   "turn": 2,
+   "ts": "2026-10-15 00:01"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "breathing",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "persona",
+      "turn": 3,
+      "ts": "2026-10-15 00:02"
+     },
+     "onset": {
+      "value": "this morning",
+      "status": "reported",
+      "who": "persona",
+      "turn": 4,
+      "ts": "2026-10-15 00:02"
+     },
+     "onset_abs": {
+      "value": "~2026-10-15 morning",
+      "status": "reported",
+      "who": "derived",
+      "turn": 4,
+      "ts": "2026-10-15 00:02"
+     },
+     "pain_rating": {
+      "value": 0,
+      "status": "reported",
+      "who": "persona",
+      "turn": 11,
+      "ts": "2026-10-15 00:02"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 3
+  },
+  "complaint.category": {
+   "value": [
+    "breathing"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 11,
+   "ts": "2026-10-15 00:02"
+  },
+  "E.mechanism": {
+   "value": "none",
+   "status": "reported",
+   "who": "derived",
+   "turn": 3,
+   "ts": "2026-10-15 00:02"
+  },
+  "patient.age": {
+   "value": 72,
+   "status": "reported",
+   "who": "persona",
+   "turn": 4,
+   "ts": "2026-10-15 00:02"
+  },
+  "complaint.onset": {
+   "value": "this morning",
+   "status": "reported",
+   "who": "persona",
+   "turn": 4,
+   "ts": "2026-10-15 00:02"
+  },
+  "complaint.onset_abs": {
+   "value": "~2026-10-15 morning (from 'this morning' said 00:02)",
+   "status": "reported",
+   "who": "derived",
+   "turn": 4,
+   "ts": "2026-10-15 00:02"
+  },
+  "patient.age_group": {
+   "value": "older_adult",
+   "status": "reported",
+   "who": "derived",
+   "turn": 4,
+   "ts": "2026-10-15 00:02"
+  },
+  "patient.sex": {
+   "value": "male",
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-10-15 00:02"
+  },
+  "complaint.fever": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 6,
+   "ts": "2026-10-15 00:02"
+  },
+  "infection.rash": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 6,
+   "ts": "2026-10-15 00:02"
+  },
+  "infection.travel_14d": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 7,
+   "ts": "2026-10-15 00:02"
+  },
+  "infection.contacts": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 7,
+   "ts": "2026-10-15 00:02"
+  },
+  "complaint.pain_rating": {
+   "value": 0,
+   "status": "reported",
+   "who": "persona",
+   "turn": 11,
+   "ts": "2026-10-15 00:02"
+  },
+  "complaint.pain_latest": {
+   "value": 0,
+   "status": "reported",
+   "who": "persona",
+   "turn": 11,
+   "ts": "2026-10-15 00:02"
+  },
+  "complaint.increasing_respiratory_effort": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 11,
+   "ts": "2026-10-15 00:02"
+  },
+  "M.medications": {
+   "value": [
+    "frusemide",
+    "inhaler"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 12,
+   "ts": "2026-10-15 00:03"
+  },
+  "A.allergies": {
+   "value": [],
+   "status": "reported",
+   "who": "persona",
+   "turn": 12,
+   "ts": "2026-10-15 00:03"
+  },
+  "history.conditions": {
+   "value": [
+    "heart failure",
+    "COPD"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 13,
+   "ts": "2026-10-15 00:03"
+  },
+  "history.immunocompromised": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 14,
+   "ts": "2026-10-15 00:03"
+  },
+  "identity.name": {
+   "value": "Mr. Lim",
+   "status": "reported",
+   "who": "persona",
+   "turn": 15,
+   "ts": "2026-10-15 00:03"
+  },
+  "identity.dob": {
+   "value": "03 Mar 1954",
+   "status": "reported",
+   "who": "persona",
+   "turn": 16,
+   "ts": "2026-10-15 00:03"
+  },
+  "complaint.respiratory_distress_signs": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 17,
+   "ts": "2026-10-15 00:03"
+  },
+  "L.last_intake": {
+   "value": "toast at 8am",
+   "status": "reported",
+   "who": "persona",
+   "turn": 18,
+   "ts": "2026-10-15 00:03"
+  },
+  "L.last_intake_abs": {
+   "value": "~2026-10-15 08:00 (from 'toast at 8am' said 00:03)",
+   "status": "reported",
+   "who": "derived",
+   "turn": 18,
+   "ts": "2026-10-15 00:03"
+  }
+ },
+ "attempts": {
+  "danger_signs.responsive": 1,
+  "danger_signs.chest_pain_now": 1,
+  "danger_signs.breathing_difficulty": 1,
+  "danger_signs.heavy_bleeding": 1,
+  "complaint.category": 2,
+  "complaint.text": 1,
+  "complaint.onset": 1,
+  "patient.age": 1,
+  "patient.sex": 2,
+  "complaint.fever": 1,
+  "infection.rash": 1,
+  "infection.travel_14d": 1,
+  "infection.contacts": 1,
+  "ams.changed_from_baseline": 3,
+  "complaint.pain_rating": 1,
+  "complaint.increasing_respiratory_effort": 1,
+  "M.medications": 1,
+  "A.allergies": 1,
+  "history.conditions": 1,
+  "history.immunocompromised": 1,
+  "identity.name": 1,
+  "identity.dob": 2,
+  "complaint.respiratory_distress_signs": 1,
+  "L.last_intake": 1
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "I'm here to help get the team ready. Is the person awake and responding normally, and are they currently having any chest pain, trouble breathing, or heavy bleeding?",
+   "ts": "2026-10-15 00:01:46",
+   "kind": "question",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "caregiver",
+   "text": "He is awake and talking normally. He has no pain.",
+   "ts": "2026-10-15 00:01:48",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "bot",
+   "text": "I'm glad to hear he's awake. Is he having any trouble breathing or bleeding heavily, and can you tell me what the main problem is?",
+   "ts": "2026-10-15 00:01:54",
+   "kind": "question",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category+complaint.text"
+  },
+  {
+   "role": "caregiver",
+   "text": "He is more short of breath than usual today. He is not bleeding.",
+   "ts": "2026-10-15 00:01:55",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category+complaint.text"
+  },
+  {
+   "role": "bot",
+   "text": "I understand he's having some trouble breathing. Could you tell me more about what's going on or what the main issue is today?",
+   "ts": "2026-10-15 00:02:01",
+   "kind": "question",
+   "slot": "dyn:complaint.category"
+  },
+  {
+   "role": "caregiver",
+   "text": "He's been more short of breath than usual since this morning.",
+   "ts": "2026-10-15 00:02:03",
+   "kind": "answer",
+   "slot": "dyn:complaint.category"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear he's struggling with his breathing. How old is he, and when did this shortness of breath begin today?",
+   "ts": "2026-10-15 00:02:08",
+   "kind": "question",
+   "slot": "dyn:complaint.onset+patient.age+patient.sex"
+  },
+  {
+   "role": "caregiver",
+   "text": "He is 72 years old. He has been more short of breath than usual since this morning.",
+   "ts": "2026-10-15 00:02:10",
+   "kind": "answer",
+   "slot": "dyn:complaint.onset+patient.age+patient.sex"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear he's struggling. Is he a man or a woman?",
+   "ts": "2026-10-15 00:02:15",
+   "kind": "question",
+   "slot": "dyn:patient.sex"
+  },
+  {
+   "role": "caregiver",
+   "text": "He is a man.",
+   "ts": "2026-10-15 00:02:16",
+   "kind": "answer",
+   "slot": "dyn:patient.sex"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear he's struggling. Does he have a fever or a new rash?",
+   "ts": "2026-10-15 00:02:22",
+   "kind": "question",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "He has no fever and no rash.",
+   "ts": "2026-10-15 00:02:23",
+   "kind": "answer",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Has he traveled outside the country or been in contact with anyone who is sick in the last two weeks?",
+   "ts": "2026-10-15 00:02:29",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, he has had no travel and no contact with anyone ill.",
+   "ts": "2026-10-15 00:02:30",
+   "kind": "answer",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you for that information. Has he seemed more confused, sleepy, or just not like himself today?",
+   "ts": "2026-10-15 00:02:36",
+   "kind": "question",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "caregiver",
+   "text": "He is awake and talking normally.",
+   "ts": "2026-10-15 00:02:37",
+   "kind": "answer",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Has he been acting differently today, such as being more confused or sleepy than usual?",
+   "ts": "2026-10-15 00:02:42",
+   "kind": "question",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, he is awake and talking normally.",
+   "ts": "2026-10-15 00:02:43",
+   "kind": "answer",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "bot",
+   "text": "I understand he is talking now. Compared to his usual self, does he seem more confused or sleepy than normal?",
+   "ts": "2026-10-15 00:02:48",
+   "kind": "question",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "caregiver",
+   "text": "He is awake and talking normally.",
+   "ts": "2026-10-15 00:02:49",
+   "kind": "answer",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "bot",
+   "text": "I'm glad he's alert. On a scale of 0 to 10, how bad is his pain right now, and is his breathing getting harder than it was earlier?",
+   "ts": "2026-10-15 00:02:54",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating+complaint.increasing_respiratory_effort"
+  },
+  {
+   "role": "caregiver",
+   "text": "He has no pain. He has been more short of breath than usual since this morning.",
+   "ts": "2026-10-15 00:02:56",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_rating+complaint.increasing_respiratory_effort"
+  },
+  {
+   "role": "system",
+   "text": "floor: at least ESI-2  rules: ['B-12.increasing-respiratory-effort']",
+   "ts": "2026-10-15 00:02:59",
+   "kind": "floor"
+  },
+  {
+   "role": "bot",
+   "text": "I've noted that he isn't in any pain. To help the team prepare, could you tell me what medications he takes regularly and if he has any allergies, especially to medicines?",
+   "ts": "2026-10-15 00:03:02",
+   "kind": "question",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "caregiver",
+   "text": "He takes a water pill (frusemide) and an inhaler. He has no allergies.",
+   "ts": "2026-10-15 00:03:03",
+   "kind": "answer",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you for that information. Does he have any other ongoing medical conditions, like heart or lung problems?",
+   "ts": "2026-10-15 00:03:09",
+   "kind": "question",
+   "slot": "dyn:history.conditions"
+  },
+  {
+   "role": "caregiver",
+   "text": "He has heart failure and COPD.",
+   "ts": "2026-10-15 00:03:10",
+   "kind": "answer",
+   "slot": "dyn:history.conditions"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you for sharing those details. Is he currently being treated for any conditions that weaken his immune system, such as cancer, an organ transplant, or HIV?",
+   "ts": "2026-10-15 00:03:16",
+   "kind": "question",
+   "slot": "dyn:history.immunocompromised"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-15 00:03:17",
+   "kind": "answer",
+   "slot": "dyn:history.immunocompromised"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. To help the team prepare, could you please tell me the patient's full name and date of birth?",
+   "ts": "2026-10-15 00:03:22",
+   "kind": "question",
+   "slot": "dyn:identity.name+identity.dob"
+  },
+  {
+   "role": "caregiver",
+   "text": "His name is Mr. Lim and his date of birth is 03 Mar 1954.",
+   "ts": "2026-10-15 00:03:23",
+   "kind": "answer",
+   "slot": "dyn:identity.name+identity.dob"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you for providing his name. Could you please tell me his date of birth?",
+   "ts": "2026-10-15 00:03:28",
+   "kind": "question",
+   "slot": "dyn:identity.dob"
+  },
+  {
+   "role": "caregiver",
+   "text": "His date of birth is 03 Mar 1954.",
+   "ts": "2026-10-15 00:03:30",
+   "kind": "answer",
+   "slot": "dyn:identity.dob"
+  },
+  {
+   "role": "bot",
+   "text": "That's enough for the hospital team to prepare. Show the code TIGER-4066 at the counter when you arrive. I'll ask a few more things while you're on the way; tell me straight away if anything changes.",
+   "ts": "2026-10-15 00:03:33",
+   "kind": "ack"
+  },
+  {
+   "role": "bot",
+   "text": "Is he currently struggling to breathe, such as breathing very fast, wheezing, or only being able to say a few words at a time?",
+   "ts": "2026-10-15 00:03:35",
+   "kind": "question",
+   "slot": "dyn:complaint.respiratory_distress_signs"
+  },
+  {
+   "role": "caregiver",
+   "text": "He is not wheezing and can still speak in full sentences. He is just more short of breath than usual.",
+   "ts": "2026-10-15 00:03:37",
+   "kind": "answer",
+   "slot": "dyn:complaint.respiratory_distress_signs"
+  },
+  {
+   "role": "bot",
+   "text": "I understand he's struggling a bit more than usual. When was the last time he had something to eat or drink?",
+   "ts": "2026-10-15 00:03:42",
+   "kind": "question",
+   "slot": "dyn:L.last_intake"
+  },
+  {
+   "role": "caregiver",
+   "text": "He last ate toast at 8am.",
+   "ts": "2026-10-15 00:03:43",
+   "kind": "answer",
+   "slot": "dyn:L.last_intake"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you - that's everything. Show the code TIGER-4066 at the counter when you arrive.",
+   "ts": "2026-10-15 00:03:46",
+   "kind": "ack"
+  }
+ ],
+ "stage": "rest",
+ "floor": "at least ESI-2",
+ "phase": "enroute",
+ "opened": [],
+ "created": "2026-10-15 00:01",
+ "pending_slot": "dyn:L.last_intake",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {},
+ "qr_ready": true,
+ "qr_turn": 16,
+ "said_done": true
+}

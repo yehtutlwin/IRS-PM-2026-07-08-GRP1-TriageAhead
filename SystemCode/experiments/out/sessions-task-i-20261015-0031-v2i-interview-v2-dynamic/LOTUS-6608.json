@@ -1,0 +1,614 @@
+{
+ "sid": "LOTUS-6608",
+ "facts": {
+  "danger_signs.responsive": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-10-15 00:09"
+  },
+  "danger_signs.chest_pain_now": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-10-15 00:09"
+  },
+  "danger_signs.breathing_difficulty": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-10-15 00:09"
+  },
+  "complaint.shortness_of_breath": {
+   "value": true,
+   "status": "reported",
+   "who": "derived",
+   "turn": 1,
+   "ts": "2026-10-15 00:09"
+  },
+  "danger_signs.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-10-15 00:09"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "chest_pain",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "persona",
+      "turn": 2,
+      "ts": "2026-10-15 00:09"
+     },
+     "text": {
+      "value": "pressure in the center of my chest; feeling a bit breathless when I walk.",
+      "status": "reported",
+      "who": "persona",
+      "turn": 14,
+      "ts": "2026-10-15 00:11"
+     },
+     "onset": {
+      "value": "40 minutes",
+      "status": "reported",
+      "who": "persona",
+      "turn": 3,
+      "ts": "2026-10-15 00:09"
+     },
+     "pain_rating": {
+      "value": 6,
+      "status": "reported",
+      "who": "persona",
+      "turn": 12,
+      "ts": "2026-10-15 00:10"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 2
+  },
+  "complaint.category": {
+   "value": [
+    "chest_pain"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 14,
+   "ts": "2026-10-15 00:11"
+  },
+  "complaint.text": {
+   "value": "pressure in the center of my chest; feeling a bit breathless when I walk.",
+   "status": "reported",
+   "who": "persona",
+   "turn": 14,
+   "ts": "2026-10-15 00:11"
+  },
+  "E.mechanism": {
+   "value": "none",
+   "status": "reported",
+   "who": "derived",
+   "turn": 2,
+   "ts": "2026-10-15 00:09"
+  },
+  "complaint.onset": {
+   "value": "40 minutes",
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-10-15 00:09"
+  },
+  "patient.age": {
+   "value": 51,
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-10-15 00:09"
+  },
+  "patient.sex": {
+   "value": "female",
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-10-15 00:09"
+  },
+  "patient.age_group": {
+   "value": "adult",
+   "status": "reported",
+   "who": "derived",
+   "turn": 3,
+   "ts": "2026-10-15 00:09"
+  },
+  "complaint.fever": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 9,
+   "ts": "2026-10-15 00:10"
+  },
+  "infection.rash": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 10,
+   "ts": "2026-10-15 00:10"
+  },
+  "infection.travel_14d": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 11,
+   "ts": "2026-10-15 00:10"
+  },
+  "infection.contacts": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 11,
+   "ts": "2026-10-15 00:10"
+  },
+  "complaint.pain_rating": {
+   "value": 6,
+   "status": "reported",
+   "who": "persona",
+   "turn": 14,
+   "ts": "2026-10-15 00:11"
+  },
+  "complaint.pain_latest": {
+   "value": 6,
+   "status": "reported",
+   "who": "persona",
+   "turn": 12,
+   "ts": "2026-10-15 00:10"
+  },
+  "ams.changed_from_baseline": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 13,
+   "ts": "2026-10-15 00:10"
+  },
+  "complaint.acs_suspicion": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 14,
+   "ts": "2026-10-15 00:11"
+  },
+  "M.medications": {
+   "value": [],
+   "status": "reported",
+   "who": "persona",
+   "turn": 15,
+   "ts": "2026-10-15 00:11"
+  },
+  "A.allergies": {
+   "value": [],
+   "status": "reported",
+   "who": "persona",
+   "turn": 16,
+   "ts": "2026-10-15 00:11"
+  },
+  "history.conditions": {
+   "value": [],
+   "status": "reported",
+   "who": "persona",
+   "turn": 17,
+   "ts": "2026-10-15 00:11"
+  },
+  "identity.name": {
+   "value": "[Name]",
+   "status": "reported",
+   "who": "persona",
+   "turn": 18,
+   "ts": "2026-10-15 00:11"
+  },
+  "identity.dob": {
+   "value": "1975-05-14",
+   "status": "reported",
+   "who": "persona",
+   "turn": 19,
+   "ts": "2026-10-15 00:11"
+  },
+  "complaint.increasing_respiratory_effort": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 20,
+   "ts": "2026-10-15 00:11"
+  },
+  "complaint.respiratory_distress_signs": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 21,
+   "ts": "2026-10-15 00:11"
+  }
+ },
+ "attempts": {
+  "danger_signs.responsive": 1,
+  "danger_signs.chest_pain_now": 1,
+  "danger_signs.heavy_bleeding": 1,
+  "complaint.category": 1,
+  "complaint.onset": 1,
+  "patient.age": 1,
+  "patient.sex": 1,
+  "history.pregnant": 3,
+  "history.postpartum": 3,
+  "complaint.fever": 1,
+  "infection.rash": 1,
+  "infection.travel_14d": 1,
+  "infection.contacts": 1,
+  "ams.changed_from_baseline": 2,
+  "complaint.pain_rating": 1,
+  "complaint.acs_suspicion": 1,
+  "complaint.increasing_respiratory_effort": 2,
+  "M.medications": 1,
+  "A.allergies": 2,
+  "history.conditions": 1,
+  "identity.name": 1,
+  "identity.dob": 2,
+  "history.immunocompromised": 3,
+  "complaint.respiratory_distress_signs": 1,
+  "history.recent_covid_infection": 1
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "I'm here to help gather some information for the medical team. Is the patient awake and responding normally, and are they currently experiencing any chest pain, trouble breathing, or heavy bleeding?",
+   "ts": "2026-10-15 00:09:23",
+   "kind": "question",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, I'm awake. I have pressure in the center of my chest and I'm a bit breathless.",
+   "ts": "2026-10-15 00:09:25",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear about the chest pressure. Are you bleeding heavily right now, and what is the main reason you are seeking care today?",
+   "ts": "2026-10-15 00:09:31",
+   "kind": "question",
+   "slot": "dyn:danger_signs.heavy_bleeding+complaint.category"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I'm not bleeding. I have a lot of pressure in the center of my chest and it's spreading to my arm.",
+   "ts": "2026-10-15 00:09:33",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.heavy_bleeding+complaint.category"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry you're feeling this way. To help the team prepare, could you tell me how long this chest pressure has been going on, and what is your age and sex?",
+   "ts": "2026-10-15 00:09:40",
+   "kind": "question",
+   "slot": "dyn:complaint.onset+patient.age+patient.sex"
+  },
+  {
+   "role": "caregiver",
+   "text": "It's been going on for about 40 minutes. I'm a 51-year-old woman.",
+   "ts": "2026-10-15 00:09:42",
+   "kind": "answer",
+   "slot": "dyn:complaint.onset+patient.age+patient.sex"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you for that information. Are you currently pregnant or have you given birth in the last few weeks?",
+   "ts": "2026-10-15 00:09:48",
+   "kind": "question",
+   "slot": "dyn:history.pregnant+history.postpartum"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I'm not.",
+   "ts": "2026-10-15 00:09:49",
+   "kind": "answer",
+   "slot": "dyn:history.pregnant+history.postpartum"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Just to confirm for the medical team, are you currently pregnant?",
+   "ts": "2026-10-15 00:09:55",
+   "kind": "question",
+   "slot": "dyn:history.pregnant"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I'm not.",
+   "ts": "2026-10-15 00:09:57",
+   "kind": "answer",
+   "slot": "dyn:history.pregnant"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. To make sure the team has the right details, are you currently pregnant?",
+   "ts": "2026-10-15 00:10:02",
+   "kind": "question",
+   "slot": "dyn:history.pregnant"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I'm not.",
+   "ts": "2026-10-15 00:10:05",
+   "kind": "answer",
+   "slot": "dyn:history.pregnant"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Have you given birth in the last few weeks?",
+   "ts": "2026-10-15 00:10:10",
+   "kind": "question",
+   "slot": "dyn:history.postpartum"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I haven't.",
+   "ts": "2026-10-15 00:10:11",
+   "kind": "answer",
+   "slot": "dyn:history.postpartum"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Just to be clear, have you had any babies in the last few weeks?",
+   "ts": "2026-10-15 00:10:16",
+   "kind": "question",
+   "slot": "dyn:history.postpartum"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I haven't had any babies.",
+   "ts": "2026-10-15 00:10:19",
+   "kind": "answer",
+   "slot": "dyn:history.postpartum"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear about the chest pain. Do you have a fever or a feverish feeling right now?",
+   "ts": "2026-10-15 00:10:24",
+   "kind": "question",
+   "slot": "dyn:complaint.fever"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I don't have a fever.",
+   "ts": "2026-10-15 00:10:25",
+   "kind": "answer",
+   "slot": "dyn:complaint.fever"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry you're feeling so unwell. Have you noticed any new rashes on your skin?",
+   "ts": "2026-10-15 00:10:31",
+   "kind": "question",
+   "slot": "dyn:infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I don't have any rashes.",
+   "ts": "2026-10-15 00:10:32",
+   "kind": "answer",
+   "slot": "dyn:infection.rash"
+  },
+  {
+   "role": "bot",
+   "text": "I'm glad you don't have a fever or a rash. Have you traveled outside the country or been around anyone who was sick in the last two weeks?",
+   "ts": "2026-10-15 00:10:37",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I haven't.",
+   "ts": "2026-10-15 00:10:38",
+   "kind": "answer",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry you're feeling this way. On a scale of 0 to 10, how bad is your pain right now, and have you noticed any changes in your mental clarity or feeling more sleepy than usual?",
+   "ts": "2026-10-15 00:10:45",
+   "kind": "question",
+   "slot": "dyn:ams.changed_from_baseline+complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "The pain is a 6 out of 10. I'm just feeling a bit scared.",
+   "ts": "2026-10-15 00:10:46",
+   "kind": "answer",
+   "slot": "dyn:ams.changed_from_baseline+complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "I understand that you're feeling scared. Are you feeling more confused or sleepy than you normally do?",
+   "ts": "2026-10-15 00:10:52",
+   "kind": "question",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I just feel scared and a bit breathless.",
+   "ts": "2026-10-15 00:10:53",
+   "kind": "answer",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear you're feeling breathless. Does the pain feel like pressure or squeezing, and is it getting harder for you to breathe than it was a little while ago?",
+   "ts": "2026-10-15 00:10:59",
+   "kind": "question",
+   "slot": "dyn:complaint.acs_suspicion+complaint.increasing_respiratory_effort"
+  },
+  {
+   "role": "caregiver",
+   "text": "It feels like pressure in the center of my chest. I'm feeling a bit breathless when I walk.",
+   "ts": "2026-10-15 00:11:00",
+   "kind": "answer",
+   "slot": "dyn:complaint.acs_suspicion+complaint.increasing_respiratory_effort"
+  },
+  {
+   "role": "system",
+   "text": "floor: at least ESI-2  rules: ['B-04.chest-pain-acs-suspect']",
+   "ts": "2026-10-15 00:11:04",
+   "kind": "floor"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear about the chest pressure. To help the medical team prepare, could you tell me what medications you take regularly and if you have any allergies, especially to medicines?",
+   "ts": "2026-10-15 00:11:07",
+   "kind": "question",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't take any regular medications and I don't have any allergies.",
+   "ts": "2026-10-15 00:11:08",
+   "kind": "answer",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "bot",
+   "text": "I understand you don't take any regular medications. Just to be safe, are you allergic to any specific medicines?",
+   "ts": "2026-10-15 00:11:14",
+   "kind": "question",
+   "slot": "dyn:A.allergies"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I don't have any allergies.",
+   "ts": "2026-10-15 00:11:15",
+   "kind": "answer",
+   "slot": "dyn:A.allergies"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you for confirming that. To help the team prepare, do you have any ongoing medical conditions?",
+   "ts": "2026-10-15 00:11:20",
+   "kind": "question",
+   "slot": "dyn:history.conditions"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I don't have any known conditions.",
+   "ts": "2026-10-15 00:11:21",
+   "kind": "answer",
+   "slot": "dyn:history.conditions"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you for that information. To get started, could you please tell me your full name and date of birth?",
+   "ts": "2026-10-15 00:11:27",
+   "kind": "question",
+   "slot": "dyn:identity.name+identity.dob"
+  },
+  {
+   "role": "caregiver",
+   "text": "My name is [Name] and my date of birth is 14 May 1975.",
+   "ts": "2026-10-15 00:11:28",
+   "kind": "answer",
+   "slot": "dyn:identity.name+identity.dob"
+  },
+  {
+   "role": "bot",
+   "text": "I have your name, but could you please tell me your date of birth again just to make sure I have it right?",
+   "ts": "2026-10-15 00:11:33",
+   "kind": "question",
+   "slot": "dyn:identity.dob"
+  },
+  {
+   "role": "caregiver",
+   "text": "It's May 14, 1975.",
+   "ts": "2026-10-15 00:11:34",
+   "kind": "answer",
+   "slot": "dyn:identity.dob"
+  },
+  {
+   "role": "bot",
+   "text": "That's enough for the hospital team to prepare. Show the code LOTUS-6608 at the counter when you arrive. I'll ask a few more things while you're on the way; tell me straight away if anything changes.",
+   "ts": "2026-10-15 00:11:37",
+   "kind": "ack"
+  },
+  {
+   "role": "bot",
+   "text": "Is your breathing getting harder or more difficult than it was before?",
+   "ts": "2026-10-15 00:11:39",
+   "kind": "question",
+   "slot": "dyn:complaint.increasing_respiratory_effort"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, I'm feeling a bit breathless when I walk.",
+   "ts": "2026-10-15 00:11:41",
+   "kind": "answer",
+   "slot": "dyn:complaint.increasing_respiratory_effort"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear you're feeling breathless. To help the team prepare, are you currently taking any medications that weaken your immune system, and are you having any trouble speaking in full sentences or making a wheezing sound?",
+   "ts": "2026-10-15 00:11:46",
+   "kind": "question",
+   "slot": "dyn:history.immunocompromised+complaint.respiratory_distress_signs"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I don't take any medications. I can speak, but I'm just a bit scared.",
+   "ts": "2026-10-15 00:11:48",
+   "kind": "answer",
+   "slot": "dyn:history.immunocompromised+complaint.respiratory_distress_signs"
+  },
+  {
+   "role": "bot",
+   "text": "I understand you're feeling scared. To help the doctors, has a doctor ever told you that you have a weakened immune system or a condition that makes it harder for you to fight off infections?",
+   "ts": "2026-10-15 00:11:54",
+   "kind": "question",
+   "slot": "dyn:history.immunocompromised"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I don't have any known conditions.",
+   "ts": "2026-10-15 00:11:55",
+   "kind": "answer",
+   "slot": "dyn:history.immunocompromised"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Just to be sure, have you ever been told by a doctor that you have a condition that makes it harder for your body to fight off infections?",
+   "ts": "2026-10-15 00:12:00",
+   "kind": "question",
+   "slot": "dyn:history.immunocompromised"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I don't have any known conditions.",
+   "ts": "2026-10-15 00:12:03",
+   "kind": "answer",
+   "slot": "dyn:history.immunocompromised"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Have you had a COVID-19 infection recently?",
+   "ts": "2026-10-15 00:12:07",
+   "kind": "question",
+   "slot": "dyn:history.recent_covid_infection"
+  }
+ ],
+ "stage": "rest",
+ "floor": "at least ESI-2",
+ "phase": "enroute",
+ "opened": [],
+ "created": "2026-10-15 00:09",
+ "pending_slot": "dyn:history.recent_covid_infection",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {},
+ "qr_ready": true,
+ "qr_turn": 19
+}

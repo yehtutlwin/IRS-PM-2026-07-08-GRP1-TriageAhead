@@ -1,0 +1,494 @@
+{
+ "sid": "BAOBAB-2140",
+ "facts": {
+  "danger_signs.responsive": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-18 20:05"
+  },
+  "danger_signs.chest_pain_now": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-18 20:05"
+  },
+  "danger_signs.breathing_difficulty": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-18 20:05"
+  },
+  "danger_signs.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-18 20:05"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "mental_health",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 2,
+      "ts": "2026-10-18 20:05"
+     },
+     "text": {
+      "value": "My sister told me today she's been thinking about killing herself.",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 2,
+      "ts": "2026-10-18 20:05"
+     },
+     "onset": {
+      "value": "today",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 3,
+      "ts": "2026-10-18 20:06"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2
+  },
+  "complaint.category": {
+   "value": [
+    "mental_health"
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-18 20:06"
+  },
+  "complaint.text": {
+   "value": "My sister told me today she's been thinking about killing herself.",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-18 20:05"
+  },
+  "E.mechanism": {
+   "value": "none",
+   "status": "reported",
+   "who": "derived",
+   "turn": 2,
+   "ts": "2026-10-18 20:05"
+  },
+  "complaint.onset": {
+   "value": "today",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-18 20:06"
+  },
+  "patient.age": {
+   "value": 31,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 15,
+   "ts": "2026-10-18 20:07"
+  },
+  "patient.sex": {
+   "value": "female",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-18 20:06"
+  },
+  "patient.age_group": {
+   "value": "adult",
+   "status": "reported",
+   "who": "derived",
+   "turn": 3,
+   "ts": "2026-10-18 20:06"
+  },
+  "history.pregnant": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 4,
+   "ts": "2026-10-18 20:06"
+  },
+  "history.postpartum": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 4,
+   "ts": "2026-10-18 20:06"
+  },
+  "complaint.fever": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 5,
+   "ts": "2026-10-18 20:06"
+  },
+  "infection.rash": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 5,
+   "ts": "2026-10-18 20:06"
+  },
+  "infection.travel_14d": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 6,
+   "ts": "2026-10-18 20:06"
+  },
+  "infection.contacts": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 6,
+   "ts": "2026-10-18 20:06"
+  },
+  "ams.changed_from_baseline": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 7,
+   "ts": "2026-10-18 20:06"
+  },
+  "complaint.danger_to_self_or_others": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 11,
+   "ts": "2026-10-18 20:06"
+  },
+  "M.medications": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 12,
+   "ts": "2026-10-18 20:06"
+  },
+  "A.allergies": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 12,
+   "ts": "2026-10-18 20:06"
+  },
+  "history.conditions": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 13,
+   "ts": "2026-10-18 20:07"
+  },
+  "identity.name": {
+   "value": "Grace Lee",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 14,
+   "ts": "2026-10-18 20:07"
+  },
+  "identity.dob": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 15,
+   "ts": "2026-10-18 20:07"
+  },
+  "L.last_intake": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 16,
+   "ts": "2026-10-18 20:07"
+  }
+ },
+ "attempts": {
+  "danger_signs.responsive": 1,
+  "danger_signs.chest_pain_now": 1,
+  "danger_signs.breathing_difficulty": 1,
+  "danger_signs.heavy_bleeding": 1,
+  "complaint.category": 1,
+  "complaint.text": 1,
+  "complaint.onset": 1,
+  "patient.age": 1,
+  "patient.sex": 1,
+  "history.pregnant": 1,
+  "history.postpartum": 1,
+  "complaint.fever": 1,
+  "infection.rash": 1,
+  "infection.travel_14d": 1,
+  "infection.contacts": 1,
+  "ams.changed_from_baseline": 1,
+  "complaint.pain_rating": 3,
+  "complaint.danger_to_self_or_others": 1,
+  "complaint.known_toxic_ingestion": 1,
+  "M.medications": 1,
+  "A.allergies": 1,
+  "history.conditions": 1,
+  "identity.name": 1,
+  "identity.dob": 2,
+  "L.last_intake": 1
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "Is the patient awake and responding to you normally? Also, is he or she experiencing any chest pain, trouble breathing, or heavy bleeding right now?",
+   "ts": "2026-10-18 20:05:39",
+   "kind": "question",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, she's awake and talking. No.",
+   "ts": "2026-10-18 20:05:39",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "bot",
+   "text": "I'm glad she's awake. Is she having any trouble breathing or is there any heavy bleeding? Also, could you tell me what the main problem is and what's happening?",
+   "ts": "2026-10-18 20:05:47",
+   "kind": "question",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category+complaint.text"
+  },
+  {
+   "role": "caregiver",
+   "text": "No. My sister told me today she's been thinking about killing herself.",
+   "ts": "2026-10-18 20:05:47",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category+complaint.text"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. How long has she been feeling this way, and could you tell me her age?",
+   "ts": "2026-10-18 20:05:55",
+   "kind": "question",
+   "slot": "dyn:complaint.onset+patient.age+patient.sex"
+  },
+  {
+   "role": "caregiver",
+   "text": "She told me today. She's 31. She's a woman, my sister.",
+   "ts": "2026-10-18 20:05:55",
+   "kind": "answer",
+   "slot": "dyn:complaint.onset+patient.age+patient.sex"
+  },
+  {
+   "role": "bot",
+   "text": "I'm so sorry to hear she's going through this. Is she currently pregnant or has she given birth in the last few weeks?",
+   "ts": "2026-10-18 20:06:03",
+   "kind": "question",
+   "slot": "dyn:history.pregnant+history.postpartum"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 20:06:03",
+   "kind": "answer",
+   "slot": "dyn:history.pregnant+history.postpartum"
+  },
+  {
+   "role": "bot",
+   "text": "I understand you aren't sure about her pregnancy. Does she have a fever or any new rashes on her skin?",
+   "ts": "2026-10-18 20:06:10",
+   "kind": "question",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 20:06:10",
+   "kind": "answer",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Has she traveled outside the country or been in contact with anyone who is sick in the last two weeks?",
+   "ts": "2026-10-18 20:06:17",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 20:06:17",
+   "kind": "answer",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "bot",
+   "text": "Has she seemed more confused, out of it, or unusually sleepy lately?",
+   "ts": "2026-10-18 20:06:23",
+   "kind": "question",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 20:06:23",
+   "kind": "answer",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. On a scale from 0 to 10, where 10 is the worst pain imaginable, how bad is her pain right now?",
+   "ts": "2026-10-18 20:06:29",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 20:06:29",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Can you describe how much pain she is in right now on a scale of 0 to 10?",
+   "ts": "2026-10-18 20:06:36",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 20:06:36",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "I understand it's hard to say. If you had to estimate, how severe would you say her pain is on a scale of 0 to 10?",
+   "ts": "2026-10-18 20:06:41",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 20:06:41",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Has she mentioned or done anything to suggest she might hurt herself or anyone else, or has she taken any medications or substances that could be poisonous?",
+   "ts": "2026-10-18 20:06:47",
+   "kind": "question",
+   "slot": "dyn:complaint.danger_to_self_or_others+complaint.known_toxic_ingestion"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, she said she wants to kill herself.",
+   "ts": "2026-10-18 20:06:47",
+   "kind": "answer",
+   "slot": "dyn:complaint.danger_to_self_or_others+complaint.known_toxic_ingestion"
+  },
+  {
+   "role": "system",
+   "text": "floor: at least ESI-2  rules: ['B-09.suicidal-or-homicidal']",
+   "ts": "2026-10-18 20:06:51",
+   "kind": "floor"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear that. To help the team prepare, does she take any regular medications or have any known allergies?",
+   "ts": "2026-10-18 20:06:54",
+   "kind": "question",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 20:06:54",
+   "kind": "answer",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Does she have any ongoing medical conditions, like heart issues or diabetes?",
+   "ts": "2026-10-18 20:07:01",
+   "kind": "question",
+   "slot": "dyn:history.conditions"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 20:07:01",
+   "kind": "answer",
+   "slot": "dyn:history.conditions"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Could you please tell me her full name and date of birth?",
+   "ts": "2026-10-18 20:07:06",
+   "kind": "question",
+   "slot": "dyn:identity.name+identity.dob"
+  },
+  {
+   "role": "caregiver",
+   "text": "Grace Lee. I'm not sure of the date, she's 31.",
+   "ts": "2026-10-18 20:07:06",
+   "kind": "answer",
+   "slot": "dyn:identity.name+identity.dob"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Could you tell me her date of birth?",
+   "ts": "2026-10-18 20:07:13",
+   "kind": "question",
+   "slot": "dyn:identity.dob"
+  },
+  {
+   "role": "caregiver",
+   "text": "I'm not sure of the date, she's 31.",
+   "ts": "2026-10-18 20:07:13",
+   "kind": "answer",
+   "slot": "dyn:identity.dob"
+  },
+  {
+   "role": "bot",
+   "text": "That's enough for the hospital team to prepare. Show the code BAOBAB-2140 at the counter when you arrive. I'll ask a few more things while you're on the way; tell me straight away if anything changes.",
+   "ts": "2026-10-18 20:07:17",
+   "kind": "ack"
+  },
+  {
+   "role": "bot",
+   "text": "When was the last time she had anything to eat or drink?",
+   "ts": "2026-10-18 20:07:20",
+   "kind": "question",
+   "slot": "dyn:L.last_intake"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 20:07:20",
+   "kind": "answer",
+   "slot": "dyn:L.last_intake"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you - that's everything. Show the code BAOBAB-2140 at the counter when you arrive.",
+   "ts": "2026-10-18 20:07:23",
+   "kind": "ack"
+  }
+ ],
+ "stage": "rest",
+ "floor": "at least ESI-2",
+ "phase": "enroute",
+ "created": "2026-10-18 20:05",
+ "pending_slot": "dyn:L.last_intake",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {},
+ "qr_ready": true,
+ "qr_turn": 15,
+ "said_done": true
+}

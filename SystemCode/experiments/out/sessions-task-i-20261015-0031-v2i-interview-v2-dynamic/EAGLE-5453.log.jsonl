@@ -1,0 +1,84 @@
+{"t": "00:24:43", "kind": "engine", "note": "session EAGLE-5453 started (web)"}
+{"t": "00:24:46", "kind": "question", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "I'm here to help get information for the medical team. Is the person awake and responding to you, and are they currently experiencing any chest pain, trouble breathing, or heavy bleeding?", "fields": ["danger_signs.responsive", "danger_signs.chest_pain_now"], "offered": ["danger_signs.responsive", "danger_signs.chest_pain_now", "danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text"]}
+{"t": "00:24:48", "kind": "answer", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "He is awake but only responding with confused words. No, he is not experiencing chest pain, trouble breathing, or heavy bleeding."}
+{"t": "00:24:51", "kind": "extract", "writes": [["danger_signs.responsive", true], ["danger_signs.chest_pain_now", false]]}
+{"t": "00:24:54", "kind": "question", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category+complaint.text", "text": "I'm sorry to hear he is confused. To help the team, could you tell me what the main problem is and describe what is happening in your own words?", "fields": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text"], "offered": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text", "complaint.onset", "E.mechanism"]}
+{"t": "00:24:55", "kind": "answer", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category+complaint.text", "text": "He collapsed while working in the sun and is now very hot and confused. He's been vomiting and only responding with confused words."}
+{"t": "00:24:59", "kind": "extract", "writes": [["complaint.category", "neuro_symptoms"], ["complaint.text", "collapsed while working in the sun and is now very hot and confused. He's been vomiting and only responding with confused words."]]}
+{"t": "00:24:59", "kind": "extract", "writes": [["E.mechanism", "none"]], "via": "derived-non-injury"}
+{"t": "00:25:02", "kind": "question", "slot": "dyn:danger_signs.breathing_difficulty", "text": "I understand he is very confused. Is he having any trouble breathing right now?", "fields": ["danger_signs.breathing_difficulty"], "offered": ["danger_signs.breathing_difficulty"]}
+{"t": "00:25:03", "kind": "answer", "slot": "dyn:danger_signs.breathing_difficulty", "text": "I don't know."}
+{"t": "00:25:05", "kind": "extract", "writes": []}
+{"t": "00:25:05", "kind": "extract", "writes": [["danger_signs.breathing_difficulty", null]], "via": "dont-know"}
+{"t": "00:25:08", "kind": "question", "slot": "dyn:danger_signs.heavy_bleeding", "text": "I understand. Is he bleeding heavily anywhere right now?", "fields": ["danger_signs.heavy_bleeding"], "offered": ["danger_signs.heavy_bleeding"]}
+{"t": "00:25:09", "kind": "answer", "slot": "dyn:danger_signs.heavy_bleeding", "text": "No, he is not bleeding."}
+{"t": "00:25:11", "kind": "extract", "writes": [["danger_signs.heavy_bleeding", false]]}
+{"t": "00:25:14", "kind": "question", "slot": "dyn:complaint.onset+patient.age", "text": "I'm sorry to hear about his condition. When did these symptoms first begin, and how old is he?", "fields": ["complaint.onset", "patient.age"], "offered": ["complaint.onset", "patient.age", "patient.sex", "complaint.fever", "infection.rash", "infection.travel_14d"]}
+{"t": "00:25:15", "kind": "answer", "slot": "dyn:complaint.onset+patient.age", "text": "He started feeling sick after working for about four hours. I don't know his age."}
+{"t": "00:25:18", "kind": "extract", "writes": [["complaint.onset", "after working for about four hours"]]}
+{"t": "00:25:18", "kind": "extract", "writes": [["patient.age", null]], "via": "dont-know"}
+{"t": "00:25:21", "kind": "question", "slot": "dyn:patient.sex+complaint.fever", "text": "I'm sorry to hear he's feeling so unwell. Is the person who collapsed a man or a woman, and have you noticed if they have a fever?", "fields": ["patient.sex", "complaint.fever"], "offered": ["patient.sex", "complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts", "stroke.vision_change"]}
+{"t": "00:25:23", "kind": "answer", "slot": "dyn:patient.sex+complaint.fever", "text": "He is a man. He is very hot and his temperature is 40.4 degrees Celsius."}
+{"t": "00:25:26", "kind": "extract", "writes": [["patient.sex", "male"], ["complaint.fever", true]]}
+{"t": "00:25:28", "kind": "question", "slot": "dyn:infection.rash", "text": "I understand he has a high temperature. Have you noticed any new rashes on his skin?", "fields": ["infection.rash"], "offered": ["infection.rash", "infection.travel_14d", "infection.contacts", "complaint.uti_symptoms", "vitals.temp_c", "stroke.vision_change"]}
+{"t": "00:25:29", "kind": "answer", "slot": "dyn:infection.rash", "text": "I don't know."}
+{"t": "00:25:32", "kind": "extract", "writes": []}
+{"t": "00:25:32", "kind": "extract", "writes": [["infection.rash", null]], "via": "dont-know"}
+{"t": "00:25:35", "kind": "question", "slot": "dyn:infection.travel_14d+infection.contacts", "text": "I understand. Has he traveled outside the country in the last two weeks, or been in contact with anyone who has been sick recently?", "fields": ["infection.travel_14d", "infection.contacts"], "offered": ["infection.travel_14d", "infection.contacts", "complaint.uti_symptoms", "vitals.temp_c", "stroke.vision_change", "ams.changed_from_baseline"]}
+{"t": "00:25:37", "kind": "answer", "slot": "dyn:infection.travel_14d+infection.contacts", "text": "I don't know."}
+{"t": "00:25:39", "kind": "extract", "writes": []}
+{"t": "00:25:39", "kind": "extract", "writes": [["infection.travel_14d", null], ["infection.contacts", null]], "via": "dont-know"}
+{"t": "00:25:42", "kind": "question", "slot": "dyn:complaint.uti_symptoms", "text": "I'm sorry to hear you aren't sure about the other details. Has he had any pain or burning when passing urine, or have you noticed his urine looking cloudy or smelling strong?", "fields": ["complaint.uti_symptoms"], "offered": ["complaint.uti_symptoms", "vitals.temp_c", "stroke.vision_change", "ams.changed_from_baseline", "complaint.pain_rating", "complaint.infection_signs"]}
+{"t": "00:25:45", "kind": "answer", "slot": "dyn:complaint.uti_symptoms", "text": "I don't know."}
+{"t": "00:25:47", "kind": "extract", "writes": []}
+{"t": "00:25:47", "kind": "extract", "writes": [["complaint.uti_symptoms", null]], "via": "dont-know"}
+{"t": "00:25:50", "kind": "question", "slot": "dyn:vitals.temp_c", "text": "I understand. Do you have a thermometer nearby to tell me his temperature?", "fields": ["vitals.temp_c"], "offered": ["vitals.temp_c", "stroke.vision_change", "ams.changed_from_baseline", "complaint.pain_rating", "complaint.infection_signs", "stroke.face_droop"]}
+{"t": "00:25:51", "kind": "answer", "slot": "dyn:vitals.temp_c", "text": "Yes, the infrared thermometer shows his temperature is 40.4 degrees Celsius."}
+{"t": "00:25:54", "kind": "extract", "writes": [["vitals.temp_c", 40.4]]}
+{"t": "00:25:57", "kind": "question", "slot": "dyn:stroke.vision_change+ams.changed_from_baseline", "text": "Thank you for providing his temperature. Has he had any sudden changes in his vision, or does he seem more confused or sleepy than usual?", "fields": ["stroke.vision_change", "ams.changed_from_baseline"], "offered": ["stroke.vision_change", "ams.changed_from_baseline", "complaint.pain_rating", "complaint.infection_signs", "stroke.face_droop", "stroke.arm_weakness"]}
+{"t": "00:25:59", "kind": "answer", "slot": "dyn:stroke.vision_change+ams.changed_from_baseline", "text": "He is very confused and only responding with confused words. I don't know if his vision has changed."}
+{"t": "00:26:02", "kind": "extract", "writes": [["ams.changed_from_baseline", true], ["obs.confusion_lethargy_disorientation", true]]}
+{"t": "00:26:02", "kind": "floor", "floor": "at least ESI-2", "fired": ["B-01.new-altered-mental-status"], "sources": ["ESI v5 p.12 (New Onset Confusion, Lethargy, or Disorientation)"]}
+{"t": "00:26:02", "kind": "extract", "writes": [["stroke.vision_change", null]], "via": "dont-know"}
+{"t": "00:26:05", "kind": "question", "slot": "dyn:M.medications+A.allergies", "text": "I'm sorry to hear he is so confused. To help the team prepare, could you tell me what medications he takes regularly and if he has any allergies, especially to medicines?", "fields": ["M.medications", "A.allergies"], "offered": ["M.medications", "A.allergies", "history.conditions", "identity.name", "identity.dob"]}
+{"t": "00:26:06", "kind": "answer", "slot": "dyn:M.medications+A.allergies", "text": "I don't know his medications or any allergies."}
+{"t": "00:26:09", "kind": "extract", "writes": []}
+{"t": "00:26:09", "kind": "extract", "writes": [["M.medications", null], ["A.allergies", null]], "via": "dont-know"}
+{"t": "00:26:11", "kind": "question", "slot": "dyn:history.conditions", "text": "I understand. To help the medical team, could you tell me if he has any ongoing medical conditions?", "fields": ["history.conditions"], "offered": ["history.conditions", "identity.name", "identity.dob"]}
+{"t": "00:26:13", "kind": "answer", "slot": "dyn:history.conditions", "text": "I don't know his medical history."}
+{"t": "00:26:15", "kind": "extract", "writes": []}
+{"t": "00:26:15", "kind": "extract", "writes": [["history.conditions", null]], "via": "dont-know"}
+{"t": "00:26:18", "kind": "question", "slot": "dyn:identity.name+identity.dob", "text": "I understand. Could you please tell me your father's full name and his date of birth?", "fields": ["identity.name", "identity.dob"], "offered": ["identity.name", "identity.dob"]}
+{"t": "00:26:19", "kind": "answer", "slot": "dyn:identity.name+identity.dob", "text": "I don't know."}
+{"t": "00:26:21", "kind": "extract", "writes": []}
+{"t": "00:26:21", "kind": "extract", "writes": [["identity.name", null], ["identity.dob", null]], "via": "dont-know"}
+{"t": "00:26:21", "kind": "engine", "note": "floor settled - report ready; remaining questions continue"}
+{"t": "00:26:24", "kind": "question", "slot": "dyn:complaint.pain_rating", "text": "I understand. On a scale from 0 to 10, where 10 is the worst pain imaginable, how bad is his pain right now?", "fields": ["complaint.pain_rating"], "offered": ["complaint.pain_rating", "complaint.infection_signs", "stroke.face_droop", "stroke.arm_weakness", "stroke.speech_change", "stroke.balance_loss"]}
+{"t": "00:26:26", "kind": "answer", "slot": "dyn:complaint.pain_rating", "text": "I don't know. He is only responding with confused words."}
+{"t": "00:26:29", "kind": "extract", "writes": [["obs.new_confusion_lethargy_disorientation", true]]}
+{"t": "00:26:31", "kind": "question", "slot": "dyn:complaint.pain_rating", "text": "I understand he is very confused. Can you tell me how much pain he seems to be in on a scale of 0 to 10?", "fields": ["complaint.pain_rating"], "offered": ["complaint.pain_rating"]}
+{"t": "00:26:34", "kind": "answer", "slot": "dyn:complaint.pain_rating", "text": "I don't know. He is only responding with confused words."}
+{"t": "00:26:36", "kind": "extract", "writes": [["complaint.text", "He is only responding with confused words."]]}
+{"t": "00:26:39", "kind": "question", "slot": "dyn:complaint.pain_rating", "text": "I understand he is very confused. Since he can't speak, does it seem like he is in a lot of physical pain?", "fields": ["complaint.pain_rating"], "offered": ["complaint.pain_rating"]}
+{"t": "00:26:41", "kind": "answer", "slot": "dyn:complaint.pain_rating", "text": "I don't know. He is just responding with confused words."}
+{"t": "00:26:42", "kind": "extract", "writes": []}
+{"t": "00:26:46", "kind": "question", "slot": "dyn:complaint.infection_signs+stroke.face_droop", "text": "I'm sorry to hear he's having such a hard time communicating. Does he have any signs of infection like a red or swollen wound, and have you noticed any drooping in his face, weakness in his limbs, or slurred speech?", "fields": ["complaint.infection_signs", "stroke.face_droop"], "offered": ["complaint.infection_signs", "stroke.face_droop", "stroke.arm_weakness", "stroke.speech_change", "stroke.balance_loss", "complaint.danger_to_self_or_others"]}
+{"t": "00:26:47", "kind": "answer", "slot": "dyn:complaint.infection_signs+stroke.face_droop", "text": "I don't know if he has any wounds or infections. He is only responding with confused words."}
+{"t": "00:26:50", "kind": "extract", "writes": [["complaint.text", "He is only responding with confused words."]]}
+{"t": "00:26:50", "kind": "extract", "writes": [["complaint.infection_signs", null], ["stroke.face_droop", null]], "via": "dont-know"}
+{"t": "00:26:53", "kind": "question", "slot": "dyn:stroke.arm_weakness+stroke.speech_change", "text": "I understand. Does he have any weakness or numbness in his arms or legs, and is his speech slurred or is he having trouble understanding you?", "fields": ["stroke.arm_weakness", "stroke.speech_change"], "offered": ["stroke.arm_weakness", "stroke.speech_change", "stroke.balance_loss", "complaint.danger_to_self_or_others", "complaint.known_toxic_ingestion", "complaint.chills_or_rigors"]}
+{"t": "00:26:55", "kind": "answer", "slot": "dyn:stroke.arm_weakness+stroke.speech_change", "text": "He is very weak and is only responding with confused words. I don't know if he has numbness."}
+{"t": "00:26:58", "kind": "extract", "writes": [["stroke.arm_weakness", true], ["stroke.speech_change", true]]}
+{"t": "00:27:01", "kind": "question", "slot": "dyn:stroke.balance_loss+complaint.danger_to_self_or_others", "text": "I'm sorry to hear he's so confused. Has he suddenly lost his balance or coordination, and has he done anything that makes you concerned he might hurt himself or someone else?", "fields": ["stroke.balance_loss", "complaint.danger_to_self_or_others"], "offered": ["stroke.balance_loss", "complaint.danger_to_self_or_others", "complaint.known_toxic_ingestion", "complaint.chills_or_rigors", "complaint.post_ictal_after_seizure", "history.immunocompromised"]}
+{"t": "00:27:03", "kind": "answer", "slot": "dyn:stroke.balance_loss+complaint.danger_to_self_or_others", "text": "He fell to the ground and is now very weak and only saying confused words. I don't know if he's a danger to anyone else."}
+{"t": "00:27:06", "kind": "extract", "writes": [["stroke.balance_loss", true]]}
+{"t": "00:27:06", "kind": "extract", "writes": [["complaint.danger_to_self_or_others", null]], "via": "dont-know"}
+{"t": "00:27:09", "kind": "question", "slot": "dyn:complaint.known_toxic_ingestion", "text": "I'm so sorry he's going through this. Has he swallowed or taken any medications or anything else that could be poisonous?", "fields": ["complaint.known_toxic_ingestion"], "offered": ["complaint.known_toxic_ingestion", "complaint.chills_or_rigors", "complaint.post_ictal_after_seizure", "history.immunocompromised", "history.transplant_recipient_or_listed", "history.baseline_mental_status"]}
+{"t": "00:27:10", "kind": "answer", "slot": "dyn:complaint.known_toxic_ingestion", "text": "I don't know his medications or medical history."}
+{"t": "00:27:12", "kind": "extract", "writes": []}
+{"t": "00:27:12", "kind": "extract", "writes": [["complaint.known_toxic_ingestion", null]], "via": "dont-know"}
+{"t": "00:27:15", "kind": "question", "slot": "dyn:complaint.chills_or_rigors+complaint.post_ictal_after_seizure", "text": "I understand. Has he had any shivering or shaking chills, or did he have a seizure or fit just before this happened?", "fields": ["complaint.chills_or_rigors", "complaint.post_ictal_after_seizure"], "offered": ["complaint.chills_or_rigors", "complaint.post_ictal_after_seizure", "history.immunocompromised", "history.transplant_recipient_or_listed", "history.baseline_mental_status", "L.last_intake"]}
+{"t": "00:27:17", "kind": "answer", "slot": "dyn:complaint.chills_or_rigors+complaint.post_ictal_after_seizure", "text": "I don't know."}
+{"t": "00:27:19", "kind": "extract", "writes": []}
+{"t": "00:27:19", "kind": "extract", "writes": [["complaint.chills_or_rigors", null], ["complaint.post_ictal_after_seizure", null]], "via": "dont-know"}
+{"t": "00:27:22", "kind": "question", "slot": "dyn:history.immunocompromised", "text": "I understand you're not sure about his history. Has he ever been told by a doctor that his immune system is weak or that he's undergoing treatment like chemotherapy?", "fields": ["history.immunocompromised"], "offered": ["history.immunocompromised", "history.transplant_recipient_or_listed", "history.baseline_mental_status", "L.last_intake"]}

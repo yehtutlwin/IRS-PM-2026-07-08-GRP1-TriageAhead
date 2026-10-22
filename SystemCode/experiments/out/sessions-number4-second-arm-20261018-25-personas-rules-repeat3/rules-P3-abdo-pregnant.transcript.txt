@@ -1,0 +1,49 @@
+arm B, form rules, persona P3-abdo-pregnant, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  Is the patient awake and responding normally?
+A1  Yes, I'm awake.
+
+Q2  Is the patient experiencing any chest pain right now?
+A2  No chest pain.
+
+Q3  Is the patient having any trouble breathing right now?
+A3  No trouble breathing, just the pain.
+
+Q4  Is the patient bleeding heavily right now?
+A4  No bleeding at all.
+
+Q5  Where is the pain located and what does it feel like?
+A5  It's low down in the belly and it's constant and getting worse. I can't say if it's on one side.
+
+Q6  Is the pain in the belly very severe, and did it start suddenly or is it constant and at its worst since it began?
+A6  The pain is an 8 out of 10 and it's constant and getting worse. It has been there since this morning.
+
+Q7  Are you currently pregnant or have you given birth in the last few weeks?
+A7  Yes, I'm 28 weeks pregnant.
+
+Q8  Is the pain in the belly accompanied by any vaginal bleeding?
+A8  No bleeding at all.
+
+Q9  Is the pain in your belly accompanied by any other symptoms, such as a fever, feeling very dizzy, or feeling like you might faint?
+A9  No fever. No, I'm thinking clearly.
+
+Q10  Are you feeling any dizziness or feeling like you might faint?
+A10  No.
+
+Q11  Is the pain in your belly constant and at its worst since it began?
+A11  It's there all the time and getting worse.
+
+Q12  Is the pain in your belly accompanied by any signs of infection, such as feeling very unwell, having a high temperature, or having a very fast heart rate?
+A12  No fever. No rash.
+
+Q13  Are you feeling any dizziness or feeling like you might faint?
+A13  No.
+
+Q14  Is the pain in your belly accompanied by any other symptoms, such as a fever, feeling very dizzy, or feeling like you might faint?
+A14  No fever. No, I'm thinking clearly.
+
+Q15  Is the pain in your belly constant and at its worst since it began?
+A15  It's there all the time and getting worse.
+
+DECISION {"decision": "at least ESI-2", "reason": "The patient is pregnant and experiencing severe abdominal pain (8/10), which is a high-risk situation.", "citation": "ESI v5 p.14 (Obstetrical and Gynecological Concerns); Rule B-38"}
+OUTCOME level 2 or floor | expected at least ESI-2 | pass True | label None | max prompt tokens 44130

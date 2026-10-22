@@ -1,0 +1,52 @@
+arm B, form rules, persona P1-fall-anticoag, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  Is the patient awake and responding normally?
+A1  Yes, he's awake and talking. He's as alert as usual.
+
+Q2  Is the patient experiencing any chest pain right now?
+A2  No chest pain.
+
+Q3  Is the patient having any trouble breathing right now?
+A3  No, he's breathing fine.
+
+Q4  Is the patient bleeding heavily right now?
+A4  No bleeding.
+
+Q5  What is the main reason the patient is coming to the emergency department?
+A5  He fell down 4 steps at home and landed on his right hip. He can't stand.
+
+Q6  Is the patient's hip or leg numb, cold, pale, or blue, or is he unable to move his toes or foot?
+A6  I don't know.
+
+Q7  How old is the patient?
+A7  He's 87.
+
+Q8  Was the fall from the stairs a result of a trip or slip, or was it caused by something like a car accident, a push, or a fall from a significant height (more than 6 feet)?
+A8  He fell down 4 steps, about a metre.
+
+Q9  Is the patient's hip or leg area showing any signs of a large wound or a bone sticking out?
+A9  No bleeding.
+
+Q10  Is the patient's hip or leg area showing any signs of a large wound or a bone sticking out?
+A10  No bleeding.
+
+Q11  Is the patient's hip or leg area showing any signs of a large wound or a bone sticking out?
+A11  No bleeding.
+
+Q12  Is the patient's hip or leg area showing any signs of a large wound or a bone sticking out?
+A12  No bleeding.
+
+Q13  Is the patient's hip or leg area showing any signs of a large wound or a bone sticking out?
+A13  No bleeding.
+
+Q14  Is the patient's hip or leg area showing any signs of a large wound or a bone sticking out?
+A14  No bleeding.
+
+Q15  Is the patient's hip or leg area showing any signs of a large wound or a bone sticking out?
+A15  No bleeding.
+
+Q16  Is the patient's hip or leg area numb, cold, pale, or blue, or is he unable to move his toes or foot?
+A16  I don't know.
+
+DECISION {"decision": "unparsed", "reason": "turn limit reached without a decision"}
+OUTCOME unparsed | expected at least ESI-2 | pass False | label missing fact | max prompt tokens 44113

@@ -1,0 +1,52 @@
+arm B, form rules, persona P9-breathing-no-pain, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  Is the patient awake and responding normally?
+A1  Yes, he's awake and talking normally.
+
+Q2  Is the patient experiencing chest pain right now?
+A2  No chest pain.
+
+Q3  Is the patient having any trouble breathing right now?
+A3  Yes, he's more short of breath than usual, but he can speak in full sentences.
+
+Q4  Is the patient bleeding heavily right now?
+A4  No.
+
+Q5  Is the patient's breathing difficulty severe enough that they are struggling to speak or are in significant distress?
+A5  No, he can speak in full sentences and is not in significant distress.
+
+Q6  Is the patient's breathing difficulty caused by a known condition like asthma or COPD, or is it a new problem?
+A6  He has heart failure and COPD. He has been more short of breath than usual since this morning.
+
+Q7  Is the patient's breathing difficulty a new problem or a change from his usual baseline?
+A7  He's been more short of breath than usual since this morning.
+
+Q8  Is the patient's breathing difficulty a new problem or a change from his usual baseline?
+A8  He's been more short of breath than usual since this morning.
+
+Q9  Does the patient have any other symptoms, such as a cough, fever, or a recent infection?
+A9  No fever. No rash.
+
+Q10  Does the patient have any other symptoms, such as a cough, fever, or a recent infection?
+A10  No fever. No rash.
+
+Q11  Is the patient's breathing difficulty a new problem or a change from his usual baseline?
+A11  He's been more short of breath than usual since this morning.
+
+Q12  Is the patient's breathing difficulty a new problem or a change from his usual baseline?
+A12  He's been more short of breath than usual since this morning.
+
+Q13  Does the patient have any other symptoms, such as a cough, fever, or a recent infection?
+A13  No fever. No rash.
+
+Q14  Does the patient have any other symptoms, such as a cough, fever, or a recent infection?
+A14  No fever. No rash.
+
+Q15  Does the patient have any other symptoms, such as a cough, fever, or a recent infection?
+A15  No fever. No rash.
+
+Q16  Does the patient have any other symptoms, such as a cough, fever, or a recent infection?
+A16  No fever. No rash.
+
+DECISION {"decision": "unparsed", "reason": "turn limit reached without a decision"}
+OUTCOME no decision in 16 questions | expected None | pass False | label model error (over-call) | max prompt tokens 44144

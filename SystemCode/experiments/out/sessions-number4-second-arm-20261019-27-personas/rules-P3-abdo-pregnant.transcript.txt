@@ -1,0 +1,40 @@
+arm B, form rules, persona P3-abdo-pregnant, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  Is the patient awake and responding normally?
+A1  Yes, I'm awake.
+
+Q2  Is the patient experiencing any chest pain right now?
+A2  No chest pain.
+
+Q3  Is the patient having any trouble breathing right now?
+A3  No trouble breathing, just the pain.
+
+Q4  Is the patient bleeding heavily right now?
+A4  No bleeding at all.
+
+Q5  Where is the pain located and what does it feel like?
+A5  It's low down in the belly and it's constant and getting worse. I can't say if it's on one side.
+
+Q6  Is the patient pregnant or have they recently given birth?
+A6  I am 28 weeks pregnant.
+
+Q7  Is the pain in the belly very severe, and does it feel like it's been constant or at its worst since it started?
+A7  It's an 8 out of 10 now. It's there all the time and getting worse.
+
+Q8  Is the pain in the belly accompanied by any vaginal bleeding?
+A8  No bleeding at all.
+
+Q9  Does the patient have any other symptoms, such as a fever, feeling very unwell, or signs of a severe infection?
+A9  No fever. No rash.
+
+Q10  Is the pain in the belly constant and was it at its worst the moment it started?
+A10  It's there all the time and getting worse.
+
+Q11  Is the pain in the belly accompanied by any other symptoms like a fever, feeling very unwell, or signs of a severe infection?
+A11  No fever. No rash.
+
+Q12  Was the pain at its worst the moment it started?
+A12  It's there all the time and getting worse.
+
+DECISION {"decision": "at least ESI-2", "reason": "The patient is pregnant and experiencing abdominal pain, which is a high-risk situation.", "citation": "ESI v5 p.14 (Obstetrical and Gynecological Concerns); rule B-38"}
+OUTCOME level 2 or floor | expected at least ESI-2 | pass True | label None | max prompt tokens 44007

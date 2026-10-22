@@ -1,0 +1,436 @@
+{
+ "sid": "LOTUS-6841",
+ "facts": {
+  "danger_signs.responsive": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-18 20:09"
+  },
+  "danger_signs.chest_pain_now": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-18 20:09"
+  },
+  "danger_signs.breathing_difficulty": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-18 20:09"
+  },
+  "danger_signs.heavy_bleeding": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-18 20:09"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "nosebleed",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 2,
+      "ts": "2026-10-18 20:09"
+     },
+     "text": {
+      "value": "His nose is bleeding and it won't stop. His nose has been bleeding and it won't stop.",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 2,
+      "ts": "2026-10-18 20:09"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2
+  },
+  "complaint.category": {
+   "value": [
+    "nosebleed"
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-18 20:09"
+  },
+  "complaint.text": {
+   "value": "His nose is bleeding and it won't stop. His nose has been bleeding and it won't stop.",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-18 20:09"
+  },
+  "E.mechanism": {
+   "value": "none",
+   "status": "reported",
+   "who": "derived",
+   "turn": 2,
+   "ts": "2026-10-18 20:09"
+  },
+  "patient.age": {
+   "value": 71,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-18 20:09"
+  },
+  "patient.age_group": {
+   "value": "older_adult",
+   "status": "reported",
+   "who": "derived",
+   "turn": 3,
+   "ts": "2026-10-18 20:09"
+  },
+  "patient.sex": {
+   "value": "male",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 6,
+   "ts": "2026-10-18 20:10"
+  },
+  "complaint.fever": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 7,
+   "ts": "2026-10-18 20:10"
+  },
+  "infection.rash": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 8,
+   "ts": "2026-10-18 20:10"
+  },
+  "infection.travel_14d": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 8,
+   "ts": "2026-10-18 20:10"
+  },
+  "infection.contacts": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 9,
+   "ts": "2026-10-18 20:10"
+  },
+  "ams.changed_from_baseline": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 10,
+   "ts": "2026-10-18 20:10"
+  },
+  "M.anticoagulant": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 11,
+   "ts": "2026-10-18 20:10"
+  },
+  "complaint.brisk_or_posterior_bleeding": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 14,
+   "ts": "2026-10-18 20:10"
+  },
+  "M.medications": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 15,
+   "ts": "2026-10-18 20:10"
+  },
+  "A.allergies": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 15,
+   "ts": "2026-10-18 20:10"
+  },
+  "history.conditions": {
+   "value": [
+    "blood clotting disorder"
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 16,
+   "ts": "2026-10-18 20:11"
+  }
+ },
+ "attempts": {
+  "danger_signs.responsive": 1,
+  "danger_signs.chest_pain_now": 1,
+  "danger_signs.breathing_difficulty": 1,
+  "danger_signs.heavy_bleeding": 1,
+  "complaint.category": 1,
+  "complaint.text": 1,
+  "complaint.onset": 3,
+  "patient.age": 1,
+  "patient.sex": 1,
+  "complaint.fever": 1,
+  "infection.rash": 1,
+  "infection.travel_14d": 1,
+  "infection.contacts": 1,
+  "ams.changed_from_baseline": 1,
+  "complaint.pain_rating": 3,
+  "M.anticoagulant": 1,
+  "complaint.brisk_or_posterior_bleeding": 1,
+  "M.medications": 1,
+  "A.allergies": 1,
+  "history.conditions": 1,
+  "history.immunocompromised": 1
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "Is the patient awake and responding to you normally? Also, is he or she experiencing any chest pain, trouble breathing, or heavy bleeding right now?",
+   "ts": "2026-10-18 20:09:13",
+   "kind": "question",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, he's awake and talking. No.",
+   "ts": "2026-10-18 20:09:13",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "bot",
+   "text": "I'm glad he's awake. Is he having any trouble breathing or is there any heavy bleeding? Also, could you tell me what the main problem is and what's happening?",
+   "ts": "2026-10-18 20:09:22",
+   "kind": "question",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category+complaint.text"
+  },
+  {
+   "role": "caregiver",
+   "text": "No. His nose is bleeding and it won't stop. His nose has been bleeding and it won't stop.",
+   "ts": "2026-10-18 20:09:22",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category+complaint.text"
+  },
+  {
+   "role": "bot",
+   "text": "I understand his nose is bleeding. When did this start, and how old is he?",
+   "ts": "2026-10-18 20:09:39",
+   "kind": "question",
+   "slot": "dyn:complaint.onset+patient.age"
+  },
+  {
+   "role": "caregiver",
+   "text": "I'm not sure exactly when it started. He's 71.",
+   "ts": "2026-10-18 20:09:39",
+   "kind": "answer",
+   "slot": "dyn:complaint.onset+patient.age"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. About how long has his nose been bleeding?",
+   "ts": "2026-10-18 20:09:46",
+   "kind": "question",
+   "slot": "dyn:complaint.onset"
+  },
+  {
+   "role": "caregiver",
+   "text": "I'm not sure exactly when it started.",
+   "ts": "2026-10-18 20:09:46",
+   "kind": "answer",
+   "slot": "dyn:complaint.onset"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Roughly how long has the bleeding been going on?",
+   "ts": "2026-10-18 20:09:51",
+   "kind": "question",
+   "slot": "dyn:complaint.onset"
+  },
+  {
+   "role": "caregiver",
+   "text": "I'm not sure exactly when it started.",
+   "ts": "2026-10-18 20:09:51",
+   "kind": "answer",
+   "slot": "dyn:complaint.onset"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Is the patient a man or a woman?",
+   "ts": "2026-10-18 20:09:56",
+   "kind": "question",
+   "slot": "dyn:patient.sex"
+  },
+  {
+   "role": "caregiver",
+   "text": "He's a man, my husband.",
+   "ts": "2026-10-18 20:09:56",
+   "kind": "answer",
+   "slot": "dyn:patient.sex"
+  },
+  {
+   "role": "bot",
+   "text": "I see. Does he have a fever or any new rashes?",
+   "ts": "2026-10-18 20:10:03",
+   "kind": "question",
+   "slot": "dyn:complaint.fever"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 20:10:03",
+   "kind": "answer",
+   "slot": "dyn:complaint.fever"
+  },
+  {
+   "role": "bot",
+   "text": "I understand you aren't sure about the fever. Does he have any new rashes, and has he traveled outside the country in the last two weeks?",
+   "ts": "2026-10-18 20:10:09",
+   "kind": "question",
+   "slot": "dyn:infection.rash+infection.travel_14d"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 20:10:09",
+   "kind": "answer",
+   "slot": "dyn:infection.rash+infection.travel_14d"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Has he been in contact with anyone who has an infectious illness in the last two weeks?",
+   "ts": "2026-10-18 20:10:16",
+   "kind": "question",
+   "slot": "dyn:infection.contacts"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 20:10:16",
+   "kind": "answer",
+   "slot": "dyn:infection.contacts"
+  },
+  {
+   "role": "bot",
+   "text": "Is he acting differently than usual, such as being more confused or unusually sleepy?",
+   "ts": "2026-10-18 20:10:22",
+   "kind": "question",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 20:10:22",
+   "kind": "answer",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "bot",
+   "text": "On a scale of 0 to 10, how much pain is he in right now? Also, does he take any blood thinners like warfarin or aspirin?",
+   "ts": "2026-10-18 20:10:29",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating+M.anticoagulant"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, he doesn't take blood thinners.",
+   "ts": "2026-10-18 20:10:29",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_rating+M.anticoagulant"
+  },
+  {
+   "role": "bot",
+   "text": "How much pain is he in right now on a scale of 0 to 10?",
+   "ts": "2026-10-18 20:10:36",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 20:10:36",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Can you describe how much discomfort or pain he is feeling right now on a scale of 0 to 10?",
+   "ts": "2026-10-18 20:10:42",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 20:10:42",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "Is the blood coming out quickly or is it running down the back of his throat?",
+   "ts": "2026-10-18 20:10:47",
+   "kind": "question",
+   "slot": "dyn:complaint.brisk_or_posterior_bleeding"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 20:10:47",
+   "kind": "answer",
+   "slot": "dyn:complaint.brisk_or_posterior_bleeding"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. To help the team prepare, could you tell me what medications he takes regularly and if he has any allergies, especially to medicines?",
+   "ts": "2026-10-18 20:10:54",
+   "kind": "question",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 20:10:54",
+   "kind": "answer",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Does he have any ongoing medical conditions, such as heart disease or diabetes?",
+   "ts": "2026-10-18 20:11:00",
+   "kind": "question",
+   "slot": "dyn:history.conditions"
+  },
+  {
+   "role": "caregiver",
+   "text": "He has a blood clotting disorder.",
+   "ts": "2026-10-18 20:11:00",
+   "kind": "answer",
+   "slot": "dyn:history.conditions"
+  },
+  {
+   "role": "bot",
+   "text": "I've noted the blood clotting disorder. Has he ever been told he has a weakened immune system or is being treated for something like cancer or an organ transplant?",
+   "ts": "2026-10-18 20:11:14",
+   "kind": "question",
+   "slot": "dyn:history.immunocompromised"
+  }
+ ],
+ "stage": "floor",
+ "floor": null,
+ "phase": "enroute",
+ "created": "2026-10-18 20:09",
+ "pending_slot": "dyn:history.immunocompromised",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {}
+}

@@ -1,0 +1,59 @@
+{"t": "21:13:19", "kind": "engine", "note": "session SAGA-5757 started (web)"}
+{"t": "21:13:21", "kind": "question", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "Is the patient awake and responding to you normally? Also, are they currently experiencing any chest pain, trouble breathing, or heavy bleeding?", "fields": ["danger_signs.responsive", "danger_signs.chest_pain_now"], "offered": ["danger_signs.responsive", "danger_signs.chest_pain_now", "danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text"]}
+{"t": "21:13:21", "kind": "answer", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "Yes, she's awake and talking. No."}
+{"t": "21:13:25", "kind": "extract", "writes": [["danger_signs.responsive", true], ["danger_signs.chest_pain_now", false]]}
+{"t": "21:13:29", "kind": "question", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category+complaint.text", "text": "I'm glad she's awake. Is she having any trouble breathing or is there any heavy bleeding? Also, could you tell me what the main problem is and what's happening?", "fields": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text"], "offered": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text", "complaint.onset", "E.mechanism"]}
+{"t": "21:13:29", "kind": "answer", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category+complaint.text", "text": "No. My wife fell today and hurt herself."}
+{"t": "21:13:35", "kind": "extract", "writes": [["danger_signs.breathing_difficulty", false], ["danger_signs.heavy_bleeding", false], ["complaint.category", "injury"], ["complaint.text", "My wife fell today and hurt herself."]]}
+{"t": "21:13:38", "kind": "question", "slot": "dyn:complaint.onset+E.mechanism", "text": "I'm sorry to hear about her fall. About how long ago did it happen, and can you tell me more about how she fell?", "fields": ["complaint.onset", "E.mechanism"], "offered": ["complaint.onset", "E.mechanism", "patient.age", "patient.sex", "complaint.fever", "infection.rash"]}
+{"t": "21:13:38", "kind": "answer", "slot": "dyn:complaint.onset+E.mechanism", "text": "Today. She fell."}
+{"t": "21:13:42", "kind": "extract", "writes": [["complaint.onset", "Today"], ["E.mechanism", "fall"]]}
+{"t": "21:13:44", "kind": "question", "slot": "dyn:patient.age+patient.sex", "text": "I understand. How old is your wife?", "fields": ["patient.age", "patient.sex"], "offered": ["patient.age", "patient.sex", "complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts"]}
+{"t": "21:13:44", "kind": "answer", "slot": "dyn:patient.age+patient.sex", "text": "She's 58. She's a woman, my wife."}
+{"t": "21:13:49", "kind": "extract", "writes": [["patient.age", 58], ["patient.sex", "female"]]}
+{"t": "21:13:51", "kind": "question", "slot": "dyn:history.pregnant", "text": "Is she currently pregnant?", "fields": ["history.pregnant"], "offered": ["history.pregnant", "history.postpartum", "complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts"]}
+{"t": "21:13:51", "kind": "answer", "slot": "dyn:history.pregnant", "text": "I don't know."}
+{"t": "21:13:55", "kind": "extract", "writes": []}
+{"t": "21:13:55", "kind": "extract", "writes": [["history.pregnant", null]], "via": "dont-know"}
+{"t": "21:13:57", "kind": "question", "slot": "dyn:history.postpartum", "text": "Has she given birth in the last few weeks?", "fields": ["history.postpartum"], "offered": ["history.postpartum", "complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts", "ams.changed_from_baseline"]}
+{"t": "21:13:57", "kind": "answer", "slot": "dyn:history.postpartum", "text": "I don't know."}
+{"t": "21:14:01", "kind": "extract", "writes": []}
+{"t": "21:14:01", "kind": "extract", "writes": [["history.postpartum", null]], "via": "dont-know"}
+{"t": "21:14:03", "kind": "question", "slot": "dyn:complaint.fever+infection.rash", "text": "Does she have a fever or any new rashes on her skin?", "fields": ["complaint.fever", "infection.rash"], "offered": ["complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts", "ams.changed_from_baseline", "complaint.pain_rating"]}
+{"t": "21:14:03", "kind": "answer", "slot": "dyn:complaint.fever+infection.rash", "text": "I don't know."}
+{"t": "21:14:07", "kind": "extract", "writes": []}
+{"t": "21:14:07", "kind": "extract", "writes": [["complaint.fever", null], ["infection.rash", null]], "via": "dont-know"}
+{"t": "21:14:10", "kind": "question", "slot": "dyn:infection.travel_14d+infection.contacts", "text": "Has she traveled outside the country or been in contact with anyone who is sick in the last two weeks?", "fields": ["infection.travel_14d", "infection.contacts"], "offered": ["infection.travel_14d", "infection.contacts", "ams.changed_from_baseline", "complaint.pain_rating", "M.anticoagulant", "complaint.compartment_syndrome_symptoms"]}
+{"t": "21:14:10", "kind": "answer", "slot": "dyn:infection.travel_14d+infection.contacts", "text": "I don't know."}
+{"t": "21:14:14", "kind": "extract", "writes": []}
+{"t": "21:14:14", "kind": "extract", "writes": [["infection.travel_14d", null], ["infection.contacts", null]], "via": "dont-know"}
+{"t": "21:14:17", "kind": "question", "slot": "dyn:ams.changed_from_baseline+complaint.pain_rating", "text": "Is she acting confused or more sleepy than usual? Also, on a scale of 0 to 10, how would you rate her pain right now?", "fields": ["ams.changed_from_baseline", "complaint.pain_rating"], "offered": ["ams.changed_from_baseline", "complaint.pain_rating", "M.anticoagulant", "complaint.compartment_syndrome_symptoms", "E.fall_height_meters", "M.medications"]}
+{"t": "21:14:17", "kind": "answer", "slot": "dyn:ams.changed_from_baseline+complaint.pain_rating", "text": "I don't know."}
+{"t": "21:14:21", "kind": "extract", "writes": []}
+{"t": "21:14:21", "kind": "extract", "writes": [["ams.changed_from_baseline", null]], "via": "dont-know"}
+{"t": "21:14:24", "kind": "question", "slot": "dyn:complaint.pain_rating", "text": "I understand. To help the team, how would you rate her pain level on a scale of 0 to 10, where 10 is the worst possible pain?", "fields": ["complaint.pain_rating"], "offered": ["complaint.pain_rating"]}
+{"t": "21:14:24", "kind": "answer", "slot": "dyn:complaint.pain_rating", "text": "I don't know."}
+{"t": "21:14:27", "kind": "extract", "writes": []}
+{"t": "21:14:31", "kind": "question", "slot": "dyn:complaint.pain_rating", "text": "I understand it's hard to say. If you had to pick a number from 0 to 10, with 10 being the worst pain possible, how much pain is she in right now?", "fields": ["complaint.pain_rating"], "offered": ["complaint.pain_rating"]}
+{"t": "21:14:31", "kind": "answer", "slot": "dyn:complaint.pain_rating", "text": "I don't know."}
+{"t": "21:14:33", "kind": "extract", "writes": []}
+{"t": "21:14:36", "kind": "question", "slot": "dyn:M.anticoagulant", "text": "Does she take any blood thinners or medications to prevent blood clots, like warfarin or aspirin?", "fields": ["M.anticoagulant"], "offered": ["M.anticoagulant", "complaint.compartment_syndrome_symptoms", "E.fall_height_meters", "M.medications", "A.allergies", "history.conditions"]}
+{"t": "21:14:36", "kind": "answer", "slot": "dyn:M.anticoagulant", "text": "No, she doesn't take blood thinners."}
+{"t": "21:14:40", "kind": "extract", "writes": [["M.anticoagulant", false]]}
+{"t": "21:14:43", "kind": "question", "slot": "dyn:complaint.compartment_syndrome_symptoms+E.fall_height_meters", "text": "I understand. To help the team, can you tell me if her limb feels very tight or if the pain is getting much worse? Also, did she fall from a standing position or from a height like a ladder or stairs?", "fields": ["complaint.compartment_syndrome_symptoms", "E.fall_height_meters"], "offered": ["complaint.compartment_syndrome_symptoms", "E.fall_height_meters", "M.medications", "A.allergies", "history.conditions", "history.immunocompromised"]}
+{"t": "21:14:43", "kind": "answer", "slot": "dyn:complaint.compartment_syndrome_symptoms+E.fall_height_meters", "text": "I don't know."}
+{"t": "21:14:47", "kind": "extract", "writes": []}
+{"t": "21:14:47", "kind": "extract", "writes": [["complaint.compartment_syndrome_symptoms", null], ["E.fall_height_meters", null]], "via": "dont-know"}
+{"t": "21:14:50", "kind": "question", "slot": "dyn:M.medications+A.allergies", "text": "I understand. Could you tell me what medications she takes regularly and if she has any allergies, especially to medicines?", "fields": ["M.medications", "A.allergies"], "offered": ["M.medications", "A.allergies", "history.conditions", "history.immunocompromised", "history.thrombocytopenia_or_clotting_disorder", "limb.numb_tingling"]}
+{"t": "21:14:50", "kind": "answer", "slot": "dyn:M.medications+A.allergies", "text": "I don't know."}
+{"t": "21:14:54", "kind": "extract", "writes": []}
+{"t": "21:14:54", "kind": "extract", "writes": [["M.medications", null], ["A.allergies", null]], "via": "dont-know"}
+{"t": "21:14:57", "kind": "question", "slot": "dyn:history.conditions", "text": "I understand you're not sure about the medications. Does she have any other ongoing medical conditions?", "fields": ["history.conditions"], "offered": ["history.conditions", "history.immunocompromised", "history.thrombocytopenia_or_clotting_disorder", "limb.numb_tingling", "limb.cold_pale_blue", "limb.cannot_move_digits"]}
+{"t": "21:14:57", "kind": "answer", "slot": "dyn:history.conditions", "text": "I don't know."}
+{"t": "21:15:00", "kind": "extract", "writes": []}
+{"t": "21:15:00", "kind": "extract", "writes": [["history.conditions", null]], "via": "dont-know"}
+{"t": "21:15:03", "kind": "question", "slot": "dyn:history.immunocompromised+history.thrombocytopenia_or_clotting_disorder", "text": "I understand. Has she ever been told she has a weakened immune system, or does she have any conditions like a bleeding or clotting disorder?", "fields": ["history.immunocompromised", "history.thrombocytopenia_or_clotting_disorder"], "offered": ["history.immunocompromised", "history.thrombocytopenia_or_clotting_disorder", "limb.numb_tingling", "limb.cold_pale_blue", "limb.cannot_move_digits", "limb.cast_too_tight"]}
+{"t": "21:15:03", "kind": "answer", "slot": "dyn:history.immunocompromised+history.thrombocytopenia_or_clotting_disorder", "text": "I don't know."}
+{"t": "21:15:07", "kind": "extract", "writes": []}
+{"t": "21:15:07", "kind": "extract", "writes": [["history.immunocompromised", null], ["history.thrombocytopenia_or_clotting_disorder", null]], "via": "dont-know"}
+{"t": "21:15:10", "kind": "question", "slot": "dyn:limb.numb_tingling+limb.cold_pale_blue", "text": "Are her fingers or toes below the injury numb, tingling, or discolored? Also, is she able to move them?", "fields": ["limb.numb_tingling", "limb.cold_pale_blue"], "offered": ["limb.numb_tingling", "limb.cold_pale_blue", "limb.cannot_move_digits", "limb.cast_too_tight", "identity.name", "identity.dob"]}

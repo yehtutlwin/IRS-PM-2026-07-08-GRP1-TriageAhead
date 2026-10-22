@@ -1,0 +1,194 @@
+{
+ "persona_backend": "claude",
+ "persona_model": "claude-sonnet-5-5",
+ "interview": {
+  "interview_mode": "dynamic",
+  "backend": "claude",
+  "model": "claude-opus-5-5",
+  "dyn_max_fields": 4,
+  "usage": {
+   "calls": 192,
+   "input": 498957,
+   "output": 52167,
+   "cache_read": 0,
+   "cache_write": 0
+  },
+  "cost_usd": 3.0392
+ },
+ "tag": "v2j-claude-opus-interview-sonnet-persona",
+ "cost_usd": {
+  "interview": 3.0392,
+  "persona": 0.1661
+ },
+ "results": [
+  {
+   "questions": 20,
+   "questions_to_report": 12,
+   "reasks": 2,
+   "floor": "at least ESI-2",
+   "floor_ok": true,
+   "rules_ok": true,
+   "fired": [
+    "B-30.anticoagulated-trauma"
+   ],
+   "hits": 9,
+   "total": 9,
+   "misses": [],
+   "danger_miss": false,
+   "persona": "P1-fall-anticoag",
+   "run": 1,
+   "session": "PANDA-2681",
+   "turns": 20,
+   "interview_tokens": {
+    "calls": 40,
+    "input": 107454,
+    "output": 11017,
+    "cache_read": 0,
+    "cache_write": 0
+   },
+   "persona_tokens": {
+    "calls": 20,
+    "input": 8059,
+    "output": 2132,
+    "cache_read": 0,
+    "cache_write": 0
+   },
+   "transcript": "sessions-task-i-20261015-0047-v2j-claude-opus-interview-sonnet-persona/PANDA-2681.transcript.txt"
+  },
+  {
+   "questions": 26,
+   "questions_to_report": 11,
+   "reasks": 7,
+   "floor": "at least ESI-2",
+   "floor_ok": true,
+   "rules_ok": true,
+   "fired": [
+    "B-38.pregnant-chest-pain-breathlessness-abdo-pain-or-headache"
+   ],
+   "hits": 6,
+   "total": 6,
+   "misses": [],
+   "danger_miss": false,
+   "persona": "P3-abdo-pregnant",
+   "run": 1,
+   "session": "TIGER-1818",
+   "turns": 26,
+   "interview_tokens": {
+    "calls": 52,
+    "input": 139113,
+    "output": 13870,
+    "cache_read": 0,
+    "cache_write": 0
+   },
+   "persona_tokens": {
+    "calls": 26,
+    "input": 8458,
+    "output": 2811,
+    "cache_read": 0,
+    "cache_write": 0
+   },
+   "transcript": "sessions-task-i-20261015-0047-v2j-claude-opus-interview-sonnet-persona/TIGER-1818.transcript.txt"
+  },
+  {
+   "questions": 20,
+   "questions_to_report": 7,
+   "reasks": 2,
+   "floor": "at least ESI-2",
+   "floor_ok": true,
+   "rules_ok": true,
+   "fired": [
+    "B-05.stroke-signs"
+   ],
+   "hits": 6,
+   "total": 6,
+   "misses": [],
+   "danger_miss": false,
+   "persona": "P6-stroke-resolved",
+   "run": 1,
+   "session": "LOTUS-2564",
+   "turns": 20,
+   "interview_tokens": {
+    "calls": 40,
+    "input": 103696,
+    "output": 13112,
+    "cache_read": 0,
+    "cache_write": 0
+   },
+   "persona_tokens": {
+    "calls": 20,
+    "input": 8696,
+    "output": 2110,
+    "cache_read": 0,
+    "cache_write": 0
+   },
+   "transcript": "sessions-task-i-20261015-0047-v2j-claude-opus-interview-sonnet-persona/LOTUS-2564.transcript.txt"
+  },
+  {
+   "questions": 15,
+   "questions_to_report": 13,
+   "reasks": 2,
+   "floor": null,
+   "floor_ok": true,
+   "rules_ok": true,
+   "fired": [],
+   "hits": 5,
+   "total": 7,
+   "misses": [
+    "complaint.trauma: want=False got=None",
+    "history.gout: want=True got=None"
+   ],
+   "danger_miss": false,
+   "persona": "P6-acute-gout",
+   "run": 1,
+   "session": "BAOBAB-4829",
+   "turns": 15,
+   "interview_tokens": {
+    "calls": 30,
+    "input": 73585,
+    "output": 6656,
+    "cache_read": 0,
+    "cache_write": 0
+   },
+   "persona_tokens": {
+    "calls": 15,
+    "input": 6486,
+    "output": 1138,
+    "cache_read": 0,
+    "cache_write": 0
+   },
+   "transcript": "sessions-task-i-20261015-0047-v2j-claude-opus-interview-sonnet-persona/BAOBAB-4829.transcript.txt"
+  },
+  {
+   "questions": 15,
+   "questions_to_report": 13,
+   "reasks": 2,
+   "floor": null,
+   "floor_ok": false,
+   "rules_ok": false,
+   "fired": [],
+   "hits": 7,
+   "total": 7,
+   "misses": [],
+   "danger_miss": false,
+   "persona": "P9-breathing-no-pain",
+   "run": 1,
+   "session": "PANDA-6043",
+   "turns": 15,
+   "interview_tokens": {
+    "calls": 30,
+    "input": 75109,
+    "output": 7512,
+    "cache_read": 0,
+    "cache_write": 0
+   },
+   "persona_tokens": {
+    "calls": 15,
+    "input": 5723,
+    "output": 932,
+    "cache_read": 0,
+    "cache_write": 0
+   },
+   "transcript": "sessions-task-i-20261015-0047-v2j-claude-opus-interview-sonnet-persona/PANDA-6043.transcript.txt"
+  }
+ ]
+}

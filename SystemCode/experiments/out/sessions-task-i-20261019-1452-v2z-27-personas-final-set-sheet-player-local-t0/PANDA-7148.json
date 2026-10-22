@@ -1,0 +1,428 @@
+{
+ "sid": "PANDA-7148",
+ "facts": {
+  "danger_signs.responsive": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-19 14:45"
+  },
+  "danger_signs.chest_pain_now": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-19 14:45"
+  },
+  "danger_signs.breathing_difficulty": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-19 14:45"
+  },
+  "danger_signs.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-19 14:45"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "abdominal_pain",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 2,
+      "ts": "2026-10-19 14:45"
+     },
+     "text": {
+      "value": "sharp pain low on the right side of my abdomen and some spotting",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 2,
+      "ts": "2026-10-19 14:45"
+     },
+     "onset": {
+      "value": "this afternoon",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 3,
+      "ts": "2026-10-19 14:45"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2
+  },
+  "complaint.category": {
+   "value": [
+    "abdominal_pain"
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-19 14:45"
+  },
+  "complaint.text": {
+   "value": "sharp pain low on the right side of my abdomen and some spotting",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-19 14:45"
+  },
+  "E.mechanism": {
+   "value": "none",
+   "status": "reported",
+   "who": "derived",
+   "turn": 2,
+   "ts": "2026-10-19 14:45"
+  },
+  "complaint.onset": {
+   "value": "this afternoon",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-19 14:45"
+  },
+  "patient.age": {
+   "value": 29,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-19 14:45"
+  },
+  "patient.sex": {
+   "value": "female",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-19 14:45"
+  },
+  "patient.age_group": {
+   "value": "adult",
+   "status": "reported",
+   "who": "derived",
+   "turn": 3,
+   "ts": "2026-10-19 14:45"
+  },
+  "history.pregnant": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 4,
+   "ts": "2026-10-19 14:45"
+  },
+  "M.medications": {
+   "value": [],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 5,
+   "ts": "2026-10-19 14:46"
+  },
+  "A.allergies": {
+   "value": [],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 6,
+   "ts": "2026-10-19 14:46"
+  },
+  "history.conditions": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 7,
+   "ts": "2026-10-19 14:46"
+  },
+  "complaint.fever": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 13,
+   "ts": "2026-10-19 14:46"
+  }
+ },
+ "attempts": {
+  "danger_signs.responsive": 1,
+  "danger_signs.chest_pain_now": 1,
+  "danger_signs.breathing_difficulty": 1,
+  "danger_signs.heavy_bleeding": 1,
+  "complaint.category": 1,
+  "complaint.onset": 1,
+  "patient.age": 1,
+  "patient.sex": 1,
+  "history.pregnant": 1,
+  "history.postpartum": 1,
+  "M.medications": 1,
+  "A.allergies": 2,
+  "history.conditions": 1,
+  "identity.name": 3,
+  "identity.dob": 3,
+  "complaint.fever": 1,
+  "infection.rash": 3,
+  "infection.travel_14d": 2,
+  "infection.contacts": 1
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "Is the patient awake and responding to you normally? Also, is he or she experiencing any chest pain, trouble breathing, or heavy bleeding right now?",
+   "ts": "2026-10-19 14:45:28",
+   "kind": "question",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, the patient is awake and responding normally. No, the patient is not having chest pain right now.",
+   "ts": "2026-10-19 14:45:28",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "bot",
+   "text": "I'm glad they are alert. Is the patient having any trouble breathing or any heavy bleeding right now? Also, what is the main reason you are bringing them in?",
+   "ts": "2026-10-19 14:45:36",
+   "kind": "question",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, the patient is not having trouble breathing right now. No, the patient is not bleeding heavily right now. I have sharp pain low on the right side of my abdomen and some spotting.",
+   "ts": "2026-10-19 14:45:36",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category"
+  },
+  {
+   "role": "bot",
+   "text": "I understand about the abdominal pain. When did this start, and could you tell me the patient's age and sex?",
+   "ts": "2026-10-19 14:45:46",
+   "kind": "question",
+   "slot": "dyn:complaint.onset+patient.age+patient.sex"
+  },
+  {
+   "role": "caregiver",
+   "text": "It began this afternoon and is getting worse. The patient is 29 years old. The patient is female.",
+   "ts": "2026-10-19 14:45:46",
+   "kind": "answer",
+   "slot": "dyn:complaint.onset+patient.age+patient.sex"
+  },
+  {
+   "role": "bot",
+   "text": "Is she pregnant or has she given birth in the last few weeks?",
+   "ts": "2026-10-19 14:45:54",
+   "kind": "question",
+   "slot": "dyn:history.pregnant+history.postpartum"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, the patient has pregnancy.",
+   "ts": "2026-10-19 14:45:54",
+   "kind": "answer",
+   "slot": "dyn:history.pregnant+history.postpartum"
+  },
+  {
+   "role": "system",
+   "text": "floor: at least ESI-2  rules: ['B-38.pregnant-chest-pain-breathlessness-abdo-pain-or-headache']",
+   "ts": "2026-10-19 14:45:58",
+   "kind": "floor"
+  },
+  {
+   "role": "bot",
+   "text": "I see. Does she take any regular medications or have any known allergies, especially to medicine?",
+   "ts": "2026-10-19 14:46:00",
+   "kind": "question",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "caregiver",
+   "text": "I take no regular medicines. The patient has no known allergies.",
+   "ts": "2026-10-19 14:46:00",
+   "kind": "answer",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "bot",
+   "text": "To confirm, does she have any allergies to medications?",
+   "ts": "2026-10-19 14:46:08",
+   "kind": "question",
+   "slot": "dyn:A.allergies"
+  },
+  {
+   "role": "caregiver",
+   "text": "The patient has no known allergies.",
+   "ts": "2026-10-19 14:46:08",
+   "kind": "answer",
+   "slot": "dyn:A.allergies"
+  },
+  {
+   "role": "bot",
+   "text": "Does she have any ongoing medical conditions?",
+   "ts": "2026-10-19 14:46:14",
+   "kind": "question",
+   "slot": "dyn:history.conditions"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know the patient\u2019s medical conditions.",
+   "ts": "2026-10-19 14:46:14",
+   "kind": "answer",
+   "slot": "dyn:history.conditions"
+  },
+  {
+   "role": "bot",
+   "text": "I've noted that. Could you please tell me her full name and date of birth?",
+   "ts": "2026-10-19 14:46:20",
+   "kind": "question",
+   "slot": "dyn:identity.name+identity.dob"
+  },
+  {
+   "role": "caregiver",
+   "text": "I have not given the patient\u2019s name. I do not know the exact date of birth.",
+   "ts": "2026-10-19 14:46:20",
+   "kind": "answer",
+   "slot": "dyn:identity.name+identity.dob"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Could you please tell me her full name?",
+   "ts": "2026-10-19 14:46:26",
+   "kind": "question",
+   "slot": "dyn:identity.name"
+  },
+  {
+   "role": "caregiver",
+   "text": "I have not given the patient\u2019s name.",
+   "ts": "2026-10-19 14:46:26",
+   "kind": "answer",
+   "slot": "dyn:identity.name"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Could you please tell me her name so I can get her information started?",
+   "ts": "2026-10-19 14:46:31",
+   "kind": "question",
+   "slot": "dyn:identity.name"
+  },
+  {
+   "role": "caregiver",
+   "text": "I have not given the patient\u2019s name.",
+   "ts": "2026-10-19 14:46:31",
+   "kind": "answer",
+   "slot": "dyn:identity.name"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Could you please tell me her date of birth?",
+   "ts": "2026-10-19 14:46:36",
+   "kind": "question",
+   "slot": "dyn:identity.dob"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know the exact date of birth.",
+   "ts": "2026-10-19 14:46:36",
+   "kind": "answer",
+   "slot": "dyn:identity.dob"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Could you tell me her birth date?",
+   "ts": "2026-10-19 14:46:42",
+   "kind": "question",
+   "slot": "dyn:identity.dob"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know the exact date of birth.",
+   "ts": "2026-10-19 14:46:42",
+   "kind": "answer",
+   "slot": "dyn:identity.dob"
+  },
+  {
+   "role": "bot",
+   "text": "That's enough for the hospital team to prepare. Show the code PANDA-7148 at the counter when you arrive. I'll ask a few more things while you're on the way; tell me straight away if anything changes.",
+   "ts": "2026-10-19 14:46:44",
+   "kind": "ack"
+  },
+  {
+   "role": "bot",
+   "text": "Does she have a fever or any new rashes?",
+   "ts": "2026-10-19 14:46:47",
+   "kind": "question",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, the patient does not have fever. I do not know whether the patient has a rash.",
+   "ts": "2026-10-19 14:46:47",
+   "kind": "answer",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "bot",
+   "text": "I understand about the fever. Does she have any new rashes on her skin?",
+   "ts": "2026-10-19 14:46:53",
+   "kind": "question",
+   "slot": "dyn:infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient has a rash.",
+   "ts": "2026-10-19 14:46:53",
+   "kind": "answer",
+   "slot": "dyn:infection.rash"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Can you check if she has any new rashes on her skin?",
+   "ts": "2026-10-19 14:46:59",
+   "kind": "question",
+   "slot": "dyn:infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient has a rash.",
+   "ts": "2026-10-19 14:46:59",
+   "kind": "answer",
+   "slot": "dyn:infection.rash"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Has she traveled outside the country or been in contact with anyone who is sick in the last two weeks?",
+   "ts": "2026-10-19 14:47:04",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient travelled in the last 14 days. I do not know of any sick contacts.",
+   "ts": "2026-10-19 14:47:04",
+   "kind": "answer",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Has she traveled outside the country in the last 14 days?",
+   "ts": "2026-10-19 14:47:11",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d"
+  }
+ ],
+ "stage": "rest",
+ "floor": "at least ESI-2",
+ "phase": "enroute",
+ "created": "2026-10-19 14:45",
+ "pending_slot": "dyn:infection.travel_14d",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {},
+ "considered": [
+  "B-17.abdo-pain-pregnant-or-postpartum"
+ ],
+ "qr_ready": true,
+ "qr_turn": 12
+}

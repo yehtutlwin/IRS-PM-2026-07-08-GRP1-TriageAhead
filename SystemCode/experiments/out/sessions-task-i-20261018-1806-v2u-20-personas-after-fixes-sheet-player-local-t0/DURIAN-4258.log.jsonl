@@ -1,0 +1,55 @@
+{"t": "17:46:07", "kind": "engine", "note": "session DURIAN-4258 started (web)"}
+{"t": "17:46:11", "kind": "question", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "Is the patient awake and responding to you normally? Also, is he or she experiencing any chest pain, trouble breathing, or heavy bleeding right now?", "fields": ["danger_signs.responsive", "danger_signs.chest_pain_now"], "offered": ["danger_signs.responsive", "danger_signs.chest_pain_now", "danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text"]}
+{"t": "17:46:11", "kind": "answer", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "Yes, he's awake. He's acting like his usual self. No, he doesn't seem to be in pain."}
+{"t": "17:46:17", "kind": "extract", "writes": [["danger_signs.responsive", true], ["danger_signs.chest_pain_now", false]]}
+{"t": "17:46:20", "kind": "question", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category", "text": "I'm glad he's alert. Is he having any trouble breathing or is there any heavy bleeding? Also, what is the main reason you are bringing him in today?", "fields": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category"], "offered": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text", "complaint.onset", "E.mechanism"]}
+{"t": "17:46:20", "kind": "answer", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category", "text": "No, he's breathing normally. No bleeding. My baby has a fever. I called the paediatrician and she told me to bring him in."}
+{"t": "17:46:24", "kind": "extract", "writes": [["danger_signs.breathing_difficulty", false], ["danger_signs.heavy_bleeding", false], ["complaint.category", "fever"]]}
+{"t": "17:46:24", "kind": "extract", "writes": [["E.mechanism", "none"]], "via": "derived-non-injury"}
+{"t": "17:46:28", "kind": "question", "slot": "dyn:complaint.text+complaint.onset+patient.age+patient.sex", "text": "I understand he has a fever. Could you tell me more about his symptoms, how long this has been going on, and how old he is?", "fields": ["complaint.text", "complaint.onset", "patient.age", "patient.sex"], "offered": ["complaint.text", "complaint.onset", "patient.age", "patient.sex", "complaint.fever", "infection.rash"]}
+{"t": "17:46:28", "kind": "answer", "slot": "dyn:complaint.text+complaint.onset+patient.age+patient.sex", "text": "My baby has a fever. I called the paediatrician and she told me to bring him in. I noticed it today. He's two weeks old. He's a boy."}
+{"t": "17:46:33", "kind": "extract", "writes": [["complaint.text", "My baby has a fever."], ["complaint.onset", "today"], ["patient.age", 0], ["patient.sex", "male"]]}
+{"t": "17:46:37", "kind": "question", "slot": "dyn:patient.age_days+complaint.fever", "text": "I see he is two weeks old. Do you have a recorded temperature for his fever, and have you noticed any new rashes on his skin?", "fields": ["patient.age_days", "complaint.fever"], "offered": ["patient.age_days", "complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts", "complaint.uti_symptoms"]}
+{"t": "17:46:37", "kind": "answer", "slot": "dyn:patient.age_days+complaint.fever", "text": "Two weeks, fourteen days. Yes, he has a fever. I don't remember the exact number."}
+{"t": "17:46:41", "kind": "extract", "writes": [["patient.age_days", 14], ["complaint.fever", true]]}
+{"t": "17:46:41", "kind": "floor", "floor": "at least ESI-2", "fired": ["B-56.infant-under-28-days-fever"], "sources": ["ESI v5 p.23 (Pediatric Vital Signs); p.6 ('1-28 days of age: Assign at least ESI 2 if T > 38\u00b0 C')"]}
+{"t": "17:46:44", "kind": "question", "slot": "dyn:M.medications+A.allergies", "text": "Does he take any medications regularly or have any known allergies?", "fields": ["M.medications", "A.allergies"], "offered": ["M.medications", "A.allergies", "history.conditions", "identity.name", "identity.dob"]}
+{"t": "17:46:44", "kind": "answer", "slot": "dyn:M.medications+A.allergies", "text": "No medicines. None that we know of."}
+{"t": "17:46:48", "kind": "extract", "writes": [["M.medications", []]]}
+{"t": "17:46:50", "kind": "question", "slot": "dyn:A.allergies", "text": "Does he have any known allergies to medications or other substances?", "fields": ["A.allergies"], "offered": ["A.allergies"]}
+{"t": "17:46:50", "kind": "answer", "slot": "dyn:A.allergies", "text": "None that we know of."}
+{"t": "17:46:54", "kind": "extract", "writes": [["A.allergies", []]]}
+{"t": "17:46:57", "kind": "question", "slot": "dyn:history.conditions", "text": "Does he have any other ongoing medical conditions?", "fields": ["history.conditions"], "offered": ["history.conditions", "identity.name", "identity.dob"]}
+{"t": "17:46:57", "kind": "answer", "slot": "dyn:history.conditions", "text": "He's healthy. It was a normal delivery."}
+{"t": "17:47:00", "kind": "extract", "writes": []}
+{"t": "17:47:03", "kind": "question", "slot": "dyn:history.conditions", "text": "I understand. Does he have any other health problems or medical conditions?", "fields": ["history.conditions"], "offered": ["history.conditions"]}
+{"t": "17:47:03", "kind": "answer", "slot": "dyn:history.conditions", "text": "He's healthy. It was a normal delivery."}
+{"t": "17:47:05", "kind": "extract", "writes": []}
+{"t": "17:47:08", "kind": "question", "slot": "dyn:history.conditions", "text": "I understand. To be clear, does he have any other medical conditions or health problems?", "fields": ["history.conditions"], "offered": ["history.conditions"]}
+{"t": "17:47:08", "kind": "answer", "slot": "dyn:history.conditions", "text": "He's healthy. It was a normal delivery."}
+{"t": "17:47:10", "kind": "extract", "writes": []}
+{"t": "17:47:13", "kind": "question", "slot": "dyn:identity.name", "text": "I'm glad to hear he's healthy. Could you please tell me the baby's full name?", "fields": ["identity.name"], "offered": ["identity.name", "identity.dob"]}
+{"t": "17:47:13", "kind": "answer", "slot": "dyn:identity.name", "text": "Lim Wei Jie."}
+{"t": "17:47:26", "kind": "extract", "writes": [["identity.name", "Lim Wei Jie"]]}
+{"t": "17:47:29", "kind": "question", "slot": "dyn:identity.dob", "text": "Thank you. Could you please tell me the baby's date of birth?", "fields": ["identity.dob"], "offered": ["identity.dob"]}
+{"t": "17:47:29", "kind": "answer", "slot": "dyn:identity.dob", "text": "He was born on 4 October 2026."}
+{"t": "17:47:43", "kind": "extract", "writes": [["identity.dob", "4 October 2026"]]}
+{"t": "17:47:43", "kind": "engine", "note": "floor settled - report ready; remaining questions continue"}
+{"t": "17:47:46", "kind": "question", "slot": "dyn:infection.rash+infection.travel_14d", "text": "I see he has a fever. Does he have any new rashes, and has he traveled out of the country in the last two weeks?", "fields": ["infection.rash", "infection.travel_14d"], "offered": ["infection.rash", "infection.travel_14d", "infection.contacts", "vitals.temp_c", "complaint.pain_rating", "patient.immunizations_incomplete"]}
+{"t": "17:47:46", "kind": "answer", "slot": "dyn:infection.rash+infection.travel_14d", "text": "No rash. No, we haven't travelled."}
+{"t": "17:47:50", "kind": "extract", "writes": [["infection.rash", false], ["infection.travel_14d", false]]}
+{"t": "17:47:53", "kind": "question", "slot": "dyn:infection.contacts", "text": "Has he been in contact with anyone who has an infectious illness in the last two weeks?", "fields": ["infection.contacts"], "offered": ["infection.contacts", "vitals.temp_c", "complaint.pain_rating", "patient.immunizations_incomplete", "complaint.fever_no_obvious_source", "L.last_intake"]}
+{"t": "17:47:53", "kind": "answer", "slot": "dyn:infection.contacts", "text": "I don't know."}
+{"t": "17:47:56", "kind": "extract", "writes": []}
+{"t": "17:47:56", "kind": "extract", "writes": [["infection.contacts", null]], "via": "dont-know"}
+{"t": "17:47:59", "kind": "question", "slot": "dyn:vitals.temp_c", "text": "I understand. If you measured his temperature, what was the reading?", "fields": ["vitals.temp_c"], "offered": ["vitals.temp_c", "complaint.pain_rating", "patient.immunizations_incomplete", "complaint.fever_no_obvious_source", "L.last_intake"]}
+{"t": "17:47:59", "kind": "answer", "slot": "dyn:vitals.temp_c", "text": "I don't know."}
+{"t": "17:48:03", "kind": "extract", "writes": []}
+{"t": "17:48:03", "kind": "extract", "writes": [["vitals.temp_c", null]], "via": "dont-know"}
+{"t": "17:48:06", "kind": "question", "slot": "dyn:complaint.pain_rating", "text": "I understand. On a scale of 0 to 10, where 10 is the worst pain imaginable, how would you rate his pain right now?", "fields": ["complaint.pain_rating"], "offered": ["complaint.pain_rating", "patient.immunizations_incomplete", "complaint.fever_no_obvious_source", "L.last_intake"]}
+{"t": "17:48:06", "kind": "answer", "slot": "dyn:complaint.pain_rating", "text": "I don't know."}
+{"t": "17:48:09", "kind": "extract", "writes": []}
+{"t": "17:48:12", "kind": "question", "slot": "dyn:complaint.pain_rating", "text": "I understand. Is he showing any signs of physical discomfort or crying a lot right now?", "fields": ["complaint.pain_rating"], "offered": ["complaint.pain_rating"]}
+{"t": "17:48:12", "kind": "answer", "slot": "dyn:complaint.pain_rating", "text": "I don't know."}
+{"t": "17:48:14", "kind": "extract", "writes": []}
+{"t": "17:48:18", "kind": "question", "slot": "dyn:complaint.pain_rating", "text": "I understand it's hard to tell. If you had to give a number from 0 to 10 for how much he seems to be hurting, what would that be?", "fields": ["complaint.pain_rating"], "offered": ["complaint.pain_rating"]}

@@ -1,0 +1,470 @@
+{
+ "sid": "TIGER-9634",
+ "facts": {
+  "danger_signs.responsive": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-18 16:47"
+  },
+  "danger_signs.chest_pain_now": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-18 16:47"
+  },
+  "danger_signs.breathing_difficulty": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-18 16:47"
+  },
+  "danger_signs.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-18 16:47"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "fever",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 2,
+      "ts": "2026-10-18 16:47"
+     },
+     "text": {
+      "value": "My baby has a fever.",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 2,
+      "ts": "2026-10-18 16:47"
+     },
+     "onset": {
+      "value": "today",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 3,
+      "ts": "2026-10-18 16:47"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2
+  },
+  "complaint.category": {
+   "value": [
+    "fever"
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-18 16:47"
+  },
+  "complaint.text": {
+   "value": "My baby has a fever.",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-18 16:47"
+  },
+  "E.mechanism": {
+   "value": "none",
+   "status": "reported",
+   "who": "derived",
+   "turn": 2,
+   "ts": "2026-10-18 16:47"
+  },
+  "complaint.onset": {
+   "value": "today",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-18 16:47"
+  },
+  "patient.age": {
+   "value": 0,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-18 16:47"
+  },
+  "patient.age_months": {
+   "value": 0,
+   "status": "probable",
+   "who": "derived",
+   "turn": 3,
+   "ts": "2026-10-18 16:47"
+  },
+  "patient.age_group": {
+   "value": "infant",
+   "status": "reported",
+   "who": "derived",
+   "turn": 3,
+   "ts": "2026-10-18 16:47"
+  },
+  "patient.age_days": {
+   "value": 14,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 4,
+   "ts": "2026-10-18 16:47"
+  },
+  "patient.sex": {
+   "value": "male",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 4,
+   "ts": "2026-10-18 16:47"
+  },
+  "complaint.fever": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 5,
+   "ts": "2026-10-18 16:48"
+  },
+  "infection.rash": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 5,
+   "ts": "2026-10-18 16:48"
+  },
+  "M.medications": {
+   "value": [],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 6,
+   "ts": "2026-10-18 16:48"
+  },
+  "A.allergies": {
+   "value": [],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 6,
+   "ts": "2026-10-18 16:48"
+  },
+  "identity.name": {
+   "value": "Lim Wei Jie",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 7,
+   "ts": "2026-10-18 16:48"
+  },
+  "identity.dob": {
+   "value": "4 October 2026",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 10,
+   "ts": "2026-10-18 16:48"
+  },
+  "infection.travel_14d": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 11,
+   "ts": "2026-10-18 16:48"
+  },
+  "infection.contacts": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 12,
+   "ts": "2026-10-18 16:48"
+  },
+  "vitals.temp_c": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 13,
+   "ts": "2026-10-18 16:48"
+  }
+ },
+ "attempts": {
+  "danger_signs.responsive": 1,
+  "danger_signs.chest_pain_now": 1,
+  "danger_signs.breathing_difficulty": 1,
+  "danger_signs.heavy_bleeding": 1,
+  "complaint.category": 1,
+  "complaint.text": 1,
+  "complaint.onset": 1,
+  "patient.age": 1,
+  "patient.age_days": 1,
+  "patient.sex": 1,
+  "complaint.fever": 1,
+  "infection.rash": 1,
+  "M.medications": 1,
+  "A.allergies": 1,
+  "history.conditions": 3,
+  "identity.name": 1,
+  "identity.dob": 1,
+  "infection.travel_14d": 1,
+  "infection.contacts": 2,
+  "vitals.temp_c": 1,
+  "complaint.pain_rating": 3,
+  "patient.immunizations_incomplete": 1
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "Is the patient awake and responding to you normally? Also, are they currently experiencing any chest pain, trouble breathing, or heavy bleeding?",
+   "ts": "2026-10-18 16:47:30",
+   "kind": "question",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, he's awake. He's acting like his usual self. No, he doesn't seem to be in pain.",
+   "ts": "2026-10-18 16:47:30",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "bot",
+   "text": "I'm glad he's feeling okay. Is he having any trouble breathing or is there any heavy bleeding? Also, could you tell me what the main problem is and what's happening?",
+   "ts": "2026-10-18 16:47:39",
+   "kind": "question",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category+complaint.text"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, he's breathing normally. No bleeding. My baby has a fever. I called the paediatrician and she told me to bring him in.",
+   "ts": "2026-10-18 16:47:39",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category+complaint.text"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. How old is your baby, and when did the fever start?",
+   "ts": "2026-10-18 16:47:48",
+   "kind": "question",
+   "slot": "dyn:complaint.onset+patient.age"
+  },
+  {
+   "role": "caregiver",
+   "text": "I noticed it today. He's two weeks old.",
+   "ts": "2026-10-18 16:47:48",
+   "kind": "answer",
+   "slot": "dyn:complaint.onset+patient.age"
+  },
+  {
+   "role": "bot",
+   "text": "I see he is two weeks old. Is he a boy or a girl?",
+   "ts": "2026-10-18 16:47:55",
+   "kind": "question",
+   "slot": "dyn:patient.age_days+patient.sex"
+  },
+  {
+   "role": "caregiver",
+   "text": "Two weeks, fourteen days. He's a boy.",
+   "ts": "2026-10-18 16:47:55",
+   "kind": "answer",
+   "slot": "dyn:patient.age_days+patient.sex"
+  },
+  {
+   "role": "bot",
+   "text": "I've noted he's a 14-day-old boy. Have you measured his temperature, and does he have any new rashes?",
+   "ts": "2026-10-18 16:48:02",
+   "kind": "question",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, he has a fever. I don't remember the exact number. No rash.",
+   "ts": "2026-10-18 16:48:02",
+   "kind": "answer",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "system",
+   "text": "floor: at least ESI-2  rules: ['B-56.infant-under-28-days-fever']",
+   "ts": "2026-10-18 16:48:07",
+   "kind": "floor"
+  },
+  {
+   "role": "bot",
+   "text": "I've noted that. Does he take any medications regularly, and does he have any known allergies?",
+   "ts": "2026-10-18 16:48:09",
+   "kind": "question",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "caregiver",
+   "text": "No medicines. None that we know of.",
+   "ts": "2026-10-18 16:48:09",
+   "kind": "answer",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "bot",
+   "text": "Does he have any other medical conditions? Also, could you tell me his full name?",
+   "ts": "2026-10-18 16:48:16",
+   "kind": "question",
+   "slot": "dyn:history.conditions+identity.name"
+  },
+  {
+   "role": "caregiver",
+   "text": "He's healthy. It was a normal delivery. Lim Wei Jie.",
+   "ts": "2026-10-18 16:48:16",
+   "kind": "answer",
+   "slot": "dyn:history.conditions+identity.name"
+  },
+  {
+   "role": "bot",
+   "text": "Does he have any other ongoing medical conditions?",
+   "ts": "2026-10-18 16:48:23",
+   "kind": "question",
+   "slot": "dyn:history.conditions"
+  },
+  {
+   "role": "caregiver",
+   "text": "He's healthy. It was a normal delivery.",
+   "ts": "2026-10-18 16:48:23",
+   "kind": "answer",
+   "slot": "dyn:history.conditions"
+  },
+  {
+   "role": "bot",
+   "text": "I understand he's generally healthy. Does he have any other medical conditions we should know about?",
+   "ts": "2026-10-18 16:48:28",
+   "kind": "question",
+   "slot": "dyn:history.conditions"
+  },
+  {
+   "role": "caregiver",
+   "text": "He's healthy. It was a normal delivery.",
+   "ts": "2026-10-18 16:48:28",
+   "kind": "answer",
+   "slot": "dyn:history.conditions"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Could you please tell me his date of birth?",
+   "ts": "2026-10-18 16:48:33",
+   "kind": "question",
+   "slot": "dyn:identity.dob"
+  },
+  {
+   "role": "caregiver",
+   "text": "He was born on 4 October 2026.",
+   "ts": "2026-10-18 16:48:33",
+   "kind": "answer",
+   "slot": "dyn:identity.dob"
+  },
+  {
+   "role": "bot",
+   "text": "That's enough for the hospital team to prepare. Show the code TIGER-9634 at the counter when you arrive. I'll ask a few more things while you're on the way; tell me straight away if anything changes.",
+   "ts": "2026-10-18 16:48:37",
+   "kind": "ack"
+  },
+  {
+   "role": "bot",
+   "text": "Has he traveled abroad or been in contact with anyone who has a contagious illness in the last two weeks?",
+   "ts": "2026-10-18 16:48:40",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, we haven't travelled.",
+   "ts": "2026-10-18 16:48:40",
+   "kind": "answer",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "bot",
+   "text": "Has anyone close to him been feeling sick or having a contagious illness lately?",
+   "ts": "2026-10-18 16:48:46",
+   "kind": "question",
+   "slot": "dyn:infection.contacts"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 16:48:46",
+   "kind": "answer",
+   "slot": "dyn:infection.contacts"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. If you have a thermometer handy, what was his temperature reading?",
+   "ts": "2026-10-18 16:48:53",
+   "kind": "question",
+   "slot": "dyn:vitals.temp_c"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 16:48:53",
+   "kind": "answer",
+   "slot": "dyn:vitals.temp_c"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. On a scale of 0 to 10, where 10 is the worst pain imaginable, how would you rate his pain right now?",
+   "ts": "2026-10-18 16:48:59",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 16:48:59",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. How would you describe his level of discomfort or fussiness right now?",
+   "ts": "2026-10-18 16:49:05",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 16:49:05",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "I understand it's hard to tell. If you had to give his discomfort a score from 0 to 10, where 10 is the most severe, what number would you give him?",
+   "ts": "2026-10-18 16:49:11",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 16:49:11",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Are his vaccinations up to date for his age?",
+   "ts": "2026-10-18 16:49:16",
+   "kind": "question",
+   "slot": "dyn:patient.immunizations_incomplete"
+  }
+ ],
+ "stage": "rest",
+ "floor": "at least ESI-2",
+ "phase": "enroute",
+ "created": "2026-10-18 16:47",
+ "pending_slot": "dyn:patient.immunizations_incomplete",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {},
+ "qr_ready": true,
+ "qr_turn": 10
+}

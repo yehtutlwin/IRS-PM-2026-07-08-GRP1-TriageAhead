@@ -1,0 +1,571 @@
+{
+ "sid": "HERON-9049",
+ "facts": {
+  "danger_signs.responsive": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-16 01:11"
+  },
+  "obs.new_confusion_lethargy_disorientation": {
+   "value": true,
+   "status": "reported",
+   "who": "derived",
+   "turn": 1,
+   "ts": "2026-10-16 01:11"
+  },
+  "danger_signs.chest_pain_now": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-16 01:11"
+  },
+  "danger_signs.breathing_difficulty": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-16 01:11"
+  },
+  "danger_signs.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-16 01:11"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "other",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 4,
+      "ts": "2026-10-16 01:11"
+     },
+     "text": {
+      "value": "He collapsed working outdoors in the sun. He had a headache, nausea and dizziness, then got confused and fell. He's very hot and weak now.",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 4,
+      "ts": "2026-10-16 01:11"
+     },
+     "onset": {
+      "value": "half an hour ago",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 5,
+      "ts": "2026-10-16 01:11"
+     },
+     "onset_abs": {
+      "value": "~2026-10-16 00:41",
+      "status": "reported",
+      "who": "derived",
+      "turn": 5,
+      "ts": "2026-10-16 01:11"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 4
+  },
+  "complaint.category": {
+   "value": [
+    "other"
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 5,
+   "ts": "2026-10-16 01:11"
+  },
+  "complaint.text": {
+   "value": "He collapsed working outdoors in the sun. He had a headache, nausea and dizziness, then got confused and fell. He's very hot and weak now.",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 4,
+   "ts": "2026-10-16 01:11"
+  },
+  "complaint.onset": {
+   "value": "half an hour ago",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 5,
+   "ts": "2026-10-16 01:11"
+  },
+  "patient.age": {
+   "value": 39,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 5,
+   "ts": "2026-10-16 01:11"
+  },
+  "complaint.onset_abs": {
+   "value": "~2026-10-16 00:41 (from 'half an hour ago' said 01:11)",
+   "status": "reported",
+   "who": "derived",
+   "turn": 5,
+   "ts": "2026-10-16 01:11"
+  },
+  "patient.age_group": {
+   "value": "adult",
+   "status": "reported",
+   "who": "derived",
+   "turn": 5,
+   "ts": "2026-10-16 01:11"
+  },
+  "patient.sex": {
+   "value": "male",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 6,
+   "ts": "2026-10-16 01:11"
+  },
+  "M.medications": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 7,
+   "ts": "2026-10-16 01:11"
+  },
+  "A.allergies": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 7,
+   "ts": "2026-10-16 01:11"
+  },
+  "history.conditions": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 8,
+   "ts": "2026-10-16 01:11"
+  },
+  "identity.name": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 9,
+   "ts": "2026-10-16 01:12"
+  },
+  "identity.dob": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 9,
+   "ts": "2026-10-16 01:12"
+  },
+  "E.mechanism": {
+   "value": "fall",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 10,
+   "ts": "2026-10-16 01:12"
+  },
+  "infection.rash": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 11,
+   "ts": "2026-10-16 01:12"
+  },
+  "infection.travel_14d": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 12,
+   "ts": "2026-10-16 01:12"
+  },
+  "infection.contacts": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 12,
+   "ts": "2026-10-16 01:12"
+  },
+  "complaint.testicular_or_scrotal_pain": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 16,
+   "ts": "2026-10-16 01:12"
+  },
+  "complaint.possible_pelvis_femur_fracture_or_dislocation": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 16,
+   "ts": "2026-10-16 01:12"
+  },
+  "E.abdominal_trauma": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 17,
+   "ts": "2026-10-16 01:12"
+  },
+  "E.head_strike": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 17,
+   "ts": "2026-10-16 01:12"
+  },
+  "E.loc": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 18,
+   "ts": "2026-10-16 01:12"
+  },
+  "L.last_intake": {
+   "value": "Breakfast at 7am; he drank very little water",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 19,
+   "ts": "2026-10-16 01:13"
+  },
+  "L.last_intake_abs": {
+   "value": "~2026-10-16 07:00 (from 'Breakfast at 7am; he drank very little water' said 01:13)",
+   "status": "reported",
+   "who": "derived",
+   "turn": 19,
+   "ts": "2026-10-16 01:13"
+  }
+ },
+ "attempts": {
+  "danger_signs.responsive": 1,
+  "danger_signs.chest_pain_now": 2,
+  "danger_signs.breathing_difficulty": 1,
+  "danger_signs.heavy_bleeding": 1,
+  "complaint.category": 1,
+  "complaint.text": 1,
+  "complaint.onset": 1,
+  "patient.age": 1,
+  "patient.sex": 1,
+  "M.medications": 1,
+  "A.allergies": 1,
+  "history.conditions": 1,
+  "identity.name": 1,
+  "identity.dob": 1,
+  "E.mechanism": 1,
+  "infection.rash": 2,
+  "infection.travel_14d": 1,
+  "infection.contacts": 1,
+  "complaint.pain_rating": 3,
+  "complaint.testicular_or_scrotal_pain": 1,
+  "complaint.possible_pelvis_femur_fracture_or_dislocation": 1,
+  "E.abdominal_trauma": 1,
+  "E.head_strike": 1,
+  "E.loc": 1,
+  "L.last_intake": 1
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "Is the patient awake and responding to you normally? Also, is he or she experiencing any chest pain, trouble breathing, or heavy bleeding right now?",
+   "ts": "2026-10-16 01:10:57",
+   "kind": "question",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "caregiver",
+   "text": "He's awake but only answers with confused words.",
+   "ts": "2026-10-16 01:10:57",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "system",
+   "text": "floor: at least ESI-2  rules: ['B-01.new-altered-mental-status']",
+   "ts": "2026-10-16 01:11:01",
+   "kind": "floor"
+  },
+  {
+   "role": "bot",
+   "text": "Based on what you just told me, please call 995 NOW if you are not already with paramedics. I have put this at the top of the hospital report.",
+   "ts": "2026-10-16 01:11:01",
+   "kind": "advice"
+  },
+  {
+   "role": "bot",
+   "text": "Is he experiencing any chest pain at this moment?",
+   "ts": "2026-10-16 01:11:04",
+   "kind": "question",
+   "slot": "dyn:danger_signs.chest_pain_now"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-16 01:11:04",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.chest_pain_now"
+  },
+  {
+   "role": "bot",
+   "text": "Is he having any trouble breathing or is there any heavy bleeding?",
+   "ts": "2026-10-16 01:11:10",
+   "kind": "question",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding"
+  },
+  {
+   "role": "caregiver",
+   "text": "He's breathing, not struggling that I can see. No bleeding.",
+   "ts": "2026-10-16 01:11:10",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. What is the main reason you are bringing him in today, and can you describe what is happening?",
+   "ts": "2026-10-16 01:11:17",
+   "kind": "question",
+   "slot": "dyn:complaint.category+complaint.text"
+  },
+  {
+   "role": "caregiver",
+   "text": "He collapsed working outdoors in the sun. He had a headache, nausea and dizziness, then got confused and fell. He's very hot and weak now.",
+   "ts": "2026-10-16 01:11:17",
+   "kind": "answer",
+   "slot": "dyn:complaint.category+complaint.text"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear about his collapse. About how old is he, and when did these symptoms first begin?",
+   "ts": "2026-10-16 01:11:31",
+   "kind": "question",
+   "slot": "dyn:complaint.onset+patient.age"
+  },
+  {
+   "role": "caregiver",
+   "text": "About half an hour ago, after four hours in the sun. 39.",
+   "ts": "2026-10-16 01:11:31",
+   "kind": "answer",
+   "slot": "dyn:complaint.onset+patient.age"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear he's feeling so poorly. Is he a man or a woman?",
+   "ts": "2026-10-16 01:11:39",
+   "kind": "question",
+   "slot": "dyn:patient.sex"
+  },
+  {
+   "role": "caregiver",
+   "text": "Male.",
+   "ts": "2026-10-16 01:11:39",
+   "kind": "answer",
+   "slot": "dyn:patient.sex"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Does he take any regular medications or have any known allergies?",
+   "ts": "2026-10-16 01:11:45",
+   "kind": "question",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-16 01:11:45",
+   "kind": "answer",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "bot",
+   "text": "Does he have any ongoing medical conditions, like heart problems or diabetes?",
+   "ts": "2026-10-16 01:11:51",
+   "kind": "question",
+   "slot": "dyn:history.conditions"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-16 01:11:51",
+   "kind": "answer",
+   "slot": "dyn:history.conditions"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Could you please tell me his full name and date of birth?",
+   "ts": "2026-10-16 01:11:57",
+   "kind": "question",
+   "slot": "dyn:identity.name+identity.dob"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-16 01:11:57",
+   "kind": "answer",
+   "slot": "dyn:identity.name+identity.dob"
+  },
+  {
+   "role": "bot",
+   "text": "That's enough for the hospital team to prepare. Show the code HERON-9049 at the counter when you arrive. I'll ask a few more things while you're on the way; tell me straight away if anything changes.",
+   "ts": "2026-10-16 01:12:01",
+   "kind": "ack"
+  },
+  {
+   "role": "bot",
+   "text": "Can you tell me more about how he collapsed? Also, does he have any new rashes on his skin?",
+   "ts": "2026-10-16 01:12:04",
+   "kind": "question",
+   "slot": "dyn:E.mechanism+infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "He collapsed and fell to the ground; he didn't hit his head.",
+   "ts": "2026-10-16 01:12:04",
+   "kind": "answer",
+   "slot": "dyn:E.mechanism+infection.rash"
+  },
+  {
+   "role": "bot",
+   "text": "I understand he didn't hit his head. Does he have any new rashes or spots on his skin?",
+   "ts": "2026-10-16 01:12:10",
+   "kind": "question",
+   "slot": "dyn:infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-16 01:12:10",
+   "kind": "answer",
+   "slot": "dyn:infection.rash"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Has he traveled outside the country or been in contact with anyone who has a contagious illness in the last two weeks?",
+   "ts": "2026-10-16 01:12:16",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-16 01:12:16",
+   "kind": "answer",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "bot",
+   "text": "On a scale of 0 to 10, where 10 is the worst pain imaginable, how bad is his pain right now?",
+   "ts": "2026-10-16 01:12:23",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-16 01:12:23",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. To help the team, can you describe how severe his pain is on a scale of 0 to 10?",
+   "ts": "2026-10-16 01:12:30",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-16 01:12:30",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "I understand it's hard to say. If you had to pick a number from 0 to 10 to describe his level of discomfort, what would it be?",
+   "ts": "2026-10-16 01:12:35",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-16 01:12:35",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Is he experiencing any pain in his groin or testicles, and is he able to put any weight on his leg?",
+   "ts": "2026-10-16 01:12:41",
+   "kind": "question",
+   "slot": "dyn:complaint.testicular_or_scrotal_pain+complaint.possible_pelvis_femur_fracture_or_dislocation"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-16 01:12:41",
+   "kind": "answer",
+   "slot": "dyn:complaint.testicular_or_scrotal_pain+complaint.possible_pelvis_femur_fracture_or_dislocation"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Did he hit his head or have any impact to his belly during the fall?",
+   "ts": "2026-10-16 01:12:48",
+   "kind": "question",
+   "slot": "dyn:E.abdominal_trauma+E.head_strike"
+  },
+  {
+   "role": "caregiver",
+   "text": "No.",
+   "ts": "2026-10-16 01:12:48",
+   "kind": "answer",
+   "slot": "dyn:E.abdominal_trauma+E.head_strike"
+  },
+  {
+   "role": "bot",
+   "text": "Did he pass out or lose consciousness at any point during the fall?",
+   "ts": "2026-10-16 01:12:55",
+   "kind": "question",
+   "slot": "dyn:E.loc"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-16 01:12:55",
+   "kind": "answer",
+   "slot": "dyn:E.loc"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. When was the last time he had anything to eat or drink?",
+   "ts": "2026-10-16 01:13:01",
+   "kind": "question",
+   "slot": "dyn:L.last_intake"
+  },
+  {
+   "role": "caregiver",
+   "text": "Breakfast at 7am; he drank very little water.",
+   "ts": "2026-10-16 01:13:01",
+   "kind": "answer",
+   "slot": "dyn:L.last_intake"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you - that's everything. Show the code HERON-9049 at the counter when you arrive.",
+   "ts": "2026-10-16 01:13:05",
+   "kind": "ack"
+  }
+ ],
+ "stage": "rest",
+ "floor": "at least ESI-2",
+ "phase": "enroute",
+ "created": "2026-10-16 01:10",
+ "pending_slot": "dyn:L.last_intake",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {},
+ "advised995": true,
+ "qr_ready": true,
+ "qr_turn": 9,
+ "said_done": true
+}

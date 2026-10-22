@@ -1,0 +1,768 @@
+{
+ "sid": "TIGER-1818",
+ "facts": {
+  "danger_signs.responsive": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-10-15 00:35"
+  },
+  "danger_signs.chest_pain_now": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-10-15 00:35"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "abdominal_pain",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "persona",
+      "turn": 1,
+      "ts": "2026-10-15 00:35"
+     },
+     "text": {
+      "value": "getting worse",
+      "status": "reported",
+      "who": "persona",
+      "turn": 26,
+      "ts": "2026-10-15 00:39"
+     },
+     "pain_rating": {
+      "value": 8,
+      "status": "reported",
+      "who": "persona",
+      "turn": 2,
+      "ts": "2026-10-15 00:35"
+     },
+     "onset": {
+      "value": "this morning",
+      "status": "reported",
+      "who": "persona",
+      "turn": 26,
+      "ts": "2026-10-15 00:39"
+     },
+     "onset_abs": {
+      "value": "~2026-10-15 morning",
+      "status": "reported",
+      "who": "derived",
+      "turn": 4,
+      "ts": "2026-10-15 00:35"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 1
+  },
+  "complaint.category": {
+   "value": [
+    "abdominal_pain"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 26,
+   "ts": "2026-10-15 00:39"
+  },
+  "complaint.text": {
+   "value": "getting worse",
+   "status": "reported",
+   "who": "persona",
+   "turn": 26,
+   "ts": "2026-10-15 00:39"
+  },
+  "E.mechanism": {
+   "value": "none",
+   "status": "reported",
+   "who": "derived",
+   "turn": 1,
+   "ts": "2026-10-15 00:35"
+  },
+  "danger_signs.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-10-15 00:35"
+  },
+  "complaint.pain_rating": {
+   "value": 8,
+   "status": "reported",
+   "who": "persona",
+   "turn": 26,
+   "ts": "2026-10-15 00:39"
+  },
+  "complaint.pain_latest": {
+   "value": 8,
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-10-15 00:35"
+  },
+  "danger_signs.breathing_difficulty": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-15 00:35"
+  },
+  "complaint.onset": {
+   "value": "this morning",
+   "status": "reported",
+   "who": "persona",
+   "turn": 26,
+   "ts": "2026-10-15 00:39"
+  },
+  "complaint.pain_refractory_constant_or_maximal_onset": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 4,
+   "ts": "2026-10-15 00:35"
+  },
+  "complaint.onset_abs": {
+   "value": "~2026-10-15 morning (from 'since this morning' said 00:35)",
+   "status": "reported",
+   "who": "derived",
+   "turn": 4,
+   "ts": "2026-10-15 00:35"
+  },
+  "patient.age": {
+   "value": 40,
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-10-15 00:36"
+  },
+  "patient.sex": {
+   "value": "female",
+   "status": "probable",
+   "who": "persona",
+   "turn": 24,
+   "ts": "2026-10-15 00:39"
+  },
+  "history.conditions": {
+   "value": [
+    "28 weeks pregnant"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-10-15 00:36"
+  },
+  "patient.age_group": {
+   "value": "adult",
+   "status": "reported",
+   "who": "derived",
+   "turn": 5,
+   "ts": "2026-10-15 00:36"
+  },
+  "history.pregnant": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 8,
+   "ts": "2026-10-15 00:36"
+  },
+  "M.medications": {
+   "value": [
+    "vitamins"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 24,
+   "ts": "2026-10-15 00:39"
+  },
+  "A.allergies": {
+   "value": [],
+   "status": "reported",
+   "who": "persona",
+   "turn": 9,
+   "ts": "2026-10-15 00:36"
+  },
+  "identity.dob": {
+   "value": "3 September 1986",
+   "status": "reported",
+   "who": "persona",
+   "turn": 10,
+   "ts": "2026-10-15 00:36"
+  },
+  "identity.name": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 11,
+   "ts": "2026-10-15 00:36"
+  },
+  "complaint.fever": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 12,
+   "ts": "2026-10-15 00:37"
+  },
+  "infection.rash": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 12,
+   "ts": "2026-10-15 00:37"
+  },
+  "infection.travel_14d": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 13,
+   "ts": "2026-10-15 00:37"
+  },
+  "infection.contacts": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 13,
+   "ts": "2026-10-15 00:37"
+  },
+  "complaint.uti_symptoms": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 14,
+   "ts": "2026-10-15 00:37"
+  },
+  "ams.changed_from_baseline": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 15,
+   "ts": "2026-10-15 00:37"
+  },
+  "complaint.infection_signs": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 16,
+   "ts": "2026-10-15 00:37"
+  },
+  "complaint.pain_cause_class": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 17,
+   "ts": "2026-10-15 00:38"
+  },
+  "complaint.severe_flank_pain": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 17,
+   "ts": "2026-10-15 00:38"
+  },
+  "complaint.vaginal_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 18,
+   "ts": "2026-10-15 00:38"
+  },
+  "complaint.possible_ectopic_pregnancy": {
+   "value": false,
+   "status": "probable",
+   "who": "persona",
+   "turn": 18,
+   "ts": "2026-10-15 00:38"
+  },
+  "complaint.shortness_of_breath": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 19,
+   "ts": "2026-10-15 00:38"
+  },
+  "complaint.vomiting": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 19,
+   "ts": "2026-10-15 00:38"
+  },
+  "L.last_intake": {
+   "value": "dinner last night",
+   "status": "reported",
+   "who": "persona",
+   "turn": 20,
+   "ts": "2026-10-15 00:38"
+  },
+  "L.last_intake_abs": {
+   "value": "~2026-10-14 night (from 'dinner last night' said 00:38)",
+   "status": "reported",
+   "who": "derived",
+   "turn": 20,
+   "ts": "2026-10-15 00:38"
+  },
+  "complaint.known_toxic_ingestion": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 21,
+   "ts": "2026-10-15 00:38"
+  },
+  "M.immunosuppressant_or_steroid": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 24,
+   "ts": "2026-10-15 00:39"
+  },
+  "complaint.unilateral_lower_quadrant_pain": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 25,
+   "ts": "2026-10-15 00:39"
+  },
+  "E.abdominal_trauma": {
+   "value": false,
+   "status": "probable",
+   "who": "persona",
+   "turn": 26,
+   "ts": "2026-10-15 00:39"
+  }
+ },
+ "attempts": {
+  "danger_signs.responsive": 1,
+  "danger_signs.chest_pain_now": 1,
+  "danger_signs.breathing_difficulty": 2,
+  "danger_signs.heavy_bleeding": 1,
+  "complaint.onset": 1,
+  "patient.age": 1,
+  "patient.sex": 1,
+  "history.pregnant": 3,
+  "M.medications": 1,
+  "A.allergies": 1,
+  "identity.name": 2,
+  "identity.dob": 1,
+  "complaint.fever": 1,
+  "infection.rash": 1,
+  "infection.travel_14d": 1,
+  "infection.contacts": 1,
+  "complaint.uti_symptoms": 1,
+  "ams.changed_from_baseline": 1,
+  "complaint.infection_signs": 1,
+  "complaint.pain_cause_class": 1,
+  "complaint.severe_flank_pain": 1,
+  "complaint.possible_ectopic_pregnancy": 1,
+  "complaint.vaginal_bleeding": 1,
+  "complaint.shortness_of_breath": 1,
+  "complaint.vomiting": 1,
+  "complaint.known_toxic_ingestion": 2,
+  "L.last_intake": 1,
+  "history.immunocompromised": 3,
+  "complaint.unilateral_lower_quadrant_pain": 1,
+  "E.abdominal_trauma": 1
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "Is the patient awake and responding to you normally right now, and do they have any chest pain at the moment?",
+   "ts": "2026-10-15 00:35:10",
+   "kind": "question",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "caregiver",
+   "text": "I'm awake, I'm talking to you. The pain is in my lower belly, nothing in my chest.",
+   "ts": "2026-10-15 00:35:13",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you, so the pain is in your lower belly and not your chest. Are you having any trouble breathing right now, or any heavy bleeding?",
+   "ts": "2026-10-15 00:35:19",
+   "kind": "question",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding"
+  },
+  {
+   "role": "caregiver",
+   "text": "No bleeding at all. The pain is just really bad... 8 out of 10.",
+   "ts": "2026-10-15 00:35:29",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you for telling me, I hear that the pain is really bad. Can you breathe in and out normally right now, or does it feel hard to get your breath?",
+   "ts": "2026-10-15 00:35:36",
+   "kind": "question",
+   "slot": "dyn:danger_signs.breathing_difficulty"
+  },
+  {
+   "role": "caregiver",
+   "text": "I can breathe, but it's hard to talk because the pain is so bad. I don't know if it's more than that.",
+   "ts": "2026-10-15 00:35:39",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.breathing_difficulty"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you, I know it's hard to talk right now. When did this pain in your lower belly start?",
+   "ts": "2026-10-15 00:35:47",
+   "kind": "question",
+   "slot": "dyn:complaint.onset"
+  },
+  {
+   "role": "caregiver",
+   "text": "Since this morning. It's been constant and it keeps getting worse.",
+   "ts": "2026-10-15 00:35:48",
+   "kind": "answer",
+   "slot": "dyn:complaint.onset"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you, I understand it's been constant and getting worse since this morning. How old are you, and are you male or female?",
+   "ts": "2026-10-15 00:35:56",
+   "kind": "question",
+   "slot": "dyn:patient.age+patient.sex"
+  },
+  {
+   "role": "caregiver",
+   "text": "I'm 40... female. I'm 28 weeks pregnant.",
+   "ts": "2026-10-15 00:35:58",
+   "kind": "answer",
+   "slot": "dyn:patient.age+patient.sex"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you for telling me. Just to be sure I have this right, you are currently 28 weeks pregnant?",
+   "ts": "2026-10-15 00:36:09",
+   "kind": "question",
+   "slot": "dyn:history.pregnant"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, 28 weeks. The pain is getting worse.",
+   "ts": "2026-10-15 00:36:11",
+   "kind": "answer",
+   "slot": "dyn:history.pregnant"
+  },
+  {
+   "role": "bot",
+   "text": "I hear that the pain is getting worse, and I'm passing that on to the team. Just so I record it correctly: you're expecting a baby right now, yes?",
+   "ts": "2026-10-15 00:36:20",
+   "kind": "question",
+   "slot": "dyn:history.pregnant"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes... 28 weeks. The pain is getting worse.",
+   "ts": "2026-10-15 00:36:21",
+   "kind": "answer",
+   "slot": "dyn:history.pregnant"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you, I've noted that the pain is getting worse. So I can mark it clearly for the team: are you pregnant right now?",
+   "ts": "2026-10-15 00:36:30",
+   "kind": "question",
+   "slot": "dyn:history.pregnant"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, I'm 28 weeks pregnant. The pain is really bad.",
+   "ts": "2026-10-15 00:36:32",
+   "kind": "answer",
+   "slot": "dyn:history.pregnant"
+  },
+  {
+   "role": "system",
+   "text": "floor: at least ESI-2  rules: ['B-38.pregnant-chest-pain-breathlessness-abdo-pain-or-headache']",
+   "ts": "2026-10-15 00:36:35",
+   "kind": "floor"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you, I've noted that you're 28 weeks pregnant and the pain is really bad. What medicines do you take regularly (a photo of the boxes is fine), and are you allergic to any medicines?",
+   "ts": "2026-10-15 00:36:38",
+   "kind": "question",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "caregiver",
+   "text": "Just pregnancy vitamins, nothing else. No allergies that I know of.",
+   "ts": "2026-10-15 00:36:40",
+   "kind": "answer",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you, I've noted the pregnancy vitamins and no known allergies. What is your full name and your date of birth?",
+   "ts": "2026-10-15 00:36:44",
+   "kind": "question",
+   "slot": "dyn:identity.name+identity.dob"
+  },
+  {
+   "role": "caregiver",
+   "text": "Born 3 September 1986. *breath* I can't give you my name, sorry.",
+   "ts": "2026-10-15 00:36:48",
+   "kind": "answer",
+   "slot": "dyn:identity.name+identity.dob"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you, I've noted your birth date. What name should the team call you when you arrive? Even just your first name is fine.",
+   "ts": "2026-10-15 00:36:55",
+   "kind": "question",
+   "slot": "dyn:identity.name"
+  },
+  {
+   "role": "caregiver",
+   "text": "I'm sorry, I don't know what to tell you for that. The pain is really bad right now.",
+   "ts": "2026-10-15 00:36:57",
+   "kind": "answer",
+   "slot": "dyn:identity.name"
+  },
+  {
+   "role": "bot",
+   "text": "That's enough for the hospital team to prepare. Show the code TIGER-1818 at the counter when you arrive. I'll ask a few more things while you're on the way; tell me straight away if anything changes.",
+   "ts": "2026-10-15 00:37:00",
+   "kind": "ack"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you, I know the pain is really bad right now. Do you have a fever (and if you've measured it, what was the temperature), and have you noticed any new rash?",
+   "ts": "2026-10-15 00:37:04",
+   "kind": "question",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "No fever, and no rash. I haven't taken my temperature though.",
+   "ts": "2026-10-15 00:37:05",
+   "kind": "answer",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you, that's helpful. In the last two weeks, have you travelled overseas, or been around anyone who was sick with something catching?",
+   "ts": "2026-10-15 00:37:10",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I haven't travelled anywhere. I don't know about anyone being sick around me.",
+   "ts": "2026-10-15 00:37:12",
+   "kind": "answer",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you for letting me know. Does it burn or hurt when you pee, are you needing to go much more often than usual, or does your urine look cloudy or smell different?",
+   "ts": "2026-10-15 00:37:20",
+   "kind": "question",
+   "slot": "dyn:complaint.uti_symptoms"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know... I haven't noticed anything with my pee. It's just the belly pain, and it's really bad.",
+   "ts": "2026-10-15 00:37:21",
+   "kind": "answer",
+   "slot": "dyn:complaint.uti_symptoms"
+  },
+  {
+   "role": "bot",
+   "text": "I hear you, the belly pain is really bad, and I'll make sure the team knows. Compared with how you usually are, do you feel more muddled, more drowsy, or just not like yourself?",
+   "ts": "2026-10-15 00:37:30",
+   "kind": "question",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "caregiver",
+   "text": "I... don't know. I'm just in so much pain.",
+   "ts": "2026-10-15 00:37:32",
+   "kind": "answer",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "bot",
+   "text": "I'm so sorry you're in this much pain. Do you have any wound that looks red, feels hot, is swollen or oozing, or has a doctor told you that you have an infection?",
+   "ts": "2026-10-15 00:37:40",
+   "kind": "question",
+   "slot": "dyn:complaint.infection_signs"
+  },
+  {
+   "role": "caregiver",
+   "text": "No... no wound. No infection that I know of. It's just this pain in my lower belly.",
+   "ts": "2026-10-15 00:37:42",
+   "kind": "answer",
+   "slot": "dyn:complaint.infection_signs"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you for telling me, I know this is hard. Do you have any condition you already know about that can cause pain like this, such as kidney stones, cancer or sickle cell disease, and is there also strong pain in your side or back, between your ribs and your hip?",
+   "ts": "2026-10-15 00:37:51",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_cause_class+complaint.severe_flank_pain"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I don't have any other conditions. The pain is low in my belly, and I don't know about my side or back.",
+   "ts": "2026-10-15 00:37:53",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_cause_class+complaint.severe_flank_pain"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you, that helps. Could you be pregnant or have you missed a period, and are you having any vaginal bleeding that isn't your normal period?",
+   "ts": "2026-10-15 00:38:04",
+   "kind": "question",
+   "slot": "dyn:complaint.possible_ectopic_pregnancy+complaint.vaginal_bleeding"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, I'm 28 weeks pregnant. No bleeding at all.",
+   "ts": "2026-10-15 00:38:05",
+   "kind": "answer",
+   "slot": "dyn:complaint.possible_ectopic_pregnancy+complaint.vaginal_bleeding"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you for letting me know you're 28 weeks pregnant. Are you having any trouble breathing or feeling short of breath, and have you been throwing up?",
+   "ts": "2026-10-15 00:38:13",
+   "kind": "question",
+   "slot": "dyn:complaint.shortness_of_breath+complaint.vomiting"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know... I'm just in a lot of pain. I can't say about the breathing or throwing up.",
+   "ts": "2026-10-15 00:38:16",
+   "kind": "answer",
+   "slot": "dyn:complaint.shortness_of_breath+complaint.vomiting"
+  },
+  {
+   "role": "bot",
+   "text": "I hear that you're in a lot of pain, and that's okay. Have you swallowed anything that could be harmful, or taken more of a medicine than you should, and when did you last eat or drink, and what was it?",
+   "ts": "2026-10-15 00:38:24",
+   "kind": "question",
+   "slot": "dyn:complaint.known_toxic_ingestion+L.last_intake"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, nothing harmful, just my pregnancy vitamins. I last ate dinner last night.",
+   "ts": "2026-10-15 00:38:26",
+   "kind": "answer",
+   "slot": "dyn:complaint.known_toxic_ingestion+L.last_intake"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you for telling me about dinner. Just to be sure, have you taken more of your pregnancy vitamins, or any other pills, than you normally would?",
+   "ts": "2026-10-15 00:38:33",
+   "kind": "question",
+   "slot": "dyn:complaint.known_toxic_ingestion"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, just my usual vitamins. Nothing extra.",
+   "ts": "2026-10-15 00:38:34",
+   "kind": "answer",
+   "slot": "dyn:complaint.known_toxic_ingestion"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you, that's clear. Are you being treated for cancer, have you had an organ transplant, do you have HIV, or do you take steroids or any other medicine that weakens your body's defences against infection, or has a doctor ever told you your immune system is weak?",
+   "ts": "2026-10-15 00:38:43",
+   "kind": "question",
+   "slot": "dyn:history.immunocompromised"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, none of that. Just pregnancy vitamins, nothing else.",
+   "ts": "2026-10-15 00:38:44",
+   "kind": "answer",
+   "slot": "dyn:history.immunocompromised"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you, I know it may feel like I'm repeating myself. Has a doctor ever told you that your body has a harder time fighting off infections than most people's?",
+   "ts": "2026-10-15 00:38:52",
+   "kind": "question",
+   "slot": "dyn:history.immunocompromised"
+  },
+  {
+   "role": "caregiver",
+   "text": "No... nothing like that. *breath* Just the pregnancy.",
+   "ts": "2026-10-15 00:38:54",
+   "kind": "answer",
+   "slot": "dyn:history.immunocompromised"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you, and sorry for asking again. Just so I write it down correctly: apart from the pregnancy, you have no illness or medicine that makes it harder for you to fight off germs, is that right?",
+   "ts": "2026-10-15 00:39:04",
+   "kind": "question",
+   "slot": "dyn:history.immunocompromised"
+  },
+  {
+   "role": "caregiver",
+   "text": "Right, nothing like that. Just the pregnancy and my vitamins.",
+   "ts": "2026-10-15 00:39:05",
+   "kind": "answer",
+   "slot": "dyn:history.immunocompromised"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you, I've written that down. Is the pain low down in your belly, and only on one side?",
+   "ts": "2026-10-15 00:39:15",
+   "kind": "question",
+   "slot": "dyn:complaint.unilateral_lower_quadrant_pain"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, it's low in my belly. I don't know if it's only one side, it just feels like it's all across the bottom.",
+   "ts": "2026-10-15 00:39:16",
+   "kind": "answer",
+   "slot": "dyn:complaint.unilateral_lower_quadrant_pain"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you, I've noted that the pain is low and across the bottom of your belly. Have you had any fall, knock, or other injury to your belly recently?",
+   "ts": "2026-10-15 00:39:24",
+   "kind": "question",
+   "slot": "dyn:E.abdominal_trauma"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know of any. The pain just started this morning and it's getting worse.",
+   "ts": "2026-10-15 00:39:26",
+   "kind": "answer",
+   "slot": "dyn:E.abdominal_trauma"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you - that's everything. Show the code TIGER-1818 at the counter when you arrive.",
+   "ts": "2026-10-15 00:39:32",
+   "kind": "ack"
+  }
+ ],
+ "stage": "rest",
+ "floor": "at least ESI-2",
+ "phase": "enroute",
+ "opened": [],
+ "created": "2026-10-15 00:35",
+ "pending_slot": "dyn:E.abdominal_trauma",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {},
+ "considered": [
+  "B-02.severe-pain-consider",
+  "B-20.abdo-pain-refractory-constant-maximal",
+  "B-17.abdo-pain-pregnant-or-postpartum"
+ ],
+ "qr_ready": true,
+ "qr_turn": 11,
+ "said_done": true
+}

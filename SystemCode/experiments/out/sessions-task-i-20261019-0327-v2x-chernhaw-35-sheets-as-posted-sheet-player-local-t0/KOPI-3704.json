@@ -1,0 +1,365 @@
+{
+ "sid": "KOPI-3704",
+ "facts": {
+  "danger_signs.responsive": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-19 03:03"
+  },
+  "danger_signs.chest_pain_now": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-19 03:03"
+  },
+  "danger_signs.breathing_difficulty": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-19 03:03"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "injury",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 2,
+      "ts": "2026-10-19 03:03"
+     },
+     "text": {
+      "value": "fell at the playground and cut a knee; the bleeding stopped with pressure.",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 2,
+      "ts": "2026-10-19 03:03"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2
+  },
+  "complaint.category": {
+   "value": [
+    "injury"
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-19 03:03"
+  },
+  "complaint.text": {
+   "value": "fell at the playground and cut a knee; the bleeding stopped with pressure.",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-19 03:03"
+  },
+  "danger_signs.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-19 03:03"
+  },
+  "E.mechanism": {
+   "value": "fall",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 4,
+   "ts": "2026-10-19 03:03"
+  },
+  "patient.age": {
+   "value": 6,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 7,
+   "ts": "2026-10-19 03:04"
+  },
+  "patient.age_group": {
+   "value": "child",
+   "status": "reported",
+   "who": "derived",
+   "turn": 7,
+   "ts": "2026-10-19 03:04"
+  },
+  "complaint.fever": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 10,
+   "ts": "2026-10-19 03:04"
+  },
+  "infection.contacts": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 16,
+   "ts": "2026-10-19 03:05"
+  }
+ },
+ "attempts": {
+  "danger_signs.responsive": 1,
+  "danger_signs.chest_pain_now": 1,
+  "danger_signs.breathing_difficulty": 1,
+  "danger_signs.heavy_bleeding": 2,
+  "complaint.category": 1,
+  "complaint.onset": 3,
+  "E.mechanism": 1,
+  "patient.age": 1,
+  "patient.sex": 3,
+  "complaint.fever": 1,
+  "infection.rash": 3,
+  "infection.travel_14d": 3,
+  "infection.contacts": 2,
+  "ams.changed_from_baseline": 1,
+  "complaint.pain_rating": 1
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "Is the patient awake and responding to you normally? Also, is he or she experiencing any chest pain, trouble breathing, or heavy bleeding right now?",
+   "ts": "2026-10-19 03:03:14",
+   "kind": "question",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, the patient is awake and responding normally. No, the patient is not having chest pain right now.",
+   "ts": "2026-10-19 03:03:14",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "bot",
+   "text": "I'm glad to hear they are alert. Is the patient having any trouble breathing or heavy bleeding right now? Also, what is the main reason you are bringing them in?",
+   "ts": "2026-10-19 03:03:23",
+   "kind": "question",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, the patient is not having trouble breathing right now. No, the patient is not bleeding heavily right now. My child fell at the playground and cut a knee; the bleeding stopped with pressure.",
+   "ts": "2026-10-19 03:03:23",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category"
+  },
+  {
+   "role": "bot",
+   "text": "I understand the bleeding has slowed. Just to be sure for the team, is there any heavy bleeding occurring right now?",
+   "ts": "2026-10-19 03:03:40",
+   "kind": "question",
+   "slot": "dyn:danger_signs.heavy_bleeding"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, the patient is not bleeding heavily right now.",
+   "ts": "2026-10-19 03:03:40",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.heavy_bleeding"
+  },
+  {
+   "role": "bot",
+   "text": "I see. When did the fall happen, and can you tell me a bit more about how it happened?",
+   "ts": "2026-10-19 03:03:53",
+   "kind": "question",
+   "slot": "dyn:complaint.onset+E.mechanism"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know exactly when it started. The patient fell.",
+   "ts": "2026-10-19 03:03:53",
+   "kind": "answer",
+   "slot": "dyn:complaint.onset+E.mechanism"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. About how long ago did the fall happen?",
+   "ts": "2026-10-19 03:03:59",
+   "kind": "question",
+   "slot": "dyn:complaint.onset"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know exactly when it started.",
+   "ts": "2026-10-19 03:03:59",
+   "kind": "answer",
+   "slot": "dyn:complaint.onset"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. About how many minutes or hours ago did the fall occur?",
+   "ts": "2026-10-19 03:04:06",
+   "kind": "question",
+   "slot": "dyn:complaint.onset"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know exactly when it started.",
+   "ts": "2026-10-19 03:04:06",
+   "kind": "answer",
+   "slot": "dyn:complaint.onset"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Could you tell me the age and sex of the person who was injured?",
+   "ts": "2026-10-19 03:04:11",
+   "kind": "question",
+   "slot": "dyn:patient.age+patient.sex"
+  },
+  {
+   "role": "caregiver",
+   "text": "The patient is 6 years old. The patient\u2019s sex has not been specified as male or female.",
+   "ts": "2026-10-19 03:04:11",
+   "kind": "answer",
+   "slot": "dyn:patient.age+patient.sex"
+  },
+  {
+   "role": "bot",
+   "text": "Is the child a boy or a girl?",
+   "ts": "2026-10-19 03:04:17",
+   "kind": "question",
+   "slot": "dyn:patient.sex"
+  },
+  {
+   "role": "caregiver",
+   "text": "The patient\u2019s sex has not been specified as male or female.",
+   "ts": "2026-10-19 03:04:17",
+   "kind": "answer",
+   "slot": "dyn:patient.sex"
+  },
+  {
+   "role": "bot",
+   "text": "To help the team prepare, is the child a boy or a girl?",
+   "ts": "2026-10-19 03:04:23",
+   "kind": "question",
+   "slot": "dyn:patient.sex"
+  },
+  {
+   "role": "caregiver",
+   "text": "The patient\u2019s sex has not been specified as male or female.",
+   "ts": "2026-10-19 03:04:23",
+   "kind": "answer",
+   "slot": "dyn:patient.sex"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Does the child have a fever or any new rashes?",
+   "ts": "2026-10-19 03:04:29",
+   "kind": "question",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, the patient does not have fever. I do not know whether the patient has a rash.",
+   "ts": "2026-10-19 03:04:29",
+   "kind": "answer",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Does the child have any new rashes?",
+   "ts": "2026-10-19 03:04:35",
+   "kind": "question",
+   "slot": "dyn:infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient has a rash.",
+   "ts": "2026-10-19 03:04:35",
+   "kind": "answer",
+   "slot": "dyn:infection.rash"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Can you tell me if there are any new rashes on the child's skin?",
+   "ts": "2026-10-19 03:04:41",
+   "kind": "question",
+   "slot": "dyn:infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient has a rash.",
+   "ts": "2026-10-19 03:04:41",
+   "kind": "answer",
+   "slot": "dyn:infection.rash"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Has the child traveled outside the country or been in contact with anyone who is sick in the last two weeks?",
+   "ts": "2026-10-19 03:04:47",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient travelled in the last 14 days. I do not know of any sick contacts.",
+   "ts": "2026-10-19 03:04:47",
+   "kind": "answer",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Has the child been on any trips outside of the country in the last two weeks?",
+   "ts": "2026-10-19 03:04:54",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient travelled in the last 14 days.",
+   "ts": "2026-10-19 03:04:54",
+   "kind": "answer",
+   "slot": "dyn:infection.travel_14d"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. To clarify, has the child been on any trips outside of the country in the last 14 days?",
+   "ts": "2026-10-19 03:05:00",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient travelled in the last 14 days.",
+   "ts": "2026-10-19 03:05:00",
+   "kind": "answer",
+   "slot": "dyn:infection.travel_14d"
+  },
+  {
+   "role": "bot",
+   "text": "Has the child been around anyone who has been sick or had a contagious illness lately?",
+   "ts": "2026-10-19 03:05:05",
+   "kind": "question",
+   "slot": "dyn:infection.contacts"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know of any sick contacts.",
+   "ts": "2026-10-19 03:05:05",
+   "kind": "answer",
+   "slot": "dyn:infection.contacts"
+  },
+  {
+   "role": "bot",
+   "text": "Is the child acting like themselves, or are they unusually sleepy or confused? Also, on a scale of 0 to 10, how much pain is the child in right now?",
+   "ts": "2026-10-19 03:05:13",
+   "kind": "question",
+   "slot": "dyn:ams.changed_from_baseline+complaint.pain_rating"
+  }
+ ],
+ "stage": "floor",
+ "floor": null,
+ "phase": "enroute",
+ "created": "2026-10-19 03:03",
+ "pending_slot": "dyn:ams.changed_from_baseline+complaint.pain_rating",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {}
+}

@@ -1,0 +1,24 @@
+session OTTER-1721   started 2026-09-26 03:32   (generated from messages)
+
+03:32:01  BOT  Is the patient awake and responding normally, and are they experiencing any severe chest pain, trouble breathing, or heavy bleeding right now?   [slot red_flags.screen]
+03:32:02  THEM She is awake and talking. No, she isn't having chest pain, trouble breathing, or heavy bleeding.   [slot red_flags.screen]
+03:32:06  BOT  Can you tell me what happened, when it started, and how bad the pain is on a scale of 0 to 10?   [slot complaint.main]
+03:32:08  THEM She's had a fever since this afternoon and is shivering and very tired. I'm not sure about the pain level.   [slot complaint.main]
+03:32:12  BOT  Could you tell me how much pain she is in on a scale of 0 to 10?   [slot complaint.main]
+03:32:13  THEM I'm not sure how to rate her pain on a scale. She is just very tired and has been shivering.   [slot complaint.main]
+03:32:16  BOT  Could you try to estimate her pain level on a scale of 0 to 10 to help the team?   [slot complaint.main]
+03:32:17  THEM I'm not sure, I haven't asked her about a specific pain level.   [slot complaint.main]
+03:32:19  BOT  Does she take any regular medications?   [slot M.medications]
+03:32:20  THEM She takes "the chemo tablets" and omeprazole.   [slot M.medications]
+03:32:23  BOT  Does she have any allergies to medication or other conditions like heart problems, diabetes, or pregnancy?   [slot allergies_and_history]
+03:32:24  THEM No, she has no known allergies.   [slot allergies_and_history]
+03:32:27  BOT  Does she have any other conditions, such as being pregnant, postpartum, or having a weakened immune system?   [slot allergies_and_history]
+03:32:28  THEM She is undergoing chemotherapy for breast cancer.   [slot allergies_and_history]
+03:32:29  SYS  floor: at least ESI-2  rules: ['B-07.immunocompromised-fever'] (floor)
+03:32:31  BOT  Is she currently pregnant or in the postpartum period?   [slot allergies_and_history]
+03:32:32  THEM No, she is not.   [slot allergies_and_history]
+03:32:34  BOT  Has she had any rashes, traveled overseas in the last two weeks, or been in contact with anyone who is unwell?   [slot infection.screen]
+03:32:36  THEM No, she hasn't had any rashes, no recent travel, and no contact with anyone unwell.   [slot infection.screen]
+03:32:39  BOT  Could you please tell me when she last ate or drank, and provide her name and date of birth for the hospital's records?   [slot wrapup]
+03:32:40  THEM She last drank some tea at 4pm. Her name is not provided, but her date of birth is 30 Jun 1975.   [slot wrapup]
+03:32:42  BOT  Thank you - that's everything for now. Show the code OTTER-1721 at the counter when you arrive. (ack)

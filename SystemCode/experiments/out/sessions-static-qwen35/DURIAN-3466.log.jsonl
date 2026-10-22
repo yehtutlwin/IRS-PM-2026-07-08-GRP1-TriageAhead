@@ -1,0 +1,21 @@
+{"t": "03:47:05", "kind": "engine", "note": "session DURIAN-3466 started (web)"}
+{"t": "03:47:05", "kind": "question", "slot": "red_flags.screen", "text": "Are you awake and responding normally without severe chest pain, trouble breathing, or heavy bleeding right now?"}
+{"t": "03:47:06", "kind": "answer", "slot": "red_flags.screen", "text": "He is awake and breathing normally but answers slowly; there is no chest pain, trouble breathing, vomiting of blood, or black stools."}
+{"t": "03:47:08", "kind": "extract", "writes": [["red_flags.responsive", true], ["red_flags.chest_pain_now", false], ["red_flags.breathing_difficulty", false], ["red_flags.heavy_bleeding", false]]}
+{"t": "03:47:09", "kind": "question", "slot": "complaint.main", "text": "Can you tell me what happened, when it started, and how bad the pain is on a scale of 0 to 10?"}
+{"t": "03:47:09", "kind": "answer", "slot": "complaint.main", "text": "His symptoms started over the past two days with increasing abdominal swelling, yellow eyes, and confusion. He reports mild abdominal discomfort, rating it 3/10."}
+{"t": "03:47:11", "kind": "extract", "writes": [["complaint.text", "increasing abdominal swelling, yellow eyes, and confusion", "abdominal_pain"], ["complaint.onset", "over the past two days", "abdominal_pain"], ["complaint.pain_rating", 3, "abdominal_pain"]]}
+{"t": "03:47:11", "kind": "extract", "writes": [["E.mechanism", "none"]], "via": "derived-non-injury"}
+{"t": "03:47:12", "kind": "question", "slot": "M.medications", "text": "Do you take any regular medications?"}
+{"t": "03:47:13", "kind": "answer", "slot": "M.medications", "text": "Yes, he takes lactulose, spironolactone, and furosemide, though he missed several doses of lactulose this week. He has no known allergies and is not on blood thinners."}
+{"t": "03:47:14", "kind": "extract", "writes": [["M.medications", ["lactulose", "spironolactone", "furosemide"]], ["A.allergies", []], ["confirm.M.anticoagulant", null]]}
+{"t": "03:47:15", "kind": "question", "slot": "allergies_and_history", "text": "Could you please tell us about any other medical conditions, such as heart problems, diabetes, pregnancy, or if your immune system is weakened?"}
+{"t": "03:47:16", "kind": "answer", "slot": "allergies_and_history", "text": "He has cirrhosis caused by chronic hepatitis B. There are no other mentioned medical conditions like heart problems, diabetes, pregnancy, or a weakened immune system in his history."}
+{"t": "03:47:17", "kind": "extract", "writes": [["history.conditions", ["cirrhosis", "chronic hepatitis B"]], ["history.immunocompromised", false], ["history.pregnant_or_postpartum", false]]}
+{"t": "03:47:18", "kind": "question", "slot": "infection.screen", "text": "Could you please tell us if he has had any fever, rash, overseas travel in the last two weeks, or contact with anyone who is infectious?"}
+{"t": "03:47:19", "kind": "answer", "slot": "infection.screen", "text": "He has no fever and reports only mild abdominal discomfort. He has not mentioned a rash, overseas travel, or contact with anyone who is infectious."}
+{"t": "03:47:21", "kind": "extract", "writes": [["infection.fever", false], ["infection.rash", false], ["infection.travel_14d", false], ["infection.contacts", false], ["complaint.category", "abdominal_pain"], ["complaint.text", "mild abdominal discomfort"]]}
+{"t": "03:47:22", "kind": "question", "slot": "wrapup", "text": "Could you please tell us when he last ate or drank, along with his name and date of birth for our records?"}
+{"t": "03:47:23", "kind": "answer", "slot": "wrapup", "text": "He last ate a small bowl of rice at noon. His name is not provided in my description, but his date of birth is July 7, 1968."}
+{"t": "03:47:24", "kind": "extract", "writes": [["L.last_intake", "small bowl of rice at noon"], ["identity.name", null], ["identity.dob", "July 7, 1968"]]}
+{"t": "03:47:24", "kind": "engine", "note": "interview complete - no open slots"}

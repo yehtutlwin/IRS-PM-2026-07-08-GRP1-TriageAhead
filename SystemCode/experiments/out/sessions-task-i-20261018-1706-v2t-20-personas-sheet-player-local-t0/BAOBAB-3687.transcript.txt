@@ -1,0 +1,31 @@
+session BAOBAB-3687   started 2026-10-18 16:37   (generated from messages)
+
+16:37:12  BOT  Is the patient awake and responding to you normally? Also, is he or she experiencing any chest pain, trouble breathing, or heavy bleeding right now?   [slot dyn:danger_signs.responsive+danger_signs.chest_pain_now]
+16:37:12  THEM Yes, she's awake and talking. No chest pain.   [slot dyn:danger_signs.responsive+danger_signs.chest_pain_now]
+16:37:20  BOT  I'm glad she's awake. Is she having any trouble breathing or is there any heavy bleeding? Also, could you tell me what the main problem is and what's happening?   [slot dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category+complaint.text]
+16:37:20  THEM No trouble breathing. No. She's had a fever since this afternoon, 38.6 on our thermometer, shivering and very tired. She's on chemotherapy for breast cancer.   [slot dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category+complaint.text]
+16:37:36  SYS  floor: at least ESI-2  rules: ['B-07.immunocompromised-fever'] (floor)
+16:37:39  BOT  I understand she has a fever. How old is she, and exactly what time did the fever start?   [slot dyn:complaint.onset+patient.age]
+16:37:39  THEM Since this afternoon. She's 51.   [slot dyn:complaint.onset+patient.age]
+16:37:47  BOT  I've noted her age and the fever. To help the team, could you tell me her name and date of birth?   [slot dyn:patient.sex]
+16:37:47  THEM Female.   [slot dyn:patient.sex]
+16:37:53  BOT  I've noted that. Could you please tell me her full name and date of birth?   [slot dyn:M.medications+identity.name+identity.dob]
+16:37:53  THEM The chemo tablets, capecitabine, and omeprazole. Chen Li Hua. 30 June 1975.   [slot dyn:M.medications+identity.name+identity.dob]
+16:38:02  BOT  I have her details. Does she have any allergies, especially to medications?   [slot dyn:A.allergies]
+16:38:02  THEM None.   [slot dyn:A.allergies]
+16:38:08  BOT  I've noted her details. Besides her cancer treatment, does she have any other ongoing medical conditions?   [slot dyn:history.conditions]
+16:38:08  THEM Breast cancer, on chemotherapy.   [slot dyn:history.conditions]
+16:38:20  BOT  That's enough for the hospital team to prepare. Show the code BAOBAB-3687 at the counter when you arrive. I'll ask a few more things while you're on the way; tell me straight away if anything changes. (ack)
+16:38:23  BOT  Is she currently pregnant or has she given birth in the last few weeks?   [slot dyn:history.pregnant+history.postpartum]
+16:38:23  THEM No.   [slot dyn:history.pregnant+history.postpartum]
+16:38:31  BOT  Has she developed any new rashes, or has she traveled abroad or been in contact with anyone who is sick in the last two weeks?   [slot dyn:infection.rash+infection.travel_14d]
+16:38:31  THEM No rash. No.   [slot dyn:infection.rash+infection.travel_14d]
+16:38:38  BOT  I understand. Has she been in contact with anyone who has an infectious illness in the last two weeks?   [slot dyn:infection.contacts]
+16:38:38  THEM No.   [slot dyn:infection.contacts]
+16:38:45  BOT  Thank you for that information. Have you taken her temperature, and if so, what was it?   [slot dyn:vitals.temp_c]
+16:38:45  THEM 38.6.   [slot dyn:vitals.temp_c]
+16:38:51  BOT  On a scale of 0 to 10, where 10 is the worst pain imaginable, how bad is her pain right now?   [slot dyn:complaint.pain_rating]
+16:38:51  THEM She has no pain, 0.   [slot dyn:complaint.pain_rating]
+16:38:58  BOT  I've noted that she isn't in any pain. When was the last time she had anything to eat or drink?   [slot dyn:L.last_intake]
+16:38:58  THEM Some tea at 4pm.   [slot dyn:L.last_intake]
+16:39:09  BOT  Thank you - that's everything. Show the code BAOBAB-3687 at the counter when you arrive. (ack)

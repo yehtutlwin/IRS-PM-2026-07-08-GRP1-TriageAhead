@@ -1,0 +1,52 @@
+arm B, form rules, persona ND-P27-resolved-speech-change, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  Is the patient awake and responding normally?
+A1  Yes, the patient is awake and can respond.
+
+Q2  Is the patient having chest pain right now?
+A2  No.
+
+Q3  Is the patient having trouble breathing right now?
+A3  No.
+
+Q4  Is the patient bleeding heavily right now?
+A4  No.
+
+Q5  What is the main reason the patient is coming to the emergency department?
+A5  Her speech suddenly became slurred for about ten minutes. It sounds normal now.
+
+Q6  Was the slurred speech accompanied by any other symptoms like a drooping face, weakness in an arm or leg, or sudden confusion?
+A6  I don't know.
+
+Q7  Did the slurred speech happen suddenly, and did it occur along with any other symptoms like a drooping face, weakness in an arm or leg, or sudden confusion?
+A7  Her speech suddenly became slurred for about ten minutes. It sounds normal now.
+
+Q8  Was the slurred speech accompanied by any other symptoms like a drooping face, weakness in an arm or leg, or sudden confusion?
+A8  I don't know.
+
+Q9  Did the patient have any other symptoms like a drooping face, weakness in an arm or leg, or sudden confusion during the time her speech was slurred?
+A9  I don't know.
+
+Q10  During the time her speech was slurred, did she have any other symptoms like a drooping face, weakness in an arm or leg, or sudden confusion?
+A10  I don't know.
+
+Q11  Is the patient currently experiencing any other symptoms, such as a drooping face, weakness in an arm or leg, or sudden confusion?
+A11  I don't know.
+
+Q12  Is the patient currently experiencing any other symptoms, such as a drooping face, weakness in an arm or leg, or sudden confusion?
+A12  I don't know.
+
+Q13  During the time her speech was slurred, did she have any other symptoms like a drooping face, weakness in an arm or leg, or sudden confusion?
+A13  I don't know.
+
+Q14  Was the slurred speech accompanied by a sudden, severe headache, or any other symptoms like a drooping face, weakness in an arm or leg, or sudden confusion?
+A14  I don't know.
+
+Q15  Is the patient currently experiencing any other symptoms, such as a drooping face, weakness in an arm or leg, or sudden confusion?
+A15  I don't know.
+
+Q16  Is the patient currently experiencing any other symptoms, such as a drooping face, weakness in an arm or leg, or sudden confusion?
+A16  I don't know.
+
+DECISION {"decision": "unparsed", "reason": "turn limit reached without a decision"}
+OUTCOME no decision in 16 questions | expected at least ESI-2 | pass False | label missing fact | max prompt tokens 44174

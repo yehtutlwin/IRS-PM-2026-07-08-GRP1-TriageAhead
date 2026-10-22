@@ -1,0 +1,31 @@
+{
+ "persona_backend": "ollama",
+ "persona_model": "gemma4:12b",
+ "interview": {
+  "interview_mode": "dynamic",
+  "backend": "ollama",
+  "model": "gemma4:12b",
+  "dyn_max_fields": 4
+ },
+ "tag": "v2-dynamic",
+ "results": [
+  {
+   "questions": 17,
+   "reasks": 1,
+   "floor": null,
+   "floor_ok": false,
+   "rules_ok": false,
+   "fired": [],
+   "hits": 8,
+   "total": 9,
+   "misses": [
+    "infection.fever: want=False got=None"
+   ],
+   "danger_miss": false,
+   "persona": "P1-fall-anticoag",
+   "run": 1,
+   "session": "PANDA-8918",
+   "turns": 16
+  }
+ ]
+}

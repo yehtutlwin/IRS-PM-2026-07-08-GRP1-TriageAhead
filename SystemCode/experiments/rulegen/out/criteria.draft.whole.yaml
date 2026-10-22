@@ -1,0 +1,142 @@
+- id: A-61.intubated
+  decision_point: A
+  when:
+    field: obs.intubated
+    equals: true
+  assessed_via: observed
+  provenance: verbatim
+  source: ESI v5 p.6 (ESI Triage Algorithm, Version 5)
+  span: intubated
+- id: A-62.unresponsive-nonverbal-not-following-commands
+  decision_point: A
+  when:
+    all:
+    - field: obs.nonverbal_acute
+      equals: true
+    - field: obs.not_following_commands
+      equals: true
+  assessed_via: observed
+  provenance: verbatim
+  source: ESI v5 p.6 (ESI Triage Algorithm, Version 5)
+  span: Is nonverbal and not following commands (acutely)
+- id: A-63.pulselessness
+  decision_point: A
+  when:
+    field: obs.pulseless
+    equals: true
+  assessed_via: observed
+  provenance: verbatim
+  source: ESI v5 p.6 (ESI Triage Algorithm, Version 5)
+  span: pulselessness
+- id: A-65.severe-respiratory-distress
+  decision_point: A
+  when:
+    field: obs.severe_respiratory_distress
+    equals: true
+  assessed_via: observed
+  provenance: verbatim
+  source: ESI v5 p.6 (ESI Triage Algorithm, Version 5)
+  span: severe respiratory distress
+- id: A-66.profound-hypotension
+  decision_point: A
+  when:
+    field: vitals.hypotension
+    equals: true
+  assessed_via: vitals
+  provenance: verbatim
+  source: ESI v5 p.6 (ESI Triage Algorithm, Version 5)
+  span: profound hypotension
+- id: A-67.profound-hypoglycemia
+  decision_point: A
+  when:
+    field: vitals.profound_hypoglycemia
+    equals: true
+  assessed_via: vitals
+  provenance: verbatim
+  source: ESI v5 p.6 (ESI Triage Algorithm, Version 5)
+  span: hypoglycemia
+- id: B-61.neonate-fever
+  decision_point: B
+  when:
+    all:
+    - field: patient.age_days
+      lte: 28
+    - field: vitals.temp_c
+      gt: 38.0
+  assessed_via: vitals
+  provenance: verbatim
+  source: ESI v5 p.6 (ESI Triage Algorithm, Version 5)
+  span: '1-28 days of age: Assign at least ESI 2 if T > 38° C (100.4 ° F)'
+- id: B-62.infant-1-3m-fever
+  decision_point: B
+  when:
+    all:
+    - field: patient.age_months
+      gte: 1
+    - field: patient.age_months
+      lte: 3
+    - field: vitals.temp_c
+      gt: 38.0
+  effect_override: consider
+  assessed_via: vitals
+  provenance: verbatim
+  source: ESI v5 p.6 (ESI Triage Algorithm, Version 5)
+  span: '1-3 months: Consider assigning ESI 2 if T > 38 ° C (100.4 ° F)'
+- id: B-63.severe-pain-rating
+  decision_point: B
+  when:
+    field: complaint.pain_rating
+    gte: 7
+  effect_override: consider
+  assessed_via: reported
+  provenance: verbatim
+  source: 'ESI v5 p.12 (Decision Point B: High-Risk Presentation?)'
+  span: All patients who have a pain rating of 7/10 or greater should be considered for meeting ESI level-2
+    criteria.
+- id: B-64.cannot-manage-secretions-or-stridor
+  decision_point: B
+  when:
+    any:
+    - field: obs.cannot_manage_secretions
+      equals: true
+    - field: obs.stridor
+      equals: true
+  assessed_via: observed
+  provenance: verbatim
+  source: 'ESI v5 p.13 (Decision Point B: High-Risk Presentation?)'
+  span: Patients who are unable to manage their own secretions and/or exhibit respiratory stridor are
+    extremely high-risk patients and should be assigned an ESI level of 2.
+- id: B-65.high-risk-epistaxis
+  decision_point: B
+  when:
+    any:
+    - field: complaint.brisk_or_posterior_bleeding
+      equals: true
+    - field: history.thrombocytopenia_or_clotting_disorder
+      equals: true
+    - field: M.anticoagulant.status
+      equals: true
+  assessed_via: reported
+  provenance: verbatim
+  source: 'ESI v5 p.13 (Decision Point B: High-Risk Presentation?)'
+  span: Examples include brisk bleeding secondary to posterior nosebleed or when experienced by a patient
+    with known thrombocytopenia, clotting dyscrasias, and use of warfarin or other anti-coagulants
+- id: D-61.adult-high-risk-vitals
+  decision_point: D
+  when:
+    all:
+    - field: patient.age
+      gt: 18
+    - any:
+      - field: vitals.heart_rate
+        gt: 100
+      - field: vitals.respiratory_rate
+        gt: 20
+      - field: vitals.spo2
+        lt: 92
+  effect_override: reassess_uptriage_consider
+  assessed_via: vitals
+  provenance: verbatim
+  source: ESI v5 p.6 (ESI Triage Algorithm, Version 5)
+  span: Reassess to determine whether the patient warrants a higher acuity level if a patient has one
+    or more vital signs outside the normal parameters for the patient.

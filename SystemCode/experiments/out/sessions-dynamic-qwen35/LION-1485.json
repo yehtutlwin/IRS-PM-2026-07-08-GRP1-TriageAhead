@@ -1,0 +1,364 @@
+{
+ "sid": "LION-1485",
+ "facts": {
+  "red_flags.responsive": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-09-26 03:48"
+  },
+  "red_flags.chest_pain_now": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-09-26 03:48"
+  },
+  "red_flags.breathing_difficulty": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-09-26 03:48"
+  },
+  "red_flags.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-09-26 03:48"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "chest_pain",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "persona",
+      "turn": 1,
+      "ts": "2026-09-26 03:48"
+     },
+     "pain_rating": {
+      "value": 6,
+      "status": "reported",
+      "who": "persona",
+      "turn": 1,
+      "ts": "2026-09-26 03:48"
+     },
+     "text": {
+      "value": "I feel a bit scared because of my chest pain.",
+      "status": "reported",
+      "who": "persona",
+      "turn": 2,
+      "ts": "2026-09-26 03:48"
+     },
+     "onset": {
+      "value": "now",
+      "status": "reported",
+      "who": "persona",
+      "turn": 1,
+      "ts": "2026-09-26 03:48"
+     },
+     "onset_abs": {
+      "value": "~2026-09-26 03:48",
+      "status": "reported",
+      "who": "derived",
+      "turn": 1,
+      "ts": "2026-09-26 03:48"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 1
+  },
+  "complaint.category": {
+   "value": [
+    "chest_pain"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-09-26 03:48"
+  },
+  "complaint.pain_rating": {
+   "value": 6,
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-09-26 03:48"
+  },
+  "complaint.pain_latest": {
+   "value": 6,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-09-26 03:48"
+  },
+  "complaint.text": {
+   "value": "I feel a bit scared because of my chest pain.",
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-09-26 03:48"
+  },
+  "complaint.onset": {
+   "value": "now",
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-09-26 03:48"
+  },
+  "chest_pain_suspicious": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-09-26 03:48"
+  },
+  "complaint.onset_abs": {
+   "value": "~2026-09-26 03:48 (from 'now' said 03:48)",
+   "status": "reported",
+   "who": "derived",
+   "turn": 1,
+   "ts": "2026-09-26 03:48"
+  },
+  "complaint.acs_suspicion": {
+   "value": true,
+   "status": "reported",
+   "who": "derived",
+   "turn": 1,
+   "ts": "2026-09-26 03:48"
+  },
+  "E.mechanism": {
+   "value": "none",
+   "status": "reported",
+   "who": "derived",
+   "turn": 1,
+   "ts": "2026-09-26 03:48"
+  },
+  "M.medications": {
+   "value": [],
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-09-26 03:48"
+  },
+  "A.allergies": {
+   "value": [],
+   "status": "reported",
+   "who": "persona",
+   "turn": 4,
+   "ts": "2026-09-26 03:48"
+  },
+  "history.conditions": {
+   "value": [],
+   "status": "reported",
+   "who": "persona",
+   "turn": 4,
+   "ts": "2026-09-26 03:48"
+  },
+  "history.pregnant_or_postpartum": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-09-26 03:48"
+  },
+  "history.immunocompromised": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 4,
+   "ts": "2026-09-26 03:48"
+  },
+  "infection.fever": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 6,
+   "ts": "2026-09-26 03:48"
+  },
+  "infection.rash": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 6,
+   "ts": "2026-09-26 03:48"
+  },
+  "infection.contacts": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 6,
+   "ts": "2026-09-26 03:48"
+  },
+  "identity.name": {
+   "value": "[Name]",
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-09-26 03:48"
+  },
+  "identity.dob": {
+   "value": "May 14, 1975",
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-09-26 03:48"
+  },
+  "L.last_intake": {
+   "value": "breakfast toast at 8 am",
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-09-26 03:48"
+  },
+  "L.last_intake_abs": {
+   "value": "~2026-09-26 08:00 (from 'breakfast toast at 8 am' said 03:48)",
+   "status": "reported",
+   "who": "derived",
+   "turn": 5,
+   "ts": "2026-09-26 03:48"
+  },
+  "patient.age": {
+   "value": 51,
+   "status": "probable",
+   "who": "derived",
+   "turn": 5,
+   "ts": "2026-09-26 03:48"
+  },
+  "infection.travel_14d": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 6,
+   "ts": "2026-09-26 03:48"
+  }
+ },
+ "attempts": {
+  "red_flags.responsive": 1,
+  "red_flags.chest_pain_now": 1,
+  "red_flags.breathing_difficulty": 1,
+  "red_flags.heavy_bleeding": 1,
+  "M.medications": 1,
+  "A.allergies": 1,
+  "history.conditions": 1,
+  "history.immunocompromised": 1,
+  "infection.fever": 1,
+  "infection.rash": 1,
+  "infection.travel_14d": 3,
+  "L.last_intake": 1,
+  "identity.name": 1,
+  "identity.dob": 1
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "Hello, we need to check for any immediate danger right now. Is the person awake and responding normally? Are they having severe chest pain, trouble breathing, or heavy bleeding?",
+   "ts": "2026-09-26 03:47:59",
+   "kind": "question",
+   "slot": "dyn:red_flags.responsive+red_flags.chest_pain_now+red_flags.breathing_difficulty+red_flags.heavy_bleeding"
+  },
+  {
+   "role": "caregiver",
+   "text": "I'm awake and responding, though I feel a bit scared. My chest pain is 6/10 and spreading to my left arm, and I am having trouble breathing.",
+   "ts": "2026-09-26 03:48:00",
+   "kind": "answer",
+   "slot": "dyn:red_flags.responsive+red_flags.chest_pain_now+red_flags.breathing_difficulty+red_flags.heavy_bleeding"
+  },
+  {
+   "role": "system",
+   "text": "floor: at least ESI-2  rules: ['B-04.chest-pain-acs-suspect']",
+   "ts": "2026-09-26 03:48:02",
+   "kind": "floor"
+  },
+  {
+   "role": "bot",
+   "text": "I understand you're feeling scared; to help our team prepare, do you take any regular medications, and do you have any allergies to medicines?",
+   "ts": "2026-09-26 03:48:03",
+   "kind": "question",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I don't take any regular medications and I have no known allergies. I feel a bit scared because of my chest pain.",
+   "ts": "2026-09-26 03:48:04",
+   "kind": "answer",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "bot",
+   "text": "To help our team prepare for your care, do you have any medical conditions such as heart problems, diabetes, or are you pregnant?",
+   "ts": "2026-09-26 03:48:07",
+   "kind": "question",
+   "slot": "dyn:history.conditions"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I don't know of any medical conditions; I have no known issues. I am not pregnant.",
+   "ts": "2026-09-26 03:48:07",
+   "kind": "answer",
+   "slot": "dyn:history.conditions"
+  },
+  {
+   "role": "bot",
+   "text": "To help our team prepare, do you have any allergies to medicines or other conditions like diabetes or heart problems? Also, have you had a fever, rash, traveled overseas in the last two weeks, or been around anyone who is sick?",
+   "ts": "2026-09-26 03:48:10",
+   "kind": "question",
+   "slot": "dyn:history.immunocompromised+infection.fever+infection.rash+infection.travel_14d"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I don't have any known conditions or allergies. I haven't had a fever, rash, or been near anyone sick recently.",
+   "ts": "2026-09-26 03:48:11",
+   "kind": "answer",
+   "slot": "dyn:history.immunocompromised+infection.fever+infection.rash+infection.travel_14d"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you for that information. To help us get your name and date of birth on file, and to see how long it's been since you last ate or drank anything, could you please tell us those details?",
+   "ts": "2026-09-26 03:48:14",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d+L.last_intake+identity.name+identity.dob"
+  },
+  {
+   "role": "caregiver",
+   "text": "My name is [Name] and I was born on May 14, 1975. It's been about four hours since I had breakfast toast at 8 am.",
+   "ts": "2026-09-26 03:48:15",
+   "kind": "answer",
+   "slot": "dyn:infection.travel_14d+L.last_intake+identity.name+identity.dob"
+  },
+  {
+   "role": "bot",
+   "text": "Could you please confirm if you have had any fever, rash, traveled overseas, or been around someone who is sick in the last two weeks?",
+   "ts": "2026-09-26 03:48:18",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I haven't had a fever, rash, traveled, or been around anyone sick. My husband is driving me in because of my chest pain and shortness of breath.",
+   "ts": "2026-09-26 03:48:19",
+   "kind": "answer",
+   "slot": "dyn:infection.travel_14d"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you - that's everything for now. Show the code LION-1485 at the counter when you arrive.",
+   "ts": "2026-09-26 03:48:20",
+   "kind": "ack"
+  }
+ ],
+ "active_ids": [],
+ "floor": "at least ESI-2",
+ "phase": "enroute",
+ "opened": [],
+ "created": "2026-09-26 03:47",
+ "pending_slot": "dyn:infection.travel_14d",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {},
+ "said_done": true
+}

@@ -1,0 +1,5040 @@
+{
+ "label": "gemini",
+ "cases": 187,
+ "totals": {
+  "agree": 1431,
+  "value differs": 76,
+  "only ours": 294,
+  "only theirs": 146,
+  "theirs, no such field": 0
+ },
+ "outcome_changes": [
+  [
+   "ch9-42",
+   "esi1",
+   "floor2",
+   "esi1",
+   [
+    "A-01.unresponsive",
+    "B-32.thunderclap-headache",
+    "B-34.headache-red-flags",
+    "B-38.pregnant-chest-pain-breathlessness-abdo-pain-or-headache"
+   ],
+   [
+    "B-34.headache-red-flags",
+    "B-38.pregnant-chest-pain-breathlessness-abdo-pain-or-headache"
+   ]
+  ],
+  [
+   "ch9-95",
+   "none",
+   "esi1",
+   "none",
+   [],
+   [
+    "A-01.unresponsive"
+   ]
+  ],
+  [
+   "A-8",
+   "floor2",
+   "none",
+   "floor2",
+   [
+    "B-12.increasing-respiratory-effort"
+   ],
+   []
+  ],
+  [
+   "A-10",
+   "esi1",
+   "none",
+   "esi1",
+   [
+    "A-05.severe-respiratory-distress",
+    "A-14.penetrating-trauma-unstable",
+    "A-22.requires-lifesaving-intervention"
+   ],
+   []
+  ],
+  [
+   "A-18",
+   "esi1",
+   "floor2",
+   "esi1",
+   [
+    "A-10.hypotension-with-hypoperfusion",
+    "B-04.chest-pain-acs-suspect",
+    "B-36.abnormal-ecg-chest-pain"
+   ],
+   [
+    "B-04.chest-pain-acs-suspect",
+    "B-36.abnormal-ecg-chest-pain"
+   ]
+  ],
+  [
+   "A-24",
+   "esi1",
+   "none",
+   "esi1",
+   [
+    "A-10.hypotension-with-hypoperfusion"
+   ],
+   []
+  ],
+  [
+   "B-20",
+   "esi1",
+   "none",
+   "esi1",
+   [
+    "A-14.penetrating-trauma-unstable",
+    "A-22.requires-lifesaving-intervention"
+   ],
+   []
+  ],
+  [
+   "B-25",
+   "esi1",
+   "floor2",
+   "esi1",
+   [
+    "A-05.severe-respiratory-distress",
+    "B-12.increasing-respiratory-effort"
+   ],
+   [
+    "B-12.increasing-respiratory-effort"
+   ]
+  ],
+  [
+   "ch9-2",
+   "esi1",
+   "floor2",
+   "esi1",
+   [
+    "A-08.spo2-below-90-with-compromise",
+    "A-22.requires-lifesaving-intervention",
+    "B-01.new-altered-mental-status",
+    "B-26.suspected-toxic-ingestion"
+   ],
+   [
+    "B-01.new-altered-mental-status",
+    "B-09.suicidal-or-homicidal",
+    "B-26.suspected-toxic-ingestion"
+   ]
+  ],
+  [
+   "ch9-8",
+   "none",
+   "floor2",
+   "none",
+   [],
+   [
+    "B-29.pediatric-subtle-ams"
+   ]
+  ],
+  [
+   "ch9-16",
+   "esi1",
+   "none",
+   "esi1",
+   [
+    "A-10.hypotension-with-hypoperfusion",
+    "A-22.requires-lifesaving-intervention"
+   ],
+   []
+  ],
+  [
+   "ch9-22",
+   "esi1",
+   "none",
+   "esi1",
+   [
+    "A-05.severe-respiratory-distress",
+    "A-22.requires-lifesaving-intervention",
+    "B-12.increasing-respiratory-effort"
+   ],
+   []
+  ],
+  [
+   "ch9-37",
+   "esi1",
+   "none",
+   "esi1",
+   [
+    "A-10.hypotension-with-hypoperfusion",
+    "A-12.severe-brady-or-tachycardia",
+    "A-17.chest-pain-unstable-lifesaving",
+    "A-22.requires-lifesaving-intervention"
+   ],
+   []
+  ],
+  [
+   "ch9-45",
+   "none",
+   "floor2",
+   "none",
+   [],
+   [
+    "B-06.possible-ectopic-stable"
+   ]
+  ],
+  [
+   "ch9-48",
+   "esi1",
+   "floor2",
+   "esi1",
+   [
+    "A-10.hypotension-with-hypoperfusion",
+    "A-18.pregnancy-hemodynamic-instability-lifesaving",
+    "A-22.requires-lifesaving-intervention",
+    "B-13.postpartum-hemorrhage",
+    "B-37.pregnant-postpartum-sbp-out-of-range"
+   ],
+   [
+    "B-13.postpartum-hemorrhage",
+    "B-37.pregnant-postpartum-sbp-out-of-range"
+   ]
+  ],
+  [
+   "ch9-59",
+   "esi1",
+   "none",
+   "esi1",
+   [
+    "A-10.hypotension-with-hypoperfusion",
+    "A-17.chest-pain-unstable-lifesaving",
+    "A-22.requires-lifesaving-intervention",
+    "B-04.chest-pain-acs-suspect"
+   ],
+   []
+  ],
+  [
+   "ch9-60",
+   "floor2",
+   "none",
+   "floor2",
+   [
+    "B-12.increasing-respiratory-effort"
+   ],
+   []
+  ],
+  [
+   "ch9-66",
+   "esi1",
+   "none",
+   "esi1",
+   [
+    "A-12.severe-brady-or-tachycardia",
+    "A-16.profound-hypotension",
+    "A-22.requires-lifesaving-intervention"
+   ],
+   []
+  ],
+  [
+   "ch9-69",
+   "esi1",
+   "none",
+   "esi1",
+   [
+    "A-14.penetrating-trauma-unstable",
+    "A-22.requires-lifesaving-intervention"
+   ],
+   []
+  ],
+  [
+   "ch9-71",
+   "esi1",
+   "none",
+   "esi1",
+   [
+    "A-10.hypotension-with-hypoperfusion",
+    "A-22.requires-lifesaving-intervention"
+   ],
+   []
+  ],
+  [
+   "ch9-92",
+   "esi1",
+   "none",
+   "esi1",
+   [
+    "A-05.severe-respiratory-distress",
+    "A-08.spo2-below-90-with-compromise",
+    "A-22.requires-lifesaving-intervention",
+    "B-12.increasing-respiratory-effort"
+   ],
+   []
+  ],
+  [
+   "ch9-100",
+   "esi1",
+   "none",
+   "esi1",
+   [
+    "A-10.hypotension-with-hypoperfusion",
+    "A-16.profound-hypotension",
+    "A-22.requires-lifesaving-intervention"
+   ],
+   []
+  ],
+  [
+   "A-3",
+   "esi1",
+   "none",
+   "esi1",
+   [
+    "A-22.requires-lifesaving-intervention",
+    "B-01.new-altered-mental-status",
+    "B-29.pediatric-subtle-ams"
+   ],
+   []
+  ],
+  [
+   "appA-ch3-q1",
+   "floor2",
+   "none",
+   "floor2",
+   [
+    "B-04.chest-pain-acs-suspect"
+   ],
+   []
+  ],
+  [
+   "appA-ch3-q7",
+   "floor2",
+   "none",
+   "floor2",
+   [
+    "B-29.pediatric-subtle-ams"
+   ],
+   []
+  ],
+  [
+   "appA-ch3-q12",
+   "floor2",
+   "none",
+   "floor2",
+   [
+    "B-01.new-altered-mental-status"
+   ],
+   []
+  ],
+  [
+   "appA-ch3-q13",
+   "floor2",
+   "none",
+   "floor2",
+   [
+    "B-12.increasing-respiratory-effort"
+   ],
+   []
+  ],
+  [
+   "appA-ch3-q14",
+   "esi1",
+   "none",
+   "esi1",
+   [
+    "A-10.hypotension-with-hypoperfusion"
+   ],
+   []
+  ],
+  [
+   "appA-ch3-q15",
+   "esi1",
+   "floor2",
+   "esi1",
+   [
+    "A-18.pregnancy-hemodynamic-instability-lifesaving",
+    "A-22.requires-lifesaving-intervention",
+    "B-38.pregnant-chest-pain-breathlessness-abdo-pain-or-headache"
+   ],
+   [
+    "B-38.pregnant-chest-pain-breathlessness-abdo-pain-or-headache"
+   ]
+  ],
+  [
+   "appA-ch6-q2",
+   "esi1",
+   "none",
+   "esi1",
+   [
+    "A-19.ineffective-tissue-perfusion",
+    "A-20.ineffective-respiratory-pattern",
+    "A-22.requires-lifesaving-intervention"
+   ],
+   []
+  ]
+ ],
+ "rows": [
+  {
+   "case": "ch9-3",
+   "agree": [
+    "E.body_region",
+    "E.mechanism",
+    "complaint.text",
+    "obs.avpu",
+    "obs.intubated",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "complaint.category",
+    "obs.requires_lifesaving_intervention"
+   ],
+   "only_theirs": {
+    "complaint.danger_to_self_or_others": true
+   },
+   "no_such_field": [],
+   "outcome_ours": "esi1",
+   "outcome_theirs": "esi1"
+  },
+  {
+   "case": "ch9-7",
+   "agree": [
+    "complaint.text",
+    "obs.avpu",
+    "patient.age",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.spo2"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "complaint.category",
+    "obs.requires_lifesaving_intervention",
+    "patient.sex"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "esi1",
+   "outcome_theirs": "esi1"
+  },
+  {
+   "case": "ch9-30",
+   "agree": [
+    "E.head_strike",
+    "complaint.text",
+    "obs.avpu",
+    "obs.intubated",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "E.mechanism",
+    "complaint.category"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "esi1",
+   "outcome_theirs": "esi1"
+  },
+  {
+   "case": "ch9-42",
+   "agree": [
+    "M.medications",
+    "complaint.category",
+    "complaint.onset",
+    "complaint.text",
+    "complaint.vomiting",
+    "history.pregnant",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "A.allergies",
+    "complaint.headache_thunderclap",
+    "obs.avpu"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "esi1",
+   "outcome_theirs": "floor2"
+  },
+  {
+   "case": "ch9-51",
+   "agree": [
+    "complaint.text",
+    "obs.cardiac_or_pulmonary_arrest",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "complaint.category",
+    "obs.requires_lifesaving_intervention"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "esi1",
+   "outcome_theirs": "esi1"
+  },
+  {
+   "case": "ch9-43",
+   "agree": [
+    "complaint.category",
+    "complaint.onset",
+    "complaint.stroke_signs",
+    "complaint.text",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "M.medications",
+    "history.conditions"
+   ],
+   "only_theirs": {
+    "stroke.face_droop": true
+   },
+   "no_such_field": [],
+   "outcome_ours": "floor2",
+   "outcome_theirs": "floor2"
+  },
+  {
+   "case": "ch9-44",
+   "agree": [
+    "M.medications",
+    "complaint.category",
+    "complaint.onset",
+    "complaint.stroke_signs",
+    "complaint.text",
+    "history.conditions",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {},
+   "only_ours": [],
+   "only_theirs": {
+    "M.anticoagulant": true,
+    "obs.avpu": "A",
+    "stroke.arm_weakness": true,
+    "stroke.speech_change": true
+   },
+   "no_such_field": [],
+   "outcome_ours": "floor2",
+   "outcome_theirs": "floor2"
+  },
+  {
+   "case": "ch9-50",
+   "agree": [
+    "complaint.category",
+    "complaint.extremity_neurovascular_compromise",
+    "complaint.text"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "E.mechanism"
+   ],
+   "only_theirs": {
+    "limb.cast_too_tight": true
+   },
+   "no_such_field": [],
+   "outcome_ours": "floor2",
+   "outcome_theirs": "floor2"
+  },
+  {
+   "case": "ch9-76",
+   "agree": [
+    "complaint.category",
+    "complaint.text",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "complaint.danger_to_self_or_others"
+   ],
+   "only_theirs": {
+    "complaint.psychotic_or_violent": true
+   },
+   "no_such_field": [],
+   "outcome_ours": "floor2",
+   "outcome_theirs": "floor2"
+  },
+  {
+   "case": "ch9-84",
+   "agree": [
+    "complaint.category",
+    "complaint.danger_to_self_or_others",
+    "complaint.text",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.spo2"
+   ],
+   "value_differs": {
+    "A.allergies": [
+     [],
+     [
+      "No known drug allergies"
+     ]
+    ],
+    "M.medications": [
+     [
+      "aspirin"
+     ],
+     [
+      "baby ASA"
+     ]
+    ]
+   },
+   "only_ours": [
+    "red_flags.heavy_bleeding"
+   ],
+   "only_theirs": {
+    "M.anticoagulant": true,
+    "complaint.severe_psychological_distress": true
+   },
+   "no_such_field": [],
+   "outcome_ours": "floor2",
+   "outcome_theirs": "floor2"
+  },
+  {
+   "case": "ch9-93",
+   "agree": [
+    "A.allergies",
+    "M.medications",
+    "complaint.category",
+    "complaint.danger_to_self_or_others",
+    "complaint.text",
+    "history.conditions",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {},
+   "only_ours": [],
+   "only_theirs": {
+    "complaint.psychotic_or_violent": true,
+    "complaint.severe_psychological_distress": true
+   },
+   "no_such_field": [],
+   "outcome_ours": "floor2",
+   "outcome_theirs": "floor2"
+  },
+  {
+   "case": "ch9-25",
+   "agree": [
+    "E.head_strike",
+    "E.mechanism",
+    "complaint.category",
+    "complaint.text",
+    "history.conditions",
+    "patient.age",
+    "patient.sex",
+    "red_flags.responsive"
+   ],
+   "value_differs": {
+    "M.medications": [
+     [
+      "warfarin",
+      "metoprolol"
+     ],
+     [
+      "multiple medications",
+      "warfarin"
+     ]
+    ]
+   },
+   "only_ours": [],
+   "only_theirs": {
+    "E.loc": false,
+    "M.anticoagulant": true
+   },
+   "no_such_field": [],
+   "outcome_ours": "floor2",
+   "outcome_theirs": "floor2"
+  },
+  {
+   "case": "ch9-18",
+   "agree": [
+    "complaint.category",
+    "complaint.pain_rating",
+    "complaint.text",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {},
+   "only_ours": [],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-77",
+   "agree": [
+    "A.allergies",
+    "complaint.category",
+    "complaint.onset",
+    "complaint.pain_rating",
+    "complaint.text",
+    "patient.age",
+    "patient.sex",
+    "vitals.temp_c"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-83",
+   "agree": [
+    "M.medications",
+    "complaint.category",
+    "complaint.onset",
+    "complaint.text",
+    "complaint.vomiting",
+    "history.conditions",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {
+    "A.allergies": [
+     [],
+     [
+      "no allergies"
+     ]
+    ],
+    "complaint.pain_rating": [
+     10,
+     20
+    ]
+   },
+   "only_ours": [],
+   "only_theirs": {
+    "patient.has_ovaries": true
+   },
+   "no_such_field": [],
+   "outcome_ours": "floor2",
+   "outcome_theirs": "floor2"
+  },
+  {
+   "case": "ch9-89",
+   "agree": [
+    "M.medications",
+    "complaint.text",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {
+    "A.allergies": [
+     [],
+     [
+      "No known drug allergies"
+     ]
+    ],
+    "complaint.category": [
+     "other",
+     "injury"
+    ],
+    "complaint.pain_rating": [
+     10,
+     20
+    ]
+   },
+   "only_ours": [],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-91",
+   "agree": [
+    "complaint.extremity_neurovascular_compromise",
+    "complaint.pain_rating",
+    "complaint.text",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {
+    "complaint.category": [
+     "limb_pain_or_swelling",
+     "injury"
+    ]
+   },
+   "only_ours": [
+    "E.mechanism",
+    "limb.cannot_move_digits",
+    "limb.cold_pale_blue",
+    "limb.numb_tingling"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-10",
+   "agree": [
+    "E.mechanism",
+    "complaint.category",
+    "complaint.pain_rating",
+    "complaint.text",
+    "history.conditions",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "E.fall_height_meters"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-36",
+   "agree": [
+    "A.allergies",
+    "E.head_strike",
+    "E.mechanism",
+    "M.medications",
+    "complaint.category",
+    "complaint.extremity_neurovascular_compromise",
+    "complaint.pain_rating",
+    "complaint.text",
+    "history.conditions",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "E.fall_height_meters"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-1",
+   "agree": [
+    "complaint.category",
+    "complaint.pain_rating",
+    "complaint.text",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "complaint.atso_elements_count"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-4",
+   "agree": [
+    "complaint.category",
+    "complaint.text",
+    "history.conditions",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.temp_c"
+   ],
+   "value_differs": {},
+   "only_ours": [],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-5",
+   "agree": [
+    "complaint.category",
+    "complaint.text",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {
+    "E.mechanism": [
+     "fall",
+     "road_accident"
+    ]
+   },
+   "only_ours": [
+    "E.head_strike",
+    "complaint.pain_rating"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-9",
+   "agree": [
+    "A.allergies",
+    "E.mechanism",
+    "M.medications",
+    "complaint.category",
+    "complaint.text",
+    "patient.age",
+    "patient.immunizations_incomplete",
+    "patient.sex"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "E.fall_height_meters"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-12",
+   "agree": [
+    "E.mechanism",
+    "complaint.infection_signs",
+    "complaint.text",
+    "history.conditions",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.spo2",
+    "vitals.temp_c"
+   ],
+   "value_differs": {
+    "complaint.category": [
+     "skin_problem",
+     "limb_pain_or_swelling"
+    ]
+   },
+   "only_ours": [],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-13",
+   "agree": [
+    "A.allergies",
+    "M.medications",
+    "complaint.category",
+    "complaint.text",
+    "complaint.uti_symptoms",
+    "history.conditions",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.temp_c"
+   ],
+   "value_differs": {},
+   "only_ours": [],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-19",
+   "agree": [
+    "complaint.chills_or_rigors",
+    "complaint.fever",
+    "complaint.onset",
+    "complaint.pain_rating",
+    "complaint.text",
+    "complaint.vomiting",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.temp_c"
+   ],
+   "value_differs": {
+    "complaint.category": [
+     "abdominal_pain",
+     "vomiting_or_diarrhoea"
+    ]
+   },
+   "only_ours": [
+    "history.postpartum",
+    "history.pregnant"
+   ],
+   "only_theirs": {
+    "history.conditions": []
+   },
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-20",
+   "agree": [
+    "A.allergies",
+    "complaint.category",
+    "complaint.onset",
+    "complaint.pain_rating",
+    "complaint.text",
+    "complaint.vomiting",
+    "history.conditions",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.spo2",
+    "vitals.temp_c"
+   ],
+   "value_differs": {},
+   "only_ours": [],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "floor2",
+   "outcome_theirs": "floor2"
+  },
+  {
+   "case": "ch9-21",
+   "agree": [
+    "complaint.category",
+    "complaint.text",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "red_flags.heavy_bleeding"
+   ],
+   "only_theirs": {
+    "history.conditions": []
+   },
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-24",
+   "agree": [
+    "complaint.category",
+    "complaint.text",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.temp_c"
+   ],
+   "value_differs": {},
+   "only_ours": [],
+   "only_theirs": {
+    "history.conditions": [
+     "obese"
+    ]
+   },
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-26",
+   "agree": [
+    "A.allergies",
+    "complaint.category",
+    "complaint.text",
+    "infection.rash",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.temp_c"
+   ],
+   "value_differs": {},
+   "only_ours": [],
+   "only_theirs": {
+    "M.medications": [
+     "over the counter spray"
+    ],
+    "history.conditions": []
+   },
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-29",
+   "agree": [
+    "A.allergies",
+    "E.mechanism",
+    "M.medications",
+    "complaint.category",
+    "complaint.text",
+    "history.conditions",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "complaint.extremity_neurovascular_compromise"
+   ],
+   "only_theirs": {
+    "limb.cannot_move_digits": false,
+    "limb.cold_pale_blue": false
+   },
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-34",
+   "agree": [
+    "complaint.category",
+    "complaint.text",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.temp_c"
+   ],
+   "value_differs": {},
+   "only_ours": [],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-40",
+   "agree": [
+    "complaint.category",
+    "complaint.fever",
+    "complaint.text",
+    "complaint.uti_symptoms",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.temp_c"
+   ],
+   "value_differs": {},
+   "only_ours": [],
+   "only_theirs": {
+    "complaint.chills_or_rigors": false
+   },
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-46",
+   "agree": [
+    "complaint.category",
+    "complaint.pain_rating",
+    "complaint.text",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "A.allergies",
+    "M.medications",
+    "complaint.atso_elements_count",
+    "history.conditions"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-47",
+   "agree": [
+    "complaint.category",
+    "complaint.text",
+    "complaint.vomiting",
+    "patient.age_days"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "obs.subtle_mental_status_change",
+    "patient.age",
+    "patient.age_months",
+    "patient.sex"
+   ],
+   "only_theirs": {
+    "vitals.abnormal_for_patient": false
+   },
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-54",
+   "agree": [
+    "complaint.category",
+    "complaint.onset",
+    "complaint.text",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.temp_c"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "A.allergies",
+    "M.medications"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-56",
+   "agree": [
+    "complaint.category",
+    "complaint.pain_rating",
+    "complaint.text",
+    "complaint.vomiting",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.spo2",
+    "vitals.temp_c"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "history.conditions"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-63",
+   "agree": [
+    "complaint.category",
+    "complaint.text",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {},
+   "only_ours": [],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-94",
+   "agree": [
+    "complaint.onset",
+    "complaint.text",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {
+    "complaint.category": [
+     "request",
+     "wound"
+    ]
+   },
+   "only_ours": [
+    "A.allergies",
+    "M.medications",
+    "history.conditions"
+   ],
+   "only_theirs": {
+    "E.mechanism": "penetrating_trauma"
+   },
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-95",
+   "agree": [
+    "complaint.text",
+    "history.baseline_mental_status",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {
+    "complaint.category": [
+     "request",
+     "other"
+    ],
+    "history.conditions": [
+     [
+      "massive stroke 4 years ago"
+     ],
+     [
+      "massive stroke"
+     ]
+    ]
+   },
+   "only_ours": [
+    "obs.confusion_lethargy_disorientation",
+    "obs.new_confusion_lethargy_disorientation"
+   ],
+   "only_theirs": {
+    "obs.avpu": "U"
+   },
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "esi1"
+  },
+  {
+   "case": "ch9-97",
+   "agree": [
+    "complaint.category",
+    "complaint.fever",
+    "complaint.text",
+    "complaint.vomiting",
+    "patient.age_months",
+    "patient.sex"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "obs.subtle_mental_status_change",
+    "patient.age"
+   ],
+   "only_theirs": {
+    "red_flags.responsive": true
+   },
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-98",
+   "agree": [
+    "E.mechanism",
+    "complaint.category",
+    "complaint.text",
+    "patient.age_months",
+    "patient.sex"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "E.fall_height_meters",
+    "patient.age"
+   ],
+   "only_theirs": {
+    "vitals.abnormal_for_patient": false
+   },
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "A-1",
+   "agree": [
+    "complaint.text",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.spo2",
+    "vitals.temp_c"
+   ],
+   "value_differs": {
+    "complaint.category": [
+     "abdominal_pain",
+     "vomiting_or_diarrhoea"
+    ]
+   },
+   "only_ours": [
+    "history.postpartum",
+    "history.pregnant",
+    "infection.travel_14d"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "A-2",
+   "agree": [
+    "E.fall_height_meters",
+    "E.mechanism",
+    "complaint.pain_rating",
+    "complaint.text",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.spo2",
+    "vitals.temp_c"
+   ],
+   "value_differs": {
+    "complaint.category": [
+     "injury",
+     "limb_pain_or_swelling"
+    ]
+   },
+   "only_ours": [
+    "complaint.extremity_neurovascular_compromise"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "A-4",
+   "agree": [
+    "complaint.category",
+    "complaint.pain_cause_class",
+    "complaint.pain_rating",
+    "complaint.text",
+    "history.conditions",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {},
+   "only_ours": [],
+   "only_theirs": {
+    "vitals.abnormal_for_patient": false
+   },
+   "no_such_field": [],
+   "outcome_ours": "floor2",
+   "outcome_theirs": "floor2"
+  },
+  {
+   "case": "A-5",
+   "agree": [
+    "complaint.pain_cause_class",
+    "complaint.pain_rating",
+    "complaint.text",
+    "complaint.vomiting",
+    "history.conditions",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.spo2",
+    "vitals.temp_c"
+   ],
+   "value_differs": {
+    "complaint.category": [
+     "abdominal_pain",
+     "back_pain"
+    ]
+   },
+   "only_ours": [],
+   "only_theirs": {
+    "complaint.back_pain": "lower"
+   },
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "A-7",
+   "agree": [
+    "complaint.text",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {
+    "complaint.category": [
+     "injury",
+     "limb_pain_or_swelling"
+    ]
+   },
+   "only_ours": [
+    "complaint.pain_rating"
+   ],
+   "only_theirs": {
+    "vitals.abnormal_for_patient": false
+   },
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "A-8",
+   "agree": [
+    "complaint.category",
+    "complaint.respiratory_distress_signs",
+    "complaint.text",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.spo2"
+   ],
+   "value_differs": {
+    "history.conditions": [
+     [
+      "asthma, intubated on a previous admission"
+     ],
+     [
+      "asthma"
+     ]
+    ]
+   },
+   "only_ours": [
+    "complaint.increasing_respiratory_effort"
+   ],
+   "only_theirs": {
+    "red_flags.breathing_difficulty": true,
+    "red_flags.responsive": true
+   },
+   "no_such_field": [],
+   "outcome_ours": "floor2",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "A-9",
+   "agree": [
+    "complaint.increasing_respiratory_effort",
+    "complaint.shortness_of_breath",
+    "complaint.text",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.spo2"
+   ],
+   "value_differs": {
+    "complaint.category": [
+     "breathing",
+     "limb_pain_or_swelling"
+    ],
+    "history.conditions": [
+     [
+      "late-stage non-Hodgkin's lymphoma"
+     ],
+     [
+      "late-stage non-Hodgkin\u2019s lymphoma"
+     ]
+    ]
+   },
+   "only_ours": [
+    "vitals.temp_c"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "floor2",
+   "outcome_theirs": "floor2"
+  },
+  {
+   "case": "A-10",
+   "agree": [
+    "E.body_region",
+    "E.mechanism",
+    "complaint.text",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.spo2"
+   ],
+   "value_differs": {
+    "complaint.category": [
+     "injury",
+     "wound"
+    ]
+   },
+   "only_ours": [
+    "obs.requires_lifesaving_intervention",
+    "obs.severe_respiratory_distress"
+   ],
+   "only_theirs": {
+    "complaint.shortness_of_breath": true
+   },
+   "no_such_field": [],
+   "outcome_ours": "esi1",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "A-11",
+   "agree": [
+    "complaint.category",
+    "complaint.onset",
+    "complaint.text",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "complaint.fever",
+    "obs.subtle_mental_status_change"
+   ],
+   "only_theirs": {
+    "red_flags.responsive": true
+   },
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "A-13",
+   "agree": [
+    "complaint.category",
+    "complaint.onset",
+    "complaint.text",
+    "complaint.vomiting",
+    "patient.age_months",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.spo2",
+    "vitals.temp_c"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "obs.subtle_mental_status_change",
+    "patient.age"
+   ],
+   "only_theirs": {
+    "infection.contacts": true,
+    "red_flags.responsive": true
+   },
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "A-14",
+   "agree": [
+    "E.mechanism",
+    "complaint.category",
+    "complaint.pain_rating",
+    "complaint.possible_pelvis_femur_fracture_or_dislocation",
+    "complaint.text",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "E.fall_height_meters"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "A-15",
+   "agree": [
+    "complaint.text",
+    "patient.age_months",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.spo2",
+    "vitals.temp_c"
+   ],
+   "value_differs": {
+    "complaint.category": [
+     "breathing",
+     "other"
+    ]
+   },
+   "only_ours": [
+    "complaint.fever",
+    "obs.subtle_mental_status_change",
+    "patient.age"
+   ],
+   "only_theirs": {
+    "red_flags.responsive": true
+   },
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "A-16",
+   "agree": [
+    "ams.changed_from_baseline",
+    "complaint.category",
+    "complaint.onset",
+    "complaint.text",
+    "history.baseline_mental_status",
+    "obs.new_confusion_lethargy_disorientation",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.spo2",
+    "vitals.temp_c"
+   ],
+   "value_differs": {},
+   "only_ours": [],
+   "only_theirs": {
+    "obs.confusion_lethargy_disorientation": true
+   },
+   "no_such_field": [],
+   "outcome_ours": "floor2",
+   "outcome_theirs": "floor2"
+  },
+  {
+   "case": "A-17",
+   "agree": [
+    "complaint.text",
+    "history.conditions",
+    "obs.subtle_mental_status_change",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.spo2",
+    "vitals.temp_c"
+   ],
+   "value_differs": {
+    "complaint.category": [
+     "neuro_symptoms",
+     "headache"
+    ]
+   },
+   "only_ours": [
+    "ams.changed_from_baseline",
+    "history.baseline_mental_status"
+   ],
+   "only_theirs": {
+    "identity.name": "Melissa",
+    "obs.avpu": "V"
+   },
+   "no_such_field": [],
+   "outcome_ours": "floor2",
+   "outcome_theirs": "floor2"
+  },
+  {
+   "case": "A-18",
+   "agree": [
+    "complaint.acs_suspicion",
+    "complaint.category",
+    "complaint.onset",
+    "complaint.text",
+    "obs.hypoperfusion_signs",
+    "patient.age",
+    "patient.sex",
+    "vitals.ecg_abnormal",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.spo2"
+   ],
+   "value_differs": {
+    "history.conditions": [
+     [
+      "myocardial infarction 4 years ago"
+     ],
+     [
+      "myocardial infarction"
+     ]
+    ]
+   },
+   "only_ours": [
+    "vitals.hypotension"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "esi1",
+   "outcome_theirs": "floor2"
+  },
+  {
+   "case": "A-19",
+   "agree": [
+    "complaint.pain_rating",
+    "complaint.text",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.spo2",
+    "vitals.temp_c"
+   ],
+   "value_differs": {
+    "complaint.category": [
+     "skin_problem",
+     "limb_pain_or_swelling"
+    ]
+   },
+   "only_ours": [
+    "complaint.infection_signs"
+   ],
+   "only_theirs": {
+    "history.conditions": [
+     "knee replacement"
+    ]
+   },
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "A-20",
+   "agree": [
+    "complaint.category",
+    "complaint.onset",
+    "complaint.pain_rating",
+    "complaint.text",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {},
+   "only_ours": [],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "A-21",
+   "agree": [
+    "complaint.category",
+    "complaint.fever",
+    "complaint.onset",
+    "complaint.text",
+    "history.conditions",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.spo2",
+    "vitals.temp_c"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "complaint.shortness_of_breath",
+    "history.immunocompromised"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "A-22",
+   "agree": [
+    "complaint.possible_pelvis_femur_fracture_or_dislocation",
+    "complaint.text",
+    "patient.age",
+    "patient.sex",
+    "red_flags.responsive",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.spo2"
+   ],
+   "value_differs": {
+    "complaint.category": [
+     "abdominal_pain",
+     "injury"
+    ]
+   },
+   "only_ours": [
+    "E.abdominal_trauma",
+    "E.mechanism",
+    "obs.hemodynamically_unstable",
+    "vitals.temp_c"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "A-23",
+   "agree": [
+    "complaint.category",
+    "complaint.onset",
+    "complaint.text",
+    "history.conditions",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "A.allergies",
+    "M.medications"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "A-24",
+   "agree": [
+    "complaint.category",
+    "complaint.text",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.spo2"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "history.conditions",
+    "obs.hypoperfusion_signs",
+    "vitals.hypotension"
+   ],
+   "only_theirs": {
+    "M.medications": [
+     "high blood pressure medication"
+    ]
+   },
+   "no_such_field": [],
+   "outcome_ours": "esi1",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "A-25",
+   "agree": [
+    "complaint.category",
+    "complaint.onset",
+    "complaint.text",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "complaint.atso_elements_count"
+   ],
+   "only_theirs": {
+    "infection.contacts": true
+   },
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "B-1",
+   "agree": [
+    "complaint.category",
+    "complaint.pain_rating",
+    "complaint.text",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.spo2",
+    "vitals.temp_c"
+   ],
+   "value_differs": {
+    "E.mechanism": [
+     "fall",
+     "road_accident"
+    ]
+   },
+   "only_ours": [],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "B-2",
+   "agree": [
+    "complaint.onset",
+    "complaint.sexual_assault",
+    "complaint.text",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {
+    "complaint.category": [
+     "mental_health",
+     "other"
+    ]
+   },
+   "only_ours": [],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "floor2",
+   "outcome_theirs": "floor2"
+  },
+  {
+   "case": "B-4",
+   "agree": [
+    "complaint.category",
+    "complaint.pain_rating",
+    "complaint.text",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.spo2",
+    "vitals.temp_c"
+   ],
+   "value_differs": {
+    "history.conditions": [
+     [
+      "diabetes"
+     ],
+     [
+      "diabetic"
+     ]
+    ]
+   },
+   "only_ours": [],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "B-5",
+   "agree": [
+    "complaint.category",
+    "complaint.text",
+    "obs.cardiac_or_pulmonary_arrest",
+    "obs.intubated",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "E.mechanism"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "esi1",
+   "outcome_theirs": "esi1"
+  },
+  {
+   "case": "B-7",
+   "agree": [
+    "complaint.category",
+    "complaint.text",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "history.conditions"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "B-9",
+   "agree": [
+    "complaint.category",
+    "complaint.onset",
+    "complaint.stroke_signs",
+    "complaint.text",
+    "history.conditions",
+    "patient.age",
+    "patient.sex",
+    "stroke.vision_change"
+   ],
+   "value_differs": {},
+   "only_ours": [],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "floor2",
+   "outcome_theirs": "floor2"
+  },
+  {
+   "case": "B-10",
+   "agree": [
+    "complaint.category",
+    "complaint.pain_rating",
+    "complaint.text",
+    "history.conditions",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.spo2",
+    "vitals.temp_c"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "E.fall_height_meters",
+    "E.mechanism",
+    "complaint.extremity_neurovascular_compromise"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "B-11",
+   "agree": [
+    "complaint.category",
+    "complaint.known_toxic_ingestion",
+    "complaint.onset",
+    "complaint.text",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "A.allergies",
+    "M.medications",
+    "complaint.danger_to_self_or_others",
+    "history.conditions"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "floor2",
+   "outcome_theirs": "floor2"
+  },
+  {
+   "case": "B-12",
+   "agree": [
+    "complaint.pain_rating",
+    "complaint.text",
+    "history.conditions",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.spo2",
+    "vitals.temp_c"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "complaint.category",
+    "history.postpartum",
+    "history.pregnant"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "B-13",
+   "agree": [
+    "complaint.pain_rating",
+    "complaint.text",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.spo2",
+    "vitals.temp_c"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "E.mechanism",
+    "complaint.category",
+    "complaint.extremity_neurovascular_compromise"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "B-14",
+   "agree": [
+    "M.medications",
+    "complaint.onset",
+    "complaint.pain_cause_class",
+    "complaint.pain_rating",
+    "complaint.text",
+    "history.conditions",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "complaint.category"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "floor2",
+   "outcome_theirs": "floor2"
+  },
+  {
+   "case": "B-15",
+   "agree": [
+    "M.anticoagulant",
+    "complaint.text",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {
+    "history.conditions": [
+     [
+      "previous blood clots in the legs"
+     ],
+     [
+      "clots in his legs"
+     ]
+    ]
+   },
+   "only_ours": [
+    "M.medications",
+    "complaint.category"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "B-16",
+   "agree": [
+    "complaint.text",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {
+    "history.conditions": [
+     [
+      "massive stroke 3 years ago, aphasic"
+     ],
+     [
+      "massive stroke 3 years ago",
+      "aphasic"
+     ]
+    ]
+   },
+   "only_ours": [
+    "complaint.category",
+    "complaint.stroke_signs",
+    "history.baseline_mental_status",
+    "obs.confusion_lethargy_disorientation",
+    "obs.new_confusion_lethargy_disorientation"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "B-17",
+   "agree": [
+    "complaint.danger_to_self_or_others",
+    "complaint.text",
+    "history.conditions",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "complaint.category"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "floor2",
+   "outcome_theirs": "floor2"
+  },
+  {
+   "case": "B-20",
+   "agree": [
+    "E.body_region",
+    "E.mechanism",
+    "complaint.text",
+    "patient.age",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.spo2"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "complaint.category",
+    "obs.hemodynamically_unstable",
+    "obs.requires_lifesaving_intervention",
+    "patient.sex",
+    "vitals.hypotension"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "esi1",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "B-21",
+   "agree": [
+    "complaint.fever",
+    "complaint.infection_signs",
+    "complaint.onset",
+    "complaint.pain_rating",
+    "complaint.text",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.spo2",
+    "vitals.temp_c"
+   ],
+   "value_differs": {
+    "history.conditions": [
+     [
+      "gastro-oesophageal reflux disease"
+     ],
+     [
+      "gastroesophageal reflux disease"
+     ]
+    ]
+   },
+   "only_ours": [
+    "complaint.category",
+    "history.immunocompromised"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "B-22",
+   "agree": [
+    "complaint.category",
+    "complaint.danger_to_self_or_others",
+    "complaint.known_toxic_ingestion",
+    "complaint.onset",
+    "complaint.text",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {},
+   "only_ours": [],
+   "only_theirs": {
+    "complaint.severe_psychological_distress": true,
+    "obs.avpu": "A"
+   },
+   "no_such_field": [],
+   "outcome_ours": "floor2",
+   "outcome_theirs": "floor2"
+  },
+  {
+   "case": "B-24",
+   "agree": [
+    "complaint.category",
+    "complaint.pain_rating",
+    "complaint.text",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.spo2",
+    "vitals.temp_c"
+   ],
+   "value_differs": {},
+   "only_ours": [],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "B-25",
+   "agree": [
+    "complaint.category",
+    "complaint.increasing_respiratory_effort",
+    "complaint.onset",
+    "complaint.respiratory_distress_signs",
+    "complaint.text",
+    "patient.age",
+    "patient.sex",
+    "vitals.respiratory_rate",
+    "vitals.spo2"
+   ],
+   "value_differs": {
+    "history.conditions": [
+     [
+      "asthma, previous intubations"
+     ],
+     [
+      "asthma"
+     ]
+    ]
+   },
+   "only_ours": [
+    "obs.severe_respiratory_distress"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "esi1",
+   "outcome_theirs": "floor2"
+  },
+  {
+   "case": "ch9-2",
+   "agree": [
+    "ams.changed_from_baseline",
+    "complaint.category",
+    "complaint.known_toxic_ingestion",
+    "complaint.text",
+    "history.conditions",
+    "patient.age",
+    "patient.sex",
+    "vitals.respiratory_rate",
+    "vitals.spo2"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "obs.requires_lifesaving_intervention",
+    "obs.respiratory_compromise_signs",
+    "vitals.spo2_is_patients_norm"
+   ],
+   "only_theirs": {
+    "complaint.danger_to_self_or_others": true,
+    "obs.confusion_lethargy_disorientation": true
+   },
+   "no_such_field": [],
+   "outcome_ours": "esi1",
+   "outcome_theirs": "floor2"
+  },
+  {
+   "case": "ch9-6",
+   "agree": [
+    "M.medications",
+    "complaint.category",
+    "complaint.onset",
+    "complaint.shortness_of_breath",
+    "complaint.text",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.spo2",
+    "vitals.temp_c"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "A.allergies",
+    "complaint.respiratory_distress_signs",
+    "history.conditions"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-8",
+   "agree": [
+    "complaint.category",
+    "complaint.pain_rating",
+    "complaint.text",
+    "complaint.vomiting",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.spo2",
+    "vitals.temp_c"
+   ],
+   "value_differs": {
+    "complaint.onset": [
+     "this morning",
+     "woke up"
+    ]
+   },
+   "only_ours": [
+    "complaint.fever"
+   ],
+   "only_theirs": {
+    "obs.subtle_mental_status_change": true
+   },
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "floor2"
+  },
+  {
+   "case": "ch9-11",
+   "agree": [
+    "E.head_strike",
+    "E.loc",
+    "E.mechanism",
+    "complaint.text",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate"
+   ],
+   "value_differs": {
+    "complaint.category": [
+     "injury",
+     "head_injury"
+    ]
+   },
+   "only_ours": [
+    "E.fall_height_meters",
+    "red_flags.responsive"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-14",
+   "agree": [
+    "complaint.category",
+    "complaint.fever",
+    "complaint.text",
+    "patient.age_days",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.spo2",
+    "vitals.temp_c"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "patient.age",
+    "patient.age_months"
+   ],
+   "only_theirs": {
+    "red_flags.responsive": true
+   },
+   "no_such_field": [],
+   "outcome_ours": "floor2",
+   "outcome_theirs": "floor2"
+  },
+  {
+   "case": "ch9-15",
+   "agree": [
+    "A.allergies",
+    "M.medications",
+    "complaint.fever",
+    "complaint.pain_rating",
+    "complaint.text",
+    "history.postpartum",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.temp_c"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "complaint.category",
+    "complaint.infection_signs",
+    "history.conditions",
+    "history.pregnant"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-16",
+   "agree": [
+    "E.mechanism",
+    "complaint.text",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.spo2",
+    "vitals.temp_c"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "complaint.category",
+    "obs.hemodynamically_unstable",
+    "obs.hypoperfusion_signs",
+    "obs.requires_lifesaving_intervention",
+    "red_flags.responsive",
+    "vitals.hypotension"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "esi1",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-17",
+   "agree": [
+    "complaint.fever",
+    "complaint.text",
+    "history.conditions",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.spo2",
+    "vitals.temp_c"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "complaint.category"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-22",
+   "agree": [
+    "complaint.respiratory_distress_signs",
+    "complaint.text",
+    "history.conditions",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.temp_c"
+   ],
+   "value_differs": {
+    "M.medications": [
+     [
+      "inhalers when needed"
+     ],
+     [
+      "inhalers"
+     ]
+    ],
+    "complaint.category": [
+     "breathing",
+     "sore_throat"
+    ]
+   },
+   "only_ours": [
+    "A.allergies",
+    "complaint.increasing_respiratory_effort",
+    "obs.requires_lifesaving_intervention",
+    "obs.severe_respiratory_distress"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "esi1",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-23",
+   "agree": [
+    "complaint.pain_rating",
+    "complaint.text",
+    "complaint.vomiting",
+    "history.pregnant",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.spo2",
+    "vitals.temp_c"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "complaint.category"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-27",
+   "agree": [
+    "E.mechanism",
+    "complaint.text",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.spo2"
+   ],
+   "value_differs": {
+    "complaint.category": [
+     "abdominal_pain",
+     "injury"
+    ]
+   },
+   "only_ours": [
+    "E.abdominal_trauma"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-28",
+   "agree": [
+    "complaint.category",
+    "complaint.onset",
+    "complaint.pain_rating",
+    "complaint.text",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {},
+   "only_ours": [],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-31",
+   "agree": [
+    "complaint.amputation_partial_or_complete",
+    "complaint.pain_rating",
+    "complaint.text",
+    "patient.sex"
+   ],
+   "value_differs": {
+    "complaint.category": [
+     "wound",
+     "injury"
+    ]
+   },
+   "only_ours": [
+    "A.allergies",
+    "M.medications",
+    "history.conditions"
+   ],
+   "only_theirs": {
+    "patient.age_group": "adult"
+   },
+   "no_such_field": [],
+   "outcome_ours": "floor2",
+   "outcome_theirs": "floor2"
+  },
+  {
+   "case": "ch9-32",
+   "agree": [
+    "complaint.category",
+    "complaint.pain_rating",
+    "complaint.possible_ectopic_pregnancy",
+    "complaint.text",
+    "complaint.vaginal_bleeding",
+    "history.conditions",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.temp_c"
+   ],
+   "value_differs": {
+    "complaint.onset": [
+     "4 days",
+     "about 4 days"
+    ]
+   },
+   "only_ours": [],
+   "only_theirs": {
+    "complaint.uti_symptoms": false,
+    "complaint.vomiting": false
+   },
+   "no_such_field": [],
+   "outcome_ours": "floor2",
+   "outcome_theirs": "floor2"
+  },
+  {
+   "case": "ch9-33",
+   "agree": [
+    "complaint.category",
+    "complaint.pain_rating",
+    "complaint.shortness_of_breath",
+    "complaint.text",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.spo2",
+    "vitals.temp_c"
+   ],
+   "value_differs": {
+    "history.conditions": [
+     [
+      "type 2 diabetes",
+      "hypertension"
+     ],
+     [
+      "type 2 diabetes",
+      "HTN",
+      "morbid obesity"
+     ]
+    ]
+   },
+   "only_ours": [
+    "red_flags.chest_pain_now"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-35",
+   "agree": [
+    "complaint.category",
+    "complaint.onset",
+    "complaint.text",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {
+    "history.conditions": [
+     [
+      "chronic renal failure on dialysis"
+     ],
+     [
+      "chronic renal failure"
+     ]
+    ]
+   },
+   "only_ours": [],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-37",
+   "agree": [
+    "complaint.shortness_of_breath",
+    "complaint.text",
+    "obs.hypoperfusion_signs",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp"
+   ],
+   "value_differs": {
+    "complaint.category": [
+     "chest_pain",
+     "other"
+    ]
+   },
+   "only_ours": [
+    "obs.hemodynamically_unstable",
+    "obs.requires_lifesaving_intervention",
+    "red_flags.chest_pain_now",
+    "vitals.extreme_heart_rate",
+    "vitals.hypotension"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "esi1",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-38",
+   "agree": [
+    "complaint.category",
+    "complaint.text",
+    "patient.age_days",
+    "patient.sex"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "complaint.fever",
+    "patient.age"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-39",
+   "agree": [
+    "complaint.atso_elements_count",
+    "complaint.category",
+    "complaint.text",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {},
+   "only_ours": [],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-41",
+   "agree": [
+    "complaint.category",
+    "complaint.onset",
+    "complaint.pain_rating",
+    "complaint.shortness_of_breath",
+    "complaint.text",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.spo2",
+    "vitals.temp_c"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "A.allergies",
+    "M.medications",
+    "complaint.respiratory_distress_signs",
+    "history.conditions"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-45",
+   "agree": [
+    "complaint.category",
+    "complaint.pain_rating",
+    "complaint.text",
+    "complaint.vaginal_bleeding",
+    "history.pregnant",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.spo2",
+    "vitals.temp_c"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "complaint.heavy_vaginal_bleeding"
+   ],
+   "only_theirs": {
+    "complaint.possible_ectopic_pregnancy": true
+   },
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "floor2"
+  },
+  {
+   "case": "ch9-48",
+   "agree": [
+    "complaint.category",
+    "complaint.heavy_vaginal_bleeding",
+    "complaint.text",
+    "complaint.vaginal_bleeding",
+    "history.postpartum",
+    "ob.heavy_bleeding",
+    "obs.hypoperfusion_signs",
+    "patient.age",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.spo2"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "history.pregnant",
+    "obs.hemodynamically_unstable",
+    "obs.requires_lifesaving_intervention",
+    "patient.sex",
+    "vitals.hypotension"
+   ],
+   "only_theirs": {
+    "complaint.postpartum_hemorrhage": true,
+    "red_flags.heavy_bleeding": true
+   },
+   "no_such_field": [],
+   "outcome_ours": "esi1",
+   "outcome_theirs": "floor2"
+  },
+  {
+   "case": "ch9-49",
+   "agree": [
+    "A.allergies",
+    "M.medications",
+    "complaint.category",
+    "complaint.onset",
+    "complaint.text",
+    "history.conditions",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.spo2",
+    "vitals.temp_c"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "complaint.fever"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-52",
+   "agree": [
+    "complaint.category",
+    "complaint.onset",
+    "complaint.pain_rating",
+    "complaint.text",
+    "complaint.vomiting",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.temp_c"
+   ],
+   "value_differs": {
+    "history.conditions": [
+     [
+      "gastric bypass 3 weeks ago"
+     ],
+     [
+      "gastric bypass",
+      "obese"
+     ]
+    ]
+   },
+   "only_ours": [],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-53",
+   "agree": [
+    "complaint.category",
+    "complaint.shortness_of_breath",
+    "complaint.text",
+    "history.postpartum",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "history.pregnant"
+   ],
+   "only_theirs": {
+    "history.conditions": [
+     "obese"
+    ]
+   },
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-55",
+   "agree": [
+    "M.medications",
+    "complaint.infection_signs",
+    "complaint.text",
+    "history.conditions",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {
+    "complaint.category": [
+     "other",
+     "request"
+    ]
+   },
+   "only_ours": [],
+   "only_theirs": {
+    "vitals.abnormal_for_patient": false
+   },
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-57",
+   "agree": [
+    "A.allergies",
+    "E.mechanism",
+    "M.medications",
+    "complaint.text",
+    "history.conditions",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp"
+   ],
+   "value_differs": {
+    "complaint.category": [
+     "injury",
+     "limb_pain_or_swelling"
+    ]
+   },
+   "only_ours": [],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-58",
+   "agree": [
+    "complaint.category",
+    "complaint.onset",
+    "complaint.text",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.temp_c"
+   ],
+   "value_differs": {
+    "M.medications": [
+     [
+      "amiodarone",
+      "multiple other medications"
+     ],
+     [
+      "multiple medications",
+      "amiodarone"
+     ]
+    ],
+    "history.conditions": [
+     [
+      "significant cardiac history, implanted defibrillator"
+     ],
+     [
+      "significant cardiac history",
+      "internal defibrillator"
+     ]
+    ]
+   },
+   "only_ours": [
+    "patient.sex"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-59",
+   "agree": [
+    "complaint.category",
+    "complaint.onset",
+    "complaint.pain_rating",
+    "complaint.shortness_of_breath",
+    "complaint.text",
+    "obs.hypoperfusion_signs",
+    "patient.age",
+    "patient.sex",
+    "red_flags.chest_pain_now",
+    "vitals.heart_rate",
+    "vitals.sbp"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "complaint.acs_suspicion",
+    "obs.hemodynamically_unstable",
+    "obs.requires_lifesaving_intervention",
+    "vitals.hypotension"
+   ],
+   "only_theirs": {
+    "history.conditions": [
+     "obese"
+    ]
+   },
+   "no_such_field": [],
+   "outcome_ours": "esi1",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-60",
+   "agree": [
+    "M.medications",
+    "complaint.category",
+    "complaint.text",
+    "history.conditions",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.spo2",
+    "vitals.temp_c"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "complaint.increasing_respiratory_effort",
+    "complaint.respiratory_distress_signs"
+   ],
+   "only_theirs": {
+    "complaint.shortness_of_breath": true
+   },
+   "no_such_field": [],
+   "outcome_ours": "floor2",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-61",
+   "agree": [
+    "complaint.category",
+    "complaint.pain_rating",
+    "complaint.text",
+    "complaint.unilateral_lower_quadrant_pain",
+    "complaint.vomiting",
+    "history.conditions",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.spo2",
+    "vitals.temp_c"
+   ],
+   "value_differs": {
+    "complaint.onset": [
+     "3 days",
+     "for 3 days"
+    ]
+   },
+   "only_ours": [
+    "complaint.fever"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-62",
+   "agree": [
+    "complaint.category",
+    "complaint.text",
+    "patient.age",
+    "patient.sex",
+    "vitals.temp_c"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "M.medications",
+    "complaint.fever",
+    "patient.age_months"
+   ],
+   "only_theirs": {
+    "history.conditions": [
+     "frequent ear infections"
+    ]
+   },
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-64",
+   "agree": [
+    "complaint.onset",
+    "complaint.text",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {
+    "complaint.category": [
+     "request",
+     "pregnancy_related"
+    ]
+   },
+   "only_ours": [],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-65",
+   "agree": [
+    "M.medications",
+    "complaint.category",
+    "complaint.fever",
+    "complaint.text",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.temp_c"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "A.allergies",
+    "history.conditions"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-66",
+   "agree": [
+    "complaint.category",
+    "complaint.text",
+    "patient.age",
+    "patient.sex",
+    "red_flags.responsive"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "obs.requires_lifesaving_intervention",
+    "vitals.extreme_heart_rate",
+    "vitals.profound_hypotension"
+   ],
+   "only_theirs": {
+    "E.loc": true,
+    "obs.avpu": "A"
+   },
+   "no_such_field": [],
+   "outcome_ours": "esi1",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-67",
+   "agree": [
+    "E.head_strike",
+    "complaint.category",
+    "complaint.text",
+    "limb.numb_tingling",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "red_flags.responsive"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "floor2",
+   "outcome_theirs": "floor2"
+  },
+  {
+   "case": "ch9-68",
+   "agree": [
+    "complaint.chills_or_rigors",
+    "complaint.fever",
+    "complaint.heavy_vaginal_bleeding",
+    "complaint.onset",
+    "complaint.pain_rating",
+    "complaint.text",
+    "complaint.vaginal_bleeding",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.spo2",
+    "vitals.temp_c"
+   ],
+   "value_differs": {
+    "complaint.category": [
+     "abdominal_pain",
+     "vaginal_bleeding"
+    ]
+   },
+   "only_ours": [
+    "history.postpartum",
+    "history.pregnant"
+   ],
+   "only_theirs": {
+    "ob.heavy_bleeding": false
+   },
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-69",
+   "agree": [
+    "E.body_region",
+    "E.mechanism",
+    "complaint.category",
+    "complaint.text",
+    "patient.age",
+    "vitals.heart_rate",
+    "vitals.sbp"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "obs.hemodynamically_unstable",
+    "obs.requires_lifesaving_intervention",
+    "patient.sex",
+    "red_flags.responsive",
+    "vitals.hypotension"
+   ],
+   "only_theirs": {
+    "obs.avpu": "A"
+   },
+   "no_such_field": [],
+   "outcome_ours": "esi1",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-70",
+   "agree": [
+    "E.loc",
+    "complaint.category",
+    "complaint.text",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "E.mechanism",
+    "complaint.atso_elements_count"
+   ],
+   "only_theirs": {
+    "patient.has_ovaries": true
+   },
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-71",
+   "agree": [
+    "complaint.category",
+    "complaint.text",
+    "history.conditions",
+    "obs.hypoperfusion_signs",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.spo2"
+   ],
+   "value_differs": {
+    "M.medications": [
+     [
+      "a diuretic"
+     ],
+     [
+      "diuretic"
+     ]
+    ],
+    "complaint.onset": [
+     "30 minutes ago",
+     "about 30 minutes prior to admission"
+    ],
+    "complaint.pain_rating": [
+     10,
+     20
+    ]
+   },
+   "only_ours": [
+    "A.allergies",
+    "complaint.pain_refractory_constant_or_maximal_onset",
+    "obs.hemodynamically_unstable",
+    "obs.requires_lifesaving_intervention",
+    "vitals.hypotension"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "esi1",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-72",
+   "agree": [
+    "complaint.category",
+    "complaint.pain_rating",
+    "complaint.text",
+    "complaint.vomiting",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.spo2",
+    "vitals.temp_c"
+   ],
+   "value_differs": {
+    "complaint.onset": [
+     "2 days",
+     "Two days ago"
+    ]
+   },
+   "only_ours": [],
+   "only_theirs": {
+    "patient.has_ovaries": true
+   },
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-73",
+   "agree": [
+    "complaint.category",
+    "complaint.danger_to_self_or_others",
+    "complaint.onset",
+    "complaint.text",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "complaint.psychotic_or_violent"
+   ],
+   "only_theirs": {
+    "patient.has_ovaries": true
+   },
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-74",
+   "agree": [
+    "complaint.category",
+    "complaint.fever",
+    "complaint.text",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.spo2",
+    "vitals.temp_c"
+   ],
+   "value_differs": {
+    "complaint.onset": [
+     "a couple of days",
+     "a couple of days ago"
+    ]
+   },
+   "only_ours": [
+    "A.allergies",
+    "M.medications",
+    "history.conditions"
+   ],
+   "only_theirs": {
+    "patient.has_ovaries": true
+   },
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-75",
+   "agree": [
+    "complaint.category",
+    "complaint.fever",
+    "complaint.infection_signs",
+    "complaint.text",
+    "history.conditions",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "A.allergies",
+    "M.medications"
+   ],
+   "only_theirs": {
+    "patient.has_ovaries": true
+   },
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-78",
+   "agree": [
+    "complaint.chills_or_rigors",
+    "complaint.fever",
+    "complaint.pain_rating",
+    "complaint.text",
+    "history.postpartum",
+    "patient.age",
+    "patient.sex",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.spo2",
+    "vitals.temp_c"
+   ],
+   "value_differs": {
+    "complaint.category": [
+     "skin_problem",
+     "other"
+    ]
+   },
+   "only_ours": [
+    "M.medications",
+    "complaint.infection_signs",
+    "history.pregnant"
+   ],
+   "only_theirs": {
+    "patient.has_ovaries": true,
+    "vitals.heart_rate": 990
+   },
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-79",
+   "agree": [
+    "E.body_region",
+    "E.mechanism",
+    "complaint.category",
+    "complaint.text",
+    "patient.sex",
+    "red_flags.responsive",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.temp_c"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "obs.hemodynamically_unstable",
+    "red_flags.heavy_bleeding"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-80",
+   "agree": [
+    "complaint.category",
+    "complaint.onset",
+    "complaint.pain_rating",
+    "complaint.text",
+    "complaint.vomiting",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.spo2",
+    "vitals.temp_c"
+   ],
+   "value_differs": {
+    "history.conditions": [
+     [
+      "heart attack 6 years ago"
+     ],
+     [
+      "heart attack"
+     ]
+    ]
+   },
+   "only_ours": [],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-81",
+   "agree": [
+    "complaint.category",
+    "complaint.text",
+    "patient.age",
+    "patient.sex",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.temp_c"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "red_flags.heavy_bleeding"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-82",
+   "agree": [
+    "complaint.category",
+    "complaint.fever",
+    "complaint.text",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {
+    "complaint.onset": [
+     "3 hours ago",
+     "about 3 hours ago"
+    ]
+   },
+   "only_ours": [],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-85",
+   "agree": [
+    "ams.changed_from_baseline",
+    "complaint.text",
+    "complaint.uti_symptoms",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.temp_c"
+   ],
+   "value_differs": {
+    "complaint.category": [
+     "neuro_symptoms",
+     "urinary_problem"
+    ]
+   },
+   "only_ours": [
+    "complaint.fever",
+    "history.baseline_mental_status"
+   ],
+   "only_theirs": {
+    "obs.avpu": "V",
+    "obs.confusion_lethargy_disorientation": true
+   },
+   "no_such_field": [],
+   "outcome_ours": "floor2",
+   "outcome_theirs": "floor2"
+  },
+  {
+   "case": "ch9-86",
+   "agree": [
+    "complaint.onset",
+    "complaint.text",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {
+    "M.medications": [
+     [
+      "antibiotics"
+     ],
+     [
+      "antibiotics for a UTI"
+     ]
+    ],
+    "complaint.category": [
+     "request",
+     "urinary_problem"
+    ],
+    "history.conditions": [
+     [
+      "multiple sclerosis",
+      "urinary tract infection on antibiotics"
+     ],
+     [
+      "multiple sclerosis"
+     ]
+    ]
+   },
+   "only_ours": [],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-87",
+   "agree": [
+    "complaint.infection_signs",
+    "complaint.onset",
+    "complaint.pain_rating",
+    "complaint.text",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.spo2",
+    "vitals.temp_c"
+   ],
+   "value_differs": {
+    "complaint.category": [
+     "skin_problem",
+     "wound"
+    ]
+   },
+   "only_ours": [
+    "complaint.fever"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-88",
+   "agree": [
+    "complaint.category",
+    "complaint.text",
+    "patient.age",
+    "patient.sex",
+    "red_flags.responsive"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "E.head_strike"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-90",
+   "agree": [
+    "complaint.category",
+    "complaint.infection_signs",
+    "complaint.onset",
+    "complaint.text",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.temp_c"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "A.allergies",
+    "complaint.fever"
+   ],
+   "only_theirs": {
+    "patient.has_ovaries": true
+   },
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-92",
+   "agree": [
+    "complaint.category",
+    "complaint.fever",
+    "complaint.onset",
+    "complaint.respiratory_distress_signs",
+    "complaint.text",
+    "history.conditions",
+    "patient.age",
+    "patient.sex",
+    "vitals.spo2"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "complaint.increasing_respiratory_effort",
+    "obs.requires_lifesaving_intervention",
+    "obs.respiratory_compromise_signs",
+    "obs.severe_respiratory_distress",
+    "vitals.spo2_is_patients_norm"
+   ],
+   "only_theirs": {
+    "complaint.shortness_of_breath": true,
+    "patient.has_ovaries": true
+   },
+   "no_such_field": [],
+   "outcome_ours": "esi1",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-96",
+   "agree": [
+    "A.allergies",
+    "complaint.category",
+    "complaint.onset",
+    "complaint.text",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.spo2",
+    "vitals.temp_c"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "complaint.respiratory_distress_signs"
+   ],
+   "only_theirs": {
+    "infection.rash": false
+   },
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-99",
+   "agree": [
+    "complaint.category",
+    "complaint.text",
+    "complaint.vomiting",
+    "history.conditions",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp"
+   ],
+   "value_differs": {
+    "complaint.onset": [
+     "5 hours",
+     "5 hours ago"
+    ]
+   },
+   "only_ours": [
+    "A.allergies",
+    "M.medications"
+   ],
+   "only_theirs": {
+    "L.last_intake": "hasn't eaten",
+    "patient.has_ovaries": true
+   },
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "ch9-100",
+   "agree": [
+    "E.mechanism",
+    "complaint.category",
+    "complaint.text",
+    "history.conditions",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp"
+   ],
+   "value_differs": {
+    "M.medications": [
+     [
+      "a little blue pill to thin his blood"
+     ],
+     [
+      "little blue pill to thin his blood"
+     ]
+    ]
+   },
+   "only_ours": [
+    "obs.hemodynamically_unstable",
+    "obs.hypoperfusion_signs",
+    "obs.requires_lifesaving_intervention",
+    "vitals.hypotension",
+    "vitals.profound_hypotension"
+   ],
+   "only_theirs": {
+    "M.anticoagulant": true
+   },
+   "no_such_field": [],
+   "outcome_ours": "esi1",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "A-3",
+   "agree": [
+    "complaint.category",
+    "complaint.text",
+    "obs.hypoperfusion_signs",
+    "patient.age_days",
+    "patient.sex"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "ams.changed_from_baseline",
+    "obs.requires_lifesaving_intervention",
+    "patient.age"
+   ],
+   "only_theirs": {
+    "obs.subtle_mental_status_change": true,
+    "patient.has_ovaries": true
+   },
+   "no_such_field": [],
+   "outcome_ours": "esi1",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "A-6",
+   "agree": [
+    "complaint.category",
+    "complaint.onset",
+    "complaint.text",
+    "infection.rash",
+    "patient.sex"
+   ],
+   "value_differs": {},
+   "only_ours": [],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "A-12",
+   "agree": [
+    "complaint.onset",
+    "complaint.text",
+    "complaint.uti_symptoms",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.spo2",
+    "vitals.temp_c"
+   ],
+   "value_differs": {
+    "complaint.category": [
+     "other",
+     "urinary_problem"
+    ]
+   },
+   "only_ours": [],
+   "only_theirs": {
+    "red_flags.responsive": true
+   },
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "B-3",
+   "agree": [
+    "complaint.category",
+    "complaint.text",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "infection.rash"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "B-6",
+   "agree": [
+    "complaint.category",
+    "complaint.fever",
+    "complaint.onset",
+    "complaint.text",
+    "history.conditions",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.spo2",
+    "vitals.temp_c"
+   ],
+   "value_differs": {},
+   "only_ours": [],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "B-8",
+   "agree": [
+    "complaint.category",
+    "complaint.onset",
+    "complaint.text"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "history.conditions"
+   ],
+   "only_theirs": {
+    "E.mechanism": "penetrating_trauma"
+   },
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "B-18",
+   "agree": [
+    "complaint.category",
+    "complaint.onset",
+    "complaint.text",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.spo2",
+    "vitals.temp_c"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "history.conditions"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "B-19",
+   "agree": [
+    "E.mechanism",
+    "complaint.text",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {
+    "complaint.category": [
+     "wound",
+     "injury"
+    ]
+   },
+   "only_ours": [
+    "E.fall_height_meters",
+    "E.head_strike"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "B-23",
+   "agree": [
+    "complaint.pain_rating",
+    "complaint.text",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.sbp",
+    "vitals.spo2",
+    "vitals.temp_c"
+   ],
+   "value_differs": {
+    "complaint.category": [
+     "mental_health",
+     "poisoning_or_overdose"
+    ]
+   },
+   "only_ours": [],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "appA-ch2-q1",
+   "agree": [
+    "complaint.text",
+    "obs.cardiac_or_pulmonary_arrest",
+    "patient.age"
+   ],
+   "value_differs": {},
+   "only_ours": [],
+   "only_theirs": {
+    "complaint.category": "other",
+    "obs.requires_lifesaving_intervention": true
+   },
+   "no_such_field": [],
+   "outcome_ours": "esi1",
+   "outcome_theirs": "esi1"
+  },
+  {
+   "case": "appA-ch2-q2",
+   "agree": [
+    "complaint.category",
+    "complaint.text",
+    "patient.age"
+   ],
+   "value_differs": {},
+   "only_ours": [],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "appA-ch2-q3",
+   "agree": [
+    "complaint.category",
+    "complaint.text",
+    "patient.age"
+   ],
+   "value_differs": {},
+   "only_ours": [],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "appA-ch2-q4",
+   "agree": [
+    "complaint.category",
+    "complaint.text",
+    "patient.age"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "patient.age_months"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "appA-ch2-q5",
+   "agree": [
+    "E.mechanism",
+    "complaint.category",
+    "complaint.text",
+    "patient.age"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "E.high_speed",
+    "E.mechanical_extrication",
+    "E.vehicle_ejection"
+   ],
+   "only_theirs": {
+    "vitals.heart_rate": 72,
+    "vitals.respiratory_rate": 18,
+    "vitals.sbp": 120
+   },
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "appA-ch2-q6",
+   "agree": [
+    "complaint.known_toxic_ingestion",
+    "complaint.text",
+    "obs.avpu",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "patient.age_months"
+   ],
+   "only_theirs": {
+    "complaint.category": "poisoning_or_overdose"
+   },
+   "no_such_field": [],
+   "outcome_ours": "esi1",
+   "outcome_theirs": "esi1"
+  },
+  {
+   "case": "appA-ch3-q1",
+   "agree": [
+    "complaint.category",
+    "complaint.onset",
+    "complaint.text",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "complaint.acs_suspicion"
+   ],
+   "only_theirs": {
+    "history.conditions": [
+     "Smoker"
+    ],
+    "obs.avpu": "A",
+    "red_flags.chest_pain_now": false
+   },
+   "no_such_field": [],
+   "outcome_ours": "floor2",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "appA-ch3-q2",
+   "agree": [
+    "complaint.category",
+    "complaint.fever",
+    "complaint.onset",
+    "complaint.shortness_of_breath",
+    "complaint.text",
+    "obs.cannot_manage_secretions",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {},
+   "only_ours": [],
+   "only_theirs": {
+    "patient.has_ovaries": true
+   },
+   "no_such_field": [],
+   "outcome_ours": "floor2",
+   "outcome_theirs": "floor2"
+  },
+  {
+   "case": "appA-ch3-q3",
+   "agree": [
+    "complaint.category",
+    "complaint.onset",
+    "complaint.stroke_signs",
+    "complaint.text",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {},
+   "only_ours": [],
+   "only_theirs": {
+    "M.medications": [
+     "Lanoxin"
+    ],
+    "complaint.shortness_of_breath": true,
+    "history.conditions": [
+     "Atrial fibrillation"
+    ],
+    "obs.avpu": "A",
+    "stroke.arm_weakness": true,
+    "stroke.balance_loss": true,
+    "stroke.face_droop": true,
+    "stroke.speech_change": true
+   },
+   "no_such_field": [],
+   "outcome_ours": "floor2",
+   "outcome_theirs": "floor2"
+  },
+  {
+   "case": "appA-ch3-q4",
+   "agree": [
+    "complaint.category",
+    "complaint.onset",
+    "complaint.text",
+    "patient.age",
+    "patient.sex",
+    "stroke.vision_change"
+   ],
+   "value_differs": {
+    "history.conditions": [
+     [
+      "coronary artery disease",
+      "hypertension"
+     ],
+     [
+      "CAD",
+      "HTN"
+     ]
+    ]
+   },
+   "only_ours": [
+    "complaint.atso_elements_count"
+   ],
+   "only_theirs": {
+    "complaint.stroke_signs": true
+   },
+   "no_such_field": [],
+   "outcome_ours": "floor2",
+   "outcome_theirs": "floor2"
+  },
+  {
+   "case": "appA-ch3-q5",
+   "agree": [
+    "complaint.category",
+    "complaint.onset",
+    "complaint.pain_rating",
+    "complaint.text",
+    "complaint.vomiting",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "patient.has_ovaries"
+   ],
+   "only_theirs": {
+    "complaint.uti_symptoms": false,
+    "vitals.heart_rate": 84
+   },
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "appA-ch3-q6",
+   "agree": [
+    "E.mechanism",
+    "complaint.category",
+    "complaint.extremity_neurovascular_compromise",
+    "complaint.onset",
+    "complaint.text",
+    "history.baseline_mental_status",
+    "obs.confusion_lethargy_disorientation",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "complaint.compartment_syndrome_symptoms",
+    "obs.new_confusion_lethargy_disorientation"
+   ],
+   "only_theirs": {
+    "ams.changed_from_baseline": false,
+    "history.conditions": [
+     "Alzheimer's disease"
+    ],
+    "limb.cast_too_tight": true,
+    "limb.cold_pale_blue": true
+   },
+   "no_such_field": [],
+   "outcome_ours": "floor2",
+   "outcome_theirs": "floor2"
+  },
+  {
+   "case": "appA-ch3-q7",
+   "agree": [
+    "complaint.category",
+    "complaint.fever",
+    "complaint.onset",
+    "complaint.text",
+    "complaint.vomiting",
+    "patient.age_months"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "obs.subtle_mental_status_change",
+    "patient.age"
+   ],
+   "only_theirs": {
+    "M.medications": [
+     "acetaminophen"
+    ],
+    "complaint.respiratory_distress_signs": false,
+    "obs.confusion_lethargy_disorientation": true
+   },
+   "no_such_field": [],
+   "outcome_ours": "floor2",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "appA-ch3-q8",
+   "agree": [
+    "complaint.category",
+    "complaint.onset",
+    "complaint.pain_rating",
+    "complaint.text",
+    "complaint.unilateral_lower_quadrant_pain",
+    "complaint.vomiting",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "patient.has_ovaries"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "appA-ch3-q9",
+   "agree": [
+    "E.loc",
+    "E.mechanism",
+    "complaint.neck_pain",
+    "complaint.onset",
+    "complaint.text",
+    "complaint.vomiting",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {
+    "complaint.category": [
+     "wound",
+     "head_injury"
+    ]
+   },
+   "only_ours": [
+    "E.body_region"
+   ],
+   "only_theirs": {
+    "E.head_strike": true,
+    "red_flags.responsive": true
+   },
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "appA-ch3-q10",
+   "agree": [
+    "complaint.category",
+    "complaint.text",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "complaint.atso_elements_count"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "appA-ch3-q11",
+   "agree": [
+    "E.loc",
+    "E.mechanism",
+    "complaint.category",
+    "complaint.onset",
+    "complaint.pain_rating",
+    "complaint.text",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "E.fall_height_meters",
+    "obs.hypoperfusion_signs"
+   ],
+   "only_theirs": {
+    "complaint.neck_pain": false
+   },
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "appA-ch3-q12",
+   "agree": [
+    "complaint.category",
+    "complaint.onset",
+    "complaint.text",
+    "complaint.vomiting",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "obs.new_confusion_lethargy_disorientation",
+    "patient.age_months"
+   ],
+   "only_theirs": {
+    "complaint.fever": false,
+    "obs.confusion_lethargy_disorientation": true
+   },
+   "no_such_field": [],
+   "outcome_ours": "floor2",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "appA-ch3-q13",
+   "agree": [
+    "complaint.onset",
+    "complaint.shortness_of_breath",
+    "complaint.text",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {
+    "complaint.category": [
+     "breathing",
+     "chest_pain"
+    ]
+   },
+   "only_ours": [
+    "complaint.increasing_respiratory_effort",
+    "complaint.respiratory_distress_signs"
+   ],
+   "only_theirs": {
+    "history.conditions": [
+     "colon cancer"
+    ],
+    "red_flags.chest_pain_now": true
+   },
+   "no_such_field": [],
+   "outcome_ours": "floor2",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "appA-ch3-q14",
+   "agree": [
+    "complaint.category",
+    "complaint.onset",
+    "complaint.text",
+    "obs.hypoperfusion_signs",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "vitals.hypotension"
+   ],
+   "only_theirs": {
+    "vitals.sbp": 80
+   },
+   "no_such_field": [],
+   "outcome_ours": "esi1",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "appA-ch3-q15",
+   "agree": [
+    "complaint.category",
+    "complaint.onset",
+    "complaint.pain_rating",
+    "complaint.text",
+    "complaint.vaginal_bleeding",
+    "history.pregnant",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "complaint.heavy_vaginal_bleeding",
+    "obs.hemodynamically_unstable",
+    "obs.requires_lifesaving_intervention"
+   ],
+   "only_theirs": {
+    "patient.has_ovaries": true,
+    "vitals.sbp": 92
+   },
+   "no_such_field": [],
+   "outcome_ours": "esi1",
+   "outcome_theirs": "floor2"
+  },
+  {
+   "case": "appA-ch4-q4",
+   "agree": [
+    "complaint.category",
+    "complaint.text",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {},
+   "only_ours": [],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "appA-ch4-q7",
+   "agree": [
+    "complaint.possible_ectopic_pregnancy",
+    "complaint.text",
+    "complaint.vaginal_bleeding",
+    "patient.age",
+    "patient.has_ovaries",
+    "patient.sex"
+   ],
+   "value_differs": {
+    "complaint.category": [
+     "vaginal_bleeding",
+     "abdominal_pain"
+    ]
+   },
+   "only_ours": [],
+   "only_theirs": {
+    "obs.hypoperfusion_signs": true
+   },
+   "no_such_field": [],
+   "outcome_ours": "floor2",
+   "outcome_theirs": "floor2"
+  },
+  {
+   "case": "appA-ch4-q8",
+   "agree": [
+    "complaint.category",
+    "complaint.fever",
+    "complaint.onset",
+    "complaint.text",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {},
+   "only_ours": [],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "appA-ch4-q9",
+   "agree": [
+    "E.mechanism",
+    "E.vehicle_ejection",
+    "complaint.text",
+    "obs.avpu",
+    "obs.intubated",
+    "patient.age",
+    "patient.sex",
+    "vitals.hypotension"
+   ],
+   "value_differs": {},
+   "only_ours": [],
+   "only_theirs": {
+    "complaint.category": "injury",
+    "patient.has_ovaries": true,
+    "red_flags.responsive": false
+   },
+   "no_such_field": [],
+   "outcome_ours": "esi1",
+   "outcome_theirs": "esi1"
+  },
+  {
+   "case": "appA-ch4-q10",
+   "agree": [
+    "complaint.category",
+    "complaint.text",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "E.mechanism"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "appA-ch5-q1",
+   "agree": [
+    "complaint.fever",
+    "complaint.text",
+    "obs.subtle_mental_status_change",
+    "patient.age_days",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.spo2",
+    "vitals.temp_c"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "complaint.category",
+    "patient.age",
+    "patient.age_months"
+   ],
+   "only_theirs": {},
+   "no_such_field": [],
+   "outcome_ours": "floor2",
+   "outcome_theirs": "floor2"
+  },
+  {
+   "case": "appA-ch5-q2",
+   "agree": [
+    "complaint.fever",
+    "complaint.text",
+    "patient.age_months",
+    "patient.immunizations_incomplete",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.spo2",
+    "vitals.temp_c"
+   ],
+   "value_differs": {
+    "complaint.category": [
+     "ear_problem",
+     "fever"
+    ]
+   },
+   "only_ours": [
+    "patient.age"
+   ],
+   "only_theirs": {
+    "history.conditions": [
+     "frequent ear infections"
+    ],
+    "obs.avpu": "A"
+   },
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "appA-ch5-q3",
+   "agree": [
+    "complaint.category",
+    "complaint.fever",
+    "complaint.onset",
+    "complaint.text",
+    "patient.age",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.spo2",
+    "vitals.temp_c"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "patient.age_months"
+   ],
+   "only_theirs": {
+    "complaint.chills_or_rigors": true,
+    "complaint.shortness_of_breath": true
+   },
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "appA-ch5-q4",
+   "agree": [
+    "complaint.category",
+    "complaint.text",
+    "complaint.vomiting",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.spo2",
+    "vitals.temp_c"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "obs.ill_appearing"
+   ],
+   "only_theirs": {
+    "vitals.sbp": 130
+   },
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "appA-ch5-q5",
+   "agree": [
+    "M.immunosuppressant_or_steroid",
+    "complaint.category",
+    "complaint.text",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.spo2"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "complaint.shortness_of_breath"
+   ],
+   "only_theirs": {
+    "history.conditions": [
+     "asthma"
+    ],
+    "vitals.sbp": 157,
+    "vitals.temp_c": 37.3
+   },
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "appA-ch5-q6",
+   "agree": [
+    "E.loc",
+    "complaint.category",
+    "complaint.text",
+    "patient.age",
+    "patient.sex"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "E.body_region",
+    "E.mechanism",
+    "patient.age_months"
+   ],
+   "only_theirs": {
+    "E.head_strike": true,
+    "red_flags.responsive": true
+   },
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "appA-ch6-q1",
+   "agree": [
+    "complaint.category",
+    "complaint.text",
+    "patient.age"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "complaint.rash",
+    "patient.age_months"
+   ],
+   "only_theirs": {
+    "infection.rash": true
+   },
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "appA-ch6-q2",
+   "agree": [
+    "complaint.category",
+    "complaint.fever",
+    "complaint.text",
+    "patient.age_months",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.spo2",
+    "vitals.temp_c"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "complaint.petechial_or_purpuric_rash",
+    "complaint.rash",
+    "obs.ineffective_respiratory_pattern",
+    "obs.ineffective_tissue_perfusion",
+    "obs.requires_lifesaving_intervention",
+    "patient.age",
+    "patient.age_days"
+   ],
+   "only_theirs": {
+    "infection.rash": true
+   },
+   "no_such_field": [],
+   "outcome_ours": "esi1",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "appA-ch6-q3",
+   "agree": [
+    "complaint.category",
+    "complaint.text",
+    "patient.age",
+    "patient.sex",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.spo2",
+    "vitals.temp_c"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "complaint.rash",
+    "patient.age_months"
+   ],
+   "only_theirs": {
+    "infection.rash": true,
+    "patient.has_ovaries": true
+   },
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "appA-ch6-q4",
+   "agree": [
+    "complaint.category",
+    "complaint.onset",
+    "complaint.text",
+    "patient.age",
+    "vitals.heart_rate",
+    "vitals.respiratory_rate",
+    "vitals.spo2"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "complaint.rash",
+    "complaint.respiratory_distress_signs",
+    "obs.anaphylaxis",
+    "patient.age_months"
+   ],
+   "only_theirs": {
+    "A.allergies": [
+     "peanut allergies"
+    ],
+    "infection.rash": true,
+    "vitals.temp_c": 36.7
+   },
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  },
+  {
+   "case": "appA-ch6-q5",
+   "agree": [
+    "complaint.category",
+    "complaint.fever",
+    "complaint.text",
+    "patient.age"
+   ],
+   "value_differs": {},
+   "only_ours": [
+    "complaint.rash",
+    "patient.age_months",
+    "vitals.temp_c"
+   ],
+   "only_theirs": {
+    "infection.contacts": true,
+    "infection.rash": true
+   },
+   "no_such_field": [],
+   "outcome_ours": "none",
+   "outcome_theirs": "none"
+  }
+ ]
+}

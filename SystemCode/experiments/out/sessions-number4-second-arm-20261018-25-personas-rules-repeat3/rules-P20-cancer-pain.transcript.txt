@@ -1,0 +1,52 @@
+arm B, form rules, persona P20-cancer-pain, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  Is the patient awake and responding normally?
+A1  Yes, I'm awake, it's me talking.
+
+Q2  Is the patient experiencing any chest pain right now?
+A2  No.
+
+Q3  Is the patient having any trouble breathing right now?
+A3  I don't know.
+
+Q4  Is the patient bleeding heavily right now?
+A4  I don't know.
+
+Q5  Can you tell me more about why you aren't sure if they are having trouble breathing? For example, are they breathing very fast, making a gasping sound, or struggling to speak?
+A5  I don't know.
+
+Q6  Can you describe what the patient is doing or how they are acting right now?
+A6  Yes, I'm awake, it's me talking.
+
+Q7  Is the patient currently experiencing any severe pain or distress?
+A7  My pain medications are not working anymore. It's a 9 out of 10.
+
+Q8  Can you tell me where the pain is located and what caused it?
+A8  Yes, it's from my cancer. I have metastatic ovarian cancer.
+
+Q9  Is the pain you are feeling in your abdomen or in your chest?
+A9  I don't know.
+
+Q10  Can you tell me if the pain is in your chest, your abdomen, or somewhere else?
+A10  I don't know.
+
+Q11  Is the pain in your abdomen (belly area)?
+A11  Yes, it's from my cancer. I have metastatic ovarian cancer.
+
+Q12  Are you currently pregnant or have you given birth in the last few weeks?
+A12  No.
+
+Q13  Is the pain you are feeling constant, or has it suddenly become much worse or more intense?
+A13  It got much worse last night.
+
+Q14  Is the pain in your abdomen constant, or has it suddenly become much worse or more intense?
+A14  It got much worse last night.
+
+Q15  Is the pain in your abdomen constant, or did it start suddenly and reach its maximum intensity when it began?
+A15  I don't know.
+
+Q16  Are you currently being treated for any other medical conditions, such as a heart condition or a lung problem?
+A16  No.
+
+DECISION {"decision": "unparsed", "reason": "turn limit reached without a decision"}
+OUTCOME no decision in 16 questions | expected at least ESI-2 | pass False | label missing fact | max prompt tokens 44099

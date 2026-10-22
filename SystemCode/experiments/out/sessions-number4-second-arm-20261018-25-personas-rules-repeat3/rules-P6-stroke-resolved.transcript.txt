@@ -1,0 +1,49 @@
+arm B, form rules, persona P6-stroke-resolved, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  Is the patient awake and responding normally?
+A1  Yes, she's awake and talking clearly now.
+
+Q2  Is the patient experiencing any chest pain right now?
+A2  No chest pain.
+
+Q3  Is the patient having any trouble breathing right now?
+A3  I don't know.
+
+Q4  Is the patient having any trouble breathing right now?
+A4  I don't know.
+
+Q5  Is the patient bleeding heavily right now?
+A5  No.
+
+Q6  Is the patient currently having any trouble breathing?
+A6  I don't know.
+
+Q7  Can you describe why you aren't sure if she is having trouble breathing? (For example, is she breathing very fast, or is she struggling to speak?)
+A7  I don't know.
+
+Q8  Is she currently struggling to speak or making any unusual noises when she breathes?
+A8  No, she's awake and talking clearly now.
+
+Q9  What is the main reason she is coming to the emergency department today?
+A9  This morning her speech suddenly went slurred and her left arm went weak, and she couldn't lift her teacup. It lasted about 45 minutes and then passed completely.
+
+Q10  Is the patient currently experiencing any other symptoms, such as a drooping face or a sudden change in her ability to move or speak?
+A10  I didn't notice her face drooping. Her speech and arm strength are back to normal now.
+
+Q11  How old is the patient?
+A11  She's 88.
+
+Q12  Does the patient have any other medical conditions, such as high blood pressure, heart problems, or a history of stroke?
+A12  She had a stroke two years ago.
+
+Q13  Is the patient currently experiencing any other symptoms, such as a drooping face or a sudden change in her ability to move or speak?
+A13  I didn't notice her face drooping. Her speech and arm strength are back to normal now.
+
+Q14  Is the patient currently experiencing any other symptoms, such as a sudden headache, dizziness, or any other new changes?
+A14  No, she's not confused and she's as clear as usual now.
+
+Q15  Is the patient currently experiencing any other symptoms, such as a sudden headache, dizziness, or any other new changes?
+A15  No, she's not confused and she's as clear as usual now.
+
+DECISION {"decision": "at least ESI-2", "reason": "The patient is presenting with symptoms of a stroke (slurred speech and arm weakness), which is a high-risk situation.", "citation": "ESI v5 p.12 (Stroke signs: ...sudden loss of balance or vision, sudden confusion; also when the signs have passed)"}
+OUTCOME level 2 or floor | expected at least ESI-2 | pass True | label None | max prompt tokens 44158

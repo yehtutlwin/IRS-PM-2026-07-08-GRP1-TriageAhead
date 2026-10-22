@@ -1,0 +1,59 @@
+{"t": "21:25:42", "kind": "engine", "note": "session SAGA-8335 started (web)"}
+{"t": "21:25:45", "kind": "question", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "Is the patient awake and responding to you normally? Also, are they currently experiencing any chest pain, trouble breathing, or heavy bleeding?", "fields": ["danger_signs.responsive", "danger_signs.chest_pain_now"], "offered": ["danger_signs.responsive", "danger_signs.chest_pain_now", "danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text"]}
+{"t": "21:25:45", "kind": "answer", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "Yes, I'm awake, it's me. No."}
+{"t": "21:25:49", "kind": "extract", "writes": [["danger_signs.responsive", true]]}
+{"t": "21:25:52", "kind": "question", "slot": "dyn:danger_signs.chest_pain_now", "text": "I understand. Is the patient experiencing any pain in their chest at this moment?", "fields": ["danger_signs.chest_pain_now"], "offered": ["danger_signs.chest_pain_now"]}
+{"t": "21:25:52", "kind": "answer", "slot": "dyn:danger_signs.chest_pain_now", "text": "No."}
+{"t": "21:25:55", "kind": "extract", "writes": [["danger_signs.chest_pain_now", false]]}
+{"t": "21:25:59", "kind": "question", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category", "text": "I'm glad you're able to speak with me. Are you or the patient having any trouble breathing or heavy bleeding right now? Also, what is the main reason for your visit today?", "fields": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category"], "offered": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text", "complaint.onset", "E.mechanism"]}
+{"t": "21:25:59", "kind": "answer", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category", "text": "No. A bug flew into my right ear while I was gardening and I can't get it out."}
+{"t": "21:26:04", "kind": "extract", "writes": [["danger_signs.breathing_difficulty", false, "denial of something the answer does not address"], ["danger_signs.heavy_bleeding", false, "denial of something the answer does not address"]], "via": "guard-dropped"}
+{"t": "21:26:04", "kind": "extract", "writes": [["complaint.category", "other"]]}
+{"t": "21:26:07", "kind": "question", "slot": "dyn:danger_signs.breathing_difficulty", "text": "I understand about the ear. Is the patient having any difficulty breathing right now?", "fields": ["danger_signs.breathing_difficulty"], "offered": ["danger_signs.breathing_difficulty"]}
+{"t": "21:26:07", "kind": "answer", "slot": "dyn:danger_signs.breathing_difficulty", "text": "No."}
+{"t": "21:26:10", "kind": "extract", "writes": [["danger_signs.breathing_difficulty", false]]}
+{"t": "21:26:13", "kind": "question", "slot": "dyn:danger_signs.heavy_bleeding", "text": "Is there any heavy bleeding occurring right now?", "fields": ["danger_signs.heavy_bleeding"], "offered": ["danger_signs.heavy_bleeding"]}
+{"t": "21:26:13", "kind": "answer", "slot": "dyn:danger_signs.heavy_bleeding", "text": "No."}
+{"t": "21:26:16", "kind": "extract", "writes": [["danger_signs.heavy_bleeding", false]]}
+{"t": "21:26:19", "kind": "question", "slot": "dyn:complaint.text+complaint.onset", "text": "I'm glad there's no breathing trouble or bleeding. Can you tell me more about what's happening with the ear and when it started?", "fields": ["complaint.text", "complaint.onset"], "offered": ["complaint.text", "complaint.onset", "E.mechanism", "patient.age", "patient.sex", "complaint.fever"]}
+{"t": "21:26:19", "kind": "answer", "slot": "dyn:complaint.text+complaint.onset", "text": "This sounds really strange. A bug flew into my right ear while I was gardening. I tried to get it out with a cotton bud. The buzzing noise is driving me crazy. This afternoon, about two hours ago."}
+{"t": "21:26:37", "kind": "extract", "writes": [["danger_signs.breathing_difficulty", false, "denial of something the answer does not address"], ["danger_signs.heavy_bleeding", false, "denial of something the answer does not address"]], "via": "guard-dropped"}
+{"t": "21:26:37", "kind": "extract", "writes": [["complaint.text", "A bug flew into my right ear while I was gardening. I tried to get it out with a cotton bud. The buzzing noise is driving me crazy."], ["complaint.onset", "This afternoon, about two hours ago"]]}
+{"t": "21:26:40", "kind": "question", "slot": "dyn:E.mechanism+patient.age+patient.sex", "text": "I understand. To help the team, could you tell me the patient's age and sex, and can you describe how the bug entered the ear?", "fields": ["E.mechanism", "patient.age", "patient.sex"], "offered": ["E.mechanism", "patient.age", "patient.sex", "complaint.fever", "infection.rash", "infection.travel_14d"]}
+{"t": "21:26:40", "kind": "answer", "slot": "dyn:E.mechanism+patient.age+patient.sex", "text": "I'm 55. I'm a woman."}
+{"t": "21:26:45", "kind": "extract", "writes": [["patient.age", 55], ["patient.sex", "female"]]}
+{"t": "21:26:48", "kind": "question", "slot": "dyn:E.mechanism", "text": "Could you tell me more about how the bug got into her ear?", "fields": ["E.mechanism"], "offered": ["E.mechanism"]}
+{"t": "21:26:48", "kind": "answer", "slot": "dyn:E.mechanism", "text": "I don't know."}
+{"t": "21:26:51", "kind": "extract", "writes": []}
+{"t": "21:26:51", "kind": "extract", "writes": [["E.mechanism", null]], "via": "dont-know"}
+{"t": "21:26:53", "kind": "question", "slot": "dyn:history.pregnant", "text": "Is she currently pregnant?", "fields": ["history.pregnant"], "offered": ["history.pregnant", "history.postpartum", "complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts"]}
+{"t": "21:26:53", "kind": "answer", "slot": "dyn:history.pregnant", "text": "I don't know."}
+{"t": "21:26:57", "kind": "extract", "writes": []}
+{"t": "21:26:57", "kind": "extract", "writes": [["history.pregnant", null]], "via": "dont-know"}
+{"t": "21:26:59", "kind": "question", "slot": "dyn:history.postpartum", "text": "Has she given birth in the last few weeks?", "fields": ["history.postpartum"], "offered": ["history.postpartum", "complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts", "complaint.uti_symptoms"]}
+{"t": "21:26:59", "kind": "answer", "slot": "dyn:history.postpartum", "text": "I don't know."}
+{"t": "21:27:03", "kind": "extract", "writes": []}
+{"t": "21:27:03", "kind": "extract", "writes": [["history.postpartum", null]], "via": "dont-know"}
+{"t": "21:27:05", "kind": "question", "slot": "dyn:complaint.fever+infection.rash", "text": "Does she have a fever or any new rashes on her skin?", "fields": ["complaint.fever", "infection.rash"], "offered": ["complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts", "complaint.uti_symptoms", "ams.changed_from_baseline"]}
+{"t": "21:27:05", "kind": "answer", "slot": "dyn:complaint.fever+infection.rash", "text": "I don't know."}
+{"t": "21:27:09", "kind": "extract", "writes": []}
+{"t": "21:27:09", "kind": "extract", "writes": [["complaint.fever", null], ["infection.rash", null]], "via": "dont-know"}
+{"t": "21:27:12", "kind": "question", "slot": "dyn:infection.travel_14d+infection.contacts", "text": "Has she traveled outside the country or been in contact with anyone who has a contagious illness in the last two weeks?", "fields": ["infection.travel_14d", "infection.contacts"], "offered": ["infection.travel_14d", "infection.contacts", "complaint.uti_symptoms", "ams.changed_from_baseline", "complaint.pain_rating", "stroke.face_droop"]}
+{"t": "21:27:12", "kind": "answer", "slot": "dyn:infection.travel_14d+infection.contacts", "text": "I don't know."}
+{"t": "21:27:15", "kind": "extract", "writes": []}
+{"t": "21:27:15", "kind": "extract", "writes": [["infection.travel_14d", null], ["infection.contacts", null]], "via": "dont-know"}
+{"t": "21:27:18", "kind": "question", "slot": "dyn:complaint.uti_symptoms", "text": "Is she experiencing any pain or burning when she goes to the bathroom, or is she needing to go much more often?", "fields": ["complaint.uti_symptoms"], "offered": ["complaint.uti_symptoms", "ams.changed_from_baseline", "complaint.pain_rating", "stroke.face_droop", "stroke.arm_weakness", "stroke.speech_change"]}
+{"t": "21:27:18", "kind": "answer", "slot": "dyn:complaint.uti_symptoms", "text": "I don't know."}
+{"t": "21:27:22", "kind": "extract", "writes": []}
+{"t": "21:27:22", "kind": "extract", "writes": [["complaint.uti_symptoms", null]], "via": "dont-know"}
+{"t": "21:27:25", "kind": "question", "slot": "dyn:ams.changed_from_baseline", "text": "Is she acting differently than usual, such as being more confused, not making sense, or unusually sleepy?", "fields": ["ams.changed_from_baseline"], "offered": ["ams.changed_from_baseline", "complaint.pain_rating", "stroke.face_droop", "stroke.arm_weakness", "stroke.speech_change", "stroke.balance_loss"]}
+{"t": "21:27:25", "kind": "answer", "slot": "dyn:ams.changed_from_baseline", "text": "I don't know."}
+{"t": "21:27:28", "kind": "extract", "writes": []}
+{"t": "21:27:28", "kind": "extract", "writes": [["ams.changed_from_baseline", null]], "via": "dont-know"}
+{"t": "21:27:31", "kind": "question", "slot": "dyn:complaint.pain_rating", "text": "On a scale of 0 to 10, where 10 is the worst pain imaginable, how bad is her pain right now?", "fields": ["complaint.pain_rating"], "offered": ["complaint.pain_rating", "stroke.face_droop", "stroke.arm_weakness", "stroke.speech_change", "stroke.balance_loss", "complaint.danger_to_self_or_others"]}
+{"t": "21:27:31", "kind": "answer", "slot": "dyn:complaint.pain_rating", "text": "I don't know."}
+{"t": "21:27:34", "kind": "extract", "writes": []}
+{"t": "21:27:37", "kind": "question", "slot": "dyn:complaint.pain_rating", "text": "I understand. Can you describe how much pain she is in right now on a scale of 0 to 10?", "fields": ["complaint.pain_rating"], "offered": ["complaint.pain_rating"]}
+{"t": "21:27:37", "kind": "answer", "slot": "dyn:complaint.pain_rating", "text": "I don't know."}
+{"t": "21:27:39", "kind": "extract", "writes": []}
+{"t": "21:27:43", "kind": "question", "slot": "dyn:complaint.pain_rating", "text": "I understand it's hard to say. If you had to guess, how much pain is she in on a scale of 0 to 10?", "fields": ["complaint.pain_rating"], "offered": ["complaint.pain_rating"]}

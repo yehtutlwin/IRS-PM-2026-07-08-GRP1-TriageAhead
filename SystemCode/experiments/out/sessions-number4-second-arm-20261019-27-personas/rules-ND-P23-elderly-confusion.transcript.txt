@@ -1,0 +1,43 @@
+arm B, form rules, persona ND-P23-elderly-confusion, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  Is the patient awake and responding normally?
+A1  Yes, the patient is awake and can respond.
+
+Q2  Is the patient having chest pain right now?
+A2  No.
+
+Q3  Is the patient having trouble breathing right now?
+A3  No breathing difficulty noticed.
+
+Q4  Is the patient bleeding heavily right now?
+A4  No.
+
+Q5  What is the main reason the patient is coming to the emergency department?
+A5  My husband is suddenly confused. He became confused this afternoon and kept asking where he was.
+
+Q6  Is this a new change in his mental state, or has he been confused before?
+A6  He is normally alert and knows where he is. This afternoon he suddenly became confused and kept asking where he was.
+
+Q7  How old is your husband?
+A7  He is seventy-nine.
+
+Q8  Is he in any pain or in distress?
+A8  I don't know.
+
+Q9  Is he in any pain or distress, such as being very upset or in physical pain?
+A9  I don't know.
+
+Q10  Does he have any other symptoms, like a headache, a fever, or a recent injury?
+A10  I don't know.
+
+Q11  Does he have a headache, a fever, or any other symptoms like a cough or a rash?
+A11  I don't know.
+
+Q12  Does he have any other symptoms, like a cough, a rash, or a fall?
+A12  I don't know.
+
+Q13  Does he have any other symptoms, like a cough, a rash, or a fall?
+A13  I don't know.
+
+DECISION {"decision": "at least ESI-2", "reason": "The patient is an older adult with a new onset of confusion/altered mental status, which is a high-risk situation.", "citation": "ESI v5 p.12 (New Onset Confusion, Lethargy, or Disorientation); Rule B-01"}
+OUTCOME level 2 or floor | expected at least ESI-2 | pass True | label None | max prompt tokens 43990

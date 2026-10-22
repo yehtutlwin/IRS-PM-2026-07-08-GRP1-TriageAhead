@@ -1,0 +1,31 @@
+session LOTUS-1424   started 2026-10-15 20:09   (generated from messages)
+
+20:09:59  BOT  Is the patient awake and responding to you normally? Also, is he or she experiencing any chest pain, trouble breathing, or heavy bleeding right now?   [slot dyn:danger_signs.responsive+danger_signs.chest_pain_now]
+20:10:00  THEM He is awake and talking normally. He has no pain and is more short of breath than usual.   [slot dyn:danger_signs.responsive+danger_signs.chest_pain_now]
+20:10:09  BOT  I understand he is having more trouble breathing. Is he struggling to catch his breath right now, and is there any heavy bleeding?   [slot dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding]
+20:10:11  THEM He is more short of breath than usual, but he can still speak in full sentences. There is no bleeding.   [slot dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding]
+20:10:18  BOT  I've noted the breathing issues. What is the main problem that brings him in today, and when did it start?   [slot dyn:complaint.category+complaint.onset]
+20:10:20  THEM He is more short of breath than usual. This started this morning.   [slot dyn:complaint.category+complaint.onset]
+20:10:26  BOT  Could you tell me exactly what time this morning the breathing difficulties began?   [slot dyn:complaint.onset]
+20:10:28  THEM He has been more short of breath since this morning.   [slot dyn:complaint.onset]
+20:10:41  BOT  I understand. How old is he and can you tell me if he is male or female?   [slot dyn:patient.age+patient.sex]
+20:10:43  THEM He is 72 years old and he is male.   [slot dyn:patient.age+patient.sex]
+20:10:50  BOT  I see he is having trouble breathing. Does he have a fever or any new rashes on his skin?   [slot dyn:complaint.fever+infection.rash]
+20:10:51  THEM He has no fever and no rash.   [slot dyn:complaint.fever+infection.rash]
+20:10:58  BOT  Has he traveled outside the country or been in contact with anyone who is sick in the last two weeks?   [slot dyn:infection.travel_14d+infection.contacts]
+20:11:00  THEM No, he has had no travel and no contact with anyone ill.   [slot dyn:infection.travel_14d+infection.contacts]
+20:11:07  BOT  Is he acting differently than usual, such as being more confused or sleepy? Also, is his breathing getting harder?   [slot dyn:ams.changed_from_baseline+complaint.increasing_respiratory_effort]
+20:11:09  THEM He is awake and talking normally, but he has been more short of breath than usual since this morning.   [slot dyn:ams.changed_from_baseline+complaint.increasing_respiratory_effort]
+20:11:14  SYS  floor: at least ESI-2  rules: ['B-12.increasing-respiratory-effort'] (floor)
+20:11:17  BOT  I understand he is struggling with his breathing. Does he have any known allergies, especially to medications, and what medicines does he take regularly?   [slot dyn:M.medications+A.allergies]
+20:11:19  THEM He has no allergies. He takes a water pill (frusemide) and an inhaler.   [slot dyn:M.medications+A.allergies]
+20:11:26  BOT  Does he have any other ongoing medical conditions?   [slot dyn:history.conditions]
+20:11:27  THEM He has heart failure and COPD.   [slot dyn:history.conditions]
+20:11:41  BOT  Thank you for that information. Could you please tell me his full name and date of birth?   [slot dyn:identity.name+identity.dob]
+20:11:42  THEM His name is Mr. Lim. He was born on 03 Mar 1954.   [slot dyn:identity.name+identity.dob]
+20:11:47  BOT  That's enough for the hospital team to prepare. Show the code LOTUS-1424 at the counter when you arrive. I'll ask a few more things while you're on the way; tell me straight away if anything changes. (ack)
+20:11:50  BOT  On a scale of 0 to 10, how bad is his pain right now? Also, is he struggling to breathe, such as by breathing very fast or only being able to say a few words at a time?   [slot dyn:complaint.pain_rating+complaint.respiratory_distress_signs]
+20:11:52  THEM He has no pain. He can still speak in full sentences and is not wheezing.   [slot dyn:complaint.pain_rating+complaint.respiratory_distress_signs]
+20:11:59  BOT  I've noted that he isn't in pain. When was the last time he had something to eat or drink?   [slot dyn:L.last_intake]
+20:12:00  THEM He had some toast at 8am.   [slot dyn:L.last_intake]
+20:12:11  BOT  Thank you - that's everything. Show the code LOTUS-1424 at the counter when you arrive. (ack)

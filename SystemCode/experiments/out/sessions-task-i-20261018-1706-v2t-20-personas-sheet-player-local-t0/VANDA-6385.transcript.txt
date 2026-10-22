@@ -1,0 +1,33 @@
+session VANDA-6385   started 2026-10-18 16:35   (generated from messages)
+
+16:35:07  BOT  Is the patient awake and responding to you normally? Also, is he or she experiencing any chest pain, trouble breathing, or heavy bleeding right now?   [slot dyn:danger_signs.responsive+danger_signs.chest_pain_now]
+16:35:07  THEM Yes, she's awake and talking clearly now. No chest pain.   [slot dyn:danger_signs.responsive+danger_signs.chest_pain_now]
+16:35:15  BOT  I'm glad she's alert. Is she having any trouble breathing or is there any heavy bleeding? Also, could you tell me what the main problem is and what's happening?   [slot dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category+complaint.text]
+16:35:15  THEM No. This morning her speech suddenly went slurred and her left arm went weak, she couldn't lift her teacup. It lasted about 45 minutes and then passed completely.   [slot dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category+complaint.text]
+16:35:30  BOT  I understand the symptoms passed. To help the team, could you tell me what time this morning the symptoms started and how old she is?   [slot dyn:complaint.onset+patient.age]
+16:35:30  THEM Around 9 this morning. She's 88.   [slot dyn:complaint.onset+patient.age]
+16:35:37  BOT  I have noted her age. To clarify for the team, is she a woman or a man?   [slot dyn:patient.sex]
+16:35:37  THEM Female.   [slot dyn:patient.sex]
+16:35:43  BOT  I've noted that. Does she have a fever or any new rashes on her skin?   [slot dyn:complaint.fever+infection.rash]
+16:35:43  THEM No fever. No rash.   [slot dyn:complaint.fever+infection.rash]
+16:35:50  BOT  Has she traveled outside the country or been in contact with anyone who is sick in the last two weeks?   [slot dyn:infection.travel_14d+infection.contacts]
+16:35:50  THEM No.   [slot dyn:infection.travel_14d+infection.contacts]
+16:35:58  BOT  I've noted that. Has she had any sudden changes in her vision or seemed more confused or sleepy than usual?   [slot dyn:stroke.vision_change+ams.changed_from_baseline]
+16:35:58  THEM No change in her vision that I know of. No, she's as clear as usual now.   [slot dyn:stroke.vision_change+ams.changed_from_baseline]
+16:36:05  BOT  I understand. Is she acting more confused, not making sense, or seems unusually sleepy and hard to wake compared to how she normally is?   [slot dyn:ams.changed_from_baseline]
+16:36:05  THEM No, she's as clear as usual now.   [slot dyn:ams.changed_from_baseline]
+16:36:13  BOT  I'm glad she is alert. On a scale of 0 to 10, how bad is her pain right now? Also, has she had any drooping in her face, weakness in her arms or legs, or any slurring or difficulty with her speech?   [slot dyn:complaint.pain_rating+stroke.face_droop+stroke.arm_weakness]
+16:36:13  THEM She has no pain, 0 out of 10. I didn't notice her face drooping. Yes, her left arm went weak, she couldn't lift her cup; it's back to normal now.   [slot dyn:complaint.pain_rating+stroke.face_droop+stroke.arm_weakness]
+16:36:20  SYS  floor: at least ESI-2  rules: ['B-05.stroke-signs'] (floor)
+16:36:23  BOT  I've noted that she has no pain. Does she have any allergies to medications, and what medicines does she take regularly?   [slot dyn:M.medications+A.allergies]
+16:36:23  THEM One aspirin daily, nothing else. None.   [slot dyn:M.medications+A.allergies]
+16:36:30  BOT  To confirm, does she have any allergies to medications?   [slot dyn:A.allergies]
+16:36:30  THEM None.   [slot dyn:A.allergies]
+16:36:39  BOT  Does she have any other ongoing medical conditions?   [slot dyn:history.conditions]
+16:36:39  THEM She had a stroke two years ago.   [slot dyn:history.conditions]
+16:36:57  BOT  I've noted her history of stroke. Could you please tell me her full name and date of birth?   [slot dyn:identity.name+identity.dob]
+16:36:57  THEM Lim Ah Mui. 15 March 1938.   [slot dyn:identity.name+identity.dob]
+16:37:01  BOT  That's enough for the hospital team to prepare. Show the code VANDA-6385 at the counter when you arrive. I'll ask a few more things while you're on the way; tell me straight away if anything changes. (ack)
+16:37:04  BOT  When was the last time she had anything to eat or drink?   [slot dyn:L.last_intake]
+16:37:04  THEM Breakfast at 8am.   [slot dyn:L.last_intake]
+16:37:08  BOT  Thank you - that's everything. Show the code VANDA-6385 at the counter when you arrive. (ack)

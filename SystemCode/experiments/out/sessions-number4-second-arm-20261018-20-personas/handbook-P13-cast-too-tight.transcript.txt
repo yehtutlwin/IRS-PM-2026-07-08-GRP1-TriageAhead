@@ -1,0 +1,52 @@
+arm B, form handbook, persona P13-cast-too-tight, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  What is the main reason the patient is seeking care today?
+A1  Her hand is really swollen and the cast is cutting into her fingers.
+
+Q2  Is the patient experiencing any severe pain or distress, or is she showing signs of a high-risk situation like a change in mental status?
+A2  She says the pain is unbearable.
+
+Q3  Is the patient's pain a result of a systemic issue (like an infection or a medical emergency) or is it from a local injury like a fracture or a cast?
+A3  She had a cast put on her broken wrist last night. Now her hand is really swollen and the cast is cutting into her fingers.
+
+Q4  Does the patient have any signs of impaired circulation to her fingers, such as they being blue, cold, or numb?
+A4  Yes, her fingers are numb.
+
+Q5  Is the patient's heart rate, respiratory rate, or oxygen saturation level abnormal?
+A5  I don't know.
+
+Q6  Is the patient's heart rate, respiratory rate, or oxygen saturation level abnormal?
+A6  I don't know.
+
+Q7  Is the patient's pain a result of a local injury (like a fracture or a cast) or a systemic issue (like an infection or a medical emergency)?
+A7  She had a cast put on her broken wrist last night. Now her hand is really swollen and the cast is cutting into her fingers.
+
+Q8  Are the fingers that are numb also blue, cold, or pale?
+A8  I don't know.
+
+Q9  Is the patient's heart rate, respiratory rate, or oxygen saturation level abnormal?
+A9  I don't know.
+
+Q10  Is the patient's pain a result of a systemic issue (like an infection or a medical emergency) or is it from a local injury (like a fracture or a cast)?
+A10  She had a cast put on her broken wrist last night. Now her hand is really swollen and the cast is cutting into her fingers.
+
+Q11  Are the fingers that are numb also blue, cold, or pale?
+A11  I don't know.
+
+Q12  Is the patient's pain a result of a systemic issue (like an infection or a medical emergency) or is it from a local injury (like a fracture or a cast)?
+A12  She had a cast put on her broken wrist last night. Now her hand is really swollen and the cast is cutting into her fingers.
+
+Q13  Is the patient's pain a result of a systemic issue (like an infection or a medical emergency) or is it from a local injury (like a fracture or a cast)?
+A13  The pain is from her broken wrist and the cast that was put on last night.
+
+Q14  Is the patient's pain a result of a local injury (like a fracture or a cast) or a systemic issue (like an infection or a medical emergency)?
+A14  She had a cast put on her broken wrist last night. Now her hand is really swollen and the cast is cutting into her fingers.
+
+Q15  Are the fingers that are numb also blue, cold, or pale?
+A15  I don't know.
+
+Q16  Are the fingers that are numb also blue, cold, or pale?
+A16  I don't know.
+
+DECISION {"decision": "unparsed", "reason": "turn limit reached without a decision"}
+OUTCOME no decision in 16 questions | expected at least ESI-2 | pass False | label missing fact | max prompt tokens 30331

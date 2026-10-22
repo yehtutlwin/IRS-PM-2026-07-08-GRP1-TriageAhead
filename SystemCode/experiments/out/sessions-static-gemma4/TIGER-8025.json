@@ -1,0 +1,416 @@
+{
+ "sid": "TIGER-8025",
+ "facts": {
+  "red_flags.responsive": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-09-26 03:32"
+  },
+  "red_flags.chest_pain_now": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-09-26 03:32"
+  },
+  "red_flags.breathing_difficulty": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-09-26 03:32"
+  },
+  "red_flags.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-09-26 03:32"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "other",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "persona",
+      "turn": 3,
+      "ts": "2026-09-26 03:32"
+     },
+     "text": {
+      "value": "sudden, severe pain in my right big toe joint",
+      "status": "reported",
+      "who": "persona",
+      "turn": 3,
+      "ts": "2026-09-26 03:32"
+     },
+     "onset": {
+      "value": "woke up",
+      "status": "reported",
+      "who": "persona",
+      "turn": 3,
+      "ts": "2026-09-26 03:32"
+     },
+     "pain_rating": {
+      "value": 8,
+      "status": "reported",
+      "who": "persona",
+      "turn": 3,
+      "ts": "2026-09-26 03:32"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 3
+  },
+  "complaint.category": {
+   "value": [
+    "other"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-09-26 03:32"
+  },
+  "complaint.text": {
+   "value": "sudden, severe pain in my right big toe joint",
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-09-26 03:32"
+  },
+  "complaint.onset": {
+   "value": "woke up",
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-09-26 03:32"
+  },
+  "complaint.pain_rating": {
+   "value": 8,
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-09-26 03:32"
+  },
+  "complaint.pain_latest": {
+   "value": 8,
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-09-26 03:32"
+  },
+  "stroke.face_droop": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 4,
+   "ts": "2026-09-26 03:33"
+  },
+  "stroke.arm_weakness": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 4,
+   "ts": "2026-09-26 03:33"
+  },
+  "stroke.speech_change": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 4,
+   "ts": "2026-09-26 03:33"
+  },
+  "E.mechanism": {
+   "value": "none",
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-09-26 03:33"
+  },
+  "M.medications": {
+   "value": [
+    "amlodipine"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 6,
+   "ts": "2026-09-26 03:33"
+  },
+  "A.allergies": {
+   "value": [],
+   "status": "reported",
+   "who": "persona",
+   "turn": 7,
+   "ts": "2026-09-26 03:33"
+  },
+  "history.conditions": {
+   "value": [
+    "high blood pressure"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 7,
+   "ts": "2026-09-26 03:33"
+  },
+  "history.pregnant_or_postpartum": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 7,
+   "ts": "2026-09-26 03:33"
+  },
+  "infection.fever": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 10,
+   "ts": "2026-09-26 03:33"
+  },
+  "infection.rash": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 10,
+   "ts": "2026-09-26 03:33"
+  },
+  "infection.travel_14d": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 10,
+   "ts": "2026-09-26 03:33"
+  },
+  "infection.contacts": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 10,
+   "ts": "2026-09-26 03:33"
+  },
+  "L.last_intake": {
+   "value": "9pm last night",
+   "status": "reported",
+   "who": "persona",
+   "turn": 11,
+   "ts": "2026-09-26 03:33"
+  },
+  "identity.name": {
+   "value": null,
+   "status": "reported",
+   "who": "persona",
+   "turn": 11,
+   "ts": "2026-09-26 03:33"
+  },
+  "identity.dob": {
+   "value": "18 Feb 1974",
+   "status": "reported",
+   "who": "persona",
+   "turn": 11,
+   "ts": "2026-09-26 03:33"
+  },
+  "L.last_intake_abs": {
+   "value": "~2026-09-25 night (from '9pm last night' said 03:33)",
+   "status": "reported",
+   "who": "derived",
+   "turn": 11,
+   "ts": "2026-09-26 03:33"
+  },
+  "patient.age": {
+   "value": 52,
+   "status": "reported",
+   "who": "derived",
+   "turn": 11,
+   "ts": "2026-09-26 03:33"
+  }
+ },
+ "attempts": {
+  "red_flags.screen": 2,
+  "complaint.main": 2,
+  "stroke.screen": 1,
+  "M.medications": 1,
+  "allergies_and_history": 3,
+  "infection.screen": 1,
+  "wrapup": 1
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "Is the patient awake and responding normally, and are they experiencing any severe chest pain, trouble breathing, or heavy bleeding right now?",
+   "ts": "2026-09-26 03:32:44",
+   "kind": "question",
+   "slot": "red_flags.screen"
+  },
+  {
+   "role": "caregiver",
+   "text": "I'm awake and responding, but I'm in a lot of pain. No, I don't have any chest pain, breathing trouble, or bleeding.",
+   "ts": "2026-09-26 03:32:45",
+   "kind": "answer",
+   "slot": "red_flags.screen"
+  },
+  {
+   "role": "bot",
+   "text": "Can you tell me if you are currently experiencing any chest pain, trouble breathing, or heavy bleeding?",
+   "ts": "2026-09-26 03:32:48",
+   "kind": "question",
+   "slot": "red_flags.screen"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I don't have any chest pain, breathing trouble, or heavy bleeding.",
+   "ts": "2026-09-26 03:32:49",
+   "kind": "answer",
+   "slot": "red_flags.screen"
+  },
+  {
+   "role": "bot",
+   "text": "Could you tell me what happened, when it started, and how you would rate the pain from 0 to 10?",
+   "ts": "2026-09-26 03:32:53",
+   "kind": "question",
+   "slot": "complaint.main"
+  },
+  {
+   "role": "caregiver",
+   "text": "I woke up with sudden, severe pain in my right big toe joint. It's an 8/10.",
+   "ts": "2026-09-26 03:32:54",
+   "kind": "answer",
+   "slot": "complaint.main"
+  },
+  {
+   "role": "bot",
+   "text": "At any point today, did you notice any drooping on one side of your face, weakness or numbness in an arm, or any slurred or strange speech?",
+   "ts": "2026-09-26 03:32:59",
+   "kind": "question",
+   "slot": "stroke.screen"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I didn't have any of those symptoms.",
+   "ts": "2026-09-26 03:33:00",
+   "kind": "answer",
+   "slot": "stroke.screen"
+  },
+  {
+   "role": "bot",
+   "text": "Could you tell me what caused the pain or if anything specific happened to your toe?",
+   "ts": "2026-09-26 03:33:03",
+   "kind": "question",
+   "slot": "complaint.main"
+  },
+  {
+   "role": "caregiver",
+   "text": "There was no fall or other injury. I had a large seafood dinner and several beers yesterday.",
+   "ts": "2026-09-26 03:33:05",
+   "kind": "answer",
+   "slot": "complaint.main"
+  },
+  {
+   "role": "bot",
+   "text": "Do you take any regular medications?",
+   "ts": "2026-09-26 03:33:07",
+   "kind": "question",
+   "slot": "M.medications"
+  },
+  {
+   "role": "caregiver",
+   "text": "I take amlodipine for my high blood pressure.",
+   "ts": "2026-09-26 03:33:08",
+   "kind": "answer",
+   "slot": "M.medications"
+  },
+  {
+   "role": "bot",
+   "text": "Do you have any allergies to medications or other medical conditions, such as heart problems, diabetes, or are you currently pregnant?",
+   "ts": "2026-09-26 03:33:11",
+   "kind": "question",
+   "slot": "allergies_and_history"
+  },
+  {
+   "role": "caregiver",
+   "text": "I have no known allergies. I have high blood pressure and I'm not pregnant.",
+   "ts": "2026-09-26 03:33:12",
+   "kind": "answer",
+   "slot": "allergies_and_history"
+  },
+  {
+   "role": "bot",
+   "text": "Do you have any conditions that affect your immune system?",
+   "ts": "2026-09-26 03:33:16",
+   "kind": "question",
+   "slot": "allergies_and_history"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-09-26 03:33:16",
+   "kind": "answer",
+   "slot": "allergies_and_history"
+  },
+  {
+   "role": "bot",
+   "text": "Could you tell me more about whether you have any conditions that might affect your immune system?",
+   "ts": "2026-09-26 03:33:19",
+   "kind": "question",
+   "slot": "allergies_and_history"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-09-26 03:33:24",
+   "kind": "answer",
+   "slot": "allergies_and_history"
+  },
+  {
+   "role": "bot",
+   "text": "Have you had a fever, a rash, traveled abroad, or been in contact with anyone who is sick in the last two weeks?",
+   "ts": "2026-09-26 03:33:26",
+   "kind": "question",
+   "slot": "infection.screen"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I don't have a fever, rash, or any contact with sick people. I haven't traveled anywhere recently.",
+   "ts": "2026-09-26 03:33:28",
+   "kind": "answer",
+   "slot": "infection.screen"
+  },
+  {
+   "role": "bot",
+   "text": "Could you please tell me when you last ate or drank something, and provide your name and date of birth for the hospital's records?",
+   "ts": "2026-09-26 03:33:31",
+   "kind": "question",
+   "slot": "wrapup"
+  },
+  {
+   "role": "caregiver",
+   "text": "I had dinner at 9pm last night. My name isn't in my profile, but my date of birth is 18 Feb 1974.",
+   "ts": "2026-09-26 03:33:33",
+   "kind": "answer",
+   "slot": "wrapup"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you - that's everything for now. Show the code TIGER-8025 at the counter when you arrive.",
+   "ts": "2026-09-26 03:33:35",
+   "kind": "ack"
+  }
+ ],
+ "active_ids": [
+  "stroke.screen"
+ ],
+ "floor": null,
+ "phase": "enroute",
+ "opened": [],
+ "created": "2026-09-26 03:32",
+ "pending_slot": "wrapup",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {},
+ "considered": [
+  "B-02.severe-pain-consider"
+ ],
+ "said_done": true
+}

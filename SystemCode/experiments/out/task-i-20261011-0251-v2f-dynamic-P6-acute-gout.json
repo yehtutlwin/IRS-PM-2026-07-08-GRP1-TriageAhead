@@ -1,0 +1,35 @@
+{
+ "persona_backend": "ollama",
+ "persona_model": "gemma4:12b",
+ "interview": {
+  "interview_mode": "dynamic",
+  "backend": "ollama",
+  "model": "gemma4:12b",
+  "dyn_max_fields": 4
+ },
+ "tag": "v2f-dynamic-P6-acute-gout",
+ "results": [
+  {
+   "questions": 19,
+   "reasks": 6,
+   "floor": "at least ESI-2",
+   "floor_ok": false,
+   "rules_ok": true,
+   "fired": [
+    "B-24.extremity-neurovascular-compromise",
+    "B-46.compartment-syndrome-symptoms"
+   ],
+   "hits": 5,
+   "total": 7,
+   "misses": [
+    "complaint.trauma: want=False got=None",
+    "history.gout: want=True got=None"
+   ],
+   "danger_miss": false,
+   "persona": "P6-acute-gout",
+   "run": 1,
+   "session": "OTTER-7996",
+   "turns": 19
+  }
+ ]
+}

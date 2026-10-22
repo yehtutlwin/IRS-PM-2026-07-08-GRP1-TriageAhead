@@ -1,0 +1,55 @@
+{"t": "20:49:04", "kind": "engine", "note": "session CANNA-4896 started (web)"}
+{"t": "20:49:08", "kind": "question", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "Is the patient awake and responding to you normally? Also, is he or she experiencing any chest pain, trouble breathing, or heavy bleeding right now?", "fields": ["danger_signs.responsive", "danger_signs.chest_pain_now"], "offered": ["danger_signs.responsive", "danger_signs.chest_pain_now", "danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text"]}
+{"t": "20:49:08", "kind": "answer", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "Yes, I'm awake and can answer you. No chest pain."}
+{"t": "20:49:13", "kind": "extract", "writes": [["danger_signs.responsive", true], ["danger_signs.chest_pain_now", false]]}
+{"t": "20:49:15", "kind": "question", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding", "text": "I understand. Is the patient having any trouble breathing or any heavy bleeding right now?", "fields": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding"], "offered": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text", "complaint.onset", "E.mechanism"]}
+{"t": "20:49:15", "kind": "answer", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding", "text": "No."}
+{"t": "20:49:20", "kind": "extract", "writes": [["danger_signs.breathing_difficulty", false], ["danger_signs.heavy_bleeding", false]]}
+{"t": "20:49:23", "kind": "question", "slot": "dyn:complaint.category+complaint.text", "text": "I'm glad to hear that. What is the main problem that brings the patient in today, and can you describe what is happening in your own words?", "fields": ["complaint.category", "complaint.text"], "offered": ["complaint.category", "complaint.text", "complaint.onset", "E.mechanism", "patient.age", "patient.sex"]}
+{"t": "20:49:23", "kind": "answer", "slot": "dyn:complaint.category+complaint.text", "text": "Sudden severe pain in the joint at the base of my right big toe; it's red, swollen and hot."}
+{"t": "20:49:34", "kind": "extract", "writes": [["complaint.category", "limb_pain_or_swelling"], ["complaint.text", "Sudden severe pain in the joint at the base of my right big toe; it's red, swollen and hot."]]}
+{"t": "20:49:37", "kind": "question", "slot": "dyn:complaint.onset+E.mechanism", "text": "I see. When did this pain start and did it happen after a specific injury or accident?", "fields": ["complaint.onset", "E.mechanism"], "offered": ["complaint.onset", "E.mechanism", "patient.age", "patient.sex", "complaint.fever", "infection.rash"]}
+{"t": "20:49:37", "kind": "answer", "slot": "dyn:complaint.onset+E.mechanism", "text": "It woke me during the night. No fall or injury, it just came on."}
+{"t": "20:49:41", "kind": "extract", "writes": [["complaint.onset", "during the night"], ["E.mechanism", "none"]]}
+{"t": "20:49:44", "kind": "question", "slot": "dyn:patient.age+patient.sex", "text": "I understand. To help the team prepare, could you tell me the patient's age and if they are male or female?", "fields": ["patient.age", "patient.sex"], "offered": ["patient.age", "patient.sex", "complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts"]}
+{"t": "20:49:44", "kind": "answer", "slot": "dyn:patient.age+patient.sex", "text": "52. Male."}
+{"t": "20:49:48", "kind": "extract", "writes": [["patient.age", 52], ["patient.sex", "male"]]}
+{"t": "20:49:51", "kind": "question", "slot": "dyn:complaint.fever+infection.rash", "text": "I've noted that. Does he have a fever or any new rashes on his body?", "fields": ["complaint.fever", "infection.rash"], "offered": ["complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts", "ams.changed_from_baseline", "complaint.pain_rating"]}
+{"t": "20:49:51", "kind": "answer", "slot": "dyn:complaint.fever+infection.rash", "text": "No fever, no chills. No rash."}
+{"t": "20:49:55", "kind": "extract", "writes": [["complaint.fever", false], ["infection.rash", false]]}
+{"t": "20:49:58", "kind": "question", "slot": "dyn:infection.travel_14d+infection.contacts", "text": "Has he traveled outside the country or been in contact with anyone who has an infectious illness in the last two weeks?", "fields": ["infection.travel_14d", "infection.contacts"], "offered": ["infection.travel_14d", "infection.contacts", "ams.changed_from_baseline", "complaint.pain_rating", "M.medications", "A.allergies"]}
+{"t": "20:49:58", "kind": "answer", "slot": "dyn:infection.travel_14d+infection.contacts", "text": "No."}
+{"t": "20:50:02", "kind": "extract", "writes": [["infection.travel_14d", false], ["infection.contacts", false]]}
+{"t": "20:50:05", "kind": "question", "slot": "dyn:ams.changed_from_baseline+complaint.pain_rating", "text": "I've noted that. On a scale of 0 to 10, how bad is his pain right now? Also, has he seemed more confused or unusually sleepy lately?", "fields": ["ams.changed_from_baseline", "complaint.pain_rating"], "offered": ["ams.changed_from_baseline", "complaint.pain_rating", "M.medications", "A.allergies", "history.conditions", "history.immunocompromised"]}
+{"t": "20:50:05", "kind": "answer", "slot": "dyn:ams.changed_from_baseline+complaint.pain_rating", "text": "No, I'm thinking clearly, just tired from the pain. 8 out of 10."}
+{"t": "20:50:10", "kind": "extract", "writes": [["ams.changed_from_baseline", false], ["complaint.pain_rating", 8]]}
+{"t": "20:50:10", "kind": "engine", "consider": ["B-02.severe-pain-consider"]}
+{"t": "20:50:13", "kind": "question", "slot": "dyn:M.medications+A.allergies", "text": "I've noted the pain level. Does he take any regular medications or have any known allergies, especially to medicine?", "fields": ["M.medications", "A.allergies"], "offered": ["M.medications", "A.allergies", "history.conditions", "history.immunocompromised", "limb.numb_tingling", "limb.cold_pale_blue"]}
+{"t": "20:50:13", "kind": "answer", "slot": "dyn:M.medications+A.allergies", "text": "Amlodipine for blood pressure. No allopurinol, no blood thinners. None."}
+{"t": "20:50:17", "kind": "extract", "writes": [["M.medications", ["Amlodipine"]], ["A.allergies", []]]}
+{"t": "20:50:20", "kind": "question", "slot": "dyn:history.conditions", "text": "I've noted his medication. Does he have any other ongoing medical conditions?", "fields": ["history.conditions"], "offered": ["history.conditions", "history.immunocompromised", "limb.numb_tingling", "limb.cold_pale_blue", "limb.cannot_move_digits", "limb.cast_too_tight"]}
+{"t": "20:50:20", "kind": "answer", "slot": "dyn:history.conditions", "text": "High blood pressure, and I've had gout twice before, a doctor told me."}
+{"t": "20:50:32", "kind": "extract", "writes": [["history.conditions", ["high blood pressure", "gout"]]]}
+{"t": "20:50:35", "kind": "question", "slot": "dyn:history.immunocompromised", "text": "I've noted his history of high blood pressure and gout. Has he ever been told he has a weakened immune system or is he currently taking any medications that affect his immune system?", "fields": ["history.immunocompromised"], "offered": ["history.immunocompromised", "limb.numb_tingling", "limb.cold_pale_blue", "limb.cannot_move_digits", "limb.cast_too_tight", "identity.name"]}
+{"t": "20:50:35", "kind": "answer", "slot": "dyn:history.immunocompromised", "text": "No."}
+{"t": "20:50:46", "kind": "extract", "writes": [["history.immunocompromised", false]]}
+{"t": "20:50:49", "kind": "question", "slot": "dyn:limb.numb_tingling+limb.cold_pale_blue", "text": "Are his fingers or toes below the injury numb, tingling, or turning blue or pale? Also, is he able to move them?", "fields": ["limb.numb_tingling", "limb.cold_pale_blue"], "offered": ["limb.numb_tingling", "limb.cold_pale_blue", "limb.cannot_move_digits", "limb.cast_too_tight", "identity.name", "identity.dob"]}
+{"t": "20:50:49", "kind": "answer", "slot": "dyn:limb.numb_tingling+limb.cold_pale_blue", "text": "I don't know."}
+{"t": "20:50:53", "kind": "extract", "writes": []}
+{"t": "20:50:53", "kind": "extract", "writes": [["limb.numb_tingling", null], ["limb.cold_pale_blue", null]], "via": "dont-know"}
+{"t": "20:50:56", "kind": "question", "slot": "dyn:limb.cannot_move_digits+limb.cast_too_tight", "text": "I understand. Is he able to move his fingers or toes, and if he has a cast or splint, does it feel too tight?", "fields": ["limb.cannot_move_digits", "limb.cast_too_tight"], "offered": ["limb.cannot_move_digits", "limb.cast_too_tight", "identity.name", "identity.dob"]}
+{"t": "20:50:56", "kind": "answer", "slot": "dyn:limb.cannot_move_digits+limb.cast_too_tight", "text": "I don't know."}
+{"t": "20:51:00", "kind": "extract", "writes": []}
+{"t": "20:51:00", "kind": "extract", "writes": [["limb.cannot_move_digits", null], ["limb.cast_too_tight", null]], "via": "dont-know"}
+{"t": "20:51:03", "kind": "question", "slot": "dyn:identity.name+identity.dob", "text": "I understand. Could you please tell me the patient's full name and date of birth?", "fields": ["identity.name", "identity.dob"], "offered": ["identity.name", "identity.dob"]}
+{"t": "20:51:03", "kind": "answer", "slot": "dyn:identity.name+identity.dob", "text": "Tan Wei Ming. 18 February 1974."}
+{"t": "20:51:07", "kind": "extract", "writes": [["identity.name", "Tan Wei Ming"], ["identity.dob", "18 February 1974"]]}
+{"t": "20:51:07", "kind": "engine", "note": "floor settled - report ready; remaining questions continue"}
+{"t": "20:51:10", "kind": "question", "slot": "dyn:complaint.testicular_or_scrotal_pain", "text": "Is the patient experiencing any pain in the testicles or the scrotum?", "fields": ["complaint.testicular_or_scrotal_pain"], "offered": ["complaint.testicular_or_scrotal_pain", "L.last_intake"]}
+{"t": "20:51:10", "kind": "answer", "slot": "dyn:complaint.testicular_or_scrotal_pain", "text": "I don't know."}
+{"t": "20:51:13", "kind": "extract", "writes": []}
+{"t": "20:51:13", "kind": "extract", "writes": [["complaint.testicular_or_scrotal_pain", null]], "via": "dont-know"}
+{"t": "20:51:16", "kind": "question", "slot": "dyn:L.last_intake", "text": "I understand. When was the last time the patient had anything to eat or drink?", "fields": ["L.last_intake"], "offered": ["L.last_intake"]}
+{"t": "20:51:16", "kind": "answer", "slot": "dyn:L.last_intake", "text": "Dinner at 9pm."}
+{"t": "20:51:19", "kind": "extract", "writes": [["L.last_intake", "Dinner at 9pm."]]}
+{"t": "20:51:20", "kind": "engine", "note": "interview complete - no open fields"}

@@ -1,0 +1,3728 @@
+entries:
+- id: gpt-001
+  page: 1
+  span: five groups, from level 1 (most urgent) to level 5 (least urgent)
+  verb: from level 1 (most urgent) to level 5 (least urgent)
+  decision_point: none
+  kind: definition
+  effect: none
+  interpretation: verbatim
+- id: gpt-002
+  page: 1
+  span: The ESI does not define expected time intervals to physician evaluation.
+  verb: does not define
+  decision_point: none
+  kind: usage
+  effect: none
+  interpretation: verbatim
+- id: gpt-003
+  page: 2
+  span: the charge nurse understands that the patient is unstable
+  verb: understands
+  decision_point: A
+  kind: definition
+  effect: none
+  interpretation: effect_inferred
+  note: This explains the shared meaning of the example phrase “level-1 patient”; it does not itself assign a level.
+- id: gpt-004
+  page: 2
+  span: highest acuity patients being identified and treated first
+  verb: being identified and treated first
+  decision_point: none
+  kind: usage
+  effect: none
+  interpretation: verbatim
+- id: gpt-005
+  page: 5
+  span: The decision points must be performed in order
+  verb: must be performed in order
+  decision_point: none
+  kind: usage
+  effect: none
+  interpretation: verbatim
+- id: gpt-006
+  page: 5
+  span: higher acuity patients will only require one or two decision points to assign an acuity level
+  verb: will only require
+  decision_point: none
+  kind: usage
+  effect: none
+  interpretation: verbatim
+- id: gpt-007
+  page: 5
+  span: If a patient does not meet high risk instability criteria (ESI level 1 or 2)
+  verb: does not meet
+  decision_point: none
+  kind: rule
+  effect: resource_band
+  who_can_supply: observed
+  when:
+    all:
+    - fact: meets_high_risk_instability_criteria
+      is: false
+  interpretation: verbatim
+  note: The text then says the nurse evaluates expected resource needs to help determine ESI level 3, 4, or 5; it does not assign one of those levels here.
+- id: gpt-008
+  page: 5
+  also_on:
+  - 6
+  - 29
+  span: Decision point A is the only one needed for ESI level-1 patients
+  verb: is the only one needed
+  decision_point: A
+  kind: usage
+  effect: assign_level_1
+  interpretation: verbatim
+- id: gpt-009
+  page: 5
+  also_on:
+  - 6
+  - 30
+  span: ESI level-1 patients, who are defined as in need of immediate lifesaving intervention.
+  verb: are defined as
+  decision_point: A
+  kind: definition
+  effect: assign_level_1
+  interpretation: verbatim
+- id: gpt-010
+  page: 5
+  span: likely to deteriorate and/or require more immediate care based on symptom presentation and patient risk factors
+  verb: likely to deteriorate and/or require more immediate care
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: observed
+  when:
+    all:
+    - fact: likely_to_deteriorate_or_require_more_immediate_care
+      is: true
+  interpretation: verbatim
+  note: The following sentence assigns these patients ESI level 2.
+- id: gpt-011
+  page: 5
+  span: These patients are assigned an ESI level of 2.
+  verb: are assigned
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: observed
+  when:
+    all:
+    - fact: likely_to_deteriorate_or_require_more_immediate_care
+      is: true
+  interpretation: verbatim
+- id: gpt-012
+  page: 5
+  span: Both of these decisions may require a full set of vital signs and a focused assessment
+  verb: may require
+  decision_point: B
+  kind: context
+  effect: none
+  interpretation: verbatim
+  note: “Both” refers to the level-1 and level-2 decisions; this does not make vital signs or assessment sufficient for either level.
+- id: gpt-013
+  page: 5
+  span: Decision point C is used only after level 1 and 2 are excluded
+  verb: is used only after
+  decision_point: C
+  kind: usage
+  effect: resource_band
+  interpretation: verbatim
+- id: gpt-014
+  page: 5
+  span: patients are determined to be physiologically stable with low risk for deterioration
+  verb: are determined to be
+  decision_point: C
+  kind: rule
+  effect: resource_band
+  who_can_supply: observed
+  when:
+    all:
+    - fact: is_physically_stable
+      is: true
+    - fact: has_low_risk_for_deterioration
+      is: true
+  interpretation: verbatim
+  note: This is the stated condition for using decision point C after levels 1 and 2 are excluded; it does not by itself select level 3, 4, or 5.
+- id: gpt-015
+  page: 5
+  span: ESI levels 3, 4, and 5 are based on how many resources the nurse anticipates will be used
+  verb: are based on
+  decision_point: C
+  kind: rule
+  effect: resource_band
+  who_can_supply: observed
+  when:
+    all:
+    - fact: anticipated_resource_types
+      gte: 0
+  interpretation: verbatim
+- id: gpt-016
+  page: 5
+  also_on:
+  - 6
+  - 29
+  span: None One Many
+  verb: None One Many
+  decision_point: C
+  kind: rule
+  effect: resource_band
+  who_can_supply: observed
+  when:
+    all:
+    - fact: anticipated_resource_types
+      in:
+      - 0
+      - 1
+      - 2
+  interpretation: interpreted
+  note: 'In Figure 2-1, the aligned outcomes are “5, 4, 3”: none resources corresponds to ESI 5, one to ESI 4, and many to ESI 3. “Many” is interpreted as two or
+    more because the figure does not itself define that word.'
+- id: gpt-017
+  page: 5
+  also_on:
+  - 6
+  - 29
+  span: reassess the acuity decision, potentially resulting in assignment of a higher acuity level as appropriate
+  verb: reassess
+  decision_point: D
+  kind: rule
+  effect: reassess_uptriage
+  who_can_supply: vitals
+  when:
+    all:
+    - fact: has_high_risk_vital_signs
+      is: true
+  interpretation: verbatim
+- id: gpt-018
+  page: 5
+  span: Do the patient’s vital signs warrant a reassessment of the acuity level?
+  verb: warrant a reassessment
+  decision_point: D
+  kind: rule
+  effect: reassess_uptriage
+  who_can_supply: vitals
+  when:
+    all:
+    - fact: vital_signs_warrant_acuity_reassessment
+      is: true
+  interpretation: verbatim
+  note: This is a decision question, not an automatic assignment to a specific higher level.
+- id: gpt-019
+  page: 6
+  also_on:
+  - 30
+  span: Requires immediate lifesaving intervention?
+  verb: '1'
+  decision_point: A
+  kind: rule
+  effect: assign_level_1
+  who_can_supply: observed
+  when:
+    all:
+    - fact: requires_immediate_lifesaving_intervention
+      is: true
+  interpretation: effect_inferred
+  note: The figure connects a Yes answer to level 1.
+- id: gpt-020
+  page: 6
+  also_on:
+  - 30
+  span: Airway or respiratory support
+  verb: Immediate life-saving intervention required
+  decision_point: A
+  kind: definition
+  effect: none
+  interpretation: verbatim
+  note: Listed as a type of immediate life-saving intervention; the text does not say it is sufficient alone.
+- id: gpt-021
+  page: 6
+  also_on:
+  - 30
+  span: emergency medications
+  verb: Immediate life-saving intervention required
+  decision_point: A
+  kind: definition
+  effect: none
+  interpretation: verbatim
+  note: Listed as a type of immediate life-saving intervention; the text does not say it is sufficient alone.
+- id: gpt-022
+  page: 6
+  also_on:
+  - 30
+  span: hemodynamic interventions such as fluid resuscitation or blood products
+  verb: Immediate life-saving intervention required
+  decision_point: A
+  kind: definition
+  effect: none
+  interpretation: verbatim
+  note: Listed as a type of immediate life-saving intervention; the text does not say it is sufficient alone.
+- id: gpt-023
+  page: 6
+  also_on:
+  - 30
+  span: 'Clinical presentations requiring lifesaving interventions include the following: intubated'
+  verb: requiring lifesaving interventions
+  decision_point: A
+  kind: definition
+  effect: none
+  interpretation: verbatim
+  note: “Include” makes this an example, not an exhaustive or expressly independently sufficient list.
+- id: gpt-024
+  page: 6
+  also_on:
+  - 30
+  span: unresponsive
+  verb: requiring lifesaving interventions
+  decision_point: A
+  kind: definition
+  effect: none
+  interpretation: verbatim
+  note: Included in a nonexhaustive list of clinical presentations requiring lifesaving interventions.
+- id: gpt-025
+  page: 6
+  also_on:
+  - 30
+  span: pulselessness
+  verb: requiring lifesaving interventions
+  decision_point: A
+  kind: definition
+  effect: none
+  interpretation: verbatim
+  note: Included in a nonexhaustive list of clinical presentations requiring lifesaving interventions.
+- id: gpt-026
+  page: 6
+  also_on:
+  - 30
+  span: apneic
+  verb: requiring lifesaving interventions
+  decision_point: A
+  kind: definition
+  effect: none
+  interpretation: verbatim
+  note: Included in a nonexhaustive list of clinical presentations requiring lifesaving interventions.
+- id: gpt-027
+  page: 6
+  also_on:
+  - 30
+  span: severe respiratory distress
+  verb: requiring lifesaving interventions
+  decision_point: A
+  kind: definition
+  effect: none
+  interpretation: verbatim
+  note: Included in a nonexhaustive list of clinical presentations requiring lifesaving interventions.
+- id: gpt-028
+  page: 6
+  also_on:
+  - 30
+  span: profound hypotension or hypoglycemia
+  verb: requiring lifesaving interventions
+  decision_point: A
+  kind: definition
+  effect: none
+  interpretation: verbatim
+  note: Included in a nonexhaustive list of clinical presentations requiring lifesaving interventions.
+- id: gpt-029
+  page: 6
+  also_on:
+  - 30
+  span: Is nonverbal and not following commands (acutely)
+  verb: is defined as
+  decision_point: A
+  kind: definition
+  effect: none
+  interpretation: verbatim
+- id: gpt-030
+  page: 6
+  also_on:
+  - 30
+  span: Requires noxious stimulus (P or U on AVPU scale)
+  verb: is defined as
+  decision_point: A
+  kind: definition
+  effect: none
+  interpretation: verbatim
+- id: gpt-031
+  page: 6
+  also_on:
+  - 30
+  span: High-risk situation?
+  verb: '2'
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: observed
+  when:
+    all:
+    - fact: is_high_risk_situation
+      is: true
+  interpretation: effect_inferred
+  note: The figure connects a Yes answer to level 2.
+- id: gpt-032
+  page: 6
+  also_on:
+  - 30
+  span: Confused/lethargic/disoriented?
+  verb: '2'
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported_as_everyday_signs
+  when:
+    all:
+    - fact: has_confusion_lethargy_or_disorientation
+      is: true
+  interpretation: effect_inferred
+  note: The figure connects a Yes answer to level 2. A non-clinician could report everyday signs such as new confusion, unusual sleepiness, or disorientation, but
+    not make the clinical finding.
+- id: gpt-033
+  page: 6
+  also_on:
+  - 30
+  span: Severe pain/distress?
+  verb: '2'
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: observed
+  when:
+    all:
+    - fact: has_severe_pain_or_distress
+      is: true
+  interpretation: effect_inferred
+  note: The figure connects a Yes answer to level 2; the accompanying text says this is determined by patient report corroborated with clinical observation.
+- id: gpt-034
+  page: 6
+  also_on:
+  - 30
+  span: May become unstable, have high risk for deterioration, or exhibit newly altered mental status.
+  verb: May become
+  decision_point: B
+  kind: definition
+  effect: none
+  interpretation: verbatim
+  note: This defines a high-risk situation; it does not itself state a level assignment.
+- id: gpt-035
+  page: 6
+  also_on:
+  - 30
+  span: Severe pain or distress is determined by patient report, corroborated with clinical observation.
+  verb: is determined by
+  decision_point: B
+  kind: definition
+  effect: none
+  interpretation: verbatim
+- id: gpt-036
+  page: 6
+  also_on:
+  - 30
+  span: How many different resources are needed?
+  verb: '5'
+  decision_point: C
+  kind: rule
+  effect: resource_band
+  who_can_supply: observed
+  when:
+    all:
+    - fact: anticipated_resource_types
+      is: 0
+  interpretation: effect_inferred
+  note: The figure maps “None” to level 5.
+- id: gpt-037
+  page: 6
+  also_on:
+  - 30
+  span: How many different resources are needed?
+  verb: '4'
+  decision_point: C
+  kind: rule
+  effect: resource_band
+  who_can_supply: observed
+  when:
+    all:
+    - fact: anticipated_resource_types
+      is: 1
+  interpretation: effect_inferred
+  note: The figure maps “One” to level 4.
+- id: gpt-038
+  page: 6
+  also_on:
+  - 30
+  span: How many different resources are needed?
+  verb: '3'
+  decision_point: C
+  kind: rule
+  effect: resource_band
+  who_can_supply: observed
+  when:
+    all:
+    - fact: anticipated_resource_types
+      gte: 2
+  interpretation: effect_inferred
+  note: The figure maps “Many” to level 3; reading “Many” as two or more is inferred from its contrast with None and One.
+- id: gpt-039
+  page: 6
+  also_on:
+  - 30
+  span: Count the number of different types of resources, not the individual tests or radiographs.
+  verb: Count
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  interpretation: verbatim
+- id: gpt-040
+  page: 6
+  also_on:
+  - 30
+  span: complete blood count, electrolytes, and coagulant studies equal one resource
+  verb: equal one resource
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  interpretation: verbatim
+- id: gpt-041
+  page: 6
+  also_on:
+  - 30
+  span: complete blood count plus chest radiograph equals two resources
+  verb: equals two resources
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  interpretation: verbatim
+- id: gpt-042
+  page: 6
+  also_on:
+  - 30
+  span: Labs (blood, urine)
+  verb: ESI Resources
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  interpretation: verbatim
+- id: gpt-043
+  page: 6
+  also_on:
+  - 30
+  span: Electrocardiogram, radiographs
+  verb: ESI Resources
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  interpretation: verbatim
+- id: gpt-044
+  page: 6
+  also_on:
+  - 30
+  span: Computed tomography, magnetic resonance imaging, ultrasound, angiography
+  verb: ESI Resources
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  interpretation: verbatim
+- id: gpt-045
+  page: 6
+  also_on:
+  - 30
+  span: Intravenous fluids (hydration)
+  verb: ESI Resources
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  interpretation: verbatim
+- id: gpt-046
+  page: 6
+  also_on:
+  - 30
+  span: Intravenous, intramuscular, or nebulized medications
+  verb: ESI Resources
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  interpretation: verbatim
+- id: gpt-047
+  page: 6
+  also_on:
+  - 30
+  span: Specialty consultation
+  verb: ESI Resources
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  interpretation: verbatim
+- id: gpt-048
+  page: 6
+  also_on:
+  - 30
+  span: Simple procedure = 1 (laceration repair, urinary catheter)
+  verb: = 1
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  interpretation: verbatim
+- id: gpt-049
+  page: 6
+  also_on:
+  - 30
+  span: Complex procedure = 2 (procedural sedation)
+  verb: = 2
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  interpretation: verbatim
+- id: gpt-050
+  page: 6
+  also_on:
+  - 30
+  span: History and physicaI exam (Including pelvic)
+  verb: Not ESI Resources
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  interpretation: verbatim
+  note: Explicitly not an ESI resource.
+- id: gpt-051
+  page: 6
+  also_on:
+  - 30
+  span: Point-of-care testing
+  verb: Not ESI Resources
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  interpretation: verbatim
+  note: Explicitly not an ESI resource.
+- id: gpt-052
+  page: 6
+  also_on:
+  - 30
+  span: Saline or heparin lock
+  verb: Not ESI Resources
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  interpretation: verbatim
+  note: Explicitly not an ESI resource.
+- id: gpt-053
+  page: 6
+  also_on:
+  - 30
+  span: Oral medications
+  verb: Not ESI Resources
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  interpretation: verbatim
+  note: Explicitly not an ESI resource.
+- id: gpt-054
+  page: 6
+  also_on:
+  - 30
+  span: Tetanus immunization
+  verb: Not ESI Resources
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  interpretation: verbatim
+  note: Explicitly not an ESI resource.
+- id: gpt-055
+  page: 6
+  also_on:
+  - 30
+  span: Prescription refills
+  verb: Not ESI Resources
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  interpretation: verbatim
+  note: Explicitly not an ESI resource.
+- id: gpt-056
+  page: 6
+  also_on:
+  - 30
+  span: Phone call to primary care physician
+  verb: Not ESI Resources
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  interpretation: verbatim
+  note: Explicitly not an ESI resource.
+- id: gpt-057
+  page: 6
+  also_on:
+  - 30
+  span: Simple wound care (dressings, recheck)
+  verb: Not ESI Resources
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  interpretation: verbatim
+  note: Explicitly not an ESI resource.
+- id: gpt-058
+  page: 6
+  also_on:
+  - 30
+  span: Crutches, splints, slings
+  verb: Not ESI Resources
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  interpretation: verbatim
+  note: Explicitly not an ESI resource.
+- id: gpt-059
+  page: 6
+  also_on:
+  - 30
+  span: Reassess to determine whether the patient warrants a higher acuity level
+  verb: Reassess to determine whether
+  decision_point: D
+  kind: rule
+  effect: reassess_uptriage
+  who_can_supply: vitals
+  when:
+    all:
+    - fact: vital_signs_warrant_acuity_reassessment
+      is: true
+  interpretation: verbatim
+  note: The full condition is one or more vital signs outside normal parameters for the patient; this calls for reassessment, not an assignment.
+- id: gpt-060
+  page: 6
+  also_on:
+  - 30
+  span: if a patient has one or more vital signs outside the normal parameters for the patient
+  verb: if
+  decision_point: D
+  kind: rule
+  effect: reassess_uptriage
+  who_can_supply: vitals
+  when:
+    all:
+    - fact: has_high_risk_vital_signs
+      is: true
+  interpretation: effect_inferred
+  note: The page’s preceding D instruction says to reassess whether the patient warrants a higher acuity level.
+- id: gpt-061
+  page: 6
+  also_on:
+  - 30
+  span: Assign at least ESI 2 if T > 38° C (100.4 ° F)
+  verb: Assign at least ESI 2
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: vitals
+  when:
+    all:
+    - fact: age_days
+      gte: 1
+    - fact: age_days
+      lte: 28
+    - fact: temperature_celsius
+      gt: 38
+  interpretation: verbatim
+  note: “At least” permits level 2 or a higher-acuity level.
+- id: gpt-062
+  page: 6
+  also_on:
+  - 30
+  span: Consider assigning ESI 2 if T > 38 ° C (100.4 ° F)
+  verb: Consider assigning ESI 2
+  decision_point: B
+  kind: rule
+  effect: consider_level_2
+  who_can_supply: vitals
+  when:
+    all:
+    - fact: age_months
+      gte: 1
+    - fact: age_months
+      lte: 3
+    - fact: temperature_celsius
+      gt: 38
+  interpretation: verbatim
+- id: gpt-063
+  page: 6
+  also_on:
+  - 30
+  span: 'Consider assigning ESI 2 or 3 if: T > 39°C (102.2°F) or < 36°C (96.8°F)'
+  verb: Consider assigning ESI 2 or 3
+  decision_point: B
+  kind: rule
+  effect: consider_level_2
+  who_can_supply: vitals
+  when:
+    all:
+    - fact: age_months
+      gte: 3
+    - any:
+      - fact: temperature_celsius
+        gt: 39
+      - fact: temperature_celsius
+        lt: 36
+  interpretation: verbatim
+  note: The handbook uses the soft verb “Consider assigning” and gives either level 2 or 3.
+- id: gpt-064
+  page: 6
+  also_on:
+  - 30
+  span: 'Consider assigning ESI 2 or 3 if: Incomplete immunizations'
+  verb: Consider assigning ESI 2 or 3
+  decision_point: B
+  kind: rule
+  effect: consider_level_2
+  who_can_supply: reported_directly
+  when:
+    all:
+    - fact: age_months
+      gte: 3
+    - fact: has_incomplete_immunizations
+      is: true
+  interpretation: verbatim
+  note: The handbook uses the soft verb “Consider assigning” and gives either level 2 or 3.
+- id: gpt-065
+  page: 6
+  also_on:
+  - 30
+  span: 'Consider assigning ESI 2 or 3 if: No obvious source of fever'
+  verb: Consider assigning ESI 2 or 3
+  decision_point: B
+  kind: rule
+  effect: consider_level_2
+  who_can_supply: observed
+  when:
+    all:
+    - fact: age_months
+      gte: 3
+    - fact: has_no_obvious_source_of_fever
+      is: true
+  interpretation: verbatim
+  note: The handbook uses the soft verb “Consider assigning” and gives either level 2 or 3.
+- id: gpt-066
+  page: 7
+  span: not developed to be a means of updating or communicating a change in patient condition
+  verb: was not developed
+  decision_point: none
+  kind: usage
+  effect: none
+  interpretation: verbatim
+- id: gpt-067
+  page: 7
+  span: Prior to a provider evaluation, a patient change in condition can be reflected in an amended ESI level.
+  verb: can be reflected
+  decision_point: none
+  kind: usage
+  effect: none
+  interpretation: verbatim
+- id: gpt-068
+  page: 7
+  span: documentation of the change in condition, the reason for the change in ESI level, and the resultant action
+  verb: is critical
+  decision_point: none
+  kind: usage
+  effect: none
+  interpretation: verbatim
+- id: gpt-069
+  page: 7
+  span: The ESI level assigned by the nurse should reflect the patient’s current risk, not the environmental conditions of the ED.
+  verb: should reflect
+  decision_point: none
+  kind: usage
+  effect: none
+  interpretation: verbatim
+- id: gpt-070
+  page: 7
+  span: Nor should the ESI level be used to manipulate metrics such as door-to-ECG or door-to-CT times.
+  verb: should
+  decision_point: none
+  kind: usage
+  effect: none
+  interpretation: verbatim
+- id: gpt-071
+  page: 7
+  span: follows decision points A through D to objectively assess them and assign an appropriate ESI acuity level
+  verb: assign
+  decision_point: none
+  kind: usage
+  effect: none
+  interpretation: verbatim
+- id: gpt-072
+  page: 9
+  also_on:
+  - 6
+  - 30
+  span: When these signs are present, the patient is assigned an ESI level of 1.
+  verb: is assigned an ESI level of 1
+  decision_point: A
+  kind: rule
+  effect: assign_level_1
+  who_can_supply: observed
+  when:
+    any:
+    - fact: is_unresponsive
+      is: true
+    - fact: has_active_seizure
+      is: true
+    - fact: has_occluded_airway
+      is: true
+    - fact: has_ineffective_gas_exchange
+      is: true
+    - fact: has_ineffective_or_decreased_perfusion
+      is: true
+  interpretation: interpreted
+  note: The preceding list says these signs “include” these five items; I interpret each listed sign as independently sufficient because the next sentence assigns
+    level 1 when these signs are present. The text does not explicitly say each item alone is sufficient.
+- id: gpt-073
+  page: 9
+  span: Ineffective airway clearance
+  verb: Examples of ESI level-1 criteria include
+  decision_point: A
+  kind: example
+  effect: assign_level_1
+  interpretation: effect_inferred
+  note: Listed as an example of an ESI level-1 criterion; the list wording does not expressly state that this item alone is sufficient.
+- id: gpt-074
+  page: 9
+  span: Ineffective respiratory pattern
+  verb: Examples of ESI level-1 criteria include
+  decision_point: A
+  kind: example
+  effect: assign_level_1
+  interpretation: effect_inferred
+  note: Listed as an example of an ESI level-1 criterion; the list wording does not expressly state that this item alone is sufficient.
+- id: gpt-075
+  page: 9
+  span: Impaired gas exchange
+  verb: Examples of ESI level-1 criteria include
+  decision_point: A
+  kind: example
+  effect: assign_level_1
+  interpretation: effect_inferred
+  note: Listed as an example of an ESI level-1 criterion; the list wording does not expressly state that this item alone is sufficient.
+- id: gpt-076
+  page: 9
+  span: Ineffective tissue perfusion
+  verb: Examples of ESI level-1 criteria include
+  decision_point: A
+  kind: example
+  effect: assign_level_1
+  interpretation: effect_inferred
+  note: Listed as an example of an ESI level-1 criterion; the list wording does not expressly state that this item alone is sufficient.
+- id: gpt-077
+  page: 9
+  span: Obtunded/unresponsive patient
+  verb: Examples of ESI level-1 criteria include
+  decision_point: A
+  kind: example
+  effect: assign_level_1
+  interpretation: effect_inferred
+  note: Listed as an example of an ESI level-1 criterion; the list wording does not expressly state that this item alone is sufficient.
+- id: gpt-078
+  page: 9
+  span: SpO2 < 90% that is not the patient’s norm, with other signs of respiratory compromise
+  verb: Examples of ESI level-1 criteria include
+  decision_point: A
+  kind: example
+  effect: assign_level_1
+  interpretation: effect_inferred
+  note: Listed as an example of an ESI level-1 criterion; the list wording does not expressly state that this combination alone is sufficient.
+- id: gpt-079
+  page: 9
+  span: Anaphylaxis
+  verb: Examples of ESI level-1 criteria include
+  decision_point: A
+  kind: example
+  effect: assign_level_1
+  interpretation: effect_inferred
+  note: Listed as an example of an ESI level-1 criterion; the list wording does not expressly state that this item alone is sufficient.
+- id: gpt-080
+  page: 9
+  span: Hypotension with signs of hypoperfusion
+  verb: Examples of ESI level-1 criteria include
+  decision_point: A
+  kind: example
+  effect: assign_level_1
+  interpretation: effect_inferred
+  note: Listed as an example of an ESI level-1 criterion; the list wording does not expressly state that this combination alone is sufficient.
+- id: gpt-081
+  page: 9
+  span: Chest pain with signs of hypoperfusion and systolic blood pressure of 80 mm Hg
+  verb: e.g.
+  decision_point: A
+  kind: example
+  effect: assign_level_1
+  interpretation: effect_inferred
+  note: This is explicitly an example of the preceding “Hypotension with signs of hypoperfusion” level-1 criterion, not a separate statement that it alone is sufficient.
+- id: gpt-082
+  page: 9
+  span: Hypoglycemia
+  verb: Examples of ESI level-1 criteria include
+  decision_point: A
+  kind: example
+  effect: assign_level_1
+  interpretation: effect_inferred
+  note: Listed as an example of an ESI level-1 criterion; the list wording does not expressly state that this item alone is sufficient.
+- id: gpt-083
+  page: 9
+  span: Severe bradycardia or tachycardia
+  verb: Examples of ESI level-1 criteria include
+  decision_point: A
+  kind: example
+  effect: assign_level_1
+  interpretation: effect_inferred
+  note: Listed as an example of an ESI level-1 criterion; the list wording does not expressly state that either condition alone is sufficient.
+- id: gpt-084
+  page: 9
+  span: Flaccid infant
+  verb: Examples of ESI level-1 criteria include
+  decision_point: A
+  kind: example
+  effect: assign_level_1
+  interpretation: effect_inferred
+  note: Listed as an example of an ESI level-1 criterion; the list wording does not expressly state that this item alone is sufficient.
+- id: gpt-085
+  page: 9
+  span: Cardiac and/or pulmonary arrest (or appears to be imminent)
+  verb: Examples of ESI level-1 criteria include
+  decision_point: A
+  kind: example
+  effect: assign_level_1
+  interpretation: effect_inferred
+  note: Listed as an example of an ESI level-1 criterion; the list wording does not expressly state that this item alone is sufficient.
+- id: gpt-086
+  page: 9
+  span: Penetrating trauma of head, neck, abdomen, chest requiring a lifesaving intervention
+  verb: Examples of ESI level-1 criteria include
+  decision_point: A
+  kind: example
+  effect: assign_level_1
+  interpretation: effect_inferred
+  note: Listed as an example of an ESI level-1 criterion; the list wording does not expressly state that this item alone is sufficient.
+- id: gpt-087
+  page: 9
+  span: Assisted ventilation
+  verb: Lifesaving Interventions
+  decision_point: A
+  kind: definition
+  effect: assign_level_1
+  interpretation: effect_inferred
+  note: Table 3-1 defines this as a lifesaving intervention; decision point A assigns level 1 when an immediate lifesaving intervention is required.
+- id: gpt-088
+  page: 9
+  span: Intubation
+  verb: Lifesaving Interventions
+  decision_point: A
+  kind: definition
+  effect: assign_level_1
+  interpretation: effect_inferred
+  note: Table 3-1 defines this as a lifesaving intervention; decision point A assigns level 1 when an immediate lifesaving intervention is required.
+- id: gpt-089
+  page: 9
+  span: Surgical airway
+  verb: Lifesaving Interventions
+  decision_point: A
+  kind: definition
+  effect: assign_level_1
+  interpretation: effect_inferred
+  note: Table 3-1 defines this as a lifesaving intervention; decision point A assigns level 1 when an immediate lifesaving intervention is required.
+- id: gpt-090
+  page: 9
+  span: Emergent non-invasive positive pressure ventilation
+  verb: Lifesaving Interventions
+  decision_point: A
+  kind: definition
+  effect: assign_level_1
+  interpretation: effect_inferred
+  note: Table 3-1 defines this as a lifesaving intervention; decision point A assigns level 1 when an immediate lifesaving intervention is required.
+- id: gpt-091
+  page: 9
+  span: Defibrillation
+  verb: Lifesaving Interventions
+  decision_point: A
+  kind: definition
+  effect: assign_level_1
+  interpretation: effect_inferred
+  note: Table 3-1 defines this as a lifesaving intervention; decision point A assigns level 1 when an immediate lifesaving intervention is required.
+- id: gpt-092
+  page: 9
+  span: Emergent cardioversion
+  verb: Lifesaving Interventions
+  decision_point: A
+  kind: definition
+  effect: assign_level_1
+  interpretation: effect_inferred
+  note: Table 3-1 defines this as a lifesaving intervention; decision point A assigns level 1 when an immediate lifesaving intervention is required.
+- id: gpt-093
+  page: 9
+  span: External pacing
+  verb: Lifesaving Interventions
+  decision_point: A
+  kind: definition
+  effect: assign_level_1
+  interpretation: effect_inferred
+  note: Table 3-1 defines this as a lifesaving intervention; decision point A assigns level 1 when an immediate lifesaving intervention is required.
+- id: gpt-094
+  page: 9
+  span: Chest needle decompression
+  verb: Lifesaving Interventions
+  decision_point: A
+  kind: definition
+  effect: assign_level_1
+  interpretation: effect_inferred
+  note: Table 3-1 defines this as a lifesaving intervention; decision point A assigns level 1 when an immediate lifesaving intervention is required.
+- id: gpt-095
+  page: 9
+  span: Pericardiocentesis
+  verb: Lifesaving Interventions
+  decision_point: A
+  kind: definition
+  effect: assign_level_1
+  interpretation: effect_inferred
+  note: Table 3-1 defines this as a lifesaving intervention; decision point A assigns level 1 when an immediate lifesaving intervention is required.
+- id: gpt-096
+  page: 9
+  span: Open thoracotomy
+  verb: Lifesaving Interventions
+  decision_point: A
+  kind: definition
+  effect: assign_level_1
+  interpretation: effect_inferred
+  note: Table 3-1 defines this as a lifesaving intervention; decision point A assigns level 1 when an immediate lifesaving intervention is required.
+- id: gpt-097
+  page: 9
+  span: Significant intravenous fluid resuscitation
+  verb: Lifesaving Interventions
+  decision_point: A
+  kind: definition
+  effect: assign_level_1
+  interpretation: effect_inferred
+  note: Table 3-1 defines this as a lifesaving intervention; decision point A assigns level 1 when an immediate lifesaving intervention is required.
+- id: gpt-098
+  page: 9
+  span: Blood administration
+  verb: Lifesaving Interventions
+  decision_point: A
+  kind: definition
+  effect: assign_level_1
+  interpretation: effect_inferred
+  note: Table 3-1 defines this as a lifesaving intervention; decision point A assigns level 1 when an immediate lifesaving intervention is required.
+- id: gpt-099
+  page: 9
+  span: Control of external hemorrhage
+  verb: Lifesaving Interventions
+  decision_point: A
+  kind: definition
+  effect: assign_level_1
+  interpretation: effect_inferred
+  note: Table 3-1 defines this as a lifesaving intervention; decision point A assigns level 1 when an immediate lifesaving intervention is required.
+- id: gpt-100
+  page: 9
+  span: Adenosine
+  verb: Lifesaving Interventions
+  decision_point: A
+  kind: definition
+  effect: assign_level_1
+  interpretation: effect_inferred
+  note: Table 3-1 defines this as a lifesaving intervention; decision point A assigns level 1 when an immediate lifesaving intervention is required.
+- id: gpt-101
+  page: 9
+  span: Atropine
+  verb: Lifesaving Interventions
+  decision_point: A
+  kind: definition
+  effect: assign_level_1
+  interpretation: effect_inferred
+  note: Table 3-1 defines this as a lifesaving intervention; decision point A assigns level 1 when an immediate lifesaving intervention is required.
+- id: gpt-102
+  page: 9
+  span: Dextrose
+  verb: Lifesaving Interventions
+  decision_point: A
+  kind: definition
+  effect: assign_level_1
+  interpretation: effect_inferred
+  note: Table 3-1 defines this as a lifesaving intervention; decision point A assigns level 1 when an immediate lifesaving intervention is required.
+- id: gpt-103
+  page: 9
+  span: Dopamine
+  verb: Lifesaving Interventions
+  decision_point: A
+  kind: definition
+  effect: assign_level_1
+  interpretation: effect_inferred
+  note: Table 3-1 defines this as a lifesaving intervention; decision point A assigns level 1 when an immediate lifesaving intervention is required.
+- id: gpt-104
+  page: 9
+  span: Epinephrine (including IM for anaphylaxis)
+  verb: Lifesaving Interventions
+  decision_point: A
+  kind: definition
+  effect: assign_level_1
+  interpretation: effect_inferred
+  note: Table 3-1 defines this as a lifesaving intervention; decision point A assigns level 1 when an immediate lifesaving intervention is required.
+- id: gpt-105
+  page: 9
+  span: Naloxone
+  verb: Lifesaving Interventions
+  decision_point: A
+  kind: definition
+  effect: assign_level_1
+  interpretation: effect_inferred
+  note: Table 3-1 defines this as a lifesaving intervention; decision point A assigns level 1 when an immediate lifesaving intervention is required.
+- id: gpt-106
+  page: 9
+  span: diagnostics are not interventions
+  verb: are not interventions
+  decision_point: A
+  kind: negative
+  effect: none
+  interpretation: verbatim
+  note: The sentence gives CT for stroke and catheterization-lab use for hemodynamically stable patients as diagnostics, not interventions.
+- id: gpt-107
+  page: 10
+  span: should not consider the method of arrival as a barrier to assigning the appropriate ESI level
+  verb: should not consider
+  decision_point: none
+  kind: usage
+  effect: none
+  interpretation: verbatim
+  note: This applies even though an ESI level-1 patient may arrive by ambulance, be dropped at the front door, or be brought by car.
+- id: gpt-108
+  page: 10
+  span: The likelihood of discharge does not have an impact on assigning ESI 1.
+  verb: does not have an impact on assigning ESI 1
+  decision_point: A
+  kind: negative
+  effect: none
+  interpretation: verbatim
+  note: The preceding sentence gives reversible causes such as hypoglycemia, alcohol intoxication, drug or other substance overdose, or anaphylaxis as situations
+    in which certain ESI level-1 patients may be discharged.
+- id: gpt-109
+  page: 10
+  span: The patient who meets criteria for an ESI level-1 designation shows signs of deterioration
+  verb: meets criteria for an ESI level-1 designation
+  decision_point: A
+  kind: context
+  effect: none
+  interpretation: verbatim
+  note: This is a summary statement, not a newly stated assignment criterion.
+- id: gpt-110
+  page: 11
+  span: The decision points must be performed in order
+  verb: must be performed in order
+  decision_point: none
+  kind: usage
+  effect: none
+  interpretation: verbatim
+- id: gpt-111
+  page: 11
+  span: higher acuity patients will only require one or two decision points to assign an acuity level
+  verb: will only require
+  decision_point: none
+  kind: usage
+  effect: none
+  interpretation: verbatim
+- id: gpt-112
+  page: 11
+  span: If a patient does not meet high risk instability criteria (ESI level 1 or 2), the triage nurse then evaluates expected resource needs
+  verb: then evaluates
+  decision_point: C
+  kind: usage
+  effect: resource_band
+  interpretation: verbatim
+- id: gpt-113
+  page: 11
+  span: ESI level-1 patients, who are defined as in need of immediate lifesaving intervention
+  verb: are defined as
+  decision_point: A
+  kind: definition
+  effect: assign_level_1
+  interpretation: verbatim
+- id: gpt-114
+  page: 11
+  span: likely to deteriorate and/or require more immediate care based on symptom presentation and patient risk factors. These patients are assigned an ESI level
+    of 2.
+  verb: are assigned an ESI level of 2
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: observed
+  when:
+    fact: likely_to_deteriorate_or_require_more_immediate_care
+    is: true
+  interpretation: verbatim
+- id: gpt-115
+  page: 11
+  span: Decision point C is used only after level 1 and 2 are excluded
+  verb: is used only after
+  decision_point: C
+  kind: usage
+  effect: resource_band
+  interpretation: verbatim
+- id: gpt-116
+  page: 11
+  span: patients are determined to be physiologically stable with low risk for deterioration
+  verb: are determined
+  decision_point: C
+  kind: rule
+  effect: resource_band
+  who_can_supply: observed
+  when:
+    all:
+    - fact: is_physically_stable
+      is: true
+    - fact: has_low_risk_for_deterioration
+      is: true
+  interpretation: verbatim
+- id: gpt-117
+  page: 11
+  span: ESI levels 3, 4, and 5 are based on how many resources the nurse anticipates
+  verb: are based on
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  interpretation: verbatim
+- id: gpt-118
+  page: 11
+  span: reassess the acuity decision, potentially resulting in assignment of a higher acuity level as appropriate
+  verb: reassess
+  decision_point: D
+  kind: rule
+  effect: reassess_uptriage
+  who_can_supply: vitals
+  when:
+    fact: vital_signs_warrant_acuity_reassessment
+    is: true
+  interpretation: verbatim
+- id: gpt-119
+  page: 11
+  also_on:
+  - 12
+  - 29
+  span: High-risk situation?
+  verb: 'Yes'
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: observed
+  when:
+    fact: is_high_risk_situation
+    is: true
+  interpretation: effect_inferred
+  note: The figure routes “Yes” to 2; the running text on this page separately states that a high-risk situation is triaged as ESI level 2.
+- id: gpt-120
+  page: 11
+  also_on:
+  - 12
+  - 29
+  span: Confused/lethargic/disoriented?
+  verb: 'Yes'
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported_as_everyday_signs
+  when:
+    fact: has_confusion_lethargy_or_disorientation
+    is: true
+  interpretation: effect_inferred
+  note: The figure routes “Yes” to 2. The figure does not itself state that the altered state must be new; running text on page 12 supplies that qualification.
+- id: gpt-121
+  page: 11
+  also_on:
+  - 12
+  - 29
+  span: Severe pain/distress?
+  verb: 'Yes'
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported_directly
+  when:
+    fact: has_severe_pain_or_distress
+    is: true
+  interpretation: effect_inferred
+  note: The figure routes “Yes” to 2; page 12 gives qualifications for pain severity.
+- id: gpt-122
+  page: 12
+  also_on:
+  - 29
+  span: None
+  verb: '5'
+  decision_point: C
+  kind: rule
+  effect: resource_band
+  who_can_supply: observed
+  when:
+    fact: anticipated_resource_types
+    is: 0
+  interpretation: effect_inferred
+  note: In the figure, “None” under resources maps to ESI 5.
+- id: gpt-123
+  page: 12
+  also_on:
+  - 29
+  span: One
+  verb: '4'
+  decision_point: C
+  kind: rule
+  effect: resource_band
+  who_can_supply: observed
+  when:
+    fact: anticipated_resource_types
+    is: 1
+  interpretation: effect_inferred
+  note: In the figure, “One” under resources maps to ESI 4.
+- id: gpt-124
+  page: 12
+  also_on:
+  - 29
+  span: Many
+  verb: '3'
+  decision_point: C
+  kind: rule
+  effect: resource_band
+  who_can_supply: observed
+  when:
+    fact: anticipated_resource_types
+    gte: 2
+  interpretation: effect_inferred
+  note: In the figure, “Many” under resources maps to ESI 3.
+- id: gpt-125
+  page: 12
+  also_on:
+  - 30
+  span: 'Immediate life-saving intervention required: Airway or respiratory support, emergency medications, hemodynamic interventions'
+  verb: required
+  decision_point: A
+  kind: definition
+  effect: assign_level_1
+  interpretation: effect_inferred
+  note: The Figure 2-2 decision-A path maps a required immediate lifesaving intervention to ESI 1.
+- id: gpt-126
+  page: 12
+  also_on:
+  - 30
+  span: 'Clinical presentations requiring lifesaving interventions include the following: intubated, unresponsive, pulselessness, apneic, severe respiratory distress,
+    profound hypotension or hypoglycemia.'
+  verb: requiring lifesaving interventions include
+  decision_point: A
+  kind: definition
+  effect: assign_level_1
+  interpretation: effect_inferred
+  note: This is an examples list, not a statement that each item is independently sufficient alone. The figure maps a required lifesaving intervention to ESI 1.
+- id: gpt-127
+  page: 12
+  also_on:
+  - 30
+  span: Is nonverbal and not following commands (acutely)
+  verb: is defined as
+  decision_point: A
+  kind: definition
+  effect: assign_level_1
+  interpretation: effect_inferred
+  note: This is one alternative in the handbook’s definition of unresponsiveness; either listed alternative qualifies.
+- id: gpt-128
+  page: 12
+  also_on:
+  - 30
+  span: Requires noxious stimulus (P or U on AVPU scale)
+  verb: is defined as
+  decision_point: A
+  kind: definition
+  effect: assign_level_1
+  interpretation: effect_inferred
+  note: This is one alternative in the handbook’s definition of unresponsiveness; either listed alternative qualifies.
+- id: gpt-129
+  page: 12
+  also_on:
+  - 30
+  span: May become unstable, have high risk for deterioration, or exhibit newly altered mental status.
+  verb: May become unstable
+  decision_point: B
+  kind: definition
+  effect: none
+  interpretation: verbatim
+  note: This defines a high-risk situation but does not itself assign a level. The page’s B algorithm separately maps a high-risk situation to ESI 2.
+- id: gpt-130
+  page: 12
+  also_on:
+  - 30
+  span: Severe pain or distress is determined by patient report, corroborated with clinical observation.
+  verb: is determined by
+  decision_point: B
+  kind: definition
+  effect: none
+  interpretation: verbatim
+- id: gpt-131
+  page: 12
+  also_on:
+  - 30
+  span: Count the number of different types of resources, not the individual tests or radiographs.
+  verb: Count
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  interpretation: verbatim
+- id: gpt-132
+  page: 12
+  also_on:
+  - 30
+  span: complete blood count, electrolytes, and coagulant studies equal one resource
+  verb: equal one resource
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  interpretation: verbatim
+- id: gpt-133
+  page: 12
+  also_on:
+  - 30
+  span: complete blood count plus chest radiograph equals two resources
+  verb: equals two resources
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  interpretation: verbatim
+- id: gpt-134
+  page: 12
+  also_on:
+  - 30
+  span: Labs (blood, urine)
+  verb: ESI Resources
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  interpretation: verbatim
+- id: gpt-135
+  page: 12
+  also_on:
+  - 30
+  span: Electrocardiogram, radiographs
+  verb: ESI Resources
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  interpretation: verbatim
+- id: gpt-136
+  page: 12
+  also_on:
+  - 30
+  span: Computed tomography, magnetic resonance imaging, ultrasound, angiography
+  verb: ESI Resources
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  interpretation: verbatim
+- id: gpt-137
+  page: 12
+  also_on:
+  - 30
+  span: Intravenous fluids (hydration)
+  verb: ESI Resources
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  interpretation: verbatim
+- id: gpt-138
+  page: 12
+  also_on:
+  - 30
+  span: Intravenous, intramuscular, or nebulized medications
+  verb: ESI Resources
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  interpretation: verbatim
+- id: gpt-139
+  page: 12
+  also_on:
+  - 30
+  span: Specialty consultation
+  verb: ESI Resources
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  interpretation: verbatim
+- id: gpt-140
+  page: 12
+  also_on:
+  - 30
+  span: Simple procedure = 1 (laceration repair, urinary catheter)
+  verb: = 1
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  interpretation: verbatim
+- id: gpt-141
+  page: 12
+  also_on:
+  - 30
+  span: Complex procedure = 2 (procedural sedation)
+  verb: = 2
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  interpretation: verbatim
+- id: gpt-142
+  page: 12
+  also_on:
+  - 30
+  span: History and physicaI exam (Including pelvic)
+  verb: Not ESI Resources
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  interpretation: verbatim
+- id: gpt-143
+  page: 12
+  also_on:
+  - 30
+  span: Point-of-care testing
+  verb: Not ESI Resources
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  interpretation: verbatim
+- id: gpt-144
+  page: 12
+  also_on:
+  - 30
+  span: Saline or heparin lock
+  verb: Not ESI Resources
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  interpretation: verbatim
+- id: gpt-145
+  page: 12
+  also_on:
+  - 30
+  span: Oral medications
+  verb: Not ESI Resources
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  interpretation: verbatim
+- id: gpt-146
+  page: 12
+  also_on:
+  - 30
+  span: Tetanus immunization
+  verb: Not ESI Resources
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  interpretation: verbatim
+- id: gpt-147
+  page: 12
+  also_on:
+  - 30
+  span: Prescription refills
+  verb: Not ESI Resources
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  interpretation: verbatim
+- id: gpt-148
+  page: 12
+  also_on:
+  - 30
+  span: Phone call to primary care physician
+  verb: Not ESI Resources
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  interpretation: verbatim
+- id: gpt-149
+  page: 12
+  also_on:
+  - 30
+  span: Simple wound care (dressings, recheck)
+  verb: Not ESI Resources
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  interpretation: verbatim
+- id: gpt-150
+  page: 12
+  also_on:
+  - 30
+  span: Crutches, splints, slings
+  verb: Not ESI Resources
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  interpretation: verbatim
+- id: gpt-151
+  page: 12
+  also_on:
+  - 30
+  span: Reassess to determine whether the patient warrants a higher acuity level
+  verb: Reassess
+  decision_point: D
+  kind: rule
+  effect: reassess_uptriage
+  who_can_supply: vitals
+  when:
+    fact: has_high_risk_vital_signs
+    is: true
+  interpretation: verbatim
+- id: gpt-152
+  page: 12
+  also_on:
+  - 30
+  span: if a patient has one or more vital signs outside the normal parameters for the patient
+  verb: has one or more
+  decision_point: D
+  kind: definition
+  effect: reassess_uptriage
+  interpretation: verbatim
+- id: gpt-153
+  page: 12
+  also_on:
+  - 30
+  span: '1-28 days of age: Assign at least ESI 2 if T > 38° C'
+  verb: Assign at least ESI 2
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: vitals
+  when:
+    all:
+    - fact: age_days
+      gte: 1
+    - fact: age_days
+      lte: 28
+    - fact: temperature_celsius
+      gt: 38
+  interpretation: verbatim
+- id: gpt-154
+  page: 12
+  also_on:
+  - 30
+  span: '1-3 months: Consider assigning ESI 2 if T > 38 ° C'
+  verb: Consider assigning ESI 2
+  decision_point: B
+  kind: rule
+  effect: consider_level_2
+  who_can_supply: vitals
+  when:
+    all:
+    - fact: age_months
+      gte: 1
+    - fact: age_months
+      lte: 3
+    - fact: temperature_celsius
+      gt: 38
+  interpretation: verbatim
+- id: gpt-155
+  page: 12
+  also_on:
+  - 30
+  span: '3 months and older: Consider assigning ESI 2 or 3 if: T > 39°C'
+  verb: Consider assigning ESI 2 or 3
+  decision_point: B
+  kind: rule
+  effect: consider_level_2
+  who_can_supply: vitals
+  when:
+    all:
+    - fact: age_months
+      gte: 3
+    - fact: temperature_celsius
+      gt: 39
+  interpretation: verbatim
+- id: gpt-156
+  page: 12
+  also_on:
+  - 30
+  span: '3 months and older: Consider assigning ESI 2 or 3 if: T < 36°C'
+  verb: Consider assigning ESI 2 or 3
+  decision_point: B
+  kind: rule
+  effect: consider_level_2
+  who_can_supply: vitals
+  when:
+    all:
+    - fact: age_months
+      gte: 3
+    - fact: temperature_celsius
+      lt: 36
+  interpretation: verbatim
+- id: gpt-157
+  page: 12
+  also_on:
+  - 30
+  span: '3 months and older: Consider assigning ESI 2 or 3 if: Incomplete immunizations'
+  verb: Consider assigning ESI 2 or 3
+  decision_point: B
+  kind: rule
+  effect: consider_level_2
+  who_can_supply: reported_directly
+  when:
+    all:
+    - fact: age_months
+      gte: 3
+    - fact: has_incomplete_immunizations
+      is: true
+  interpretation: verbatim
+  note: The criterion appears under the heading “Pediatric Fever Considerations,” but the listed condition itself does not explicitly say fever.
+- id: gpt-158
+  page: 12
+  also_on:
+  - 30
+  span: '3 months and older: Consider assigning ESI 2 or 3 if: No obvious source of fever'
+  verb: Consider assigning ESI 2 or 3
+  decision_point: B
+  kind: rule
+  effect: consider_level_2
+  who_can_supply: observed
+  when:
+    all:
+    - fact: age_months
+      gte: 3
+    - fact: has_no_obvious_source_of_fever
+      is: true
+  interpretation: verbatim
+- id: gpt-159
+  page: 12
+  span: Active chest pain, suspicious for acute coronary syndrome but does not require an immediate lifesaving intervention.
+  verb: Examples of high-risk situations include
+  decision_point: B
+  kind: example
+  effect: assign_level_2
+  when:
+    all:
+    - fact: has_active_chest_pain_suspicious_for_acute_coronary_syndrome
+      is: true
+    - fact: requires_immediate_lifesaving_intervention
+      is: false
+  interpretation: effect_inferred
+  note: This is presented as an example of a high-risk situation; the page 11 rule assigns high-risk situations ESI 2. The examples list does not expressly say each
+    item is independently sufficient alone.
+- id: gpt-160
+  page: 12
+  span: Signs of a stroke but does not meet level-1 criteria.
+  verb: Examples of high-risk situations include
+  decision_point: B
+  kind: example
+  effect: assign_level_2
+  when:
+    all:
+    - fact: has_signs_of_stroke
+      is: true
+    - fact: requires_immediate_lifesaving_intervention
+      is: false
+  interpretation: effect_inferred
+  note: Example of a high-risk situation; the list does not expressly say each item is independently sufficient alone.
+- id: gpt-161
+  page: 12
+  span: A possible ectopic pregnancy, hemodynamically stable.
+  verb: Examples of high-risk situations include
+  decision_point: B
+  kind: example
+  effect: assign_level_2
+  when:
+    all:
+    - fact: has_possible_ectopic_pregnancy
+      is: true
+    - fact: is_hemodynamically_stable
+      is: true
+  interpretation: effect_inferred
+  note: Example of a high-risk situation; the list does not expressly say each item is independently sufficient alone.
+- id: gpt-162
+  page: 12
+  span: A patient on chemotherapy, and therefore immunocompromised, with a fever.
+  verb: Examples of high-risk situations include
+  decision_point: B
+  kind: example
+  effect: assign_level_2
+  when:
+    all:
+    - fact: is_on_chemotherapy
+      is: true
+    - fact: is_immunocompromised
+      is: true
+    - fact: has_fever
+      is: true
+  interpretation: effect_inferred
+  note: Example of a high-risk situation; the list does not expressly say each item is independently sufficient alone.
+- id: gpt-163
+  page: 12
+  span: Transplant recipient presenting with a fever or other indication of infection.
+  verb: Examples of high-risk situations include
+  decision_point: B
+  kind: example
+  effect: assign_level_2
+  when:
+    all:
+    - fact: is_transplant_recipient
+      is: true
+    - any:
+      - fact: has_fever
+        is: true
+      - fact: has_other_indication_of_infection
+        is: true
+  interpretation: effect_inferred
+  note: Example of a high-risk situation; the list does not expressly say each item is independently sufficient alone.
+- id: gpt-164
+  page: 12
+  span: Actively suicidal or homicidal patient
+  verb: Examples of high-risk situations include
+  decision_point: B
+  kind: example
+  effect: assign_level_2
+  when:
+    any:
+    - fact: is_actively_suicidal
+      is: true
+    - fact: is_actively_homicidal
+      is: true
+  interpretation: effect_inferred
+  note: Example of a high-risk situation; the list does not expressly say each item is independently sufficient alone.
+- id: gpt-165
+  page: 12
+  span: A needle stick in a health care worker (time sensitive to postexposure prophylaxis treatment)
+  verb: Examples of high-risk situations include
+  decision_point: B
+  kind: example
+  effect: assign_level_2
+  when:
+    fact: has_needle_stick_injury_as_health_care_worker
+    is: true
+  interpretation: effect_inferred
+  note: Example of a high-risk situation; the list does not expressly say each item is independently sufficient alone.
+- id: gpt-166
+  page: 12
+  span: Sexual assault survivor
+  verb: Examples of high-risk situations include
+  decision_point: B
+  kind: example
+  effect: assign_level_2
+  when:
+    fact: is_sexual_assault_survivor
+    is: true
+  interpretation: effect_inferred
+  note: Example of a high-risk situation; the list does not expressly say each item is independently sufficient alone.
+- id: gpt-167
+  page: 12
+  span: Increasing respiratory effort
+  verb: Examples of high-risk situations include
+  decision_point: B
+  kind: example
+  effect: assign_level_2
+  when:
+    fact: has_increasing_respiratory_effort
+    is: true
+  interpretation: effect_inferred
+  note: Example of a high-risk situation; the list does not expressly say each item is independently sufficient alone.
+- id: gpt-168
+  page: 12
+  span: Postpartum hemorrhage
+  verb: Examples of high-risk situations include
+  decision_point: B
+  kind: example
+  effect: assign_level_2
+  when:
+    fact: has_postpartum_hemorrhage
+    is: true
+  interpretation: effect_inferred
+  note: Example of a high-risk situation; the list does not expressly say each item is independently sufficient alone.
+- id: gpt-169
+  page: 12
+  span: the presence of confusion, lethargy, or disorientation refers to a new onset
+  verb: refers to
+  decision_point: B
+  kind: definition
+  effect: none
+  interpretation: verbatim
+- id: gpt-170
+  page: 12
+  span: If the patient’s history is unknown, and the patient presents as confused, lethargic, or disoriented, the nurse should assume this condition is new and assign
+    an ESI level 2.
+  verb: should assume this condition is new and assign an ESI level 2
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported_as_everyday_signs
+  when:
+    all:
+    - fact: patient_history_is_unknown
+      is: true
+    - fact: has_confusion_lethargy_or_disorientation
+      is: true
+  interpretation: verbatim
+- id: gpt-171
+  page: 12
+  span: The patient should be assessed for the presence of severe pain or distress.
+  verb: should be assessed
+  decision_point: B
+  kind: context
+  effect: none
+  interpretation: verbatim
+- id: gpt-172
+  page: 12
+  span: All patients who have a pain rating of 7/10 or greater should be considered for meeting ESI level-2 criteria.
+  verb: should be considered for meeting ESI level-2 criteria
+  decision_point: B
+  kind: rule
+  effect: consider_level_2
+  who_can_supply: reported_directly
+  when:
+    fact: pain_rating_out_of_10
+    gte: 7
+  interpretation: verbatim
+- id: gpt-173
+  page: 12
+  span: not all patients with a pain score greater than 7 should be triaged as ESI level 2
+  verb: not all patients ... should be triaged as ESI level 2
+  decision_point: B
+  kind: negative
+  effect: none
+  interpretation: verbatim
+- id: gpt-174
+  page: 12
+  span: every patient who presents with severe pain should be thoroughly assessed.
+  verb: should be thoroughly assessed
+  decision_point: B
+  kind: context
+  effect: none
+  interpretation: verbatim
+- id: gpt-175
+  page: 12
+  span: this patient can wait to be seen, and the resources needed to reach a disposition should be determined.
+  verb: can wait
+  decision_point: C
+  kind: negative
+  effect: resource_band
+  interpretation: verbatim
+  note: This follows the orthopedic-injury example expressly conditioned on no neurovascular compromise; it says no ESI 2 assignment follows from accepting a 10/10
+    pain rating alone.
+- id: gpt-176
+  page: 12
+  span: Patients experiencing severe pain or distress as a result of a systemic disruption ... should be triaged as ESI level 2
+  verb: should be triaged as ESI level 2
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported_directly
+  when:
+    fact: has_severe_pain_or_distress_due_to_systemic_disruption
+    is: true
+  interpretation: verbatim
+  note: The handbook gives renal colic, cancer, and sickle cell crisis as examples of systemic disruption; it does not state those examples as a separate exhaustive
+    category.
+- id: gpt-177
+  page: 12
+  span: In consideration of assigning an ESI level 2, the nurse must assess for severe distress
+  verb: must assess
+  decision_point: B
+  kind: context
+  effect: consider_level_2
+  interpretation: verbatim
+- id: gpt-178
+  page: 12
+  span: 'Examples of patient behavior or experiences reflecting or resulting in severe psychological distress include the following:'
+  verb: include
+  decision_point: B
+  kind: example
+  effect: none
+  interpretation: verbatim
+  note: The following list illustrates severe psychological distress. It does not say that any listed behavior or experience alone assigns or independently satisfies
+    ESI level-2 criteria.
+- id: gpt-179
+  page: 12
+  span: other presenting symptoms and red flags that would warrant an ESI level-2 assignment.
+  verb: would warrant an ESI level-2 assignment
+  decision_point: B
+  kind: context
+  effect: assign_level_2
+  interpretation: verbatim
+  note: This introduces the nonexhaustive symptom and red-flag examples that follow.
+- id: gpt-180
+  page: 12
+  span: the “thunderclap headache” (a severe, rapid-onset headache) ... warrants immediate evaluation.
+  verb: warrants immediate evaluation
+  decision_point: B
+  kind: example
+  effect: assign_level_2
+  when:
+    fact: has_thunderclap_headache
+    is: true
+  interpretation: effect_inferred
+  note: The sentence does not name a level. It appears in the section introduced as red flags warranting ESI 2, so the ESI-2 effect is inferred.
+- id: gpt-181
+  page: 12
+  span: Any headache accompanied by neck pain or nuchal rigidity falls into this category.
+  verb: falls into this category
+  decision_point: B
+  kind: example
+  effect: assign_level_2
+  when:
+    all:
+    - fact: has_headache
+      is: true
+    - any:
+      - fact: has_neck_pain
+        is: true
+      - fact: has_nuchal_rigidity
+        is: true
+  interpretation: interpreted
+  note: “This category” could mean the preceding thunderclap/immediate-evaluation category or, more broadly, neurological concerns. Read as the former, and therefore
+    as ESI 2 by the section’s red-flag introduction.
+- id: gpt-182
+  page: 12
+  span: headache plus fever, vomiting, lower back pain, altered mental status, and/or signs and symptoms of stroke
+  verb: warrant an ESI 2 designation include
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported_directly
+  when:
+    all:
+    - fact: has_headache
+      is: true
+    - any:
+      - fact: has_fever
+        is: true
+      - fact: has_vomiting
+        is: true
+      - fact: has_lower_back_pain
+        is: true
+      - fact: has_altered_mental_status
+        is: true
+      - fact: has_signs_or_symptoms_of_stroke
+        is: true
+  interpretation: verbatim
+- id: gpt-183
+  page: 12
+  span: Patients presenting post-ictal are triaged as ESI level 2
+  verb: are triaged as ESI level 2
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: observed
+  when:
+    fact: is_post_ictal
+    is: true
+  interpretation: verbatim
+- id: gpt-184
+  page: 12
+  span: alert and oriented after having a seizure prior to ED presentation can be triaged according to their physiological presentation and expected resource needs.
+  verb: can be triaged according to
+  decision_point: none
+  kind: negative
+  effect: none
+  interpretation: verbatim
+  note: For a known-seizure-history patient who is alert and oriented after a pre-ED seizure, the text explicitly directs triage by physiologic presentation and expected
+    resources rather than assigning ESI 2.
+- id: gpt-185
+  page: 13
+  span: Pediatric patients presenting as alert and appropriate after a febrile seizure can be triaged based on their physiological assessment and anticipated resource
+    needs.
+  verb: can be triaged based on
+  decision_point: C
+  kind: rule
+  effect: resource_band
+  who_can_supply: reported_as_everyday_signs
+  when:
+    all:
+    - fact: is_pediatric_patient
+      is: true
+    - fact: is_alert_and_appropriate_after_febrile_seizure
+      is: true
+  interpretation: verbatim
+  note: This does not assign a specific level or resource count.
+- id: gpt-186
+  page: 13
+  span: A subtle change in a pediatric patient’s mental status can be suggestive of a change in hemodynamics and should be immediately investigated as high risk.
+  verb: should be immediately investigated as high risk
+  decision_point: B
+  kind: rule
+  effect: consider_level_2
+  who_can_supply: observed
+  when:
+    all:
+    - fact: is_pediatric_patient
+      is: true
+    - fact: has_subtle_mental_status_change
+      is: true
+  interpretation: interpreted
+  note: The text does not name an ESI level; high risk is interpreted as requiring consideration at decision point B, not as an ESI-2 assignment.
+- id: gpt-187
+  page: 13
+  span: few of these merit an ESI level-2 designation
+  verb: merit an ESI level-2 designation
+  decision_point: B
+  kind: context
+  effect: none
+  interpretation: interpreted
+  note: “These” refers to pediatric conjunctivitis, corneal erosion, and allergic conjunctivitis. “Few” does not identify which presentations qualify or state that
+    any individual presentation is sufficient or insufficient for ESI 2.
+- id: gpt-188
+  page: 13
+  span: Patients who are unable to manage their own secretions and/or exhibit respiratory stridor are extremely high-risk patients and should be assigned an ESI level
+    of 2.
+  verb: should be assigned an ESI level of 2
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported_as_everyday_signs
+  when:
+    all:
+    - fact: is_unable_to_manage_own_secretions
+      is: true
+  interpretation: verbatim
+  note: The “and/or” makes inability to manage secretions independently sufficient as written; everyday signs may include being unable to swallow saliva or repeatedly
+    drooling.
+- id: gpt-189
+  page: 13
+  span: Patients who are unable to manage their own secretions and/or exhibit respiratory stridor are extremely high-risk patients and should be assigned an ESI level
+    of 2.
+  verb: should be assigned an ESI level of 2
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: observed
+  when:
+    all:
+    - fact: has_respiratory_stridor
+      is: true
+  interpretation: verbatim
+  note: The “and/or” makes respiratory stridor independently sufficient as written.
+- id: gpt-190
+  page: 13
+  span: Examples include brisk bleeding secondary to posterior nosebleed
+  verb: are assigned an ESI level of 2
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: observed
+  when:
+    all:
+    - fact: has_brisk_posterior_epistaxis
+      is: true
+  interpretation: verbatim
+  note: The following sentence states that patients in these situations are assigned ESI 2; this listed example is treated as a sufficient situation.
+- id: gpt-191
+  page: 13
+  span: when experienced by a patient with known thrombocytopenia
+  verb: are assigned an ESI level of 2
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported_directly
+  when:
+    all:
+    - fact: has_epistaxis
+      is: true
+    - fact: has_known_thrombocytopenia
+      is: true
+  interpretation: verbatim
+  note: The following sentence states that patients in these situations are assigned ESI 2; this listed example is treated as a sufficient situation.
+- id: gpt-192
+  page: 13
+  span: when experienced by a patient with known clotting dyscrasias
+  verb: are assigned an ESI level of 2
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported_directly
+  when:
+    all:
+    - fact: has_epistaxis
+      is: true
+    - fact: has_known_clotting_dyscrasia
+      is: true
+  interpretation: verbatim
+  note: The following sentence states that patients in these situations are assigned ESI 2; this listed example is treated as a sufficient situation.
+- id: gpt-193
+  page: 13
+  span: when experienced by a patient with known use of warfarin or other anti-coagulants
+  verb: are assigned an ESI level of 2
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported_directly
+  when:
+    all:
+    - fact: has_epistaxis
+      is: true
+    - fact: uses_warfarin_or_other_anticoagulant
+      is: true
+  interpretation: verbatim
+  note: The following sentence states that patients in these situations are assigned ESI 2; this listed example is treated as a sufficient situation.
+- id: gpt-194
+  page: 13
+  span: Esophageal button battery ingestion has a high risk of complication
+  verb: has a high risk of complication
+  decision_point: B
+  kind: rule
+  effect: consider_level_2
+  who_can_supply: reported_directly
+  when:
+    all:
+    - fact: has_esophageal_button_battery_ingestion
+      is: true
+  interpretation: interpreted
+  note: The text calls this high risk but does not name an ESI level; it is interpreted as requiring consideration at decision point B, not as an ESI-2 assignment.
+    It says risk is especially high for children under 6 and batteries over 20 mm, without making those qualifiers required.
+- id: gpt-195
+  page: 13
+  span: The high-risk patient is one who is currently ventilating and oxygenating adequately but is in respiratory distress and has the potential to rapidly deteriorate.
+  verb: is one who
+  decision_point: B
+  kind: definition
+  effect: consider_level_2
+  interpretation: interpreted
+  note: This defines a high-risk respiratory presentation without naming an ESI level; high risk is interpreted as requiring consideration at decision point B, not
+    as an assignment.
+- id: gpt-196
+  page: 13
+  span: Signs of distress can include tachypnea, tachycardia, tripoding, speaking in short, 2-to-3-word sentences; audible stridor; wheezing; or congestion.
+  verb: can include
+  decision_point: none
+  kind: context
+  effect: none
+  interpretation: verbatim
+  note: This is a nonexhaustive list of signs of respiratory distress. The text does not state that any listed sign alone is sufficient for a level.
+- id: gpt-197
+  page: 13
+  span: Patients with mild to moderate distress should be further evaluated for respiratory rate and pulse oximetry to determine whether they should be categorized
+    as ESI level 2.
+  verb: should be further evaluated
+  decision_point: B
+  kind: rule
+  effect: consider_level_2
+  who_can_supply: observed
+  when:
+    all:
+    - fact: has_mild_to_moderate_respiratory_distress
+      is: true
+  interpretation: verbatim
+  note: The text directs further evaluation to determine whether ESI 2 is appropriate; it does not assign ESI 2.
+- id: gpt-198
+  page: 13
+  span: Patients in severe respiratory distress who require immediate lifesaving intervention, such as intubation, meet level-1 criteria.
+  verb: meet level-1 criteria
+  decision_point: A
+  kind: rule
+  effect: assign_level_1
+  who_can_supply: observed
+  when:
+    all:
+    - fact: has_severe_respiratory_distress
+      is: true
+    - fact: requires_immediate_lifesaving_intervention
+      is: true
+  interpretation: verbatim
+  note: Intubation is introduced as an example of an immediate lifesaving intervention, not as the only sufficient intervention.
+- id: gpt-199
+  page: 13
+  span: Patients with chest pain who are physiologically unstable and require immediate interventions such as intubation or hemodynamic support should be triaged
+    as ESI level 1.
+  verb: should be triaged as ESI level 1
+  decision_point: A
+  kind: rule
+  effect: assign_level_1
+  who_can_supply: observed
+  when:
+    all:
+    - fact: has_chest_pain
+      is: true
+    - fact: is_physically_unstable
+      is: true
+    - fact: requires_immediate_lifesaving_intervention
+      is: true
+  interpretation: verbatim
+  note: Intubation and hemodynamic support are examples of the required immediate interventions, not an exhaustive list.
+- id: gpt-200
+  page: 13
+  span: If the ECG is abnormal, patients would be assigned level 2.
+  verb: would be assigned level 2
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: observed
+  when:
+    all:
+    - fact: has_chest_pain_concern
+      is: true
+    - fact: has_abnormal_ecg
+      is: true
+  interpretation: verbatim
+  note: The preceding sentence scopes the ECG discussion to patients with concerns of chest pain.
+- id: gpt-201
+  page: 14
+  span: questions can help the triage nurse determine whether or not the patient meets high-risk criteria
+  verb: can help the triage nurse determine whether or not
+  decision_point: B
+  kind: context
+  effect: consider_level_2
+  interpretation: effect_inferred
+  note: The following assessment questions are not stated to be individually sufficient for high-risk criteria or ESI level 2.
+- id: gpt-202
+  page: 14
+  span: Is the patient pregnant or postpartum?
+  verb: help the triage nurse determine whether or not
+  decision_point: B
+  kind: context
+  effect: consider_level_2
+  when:
+    any:
+    - fact: is_pregnant
+      is: true
+    - fact: is_postpartum
+      is: true
+  interpretation: effect_inferred
+  note: This is an assessment question; the text does not say pregnancy or postpartum status alone meets high-risk criteria.
+- id: gpt-203
+  page: 14
+  span: Does the patient show signs of sepsis?
+  verb: help the triage nurse determine whether or not
+  decision_point: B
+  kind: context
+  effect: consider_level_2
+  when:
+    all:
+    - fact: has_signs_of_sepsis
+      is: true
+  interpretation: effect_inferred
+  note: This is an assessment question; the text does not state that this finding alone meets high-risk criteria.
+- id: gpt-204
+  page: 14
+  span: Does the patient show signs of hypoperfusion?
+  verb: help the triage nurse determine whether or not
+  decision_point: B
+  kind: context
+  effect: consider_level_2
+  when:
+    all:
+    - fact: has_signs_of_hypoperfusion
+      is: true
+  interpretation: effect_inferred
+  note: This is an assessment question; the text does not state that this finding alone meets high-risk criteria.
+- id: gpt-205
+  page: 14
+  span: Was there blunt or penetrating trauma to the abdomen?
+  verb: help the triage nurse determine whether or not
+  decision_point: B
+  kind: context
+  effect: consider_level_2
+  when:
+    any:
+    - fact: has_blunt_abdominal_trauma
+      is: true
+    - fact: has_penetrating_abdominal_trauma
+      is: true
+  interpretation: effect_inferred
+  note: This is an assessment question; the text does not state that either trauma mechanism alone meets high-risk criteria.
+- id: gpt-206
+  page: 14
+  span: Is the patient’s pain refractory to analgesia, constant, and /or maximal on onset?
+  verb: help the triage nurse determine whether or not
+  decision_point: B
+  kind: context
+  effect: consider_level_2
+  when:
+    any:
+    - fact: pain_is_refractory_to_analgesia
+      is: true
+    - fact: pain_is_constant
+      is: true
+    - fact: pain_is_maximal_on_onset
+      is: true
+  interpretation: interpreted
+  note: The question uses “and /or”; this entry reads it as any listed pain feature being a question to consider. The text does not state that any feature alone meets
+    high-risk criteria.
+- id: gpt-207
+  page: 14
+  span: with a SBP of < 90 or > 150 should be designated an ESI 2
+  verb: should be designated an ESI 2
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: vitals
+  when:
+    all:
+    - any:
+      - fact: is_pregnant
+        is: true
+      - fact: is_postpartum
+        is: true
+    - any:
+      - fact: systolic_blood_pressure_mm_hg
+        lt: 90
+      - fact: systolic_blood_pressure_mm_hg
+        gt: 150
+  interpretation: verbatim
+  note: The assignment applies even in the absence of other symptoms.
+- id: gpt-208
+  page: 14
+  span: Pregnant patients with chest pain and/or shortness of breath, abdominal pain, or headache
+  verb: should be triaged as ESI 2
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported_as_everyday_signs
+  when:
+    all:
+    - fact: is_pregnant
+      is: true
+    - any:
+      - fact: has_chest_pain
+        is: true
+      - fact: has_shortness_of_breath
+        is: true
+      - fact: has_abdominal_pain
+        is: true
+      - fact: has_headache
+        is: true
+  interpretation: interpreted
+  note: Read as pregnancy plus any listed symptom group; “chest pain and/or shortness of breath” permits either symptom. The sentence also says these patients should
+    be rapidly assessed by ED and/or OB providers.
+- id: gpt-209
+  page: 14
+  span: Pregnant patients who present with heavy vaginal bleeding and abnormal vitals with suspicion of infection
+  verb: should be categorized at ESI level 2
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: vitals
+  when:
+    all:
+    - fact: is_pregnant
+      is: true
+    - fact: has_heavy_vaginal_bleeding
+      is: true
+    - fact: has_abnormal_vital_signs
+      is: true
+    - fact: has_suspicion_of_infection
+      is: true
+  interpretation: verbatim
+- id: gpt-210
+  page: 14
+  span: Heavy vaginal bleeding generally means soaking through a pad an hour
+  verb: generally means
+  decision_point: B
+  kind: definition
+  effect: none
+  interpretation: verbatim
+  note: The text also gives plum-sized clots, bright red bleeding that does not slow down, or bleeding that has increased after a decrease as examples of heavy vaginal
+    bleeding.
+- id: gpt-211
+  page: 14
+  span: Postpartum patients presenting with heavy vaginal bleeding should also be assigned ESI level 2
+  verb: should also be assigned ESI level 2
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported_as_everyday_signs
+  when:
+    all:
+    - fact: is_postpartum
+      is: true
+    - fact: has_heavy_vaginal_bleeding
+      is: true
+  interpretation: verbatim
+  note: The sentence additionally says these patients should be seen by a provider immediately.
+- id: gpt-212
+  page: 14
+  span: Any pregnancy-capable patient, whether pregnant or postpartum, who presents with significant hemodynamic instability
+  verb: should be triaged as ESI level 1
+  decision_point: A
+  kind: rule
+  effect: assign_level_1
+  who_can_supply: observed
+  when:
+    all:
+    - fact: is_pregnancy_capable
+      is: true
+    - any:
+      - fact: is_pregnant
+        is: true
+      - fact: is_postpartum
+        is: true
+    - fact: has_significant_hemodynamic_instability
+      is: true
+    - fact: requires_immediate_lifesaving_intervention
+      is: true
+  interpretation: verbatim
+- id: gpt-213
+  page: 14
+  span: Testicular or scrotal pain should be immediately evaluated for testicular torsion
+  verb: should be immediately evaluated
+  decision_point: B
+  kind: context
+  effect: consider_level_2
+  when:
+    all:
+    - fact: has_testicular_or_scrotal_pain
+      is: true
+  interpretation: interpreted
+  note: No level is named. I interpret immediate evaluation for a time-sensitive condition capable of permanent organ loss as prompting consideration of level 2;
+    the alternative is to record no level effect.
+- id: gpt-214
+  page: 14
+  span: unilateral lower quadrant pain in patients with ovaries should be evaluated for ovarian torsion and ectopic pregnancy
+  verb: should be evaluated for
+  decision_point: B
+  kind: context
+  effect: consider_level_2
+  when:
+    all:
+    - fact: has_unilateral_lower_quadrant_pain
+      is: true
+    - fact: has_ovaries
+      is: true
+  interpretation: interpreted
+  note: No level is named. I interpret evaluation for these time-sensitive conditions as prompting consideration of level 2; the alternative is to record no level
+    effect.
+- id: gpt-215
+  page: 14
+  span: The patient with symptoms of a UTI who is elderly
+  verb: should also be assigned to ESI 2
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported_as_everyday_signs
+  when:
+    all:
+    - fact: has_uti_symptoms
+      is: true
+    - fact: is_elderly
+      is: true
+  interpretation: verbatim
+- id: gpt-216
+  page: 14
+  span: who also complains of back pain, chills, and rigors
+  verb: should also be assigned to ESI 2
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported_as_everyday_signs
+  when:
+    all:
+    - fact: has_uti_symptoms
+      is: true
+    - fact: has_back_pain
+      is: true
+    - fact: has_chills
+      is: true
+    - fact: has_rigors
+      is: true
+  interpretation: verbatim
+  note: The text says these symptoms may indicate urosepsis.
+- id: gpt-217
+  page: 14
+  span: Patients presenting with severe flank pain receive a level-2 designation
+  verb: receive a level-2 designation
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported_as_everyday_signs
+  when:
+    all:
+    - fact: has_severe_flank_pain
+      is: true
+  interpretation: verbatim
+- id: gpt-218
+  page: 15
+  span: Mechanisms of injury that warrant an ESI 2 designation include falls of 20 feet (6 meters) or more
+  verb: warrant an ESI 2 designation
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported_directly
+  when:
+    all:
+    - fact: fall_height_meters
+      gte: 6
+  interpretation: verbatim
+- id: gpt-219
+  page: 15
+  span: ejection from a vehicle
+  verb: warrant an ESI 2 designation
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported_directly
+  when:
+    all:
+    - fact: was_ejected_from_vehicle
+      is: true
+  interpretation: verbatim
+- id: gpt-220
+  page: 15
+  span: removal from a vehicle with mechanical extrication tools
+  verb: warrant an ESI 2 designation
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported_directly
+  when:
+    all:
+    - fact: was_removed_from_vehicle_with_mechanical_extrication_tools
+      is: true
+  interpretation: verbatim
+- id: gpt-221
+  page: 15
+  also_on:
+  - 12
+  span: sexual assault
+  verb: warrant an ESI 2 designation
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported_directly
+  when:
+    all:
+    - fact: is_sexual_assault_survivor
+      is: true
+  interpretation: verbatim
+- id: gpt-222
+  page: 15
+  span: Injuries that warrant an ESI level of 2 may include penetrating trauma of the head, neck, chest, and abdomen
+  verb: may include
+  decision_point: B
+  kind: rule
+  effect: consider_level_2
+  who_can_supply: observed
+  when:
+    all:
+    - fact: has_penetrating_head_neck_chest_or_abdominal_trauma
+      is: true
+    - fact: has_no_signs_of_hemodynamic_instability
+      is: true
+  interpretation: verbatim
+  note: The sentence presents this injury as something level-2 injuries may include; it does not make it sufficient alone.
+- id: gpt-223
+  page: 15
+  span: advanced age is a known risk factor for poor outcomes among trauma patients
+  verb: is a known risk factor
+  decision_point: B
+  kind: context
+  effect: none
+  interpretation: interpreted
+  note: The text identifies advanced age as a trauma-risk factor but gives no ESI level; it is interpreted as Decision-B risk context, not a level assignment.
+- id: gpt-224
+  page: 15
+  span: Patients with high-risk orthopedic injuries include those presenting with any extremity injury with compromised neurovascular function
+  verb: include
+  decision_point: B
+  kind: context
+  effect: none
+  interpretation: interpreted
+  note: The text calls this a high-risk orthopedic injury but does not name a level. This listed item is presented as included in that category.
+- id: gpt-225
+  page: 15
+  span: symptoms of compartment syndrome
+  verb: include
+  decision_point: B
+  kind: context
+  effect: none
+  interpretation: interpreted
+  note: This is an item in the list of high-risk orthopedic injuries; the page gives no level assignment.
+- id: gpt-226
+  page: 15
+  span: partial or complete amputations
+  verb: include
+  decision_point: B
+  kind: context
+  effect: none
+  interpretation: interpreted
+  note: This is an item in the list of high-risk orthopedic injuries; the page gives no level assignment.
+- id: gpt-227
+  page: 15
+  span: Patients with possible fractures of the pelvis, femur, or dislocations should be carefully evaluated and vital signs considered
+  verb: should be carefully evaluated and vital signs considered
+  decision_point: B
+  kind: context
+  effect: none
+  interpretation: verbatim
+  note: The sentence directs evaluation and consideration of vital signs, but does not assign or ask the nurse to consider a particular ESI level.
+- id: gpt-228
+  page: 15
+  span: Toxic ingestion is a high-risk presentation which needs to be rapidly evaluated
+  verb: is a high-risk presentation
+  decision_point: B
+  kind: context
+  effect: none
+  interpretation: interpreted
+  note: The page calls toxic ingestion high risk without naming a level; interpreted as Decision-B high-risk context, not an assignment.
+- id: gpt-229
+  page: 15
+  span: Patients who present with alterations in mental status ... without an obvious cause should be evaluated as a possible toxic ingestion
+  verb: should be evaluated as a possible toxic ingestion
+  decision_point: B
+  kind: context
+  effect: none
+  interpretation: verbatim
+  note: An alteration in mental status is one independently listed presentation; the sentence directs evaluation for possible toxic ingestion, not an ESI assignment.
+- id: gpt-230
+  page: 15
+  span: difficulty breathing ... without an obvious cause should be evaluated as a possible toxic ingestion
+  verb: should be evaluated as a possible toxic ingestion
+  decision_point: B
+  kind: context
+  effect: none
+  interpretation: verbatim
+  note: Difficulty breathing is one independently listed presentation; the sentence directs evaluation for possible toxic ingestion, not an ESI assignment.
+- id: gpt-231
+  page: 15
+  span: changes in breathing pattern ... without an obvious cause should be evaluated as a possible toxic ingestion
+  verb: should be evaluated as a possible toxic ingestion
+  decision_point: B
+  kind: context
+  effect: none
+  interpretation: verbatim
+  note: A change in breathing pattern is one independently listed presentation; the sentence directs evaluation for possible toxic ingestion, not an ESI assignment.
+- id: gpt-232
+  page: 15
+  span: changes in heart rate and/or rhythm without an obvious cause should be evaluated as a possible toxic ingestion
+  verb: should be evaluated as a possible toxic ingestion
+  decision_point: B
+  kind: context
+  effect: none
+  interpretation: verbatim
+  note: A change in heart rate and/or rhythm is one independently listed presentation; the sentence directs evaluation for possible toxic ingestion, not an ESI assignment.
+- id: gpt-233
+  page: 15
+  span: Patients presenting with a fever or other indication of infection or rejection should be designated ESI level 2
+  verb: should be designated ESI level 2
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported_directly
+  when:
+    all:
+    - fact: is_transplant_recipient
+      is: true
+    - any:
+      - fact: has_fever
+        is: true
+      - fact: has_other_indication_of_infection
+        is: true
+      - fact: has_indication_of_transplant_rejection
+        is: true
+  interpretation: verbatim
+- id: gpt-234
+  page: 15
+  span: Patients who are on a transplant list are also usually considered high-risk
+  verb: are also usually considered high-risk
+  decision_point: B
+  kind: context
+  effect: none
+  interpretation: interpreted
+  note: The sentence labels these patients high risk but gives no ESI level; interpreted as Decision-B context, not an assignment.
+- id: gpt-235
+  page: 15
+  span: Patients who present with specific mental health concerns are at high risk if they are a danger either to themselves
+  verb: are at high risk
+  decision_point: B
+  kind: context
+  effect: none
+  interpretation: interpreted
+  note: The sentence identifies danger to self as high risk but does not name a level; interpreted as Decision-B context, not an assignment.
+- id: gpt-236
+  page: 15
+  span: Patients who present with specific mental health concerns are at high risk if they are a danger ... to others
+  verb: are at high risk
+  decision_point: B
+  kind: context
+  effect: none
+  interpretation: interpreted
+  note: The sentence identifies danger to others as high risk but does not name a level; interpreted as Decision-B context, not an assignment.
+- id: gpt-237
+  page: 15
+  span: Patients who present with specific mental health concerns are at high risk if they are a danger ... to the environment
+  verb: are at high risk
+  decision_point: B
+  kind: context
+  effect: none
+  interpretation: interpreted
+  note: The sentence identifies danger to the environment as high risk but does not name a level; interpreted as Decision-B context, not an assignment.
+- id: gpt-238
+  page: 15
+  span: Patients who are suicidal ... should be assigned an ESI level of 2
+  verb: should be assigned an ESI level of 2
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported_directly
+  when:
+    all:
+    - fact: is_actively_suicidal
+      is: true
+  interpretation: verbatim
+- id: gpt-239
+  page: 15
+  span: Patients who are ... homicidal ... should be assigned an ESI level of 2
+  verb: should be assigned an ESI level of 2
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported_directly
+  when:
+    all:
+    - fact: is_actively_homicidal
+      is: true
+  interpretation: verbatim
+- id: gpt-240
+  page: 15
+  span: Patients who are ... psychotic ... should be assigned an ESI level of 2
+  verb: should be assigned an ESI level of 2
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: observed
+  when:
+    all:
+    - fact: is_psychotic
+      is: true
+  interpretation: verbatim
+- id: gpt-241
+  page: 15
+  span: Patients who are ... violent should be assigned an ESI level of 2
+  verb: should be assigned an ESI level of 2
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported_as_everyday_signs
+  when:
+    all:
+    - fact: is_violent
+      is: true
+  interpretation: verbatim
+  note: A non-clinician could describe violent behavior, though not make a clinical diagnosis.
+- id: gpt-242
+  page: 15
+  span: ESI level-2 patients remain a high priority, and placement and treatment should be initiated rapidly
+  verb: should be initiated rapidly
+  decision_point: B
+  kind: usage
+  effect: none
+  interpretation: verbatim
+- id: gpt-243
+  page: 15
+  span: the charge nurse or staff in the patient care area should be immediately alerted that they have an ESI level-2 patient
+  verb: should be immediately alerted
+  decision_point: B
+  kind: usage
+  effect: none
+  interpretation: verbatim
+- id: gpt-244
+  page: 19
+  span: Patients who require two or more resources are assigned level 3
+  verb: are assigned level 3
+  decision_point: C
+  kind: rule
+  effect: resource_band
+  who_can_supply: observed
+  when:
+    all:
+    - fact: anticipated_resource_types
+      gte: 2
+  interpretation: verbatim
+  note: 'Resource band: ESI level 3.'
+- id: gpt-245
+  page: 19
+  span: those who require one resource are assigned level 4
+  verb: are assigned level 4
+  decision_point: C
+  kind: rule
+  effect: resource_band
+  who_can_supply: observed
+  when:
+    all:
+    - fact: anticipated_resource_types
+      is: 1
+  interpretation: verbatim
+  note: 'Resource band: ESI level 4.'
+- id: gpt-246
+  page: 19
+  span: those who require no resources are assigned level 5
+  verb: are assigned level 5
+  decision_point: C
+  kind: rule
+  effect: resource_band
+  who_can_supply: observed
+  when:
+    all:
+    - fact: anticipated_resource_types
+      is: 0
+  interpretation: verbatim
+  note: 'Resource band: ESI level 5.'
+- id: gpt-247
+  page: 19
+  span: Once an ESI 1 or 2 designation has been ruled out
+  verb: has been ruled out
+  decision_point: C
+  kind: usage
+  effect: none
+  interpretation: verbatim
+  note: This is the stated prerequisite for moving to decision point C; it also says presumed stability enables that move.
+- id: gpt-248
+  page: 19
+  span: how many resources are likely to be used in order for the provider to reach a disposition decision
+  verb: are likely to be used
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  interpretation: verbatim
+  note: Defines the resource prediction used for levels 3–5.
+- id: gpt-249
+  page: 19
+  span: Resource determination is independent of type of hospital
+  verb: is independent of
+  decision_point: C
+  kind: usage
+  effect: none
+  interpretation: verbatim
+  note: The following sentence says the same general resources should be required in one ED as in any other ED.
+- id: gpt-250
+  page: 19
+  span: count the number of different types of resources needed
+  verb: should count
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  interpretation: verbatim
+  note: The nurse counts different resource types, not individual tests.
+- id: gpt-251
+  page: 19
+  span: not the number of individual tests
+  verb: not
+  decision_point: C
+  kind: negative
+  effect: none
+  interpretation: verbatim
+  note: Individual tests are explicitly not the counting unit.
+- id: gpt-252
+  page: 19
+  span: A complete blood count and electrolyte panel comprise one resource
+  verb: comprise one resource
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  interpretation: verbatim
+  note: This pair is sufficient for a one-resource count because both are laboratory testing.
+- id: gpt-253
+  page: 19
+  also_on:
+  - 6
+  - 30
+  span: A complete blood count and chest radiograph are two resources
+  verb: are two resources
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  interpretation: verbatim
+  note: 'This pair is sufficient for a two-resource count: laboratory test plus radiograph.'
+- id: gpt-254
+  page: 19
+  span: A complete blood count and a urinalysis are both lab tests
+  verb: count as only one resource
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  interpretation: verbatim
+  note: Together they count as only one resource.
+- id: gpt-255
+  page: 19
+  span: A chest radiograph and abdominal radiograph are one resource
+  verb: are one resource
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  interpretation: verbatim
+  note: This pair is sufficient for a one-resource count because both are radiographs.
+- id: gpt-256
+  page: 19
+  span: Cervical-spine films and a computed tomography scan of the head are two resources
+  verb: are two resources
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  interpretation: verbatim
+  note: 'This pair is sufficient for a two-resource count: radiograph plus computed tomography.'
+- id: gpt-257
+  page: 19
+  span: resources are defined by presentational acuity
+  verb: are defined by
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  interpretation: verbatim
+  note: States how the handbook frames resource definitions.
+- id: gpt-258
+  page: 19
+  span: resources is included in the triage level assignment for ESI levels 3, 4, and 5
+  verb: is included
+  decision_point: C
+  kind: usage
+  effect: resource_band
+  interpretation: verbatim
+  note: The same sentence says ESI level-1 and level-2 decisions are based only on patient acuity.
+- id: gpt-259
+  page: 20
+  also_on:
+  - 6
+  - 30
+  span: Labs (blood, urine)
+  verb: Resources
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  interpretation: verbatim
+  note: Listed as an ESI resource; the table does not say this category alone fixes a triage level.
+- id: gpt-260
+  page: 20
+  also_on:
+  - 6
+  - 30
+  span: Electrocardiogram, radiographs
+  verb: Resources
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  interpretation: verbatim
+  note: Listed as ESI resources; the table does not say either alone fixes a triage level.
+- id: gpt-261
+  page: 20
+  also_on:
+  - 6
+  - 30
+  span: Computed tomography, magnetic resonance imaging, ultrasound, angiography
+  verb: Resources
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  interpretation: verbatim
+  note: Listed as ESI resources; the table does not say any item alone fixes a triage level.
+- id: gpt-262
+  page: 20
+  also_on:
+  - 6
+  - 30
+  span: Intravenous fluids (hydration)
+  verb: Resources
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  interpretation: verbatim
+  note: Listed as an ESI resource; the table does not say it alone fixes a triage level.
+- id: gpt-263
+  page: 20
+  also_on:
+  - 6
+  - 30
+  span: Intravenous, intramuscular, or nebulized medications
+  verb: Resources
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  interpretation: verbatim
+  note: Listed as ESI resources; the table does not say any route alone fixes a triage level.
+- id: gpt-264
+  page: 20
+  also_on:
+  - 6
+  - 30
+  span: Specialty consultation
+  verb: Resources
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  interpretation: verbatim
+  note: Listed as an ESI resource; the table does not say it alone fixes a triage level.
+- id: gpt-265
+  page: 20
+  also_on:
+  - 6
+  - 30
+  span: Simple procedure = 1
+  verb: = 1
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  interpretation: verbatim
+  note: A simple procedure, with laceration repair and urinary catheter as examples, counts as one resource.
+- id: gpt-266
+  page: 20
+  also_on:
+  - 6
+  - 30
+  span: Complex procedure = 2
+  verb: = 2
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  interpretation: verbatim
+  note: A complex procedure, with procedural sedation as the example, counts as two resources.
+- id: gpt-267
+  page: 20
+  also_on:
+  - 6
+  - 30
+  span: History and physical exam (including pelvic)
+  verb: Not Resources
+  decision_point: C
+  kind: negative
+  effect: none
+  interpretation: verbatim
+  note: Explicitly listed as not an ESI resource.
+- id: gpt-268
+  page: 20
+  also_on:
+  - 6
+  - 30
+  span: Point-of-care testing
+  verb: Not Resources
+  decision_point: C
+  kind: negative
+  effect: none
+  interpretation: verbatim
+  note: Explicitly listed as not an ESI resource.
+- id: gpt-269
+  page: 20
+  also_on:
+  - 6
+  - 30
+  span: Saline or heparin lock
+  verb: Not Resources
+  decision_point: C
+  kind: negative
+  effect: none
+  interpretation: verbatim
+  note: Explicitly listed as not an ESI resource.
+- id: gpt-270
+  page: 20
+  also_on:
+  - 6
+  - 30
+  span: Oral medications
+  verb: Not Resources
+  decision_point: C
+  kind: negative
+  effect: none
+  interpretation: verbatim
+  note: Explicitly listed as not ESI resources.
+- id: gpt-271
+  page: 20
+  also_on:
+  - 6
+  - 30
+  span: Tetanus immunization
+  verb: Not Resources
+  decision_point: C
+  kind: negative
+  effect: none
+  interpretation: verbatim
+  note: Explicitly listed as not an ESI resource.
+- id: gpt-272
+  page: 20
+  also_on:
+  - 6
+  - 30
+  span: Prescription refills
+  verb: Not Resources
+  decision_point: C
+  kind: negative
+  effect: none
+  interpretation: verbatim
+  note: Explicitly listed as not ESI resources.
+- id: gpt-273
+  page: 20
+  also_on:
+  - 6
+  - 30
+  span: Phone call to primary care physician
+  verb: Not Resources
+  decision_point: C
+  kind: negative
+  effect: none
+  interpretation: verbatim
+  note: Explicitly listed as not an ESI resource.
+- id: gpt-274
+  page: 20
+  also_on:
+  - 6
+  - 30
+  span: Simple wound care (dressings, recheck)
+  verb: Not Resources
+  decision_point: C
+  kind: negative
+  effect: none
+  interpretation: verbatim
+  note: Explicitly listed as not an ESI resource.
+- id: gpt-275
+  page: 20
+  also_on:
+  - 6
+  - 30
+  span: Crutches, splints, slings
+  verb: Not Resources
+  decision_point: C
+  kind: negative
+  effect: none
+  interpretation: verbatim
+  note: Explicitly listed as not ESI resources.
+- id: gpt-276
+  page: 20
+  span: Healthy 3-year-old patient with right ear pain, up to date on immunizations
+  verb: '5'
+  decision_point: C
+  kind: example
+  effect: resource_band
+  interpretation: verbatim
+  note: Table 5-2 labels this presentation ESI level 5 with no resources; it needs an exam and prescription.
+- id: gpt-277
+  page: 20
+  span: A 42-year-old patient who lost their rescue inhaler and needs a new prescription
+  verb: '5'
+  decision_point: C
+  kind: example
+  effect: resource_band
+  interpretation: verbatim
+  note: Table 5-2 labels this asymptomatic, vital-signs-WNL presentation ESI level 5 with no resources.
+- id: gpt-278
+  page: 20
+  span: Healthy 19-year-old patient with a sore throat. Vital signs WNL
+  verb: '4'
+  decision_point: C
+  kind: example
+  effect: resource_band
+  interpretation: verbatim
+  note: Table 5-2 labels this ESI level 4 with one resource; it notes culture(s) and says to follow institutional policy.
+- id: gpt-279
+  page: 20
+  span: Healthy 29-year-old assigned female at birth with dysuria. Vitals signs WNL
+  verb: '4'
+  decision_point: C
+  kind: example
+  effect: resource_band
+  interpretation: verbatim
+  note: Table 5-2 labels this ESI level 4 with one resource; urine, culture, and possible pregnancy test all count as one resource because they are labs.
+- id: gpt-280
+  page: 20
+  span: A 22-year-old assigned male at birth with right lower quadrant abdominal pain
+  verb: '3'
+  decision_point: C
+  kind: example
+  effect: resource_band
+  interpretation: verbatim
+  note: Table 5-2 labels this vital-signs-WNL presentation ESI level 3 with two or more resources.
+- id: gpt-281
+  page: 20
+  span: A 45-year-old patient with left lower leg pain and swelling
+  verb: '3'
+  decision_point: C
+  kind: example
+  effect: resource_band
+  interpretation: verbatim
+  note: 'Table 5-2 labels this vital-signs-WNL presentation ESI level 3 with two or more resources: lab and lower-extremity non-invasive vascular studies.'
+- id: gpt-282
+  page: 20
+  span: If that is the case the patient would be an ESI level 5
+  verb: would be an ESI level 5
+  decision_point: C
+  kind: rule
+  effect: resource_band
+  who_can_supply: observed
+  when:
+    all:
+    - fact: throat_cultures_not_routinely_performed_and_patient_treated_based_on_history_and_physical_exam
+      is: true
+  interpretation: verbatim
+  note: 'Institutional policy example: when throat cultures are not routinely performed and treatment is based on history and physical examination, the sore-throat
+    example is ESI level 5.'
+facts:
+- name: meets_high_risk_instability_criteria
+  meaning: The patient meets the handbook's high-risk instability criteria for ESI level 1 or 2.
+  type: bool
+- name: likely_to_deteriorate_or_require_more_immediate_care
+  meaning: The patient is likely to get worse or need more immediate care based on symptoms and risk factors.
+  type: bool
+- name: is_physically_stable
+  meaning: The patient is physiologically stable.
+  type: bool
+- name: has_low_risk_for_deterioration
+  meaning: The patient has a low risk of getting worse.
+  type: bool
+- name: anticipated_resource_types
+  meaning: The number of different resource types the nurse expects will be used during the emergency visit.
+  type: number
+- name: has_high_risk_vital_signs
+  meaning: The patient has vital signs that are high risk.
+  type: bool
+- name: vital_signs_warrant_acuity_reassessment
+  meaning: The patient's vital signs call for the triage acuity decision to be reassessed.
+  type: bool
+- name: requires_immediate_lifesaving_intervention
+  meaning: The patient needs an intervention immediately to save life.
+  type: bool
+- name: is_high_risk_situation
+  meaning: The patient's situation is high risk.
+  type: bool
+- name: has_confusion_lethargy_or_disorientation
+  meaning: The patient is confused, unusually sleepy, or disoriented.
+  type: bool
+- name: has_severe_pain_or_distress
+  meaning: The patient has severe pain or severe physical or psychological distress.
+  type: bool
+- name: age_days
+  meaning: The patient's age in days.
+  type: number
+- name: age_months
+  meaning: The patient's age in months.
+  type: number
+- name: temperature_celsius
+  meaning: The patient's body temperature in degrees Celsius.
+  type: number
+- name: has_incomplete_immunizations
+  meaning: The patient has not received all expected immunizations.
+  type: bool
+- name: has_no_obvious_source_of_fever
+  meaning: There is no obvious cause of the patient's fever.
+  type: bool
+- name: is_unresponsive
+  meaning: The patient does not respond normally.
+  type: bool
+- name: has_active_seizure
+  meaning: The patient is currently having a seizure.
+  type: bool
+- name: has_occluded_airway
+  meaning: The patient's airway is blocked.
+  type: bool
+- name: has_ineffective_gas_exchange
+  meaning: The patient is not moving enough oxygen into the blood or carbon dioxide out of it.
+  type: bool
+- name: has_ineffective_or_decreased_perfusion
+  meaning: The patient has ineffective or reduced blood flow through the body.
+  type: bool
+- name: has_ineffective_airway_clearance
+  meaning: The patient cannot clear the airway effectively.
+  type: bool
+- name: has_ineffective_respiratory_pattern
+  meaning: The patient's breathing pattern is ineffective.
+  type: bool
+- name: has_impaired_gas_exchange
+  meaning: The patient's gas exchange is impaired.
+  type: bool
+- name: has_ineffective_tissue_perfusion
+  meaning: The patient's blood flow to body tissues is ineffective.
+  type: bool
+- name: is_obtunded
+  meaning: The patient has markedly reduced alertness or responsiveness.
+  type: bool
+- name: oxygen_saturation_percent
+  meaning: The percentage of oxygen in the patient's blood as measured by pulse oximetry.
+  type: number
+- name: oxygen_saturation_is_not_patient_norm
+  meaning: The oxygen saturation is different from the patient's usual level.
+  type: bool
+- name: has_other_signs_of_respiratory_compromise
+  meaning: The patient has other signs that breathing or oxygenation is compromised.
+  type: bool
+- name: has_anaphylaxis
+  meaning: The patient has a severe allergic reaction called anaphylaxis.
+  type: bool
+- name: has_hypotension
+  meaning: The patient has low blood pressure.
+  type: bool
+- name: has_signs_of_hypoperfusion
+  meaning: The patient has signs of inadequate blood flow to tissues.
+  type: bool
+- name: has_chest_pain
+  meaning: The patient has chest pain.
+  type: bool
+- name: systolic_blood_pressure_mm_hg
+  meaning: The top number of the patient's blood-pressure measurement in millimeters of mercury.
+  type: number
+- name: has_hypoglycemia
+  meaning: The patient has low blood sugar.
+  type: bool
+- name: has_severe_bradycardia_or_tachycardia
+  meaning: The patient has a severely slow or severely fast heart rate.
+  type: bool
+- name: is_flaccid_infant
+  meaning: The infant is limp and lacks normal muscle tone.
+  type: bool
+- name: has_cardiac_or_pulmonary_arrest_or_imminent_arrest
+  meaning: The patient has cardiac or breathing arrest, or it appears about to occur.
+  type: bool
+- name: has_penetrating_head_neck_abdomen_or_chest_trauma_requiring_lifesaving_intervention
+  meaning: The patient has a penetrating injury to the head, neck, abdomen, or chest that requires a lifesaving intervention.
+  type: bool
+- name: has_active_chest_pain_suspicious_for_acute_coronary_syndrome
+  meaning: The patient has active chest pain that is suspicious for acute coronary syndrome.
+  type: bool
+- name: has_signs_of_stroke
+  meaning: The patient has signs of a stroke.
+  type: bool
+- name: has_possible_ectopic_pregnancy
+  meaning: The patient may have an ectopic pregnancy.
+  type: bool
+- name: is_hemodynamically_stable
+  meaning: The patient's circulation and blood pressure are stable.
+  type: bool
+- name: is_on_chemotherapy
+  meaning: The patient is receiving chemotherapy.
+  type: bool
+- name: is_immunocompromised
+  meaning: The patient's immune system is weakened.
+  type: bool
+- name: has_fever
+  meaning: The patient has a fever.
+  type: bool
+- name: is_transplant_recipient
+  meaning: The patient has received a transplant.
+  type: bool
+- name: has_other_indication_of_infection
+  meaning: The patient has another sign suggesting infection.
+  type: bool
+- name: is_actively_suicidal
+  meaning: The patient is currently suicidal.
+  type: bool
+- name: is_actively_homicidal
+  meaning: The patient is currently homicidal.
+  type: bool
+- name: has_needle_stick_injury_as_health_care_worker
+  meaning: The patient is a health care worker with a needle-stick injury.
+  type: bool
+- name: is_sexual_assault_survivor
+  meaning: The patient is a survivor of sexual assault.
+  type: bool
+- name: has_increasing_respiratory_effort
+  meaning: The patient's effort to breathe is increasing.
+  type: bool
+- name: has_postpartum_hemorrhage
+  meaning: The patient has heavy bleeding after pregnancy.
+  type: bool
+- name: patient_history_is_unknown
+  meaning: The patient's medical history is not known.
+  type: bool
+- name: pain_rating_out_of_10
+  meaning: The patient's reported pain score on a zero-to-ten scale.
+  type: number
+- name: has_severe_pain_or_distress_due_to_systemic_disruption
+  meaning: The patient has severe pain or distress caused by a systemic disruption.
+  type: bool
+- name: has_thunderclap_headache
+  meaning: The patient has a severe headache that started rapidly.
+  type: bool
+- name: has_headache
+  meaning: The patient has a headache.
+  type: bool
+- name: has_neck_pain
+  meaning: The patient has neck pain.
+  type: bool
+- name: has_nuchal_rigidity
+  meaning: The patient has a stiff neck.
+  type: bool
+- name: has_vomiting
+  meaning: The patient is vomiting.
+  type: bool
+- name: has_lower_back_pain
+  meaning: The patient has pain in the lower back.
+  type: bool
+- name: has_altered_mental_status
+  meaning: The patient's awareness or orientation has changed from usual.
+  type: bool
+- name: has_signs_or_symptoms_of_stroke
+  meaning: The patient has signs or symptoms of a stroke.
+  type: bool
+- name: is_post_ictal
+  meaning: The patient is in the period after a seizure.
+  type: bool
+- name: is_pediatric_patient
+  meaning: The patient is a child.
+  type: bool
+- name: is_alert_and_appropriate_after_febrile_seizure
+  meaning: After a fever-related seizure, the child is awake and behaving appropriately.
+  type: bool
+- name: has_subtle_mental_status_change
+  meaning: The patient has a small change from their usual awareness, alertness, or behavior.
+  type: bool
+- name: is_unable_to_manage_own_secretions
+  meaning: The patient cannot handle their own saliva or other mouth and throat secretions.
+  type: bool
+- name: has_respiratory_stridor
+  meaning: The patient has a harsh, high-pitched sound when breathing.
+  type: bool
+- name: has_brisk_posterior_epistaxis
+  meaning: The patient has fast bleeding from a nosebleed that comes from the back of the nose.
+  type: bool
+- name: has_epistaxis
+  meaning: The patient has a nosebleed.
+  type: bool
+- name: has_known_thrombocytopenia
+  meaning: The patient is known to have a low platelet count.
+  type: bool
+- name: has_known_clotting_dyscrasia
+  meaning: The patient is known to have a condition that affects normal blood clotting.
+  type: bool
+- name: uses_warfarin_or_other_anticoagulant
+  meaning: The patient takes warfarin or another medicine that reduces blood clotting.
+  type: bool
+- name: has_esophageal_button_battery_ingestion
+  meaning: A button battery has been swallowed and is in the patient's esophagus.
+  type: bool
+- name: has_mild_to_moderate_respiratory_distress
+  meaning: The patient has mild or moderate difficulty breathing.
+  type: bool
+- name: has_severe_respiratory_distress
+  meaning: The patient has severe difficulty breathing.
+  type: bool
+- name: is_physically_unstable
+  meaning: The patient's body functions are not stable.
+  type: bool
+- name: has_chest_pain_concern
+  meaning: The patient has a concern of chest pain.
+  type: bool
+- name: has_abnormal_ecg
+  meaning: The patient's electrocardiogram result is abnormal.
+  type: bool
+- name: is_pregnant
+  meaning: The patient is pregnant.
+  type: bool
+- name: is_postpartum
+  meaning: The patient is in the period after pregnancy.
+  type: bool
+- name: has_signs_of_sepsis
+  meaning: The patient has signs suggesting a severe body-wide response to infection.
+  type: bool
+- name: has_blunt_abdominal_trauma
+  meaning: The patient had a nonpenetrating injury to the abdomen.
+  type: bool
+- name: has_penetrating_abdominal_trauma
+  meaning: The patient had an injury that pierced the abdomen.
+  type: bool
+- name: pain_is_refractory_to_analgesia
+  meaning: The patient's pain does not improve with pain medicine.
+  type: bool
+- name: pain_is_constant
+  meaning: The patient's pain is continuous.
+  type: bool
+- name: pain_is_maximal_on_onset
+  meaning: The patient's pain was at its worst when it began.
+  type: bool
+- name: has_shortness_of_breath
+  meaning: The patient feels short of breath.
+  type: bool
+- name: has_abdominal_pain
+  meaning: The patient has pain in the abdomen.
+  type: bool
+- name: has_heavy_vaginal_bleeding
+  meaning: The patient has heavy vaginal bleeding, generally including soaking a pad hourly, plum-sized clots, persistent bright-red bleeding, or bleeding that increased
+    after decreasing.
+  type: bool
+- name: has_abnormal_vital_signs
+  meaning: The patient's measured vital signs are abnormal.
+  type: bool
+- name: has_suspicion_of_infection
+  meaning: There is reason to suspect the patient has an infection.
+  type: bool
+- name: is_pregnancy_capable
+  meaning: The patient is capable of becoming pregnant.
+  type: bool
+- name: has_significant_hemodynamic_instability
+  meaning: The patient's circulation or blood pressure is significantly unstable.
+  type: bool
+- name: has_testicular_or_scrotal_pain
+  meaning: The patient has pain in a testicle or the scrotum.
+  type: bool
+- name: has_unilateral_lower_quadrant_pain
+  meaning: The patient has pain on one side of the lower abdomen.
+  type: bool
+- name: has_ovaries
+  meaning: The patient has ovaries.
+  type: bool
+- name: has_uti_symptoms
+  meaning: The patient has symptoms of a urinary tract infection.
+  type: bool
+- name: is_elderly
+  meaning: The patient is elderly.
+  type: bool
+- name: has_back_pain
+  meaning: The patient has back pain.
+  type: bool
+- name: has_chills
+  meaning: The patient has chills.
+  type: bool
+- name: has_rigors
+  meaning: The patient has episodes of shaking chills.
+  type: bool
+- name: has_severe_flank_pain
+  meaning: The patient has severe pain in the side of the back between the ribs and hip.
+  type: bool
+- name: fall_height_meters
+  meaning: The height of the fall in meters.
+  type: number
+- name: was_ejected_from_vehicle
+  meaning: The patient was thrown out of a vehicle.
+  type: bool
+- name: was_removed_from_vehicle_with_mechanical_extrication_tools
+  meaning: Tools were needed to remove the patient from a vehicle.
+  type: bool
+- name: has_penetrating_head_neck_chest_or_abdominal_trauma
+  meaning: The patient has an injury that pierced the head, neck, chest, or abdomen.
+  type: bool
+- name: has_no_signs_of_hemodynamic_instability
+  meaning: The patient has no signs that blood pressure or circulation is unstable.
+  type: bool
+- name: has_extremity_injury_with_compromised_neurovascular_function
+  meaning: The patient has a limb injury with impaired blood flow, feeling, or movement.
+  type: bool
+- name: has_compartment_syndrome_symptoms
+  meaning: The patient has symptoms of dangerous pressure buildup inside a limb.
+  type: bool
+- name: has_partial_or_complete_amputation
+  meaning: Part or all of a body part has been cut off.
+  type: bool
+- name: has_possible_pelvis_or_femur_fracture
+  meaning: The patient may have a broken pelvis or thigh bone.
+  type: bool
+- name: has_possible_dislocation
+  meaning: The patient may have a joint out of its normal position.
+  type: bool
+- name: has_toxic_ingestion
+  meaning: The patient swallowed or otherwise took a potentially poisonous drug or substance.
+  type: bool
+- name: has_difficulty_breathing
+  meaning: The patient is having difficulty breathing.
+  type: bool
+- name: has_changed_breathing_pattern
+  meaning: The patient's usual pattern of breathing has changed.
+  type: bool
+- name: has_changed_heart_rate_or_rhythm
+  meaning: The patient's heart rate or heartbeat rhythm has changed.
+  type: bool
+- name: has_no_obvious_cause_for_symptoms
+  meaning: There is no clear explanation for the patient's symptoms.
+  type: bool
+- name: has_indication_of_transplant_rejection
+  meaning: There is a sign that the patient's transplanted organ may be being rejected.
+  type: bool
+- name: is_on_transplant_list
+  meaning: The patient is waiting to receive a transplant.
+  type: bool
+- name: is_a_danger_to_self
+  meaning: The patient may harm themself.
+  type: bool
+- name: is_a_danger_to_others
+  meaning: The patient may harm other people.
+  type: bool
+- name: is_a_danger_to_environment
+  meaning: The patient may create danger in the surrounding environment.
+  type: bool
+- name: is_psychotic
+  meaning: The patient has lost touch with reality.
+  type: bool
+- name: is_violent
+  meaning: The patient is acting violently.
+  type: bool
+- name: throat_cultures_not_routinely_performed_and_patient_treated_based_on_history_and_physical_exam
+  meaning: At this department, throat cultures are not routinely done and the patient is treated based on history and physical examination.
+  type: bool

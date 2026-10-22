@@ -1,0 +1,56 @@
+{"t": "11:55:47", "kind": "engine", "note": "session KOPI-7948 started (web)"}
+{"t": "11:55:50", "kind": "question", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "Is the patient awake and responding to you normally? Also, is he or she experiencing any chest pain, trouble breathing, or heavy bleeding right now?", "fields": ["danger_signs.responsive", "danger_signs.chest_pain_now"], "offered": ["danger_signs.responsive", "danger_signs.chest_pain_now", "danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text"]}
+{"t": "11:55:50", "kind": "answer", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "Yes, the patient is awake and can respond. No"}
+{"t": "11:55:54", "kind": "extract", "writes": [["danger_signs.responsive", true]]}
+{"t": "11:55:57", "kind": "question", "slot": "dyn:danger_signs.chest_pain_now", "text": "I understand. Is the patient experiencing any pain in their chest at this moment?", "fields": ["danger_signs.chest_pain_now"], "offered": ["danger_signs.chest_pain_now"]}
+{"t": "11:55:57", "kind": "answer", "slot": "dyn:danger_signs.chest_pain_now", "text": "No"}
+{"t": "11:56:00", "kind": "extract", "writes": [["danger_signs.chest_pain_now", false]]}
+{"t": "11:56:03", "kind": "question", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding", "text": "Is the patient having any trouble breathing or any heavy bleeding right now?", "fields": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding"], "offered": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text", "complaint.onset", "E.mechanism"]}
+{"t": "11:56:03", "kind": "answer", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding", "text": "No breathing problem No"}
+{"t": "11:56:08", "kind": "extract", "writes": [["danger_signs.breathing_difficulty", false], ["danger_signs.heavy_bleeding", false]]}
+{"t": "11:56:11", "kind": "question", "slot": "dyn:complaint.category+complaint.text", "text": "I'm glad to hear they are breathing okay. What is the main problem that brings the patient in today, and can you describe what is happening?", "fields": ["complaint.category", "complaint.text"], "offered": ["complaint.category", "complaint.text", "complaint.onset", "E.mechanism", "patient.age", "patient.sex"]}
+{"t": "11:56:11", "kind": "answer", "slot": "dyn:complaint.category+complaint.text", "text": "My niece or nephew told me they have thoughts of hurting themselves."}
+{"t": "11:56:22", "kind": "extract", "writes": [["complaint.category", "mental_health"], ["complaint.text", "thoughts of hurting themselves"]]}
+{"t": "11:56:22", "kind": "extract", "writes": [["E.mechanism", "none"]], "via": "derived-non-injury"}
+{"t": "11:56:25", "kind": "question", "slot": "dyn:complaint.onset+patient.age+patient.sex", "text": "I understand. When did these thoughts first start, and could you tell me the age and gender of your niece or nephew?", "fields": ["complaint.onset", "patient.age", "patient.sex"], "offered": ["complaint.onset", "patient.age", "patient.sex", "complaint.fever", "infection.rash", "infection.travel_14d"]}
+{"t": "11:56:25", "kind": "answer", "slot": "dyn:complaint.onset+patient.age+patient.sex", "text": "Today They are sixteen. I am not sure how they identify; please ask them directly."}
+{"t": "11:56:30", "kind": "extract", "writes": [["complaint.onset", "Today"], ["patient.age", 16]]}
+{"t": "11:56:32", "kind": "question", "slot": "dyn:patient.sex", "text": "To help the team prepare, is the patient a boy or a girl?", "fields": ["patient.sex"], "offered": ["patient.sex"]}
+{"t": "11:56:32", "kind": "answer", "slot": "dyn:patient.sex", "text": "I am not sure how they identify; please ask them directly."}
+{"t": "11:56:36", "kind": "extract", "writes": []}
+{"t": "11:56:38", "kind": "question", "slot": "dyn:patient.sex", "text": "I understand. To help the team, could you tell me if the patient is a boy or a girl?", "fields": ["patient.sex"], "offered": ["patient.sex"]}
+{"t": "11:56:38", "kind": "answer", "slot": "dyn:patient.sex", "text": "I am not sure how they identify; please ask them directly."}
+{"t": "11:56:40", "kind": "extract", "writes": []}
+{"t": "11:56:43", "kind": "question", "slot": "dyn:history.pregnant", "text": "I understand. Is the patient pregnant?", "fields": ["history.pregnant"], "offered": ["history.pregnant", "history.postpartum", "complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts"]}
+{"t": "11:56:43", "kind": "answer", "slot": "dyn:history.pregnant", "text": "I don't know."}
+{"t": "11:56:47", "kind": "extract", "writes": []}
+{"t": "11:56:47", "kind": "extract", "writes": [["history.pregnant", null]], "via": "dont-know"}
+{"t": "11:56:50", "kind": "question", "slot": "dyn:history.postpartum+complaint.fever", "text": "I understand. Has the patient had a fever or a high temperature recently?", "fields": ["history.postpartum", "complaint.fever"], "offered": ["history.postpartum", "complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts", "ams.changed_from_baseline"]}
+{"t": "11:56:50", "kind": "answer", "slot": "dyn:history.postpartum+complaint.fever", "text": "No fever known"}
+{"t": "11:56:54", "kind": "extract", "writes": [["complaint.fever", false]]}
+{"t": "11:56:57", "kind": "question", "slot": "dyn:history.postpartum", "text": "Has the patient given birth in the last few weeks?", "fields": ["history.postpartum"], "offered": ["history.postpartum"]}
+{"t": "11:56:57", "kind": "answer", "slot": "dyn:history.postpartum", "text": "I don't know."}
+{"t": "11:57:00", "kind": "extract", "writes": []}
+{"t": "11:57:00", "kind": "extract", "writes": [["history.postpartum", null]], "via": "dont-know"}
+{"t": "11:57:03", "kind": "question", "slot": "dyn:infection.rash+infection.travel_14d", "text": "I see. Does the patient have any new rashes, and have they traveled outside the country in the last two weeks?", "fields": ["infection.rash", "infection.travel_14d"], "offered": ["infection.rash", "infection.travel_14d", "infection.contacts", "ams.changed_from_baseline", "complaint.pain_rating", "complaint.danger_to_self_or_others"]}
+{"t": "11:57:03", "kind": "answer", "slot": "dyn:infection.rash+infection.travel_14d", "text": "I don't know."}
+{"t": "11:57:06", "kind": "extract", "writes": []}
+{"t": "11:57:07", "kind": "extract", "writes": [["infection.rash", null], ["infection.travel_14d", null]], "via": "dont-know"}
+{"t": "11:57:10", "kind": "question", "slot": "dyn:infection.contacts+ams.changed_from_baseline", "text": "I understand. Has the patient been in contact with anyone who has an infectious illness recently, and are they acting more confused or sleepy than usual?", "fields": ["infection.contacts", "ams.changed_from_baseline"], "offered": ["infection.contacts", "ams.changed_from_baseline", "complaint.pain_rating", "complaint.danger_to_self_or_others", "complaint.known_toxic_ingestion", "complaint.post_ictal_after_seizure"]}
+{"t": "11:57:10", "kind": "answer", "slot": "dyn:infection.contacts+ams.changed_from_baseline", "text": "I don't know."}
+{"t": "11:57:13", "kind": "extract", "writes": []}
+{"t": "11:57:13", "kind": "extract", "writes": [["infection.contacts", null], ["ams.changed_from_baseline", null]], "via": "dont-know"}
+{"t": "11:57:17", "kind": "question", "slot": "dyn:complaint.pain_rating+complaint.danger_to_self_or_others", "text": "I understand. On a scale of 0 to 10, how much pain is the patient in right now? Also, has the patient said or done anything to suggest they might hurt themselves or someone else?", "fields": ["complaint.pain_rating", "complaint.danger_to_self_or_others"], "offered": ["complaint.pain_rating", "complaint.danger_to_self_or_others", "complaint.known_toxic_ingestion", "complaint.post_ictal_after_seizure", "M.medications", "A.allergies"]}
+{"t": "11:57:17", "kind": "answer", "slot": "dyn:complaint.pain_rating+complaint.danger_to_self_or_others", "text": "They told me today they have thoughts of hurting themselves. I do not know whether they took any tablets."}
+{"t": "11:57:21", "kind": "extract", "writes": [["complaint.danger_to_self_or_others", true]]}
+{"t": "11:57:21", "kind": "floor", "floor": "at least ESI-2", "fired": ["B-09.suicidal-or-homicidal"], "sources": ["ESI v5 p.12; p.15 (Mental and Behavioral Health)"]}
+{"t": "11:57:25", "kind": "question", "slot": "dyn:M.medications+A.allergies", "text": "I've noted the concerns about self-harm. Does the patient take any regular medications, and do they have any known allergies, especially to medicine?", "fields": ["M.medications", "A.allergies"], "offered": ["M.medications", "A.allergies", "history.conditions", "identity.name", "identity.dob"]}
+{"t": "11:57:25", "kind": "answer", "slot": "dyn:M.medications+A.allergies", "text": "Unknown; I have not checked Unknown"}
+{"t": "11:57:28", "kind": "extract", "writes": []}
+{"t": "11:57:31", "kind": "question", "slot": "dyn:M.medications", "text": "I understand. Does the patient take any regular medications? You can also send a photo of the boxes if that's easier.", "fields": ["M.medications"], "offered": ["M.medications"]}
+{"t": "11:57:31", "kind": "answer", "slot": "dyn:M.medications", "text": "Unknown; I have not checked"}
+{"t": "11:57:34", "kind": "extract", "writes": []}
+{"t": "11:57:37", "kind": "question", "slot": "dyn:M.medications", "text": "I understand you're not sure. Are there any medications the patient takes on a regular basis?", "fields": ["M.medications"], "offered": ["M.medications"]}
+{"t": "11:57:37", "kind": "answer", "slot": "dyn:M.medications", "text": "Unknown; I have not checked"}
+{"t": "11:57:39", "kind": "extract", "writes": []}
+{"t": "11:57:42", "kind": "question", "slot": "dyn:A.allergies", "text": "I understand. Does the patient have any allergies to medications or other substances?", "fields": ["A.allergies"], "offered": ["A.allergies"]}

@@ -1,0 +1,403 @@
+{
+ "sid": "DURIAN-5300",
+ "facts": {
+  "danger_signs.responsive": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-19 14:47"
+  },
+  "danger_signs.chest_pain_now": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-19 14:47"
+  },
+  "danger_signs.breathing_difficulty": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-19 14:47"
+  },
+  "danger_signs.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-19 14:47"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "fever",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 3,
+      "ts": "2026-10-19 14:47"
+     },
+     "text": {
+      "value": "shivering and feels hot while receiving chemotherapy",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 3,
+      "ts": "2026-10-19 14:47"
+     },
+     "onset": {
+      "value": "this afternoon",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 4,
+      "ts": "2026-10-19 14:47"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3
+  },
+  "complaint.category": {
+   "value": [
+    "fever"
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 4,
+   "ts": "2026-10-19 14:47"
+  },
+  "complaint.text": {
+   "value": "shivering and feels hot while receiving chemotherapy",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-19 14:47"
+  },
+  "E.mechanism": {
+   "value": "none",
+   "status": "reported",
+   "who": "derived",
+   "turn": 3,
+   "ts": "2026-10-19 14:47"
+  },
+  "complaint.onset": {
+   "value": "this afternoon",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 4,
+   "ts": "2026-10-19 14:47"
+  },
+  "patient.age": {
+   "value": 63,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 4,
+   "ts": "2026-10-19 14:47"
+  },
+  "patient.age_group": {
+   "value": "adult",
+   "status": "reported",
+   "who": "derived",
+   "turn": 4,
+   "ts": "2026-10-19 14:47"
+  },
+  "patient.sex": {
+   "value": "female",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 5,
+   "ts": "2026-10-19 14:47"
+  },
+  "complaint.fever": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 6,
+   "ts": "2026-10-19 14:47"
+  },
+  "infection.contacts": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 12,
+   "ts": "2026-10-19 14:48"
+  },
+  "complaint.uti_symptoms": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 13,
+   "ts": "2026-10-19 14:48"
+  },
+  "vitals.temp_c": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 13,
+   "ts": "2026-10-19 14:48"
+  }
+ },
+ "attempts": {
+  "danger_signs.responsive": 1,
+  "danger_signs.chest_pain_now": 1,
+  "danger_signs.breathing_difficulty": 1,
+  "danger_signs.heavy_bleeding": 1,
+  "complaint.category": 1,
+  "complaint.text": 1,
+  "complaint.onset": 1,
+  "patient.age": 1,
+  "patient.sex": 1,
+  "complaint.fever": 1,
+  "infection.rash": 3,
+  "infection.travel_14d": 3,
+  "infection.contacts": 2,
+  "complaint.uti_symptoms": 1,
+  "vitals.temp_c": 1,
+  "ams.changed_from_baseline": 3,
+  "complaint.pain_rating": 1,
+  "complaint.infection_signs": 1
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "Is the patient awake and responding to you normally? Also, is he or she experiencing any chest pain, trouble breathing, or heavy bleeding right now?",
+   "ts": "2026-10-19 14:47:13",
+   "kind": "question",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, the patient is awake and responding normally. No, the patient is not having chest pain right now.",
+   "ts": "2026-10-19 14:47:13",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "bot",
+   "text": "I'm glad to hear they are awake. Is the patient having any trouble breathing or any heavy bleeding right now?",
+   "ts": "2026-10-19 14:47:21",
+   "kind": "question",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, the patient is not having trouble breathing right now. No, the patient is not bleeding heavily right now.",
+   "ts": "2026-10-19 14:47:21",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding"
+  },
+  {
+   "role": "bot",
+   "text": "What is the main problem that brings the patient in today, and can you describe what is happening in your own words?",
+   "ts": "2026-10-19 14:47:28",
+   "kind": "question",
+   "slot": "dyn:complaint.category+complaint.text"
+  },
+  {
+   "role": "caregiver",
+   "text": "She has been shivering and feels hot while receiving chemotherapy.",
+   "ts": "2026-10-19 14:47:28",
+   "kind": "answer",
+   "slot": "dyn:complaint.category+complaint.text"
+  },
+  {
+   "role": "bot",
+   "text": "I understand she is feeling hot and shivering. When did this start, and how old is she?",
+   "ts": "2026-10-19 14:47:42",
+   "kind": "question",
+   "slot": "dyn:complaint.onset+patient.age"
+  },
+  {
+   "role": "caregiver",
+   "text": "She has been shivering since this afternoon and your home thermometer read 38.5 degrees Celsius. The patient is 63 years old.",
+   "ts": "2026-10-19 14:47:42",
+   "kind": "answer",
+   "slot": "dyn:complaint.onset+patient.age"
+  },
+  {
+   "role": "bot",
+   "text": "I've noted the temperature. To help the team, could you tell me if the patient is male or female?",
+   "ts": "2026-10-19 14:47:49",
+   "kind": "question",
+   "slot": "dyn:patient.sex"
+  },
+  {
+   "role": "caregiver",
+   "text": "The patient is female.",
+   "ts": "2026-10-19 14:47:49",
+   "kind": "answer",
+   "slot": "dyn:patient.sex"
+  },
+  {
+   "role": "bot",
+   "text": "I've noted her temperature. Does she have any new rashes on her skin?",
+   "ts": "2026-10-19 14:47:56",
+   "kind": "question",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, the patient has fever. I do not know whether the patient has a rash.",
+   "ts": "2026-10-19 14:47:56",
+   "kind": "answer",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "bot",
+   "text": "I understand about the fever. Does she have any new rashes on her skin?",
+   "ts": "2026-10-19 14:48:02",
+   "kind": "question",
+   "slot": "dyn:infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient has a rash.",
+   "ts": "2026-10-19 14:48:02",
+   "kind": "answer",
+   "slot": "dyn:infection.rash"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. To be clear, have you noticed any new rashes or spots on her skin?",
+   "ts": "2026-10-19 14:48:08",
+   "kind": "question",
+   "slot": "dyn:infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient has a rash.",
+   "ts": "2026-10-19 14:48:08",
+   "kind": "answer",
+   "slot": "dyn:infection.rash"
+  },
+  {
+   "role": "bot",
+   "text": "Has she traveled outside the country or been in contact with anyone who has a contagious illness in the last two weeks?",
+   "ts": "2026-10-19 14:48:13",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient travelled in the last 14 days. I do not know of any sick contacts.",
+   "ts": "2026-10-19 14:48:13",
+   "kind": "answer",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Has she traveled outside the country in the last two weeks?",
+   "ts": "2026-10-19 14:48:19",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient travelled in the last 14 days.",
+   "ts": "2026-10-19 14:48:19",
+   "kind": "answer",
+   "slot": "dyn:infection.travel_14d"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. To be clear, has she traveled outside of the country in the last 14 days?",
+   "ts": "2026-10-19 14:48:25",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient travelled in the last 14 days.",
+   "ts": "2026-10-19 14:48:25",
+   "kind": "answer",
+   "slot": "dyn:infection.travel_14d"
+  },
+  {
+   "role": "bot",
+   "text": "Has she been around anyone who was sick or had a contagious illness lately?",
+   "ts": "2026-10-19 14:48:30",
+   "kind": "question",
+   "slot": "dyn:infection.contacts"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know of any sick contacts.",
+   "ts": "2026-10-19 14:48:30",
+   "kind": "answer",
+   "slot": "dyn:infection.contacts"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Does she have any pain or burning when she goes to the bathroom, and do you have a record of her temperature?",
+   "ts": "2026-10-19 14:48:37",
+   "kind": "question",
+   "slot": "dyn:complaint.uti_symptoms+vitals.temp_c"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-19 14:48:37",
+   "kind": "answer",
+   "slot": "dyn:complaint.uti_symptoms+vitals.temp_c"
+  },
+  {
+   "role": "bot",
+   "text": "Has she seemed more confused, out of it, or unusually sleepy lately?",
+   "ts": "2026-10-19 14:48:43",
+   "kind": "question",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient is acting differently from usual.",
+   "ts": "2026-10-19 14:48:43",
+   "kind": "answer",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "bot",
+   "text": "Has she seemed more confused, out of it, or unusually sleepy lately?",
+   "ts": "2026-10-19 14:48:49",
+   "kind": "question",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient is acting differently from usual.",
+   "ts": "2026-10-19 14:48:49",
+   "kind": "answer",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "bot",
+   "text": "Is she acting differently than usual, such as being more confused or very sleepy?",
+   "ts": "2026-10-19 14:48:54",
+   "kind": "question",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient is acting differently from usual.",
+   "ts": "2026-10-19 14:48:54",
+   "kind": "answer",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. On a scale of 0 to 10, how much pain is she in right now? Also, have you noticed any signs of infection, like a wound that is red, swollen, or oozing?",
+   "ts": "2026-10-19 14:49:00",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating+complaint.infection_signs"
+  }
+ ],
+ "stage": "floor",
+ "floor": null,
+ "phase": "enroute",
+ "created": "2026-10-19 14:47",
+ "pending_slot": "dyn:complaint.pain_rating+complaint.infection_signs",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {}
+}

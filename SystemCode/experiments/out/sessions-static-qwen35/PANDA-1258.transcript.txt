@@ -1,0 +1,15 @@
+session PANDA-1258   started 2026-09-26 03:45   (generated from messages)
+
+03:45:02  BOT  Are you awake and responding normally, and do you have any severe chest pain, trouble breathing, or heavy bleeding right now?   [slot red_flags.screen]
+03:45:03  THEM Yes, I am awake and responding normally. I have no chest pain, trouble breathing, or heavy bleeding right now.   [slot red_flags.screen]
+03:45:05  BOT  Can you tell me what happened, when it started, and how bad the pain is on a scale from 0 to 10?   [slot complaint.main]
+03:45:06  THEM I've had a sore throat for two days that hurts to swallow about a 3/10. It started two days ago.   [slot complaint.main]
+03:45:08  BOT  Could you please tell me if you take any regular medications?   [slot M.medications]
+03:45:09  THEM No, I don't take any regular medications. I have no allergies or medical conditions either.   [slot M.medications]
+03:45:11  BOT  Do you have any allergies to medicines, or are you immunocompromised, pregnant, or postpartum?   [slot allergies_and_history]
+03:45:12  THEM No, I have no allergies, conditions, or medications. I am not pregnant or postpartum.   [slot allergies_and_history]
+03:45:14  BOT  Do you have any fever, rash, overseas travel in the last two weeks, or contact with anyone who is infectious?   [slot infection.screen]
+03:45:15  THEM No, I don't have a fever today and I haven't had a rash, traveled overseas, or been around anyone sick.   [slot infection.screen]
+03:45:17  BOT  Could you please tell me when you last ate or drank, along with your name and date of birth for our hospital records?   [slot wrapup]
+03:45:18  THEM I had soup about an hour ago. My name is [Name] and my date of birth is November 21, 2000.   [slot wrapup]
+03:45:20  BOT  Thank you - that's everything for now. Show the code PANDA-1258 at the counter when you arrive. (ack)

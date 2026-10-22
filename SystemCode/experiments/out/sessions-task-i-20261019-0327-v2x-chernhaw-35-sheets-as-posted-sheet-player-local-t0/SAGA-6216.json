@@ -1,0 +1,419 @@
+{
+ "sid": "SAGA-6216",
+ "facts": {
+  "danger_signs.responsive": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-19 03:16"
+  },
+  "danger_signs.chest_pain_now": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-19 03:16"
+  },
+  "danger_signs.breathing_difficulty": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-19 03:16"
+  },
+  "danger_signs.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-19 03:16"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "dental",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 2,
+      "ts": "2026-10-19 03:16"
+     },
+     "text": {
+      "value": "toothache for two days, without facial or gum swelling",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 2,
+      "ts": "2026-10-19 03:16"
+     },
+     "onset": {
+      "value": "two days",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 2,
+      "ts": "2026-10-19 03:16"
+     },
+     "pain_rating": {
+      "value": 9,
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 11,
+      "ts": "2026-10-19 03:17"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2
+  },
+  "complaint.category": {
+   "value": [
+    "dental"
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 11,
+   "ts": "2026-10-19 03:17"
+  },
+  "complaint.text": {
+   "value": "toothache for two days, without facial or gum swelling",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-19 03:16"
+  },
+  "complaint.onset": {
+   "value": "two days",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-19 03:16"
+  },
+  "E.mechanism": {
+   "value": "none",
+   "status": "reported",
+   "who": "derived",
+   "turn": 2,
+   "ts": "2026-10-19 03:16"
+  },
+  "patient.age": {
+   "value": 38,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-19 03:16"
+  },
+  "patient.sex": {
+   "value": "male",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-19 03:16"
+  },
+  "patient.age_group": {
+   "value": "adult",
+   "status": "reported",
+   "who": "derived",
+   "turn": 3,
+   "ts": "2026-10-19 03:16"
+  },
+  "complaint.fever": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 4,
+   "ts": "2026-10-19 03:16"
+  },
+  "infection.contacts": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 10,
+   "ts": "2026-10-19 03:17"
+  },
+  "complaint.pain_rating": {
+   "value": 9,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 11,
+   "ts": "2026-10-19 03:17"
+  },
+  "complaint.pain_latest": {
+   "value": 9,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 11,
+   "ts": "2026-10-19 03:17"
+  },
+  "A.allergies": {
+   "value": [],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 14,
+   "ts": "2026-10-19 03:17"
+  }
+ },
+ "attempts": {
+  "danger_signs.responsive": 1,
+  "danger_signs.chest_pain_now": 1,
+  "danger_signs.breathing_difficulty": 1,
+  "danger_signs.heavy_bleeding": 1,
+  "complaint.category": 1,
+  "patient.age": 1,
+  "patient.sex": 1,
+  "complaint.fever": 1,
+  "infection.rash": 3,
+  "infection.travel_14d": 3,
+  "infection.contacts": 2,
+  "ams.changed_from_baseline": 3,
+  "complaint.pain_rating": 1,
+  "M.medications": 3,
+  "A.allergies": 1,
+  "history.conditions": 1,
+  "history.immunocompromised": 1
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "Is the patient awake and responding to you normally? Also, is he or she experiencing any chest pain, trouble breathing, or heavy bleeding right now?",
+   "ts": "2026-10-19 03:16:25",
+   "kind": "question",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, the patient is awake and responding normally. No, the patient is not having chest pain right now.",
+   "ts": "2026-10-19 03:16:25",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "bot",
+   "text": "I'm glad to hear they are alert. Is the patient having any trouble breathing or heavy bleeding right now? Also, what is the main reason for the visit today?",
+   "ts": "2026-10-19 03:16:33",
+   "kind": "question",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, the patient is not having trouble breathing right now. No, the patient is not bleeding heavily right now. I have had a toothache for two days, without facial or gum swelling.",
+   "ts": "2026-10-19 03:16:33",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category"
+  },
+  {
+   "role": "bot",
+   "text": "I understand about the toothache. Could you tell me the patient's age and if it is a man or a woman?",
+   "ts": "2026-10-19 03:16:44",
+   "kind": "question",
+   "slot": "dyn:patient.age+patient.sex"
+  },
+  {
+   "role": "caregiver",
+   "text": "The patient is 38 years old. The patient is male.",
+   "ts": "2026-10-19 03:16:44",
+   "kind": "answer",
+   "slot": "dyn:patient.age+patient.sex"
+  },
+  {
+   "role": "bot",
+   "text": "I see. Does he have a fever or any new rashes?",
+   "ts": "2026-10-19 03:16:51",
+   "kind": "question",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, the patient does not have fever. I do not know whether the patient has a rash.",
+   "ts": "2026-10-19 03:16:51",
+   "kind": "answer",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Does he have any new rashes on his skin?",
+   "ts": "2026-10-19 03:16:57",
+   "kind": "question",
+   "slot": "dyn:infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient has a rash.",
+   "ts": "2026-10-19 03:16:57",
+   "kind": "answer",
+   "slot": "dyn:infection.rash"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Can you check if there are any new rashes on his skin?",
+   "ts": "2026-10-19 03:17:03",
+   "kind": "question",
+   "slot": "dyn:infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient has a rash.",
+   "ts": "2026-10-19 03:17:03",
+   "kind": "answer",
+   "slot": "dyn:infection.rash"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Has he traveled outside the country or been in contact with anyone who is sick in the last two weeks?",
+   "ts": "2026-10-19 03:17:08",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient travelled in the last 14 days. I do not know of any sick contacts.",
+   "ts": "2026-10-19 03:17:08",
+   "kind": "answer",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. To clarify, has he been on any trips outside the country in the last 14 days?",
+   "ts": "2026-10-19 03:17:14",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient travelled in the last 14 days.",
+   "ts": "2026-10-19 03:17:14",
+   "kind": "answer",
+   "slot": "dyn:infection.travel_14d"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. To be clear, has he been on any trips outside the country in the last 14 days?",
+   "ts": "2026-10-19 03:17:20",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient travelled in the last 14 days.",
+   "ts": "2026-10-19 03:17:20",
+   "kind": "answer",
+   "slot": "dyn:infection.travel_14d"
+  },
+  {
+   "role": "bot",
+   "text": "Has he been in contact with anyone who has a contagious illness or a fever in the last two weeks?",
+   "ts": "2026-10-19 03:17:26",
+   "kind": "question",
+   "slot": "dyn:infection.contacts"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know of any sick contacts.",
+   "ts": "2026-10-19 03:17:26",
+   "kind": "answer",
+   "slot": "dyn:infection.contacts"
+  },
+  {
+   "role": "bot",
+   "text": "On a scale of 0 to 10, where 10 is the worst pain imaginable, how bad is his toothache right now?",
+   "ts": "2026-10-19 03:17:32",
+   "kind": "question",
+   "slot": "dyn:ams.changed_from_baseline+complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient is acting differently from usual. The value is 9.",
+   "ts": "2026-10-19 03:17:32",
+   "kind": "answer",
+   "slot": "dyn:ams.changed_from_baseline+complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "Has he been acting differently lately, such as being more confused or unusually sleepy?",
+   "ts": "2026-10-19 03:17:39",
+   "kind": "question",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient is acting differently from usual.",
+   "ts": "2026-10-19 03:17:39",
+   "kind": "answer",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Has he seemed confused, been making less sense, or been unusually sleepy lately?",
+   "ts": "2026-10-19 03:17:45",
+   "kind": "question",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient is acting differently from usual.",
+   "ts": "2026-10-19 03:17:45",
+   "kind": "answer",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "bot",
+   "text": "Could you tell me what medications he takes regularly and if he has any allergies, especially to medicines?",
+   "ts": "2026-10-19 03:17:50",
+   "kind": "question",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know what medicines the patient takes. The patient has no known allergies.",
+   "ts": "2026-10-19 03:17:50",
+   "kind": "answer",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Could you tell me the names of any medications he takes on a regular basis?",
+   "ts": "2026-10-19 03:17:57",
+   "kind": "question",
+   "slot": "dyn:M.medications"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know what medicines the patient takes.",
+   "ts": "2026-10-19 03:17:57",
+   "kind": "answer",
+   "slot": "dyn:M.medications"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. If you can find any of his medicine boxes or bottles, could you tell me the names of the medications or send a photo of them?",
+   "ts": "2026-10-19 03:18:03",
+   "kind": "question",
+   "slot": "dyn:M.medications"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know what medicines the patient takes.",
+   "ts": "2026-10-19 03:18:03",
+   "kind": "answer",
+   "slot": "dyn:M.medications"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Does he have any ongoing medical conditions or any conditions that might weaken his immune system?",
+   "ts": "2026-10-19 03:18:08",
+   "kind": "question",
+   "slot": "dyn:history.conditions+history.immunocompromised"
+  }
+ ],
+ "stage": "floor",
+ "floor": null,
+ "phase": "enroute",
+ "created": "2026-10-19 03:16",
+ "pending_slot": "dyn:history.conditions+history.immunocompromised",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {},
+ "considered": [
+  "B-02.severe-pain-consider"
+ ]
+}

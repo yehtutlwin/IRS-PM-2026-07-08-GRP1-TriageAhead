@@ -1,0 +1,46 @@
+arm B, form rules, persona P8-decompensated-liver-disease, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  Is the patient awake and responding normally?
+A1  He's awake but slow to answer.
+
+Q2  Is the patient having any chest pain right now?
+A2  No, he has no chest pain.
+
+Q3  Is the patient having any trouble breathing right now?
+A3  He is breathing normally.
+
+Q4  Is the patient bleeding heavily right now?
+A4  No.
+
+Q5  Is the patient's slow response due to a new change in his mental state, such as being confused, drowsy, or disoriented?
+A5  Yes, he is much more confused and sleepy than usual.
+
+Q6  Is the patient a child under 18 years old?
+A6  No. He is 58 years old.
+
+Q7  Is the patient's confusion or sleepiness a new change from his usual mental state?
+A7  Yes, he is much more confused and sleepy than usual.
+
+Q8  Is the patient in severe pain or distress?
+A8  He has mild belly discomfort, 3 out of 10.
+
+Q9  Is the patient's belly discomfort caused by a serious medical condition like a kidney stone, a cancer, or a severe infection?
+A9  I don't know.
+
+Q10  Is the patient's belly discomfort constant or did it start suddenly at its worst?
+A10  He has mild belly discomfort, 3 out of 10.
+
+Q11  Was there any blunt or penetrating trauma to the abdomen (belly or flanks)?
+A11  No.
+
+Q12  Is the patient's belly discomfort caused by a serious medical condition like a kidney stone, a cancer, or a severe infection?
+A12  I don't know.
+
+Q13  Is the patient's belly discomfort caused by a serious medical condition like a kidney stone, a cancer, or a severe infection?
+A13  I don't know.
+
+Q14  Is the patient's belly discomfort caused by a serious medical condition like a kidney stone, a cancer, or a severe infection?
+A14  I don't know.
+
+DECISION {"decision": "at least ESI-2", "reason": "The patient is an adult with a new onset of confusion and lethargy, which is a high-risk situation.", "citation": "ESI v5 p.12 (New Onset Confusion, Lethargy, or Disorientation)"}
+OUTCOME level 2 or floor | expected at least ESI-2 | pass True | label None | max prompt tokens 44077

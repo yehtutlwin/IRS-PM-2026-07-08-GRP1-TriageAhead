@@ -1,0 +1,35 @@
+{"t": "03:28:52", "kind": "engine", "note": "session SAGA-1965 started (web)"}
+{"t": "03:28:53", "kind": "question", "slot": "red_flags.screen", "text": "Is the patient awake and responding normally, and are they experiencing any severe chest pain, trouble breathing, or heavy bleeding right now?"}
+{"t": "03:28:54", "kind": "answer", "slot": "red_flags.screen", "text": "I'm awake, but I have pressure in the center of my chest and I'm a bit breathless. It's a 6/10 pain."}
+{"t": "03:28:58", "kind": "extract", "writes": [["red_flags.responsive", true], ["complaint.category", "chest_pain"], ["complaint.text", "pressure in the center of my chest", "chest_pain"], ["complaint.pain_rating", 6, "chest_pain"], ["chest_pain_suspicious", true], ["red_flags.breathing_difficulty", true], ["complaint.text", "bit breathless", "breathing"]]}
+{"t": "03:28:58", "kind": "floor", "floor": "at least ESI-2", "fired": ["B-04.chest-pain-acs-suspect"], "sources": ["ESI v5 p.12 (high-risk examples list)"]}
+{"t": "03:28:58", "kind": "extract", "writes": [["E.mechanism", "none"]], "via": "derived-non-injury"}
+{"t": "03:28:59", "kind": "question", "slot": "red_flags.screen", "text": "Is the chest pain or any bleeding getting worse right now?"}
+{"t": "03:29:01", "kind": "answer", "slot": "red_flags.screen", "text": "Yes, the pressure in my chest is still there. It's a 6 out of 10."}
+{"t": "03:29:03", "kind": "extract", "writes": [["red_flags.chest_pain_now", true], ["complaint.category", "chest_pain"], ["complaint.text", "pressure in my chest", "chest_pain"], ["complaint.pain_rating", 6, "chest_pain"]]}
+{"t": "03:29:05", "kind": "question", "slot": "red_flags.screen", "text": "Are you experiencing any heavy bleeding right now?"}
+{"t": "03:29:05", "kind": "answer", "slot": "red_flags.screen", "text": "No, I'm not bleeding."}
+{"t": "03:29:07", "kind": "extract", "writes": [["red_flags.heavy_bleeding", false]]}
+{"t": "03:29:08", "kind": "question", "slot": "complaint.main", "text": "When did the pain start?"}
+{"t": "03:29:09", "kind": "answer", "slot": "complaint.main", "text": "It started about 40 minutes ago."}
+{"t": "03:29:11", "kind": "extract", "writes": [["complaint.onset", "40 minutes ago", "current_complaint"]]}
+{"t": "03:29:11", "kind": "extract", "writes": [["complaint.category", "current_complaint->other"]], "via": "normalised"}
+{"t": "03:29:12", "kind": "question", "slot": "stroke.screen", "text": "At any point today, did you notice any drooping on one side of the face, weakness or numbness in an arm, or slurred or strange speech?"}
+{"t": "03:29:13", "kind": "answer", "slot": "stroke.screen", "text": "No, I didn't notice any of those things."}
+{"t": "03:29:15", "kind": "extract", "writes": [["stroke.face_droop", false], ["stroke.arm_weakness", false], ["stroke.speech_change", false]]}
+{"t": "03:29:17", "kind": "question", "slot": "M.medications", "text": "Do you take any regular medications?"}
+{"t": "03:29:18", "kind": "answer", "slot": "M.medications", "text": "No, I don't take any regular medications."}
+{"t": "03:29:19", "kind": "extract", "writes": [["M.medications", []]]}
+{"t": "03:29:21", "kind": "question", "slot": "allergies_and_history", "text": "Do you have any allergies to medicine or other medical conditions, such as heart problems, diabetes, or are you currently pregnant?"}
+{"t": "03:29:21", "kind": "answer", "slot": "allergies_and_history", "text": "No, I don't have any known conditions or allergies."}
+{"t": "03:29:23", "kind": "extract", "writes": [["A.allergies", []], ["history.conditions", []], ["history.pregnant_or_postpartum", false]]}
+{"t": "03:29:25", "kind": "question", "slot": "allergies_and_history", "text": "Could you please let me know if you have any conditions that affect your immune system?"}
+{"t": "03:29:26", "kind": "answer", "slot": "allergies_and_history", "text": "No, I don't have any known conditions."}
+{"t": "03:29:27", "kind": "extract", "writes": [["history.immunocompromised", false]]}
+{"t": "03:29:29", "kind": "question", "slot": "infection.screen", "text": "Have you had a fever, any rashes, traveled overseas in the last two weeks, or been in contact with anyone who is infectious?"}
+{"t": "03:29:30", "kind": "answer", "slot": "infection.screen", "text": "No, I haven't had a fever or any rashes, and I haven't traveled or been in contact with anyone infectious."}
+{"t": "03:29:32", "kind": "extract", "writes": [["infection.fever", false], ["infection.rash", false], ["infection.travel_14d", false], ["infection.contacts", false]]}
+{"t": "03:29:34", "kind": "question", "slot": "wrapup", "text": "Could you please tell me when you last ate or drank, and provide your name and date of birth for the hospital's records?"}
+{"t": "03:29:36", "kind": "answer", "slot": "wrapup", "text": "I had toast for breakfast at 8am. My name is not provided, but my date of birth is 14 May 1975."}
+{"t": "03:29:38", "kind": "extract", "writes": [["L.last_intake", "toast for breakfast at 8am"], ["identity.name", null], ["identity.dob", "14 May 1975"]]}
+{"t": "03:29:38", "kind": "engine", "note": "interview complete - no open slots"}

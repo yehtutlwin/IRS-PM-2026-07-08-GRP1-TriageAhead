@@ -1,0 +1,22 @@
+arm B, form handbook, persona P7-heat-stroke, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  What is the main reason the patient is seeking care today?
+A1  He collapsed while working outdoors in the sun and is now very hot, weak, and confused.
+
+Q2  Is the patient currently able to follow commands or is he unresponsive?
+A2  He is awake but only answers with confused words.
+
+Q3  Is the patient's confusion a new development, or has he been confused for a long time?
+A3  It is a new development; he became confused and then fell.
+
+Q4  Is the patient's temperature very high, or is he currently experiencing any severe respiratory distress or significant bleeding?
+A4  His temperature is 40.4. He is not struggling to breathe and there is no bleeding.
+
+Q5  Is the patient's heart rate or blood pressure currently very low or very high?
+A5  I don't know.
+
+Q6  Is the patient's heart rate or respiratory rate currently very high or very low?
+A6  I don't know.
+
+DECISION {"decision": "level 2", "reason": "The patient is experiencing a new onset of altered mental status (confusion) and is in a high-risk situation due to a high fever and potential heat-related illness.", "citation": "page 12"}
+OUTCOME level 2 or floor | expected ESI-1 | pass False | label missing fact | max prompt tokens 29841

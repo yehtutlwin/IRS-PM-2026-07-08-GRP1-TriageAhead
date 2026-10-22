@@ -1,0 +1,37 @@
+# per-person, never committed: the virtual environment, keys, downloads, local runs
+SystemCode/.venv
+__pycache__/
+*.pyc
+.pytest_cache/
+SystemCode/.env
+SystemCode/gemini_api_key.txt
+
+# the copyrighted sources, fetched per person by SystemCode/sources/download.sh
+SystemCode/sources/ESI-Handbook-5th-Edition-3-2023.pdf
+SystemCode/sources/NICE-*.pdf
+SystemCode/sources/*.part
+
+# the interview app's own sessions folder (test runs), the review app's local verdicts and page cache
+SystemCode/prototype/out/sessions-local/
+SystemCode/prototype/out/webapp.log
+SystemCode/prototype/out/tunnel.log
+SystemCode/review/reviews.db
+SystemCode/review/cache/
+SystemCode/review/out/
+
+# datasets, fetched per person (SystemCode/data/README.md)
+SystemCode/data/*.rdata
+SystemCode/data/*.RData
+SystemCode/data/*.parquet
+SystemCode/data/*.part
+SystemCode/data/mimic*
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+~$*
+
+# editor swap and backup files
+*.swp
+*~

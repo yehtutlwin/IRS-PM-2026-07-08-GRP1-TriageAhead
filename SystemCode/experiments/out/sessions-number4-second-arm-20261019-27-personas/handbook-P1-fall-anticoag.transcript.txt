@@ -1,0 +1,52 @@
+arm B, form handbook, persona P1-fall-anticoag, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  What is the main reason the patient is seeking care today?
+A1  He fell down 4 steps at home and landed on his right hip. He can't stand.
+
+Q2  Is the patient currently experiencing any severe pain or distress, or is he showing any signs of confusion or lethargy?
+A2  He says the pain is 7 out of 10. He's as alert as usual.
+
+Q3  Is the patient's pain a result of a systemic issue (like a medical condition) or is it from a localized injury like a fracture or sprain?
+A3  He fell down 4 steps at home and landed on his right hip. He can't stand and can't put any weight on the leg.
+
+Q4  Does the patient have any other symptoms or injuries, such as a head injury, and what is his age?
+A4  No, he didn't hit his head. He is 87.
+
+Q5  Does the patient have any other symptoms or injuries, such as a head injury, and what is his age?
+A5  No, he didn't hit his head. He is 87.
+
+Q6  Are there any other concerns, such as a wound that won't stop bleeding, or any other medical issues he is currently experiencing?
+A6  No bleeding. He has an irregular heartbeat and high blood pressure.
+
+Q7  Does the patient have any other medical issues, such as a known heart condition or a history of stroke?
+A7  He has an irregular heartbeat and high blood pressure.
+
+Q8  What are the patient's current vital signs (heart rate, respiratory rate, blood pressure, and oxygen saturation)?
+A8  I don't know.
+
+Q9  Is the patient's hip injury a result of a fall that caused any other concerns, such as a possible fracture of the hip or femur?
+A9  He fell down 4 steps at home and landed on his right hip. He can't stand and can't put any weight on the leg.
+
+Q10  Does the patient have any other symptoms or injuries, such as a wound that won't stop bleeding, or any other medical issues he is currently experiencing?
+A10  No bleeding. He has an irregular heartbeat and high blood pressure.
+
+Q11  Is the patient's heart rate, respiratory rate, and oxygen saturation currently within normal limits?
+A11  I don't know.
+
+Q12  Does the patient have any other symptoms or injuries, such as a wound that won't stop bleeding, or any other medical issues he is currently experiencing?
+A12  No bleeding. He has an irregular heartbeat and high blood pressure.
+
+Q13  Is the patient's heart rate, respiratory rate, and oxygen saturation currently within normal limits?
+A13  I don't know.
+
+Q14  Is the patient's heart rate, respiratory rate, and oxygen saturation currently within normal limits?
+A14  I don't know.
+
+Q15  Is the patient's heart rate, respiratory rate, and oxygen saturation currently within normal limits?
+A15  I don't know.
+
+Q16  Is the patient's heart rate, respiratory rate, and oxygen saturation currently within normal limits?
+A16  I don't know.
+
+DECISION {"decision": "unparsed", "reason": "turn limit reached without a decision"}
+OUTCOME no decision in 16 questions | expected at least ESI-2 | pass False | label missing fact | max prompt tokens 30313

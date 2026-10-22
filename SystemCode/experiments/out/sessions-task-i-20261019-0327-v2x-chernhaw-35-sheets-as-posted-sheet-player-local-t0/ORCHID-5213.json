@@ -1,0 +1,436 @@
+{
+ "sid": "ORCHID-5213",
+ "facts": {
+  "danger_signs.responsive": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-19 02:46"
+  },
+  "danger_signs.chest_pain_now": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-19 02:46"
+  },
+  "danger_signs.breathing_difficulty": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-19 02:46"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "vomiting_or_diarrhoea",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 2,
+      "ts": "2026-10-19 02:46"
+     },
+     "text": {
+      "value": "I have been vomiting and having diarrhea, with cramps that come and go.",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 2,
+      "ts": "2026-10-19 02:46"
+     },
+     "onset": {
+      "value": "this morning",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 4,
+      "ts": "2026-10-19 02:47"
+     },
+     "onset_abs": {
+      "value": "~2026-10-19 morning",
+      "status": "reported",
+      "who": "derived",
+      "turn": 4,
+      "ts": "2026-10-19 02:47"
+     },
+     "pain_rating": {
+      "value": 5,
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 15,
+      "ts": "2026-10-19 02:48"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2
+  },
+  "complaint.category": {
+   "value": [
+    "vomiting_or_diarrhoea"
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 15,
+   "ts": "2026-10-19 02:48"
+  },
+  "complaint.text": {
+   "value": "I have been vomiting and having diarrhea, with cramps that come and go.",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-19 02:46"
+  },
+  "E.mechanism": {
+   "value": "none",
+   "status": "reported",
+   "who": "derived",
+   "turn": 2,
+   "ts": "2026-10-19 02:46"
+  },
+  "danger_signs.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-19 02:46"
+  },
+  "complaint.onset": {
+   "value": "this morning",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 4,
+   "ts": "2026-10-19 02:47"
+  },
+  "patient.age": {
+   "value": 33,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 4,
+   "ts": "2026-10-19 02:47"
+  },
+  "complaint.onset_abs": {
+   "value": "~2026-10-19 morning (from 'this morning' said 02:47)",
+   "status": "reported",
+   "who": "derived",
+   "turn": 4,
+   "ts": "2026-10-19 02:47"
+  },
+  "patient.age_group": {
+   "value": "adult",
+   "status": "reported",
+   "who": "derived",
+   "turn": 4,
+   "ts": "2026-10-19 02:47"
+  },
+  "patient.sex": {
+   "value": "female",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 5,
+   "ts": "2026-10-19 02:47"
+  },
+  "history.pregnant": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 6,
+   "ts": "2026-10-19 02:47"
+  },
+  "complaint.fever": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 7,
+   "ts": "2026-10-19 02:47"
+  },
+  "history.postpartum": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 8,
+   "ts": "2026-10-19 02:47"
+  },
+  "infection.contacts": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 14,
+   "ts": "2026-10-19 02:48"
+  },
+  "complaint.pain_rating": {
+   "value": 5,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 15,
+   "ts": "2026-10-19 02:48"
+  },
+  "complaint.pain_latest": {
+   "value": 5,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 15,
+   "ts": "2026-10-19 02:48"
+  }
+ },
+ "attempts": {
+  "danger_signs.responsive": 1,
+  "danger_signs.chest_pain_now": 1,
+  "danger_signs.breathing_difficulty": 1,
+  "danger_signs.heavy_bleeding": 2,
+  "complaint.category": 1,
+  "complaint.onset": 1,
+  "patient.age": 1,
+  "patient.sex": 1,
+  "history.pregnant": 2,
+  "history.postpartum": 2,
+  "complaint.fever": 1,
+  "infection.rash": 3,
+  "infection.travel_14d": 3,
+  "infection.contacts": 1,
+  "ams.changed_from_baseline": 3,
+  "complaint.pain_rating": 1
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "Is the patient awake and responding to you normally? Also, is he or she experiencing any chest pain, trouble breathing, or heavy bleeding right now?",
+   "ts": "2026-10-19 02:46:37",
+   "kind": "question",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, the patient is awake and responding normally. No, the patient is not having chest pain right now.",
+   "ts": "2026-10-19 02:46:37",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "bot",
+   "text": "I'm glad to hear they are alert. Is the patient having any trouble breathing or heavy bleeding right now? Also, what is the main reason you are bringing them in?",
+   "ts": "2026-10-19 02:46:45",
+   "kind": "question",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, the patient is not having trouble breathing right now. No, the patient is not bleeding heavily right now. I have been vomiting and having diarrhea, with cramps that come and go.",
+   "ts": "2026-10-19 02:46:45",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category"
+  },
+  {
+   "role": "bot",
+   "text": "I understand about the vomiting and diarrhea. Is there any heavy bleeding occurring right now?",
+   "ts": "2026-10-19 02:46:54",
+   "kind": "question",
+   "slot": "dyn:danger_signs.heavy_bleeding"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, the patient is not bleeding heavily right now.",
+   "ts": "2026-10-19 02:46:54",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.heavy_bleeding"
+  },
+  {
+   "role": "bot",
+   "text": "I've noted the vomiting and diarrhea. When did these symptoms first start, and how old is the patient?",
+   "ts": "2026-10-19 02:47:01",
+   "kind": "question",
+   "slot": "dyn:complaint.onset+patient.age"
+  },
+  {
+   "role": "caregiver",
+   "text": "You are a 33-year-old woman with vomiting and diarrhea since this morning. The patient is 33 years old.",
+   "ts": "2026-10-19 02:47:01",
+   "kind": "answer",
+   "slot": "dyn:complaint.onset+patient.age"
+  },
+  {
+   "role": "bot",
+   "text": "I've noted she is 33. Is she currently pregnant?",
+   "ts": "2026-10-19 02:47:08",
+   "kind": "question",
+   "slot": "dyn:patient.sex+history.pregnant"
+  },
+  {
+   "role": "caregiver",
+   "text": "The patient is female.",
+   "ts": "2026-10-19 02:47:08",
+   "kind": "answer",
+   "slot": "dyn:patient.sex+history.pregnant"
+  },
+  {
+   "role": "bot",
+   "text": "To help the team prepare, is she currently pregnant?",
+   "ts": "2026-10-19 02:47:15",
+   "kind": "question",
+   "slot": "dyn:history.pregnant"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-19 02:47:15",
+   "kind": "answer",
+   "slot": "dyn:history.pregnant"
+  },
+  {
+   "role": "bot",
+   "text": "I understand you aren't sure about the pregnancy. Has she given birth in the last few weeks, and does she have a fever?",
+   "ts": "2026-10-19 02:47:21",
+   "kind": "question",
+   "slot": "dyn:history.postpartum+complaint.fever"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, the patient does not have fever.",
+   "ts": "2026-10-19 02:47:21",
+   "kind": "answer",
+   "slot": "dyn:history.postpartum+complaint.fever"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Has she given birth in the last few weeks?",
+   "ts": "2026-10-19 02:47:27",
+   "kind": "question",
+   "slot": "dyn:history.postpartum"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-19 02:47:27",
+   "kind": "answer",
+   "slot": "dyn:history.postpartum"
+  },
+  {
+   "role": "bot",
+   "text": "I've noted she doesn't have a fever. Does she have any new rashes, and has she traveled outside the country in the last two weeks?",
+   "ts": "2026-10-19 02:47:34",
+   "kind": "question",
+   "slot": "dyn:infection.rash+infection.travel_14d"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient has a rash. I do not know whether the patient travelled in the last 14 days.",
+   "ts": "2026-10-19 02:47:34",
+   "kind": "answer",
+   "slot": "dyn:infection.rash+infection.travel_14d"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Can you tell me if she has any new rashes on her skin?",
+   "ts": "2026-10-19 02:47:40",
+   "kind": "question",
+   "slot": "dyn:infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient has a rash.",
+   "ts": "2026-10-19 02:47:40",
+   "kind": "answer",
+   "slot": "dyn:infection.rash"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. To clarify, have you noticed any new rashes or spots on her skin?",
+   "ts": "2026-10-19 02:47:46",
+   "kind": "question",
+   "slot": "dyn:infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient has a rash.",
+   "ts": "2026-10-19 02:47:46",
+   "kind": "answer",
+   "slot": "dyn:infection.rash"
+  },
+  {
+   "role": "bot",
+   "text": "Has she traveled to any other countries in the last two weeks?",
+   "ts": "2026-10-19 02:47:51",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient travelled in the last 14 days.",
+   "ts": "2026-10-19 02:47:51",
+   "kind": "answer",
+   "slot": "dyn:infection.travel_14d"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Has she been on any trips abroad in the last 14 days?",
+   "ts": "2026-10-19 02:47:57",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient travelled in the last 14 days.",
+   "ts": "2026-10-19 02:47:57",
+   "kind": "answer",
+   "slot": "dyn:infection.travel_14d"
+  },
+  {
+   "role": "bot",
+   "text": "Has she been in contact with anyone who has an infectious illness in the last two weeks?",
+   "ts": "2026-10-19 02:48:03",
+   "kind": "question",
+   "slot": "dyn:infection.contacts"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know of any sick contacts.",
+   "ts": "2026-10-19 02:48:03",
+   "kind": "answer",
+   "slot": "dyn:infection.contacts"
+  },
+  {
+   "role": "bot",
+   "text": "Is she acting differently than usual, such as being more confused or very sleepy? Also, on a scale of 0 to 10, how bad is her pain right now?",
+   "ts": "2026-10-19 02:48:10",
+   "kind": "question",
+   "slot": "dyn:ams.changed_from_baseline+complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient is acting differently from usual. The value is 5.",
+   "ts": "2026-10-19 02:48:10",
+   "kind": "answer",
+   "slot": "dyn:ams.changed_from_baseline+complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Is she acting differently than usual, such as being more confused or very sleepy?",
+   "ts": "2026-10-19 02:48:17",
+   "kind": "question",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient is acting differently from usual.",
+   "ts": "2026-10-19 02:48:17",
+   "kind": "answer",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "bot",
+   "text": "Is she having any trouble staying awake or seems confused lately?",
+   "ts": "2026-10-19 02:48:23",
+   "kind": "question",
+   "slot": "dyn:ams.changed_from_baseline"
+  }
+ ],
+ "stage": "floor",
+ "floor": null,
+ "phase": "enroute",
+ "created": "2026-10-19 02:46",
+ "pending_slot": "dyn:ams.changed_from_baseline",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {}
+}

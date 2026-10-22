@@ -1,0 +1,52 @@
+arm B, form rules, persona P5-fever-chemo, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  Is the patient awake and responding normally?
+A1  Yes, she's awake and talking.
+
+Q2  Is the patient having any chest pain right now?
+A2  No chest pain.
+
+Q3  Is the patient having any trouble breathing right now?
+A3  No trouble breathing.
+
+Q4  Is the patient bleeding heavily right now?
+A4  No.
+
+Q5  What is the main reason the patient is coming to the emergency department?
+A5  She has had a fever since this afternoon, 38.6 on our thermometer, and is shivering and very tired.
+
+Q6  How old is the patient?
+A6  She's 51.
+
+Q7  Is the patient's fever accompanied by any other symptoms, such as a cough, a rash, or a wound that is red, hot, or swollen?
+A7  No cough or anything else, just the fever. There is no rash and no wound.
+
+Q8  Is the patient's fever related to a recent injury, a wound, or a medical condition like a transplant or a weakened immune system?
+A8  No injury. No wound or anything like that.
+
+Q9  Is the patient's fever accompanied by any other symptoms, such as a cough, a rash, or a wound that is red, hot, or swollen?
+A9  No cough or anything else, just the fever. There is no rash and no wound.
+
+Q10  Is the patient's fever accompanied by any other symptoms, such as a cough, a rash, or a wound that is red, hot, or swollen?
+A10  No cough or anything else, just the fever. There is no rash and no wound.
+
+Q11  Is the patient's fever related to a medical condition like a transplant or a weakened immune system?
+A11  I don't know.
+
+Q12  Is the patient's fever accompanied by any other symptoms, such as a cough, a rash, or a wound that is red, hot, or swollen?
+A12  No cough or anything else, just the fever. There is no rash and no wound.
+
+Q13  Is the patient's fever related to a medical condition like a transplant or a weakened immune system?
+A13  I don't know.
+
+Q14  Is the patient's fever related to a medical condition like a transplant or a weakened immune system?
+A14  I don't know.
+
+Q15  How many different types of resources do you think will be needed to treat her, such as blood tests, X-rays, or special procedures?
+A15  I don't know.
+
+Q16  Is the patient's fever related to a medical condition like a transplant or a weakened immune system?
+A16  I don't know.
+
+DECISION {"decision": "unparsed", "reason": "turn limit reached without a decision"}
+OUTCOME unparsed | expected at least ESI-2 | pass False | label missing fact | max prompt tokens 44193

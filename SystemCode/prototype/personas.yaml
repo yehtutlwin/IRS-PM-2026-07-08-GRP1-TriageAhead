@@ -1,0 +1,1122 @@
+# Five personas novelized from real Yale ED rows (see ../prototype-seeds.json).
+# 'truth' is the answer sheet extraction is scored against. Names are fictional.
+# P6-P8 are wholly synthetic additions and are not derived from Yale ED rows.
+# `say` (16 Oct 2026): one sentence per field, the deterministic persona player's replies (PERSONA_BACKEND=sheet in the harness):
+# the harness answers each question with the sentences of the fields it asks, or "I don't know." Authored from the voice
+# paragraph by the builder; the same reply every time, so repeat runs measure fact extraction alone.
+- id: P1-fall-anticoag
+  yale_row: 1048            # 87M, cc_fall>65, on anticoagulants, real ESI 2
+  expect_floor: "at least ESI-2"
+  expect_rules: [B-30.anticoagulated-trauma]
+  voice: >
+    You are the DAUGHTER of Mr. Tan Ah Kow, 87. He fell down 4 steps at home an hour
+    ago, landed on his right hip, cannot stand. You are anxious but cooperative. He is
+    awake and talking. No head strike, no blackout. He takes "a small pill to thin his
+    blood" - you only remember the name "warfarin" if directly asked to check the box.
+    Also a blood pressure pill you can't name. Allergy: penicillin (rash). Conditions:
+    irregular heartbeat, high blood pressure. His pain is 7/10. No fever/rash/travel.
+    Last ate lunch (porridge) at 1pm. DOB 02 Jan 1939.
+  truth:
+    danger_signs.responsive: true
+    complaint.category: injury
+    E.mechanism: fall
+    E.head_strike: false
+    E.loc: false
+    M.anticoagulant: true
+    complaint.pain_rating: 7
+    complaint.fever: false
+    history.conditions: ["atrial fibrillation or irregular heartbeat", "hypertension"]
+  say:
+    danger_signs.responsive: "Yes, he's awake and talking."
+    danger_signs.chest_pain_now: "No chest pain."
+    danger_signs.breathing_difficulty: "No, he's breathing fine."
+    danger_signs.heavy_bleeding: "No bleeding."
+    complaint.category: "He fell down 4 steps at home and landed on his right hip. He can't stand."
+    complaint.text: "He fell down 4 steps at home and landed on his right hip. He can't stand."
+    complaint.onset: "About an hour ago."
+    E.mechanism: "He fell down the steps."
+    E.fall_height_meters: "He fell down 4 steps, about a metre."
+    E.head_strike: "No, he didn't hit his head."
+    E.loc: "No, he didn't black out."
+    patient.age: "He's 87."
+    patient.sex: "He's a man, my father."
+    complaint.pain_rating: "He says the pain is 7 out of 10."
+    complaint.fever: "No fever."
+    infection.rash: "No rash."
+    infection.travel_14d: "No, he hasn't travelled."
+    infection.contacts: "No, nobody sick around him."
+    ams.changed_from_baseline: "No, he's as alert as usual."
+    history.baseline_mental_status: "Yes, I know him well, he's normally sharp."
+    M.medications: "He takes a small pill to thin his blood, and a blood pressure pill, I don't know\
+  \ its name."
+    M.anticoagulant: "Yes, I checked the box, it's warfarin."
+    A.allergies: "He's allergic to penicillin, it gives him a rash."
+    history.conditions: "He has an irregular heartbeat and high blood pressure."
+    history.immunocompromised: "No, nothing like that."
+    identity.name: "Tan Ah Kow."
+    identity.dob: "2 January 1939."
+    L.last_intake: "He had porridge for lunch at 1pm."
+    complaint.possible_pelvis_femur_fracture_or_dislocation: "He can't put any weight on the leg."
+    complaint.compartment_syndrome_symptoms: "The hip hurts a lot but it's not getting worse by the minute."
+    E.abdominal_trauma: "No, he landed on his hip."
+
+- id: P2-chest-pain
+  yale_row: 116             # 51F, cc_chestpain, real ESI 2
+  expect_floor: "at least ESI-2"
+  expect_rules: [B-04.chest-pain-acs-suspect]
+  voice: >
+    You ARE the patient, a 51-year-old woman. For the last 40 minutes: pressure in the
+    centre of your chest, spreading to your left arm, and you feel sweaty and a bit
+    breathless when walking. Your husband is driving you in. No regular medications,
+    no allergies, no known conditions. Pain 6/10. No fever/rash/travel. Last ate
+    breakfast toast at 8am. DOB 14 May 1975. You answer briefly, a little scared.
+  truth:
+    danger_signs.responsive: true
+    complaint.category: chest_pain
+    complaint.acs_suspicion: true
+    complaint.pain_rating: 6
+    M.anticoagulant: absent
+    complaint.fever: false
+  say:
+    danger_signs.responsive: "Yes, I'm awake, I'm the patient."
+    danger_signs.chest_pain_now: "Yes, I have pressure in the middle of my chest right now."
+    danger_signs.breathing_difficulty: "A bit breathless when I walk, but I can talk."
+    danger_signs.heavy_bleeding: "No."
+    complaint.category: "Pressure in the centre of my chest spreading to my left arm, and I feel sweaty."
+    complaint.text: "Pressure in the centre of my chest spreading to my left arm, and I feel sweaty."
+    complaint.onset: "About 40 minutes ago."
+    complaint.acs_suspicion: "Yes, it feels like pressure and it goes into my left arm, and I'm sweaty."
+    complaint.shortness_of_breath: "A bit breathless when walking."
+    complaint.increasing_respiratory_effort: "It's about the same as when it started."
+    patient.age: "I'm 51."
+    patient.sex: "Female."
+    history.pregnant: "No, I'm not pregnant."
+    complaint.pain_rating: "6 out of 10."
+    complaint.fever: "No fever."
+    infection.rash: "No rash."
+    infection.travel_14d: "No."
+    infection.contacts: "No."
+    ams.changed_from_baseline: "No, I'm clear-headed."
+    M.medications: "I don't take any regular medicines."
+    M.anticoagulant: "No blood thinners."
+    A.allergies: "No allergies."
+    history.conditions: "No known conditions."
+    history.immunocompromised: "No."
+    identity.name: "Lee Mei Ling."
+    identity.dob: "14 May 1975."
+    L.last_intake: "Toast at 8am."
+    E.mechanism: "No injury."
+
+- id: P4-sore-throat
+  yale_row: 1339            # 25F, cc_sorethroat, real ESI 4 (the honest no-floor case)
+  expect_floor: null
+  expect_rules: []
+  voice: >
+    You ARE the patient, 25, healthy. Sore throat for two days, hurts to swallow,
+    mild - 3/10. No breathing trouble. Slight temperature yesterday you think, but
+    none today when you checked (37.1). No meds, no allergies, no conditions.
+    No travel, no rash, no sick contacts you know of. Last ate soup an hour ago.
+    DOB 21 Nov 2000. You are relaxed, slightly embarrassed to be coming in.
+  truth:
+    danger_signs.responsive: true
+    complaint.category: sore_throat
+    complaint.pain_rating: 3
+    M.anticoagulant: absent
+    complaint.fever: false
+  say:
+    danger_signs.responsive: "Yes."
+    danger_signs.chest_pain_now: "No."
+    danger_signs.breathing_difficulty: "No breathing trouble."
+    danger_signs.heavy_bleeding: "No."
+    complaint.category: "A sore throat for two days, it hurts to swallow."
+    complaint.text: "A sore throat for two days, it hurts to swallow."
+    complaint.onset: "Two days ago."
+    patient.age: "25."
+    patient.sex: "Female."
+    history.pregnant: "No."
+    complaint.pain_rating: "About 3 out of 10, mild."
+    complaint.fever: "I think I had a slight temperature yesterday, but none today, it was 37.1 when I\
+  \ checked."
+    vitals.temp_c: "37.1 this morning."
+    infection.rash: "No rash."
+    infection.travel_14d: "No."
+    infection.contacts: "Not that I know of."
+    complaint.chills_or_rigors: "No chills."
+    complaint.respiratory_distress_signs: "No, I'm breathing normally."
+    ams.changed_from_baseline: "No, I'm fine."
+    M.medications: "No medicines."
+    M.anticoagulant: "No."
+    A.allergies: "None."
+    history.conditions: "None."
+    history.immunocompromised: "No."
+    identity.name: "Priya Nair."
+    identity.dob: "21 November 2000."
+    L.last_intake: "Soup about an hour ago."
+    E.mechanism: "No injury."
+
+# Novelized from ESI v4 practice case 44 (printed p.74/p.80), NOT Yale — the resolved-TIA
+# class: symptoms lay reporters can describe but only the FAST bridge makes machine-visible.
+- id: P6-acute-gout
+  source: synthetic
+  yale_row: null
+  expect_floor: null
+  expect_rules: []
+  voice: >
+    You ARE the patient, a 52-year-old man. You woke during the night with sudden,
+    severe pain in the joint at the base of your right big toe. It is red, swollen,
+    hot and so tender that even the bedsheet hurts. The pain is 8/10. You have had
+    two similar attacks before and a doctor told you they were gout. You ate a large
+    seafood dinner and drank several beers yesterday. You can walk only with
+    difficulty. There was no fall or other injury. You have no fever, chills, rash,
+    chest pain or breathing trouble. Medications: amlodipine for high blood pressure;
+    you are not taking allopurinol and do not take blood thinners. No known allergies.
+    Last ate dinner at 9pm. DOB 18 Feb 1974. You are tired and irritable because of
+    the pain but answer questions clearly.
+  truth:
+    danger_signs.responsive: true
+    complaint.category: joint_pain
+    complaint.pain_rating: 8
+    complaint.trauma: false
+    history.gout: true
+    M.anticoagulant: absent
+    complaint.fever: false
+  say:
+    danger_signs.responsive: "Yes, I'm awake and can answer you."
+    danger_signs.chest_pain_now: "No chest pain."
+    danger_signs.breathing_difficulty: "No."
+    danger_signs.heavy_bleeding: "No."
+    complaint.category: "Sudden severe pain in the joint at the base of my right big toe; it's red, swollen\
+  \ and hot."
+    complaint.text: "Sudden severe pain in the joint at the base of my right big toe; it's red, swollen\
+  \ and hot."
+    complaint.onset: "It woke me during the night."
+    E.mechanism: "No fall or injury, it just came on."
+    patient.age: "52."
+    patient.sex: "Male."
+    complaint.pain_rating: "8 out of 10."
+    complaint.fever: "No fever, no chills."
+    complaint.chills_or_rigors: "No."
+    infection.rash: "No rash."
+    infection.travel_14d: "No."
+    infection.contacts: "No."
+    ams.changed_from_baseline: "No, I'm thinking clearly, just tired from the pain."
+    history.conditions: "High blood pressure, and I've had gout twice before, a doctor told me."
+    M.medications: "Amlodipine for blood pressure. No allopurinol, no blood thinners."
+    M.anticoagulant: "No."
+    A.allergies: "None."
+    history.immunocompromised: "No."
+    complaint.infection_signs: "The toe is red, hot and swollen, no wound."
+    complaint.possible_pelvis_femur_fracture_or_dislocation: "I can walk, with difficulty."
+    complaint.compartment_syndrome_symptoms: "It's the toe joint; it's bad but not getting worse by the minute."
+    identity.name: "Tan Wei Ming."
+    identity.dob: "18 February 1974."
+    L.last_intake: "Dinner at 9pm."
+
+- id: P7-heat-stroke
+  source: synthetic
+  yale_row: null
+  expect_floor: "ESI-1"
+  expect_rules: [synthetic.heat-stroke-altered-mental-status]
+  voice: >
+    You are the COWORKER of a 39-year-old man who collapsed while doing heavy outdoor
+    work in direct sun. He had complained of headache, nausea and dizziness, then
+    became confused and fell to the ground. He did not strike his head. He is now very
+    hot, weak and responding only with confused words. An infrared thermometer reads
+    40.4 degrees Celsius. You have called an ambulance and moved him into the shade.
+    He has vomited once. You do not know his medications, allergies or medical history.
+    He had been working for about four hours and drank very little water. His last meal
+    was breakfast at 7am. DOB and other personal details are unknown.
+  truth:
+    danger_signs.responsive: true
+    danger_signs.altered_mental_status: true
+    complaint.category: heat_illness
+    complaint.collapse: true
+    complaint.vomiting: true
+    complaint.fever: false
+    environment.heat_exposure: true
+    measurements.temperature_c: 40.4
+  say:
+    danger_signs.responsive: "He's awake but only answers with confused words."
+    danger_signs.breathing_difficulty: "He's breathing, not struggling that I can see."
+    danger_signs.heavy_bleeding: "No bleeding."
+    complaint.category: "He collapsed working outdoors in the sun. He had a headache, nausea and dizziness,\
+  \ then got confused and fell. He's very hot and weak now."
+    complaint.text: "He collapsed working outdoors in the sun. He had a headache, nausea and dizziness,\
+  \ then got confused and fell. He's very hot and weak now."
+    complaint.onset: "About half an hour ago, after four hours in the sun."
+    E.mechanism: "He collapsed and fell to the ground; he didn't hit his head."
+    E.head_strike: "No."
+    ams.changed_from_baseline: "Yes, he's confused, only confused words."
+    obs.confusion_lethargy_disorientation: "Yes, confused."
+    history.baseline_mental_status: "I only know him from work, but normally he's fine."
+    complaint.fever: "The thermometer reads 40.4."
+    vitals.temp_c: "40.4."
+    complaint.vomiting: "Yes, once."
+    patient.age: "39."
+    patient.sex: "Male."
+    L.last_intake: "Breakfast at 7am; he drank very little water."
+
+- id: P8-decompensated-liver-disease
+  source: synthetic
+  yale_row: null
+  expect_floor: "at least ESI-2"
+  expect_rules: [synthetic.liver-disease-confusion]
+  voice: >
+    You are the WIFE of a 58-year-old man with cirrhosis caused by chronic hepatitis B.
+    Over the past two days his abdomen has become more swollen, his eyes look more
+    yellow and he has been increasingly sleepy and confused. Today he cannot state the
+    correct date and his hands shake when he holds them out. He is awake and breathing
+    normally but answers slowly. There has been no vomiting of blood and his stools are
+    not black. He has no fever and reports mild abdominal discomfort, 3/10. Medications:
+    lactulose, spironolactone and furosemide, but he missed several lactulose doses this
+    week. No blood thinners and no known allergies. Last ate a small bowl of rice at
+    noon. DOB 07 Jul 1968. An ambulance is taking him to hospital.
+  truth:
+    danger_signs.responsive: true
+    danger_signs.altered_mental_status: true
+    complaint.category: liver_disease
+    complaint.pain_rating: 3
+    complaint.hematemesis: false
+    complaint.melena: false
+    history.cirrhosis: true
+    history.hepatitis_b: true
+    signs.jaundice: true
+    signs.ascites: true
+    M.anticoagulant: absent
+    complaint.fever: false
+  say:
+    danger_signs.responsive: "He's awake but slow to answer."
+    danger_signs.chest_pain_now: "No chest pain."
+    danger_signs.breathing_difficulty: "Breathing normally."
+    danger_signs.heavy_bleeding: "No."
+    complaint.category: "He has cirrhosis. Over two days his belly has got more swollen, his eyes more yellow,\
+  \ and he's sleepy and confused; today he can't say the date and his hands shake."
+    complaint.text: "He has cirrhosis. Over two days his belly has got more swollen, his eyes more yellow,\
+  \ and he's sleepy and confused; today he can't say the date and his hands shake."
+    complaint.onset: "Over the past two days."
+    ams.changed_from_baseline: "Yes, much more confused and sleepy than usual."
+    obs.confusion_lethargy_disorientation: "Yes."
+    history.baseline_mental_status: "Yes, I know him well."
+    patient.age: "58."
+    patient.sex: "Male."
+    complaint.pain_rating: "Mild belly discomfort, 3 out of 10."
+    complaint.vomiting: "No vomiting, no blood; his stools aren't black."
+    complaint.fever: "No fever."
+    infection.rash: "No rash."
+    infection.travel_14d: "No."
+    infection.contacts: "No."
+    M.medications: "Lactulose, spironolactone and furosemide; he missed several lactulose doses this\
+  \ week."
+    M.anticoagulant: "No."
+    A.allergies: "None."
+    history.conditions: "Cirrhosis from hepatitis B."
+    history.immunocompromised: "No."
+    E.mechanism: "No injury."
+    E.abdominal_trauma: "No."
+    identity.name: "Rajan Kumar."
+    identity.dob: "7 July 1968."
+    L.last_intake: "A small bowl of rice at noon."
+
+# P9 is a synthetic regression persona for issue #54 (29 Sep 2026: "he has no pain" was not stored and the pain question
+# came back twice). Not derived from a Yale ED row. Pass: the pain rating is stored as 0 on the first denial and the pain
+# question is not asked again; the breathing questions are asked. Added 14 Oct 2026.
+- id: P9-breathing-no-pain
+  expect_floor: null                      # since 16 Oct 2026 the sheet says the breathing is NOT getting worse (truth + say), so B-12 must not fire and no floor is expected;
+  expect_rules: []                        # before that the sheet left it open and the model persona players answered it both ways. The persona's purpose is the pain denial (#54).
+  voice: >
+    You are the SON of Mr. Lim, 72. Since this morning he has been more short of breath
+    than usual, about the same since it started, not getting worse; he can still speak in full sentences and is not wheezing. He is awake
+    and talking normally. He has NO pain anywhere - if you are asked about pain or asked
+    to rate it, say plainly "he has no pain" and do not give a number. No chest pain,
+    no fever, no rash, no travel, no contact with anyone ill. He takes a water pill
+    (frusemide) and an inhaler; no blood thinners; no allergies. Conditions: heart
+    failure, COPD. Last ate toast at 8am. DOB 03 Mar 1954. You are calm and brief.
+  truth:
+    danger_signs.responsive: true
+    danger_signs.breathing_difficulty: true
+    complaint.category: breathing
+    complaint.pain_rating: 0
+    complaint.shortness_of_breath: true
+    complaint.increasing_respiratory_effort: false
+    complaint.fever: false
+    M.anticoagulant: absent
+  say:
+    danger_signs.responsive: "Yes, he's awake and talking normally."
+    danger_signs.chest_pain_now: "No chest pain."
+    danger_signs.breathing_difficulty: "Yes, he's more short of breath than usual, but he can speak in full sentences."
+    danger_signs.heavy_bleeding: "No."
+    complaint.category: "He's been more short of breath than usual since this morning. He has heart failure\
+  \ and COPD."
+    complaint.text: "He's been more short of breath than usual since this morning. He has heart failure\
+  \ and COPD."
+    complaint.onset: "Since this morning."
+    complaint.shortness_of_breath: "Yes, more short of breath than usual."
+    complaint.increasing_respiratory_effort: "It's been the same since this morning, not getting worse."
+    complaint.respiratory_distress_signs: "No, he's not breathing fast, he can talk normally, no wheeze."
+    complaint.pain_rating: "He has no pain."
+    patient.age: "72."
+    patient.sex: "Male."
+    complaint.fever: "No fever."
+    infection.rash: "No rash."
+    infection.travel_14d: "No."
+    infection.contacts: "No."
+    ams.changed_from_baseline: "No, he's his usual self."
+    M.medications: "A water pill, frusemide, and an inhaler."
+    M.anticoagulant: "No."
+    A.allergies: "None."
+    history.conditions: "Heart failure and COPD."
+    history.immunocompromised: "No."
+    identity.name: "Lim Boon Keng."
+    identity.dob: "3 March 1954."
+    L.last_intake: "Toast at 8am."
+    E.mechanism: "No injury."
+
+# P10-P19 (18 Oct 2026, issue #29): five ESI v4 handbook practice cases and five Yale visits, selected so that the expected
+# level comes from an outside source (the book's answer, or the triage nurse's recorded level) and the facts that decide it
+# are ones a caregiver can report before arrival. Selection: experiments/persona_selection.md.
+# Handbook personas state only the case's facts a caregiver can know: no vital signs, no examination findings.
+# Yale personas state only what the visit's record holds (age, sex, the recorded complaint, medication classes, history
+# flags) and answer "I don't know" to the rest; their danger-sign answers are "no" where the record lists no such complaint.
+# Names and dates of birth are fictional; any other filled-in detail is named in the persona's comment.
+- id: P10-infant-fever
+  source: "ESI v4 handbook, chapter 9 practice case 14, p.72; book answer level 2, p.79"
+  expect_floor: "at least ESI-2"        # the book's answer: level 2 (a febrile infant under 28 days); ESI v5 p.6 and p.23
+  expect_rules: [B-56.infant-under-28-days-fever]
+  voice: >
+    You are the MOTHER of a two-week-old baby boy. He has a fever. You called your
+    paediatrician and she told you to bring him to the emergency department because of
+    the fever. You don't remember the number on the thermometer. He was born by a normal,
+    uncomplicated delivery. He is acting like himself and feeding as usual. No medicines,
+    no known allergies. You answer simply.
+  truth:
+    danger_signs.responsive: true
+    complaint.category: fever
+    complaint.fever: true
+    patient.age: 0
+    patient.age_days: 14
+    patient.sex: male
+    ams.changed_from_baseline: false
+  say:
+    danger_signs.responsive: "Yes, he's awake. He's acting like his usual self."
+    danger_signs.chest_pain_now: "No, he doesn't seem to be in pain."
+    danger_signs.breathing_difficulty: "No, he's breathing normally."
+    danger_signs.heavy_bleeding: "No bleeding."
+    complaint.category: "My baby has a fever. I called the paediatrician and she told me to bring him in."
+    complaint.text: "My baby has a fever. I called the paediatrician and she told me to bring him in."
+    complaint.onset: "I noticed it today."
+    patient.age: "He's two weeks old."
+    patient.age_days: "Two weeks, fourteen days."
+    patient.sex: "He's a boy."
+    complaint.fever: "Yes, he has a fever. I don't remember the exact number."
+    ams.changed_from_baseline: "No, he's acting like himself and feeding normally."
+    history.baseline_mental_status: "Yes, he's my baby, I know how he usually is."
+    history.conditions: "He's healthy. It was a normal delivery."
+    history.immunocompromised: "No."
+    M.medications: "No medicines."
+    M.anticoagulant: "No."
+    A.allergies: "None that we know of."
+    infection.rash: "No rash."
+    infection.travel_14d: "No, we haven't travelled."
+    identity.name: "Lim Wei Jie."
+    identity.dob: "He was born on 4 October 2026."
+    L.last_intake: "He fed not long ago."
+- id: P12-elderly-confusion-uti
+  source: "ESI v4 handbook, chapter 9 practice case 85, p.77; book answer level 2, p.83"
+  expect_floor: "at least ESI-2"        # the book's answer: level 2 (new confusion in an older woman with urinary symptoms); ESI v5 p.12, p.14
+  expect_rules: [B-01.new-altered-mental-status, B-43.uti-elderly-or-urosepsis-signs]
+  voice: >
+    You are the DAUGHTER of a 72-year-old woman. She is just not acting herself: she has
+    been sleeping more than usual, and she says it hurts to pee. Normally she is sharp and
+    independent, and you know her well. She answers when you talk to her, but she seems
+    mixed up about the time and where she is. You have not taken her temperature.
+  truth:
+    danger_signs.responsive: true
+    complaint.category: neuro_symptoms
+    ams.changed_from_baseline: true
+    history.baseline_mental_status: known
+    complaint.uti_symptoms: true
+    patient.age: 72
+    patient.sex: female
+  say:
+    danger_signs.responsive: "Yes, she answers when I talk to her."
+    danger_signs.chest_pain_now: "No chest pain."
+    danger_signs.breathing_difficulty: "No, her breathing is fine."
+    danger_signs.heavy_bleeding: "No."
+    complaint.category: "My mother is just not acting herself. She's sleeping more than usual and she says it hurts to pee."
+    complaint.text: "My mother is just not acting herself. She's sleeping more than usual and she says it hurts to pee."
+    complaint.onset: "Over the last day or so."
+    ams.changed_from_baseline: "Yes, she's mixed up about the time and where she is. That's not like her."
+    history.baseline_mental_status: "Yes, I know her well. Normally she's sharp and independent."
+    complaint.uti_symptoms: "Yes, she says it hurts to pee."
+    complaint.fever: "I haven't taken her temperature."
+    patient.age: "She's 72."
+    patient.sex: "She's a woman, my mother."
+    identity.name: "Chua Siew Lan."
+    identity.dob: "8 March 1954."
+- id: P13-cast-too-tight
+  source: "ESI v4 handbook, chapter 9 practice case 50, p.74; book answer level 2, p.81. The case gives no age or sex: both are fictional here. Sheet restated on 18 Oct 2026 after the first run (v2t, issue #114): the clinical fact complaint.extremity_neurovascular_compromise replaced by the three limb signs a family can see (numb fingers, can hardly move them, cast cutting in); expected floor and rule unchanged. Run v2t scored this persona against the earlier sheet"
+  expect_floor: "at least ESI-2"        # the book's answer: level 2 (a cast with decreased circulation, sensation and movement); ESI v5 p.15
+  expect_rules: [B-24.extremity-neurovascular-compromise]
+  voice: >
+    You are a FRIEND of a 35-year-old woman. She was seen in the emergency department last
+    night for a broken wrist, and they put a cast on it. Now her hand is really swollen,
+    the cast is cutting into her fingers, and the pain is unbearable. Her fingers are numb
+    and she can hardly move them. You don't know how she broke it.
+  truth:
+    danger_signs.responsive: true
+    complaint.category: limb_pain_or_swelling
+    limb.numb_tingling: true
+    limb.cannot_move_digits: true
+    limb.cast_too_tight: true
+    patient.age: 35
+    patient.sex: female
+  say:
+    danger_signs.responsive: "Yes, she's awake."
+    danger_signs.chest_pain_now: "No."
+    danger_signs.breathing_difficulty: "No."
+    danger_signs.heavy_bleeding: "No."
+    complaint.category: "She had a cast put on her broken wrist last night. Now her hand is really swollen and the cast is cutting into her fingers."
+    complaint.text: "She had a cast put on her broken wrist last night. Now her hand is really swollen and the cast is cutting into her fingers."
+    complaint.onset: "The cast went on last night. It got worse this morning."
+    complaint.extremity_neurovascular_compromise: "Her fingers are numb and she can hardly move them."
+    limb.numb_tingling: "Yes, her fingers are numb."
+    limb.cannot_move_digits: "She can hardly move her fingers."
+    limb.cast_too_tight: "Yes, the cast is cutting into her fingers. Her hand is really swollen."
+    complaint.compartment_syndrome_symptoms: "The pain is unbearable."
+    complaint.pain_rating: "She says the pain is unbearable."
+    patient.age: "She's 35."
+    patient.sex: "She's a woman."
+    identity.name: "Nur Aisyah."
+    identity.dob: "21 June 1991."
+- id: P14-child-knee-cut
+  source: "ESI v4 handbook, chapter 9 practice case 9, p.71; book answer level 4, p.78"
+  expect_floor: null                    # the book's answer: level 4 (a simple laceration, one resource); no floor
+  expect_rules: []
+  voice: >
+    You are the FATHER of a 6-year-old boy. He was running across the playground and fell.
+    He has a cut about 3 centimetres long over his right knee. He is healthy, takes no
+    medicines, has no allergies, and his vaccinations are up to date.
+  truth:
+    danger_signs.responsive: true
+    complaint.category: wound
+    E.mechanism: fall
+    patient.age: 6
+    patient.sex: male
+    patient.immunizations_incomplete: false
+  say:
+    danger_signs.responsive: "Yes, he's awake and talking."
+    danger_signs.chest_pain_now: "No."
+    danger_signs.breathing_difficulty: "No."
+    danger_signs.heavy_bleeding: "No, it's just a cut on his knee."
+    complaint.category: "He fell running across the playground and cut his right knee. It's about 3 centimetres long."
+    complaint.text: "He fell running across the playground and cut his right knee. It's about 3 centimetres long."
+    complaint.onset: "Just now, at the playground."
+    E.mechanism: "He fell while running."
+    E.head_strike: "No, he didn't hit his head."
+    E.loc: "No."
+    patient.age: "He's 6."
+    patient.sex: "He's a boy."
+    patient.immunizations_incomplete: "His vaccinations are up to date."
+    M.medications: "No medicines."
+    M.anticoagulant: "No."
+    A.allergies: "No allergies."
+    history.conditions: "He's healthy."
+    identity.name: "Ryan Tan."
+    identity.dob: "15 February 2020."
+- id: P15-suicidal-thoughts
+  yale_row: 177748                      # 31F, recorded complaint "suicidal", walk-in, nurse's level 2, discharged
+  expect_floor: "at least ESI-2"        # the triage nurse rated this visit 2; the record's complaint makes B-09 fire
+  expect_rules: [B-09.suicidal-or-homicidal]
+  voice: >
+    You are the SISTER of a 31-year-old woman. Today she told you she has been thinking about
+    killing herself. You are taking her to the emergency department. She is awake and
+    talking. You don't know anything else about her health; for anything else, say you
+    don't know.
+  truth:
+    danger_signs.responsive: true
+    complaint.category: mental_health
+    complaint.danger_to_self_or_others: true
+    patient.age: 31
+    patient.sex: female
+  say:
+    danger_signs.responsive: "Yes, she's awake and talking."
+    danger_signs.chest_pain_now: "No."
+    danger_signs.breathing_difficulty: "No."
+    danger_signs.heavy_bleeding: "No."
+    complaint.category: "My sister told me today she's been thinking about killing herself."
+    complaint.text: "My sister told me today she's been thinking about killing herself."
+    complaint.onset: "She told me today."
+    complaint.danger_to_self_or_others: "Yes, she said she wants to kill herself."
+    patient.age: "She's 31."
+    patient.sex: "She's a woman, my sister."
+    identity.name: "Grace Lee."
+    identity.dob: "I'm not sure of the date, she's 31."
+- id: P16-intentional-overdose
+  yale_row: 166225                      # 20M, recorded complaint "overdose-intentional", arrived by car, nurse's level 2, discharged
+  expect_floor: "at least ESI-2"        # the triage nurse rated this visit 2; the record's complaint makes B-26 fire
+  expect_rules: [B-26.suspected-toxic-ingestion]
+  voice: >
+    You are a FRIEND of a 20-year-old man. He took an overdose of pills on purpose. You
+    don't know which pills, how many, or exactly when. He is awake and talking. You don't
+    know anything else about his health; for anything else, say you don't know.
+  truth:
+    danger_signs.responsive: true
+    complaint.category: poisoning_or_overdose
+    complaint.known_toxic_ingestion: true
+    patient.age: 20
+    patient.sex: male
+  say:
+    danger_signs.responsive: "Yes, he's awake and talking."
+    danger_signs.chest_pain_now: "No."
+    danger_signs.breathing_difficulty: "No."
+    danger_signs.heavy_bleeding: "No."
+    complaint.category: "My friend took an overdose of pills on purpose."
+    complaint.text: "My friend took an overdose of pills on purpose."
+    complaint.onset: "I don't know exactly when."
+    complaint.known_toxic_ingestion: "Yes, he took an overdose of pills. I don't know which ones or how many."
+    patient.age: "He's 20."
+    patient.sex: "He's a man."
+    identity.name: "Daniel Koh."
+    identity.dob: "I'm not sure of the date, he's 20."
+- id: P17-nosebleed-clotting
+  yale_row: 379598                      # 71M, recorded complaint "epistaxis", clotting disorder on record, arrived by car, nurse's level 2, discharged
+  expect_floor: "at least ESI-2"        # the triage nurse rated this visit 2; nosebleed with a clotting disorder makes B-15 fire
+  expect_rules: [B-15.high-risk-epistaxis]
+  voice: >
+    You are the WIFE of a 71-year-old man. His nose has been bleeding and it won't stop. He
+    has a blood clotting disorder: his blood doesn't clot properly. He does not take blood
+    thinners. He is awake and talking. You don't know anything else; for anything else,
+    say you don't know.
+  truth:
+    danger_signs.responsive: true
+    complaint.category: nosebleed
+    history.thrombocytopenia_or_clotting_disorder: true
+    M.anticoagulant: absent
+    patient.age: 71
+    patient.sex: male
+  say:
+    danger_signs.responsive: "Yes, he's awake and talking."
+    danger_signs.chest_pain_now: "No."
+    danger_signs.breathing_difficulty: "No."
+    danger_signs.heavy_bleeding: "His nose is bleeding and it won't stop."
+    complaint.category: "His nose has been bleeding and it won't stop."
+    complaint.text: "His nose has been bleeding and it won't stop."
+    complaint.onset: "I'm not sure exactly when it started."
+    history.thrombocytopenia_or_clotting_disorder: "Yes, he has a blood clotting disorder. His blood doesn't clot properly."
+    history.conditions: "He has a blood clotting disorder."
+    M.anticoagulant: "No, he doesn't take blood thinners."
+    patient.age: "He's 71."
+    patient.sex: "He's a man, my husband."
+    identity.name: "Goh Boon Huat."
+    identity.dob: "I'm not sure of the date, he's 71."
+- id: P18-fall-no-floor
+  yale_row: 141814                      # 58F, recorded complaint "fall", no blood thinner on record, arrived by car, nurse's level 4, discharged
+  expect_floor: null                    # the triage nurse rated this visit 4; the record's facts make no rule fire
+  expect_rules: []
+  voice: >
+    You are the HUSBAND of a 58-year-old woman who fell today and hurt herself. She is awake
+    and talking. She does not take blood thinners. You don't know anything else; for
+    anything else, say you don't know.
+  truth:
+    danger_signs.responsive: true
+    complaint.category: injury
+    E.mechanism: fall
+    M.anticoagulant: absent
+    patient.age: 58
+    patient.sex: female
+  say:
+    danger_signs.responsive: "Yes, she's awake and talking."
+    danger_signs.chest_pain_now: "No."
+    danger_signs.breathing_difficulty: "No."
+    danger_signs.heavy_bleeding: "No."
+    complaint.category: "My wife fell today and hurt herself."
+    complaint.text: "My wife fell today and hurt herself."
+    complaint.onset: "Today."
+    E.mechanism: "She fell."
+    M.anticoagulant: "No, she doesn't take blood thinners."
+    patient.age: "She's 58."
+    patient.sex: "She's a woman, my wife."
+    identity.name: "Siti Rahmah."
+    identity.dob: "I'm not sure of the date, she's 58."
+- id: P19-headache-no-floor
+  yale_row: 553293                      # 52F, recorded complaint "headache", nurse's level 4, discharged
+  expect_floor: null                    # the triage nurse rated this visit 4; the record's facts make no rule fire
+  expect_rules: []
+  voice: >
+    You are the DAUGHTER of a 52-year-old woman who has a headache. She is awake and talking.
+    You don't know anything else about it; for anything else, including how it started,
+    say you don't know.
+  truth:
+    danger_signs.responsive: true
+    complaint.category: headache
+    patient.age: 52
+    patient.sex: female
+  say:
+    danger_signs.responsive: "Yes, she's awake and talking."
+    danger_signs.chest_pain_now: "No."
+    danger_signs.breathing_difficulty: "No."
+    danger_signs.heavy_bleeding: "No."
+    complaint.category: "My mother has a headache."
+    complaint.text: "My mother has a headache."
+    patient.age: "She's 52."
+    patient.sex: "She's a woman, my mother."
+    identity.name: "Wong Mei Ling."
+    identity.dob: "I'm not sure of the date, she's 52."
+# P20-P24 (18 Oct 2026, issue #29, fallback set): five more ESI v4 handbook practice cases with the book's answer as the label,
+# chosen for rules and patient types the first 20 do not test (a cancer pain rule, a child's subtle change in alertness, a
+# homicidal adolescent, and two walk-in no-floor cases with complaint types not yet covered: an eye and an ear). Written by the
+# builder from the printed case, stating only what a caregiver can know; no vital signs or examination findings.
+- id: P20-cancer-pain
+  source: "ESI v4 handbook, chapter 10 competency set A case 4, p.85; book answer level 2, p.88"
+  expect_floor: "at least ESI-2"        # the book's answer: severe pain from a known systemic cause (cancer), level 2; ESI v5 p.12
+  expect_rules: [B-03.severe-pain-systemic-cause]
+  voice: >
+    You are a 47-year-old woman with metastatic ovarian cancer, answering for yourself. Your pain medications are not
+    working any more; last night you could not sleep because the pain was so bad, 9 out of 10. Your husband called your
+    oncologist, who told you to come to the emergency department. You are awake, breathing normally, no chest pain, no
+    bleeding. For anything the case does not say, you don't know.
+  truth:
+    danger_signs.responsive: true
+    complaint.category: other
+    complaint.pain_rating: 9
+    complaint.pain_cause_class: cancer
+    history.conditions: [metastatic ovarian cancer]
+    patient.age: 47
+    patient.sex: female
+  say:
+    danger_signs.responsive: "Yes, I'm awake, it's me talking."
+    danger_signs.chest_pain_now: "No."
+    danger_signs.breathing_difficulty: "No."
+    danger_signs.heavy_bleeding: "No."
+    complaint.category: "My pain medications are not working anymore. I have metastatic ovarian cancer and my oncologist told me to come in."
+    complaint.text: "My pain medications are not working anymore. Last night I couldn't sleep because the pain was so bad. I have metastatic ovarian cancer and my oncologist told me to come in."
+    complaint.onset: "It got much worse last night."
+    complaint.pain_rating: "It's 9 out of 10."
+    complaint.pain_cause_class: "Yes, it's from my cancer. I have metastatic ovarian cancer."
+    history.conditions: "I have metastatic ovarian cancer."
+    patient.age: "I'm 47."
+    patient.sex: "I'm a woman."
+    identity.name: "Lim Mei Ling."
+    identity.dob: "I don't know the exact date off hand, I'm 47."
+- id: P21-child-shunt-not-right
+  source: "ESI v4 handbook, chapter 10 competency set A case 17, p.86; book answer level 2, p.89"
+  expect_floor: "at least ESI-2"        # the book's answer: a subtle change in a child's mental status is high risk, level 2; ESI v5 p.13 and p.12
+  expect_rules: [B-29.pediatric-subtle-ams, B-01.new-altered-mental-status]
+  voice: >
+    You are the MOTHER of Melissa, 4. She has a ventriculo-peritoneal shunt that drains fluid from her head. She is not
+    acting right today: sleepy, though she answers when you talk to her, and she says her head hurts and she is going to
+    throw up. You are worried the shunt is blocked. She is breathing normally, no chest pain, no bleeding. You know her
+    well. For anything the case does not say, you don't know.
+  truth:
+    danger_signs.responsive: true
+    complaint.category: neuro_symptoms
+    ams.changed_from_baseline: true
+    history.baseline_mental_status: known
+    history.conditions: [ventriculo-peritoneal shunt]
+    patient.age: 4
+    patient.sex: female
+  say:
+    danger_signs.responsive: "She's awake and she answers when I talk to her, but she's very sleepy."
+    danger_signs.chest_pain_now: "No."
+    danger_signs.breathing_difficulty: "No, she's breathing normally."
+    danger_signs.heavy_bleeding: "No."
+    complaint.category: "She's not acting right. She has a shunt in her head and I'm worried it's blocked."
+    complaint.text: "My daughter is not acting right. She has a shunt in her head that drains fluid and I'm worried it's blocked. She's sleepy, she says her head hurts and she's going to throw up."
+    complaint.onset: "Since this morning."
+    ams.changed_from_baseline: "Yes, she's much sleepier than usual and not herself."
+    history.baseline_mental_status: "Yes, I'm her mother, she's normally bright and chatty."
+    history.conditions: "She has a ventriculo-peritoneal shunt."
+    complaint.vomiting: "Not yet, but she says she's going to throw up."
+    patient.age: "She's 4."
+    patient.sex: "She's a girl, my daughter."
+    identity.name: "Melissa Tan."
+    identity.dob: "I don't remember the exact date right now, she's 4."
+# Teammates' sheets (19 Oct 2026, issue #29): taken exactly as posted, only the id carries the author's prefix; the posted files are
+# kept beside the run reports in experiments/out/. Not written by the builder.
+- id: ND-P20-infant-fever
+  source: 'Independent fictional caregiver scenario (Issue #29); clinical rule references are candidate evidence, not a patient
+    record.'
+  expect_floor: at least ESI-2
+  expect_rules:
+  - B-57.infant-under-90-days-temperature-over-38
+  voice: 'You are the mother of a 6-week-old baby with a measured temperature of 38.3 C this morning. The baby is feeding
+    less and is sleepier than usual but wakes when handled. You are frightened and answer in short sentences. No rash, breathing
+    difficulty or known medical problems. Reference for reviewer only: Rule B-57, ESI v5 printed p.24 as quoted in criteria.yaml;
+    ESI v4 p.8 only says consider ESI-2 for 1-3 months. Verify original v5 page and clinician interpretation.'
+  truth:
+    complaint.text: infant fever
+    complaint.onset: This morning
+    patient.age_days: 42
+    patient.age_months: 1.5
+    complaint.fever: true
+    vitals.temp_c: 38.3
+    patient.sex: female
+    complaint.category: fever
+  say:
+    danger_signs.responsive: She wakes when I pick her up, but she is sleepier and feeding less than usual.
+    danger_signs.chest_pain_now: 'No'
+    danger_signs.breathing_difficulty: 'No'
+    danger_signs.heavy_bleeding: 'No'
+    complaint.category: My six-week-old baby has a fever.
+    complaint.text: My six-week-old baby has a fever.
+    complaint.onset: This morning
+    patient.age: My baby is six weeks old.
+    patient.sex: She is a girl.
+    complaint.fever: Yes. I measured 38.3 degrees Celsius this morning.
+    M.medications: No medicines
+    A.allergies: No known allergies
+    history.conditions: No known conditions
+    L.last_intake: Milk about two hours ago
+    vitals.temp_c: The thermometer showed 38.3 degrees Celsius.
+    patient.age_days: Six weeks, about forty-two days.
+  author: 'newton-dai (issue #29, 19 Oct 2026; file personas-newtondai-6-as-posted-20261019.yaml, unchanged apart from the
+    id prefix)'
+- id: ND-P23-elderly-confusion
+  source: 'Independent fictional caregiver scenario (Issue #29); clinical rule references are candidate evidence, not a patient
+    record.'
+  expect_floor: at least ESI-2
+  expect_rules:
+  - B-01.new-altered-mental-status
+  voice: 'You are the spouse of a 79-year-old who became noticeably confused this afternoon, asking where they are despite
+    normally being alert. There was no witnessed fall. You cannot recall the full medicine list. Reference for reviewer only:
+    Rule B-01, ESI v5 printed p.12 as quoted in criteria.yaml; ESI v4 printed p.12 discusses new confusion. Check derived
+    bridge to obs.new_confusion_lethargy_disorientation.'
+  truth:
+    complaint.text: sudden confusion
+    complaint.onset: This afternoon
+    patient.age: 79
+    patient.sex: male
+    ams.changed_from_baseline: true
+    history.baseline_mental_status: known
+    complaint.category: neuro_symptoms
+  say:
+    danger_signs.responsive: Yes, the patient is awake and can respond.
+    danger_signs.chest_pain_now: 'No'
+    danger_signs.breathing_difficulty: No breathing difficulty noticed
+    danger_signs.heavy_bleeding: 'No'
+    complaint.category: My husband is suddenly confused.
+    complaint.text: My husband is suddenly confused.
+    complaint.onset: This afternoon
+    patient.age: He is seventy-nine.
+    patient.sex: He is male.
+    complaint.fever: No temperature checked
+    M.medications: Several daily tablets, names unknown
+    A.allergies: Unknown
+    history.conditions: High blood pressure
+    L.last_intake: Lunch around 1pm
+    history.baseline_mental_status: I know him well. He is normally alert and knows where he is.
+    ams.changed_from_baseline: This afternoon he suddenly became confused and kept asking where he was.
+  author: 'newton-dai (issue #29, 19 Oct 2026; file personas-newtondai-6-as-posted-20261019.yaml, unchanged apart from the
+    id prefix)'
+- id: ND-P27-resolved-speech-change
+  source: 'Independent fictional caregiver scenario (Issue #29); clinical rule references are candidate evidence, not a patient
+    record.'
+  expect_floor: at least ESI-2
+  expect_rules:
+  - B-05.stroke-signs
+  voice: 'You are the husband of a 66-year-old who suddenly had slurred speech for 10 minutes and now sounds normal. You worry
+    that the symptom has disappeared and may not be important. No known trauma. Reference for reviewer only: Rule B-05, ESI
+    v5 printed p.12 as quoted in criteria.yaml; ESI v4 printed pp.12,20 discusses stroke signs. Confirm handling of resolved
+    speech symptoms.'
+  truth:
+    complaint.text: Slurred speech, now resolved
+    complaint.onset: One hour ago, lasted ten minutes
+    patient.age: 66
+    patient.sex: female
+    complaint.stroke_signs: true
+    stroke.speech_change: true
+    complaint.category: neuro_symptoms
+  say:
+    danger_signs.responsive: Yes, the patient is awake and can respond.
+    danger_signs.chest_pain_now: 'No'
+    danger_signs.breathing_difficulty: 'No'
+    danger_signs.heavy_bleeding: 'No'
+    complaint.category: My wife had slurred speech for ten minutes, but it stopped.
+    complaint.text: My wife had slurred speech for ten minutes, but it stopped.
+    complaint.onset: One hour ago, lasted ten minutes
+    patient.age: She is sixty-six.
+    patient.sex: She is female.
+    complaint.fever: 'No'
+    M.medications: Cholesterol medicine
+    A.allergies: No known allergies
+    history.conditions: High cholesterol
+    L.last_intake: Breakfast
+    stroke.speech_change: Her speech suddenly became slurred for about ten minutes. It sounds normal now.
+    complaint.stroke_signs: Yes, she had sudden slurred speech, even though it stopped.
+  author: 'newton-dai (issue #29, 19 Oct 2026; file personas-newtondai-6-as-posted-20261019.yaml, unchanged apart from the
+    id prefix)'
+- id: ND-P28-postpartum-bleeding
+  source: 'Independent fictional caregiver scenario (Issue #29); clinical rule references are candidate evidence, not a patient
+    record.'
+  expect_floor: at least ESI-2
+  expect_rules:
+  - B-13.postpartum-hemorrhage
+  voice: 'You are the partner of a 29-year-old who gave birth eight days ago and is now bleeding heavily and feeling dizzy.
+    You can describe how quickly pads are soaking but cannot estimate blood volume. She is awake and breathing. Reference
+    for reviewer only: Rule B-13, ESI v5 printed pp.12,14 as quoted in criteria.yaml; ESI v4 printed p.21 supports postpartum
+    heavy bleeding. Clarify amount/pad saturation before approval.'
+  truth:
+    complaint.text: Heavy bleeding after recent birth
+    complaint.onset: Started an hour ago
+    patient.age: 29
+    patient.sex: female
+    history.postpartum: true
+    complaint.heavy_vaginal_bleeding: true
+    complaint.postpartum_hemorrhage: true
+    complaint.category: vaginal_bleeding
+  say:
+    danger_signs.responsive: Yes, the patient is awake and can respond.
+    danger_signs.chest_pain_now: No chest pain
+    danger_signs.breathing_difficulty: Breathing normally
+    danger_signs.heavy_bleeding: Yes, heavy vaginal bleeding
+    complaint.category: My partner gave birth eight days ago and is bleeding heavily.
+    complaint.text: My partner gave birth eight days ago and is bleeding heavily.
+    complaint.onset: Started an hour ago
+    patient.age: She is twenty-nine.
+    patient.sex: She is female.
+    complaint.fever: 'No'
+    M.medications: Iron tablets
+    A.allergies: Unknown
+    history.conditions: Recent childbirth
+    L.last_intake: Lunch
+    history.postpartum: She gave birth eight days ago.
+    complaint.heavy_vaginal_bleeding: She is bleeding heavily after childbirth. I can check how fast the pads are soaking,
+      but I cannot estimate the volume.
+    complaint.postpartum_hemorrhage: She is bleeding heavily after childbirth. I can check how fast the pads are soaking,
+      but I cannot estimate the volume.
+  author: 'newton-dai (issue #29, 19 Oct 2026; file personas-newtondai-6-as-posted-20261019.yaml, unchanged apart from the
+    id prefix)'
+- id: ND-P29-pregnant-headache
+  source: 'Independent fictional caregiver scenario (Issue #29); clinical rule references are candidate evidence, not a patient
+    record.'
+  expect_floor: at least ESI-2
+  expect_rules:
+  - B-38.pregnant-chest-pain-breathlessness-abdo-pain-or-headache
+  voice: 'You are a 33-year-old patient at 30 weeks of pregnancy with a severe headache and blurred vision since the morning.
+    You are worried but answer clearly. You have not measured your blood pressure. Reference for reviewer only: Rule B-38,
+    ESI v5 printed p.14 as quoted in criteria.yaml. Version 5 passage not independently page-checked; pregnancy and severe
+    headache require clinical review.'
+  truth:
+    complaint.text: Severe headache and blurred vision
+    complaint.onset: This morning
+    patient.age: 33
+    patient.sex: female
+    history.pregnant: true
+    complaint.category: headache
+  say:
+    danger_signs.responsive: Yes, the patient is awake and can respond.
+    danger_signs.chest_pain_now: No chest pain
+    danger_signs.breathing_difficulty: No breathing difficulty
+    danger_signs.heavy_bleeding: No bleeding
+    complaint.category: I am thirty weeks pregnant and have had a severe headache and blurred vision since this morning.
+    complaint.text: I am 30 weeks pregnant and have a severe headache with blurred vision.
+    complaint.onset: This morning
+    patient.age: I am thirty-three.
+    patient.sex: I am female.
+    complaint.fever: 'No'
+    M.medications: Prenatal vitamins
+    A.allergies: No known allergies
+    history.conditions: Pregnant 30 weeks
+    L.last_intake: Breakfast
+    history.pregnant: Yes, I am thirty weeks pregnant.
+  author: 'newton-dai (issue #29, 19 Oct 2026; file personas-newtondai-6-as-posted-20261019.yaml, unchanged apart from the
+    id prefix)'
+- id: CH-I29-03-possible-ectopic
+  expect_floor: at least ESI-2
+  expect_rules:
+  - B-06.possible-ectopic-stable
+  voice: 'You are a 29-year-old woman with sharp pain low on the right side of your abdomen. Your period is about six weeks
+    late and a home pregnancy test was positive. You have had a little spotting but no heavy bleeding, fainting, or trouble
+    breathing. You are awake and speaking normally. A clinic told you an ectopic pregnancy needs to be ruled out. You take
+    no regular medicine, have no known allergies, and have no fever. You speak English as a second language and use short
+    phrases. If asked, say the pain began this afternoon and is getting worse.
+
+    '
+  truth:
+    complaint.category: abdominal_pain
+    complaint.possible_ectopic_pregnancy: true
+    history.pregnant: true
+    complaint.vaginal_bleeding: true
+    complaint.heavy_vaginal_bleeding: false
+    danger_signs.responsive: true
+    complaint.fever: false
+    complaint.text: I have sharp pain low on the right side of my abdomen and some spotting.
+    complaint.onset: If asked, say the pain began this afternoon and is getting worse.
+    patient.age: 29
+    patient.sex: female
+  source: Invented scenario; ESI v5, printed page 12
+  say:
+    complaint.category: I have sharp pain low on the right side of my abdomen and some spotting.
+    complaint.possible_ectopic_pregnancy: Yes, the patient has possible pregnancy with pain or bleeding.
+    history.pregnant: Yes, the patient has pregnancy.
+    complaint.vaginal_bleeding: Yes, the patient has vaginal bleeding.
+    complaint.heavy_vaginal_bleeding: No, the patient does not have heavy vaginal bleeding.
+    danger_signs.responsive: Yes, the patient is awake and responding normally.
+    complaint.fever: No, the patient does not have fever.
+    complaint.text: I have sharp pain low on the right side of my abdomen and some spotting.
+    complaint.onset: It began this afternoon and is getting worse.
+    patient.age: The patient is 29 years old.
+    patient.sex: The patient is female.
+    danger_signs.chest_pain_now: No, the patient is not having chest pain right now.
+    danger_signs.breathing_difficulty: No, the patient is not having trouble breathing right now.
+    danger_signs.heavy_bleeding: No, the patient is not bleeding heavily right now.
+    infection.rash: I do not know whether the patient has a rash.
+    infection.travel_14d: I do not know whether the patient travelled in the last 14 days.
+    infection.contacts: I do not know of any sick contacts.
+    ams.changed_from_baseline: I do not know whether the patient is acting differently from usual.
+    complaint.pain_rating: The pain score was not provided.
+    M.medications: I take no regular medicines.
+    A.allergies: The patient has no known allergies.
+    history.conditions: I do not know the patient’s medical conditions.
+    history.immunocompromised: I do not know whether the patient has a weakened immune system.
+    identity.name: I have not given the patient’s name.
+    identity.dob: I do not know the exact date of birth.
+    L.last_intake: I do not know when the patient last ate or drank.
+  author: 'chernhaw75 (issue #29, 18 Oct 2026; file personas-chernhaw-35-as-posted-20261018.yaml, unchanged apart from the
+    id prefix)'
+- id: CH-I29-04-fever-during-chemotherapy
+  expect_floor: at least ESI-2
+  expect_rules:
+  - B-07.immunocompromised-fever
+  voice: 'You are the adult son of a 63-year-old woman receiving chemotherapy for breast cancer. Her last treatment was eight
+    days ago. She has been shivering since this afternoon and your home thermometer read 38.5 degrees Celsius. She is tired
+    but awake and answers you. She takes chemotherapy tablets and a stomach-protection medicine; you do not know their names.
+    No known allergies, no blood thinner, and no recent travel. You are worried and speak quickly. If asked about her history,
+    say she is being treated for cancer.
+
+    '
+  truth:
+    complaint.category: fever
+    complaint.fever: true
+    history.immunocompromised: true
+    danger_signs.responsive: true
+    M.anticoagulant: absent
+    complaint.text: She has been shivering and feels hot while receiving chemotherapy.
+    complaint.onset: Her last treatment was eight days ago.
+    patient.age: 63
+    patient.sex: female
+  source: Invented scenario; ESI v5, printed page 12
+  say:
+    complaint.category: She has been shivering and feels hot while receiving chemotherapy.
+    complaint.fever: Yes, the patient has fever.
+    history.immunocompromised: Yes, the patient has a weakened immune system.
+    danger_signs.responsive: Yes, the patient is awake and responding normally.
+    M.anticoagulant: No, the patient doesn't take a blood thinner.
+    complaint.text: She has been shivering and feels hot while receiving chemotherapy.
+    complaint.onset: She has been shivering since this afternoon and your home thermometer read 38.5 degrees Celsius.
+    patient.age: The patient is 63 years old.
+    patient.sex: The patient is female.
+    danger_signs.chest_pain_now: No, the patient is not having chest pain right now.
+    danger_signs.breathing_difficulty: No, the patient is not having trouble breathing right now.
+    danger_signs.heavy_bleeding: No, the patient is not bleeding heavily right now.
+    infection.rash: I do not know whether the patient has a rash.
+    infection.travel_14d: I do not know whether the patient travelled in the last 14 days.
+    infection.contacts: I do not know of any sick contacts.
+    ams.changed_from_baseline: I do not know whether the patient is acting differently from usual.
+    complaint.pain_rating: The pain score was not provided.
+    M.medications: She takes chemotherapy tablets and a stomach-protection medicine.
+    A.allergies: The patient has no known allergies.
+    history.conditions: I do not know the patient’s medical conditions.
+    identity.name: I have not given the patient’s name.
+    identity.dob: I do not know the exact date of birth.
+    L.last_intake: I do not know when the patient last ate or drank.
+  author: 'chernhaw75 (issue #29, 18 Oct 2026; file personas-chernhaw-35-as-posted-20261018.yaml, unchanged apart from the
+    id prefix)'
+- id: CH-I29-08-sexual-assault
+  expect_floor: at least ESI-2
+  expect_rules:
+  - B-11.sexual-assault
+  voice: 'You are a 20-year-old patient who came with a trusted friend after a sexual assault earlier tonight. You do not
+    want to describe what happened in detail at the front desk. You are awake, speaking, and physically stable; you have no
+    heavy bleeding, severe pain, or trouble breathing. You take no regular medicines, have no known allergies, and are not
+    taking a blood thinner. You are frightened and ask to speak somewhere private. If asked whether you are here after an
+    assault, quietly say yes.
+
+    '
+  truth:
+    complaint.sexual_assault: true
+    danger_signs.responsive: true
+    complaint.heavy_vaginal_bleeding: false
+    M.anticoagulant: absent
+    complaint.category: other
+    complaint.text: I came in with a trusted friend after a sexual assault.
+    complaint.onset: You are a 20-year-old patient who came with a trusted friend after a sexual assault earlier tonight.
+    patient.age: 20
+    patient.sex: other
+  source: Invented scenario; ESI v5, printed page 12
+  say:
+    complaint.sexual_assault: Yes, the patient has a sexual assault.
+    danger_signs.responsive: Yes, the patient is awake and responding normally.
+    complaint.heavy_vaginal_bleeding: No, the patient does not have heavy vaginal bleeding.
+    M.anticoagulant: No, the patient doesn't take a blood thinner.
+    complaint.category: I came in with a trusted friend after a sexual assault.
+    complaint.text: I came in with a trusted friend after a sexual assault.
+    complaint.onset: It began in detail at the front desk.
+    patient.age: The patient is 20 years old.
+    patient.sex: The patient’s sex has not been specified as male or female.
+    danger_signs.chest_pain_now: No, the patient is not having chest pain right now.
+    danger_signs.breathing_difficulty: No, the patient is not having trouble breathing right now.
+    danger_signs.heavy_bleeding: No, the patient is not bleeding heavily right now.
+    complaint.fever: I do not know whether the patient has a fever.
+    infection.rash: I do not know whether the patient has a rash.
+    infection.travel_14d: I do not know whether the patient travelled in the last 14 days.
+    infection.contacts: I do not know of any sick contacts.
+    ams.changed_from_baseline: I do not know whether the patient is acting differently from usual.
+    complaint.pain_rating: The pain score was not provided.
+    M.medications: I take no regular medicines.
+    A.allergies: The patient has no known allergies.
+    history.conditions: I do not know the patient’s medical conditions.
+    history.immunocompromised: I do not know whether the patient has a weakened immune system.
+    identity.name: I have not given the patient’s name.
+    identity.dob: I do not know the exact date of birth.
+    L.last_intake: I do not know when the patient last ate or drank.
+  author: 'chernhaw75 (issue #29, 18 Oct 2026; file personas-chernhaw-35-as-posted-20261018.yaml, unchanged apart from the
+    id prefix)'
+- id: CH-I29-09-child-increasing-work-of-breathing
+  expect_floor: at least ESI-2
+  expect_rules:
+  - B-12.increasing-respiratory-effort
+  voice: 'You are the father of a 6-year-old boy whose breathing has become harder over the last hour. His ribs pull in when
+    he breathes and he has to pause while speaking. He is awake and responds to you. He has asthma and uses a blue inhaler,
+    but it has not helped much today. No fever, no known allergies, and no blood thinner. You answer in a rush and may first
+    say only that he has a cough; describe the increased effort if asked how his breathing has changed.
+
+    '
+  truth:
+    complaint.increasing_respiratory_effort: true
+    complaint.category: breathing
+    patient.age: 6
+    danger_signs.responsive: true
+    history.conditions:
+    - asthma
+    complaint.fever: false
+    complaint.text: My son is having a harder time breathing and has to pause while speaking.
+    complaint.onset: He has asthma and uses a blue inhaler, but it has not helped much today.
+    patient.sex: male
+  source: Invented scenario; ESI v5, printed page 12
+  say:
+    complaint.increasing_respiratory_effort: Yes, the patient has increasing difficulty breathing.
+    complaint.category: My son is having a harder time breathing and has to pause while speaking.
+    patient.age: The patient is 6 years old.
+    danger_signs.responsive: Yes, the patient is awake and responding normally.
+    history.conditions: The patient has asthma.
+    complaint.fever: No, the patient does not have fever.
+    complaint.text: My son is having a harder time breathing and has to pause while speaking.
+    complaint.onset: You are the father of a 6-year-old boy whose breathing has become harder over the last hour.
+    patient.sex: The patient is male.
+    danger_signs.chest_pain_now: No, the patient is not having chest pain right now.
+    danger_signs.breathing_difficulty: Yes, the patient is having trouble breathing right now.
+    danger_signs.heavy_bleeding: No, the patient is not bleeding heavily right now.
+    infection.rash: I do not know whether the patient has a rash.
+    infection.travel_14d: I do not know whether the patient travelled in the last 14 days.
+    infection.contacts: I do not know of any sick contacts.
+    ams.changed_from_baseline: I do not know whether the patient is acting differently from usual.
+    complaint.pain_rating: The pain score was not provided.
+    M.medications: He uses a blue asthma inhaler.
+    A.allergies: The patient has no known allergies.
+    history.immunocompromised: I do not know whether the patient has a weakened immune system.
+    identity.name: I have not given the patient’s name.
+    identity.dob: I do not know the exact date of birth.
+    L.last_intake: I do not know when the patient last ate or drank.
+  author: 'chernhaw75 (issue #29, 18 Oct 2026; file personas-chernhaw-35-as-posted-20261018.yaml, unchanged apart from the
+    id prefix)'

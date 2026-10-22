@@ -1,0 +1,52 @@
+arm B, form handbook, persona CH-I29-03-possible-ectopic, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  What is the main reason the patient is seeking care today?
+A1  I have sharp pain low on the right side of my abdomen and some spotting.
+
+Q2  Are you currently pregnant or have you recently given birth?
+A2  Yes, the patient has pregnancy.
+
+Q3  Are you experiencing any dizziness, fainting, or feeling very weak?
+A3  I don't know.
+
+Q4  Is the patient's blood pressure low (less than 90 systolic) or is she feeling very faint or lightheaded?
+A4  I don't know.
+
+Q5  Is the patient's pain severe or is she in significant distress?
+A5  The pain score was not provided.
+
+Q6  Is the patient's pain severe (a rating of 7/10 or higher) or is she in significant distress?
+A6  The pain score was not provided.
+
+Q7  Is the patient's pain severe (a rating of 7/10 or higher) or is she in significant distress?
+A7  The pain score was not provided.
+
+Q8  On a scale of 0 to 10, how would you rate the patient's pain?
+A8  I don't know.
+
+Q9  Is the patient's blood pressure currently known, and if so, what is the reading?
+A9  I don't know.
+
+Q10  Is the patient's pain constant, and is it at its maximum intensity since it started?
+A10  I don't know.
+
+Q11  Is the patient's pain constant, and is it at its maximum intensity since it started?
+A11  I don't know.
+
+Q12  Is the patient's pain constant, and is it at its maximum intensity since it started?
+A12  I don't know.
+
+Q13  Is the patient's pain constant, and is it at its maximum intensity since it started?
+A13  I don't know.
+
+Q14  Is the patient's blood pressure currently known, and if so, what is the reading?
+A14  I don't know.
+
+Q15  Is the patient's pain constant, and is it at its maximum intensity since it started?
+A15  I don't know.
+
+Q16  Can you describe the patient's level of consciousness? Is she awake, alert, and able to follow commands?
+A16  Yes, the patient is awake and responding normally.
+
+DECISION {"decision": "unparsed", "reason": "turn limit reached without a decision"}
+OUTCOME no decision in 16 questions | expected at least ESI-2 | pass False | label missing fact | max prompt tokens 30135

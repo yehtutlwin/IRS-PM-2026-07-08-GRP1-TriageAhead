@@ -1,0 +1,52 @@
+arm B, form rules, persona P6-stroke-resolved, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  Is the patient awake and responding normally?
+A1  Yes, she's awake and talking clearly now.
+
+Q2  Is the patient experiencing any chest pain right now?
+A2  No chest pain.
+
+Q3  Is the patient having any trouble breathing right now?
+A3  I don't know.
+
+Q4  Is the patient's breathing difficult or fast right now?
+A4  I don't know.
+
+Q5  Is the patient bleeding heavily right now?
+A5  No.
+
+Q6  Is the patient currently having any trouble breathing?
+A6  I don't know.
+
+Q7  Is the patient currently having any trouble breathing?
+A7  I don't know.
+
+Q8  Is the patient currently having any trouble breathing?
+A8  I don't know.
+
+Q9  Is the patient currently having any trouble breathing?
+A9  I don't know.
+
+Q10  Can you describe why you aren't sure if she is having trouble breathing? For example, is she breathing faster than usual or making any unusual noises?
+A10  I don't know.
+
+Q11  Is the patient currently in any severe pain or distress?
+A11  She has no pain, 0 out of 10.
+
+Q12  Is the patient's breathing fast, or is she making any unusual noises like wheezing or gasping?
+A12  I don't know.
+
+Q13  Is the patient currently in any distress or is she acting in a way that makes you worried about her safety?
+A13  No, she's awake and talking clearly now.
+
+Q14  Is the patient currently experiencing any other symptoms, such as a cough, fever, or a recent injury?
+A14  No fever, no rash, and no fall or injury.
+
+Q15  What is the main reason the patient is coming to the emergency department today?
+A15  This morning her speech suddenly went slurred and her left arm went weak, and she couldn't lift her teacup. It lasted about 45 minutes and then passed completely.
+
+Q16  Was the patient's speech slurred or was her arm weak during the episode this morning?
+A16  Yes, her speech was slurred and her left arm went weak during the episode.
+
+DECISION {"decision": "unparsed", "reason": "turn limit reached without a decision"}
+OUTCOME unparsed | expected at least ESI-2 | pass False | label missing fact | max prompt tokens 44079

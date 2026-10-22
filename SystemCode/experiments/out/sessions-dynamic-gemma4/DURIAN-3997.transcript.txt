@@ -1,0 +1,17 @@
+session DURIAN-3997   started 2026-09-26 03:37   (generated from messages)
+
+03:37:32  BOT  I'm here to help get your information to the medical team. Is the patient awake and responding normally, and are they currently experiencing any severe chest pain, trouble breathing, or heavy bleeding?   [slot dyn:red_flags.responsive+red_flags.chest_pain_now+red_flags.breathing_difficulty+red_flags.heavy_bleeding]
+03:37:33  THEM I'm awake and responding normally. No, I'm not having any chest pain, trouble breathing, or heavy bleeding.   [slot dyn:red_flags.responsive+red_flags.chest_pain_now+red_flags.breathing_difficulty+red_flags.heavy_bleeding]
+03:37:37  BOT  I'm glad to hear you're feeling alert. Just to confirm for the medical team, are you currently experiencing any chest pain, trouble breathing, or heavy bleeding?   [slot dyn:red_flags.chest_pain_now+red_flags.breathing_difficulty+red_flags.heavy_bleeding]
+03:37:38  THEM No, I'm not having any trouble breathing or any other issues like that.   [slot dyn:red_flags.chest_pain_now+red_flags.breathing_difficulty+red_flags.heavy_bleeding]
+03:37:43  BOT  I'm glad to hear that. To help the medical team prepare, could you tell me what happened, when it started, and how severe the pain is on a scale of 0 to 10?   [slot dyn:complaint.category+complaint.text+complaint.onset+complaint.pain_rating]
+03:37:44  THEM I've had a sore throat for two days. It hurts to swallow, but it's only about a 3/10.   [slot dyn:complaint.category+complaint.text+complaint.onset+complaint.pain_rating]
+03:37:50  BOT  I've noted the details about your sore throat. To help the team prepare, do you take any regular medications, and do you have any allergies or underlying medical conditions like diabetes or heart issues?   [slot dyn:M.medications+A.allergies+history.conditions+history.immunocompromised]
+03:37:51  THEM I don't take any medications and I have no allergies or medical conditions.   [slot dyn:M.medications+A.allergies+history.conditions+history.immunocompromised]
+03:37:55  BOT  Thank you for sharing that. Are you currently pregnant or have you given birth recently?   [slot dyn:history.pregnant_or_postpartum]
+03:37:57  THEM No, I'm not.   [slot dyn:history.pregnant_or_postpartum]
+03:38:01  BOT  Thank you for confirming that. Have you had a fever, any rashes, traveled outside the country in the last two weeks, or been in contact with anyone who is sick?   [slot dyn:infection.fever+infection.rash+infection.travel_14d+infection.contacts]
+03:38:02  THEM No rashes, no recent travel, and I haven't been in contact with anyone sick. I had a slight temperature yesterday but none today.   [slot dyn:infection.fever+infection.rash+infection.travel_14d+infection.contacts]
+03:38:07  BOT  I'm sorry to hear about the fever. To help the team prepare, could you tell me your name, date of birth, and when you last had something to eat or drink?   [slot dyn:L.last_intake+identity.name+identity.dob]
+03:38:08  THEM My name is not provided, but my DOB is 21 Nov 2000. I had some soup about an hour ago.   [slot dyn:L.last_intake+identity.name+identity.dob]
+03:38:10  BOT  Thank you - that's everything for now. Show the code DURIAN-3997 at the counter when you arrive. (ack)

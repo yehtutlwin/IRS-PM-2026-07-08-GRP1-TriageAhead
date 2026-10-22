@@ -1,0 +1,550 @@
+{
+ "sid": "LOTUS-3138",
+ "facts": {
+  "danger_signs.responsive": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-18 17:26"
+  },
+  "danger_signs.chest_pain_now": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-18 17:26"
+  },
+  "complaint.text": {
+   "value": "Pressure in the centre of my chest spreading to my left arm, and I feel sweaty.",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-18 17:26"
+  },
+  "danger_signs.breathing_difficulty": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-18 17:26"
+  },
+  "danger_signs.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-18 17:26"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "chest_pain",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 3,
+      "ts": "2026-10-18 17:26"
+     },
+     "onset": {
+      "value": "40 minutes ago",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 3,
+      "ts": "2026-10-18 17:26"
+     },
+     "text": {
+      "value": "Pressure in the centre of my chest spreading to my left arm, and I feel sweaty.",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 3,
+      "ts": "2026-10-18 17:26"
+     },
+     "onset_abs": {
+      "value": "~2026-10-18 16:46",
+      "status": "reported",
+      "who": "derived",
+      "turn": 3,
+      "ts": "2026-10-18 17:26"
+     },
+     "pain_rating": {
+      "value": 6,
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 10,
+      "ts": "2026-10-18 17:27"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3
+  },
+  "complaint.category": {
+   "value": [
+    "chest_pain"
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 10,
+   "ts": "2026-10-18 17:27"
+  },
+  "complaint.onset": {
+   "value": "40 minutes ago",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-18 17:26"
+  },
+  "complaint.onset_abs": {
+   "value": "~2026-10-18 16:46 (from '40 minutes ago' said 17:26)",
+   "status": "reported",
+   "who": "derived",
+   "turn": 3,
+   "ts": "2026-10-18 17:26"
+  },
+  "E.mechanism": {
+   "value": "none",
+   "status": "reported",
+   "who": "derived",
+   "turn": 3,
+   "ts": "2026-10-18 17:26"
+  },
+  "patient.age": {
+   "value": 51,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 4,
+   "ts": "2026-10-18 17:26"
+  },
+  "patient.sex": {
+   "value": "female",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 4,
+   "ts": "2026-10-18 17:26"
+  },
+  "patient.age_group": {
+   "value": "adult",
+   "status": "reported",
+   "who": "derived",
+   "turn": 4,
+   "ts": "2026-10-18 17:26"
+  },
+  "history.pregnant": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 5,
+   "ts": "2026-10-18 17:27"
+  },
+  "history.postpartum": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 6,
+   "ts": "2026-10-18 17:27"
+  },
+  "complaint.fever": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 7,
+   "ts": "2026-10-18 17:27"
+  },
+  "infection.rash": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 7,
+   "ts": "2026-10-18 17:27"
+  },
+  "infection.travel_14d": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 8,
+   "ts": "2026-10-18 17:27"
+  },
+  "infection.contacts": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 8,
+   "ts": "2026-10-18 17:27"
+  },
+  "ams.changed_from_baseline": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 9,
+   "ts": "2026-10-18 17:27"
+  },
+  "complaint.pain_rating": {
+   "value": 6,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 10,
+   "ts": "2026-10-18 17:27"
+  },
+  "complaint.pain_latest": {
+   "value": 6,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 10,
+   "ts": "2026-10-18 17:27"
+  },
+  "complaint.acs_suspicion": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 11,
+   "ts": "2026-10-18 17:27"
+  },
+  "complaint.shortness_of_breath": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 11,
+   "ts": "2026-10-18 17:27"
+  },
+  "M.medications": {
+   "value": [],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 12,
+   "ts": "2026-10-18 17:27"
+  },
+  "A.allergies": {
+   "value": [],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 13,
+   "ts": "2026-10-18 17:28"
+  },
+  "history.conditions": {
+   "value": [],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 14,
+   "ts": "2026-10-18 17:28"
+  },
+  "identity.name": {
+   "value": "Lee Mei Ling",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 14,
+   "ts": "2026-10-18 17:28"
+  },
+  "identity.dob": {
+   "value": "14 May 1975",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 14,
+   "ts": "2026-10-18 17:28"
+  },
+  "history.recent_covid_infection": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 15,
+   "ts": "2026-10-18 17:28"
+  },
+  "L.last_intake": {
+   "value": "Toast at 8am",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 16,
+   "ts": "2026-10-18 17:28"
+  },
+  "L.last_intake_abs": {
+   "value": "~2026-10-18 08:00 (from 'Toast at 8am' said 17:28)",
+   "status": "reported",
+   "who": "derived",
+   "turn": 16,
+   "ts": "2026-10-18 17:28"
+  }
+ },
+ "attempts": {
+  "danger_signs.responsive": 1,
+  "danger_signs.chest_pain_now": 1,
+  "danger_signs.breathing_difficulty": 1,
+  "danger_signs.heavy_bleeding": 1,
+  "complaint.category": 1,
+  "complaint.onset": 1,
+  "patient.age": 1,
+  "patient.sex": 1,
+  "history.pregnant": 1,
+  "history.postpartum": 2,
+  "complaint.fever": 1,
+  "infection.rash": 1,
+  "infection.travel_14d": 1,
+  "infection.contacts": 1,
+  "ams.changed_from_baseline": 1,
+  "complaint.pain_rating": 2,
+  "complaint.acs_suspicion": 1,
+  "complaint.shortness_of_breath": 1,
+  "M.medications": 1,
+  "A.allergies": 2,
+  "history.conditions": 1,
+  "identity.name": 1,
+  "identity.dob": 1,
+  "history.recent_covid_infection": 1,
+  "L.last_intake": 1
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "Is the patient awake and responding to you normally? Also, are they currently experiencing any chest pain, trouble breathing, or heavy bleeding?",
+   "ts": "2026-10-18 17:26:25",
+   "kind": "question",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, I'm awake, I'm the patient. Yes, I have pressure in the middle of my chest right now.",
+   "ts": "2026-10-18 17:26:25",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "bot",
+   "text": "I understand you're feeling chest pressure. Are you having any trouble breathing or are you bleeding heavily right now?",
+   "ts": "2026-10-18 17:26:35",
+   "kind": "question",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding"
+  },
+  {
+   "role": "caregiver",
+   "text": "A bit breathless when I walk, but I can talk. No.",
+   "ts": "2026-10-18 17:26:35",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding"
+  },
+  {
+   "role": "bot",
+   "text": "I've noted the chest pressure and some shortness of breath. Could you tell me what the main problem is and when it first started?",
+   "ts": "2026-10-18 17:26:43",
+   "kind": "question",
+   "slot": "dyn:complaint.category+complaint.onset"
+  },
+  {
+   "role": "caregiver",
+   "text": "Pressure in the centre of my chest spreading to my left arm, and I feel sweaty. About 40 minutes ago.",
+   "ts": "2026-10-18 17:26:43",
+   "kind": "answer",
+   "slot": "dyn:complaint.category+complaint.onset"
+  },
+  {
+   "role": "bot",
+   "text": "I have noted the chest pressure and the timing. Could you tell me the patient's age and if they are male or female?",
+   "ts": "2026-10-18 17:26:51",
+   "kind": "question",
+   "slot": "dyn:patient.age+patient.sex"
+  },
+  {
+   "role": "caregiver",
+   "text": "I'm 51. Female.",
+   "ts": "2026-10-18 17:26:51",
+   "kind": "answer",
+   "slot": "dyn:patient.age+patient.sex"
+  },
+  {
+   "role": "bot",
+   "text": "I have noted her age and gender. Is she currently pregnant or has she given birth in the last few weeks?",
+   "ts": "2026-10-18 17:26:59",
+   "kind": "question",
+   "slot": "dyn:history.pregnant+history.postpartum"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I'm not pregnant.",
+   "ts": "2026-10-18 17:26:59",
+   "kind": "answer",
+   "slot": "dyn:history.pregnant+history.postpartum"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. To clarify, has she given birth in the last few weeks?",
+   "ts": "2026-10-18 17:27:05",
+   "kind": "question",
+   "slot": "dyn:history.postpartum"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 17:27:05",
+   "kind": "answer",
+   "slot": "dyn:history.postpartum"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Does she have a fever or any new rashes on her skin?",
+   "ts": "2026-10-18 17:27:11",
+   "kind": "question",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "No fever. No rash.",
+   "ts": "2026-10-18 17:27:11",
+   "kind": "answer",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "bot",
+   "text": "I see. Has she traveled outside the country or been in contact with anyone who is sick in the last two weeks?",
+   "ts": "2026-10-18 17:27:18",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "caregiver",
+   "text": "No.",
+   "ts": "2026-10-18 17:27:19",
+   "kind": "answer",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "bot",
+   "text": "Is she more confused or harder to wake up than usual? Also, on a scale of 0 to 10, how bad is her pain right now?",
+   "ts": "2026-10-18 17:27:26",
+   "kind": "question",
+   "slot": "dyn:ams.changed_from_baseline+complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I'm clear-headed. 6 out of 10.",
+   "ts": "2026-10-18 17:27:26",
+   "kind": "answer",
+   "slot": "dyn:ams.changed_from_baseline+complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. To help the team, how severe is her pain right now on a scale of 0 to 10?",
+   "ts": "2026-10-18 17:27:33",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "6 out of 10.",
+   "ts": "2026-10-18 17:27:33",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "Does she feel any pressure or squeezing in her chest, and is she having any trouble breathing?",
+   "ts": "2026-10-18 17:27:40",
+   "kind": "question",
+   "slot": "dyn:complaint.acs_suspicion+complaint.shortness_of_breath"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, it feels like pressure and it goes into my left arm, and I'm sweaty. A bit breathless when walking.",
+   "ts": "2026-10-18 17:27:40",
+   "kind": "answer",
+   "slot": "dyn:complaint.acs_suspicion+complaint.shortness_of_breath"
+  },
+  {
+   "role": "system",
+   "text": "floor: at least ESI-2  rules: ['B-04.chest-pain-acs-suspect']",
+   "ts": "2026-10-18 17:27:45",
+   "kind": "floor"
+  },
+  {
+   "role": "bot",
+   "text": "I've noted the pain and breathing issues. Does she take any regular medications or have any known allergies, especially to medicine?",
+   "ts": "2026-10-18 17:27:48",
+   "kind": "question",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't take any regular medicines. No allergies.",
+   "ts": "2026-10-18 17:27:48",
+   "kind": "answer",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "bot",
+   "text": "I've noted that she has no allergies. Just to be certain, is she allergic to any specific medications?",
+   "ts": "2026-10-18 17:27:54",
+   "kind": "question",
+   "slot": "dyn:A.allergies"
+  },
+  {
+   "role": "caregiver",
+   "text": "No allergies.",
+   "ts": "2026-10-18 17:27:54",
+   "kind": "answer",
+   "slot": "dyn:A.allergies"
+  },
+  {
+   "role": "bot",
+   "text": "I've noted that she has no allergies. Could you please tell me her full name, date of birth, and if she has any ongoing medical conditions?",
+   "ts": "2026-10-18 17:28:09",
+   "kind": "question",
+   "slot": "dyn:history.conditions+identity.name+identity.dob"
+  },
+  {
+   "role": "caregiver",
+   "text": "No known conditions. Lee Mei Ling. 14 May 1975.",
+   "ts": "2026-10-18 17:28:09",
+   "kind": "answer",
+   "slot": "dyn:history.conditions+identity.name+identity.dob"
+  },
+  {
+   "role": "bot",
+   "text": "That's enough for the hospital team to prepare. Show the code LOTUS-3138 at the counter when you arrive. I'll ask a few more things while you're on the way; tell me straight away if anything changes.",
+   "ts": "2026-10-18 17:28:14",
+   "kind": "ack"
+  },
+  {
+   "role": "bot",
+   "text": "Has she had COVID-19 recently?",
+   "ts": "2026-10-18 17:28:17",
+   "kind": "question",
+   "slot": "dyn:history.recent_covid_infection"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 17:28:17",
+   "kind": "answer",
+   "slot": "dyn:history.recent_covid_infection"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. When was the last time she had anything to eat or drink?",
+   "ts": "2026-10-18 17:28:23",
+   "kind": "question",
+   "slot": "dyn:L.last_intake"
+  },
+  {
+   "role": "caregiver",
+   "text": "Toast at 8am.",
+   "ts": "2026-10-18 17:28:23",
+   "kind": "answer",
+   "slot": "dyn:L.last_intake"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you - that's everything. Show the code LOTUS-3138 at the counter when you arrive.",
+   "ts": "2026-10-18 17:28:35",
+   "kind": "ack"
+  }
+ ],
+ "stage": "rest",
+ "floor": "at least ESI-2",
+ "phase": "enroute",
+ "created": "2026-10-18 17:26",
+ "pending_slot": "dyn:L.last_intake",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {},
+ "qr_ready": true,
+ "qr_turn": 14,
+ "said_done": true
+}

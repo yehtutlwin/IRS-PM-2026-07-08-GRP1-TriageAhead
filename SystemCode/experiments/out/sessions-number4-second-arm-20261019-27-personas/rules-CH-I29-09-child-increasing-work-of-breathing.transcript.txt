@@ -1,0 +1,16 @@
+arm B, form rules, persona CH-I29-09-child-increasing-work-of-breathing, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  Is the patient awake and responding normally?
+A1  Yes, the patient is awake and responding normally.
+
+Q2  Is the patient having chest pain right now?
+A2  No, the patient is not having chest pain right now.
+
+Q3  Is the patient having trouble breathing right now?
+A3  Yes, the patient is having trouble breathing right now.
+
+Q4  Is the patient's breathing so difficult that they need immediate life-saving treatment, such as oxygen or a breathing tube?
+A4  Yes, the patient is having trouble breathing right now and has to pause while speaking.
+
+DECISION {"decision": "ESI-1 indicator", "reason": "The patient is in severe respiratory distress and requires immediate life-saving intervention.", "citation": "ESI v5 p.6 (Fig 2-2 list); p.13 (Respiratory Concerns); Rule A-05.severe-respiratory-distress"}
+OUTCOME level 1 | expected at least ESI-2 | pass True | label None | max prompt tokens 43736

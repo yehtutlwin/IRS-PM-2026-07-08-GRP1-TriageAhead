@@ -1,0 +1,26 @@
+session RAFFLES-7907   started 2026-09-26 03:38   (generated from messages)
+
+03:38:13  BOT  I'm here to help get you started. Is the patient awake and responding normally, and are they experiencing any severe chest pain, trouble breathing, or heavy bleeding right now?   [slot dyn:red_flags.responsive+red_flags.chest_pain_now+red_flags.breathing_difficulty+red_flags.heavy_bleeding]
+03:38:14  THEM Yes, she is awake and talking clearly now. She is not experiencing any chest pain, trouble breathing, or bleeding.   [slot dyn:red_flags.responsive+red_flags.chest_pain_now+red_flags.breathing_difficulty+red_flags.heavy_bleeding]
+03:38:18  BOT  I'm glad to hear she is awake and talking clearly. Just to confirm for the team, is she currently experiencing any chest pain, trouble breathing, or heavy bleeding?   [slot dyn:red_flags.chest_pain_now+red_flags.breathing_difficulty+red_flags.heavy_bleeding]
+03:38:20  THEM No, she is not experiencing any pain, trouble breathing, or bleeding.   [slot dyn:red_flags.chest_pain_now+red_flags.breathing_difficulty+red_flags.heavy_bleeding]
+03:38:24  BOT  I'm glad she's stable. Could you tell me what happened, when it started, and how severe the pain is on a scale of 0 to 10?   [slot dyn:complaint.category+complaint.text+complaint.onset+complaint.pain_rating]
+03:38:26  THEM Her speech became slurred and her left arm went weak and she couldn't lift her cup at 9am. She has no pain right now, so it is a 0/10.   [slot dyn:complaint.category+complaint.text+complaint.onset+complaint.pain_rating]
+03:38:31  SYS  floor: at least ESI-2  rules: ['B-05.stroke-signs'] (floor)
+03:38:33  BOT  I understand. At any point today, did you notice her face drooping on one side or any other facial changes?   [slot dyn:stroke.face_droop]
+03:38:35  THEM No, I didn't notice any facial changes. Her speech was slurred and her left arm was weak.   [slot dyn:stroke.face_droop]
+03:38:39  BOT  I've noted the details about her speech and arm. Does she take any regular medications?   [slot dyn:E.mechanism+M.medications]
+03:38:40  THEM She takes one aspirin daily.   [slot dyn:E.mechanism+M.medications]
+03:38:44  BOT  Thank you for that information. Can you tell me more about what happened when her symptoms started and how severe is her pain on a scale of 0 to 10?   [slot dyn:E.mechanism]
+03:38:45  THEM Her speech became slurred and her left arm went weak so she couldn't lift her teacup. She has no pain right now, so it is a 0/10.   [slot dyn:E.mechanism]
+03:38:50  BOT  I've noted the details about her speech and arm. Could you tell me more about what happened when her symptoms started and how severe is her pain on a scale of 0 to 10?   [slot dyn:E.mechanism]
+03:38:52  THEM Her speech became slurred and her left arm went weak so she couldn't lift her teacup. She has no pain right now, it is a 0/10.   [slot dyn:E.mechanism]
+03:38:57  BOT  I've noted her speech and arm weakness. Does she have any allergies to medications or other medical conditions like heart problems or diabetes?   [slot dyn:A.allergies+history.conditions+history.immunocompromised+history.pregnant_or_postpartum]
+03:38:58  THEM She had a stroke two years ago. She has no known allergies.   [slot dyn:A.allergies+history.conditions+history.immunocompromised+history.pregnant_or_postpartum]
+03:39:02  BOT  I've noted her history of a stroke. Is she currently pregnant or has she had any other conditions like heart problems or diabetes?   [slot dyn:history.immunocompromised+history.pregnant_or_postpartum]
+03:39:04  THEM She is not pregnant and has no other conditions besides her old stroke.   [slot dyn:history.immunocompromised+history.pregnant_or_postpartum]
+03:39:08  BOT  Thank you for sharing those details. Has she had any recent fevers, rashes, or traveled outside the country in the last two weeks?   [slot dyn:history.immunocompromised+infection.fever+infection.rash+infection.travel_14d]
+03:39:09  THEM No, she hasn't had any fevers, rashes, or traveled recently.   [slot dyn:history.immunocompromised+infection.fever+infection.rash+infection.travel_14d]
+03:39:14  BOT  Thank you for that information. Has she been in contact with anyone who has been sick recently, and could you tell me her name, date of birth, and when she last had something to eat or drink?   [slot dyn:infection.contacts+L.last_intake+identity.name+identity.dob]
+03:39:16  THEM Her name is Mrs. Lim, her DOB is 15 Mar 1938, and she last ate breakfast at 8am. I don't know if she's been in contact with anyone sick.   [slot dyn:infection.contacts+L.last_intake+identity.name+identity.dob]
+03:39:19  BOT  Thank you - that's everything for now. Show the code RAFFLES-7907 at the counter when you arrive. (ack)

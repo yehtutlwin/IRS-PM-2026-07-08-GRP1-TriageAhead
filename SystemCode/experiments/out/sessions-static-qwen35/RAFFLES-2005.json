@@ -1,0 +1,411 @@
+{
+ "sid": "RAFFLES-2005",
+ "facts": {
+  "red_flags.responsive": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-09-26 03:45"
+  },
+  "red_flags.chest_pain_now": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-09-26 03:45"
+  },
+  "red_flags.breathing_difficulty": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-09-26 03:45"
+  },
+  "red_flags.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-09-26 03:45"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "fever",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "persona",
+      "turn": 2,
+      "ts": "2026-09-26 03:45"
+     },
+     "text": {
+      "value": "She has had a fever since this afternoon and is shivering",
+      "status": "reported",
+      "who": "persona",
+      "turn": 2,
+      "ts": "2026-09-26 03:45"
+     },
+     "onset": {
+      "value": "this afternoon",
+      "status": "reported",
+      "who": "persona",
+      "turn": 2,
+      "ts": "2026-09-26 03:45"
+     }
+    },
+    {
+     "category": "abdominal_pain",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "persona",
+      "turn": 3,
+      "ts": "2026-09-26 03:45"
+     },
+     "pain_rating": {
+      "value": null,
+      "status": "reported",
+      "who": "persona",
+      "turn": 3,
+      "ts": "2026-09-26 03:45"
+     }
+    },
+    {
+     "category": "chest_pain",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "persona",
+      "turn": 4,
+      "ts": "2026-09-26 03:45"
+     },
+     "pain_rating": {
+      "value": null,
+      "status": "reported",
+      "who": "persona",
+      "turn": 4,
+      "ts": "2026-09-26 03:45"
+     },
+     "text": {
+      "value": "She doesn't seem to be in pain right now.",
+      "status": "reported",
+      "who": "persona",
+      "turn": 4,
+      "ts": "2026-09-26 03:45"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 4
+  },
+  "complaint.category": {
+   "value": [
+    "fever",
+    "abdominal_pain",
+    "chest_pain"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 4,
+   "ts": "2026-09-26 03:45"
+  },
+  "complaint.text": {
+   "value": "She doesn't seem to be in pain right now.",
+   "status": "reported",
+   "who": "persona",
+   "turn": 4,
+   "ts": "2026-09-26 03:45"
+  },
+  "complaint.onset": {
+   "value": "this afternoon",
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-09-26 03:45"
+  },
+  "infection.fever": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-09-26 03:45"
+  },
+  "complaint.fever": {
+   "value": true,
+   "status": "reported",
+   "who": "derived",
+   "turn": 2,
+   "ts": "2026-09-26 03:45"
+  },
+  "E.mechanism": {
+   "value": "none",
+   "status": "reported",
+   "who": "derived",
+   "turn": 2,
+   "ts": "2026-09-26 03:45"
+  },
+  "ams.changed_from_baseline": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-09-26 03:45"
+  },
+  "obs.new_confusion_lethargy_disorientation": {
+   "value": true,
+   "status": "reported",
+   "who": "derived",
+   "turn": 3,
+   "ts": "2026-09-26 03:45"
+  },
+  "obs.subtle_mental_status_change": {
+   "value": true,
+   "status": "reported",
+   "who": "derived",
+   "turn": 3,
+   "ts": "2026-09-26 03:45"
+  },
+  "M.medications": {
+   "value": [
+    "the chemo tablets",
+    "omeprazole"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-09-26 03:45"
+  },
+  "A.allergies": {
+   "value": [],
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-09-26 03:45"
+  },
+  "history.conditions": {
+   "value": [
+    "breast cancer"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 6,
+   "ts": "2026-09-26 03:46"
+  },
+  "history.immunocompromised": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 6,
+   "ts": "2026-09-26 03:46"
+  },
+  "history.pregnant_or_postpartum": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 6,
+   "ts": "2026-09-26 03:46"
+  },
+  "infection.rash": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 7,
+   "ts": "2026-09-26 03:46"
+  },
+  "infection.travel_14d": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 7,
+   "ts": "2026-09-26 03:46"
+  },
+  "infection.contacts": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 7,
+   "ts": "2026-09-26 03:46"
+  },
+  "L.last_intake": {
+   "value": "tea at 4pm",
+   "status": "reported",
+   "who": "persona",
+   "turn": 8,
+   "ts": "2026-09-26 03:46"
+  },
+  "identity.name": {
+   "value": "[Patient Name]",
+   "status": "reported",
+   "who": "persona",
+   "turn": 8,
+   "ts": "2026-09-26 03:46"
+  },
+  "identity.dob": {
+   "value": "June 30, 1975",
+   "status": "reported",
+   "who": "persona",
+   "turn": 8,
+   "ts": "2026-09-26 03:46"
+  },
+  "L.last_intake_abs": {
+   "value": "~2026-09-26 16:00 (from 'tea at 4pm' said 03:46)",
+   "status": "reported",
+   "who": "derived",
+   "turn": 8,
+   "ts": "2026-09-26 03:46"
+  },
+  "patient.age": {
+   "value": 51,
+   "status": "probable",
+   "who": "derived",
+   "turn": 8,
+   "ts": "2026-09-26 03:46"
+  }
+ },
+ "attempts": {
+  "red_flags.screen": 1,
+  "complaint.main": 3,
+  "M.medications": 1,
+  "allergies_and_history": 1,
+  "infection.screen": 1,
+  "wrapup": 1
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "Are you awake and responding normally without any severe chest pain, trouble breathing, or heavy bleeding right now?",
+   "ts": "2026-09-26 03:45:43",
+   "kind": "question",
+   "slot": "red_flags.screen"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, she is awake and talking. She does not have severe chest pain, trouble breathing, or heavy bleeding.",
+   "ts": "2026-09-26 03:45:44",
+   "kind": "answer",
+   "slot": "red_flags.screen"
+  },
+  {
+   "role": "bot",
+   "text": "Can you tell us what happened, when it started, and how bad the pain is on a scale of 0 to 10?",
+   "ts": "2026-09-26 03:45:46",
+   "kind": "question",
+   "slot": "complaint.main"
+  },
+  {
+   "role": "caregiver",
+   "text": "She has had a fever since this afternoon and is shivering, but I don't know about pain. She is awake and talking while we drive her in now.",
+   "ts": "2026-09-26 03:45:47",
+   "kind": "answer",
+   "slot": "complaint.main"
+  },
+  {
+   "role": "bot",
+   "text": "Since you mentioned she doesn't have severe pain yet, could you please tell us how bad her discomfort is on a scale of 0 to 10?",
+   "ts": "2026-09-26 03:45:50",
+   "kind": "question",
+   "slot": "complaint.main"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know exactly what she means by \"discomfort\" since she isn't complaining of severe pain. She seems very tired and shivering from the fever, but I haven't heard her rate that specific feeling on a scale yet.",
+   "ts": "2026-09-26 03:45:51",
+   "kind": "answer",
+   "slot": "complaint.main"
+  },
+  {
+   "role": "system",
+   "text": "floor: at least ESI-2  rules: ['B-01.new-altered-mental-status']",
+   "ts": "2026-09-26 03:45:52",
+   "kind": "floor"
+  },
+  {
+   "role": "bot",
+   "text": "Since she isn't complaining of severe pain yet, could you please tell us how bad her discomfort is on a scale of 0 to 10?",
+   "ts": "2026-09-26 03:45:53",
+   "kind": "question",
+   "slot": "complaint.main"
+  },
+  {
+   "role": "caregiver",
+   "text": "She doesn't seem to be in pain right now. I don't know her specific discomfort level on that scale.",
+   "ts": "2026-09-26 03:45:54",
+   "kind": "answer",
+   "slot": "complaint.main"
+  },
+  {
+   "role": "bot",
+   "text": "Could you please let us know if she takes any regular medications?",
+   "ts": "2026-09-26 03:45:56",
+   "kind": "question",
+   "slot": "M.medications"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, she takes \"the chemo tablets\" and omeprazole. She has no allergies.",
+   "ts": "2026-09-26 03:45:57",
+   "kind": "answer",
+   "slot": "M.medications"
+  },
+  {
+   "role": "bot",
+   "text": "Could you please tell us if she has any other medical conditions, such as heart problems or diabetes, or if she is pregnant/postpartum or has a weakened immune system?",
+   "ts": "2026-09-26 03:45:59",
+   "kind": "question",
+   "slot": "allergies_and_history"
+  },
+  {
+   "role": "caregiver",
+   "text": "She is on chemotherapy for breast cancer, which means her immune system is weakened. I don't know about other conditions like heart problems or diabetes, and she is not pregnant or postpartum.",
+   "ts": "2026-09-26 03:46:00",
+   "kind": "answer",
+   "slot": "allergies_and_history"
+  },
+  {
+   "role": "bot",
+   "text": "Could you please tell us if she has developed a rash recently, traveled overseas in the last two weeks, or had contact with anyone who is infectious?",
+   "ts": "2026-09-26 03:46:02",
+   "kind": "question",
+   "slot": "infection.screen"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, she has not developed a rash, traveled overseas, or had contact with anyone who is infectious.",
+   "ts": "2026-09-26 03:46:03",
+   "kind": "answer",
+   "slot": "infection.screen"
+  },
+  {
+   "role": "bot",
+   "text": "Could you please tell us when she last ate or drank, and provide her name and date of birth so we can share this information with the hospital team?",
+   "ts": "2026-09-26 03:46:05",
+   "kind": "question",
+   "slot": "wrapup"
+  },
+  {
+   "role": "caregiver",
+   "text": "She last drank some tea at 4pm. Her name is [Patient Name] and she was born on June 30, 1975.",
+   "ts": "2026-09-26 03:46:06",
+   "kind": "answer",
+   "slot": "wrapup"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you - that's everything for now. Show the code RAFFLES-2005 at the counter when you arrive.",
+   "ts": "2026-09-26 03:46:08",
+   "kind": "ack"
+  }
+ ],
+ "active_ids": [],
+ "floor": "at least ESI-2",
+ "phase": "enroute",
+ "opened": [],
+ "created": "2026-09-26 03:45",
+ "pending_slot": "wrapup",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {},
+ "said_done": true
+}

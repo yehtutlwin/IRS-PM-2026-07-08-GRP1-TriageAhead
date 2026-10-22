@@ -1,0 +1,45 @@
+{"t": "17:41:59", "kind": "engine", "note": "session EAGLE-6532 started (web)"}
+{"t": "17:42:02", "kind": "question", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "Is the patient awake and responding to you normally? Also, is he or she experiencing any chest pain, trouble breathing, or heavy bleeding right now?", "fields": ["danger_signs.responsive", "danger_signs.chest_pain_now"], "offered": ["danger_signs.responsive", "danger_signs.chest_pain_now", "danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text"]}
+{"t": "17:42:02", "kind": "answer", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "He's awake but slow to answer. No chest pain."}
+{"t": "17:42:07", "kind": "extract", "writes": [["danger_signs.responsive", true], ["danger_signs.chest_pain_now", false]]}
+{"t": "17:42:11", "kind": "question", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category", "text": "I understand. Is he having any trouble breathing or is there any heavy bleeding? Also, what is the main reason you are bringing him in today?", "fields": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category"], "offered": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text", "complaint.onset", "E.mechanism"]}
+{"t": "17:42:11", "kind": "answer", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category", "text": "Breathing normally. No. He has cirrhosis. Over two days his belly has got more swollen, his eyes more yellow, and he's sleepy and confused; today he can't say the date and his hands shake."}
+{"t": "17:42:29", "kind": "extract", "writes": [["danger_signs.breathing_difficulty", false], ["danger_signs.heavy_bleeding", false], ["complaint.category", "other"], ["complaint.text", "Over two days his belly has got more swollen, his eyes more yellow, and he's sleepy and confused; today he can't say the date and his hands shake."], ["history.conditions", ["cirrhosis"]]]}
+{"t": "17:42:32", "kind": "question", "slot": "dyn:complaint.onset", "text": "I see he has cirrhosis. When did these new symptoms start?", "fields": ["complaint.onset"], "offered": ["complaint.onset", "E.mechanism", "patient.age", "patient.sex", "complaint.fever", "infection.rash"]}
+{"t": "17:42:32", "kind": "answer", "slot": "dyn:complaint.onset", "text": "Over the past two days."}
+{"t": "17:42:45", "kind": "extract", "writes": [["complaint.onset", "Over the past two days"]]}
+{"t": "17:42:48", "kind": "question", "slot": "dyn:E.mechanism+patient.age+patient.sex", "text": "I understand. How old is he and what is his gender? Also, can you tell me what caused these symptoms to start?", "fields": ["E.mechanism", "patient.age", "patient.sex"], "offered": ["E.mechanism", "patient.age", "patient.sex", "complaint.fever", "infection.rash", "infection.travel_14d"]}
+{"t": "17:42:48", "kind": "answer", "slot": "dyn:E.mechanism+patient.age+patient.sex", "text": "No injury. 58. Male."}
+{"t": "17:42:53", "kind": "extract", "writes": [["E.mechanism", "none"], ["patient.age", 58], ["patient.sex", "male"]]}
+{"t": "17:42:56", "kind": "question", "slot": "dyn:complaint.fever+infection.rash", "text": "I'm sorry to hear about his condition. Does he have a fever or any new rashes on his skin?", "fields": ["complaint.fever", "infection.rash"], "offered": ["complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts", "complaint.uti_symptoms", "ams.changed_from_baseline"]}
+{"t": "17:42:56", "kind": "answer", "slot": "dyn:complaint.fever+infection.rash", "text": "No fever. No rash."}
+{"t": "17:43:01", "kind": "extract", "writes": [["complaint.fever", false], ["infection.rash", false]]}
+{"t": "17:43:04", "kind": "question", "slot": "dyn:infection.travel_14d+infection.contacts", "text": "Has he traveled outside the country or been in contact with anyone who has a known infection in the last two weeks?", "fields": ["infection.travel_14d", "infection.contacts"], "offered": ["infection.travel_14d", "infection.contacts", "complaint.uti_symptoms", "ams.changed_from_baseline", "complaint.pain_rating", "stroke.face_droop"]}
+{"t": "17:43:04", "kind": "answer", "slot": "dyn:infection.travel_14d+infection.contacts", "text": "No."}
+{"t": "17:43:08", "kind": "extract", "writes": [["infection.travel_14d", false], ["infection.contacts", false]]}
+{"t": "17:43:11", "kind": "question", "slot": "dyn:complaint.uti_symptoms", "text": "Is he having any pain or burning when he goes to the bathroom, or is his urine cloudy or smelly?", "fields": ["complaint.uti_symptoms"], "offered": ["complaint.uti_symptoms", "ams.changed_from_baseline", "complaint.pain_rating", "stroke.face_droop", "stroke.arm_weakness", "stroke.speech_change"]}
+{"t": "17:43:11", "kind": "answer", "slot": "dyn:complaint.uti_symptoms", "text": "I don't know."}
+{"t": "17:43:14", "kind": "extract", "writes": []}
+{"t": "17:43:15", "kind": "extract", "writes": [["complaint.uti_symptoms", null]], "via": "dont-know"}
+{"t": "17:43:18", "kind": "question", "slot": "dyn:ams.changed_from_baseline", "text": "Is he more confused, not making sense, or more sleepy than usual?", "fields": ["ams.changed_from_baseline"], "offered": ["ams.changed_from_baseline", "complaint.pain_rating", "stroke.face_droop", "stroke.arm_weakness", "stroke.speech_change", "stroke.balance_loss"]}
+{"t": "17:43:18", "kind": "answer", "slot": "dyn:ams.changed_from_baseline", "text": "Yes, much more confused and sleepy than usual."}
+{"t": "17:43:31", "kind": "extract", "writes": [["ams.changed_from_baseline", true]]}
+{"t": "17:43:31", "kind": "floor", "floor": "at least ESI-2", "fired": ["B-01.new-altered-mental-status"], "sources": ["ESI v5 p.12 (New Onset Confusion, Lethargy, or Disorientation)"]}
+{"t": "17:43:34", "kind": "question", "slot": "dyn:M.medications+A.allergies", "text": "I understand he is very confused. What medications does he take regularly, and does he have any allergies to medicines?", "fields": ["M.medications", "A.allergies"], "offered": ["M.medications", "A.allergies", "identity.name", "identity.dob"]}
+{"t": "17:43:34", "kind": "answer", "slot": "dyn:M.medications+A.allergies", "text": "Lactulose, spironolactone and furosemide; he missed several lactulose doses this week. None."}
+{"t": "17:43:40", "kind": "extract", "writes": [["M.medications", ["Lactulose", "spironolactone", "furosemide"]], ["A.allergies", []]]}
+{"t": "17:43:43", "kind": "question", "slot": "dyn:identity.name+identity.dob", "text": "I've noted his medications. Could you please tell me his full name and date of birth?", "fields": ["identity.name", "identity.dob"], "offered": ["identity.name", "identity.dob"]}
+{"t": "17:43:43", "kind": "answer", "slot": "dyn:identity.name+identity.dob", "text": "Rajan Kumar. 7 July 1968."}
+{"t": "17:43:47", "kind": "extract", "writes": [["identity.name", "Rajan Kumar"], ["identity.dob", "7 July 1968"]]}
+{"t": "17:43:47", "kind": "engine", "note": "floor settled - report ready; remaining questions continue"}
+{"t": "17:43:50", "kind": "question", "slot": "dyn:complaint.pain_rating", "text": "On a scale of 0 to 10, where 10 is the worst pain imaginable, how bad is his pain right now?", "fields": ["complaint.pain_rating"], "offered": ["complaint.pain_rating", "complaint.testicular_or_scrotal_pain", "L.last_intake"]}
+{"t": "17:43:50", "kind": "answer", "slot": "dyn:complaint.pain_rating", "text": "Mild belly discomfort, 3 out of 10."}
+{"t": "17:43:55", "kind": "extract", "writes": [["complaint.pain_rating", 3], ["complaint.text", "Mild belly discomfort"]]}
+{"t": "17:43:58", "kind": "question", "slot": "dyn:complaint.testicular_or_scrotal_pain", "text": "I've noted the belly discomfort. Is he also experiencing any pain in his testicles or scrotum?", "fields": ["complaint.testicular_or_scrotal_pain"], "offered": ["complaint.testicular_or_scrotal_pain", "L.last_intake"]}
+{"t": "17:43:58", "kind": "answer", "slot": "dyn:complaint.testicular_or_scrotal_pain", "text": "I don't know."}
+{"t": "17:44:01", "kind": "extract", "writes": []}
+{"t": "17:44:01", "kind": "extract", "writes": [["complaint.testicular_or_scrotal_pain", null]], "via": "dont-know"}
+{"t": "17:44:04", "kind": "question", "slot": "dyn:L.last_intake", "text": "I understand. When was the last time he had anything to eat or drink, and what did he have?", "fields": ["L.last_intake"], "offered": ["L.last_intake"]}
+{"t": "17:44:04", "kind": "answer", "slot": "dyn:L.last_intake", "text": "A small bowl of rice at noon."}
+{"t": "17:44:08", "kind": "extract", "writes": [["L.last_intake", "A small bowl of rice at noon"]]}
+{"t": "17:44:08", "kind": "engine", "note": "interview complete - no open fields"}

@@ -1,0 +1,22 @@
+session LION-6744   started 2026-09-26 03:29   (generated from messages)
+
+03:29:40  BOT  Is the patient awake and responding normally, and are they experiencing any severe chest pain, trouble breathing, or heavy bleeding right now?   [slot red_flags.screen]
+03:29:41  THEM I'm awake. No chest pain, breathing okay, and no bleeding.   [slot red_flags.screen]
+03:29:43  BOT  Are you currently experiencing any chest pain, trouble breathing, or heavy bleeding?   [slot red_flags.screen]
+03:29:44  THEM No, no chest pain or bleeding. Just the abdominal pain.   [slot red_flags.screen]
+03:29:49  BOT  When did the abdominal pain start, and how would you rate it on a scale of 0 to 10?   [slot complaint.main]
+03:29:50  THEM It started this morning. It's an 8 out of 10.   [slot complaint.main]
+03:29:53  BOT  Do you take any regular medications?   [slot M.medications]
+03:29:54  THEM Just my pregnancy vitamins.   [slot M.medications]
+03:29:57  BOT  Do you have any allergies to medicine or other medical conditions, such as heart problems, diabetes, or any conditions affecting your immune system?   [slot allergies_and_history]
+03:29:58  THEM No allergies. No other conditions besides the pregnancy.   [slot allergies_and_history]
+03:30:00  SYS  floor: at least ESI-2  rules: ['B-17.abdo-pain-pregnant-or-postpartum', 'B-38.pregnant-chest-pain-breathlessness-abdo-pain-or-headache'] (floor)
+03:30:01  BOT  Do you have any conditions that affect your immune system?   [slot allergies_and_history]
+03:30:02  THEM No, I have no other conditions.   [slot allergies_and_history]
+03:30:06  BOT  Have you had a fever, any rashes, traveled overseas in the last two weeks, or been in contact with anyone who is infectious?   [slot infection.screen]
+03:30:07  THEM No fever, no rash, no travel.   [slot infection.screen]
+03:30:10  BOT  Have you been in contact with anyone who is currently infectious?   [slot infection.screen]
+03:30:11  THEM No.   [slot infection.screen]
+03:30:14  BOT  Could you please tell me when you last ate or drank something, and provide your name and date of birth for the hospital's records?   [slot wrapup]
+03:30:15  THEM Dinner last night. Name is [Name not provided], DOB 03 Sep 1986.   [slot wrapup]
+03:30:17  BOT  Thank you - that's everything for now. Show the code LION-6744 at the counter when you arrive. (ack)

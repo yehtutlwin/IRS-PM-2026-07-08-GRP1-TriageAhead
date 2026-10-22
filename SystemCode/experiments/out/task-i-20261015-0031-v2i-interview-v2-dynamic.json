@@ -1,0 +1,234 @@
+{
+ "persona_backend": "ollama",
+ "persona_model": "gemma4:12b",
+ "interview": {
+  "interview_mode": "dynamic",
+  "backend": "ollama",
+  "model": "gemma4:12b",
+  "dyn_max_fields": 4
+ },
+ "tag": "v2i-interview-v2-dynamic",
+ "results": [
+  {
+   "questions": 26,
+   "questions_to_report": 17,
+   "reasks": 5,
+   "floor": "at least ESI-2",
+   "floor_ok": true,
+   "rules_ok": true,
+   "fired": [
+    "B-30.anticoagulated-trauma"
+   ],
+   "hits": 9,
+   "total": 9,
+   "misses": [],
+   "danger_miss": false,
+   "persona": "P1-fall-anticoag",
+   "run": 1,
+   "session": "TIGER-8983",
+   "turns": 27,
+   "transcript": "sessions-task-i-20261015-0031-v2i-interview-v2-dynamic/TIGER-8983.transcript.txt"
+  },
+  {
+   "questions": 24,
+   "questions_to_report": 19,
+   "reasks": 10,
+   "floor": "at least ESI-2",
+   "floor_ok": true,
+   "rules_ok": true,
+   "fired": [
+    "B-04.chest-pain-acs-suspect",
+    "B-12.increasing-respiratory-effort"
+   ],
+   "hits": 6,
+   "total": 6,
+   "misses": [],
+   "danger_miss": false,
+   "persona": "P2-chest-pain",
+   "run": 1,
+   "session": "LOTUS-6608",
+   "turns": 30,
+   "transcript": "sessions-task-i-20261015-0031-v2i-interview-v2-dynamic/LOTUS-6608.transcript.txt"
+  },
+  {
+   "questions": 29,
+   "questions_to_report": 12,
+   "reasks": 11,
+   "floor": "at least ESI-2",
+   "floor_ok": true,
+   "rules_ok": true,
+   "fired": [
+    "B-06.possible-ectopic-stable",
+    "B-38.pregnant-chest-pain-breathlessness-abdo-pain-or-headache"
+   ],
+   "hits": 6,
+   "total": 6,
+   "misses": [],
+   "danger_miss": false,
+   "persona": "P3-abdo-pregnant",
+   "run": 1,
+   "session": "OTTER-9107",
+   "turns": 30,
+   "transcript": "sessions-task-i-20261015-0031-v2i-interview-v2-dynamic/OTTER-9107.transcript.txt"
+  },
+  {
+   "questions": 20,
+   "questions_to_report": 19,
+   "reasks": 6,
+   "floor": null,
+   "floor_ok": true,
+   "rules_ok": true,
+   "fired": [],
+   "hits": 4,
+   "total": 5,
+   "misses": [
+    "complaint.fever: want=False got=True"
+   ],
+   "danger_miss": false,
+   "persona": "P4-sore-throat",
+   "run": 1,
+   "session": "VANDA-5393",
+   "turns": 20,
+   "transcript": "sessions-task-i-20261015-0031-v2i-interview-v2-dynamic/VANDA-5393.transcript.txt"
+  },
+  {
+   "questions": 24,
+   "questions_to_report": 13,
+   "reasks": 8,
+   "floor": "at least ESI-2",
+   "floor_ok": true,
+   "rules_ok": true,
+   "fired": [
+    "B-05.stroke-signs"
+   ],
+   "hits": 6,
+   "total": 6,
+   "misses": [],
+   "danger_miss": false,
+   "persona": "P6-stroke-resolved",
+   "run": 1,
+   "session": "HERON-3932",
+   "turns": 24,
+   "transcript": "sessions-task-i-20261015-0031-v2i-interview-v2-dynamic/HERON-3932.transcript.txt"
+  },
+  {
+   "questions": 19,
+   "questions_to_report": 6,
+   "reasks": 4,
+   "floor": "at least ESI-2",
+   "floor_ok": true,
+   "rules_ok": true,
+   "fired": [
+    "B-07.immunocompromised-fever"
+   ],
+   "hits": 4,
+   "total": 5,
+   "misses": [
+    "complaint.pain_rating: want=0 got=None"
+   ],
+   "danger_miss": false,
+   "persona": "P5-fever-chemo",
+   "run": 1,
+   "session": "OTTER-5593",
+   "turns": 19,
+   "transcript": "sessions-task-i-20261015-0031-v2i-interview-v2-dynamic/OTTER-5593.transcript.txt"
+  },
+  {
+   "questions": 16,
+   "questions_to_report": 14,
+   "reasks": 4,
+   "floor": null,
+   "floor_ok": true,
+   "rules_ok": true,
+   "fired": [],
+   "hits": 5,
+   "total": 7,
+   "misses": [
+    "complaint.trauma: want=False got=None",
+    "history.gout: want=True got=None"
+   ],
+   "danger_miss": false,
+   "persona": "P6-acute-gout",
+   "run": 1,
+   "session": "KOPI-8085",
+   "turns": 16,
+   "transcript": "sessions-task-i-20261015-0031-v2i-interview-v2-dynamic/KOPI-8085.transcript.txt"
+  },
+  {
+   "questions": 23,
+   "questions_to_report": 14,
+   "reasks": 4,
+   "floor": "at least ESI-2",
+   "floor_ok": false,
+   "rules_ok": false,
+   "fired": [
+    "B-01.new-altered-mental-status",
+    "B-05.stroke-signs"
+   ],
+   "hits": 2,
+   "total": 8,
+   "misses": [
+    "danger_signs.altered_mental_status: want=True got=None",
+    "complaint.collapse: want=True got=None",
+    "complaint.vomiting: want=True got=None",
+    "complaint.fever: want=False got=True",
+    "environment.heat_exposure: want=True got=None",
+    "measurements.temperature_c: want=40.4 got=None"
+   ],
+   "danger_miss": false,
+   "persona": "P7-heat-stroke",
+   "run": 1,
+   "session": "EAGLE-5453",
+   "turns": 30,
+   "transcript": "sessions-task-i-20261015-0031-v2i-interview-v2-dynamic/EAGLE-5453.transcript.txt"
+  },
+  {
+   "questions": 22,
+   "questions_to_report": 13,
+   "reasks": 7,
+   "floor": "at least ESI-2",
+   "floor_ok": true,
+   "rules_ok": false,
+   "fired": [
+    "B-01.new-altered-mental-status"
+   ],
+   "hits": 5,
+   "total": 12,
+   "misses": [
+    "danger_signs.altered_mental_status: want=True got=None",
+    "complaint.hematemesis: want=False got=None",
+    "complaint.melena: want=False got=None",
+    "history.cirrhosis: want=True got=None",
+    "history.hepatitis_b: want=True got=None",
+    "signs.jaundice: want=True got=None",
+    "signs.ascites: want=True got=None"
+   ],
+   "danger_miss": false,
+   "persona": "P8-decompensated-liver-disease",
+   "run": 1,
+   "session": "HERON-6530",
+   "turns": 22,
+   "transcript": "sessions-task-i-20261015-0031-v2i-interview-v2-dynamic/HERON-6530.transcript.txt"
+  },
+  {
+   "questions": 17,
+   "questions_to_report": 14,
+   "reasks": 5,
+   "floor": "at least ESI-2",
+   "floor_ok": true,
+   "rules_ok": true,
+   "fired": [
+    "B-12.increasing-respiratory-effort"
+   ],
+   "hits": 7,
+   "total": 7,
+   "misses": [],
+   "danger_miss": false,
+   "persona": "P9-breathing-no-pain",
+   "run": 1,
+   "session": "BAOBAB-2894",
+   "turns": 19,
+   "transcript": "sessions-task-i-20261015-0031-v2i-interview-v2-dynamic/BAOBAB-2894.transcript.txt"
+  }
+ ]
+}

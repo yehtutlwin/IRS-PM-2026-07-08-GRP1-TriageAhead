@@ -1,0 +1,52 @@
+arm B, form rules, persona P13-cast-too-tight, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  Is the patient awake and responding normally?
+A1  Yes, she's awake.
+
+Q2  Is the patient experiencing chest pain right now?
+A2  I don't know.
+
+Q3  Is the patient having any trouble breathing right now?
+A3  I don't know.
+
+Q4  Is the patient bleeding heavily right now?
+A4  I don't know.
+
+Q5  How old is the patient?
+A5  She's 35.
+
+Q6  Is the patient in any severe pain or distress?
+A6  She says the pain is unbearable.
+
+Q7  Can you describe the location and type of pain she is experiencing?
+A7  She says the pain is unbearable.
+
+Q8  Where is the pain located?
+A8  The pain is in her wrist and her hand is really swollen.
+
+Q9  Is the hand or wrist area numb, tingling, cold, or pale, or is the hand/fingers unable to move?
+A9  Her fingers are numb and she can hardly move them.
+
+Q10  Is the pain in her wrist and hand the result of a recent injury, such as a fall or a crash?
+A10  I don't know.
+
+Q11  Was there a specific injury, like a fall or a crash, that caused this?
+A11  I don't know.
+
+Q12  Is the patient's hand or wrist the result of a recent injury, such as a fall or a crash?
+A12  I don't know.
+
+Q13  Is the patient's hand or wrist area numb, tingling, cold, or pale, or are the fingers unable to move?
+A13  Her fingers are numb and she can hardly move them.
+
+Q14  Was there a specific injury, like a fall or a crash, that caused this?
+A14  I don't know.
+
+Q15  Was there a specific injury, like a fall or a crash, that caused this?
+A15  I don't know.
+
+Q16  Is the patient's hand or wrist area numb, tingling, cold, or pale, or are the fingers unable to move?
+A16  Her fingers are numb and she can hardly move them.
+
+DECISION {"decision": "unparsed", "reason": "turn limit reached without a decision"}
+OUTCOME no decision in 16 questions | expected at least ESI-2 | pass False | label missing fact | max prompt tokens 44065

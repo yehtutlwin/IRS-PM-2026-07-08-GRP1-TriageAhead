@@ -1,0 +1,31 @@
+arm B, form rules, persona P2-chest-pain, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  Is the patient awake and responding normally?
+A1  Yes, I'm awake, I'm the patient.
+
+Q2  Are you experiencing any chest pain right now?
+A2  Yes, I have pressure in the middle of my chest right now.
+
+Q3  Are you having any trouble breathing right now?
+A3  I'm a bit breathless when I walk, but I can talk.
+
+Q4  Are you bleeding heavily right now?
+A4  No.
+
+Q5  Is the chest pressure you feel a heavy weight or tightness, and does it spread to your arm, jaw, or back, or are you feeling sweaty or nauseous?
+A5  It feels like pressure and it goes into my left arm, and I'm sweaty.
+
+Q6  Is the chest pressure you feel a heavy weight or tightness, and does it spread to your arm, jaw, or back, or are you feeling sweaty or nauseous?
+A6  It feels like pressure and it goes into my left arm, and I'm sweaty.
+
+Q7  Is the chest pressure you feel a heavy weight or tightness, and does it spread to your arm, jaw, or back, or are you feeling sweaty or nauseous?
+A7  It feels like pressure and it goes into my left arm, and I'm sweaty.
+
+Q8  Is the chest pressure you feel a heavy weight or tightness, and does it spread to your arm, jaw, or back, or are you feeling sweaty or nauseous?
+A8  It feels like pressure and it goes into my left arm, and I'm sweaty.
+
+Q9  Is the chest pressure you feel a heavy weight or tightness, and does it spread to your arm, jaw, or back, or are you feeling sweaty or nauseous?
+A9  It feels like pressure and it goes into my left arm, and I'm sweaty.
+
+DECISION {"done": true, "decision": "at least ESI-2", "reason": "The patient is experiencing chest pressure with radiation to the left arm and sweating, which is suspicious for acute coronary syndrome.", "citation": "ESI v5 p.13 (Cardiovascular); rule B-04.chest_pain_acs_suspect"}
+OUTCOME level 2 or floor | expected at least ESI-2 | pass True | label None | max prompt tokens 44012

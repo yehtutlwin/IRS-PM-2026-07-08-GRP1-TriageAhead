@@ -1,0 +1,52 @@
+arm B, form handbook, persona P23-sawdust-in-eye, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  What is the main reason the patient is seeking care today?
+A1  I think I got sawdust in my left eye while I was using a chainsaw without goggles. It hurts and it just won't stop tearing.
+
+Q2  Is the patient experiencing any other symptoms, such as vision loss, severe pain, or any other injuries from the chainsaw?
+A2  No, I can see, it just hurts and waters.
+
+Q3  Is the eye red, and is there any vision loss or a sudden change in your vision?
+A3  No, I can see, it just hurts and waters.
+
+Q4  Is the eye red, and is there any vision loss or a sudden change in your vision?
+A4  No, I can see, it just hurts and waters.
+
+Q5  Is the pain in your eye severe or unbearable?
+A5  No, nothing like that.
+
+Q6  Is the eye red, or is there any other physical change like a pupil that is a different size than the other side?
+A6  No, nothing like that.
+
+Q7  Is the eye pain so severe that it is considered unbearable or distressing to you?
+A7  No, I can see, it just hurts and waters.
+
+Q8  Are you experiencing any other symptoms, such as a headache, nausea, or any other injuries from the chainsaw?
+A8  No, nothing like that.
+
+Q9  Is the eye pain so severe that it is considered distressing to you?
+A9  No, nothing like that.
+
+Q10  Is the eye pain so severe that it is considered distressing to you?
+A10  No, nothing like that.
+
+Q11  Are you experiencing any other symptoms, such as a headache, nausea, or any other injuries from the chainsaw?
+A11  No, nothing like that.
+
+Q12  Is the eye pain so severe that it is considered distressing to you?
+A12  No, nothing like that.
+
+Q13  Is the eye pain so severe that it is considered distressing to you?
+A13  No, nothing like that.
+
+Q14  Is the eye pain so severe that it is considered distressing to you?
+A14  No, nothing like that.
+
+Q15  Is the eye pain so severe that it is considered distressing to you?
+A15  No, nothing like that.
+
+Q16  Is the eye pain so severe that it is considered distressing to you?
+A16  No, nothing like that.
+
+DECISION {"decision": "unparsed", "reason": "turn limit reached without a decision"}
+OUTCOME no decision in 16 questions | expected None | pass False | label model error (over-call) | max prompt tokens 30139

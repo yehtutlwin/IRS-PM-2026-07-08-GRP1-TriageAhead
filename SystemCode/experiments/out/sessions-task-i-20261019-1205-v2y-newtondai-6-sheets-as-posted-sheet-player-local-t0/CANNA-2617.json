@@ -1,0 +1,482 @@
+{
+ "sid": "CANNA-2617",
+ "facts": {
+  "danger_signs.responsive": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-19 12:03"
+  },
+  "danger_signs.chest_pain_now": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-19 12:03"
+  },
+  "danger_signs.breathing_difficulty": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-19 12:03"
+  },
+  "danger_signs.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-19 12:03"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "pregnancy_related",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 3,
+      "ts": "2026-10-19 12:04"
+     },
+     "text": {
+      "value": "I am thirty weeks pregnant and have had a severe headache and blurred vision since this morning.",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 3,
+      "ts": "2026-10-19 12:04"
+     },
+     "onset": {
+      "value": "this morning",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 3,
+      "ts": "2026-10-19 12:04"
+     },
+     "onset_abs": {
+      "value": "~2026-10-19 morning",
+      "status": "reported",
+      "who": "derived",
+      "turn": 3,
+      "ts": "2026-10-19 12:04"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3
+  },
+  "complaint.category": {
+   "value": [
+    "pregnancy_related"
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-19 12:04"
+  },
+  "complaint.text": {
+   "value": "I am thirty weeks pregnant and have had a severe headache and blurred vision since this morning.",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-19 12:04"
+  },
+  "complaint.onset": {
+   "value": "this morning",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-19 12:04"
+  },
+  "complaint.onset_abs": {
+   "value": "~2026-10-19 morning (from 'this morning' said 12:04)",
+   "status": "reported",
+   "who": "derived",
+   "turn": 3,
+   "ts": "2026-10-19 12:04"
+  },
+  "E.mechanism": {
+   "value": "none",
+   "status": "reported",
+   "who": "derived",
+   "turn": 3,
+   "ts": "2026-10-19 12:04"
+  },
+  "patient.age": {
+   "value": 33,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 4,
+   "ts": "2026-10-19 12:04"
+  },
+  "patient.sex": {
+   "value": "female",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 4,
+   "ts": "2026-10-19 12:04"
+  },
+  "patient.age_group": {
+   "value": "adult",
+   "status": "reported",
+   "who": "derived",
+   "turn": 4,
+   "ts": "2026-10-19 12:04"
+  },
+  "history.pregnant": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 5,
+   "ts": "2026-10-19 12:04"
+  },
+  "complaint.fever": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 6,
+   "ts": "2026-10-19 12:04"
+  },
+  "infection.rash": {
+   "value": false,
+   "status": "reported",
+   "who": "blanket-no",
+   "turn": 6,
+   "ts": "2026-10-19 12:04"
+  },
+  "infection.travel_14d": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 7,
+   "ts": "2026-10-19 12:04"
+  },
+  "infection.contacts": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 7,
+   "ts": "2026-10-19 12:04"
+  },
+  "ams.changed_from_baseline": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 8,
+   "ts": "2026-10-19 12:04"
+  },
+  "complaint.infection_signs": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 9,
+   "ts": "2026-10-19 12:04"
+  },
+  "A.allergies": {
+   "value": [],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 12,
+   "ts": "2026-10-19 12:05"
+  },
+  "complaint.shortness_of_breath": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 13,
+   "ts": "2026-10-19 12:05"
+  },
+  "M.medications": {
+   "value": [
+    "Prenatal vitamins"
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 14,
+   "ts": "2026-10-19 12:05"
+  },
+  "history.conditions": {
+   "value": [
+    "pregnancy"
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 15,
+   "ts": "2026-10-19 12:05"
+  },
+  "history.immunocompromised": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 16,
+   "ts": "2026-10-19 12:05"
+  }
+ },
+ "attempts": {
+  "danger_signs.responsive": 1,
+  "danger_signs.chest_pain_now": 1,
+  "danger_signs.breathing_difficulty": 1,
+  "danger_signs.heavy_bleeding": 1,
+  "complaint.category": 1,
+  "complaint.text": 1,
+  "patient.age": 1,
+  "patient.sex": 1,
+  "history.pregnant": 1,
+  "complaint.fever": 1,
+  "infection.rash": 1,
+  "infection.travel_14d": 1,
+  "infection.contacts": 1,
+  "ams.changed_from_baseline": 1,
+  "complaint.pain_rating": 3,
+  "complaint.infection_signs": 1,
+  "complaint.shortness_of_breath": 2,
+  "M.medications": 2,
+  "A.allergies": 1,
+  "history.conditions": 1,
+  "history.immunocompromised": 1,
+  "identity.name": 1,
+  "identity.dob": 1
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "Is the patient awake and responding to you? Also, is he or she experiencing any chest pain, trouble breathing, or heavy bleeding right now?",
+   "ts": "2026-10-19 12:03:35",
+   "kind": "question",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, the patient is awake and can respond. No chest pain",
+   "ts": "2026-10-19 12:03:35",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "bot",
+   "text": "I'm glad they are awake. Is the patient having any trouble breathing or any heavy bleeding right now?",
+   "ts": "2026-10-19 12:03:43",
+   "kind": "question",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding"
+  },
+  {
+   "role": "caregiver",
+   "text": "No breathing difficulty No bleeding",
+   "ts": "2026-10-19 12:03:43",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding"
+  },
+  {
+   "role": "bot",
+   "text": "I've noted that. What is the main problem that brings the patient in today, and can you describe what is happening in your own words?",
+   "ts": "2026-10-19 12:03:51",
+   "kind": "question",
+   "slot": "dyn:complaint.category+complaint.text"
+  },
+  {
+   "role": "caregiver",
+   "text": "I am thirty weeks pregnant and have had a severe headache and blurred vision since this morning. I am 30 weeks pregnant and have a severe headache with blurred vision.",
+   "ts": "2026-10-19 12:03:51",
+   "kind": "answer",
+   "slot": "dyn:complaint.category+complaint.text"
+  },
+  {
+   "role": "bot",
+   "text": "I've noted the symptoms. How old is the patient, and can you confirm if the patient is female?",
+   "ts": "2026-10-19 12:04:06",
+   "kind": "question",
+   "slot": "dyn:patient.age+patient.sex"
+  },
+  {
+   "role": "caregiver",
+   "text": "I am thirty-three. I am female.",
+   "ts": "2026-10-19 12:04:06",
+   "kind": "answer",
+   "slot": "dyn:patient.age+patient.sex"
+  },
+  {
+   "role": "bot",
+   "text": "I've noted she is 33 and pregnant. Have you had any other symptoms like a fever or a new rash?",
+   "ts": "2026-10-19 12:04:13",
+   "kind": "question",
+   "slot": "dyn:history.pregnant"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, I am thirty weeks pregnant.",
+   "ts": "2026-10-19 12:04:13",
+   "kind": "answer",
+   "slot": "dyn:history.pregnant"
+  },
+  {
+   "role": "bot",
+   "text": "I've noted that. Does she have a fever or any new rashes?",
+   "ts": "2026-10-19 12:04:26",
+   "kind": "question",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "No",
+   "ts": "2026-10-19 12:04:26",
+   "kind": "answer",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Has she traveled abroad in the last two weeks or been in contact with anyone who has an infectious illness?",
+   "ts": "2026-10-19 12:04:34",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-19 12:04:34",
+   "kind": "answer",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "bot",
+   "text": "Is she acting confused, not making sense, or is she unusually sleepy and hard to wake?",
+   "ts": "2026-10-19 12:04:40",
+   "kind": "question",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-19 12:04:40",
+   "kind": "answer",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. On a scale of 0 to 10, where 10 is the worst pain imaginable, how bad is her pain right now? Also, have you noticed any signs of infection, like a wound that is red, hot, or swollen?",
+   "ts": "2026-10-19 12:04:47",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating+complaint.infection_signs"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-19 12:04:47",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_rating+complaint.infection_signs"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. To help the team, can you describe how severe her pain is on a scale of 0 to 10?",
+   "ts": "2026-10-19 12:04:54",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-19 12:04:54",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "I understand it's hard to say. If you had to estimate, how much is she struggling with the pain on a scale of 0 to 10?",
+   "ts": "2026-10-19 12:05:00",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-19 12:05:00",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Is she having any trouble breathing? Also, does she take any regular medications or have any known allergies?",
+   "ts": "2026-10-19 12:05:06",
+   "kind": "question",
+   "slot": "dyn:complaint.shortness_of_breath+M.medications+A.allergies"
+  },
+  {
+   "role": "caregiver",
+   "text": "Prenatal vitamins No known allergies",
+   "ts": "2026-10-19 12:05:06",
+   "kind": "answer",
+   "slot": "dyn:complaint.shortness_of_breath+M.medications+A.allergies"
+  },
+  {
+   "role": "bot",
+   "text": "Is she having any difficulty breathing or catching her breath?",
+   "ts": "2026-10-19 12:05:13",
+   "kind": "question",
+   "slot": "dyn:complaint.shortness_of_breath"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-19 12:05:13",
+   "kind": "answer",
+   "slot": "dyn:complaint.shortness_of_breath"
+  },
+  {
+   "role": "bot",
+   "text": "Could you tell me the names of any medications she takes on a regular basis?",
+   "ts": "2026-10-19 12:05:19",
+   "kind": "question",
+   "slot": "dyn:M.medications"
+  },
+  {
+   "role": "caregiver",
+   "text": "Prenatal vitamins",
+   "ts": "2026-10-19 12:05:19",
+   "kind": "answer",
+   "slot": "dyn:M.medications"
+  },
+  {
+   "role": "bot",
+   "text": "Does she have any other ongoing medical conditions?",
+   "ts": "2026-10-19 12:05:32",
+   "kind": "question",
+   "slot": "dyn:history.conditions"
+  },
+  {
+   "role": "caregiver",
+   "text": "Pregnant 30 weeks",
+   "ts": "2026-10-19 12:05:32",
+   "kind": "answer",
+   "slot": "dyn:history.conditions"
+  },
+  {
+   "role": "bot",
+   "text": "I've noted she is 30 weeks pregnant. Has she ever been told she has a weakened immune system or is she currently being treated for any conditions like cancer or an organ transplant?",
+   "ts": "2026-10-19 12:05:45",
+   "kind": "question",
+   "slot": "dyn:history.immunocompromised"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-19 12:05:45",
+   "kind": "answer",
+   "slot": "dyn:history.immunocompromised"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Could you please tell me her full name and date of birth?",
+   "ts": "2026-10-19 12:05:51",
+   "kind": "question",
+   "slot": "dyn:identity.name+identity.dob"
+  }
+ ],
+ "stage": "floor",
+ "floor": null,
+ "phase": "enroute",
+ "created": "2026-10-19 12:03",
+ "pending_slot": "dyn:identity.name+identity.dob",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {}
+}

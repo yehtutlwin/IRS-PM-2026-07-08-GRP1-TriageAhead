@@ -1,0 +1,18 @@
+session MERLION-1744   started 2026-09-26 03:43   (generated from messages)
+
+03:43:54  BOT  Are you currently experiencing severe chest pain, trouble breathing, or heavy bleeding?   [slot red_flags.screen]
+03:43:55  THEM No, he is not having chest pain, trouble breathing, or heavy bleeding. He is awake and talking with no head strike or blackout.   [slot red_flags.screen]
+03:43:57  BOT  Can you tell us what happened, when it started, and how bad the pain is on a scale of 0 to 10?   [slot complaint.main]
+03:43:58  THEM My father fell down four steps at home about an hour ago and landed on his right hip. His pain is currently 7 out of 10.   [slot complaint.main]
+03:44:01  BOT  Are his fingers or toes numb, cold, pale, blue, or unable to move, and does the cast feel too tight?   [slot limb.screen]
+03:44:02  THEM I don't know about his fingers or toes or the cast because he wasn't wearing one. He is awake and talking right now.   [slot limb.screen]
+03:44:04  BOT  Do you know if he takes any regular medications?   [slot M.medications]
+03:44:05  THEM Yes, he takes a small pill to thin his blood called warfarin and another blood pressure pill I cannot name. He also has conditions including irregular heartbeat and high blood pressure.   [slot M.medications]
+03:44:06  SYS  floor: at least ESI-2  rules: ['B-30.anticoagulated-trauma'] (floor)
+03:44:07  BOT  Do you have any allergies to medicines, are you pregnant or recently postpartum, or do you have any conditions affecting your immune system?   [slot allergies_and_history]
+03:44:08  THEM I am allergic to penicillin because it causes a rash. I am not pregnant and do not have any conditions affecting my immune system.   [slot allergies_and_history]
+03:44:10  BOT  Do you have any fever, rash, overseas travel in the last two weeks, or contact with anyone who is infectious?   [slot infection.screen]
+03:44:11  THEM No, there is no fever, rash, recent overseas travel, or contact with anyone who is infectious.   [slot infection.screen]
+03:44:13  BOT  Could you please tell me when you last ate or drank, along with your name and date of birth for our hospital records?   [slot wrapup]
+03:44:14  THEM My father last had porridge at 1pm. His name is Mr. Tan Ah Kow and his date of birth is January 2, 1939.   [slot wrapup]
+03:44:16  BOT  Thank you - that's everything for now. Show the code MERLION-1744 at the counter when you arrive. (ack)

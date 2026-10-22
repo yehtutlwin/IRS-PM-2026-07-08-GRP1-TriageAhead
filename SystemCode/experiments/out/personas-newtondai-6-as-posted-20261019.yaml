@@ -1,0 +1,217 @@
+# SIX PROVISIONAL CANDIDATE ANSWER SHEETS. NOT CLINICALLY VALIDATED.
+# ESI v5 quotations are from team criteria.yaml, not independently checked against original v5 PDF.
+# Do not merge into evaluation gold standard before reviewer adjudication and harness testing.
+- id: P20-infant-fever
+  source: 'Independent fictional caregiver scenario (Issue #29); clinical rule references are candidate evidence,
+    not a patient record.'
+  expect_floor: at least ESI-2
+  expect_rules:
+  - B-57.infant-under-90-days-temperature-over-38
+  voice: 'You are the mother of a 6-week-old baby with a measured temperature of 38.3 C this morning. The baby is
+    feeding less and is sleepier than usual but wakes when handled. You are frightened and answer in short sentences.
+    No rash, breathing difficulty or known medical problems. Reference for reviewer only: Rule B-57, ESI v5 printed
+    p.24 as quoted in criteria.yaml; ESI v4 p.8 only says consider ESI-2 for 1-3 months. Verify original v5 page
+    and clinician interpretation.'
+  truth:
+    complaint.text: infant fever
+    complaint.onset: This morning
+    patient.age_days: 42
+    patient.age_months: 1.5
+    complaint.fever: true
+    vitals.temp_c: 38.3
+    patient.sex: female
+    complaint.category: fever
+  say:
+    danger_signs.responsive: She wakes when I pick her up, but she is sleepier and feeding less than usual.
+    danger_signs.chest_pain_now: 'No'
+    danger_signs.breathing_difficulty: 'No'
+    danger_signs.heavy_bleeding: 'No'
+    complaint.category: My six-week-old baby has a fever.
+    complaint.text: My six-week-old baby has a fever.
+    complaint.onset: This morning
+    patient.age: My baby is six weeks old.
+    patient.sex: She is a girl.
+    complaint.fever: Yes. I measured 38.3 degrees Celsius this morning.
+    M.medications: No medicines
+    A.allergies: No known allergies
+    history.conditions: No known conditions
+    L.last_intake: Milk about two hours ago
+    vitals.temp_c: The thermometer showed 38.3 degrees Celsius.
+    patient.age_days: Six weeks, about forty-two days.
+- id: P22-teen-self-harm-concern
+  source: 'Independent fictional caregiver scenario (Issue #29); clinical rule references are candidate evidence,
+    not a patient record.'
+  expect_floor: at least ESI-2
+  expect_rules:
+  - B-09.suicidal-or-homicidal
+  voice: 'You are the aunt of a 16-year-old who told you today that they feel unsafe and have thoughts of hurting
+    themselves. They are awake and speaking but withdrawn. You are unsure whether they have taken any tablets and
+    do not want to guess. Reference for reviewer only: Rule B-09, ESI v5 printed pp.12,15 as quoted in criteria.yaml;
+    ESI v4 printed pp.12,20 supports suicidal presentation as high-risk. Clarify current intent and possible ingestion.'
+  truth:
+    complaint.text: thoughts of self-harm
+    complaint.onset: Today
+    patient.age: 16
+    complaint.danger_to_self_or_others: true
+    complaint.category: mental_health
+  say:
+    danger_signs.responsive: Yes, the patient is awake and can respond.
+    danger_signs.chest_pain_now: 'No'
+    danger_signs.breathing_difficulty: No breathing problem
+    danger_signs.heavy_bleeding: 'No'
+    complaint.category: My niece or nephew told me they have thoughts of hurting themselves.
+    complaint.text: My niece or nephew told me they have thoughts of hurting themselves.
+    complaint.onset: Today
+    patient.age: They are sixteen.
+    patient.sex: I am not sure how they identify; please ask them directly.
+    complaint.fever: No fever known
+    M.medications: Unknown; I have not checked
+    A.allergies: Unknown
+    history.conditions: Unknown
+    L.last_intake: Unknown
+    complaint.danger_to_self_or_others: They told me today they have thoughts of hurting themselves. I do not know
+      whether they took any tablets.
+    complaint.known_toxic_ingestion: I cannot confirm whether they swallowed any tablets.
+- id: P23-elderly-confusion
+  source: 'Independent fictional caregiver scenario (Issue #29); clinical rule references are candidate evidence,
+    not a patient record.'
+  expect_floor: at least ESI-2
+  expect_rules:
+  - B-01.new-altered-mental-status
+  voice: 'You are the spouse of a 79-year-old who became noticeably confused this afternoon, asking where they are
+    despite normally being alert. There was no witnessed fall. You cannot recall the full medicine list. Reference
+    for reviewer only: Rule B-01, ESI v5 printed p.12 as quoted in criteria.yaml; ESI v4 printed p.12 discusses
+    new confusion. Check derived bridge to obs.new_confusion_lethargy_disorientation.'
+  truth:
+    complaint.text: sudden confusion
+    complaint.onset: This afternoon
+    patient.age: 79
+    patient.sex: male
+    ams.changed_from_baseline: true
+    history.baseline_mental_status: known
+    complaint.category: neuro_symptoms
+  say:
+    danger_signs.responsive: Yes, the patient is awake and can respond.
+    danger_signs.chest_pain_now: 'No'
+    danger_signs.breathing_difficulty: No breathing difficulty noticed
+    danger_signs.heavy_bleeding: 'No'
+    complaint.category: My husband is suddenly confused.
+    complaint.text: My husband is suddenly confused.
+    complaint.onset: This afternoon
+    patient.age: He is seventy-nine.
+    patient.sex: He is male.
+    complaint.fever: No temperature checked
+    M.medications: Several daily tablets, names unknown
+    A.allergies: Unknown
+    history.conditions: High blood pressure
+    L.last_intake: Lunch around 1pm
+    history.baseline_mental_status: I know him well. He is normally alert and knows where he is.
+    ams.changed_from_baseline: This afternoon he suddenly became confused and kept asking where he was.
+- id: P27-resolved-speech-change
+  source: 'Independent fictional caregiver scenario (Issue #29); clinical rule references are candidate evidence,
+    not a patient record.'
+  expect_floor: at least ESI-2
+  expect_rules:
+  - B-05.stroke-signs
+  voice: 'You are the husband of a 66-year-old who suddenly had slurred speech for 10 minutes and now sounds normal.
+    You worry that the symptom has disappeared and may not be important. No known trauma. Reference for reviewer
+    only: Rule B-05, ESI v5 printed p.12 as quoted in criteria.yaml; ESI v4 printed pp.12,20 discusses stroke signs.
+    Confirm handling of resolved speech symptoms.'
+  truth:
+    complaint.text: Slurred speech, now resolved
+    complaint.onset: One hour ago, lasted ten minutes
+    patient.age: 66
+    patient.sex: female
+    complaint.stroke_signs: true
+    stroke.speech_change: true
+    complaint.category: neuro_symptoms
+  say:
+    danger_signs.responsive: Yes, the patient is awake and can respond.
+    danger_signs.chest_pain_now: 'No'
+    danger_signs.breathing_difficulty: 'No'
+    danger_signs.heavy_bleeding: 'No'
+    complaint.category: My wife had slurred speech for ten minutes, but it stopped.
+    complaint.text: My wife had slurred speech for ten minutes, but it stopped.
+    complaint.onset: One hour ago, lasted ten minutes
+    patient.age: She is sixty-six.
+    patient.sex: She is female.
+    complaint.fever: 'No'
+    M.medications: Cholesterol medicine
+    A.allergies: No known allergies
+    history.conditions: High cholesterol
+    L.last_intake: Breakfast
+    stroke.speech_change: Her speech suddenly became slurred for about ten minutes. It sounds normal now.
+    complaint.stroke_signs: Yes, she had sudden slurred speech, even though it stopped.
+- id: P28-postpartum-bleeding
+  source: 'Independent fictional caregiver scenario (Issue #29); clinical rule references are candidate evidence,
+    not a patient record.'
+  expect_floor: at least ESI-2
+  expect_rules:
+  - B-13.postpartum-hemorrhage
+  voice: 'You are the partner of a 29-year-old who gave birth eight days ago and is now bleeding heavily and feeling
+    dizzy. You can describe how quickly pads are soaking but cannot estimate blood volume. She is awake and breathing.
+    Reference for reviewer only: Rule B-13, ESI v5 printed pp.12,14 as quoted in criteria.yaml; ESI v4 printed p.21
+    supports postpartum heavy bleeding. Clarify amount/pad saturation before approval.'
+  truth:
+    complaint.text: Heavy bleeding after recent birth
+    complaint.onset: Started an hour ago
+    patient.age: 29
+    patient.sex: female
+    history.postpartum: true
+    complaint.heavy_vaginal_bleeding: true
+    complaint.postpartum_hemorrhage: true
+    complaint.category: vaginal_bleeding
+  say:
+    danger_signs.responsive: Yes, the patient is awake and can respond.
+    danger_signs.chest_pain_now: No chest pain
+    danger_signs.breathing_difficulty: Breathing normally
+    danger_signs.heavy_bleeding: Yes, heavy vaginal bleeding
+    complaint.category: My partner gave birth eight days ago and is bleeding heavily.
+    complaint.text: My partner gave birth eight days ago and is bleeding heavily.
+    complaint.onset: Started an hour ago
+    patient.age: She is twenty-nine.
+    patient.sex: She is female.
+    complaint.fever: 'No'
+    M.medications: Iron tablets
+    A.allergies: Unknown
+    history.conditions: Recent childbirth
+    L.last_intake: Lunch
+    history.postpartum: She gave birth eight days ago.
+    complaint.heavy_vaginal_bleeding: She is bleeding heavily after childbirth. I can check how fast the pads are
+      soaking, but I cannot estimate the volume.
+    complaint.postpartum_hemorrhage: She is bleeding heavily after childbirth. I can check how fast the pads are
+      soaking, but I cannot estimate the volume.
+- id: P29-pregnant-headache
+  source: 'Independent fictional caregiver scenario (Issue #29); clinical rule references are candidate evidence,
+    not a patient record.'
+  expect_floor: at least ESI-2
+  expect_rules:
+  - B-38.pregnant-chest-pain-breathlessness-abdo-pain-or-headache
+  voice: 'You are a 33-year-old patient at 30 weeks of pregnancy with a severe headache and blurred vision since
+    the morning. You are worried but answer clearly. You have not measured your blood pressure. Reference for reviewer
+    only: Rule B-38, ESI v5 printed p.14 as quoted in criteria.yaml. Version 5 passage not independently page-checked;
+    pregnancy and severe headache require clinical review.'
+  truth:
+    complaint.text: Severe headache and blurred vision
+    complaint.onset: This morning
+    patient.age: 33
+    patient.sex: female
+    history.pregnant: true
+    complaint.category: headache
+  say:
+    danger_signs.responsive: Yes, the patient is awake and can respond.
+    danger_signs.chest_pain_now: No chest pain
+    danger_signs.breathing_difficulty: No breathing difficulty
+    danger_signs.heavy_bleeding: No bleeding
+    complaint.category: I am thirty weeks pregnant and have had a severe headache and blurred vision since this
+      morning.
+    complaint.text: I am 30 weeks pregnant and have a severe headache with blurred vision.
+    complaint.onset: This morning
+    patient.age: I am thirty-three.
+    patient.sex: I am female.
+    complaint.fever: 'No'
+    M.medications: Prenatal vitamins
+    A.allergies: No known allergies
+    history.conditions: Pregnant 30 weeks
+    L.last_intake: Breakfast
+    history.pregnant: Yes, I am thirty weeks pregnant.

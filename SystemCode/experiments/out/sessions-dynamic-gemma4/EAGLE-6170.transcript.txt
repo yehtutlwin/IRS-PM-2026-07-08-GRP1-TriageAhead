@@ -1,0 +1,20 @@
+session EAGLE-6170   started 2026-09-26 03:39   (generated from messages)
+
+03:39:22  BOT  I'm here to help get you prepared for the hospital. Is the patient awake and responding normally, and are they currently experiencing any chest pain, trouble breathing, or heavy bleeding?   [slot dyn:red_flags.responsive+red_flags.chest_pain_now+red_flags.breathing_difficulty+red_flags.heavy_bleeding]
+03:39:23  THEM She is awake and talking. She isn't having any chest pain, trouble breathing, or heavy bleeding.   [slot dyn:red_flags.responsive+red_flags.chest_pain_now+red_flags.breathing_difficulty+red_flags.heavy_bleeding]
+03:39:28  BOT  I'm glad to hear she is alert. Could you tell me what happened, when it started, and how severe the pain is on a scale of 0 to 10?   [slot dyn:complaint.category+complaint.text+complaint.onset+complaint.pain_rating]
+03:39:29  THEM She's been having a fever and shivering since this afternoon. I'm not sure about the pain level.   [slot dyn:complaint.category+complaint.text+complaint.onset+complaint.pain_rating]
+03:39:34  BOT  I understand she's had a fever and shivering since this afternoon. Since you aren't sure about the pain level, could you describe any other symptoms she's having or how uncomfortable she feels?   [slot dyn:complaint.pain_rating]
+03:39:36  THEM She is very tired and has been shivering. She is awake and talking, but she's been feeling unwell since the fever started this afternoon.   [slot dyn:complaint.pain_rating]
+03:39:40  BOT  I'm sorry to hear she's feeling so unwell. Even if it's not a sharp pain, could you describe how uncomfortable she is or give a general sense of her distress level?   [slot dyn:complaint.pain_rating]
+03:39:41  THEM She's very tired and shivering from the fever. She is awake and talking, but she's clearly not feeling well.   [slot dyn:complaint.pain_rating]
+03:39:45  BOT  I'm sorry she's feeling so poorly. Does she take any regular medications, and does she have any known allergies or other medical conditions like diabetes or heart problems?   [slot dyn:M.medications+A.allergies+history.conditions+history.immunocompromised]
+03:39:47  THEM She takes capecitabine and omeprazole. She has no known allergies and no other medical conditions like diabetes or heart problems.   [slot dyn:M.medications+A.allergies+history.conditions+history.immunocompromised]
+03:39:51  BOT  I'm sorry she's feeling so poorly. Could you tell me if she has any conditions that affect her immune system or if she is currently pregnant or recently gave birth?   [slot dyn:history.immunocompromised+history.pregnant_or_postpartum]
+03:39:53  THEM She is currently undergoing chemotherapy for breast cancer. She is not pregnant.   [slot dyn:history.immunocompromised+history.pregnant_or_postpartum]
+03:39:55  SYS  floor: at least ESI-2  rules: ['B-07.immunocompromised-fever'] (floor)
+03:39:57  BOT  I've noted her chemotherapy treatment. Has she had any recent rashes, traveled abroad in the last two weeks, or been in contact with anyone who is sick?   [slot dyn:infection.rash+infection.travel_14d+infection.contacts]
+03:39:59  THEM No, she hasn't had any rashes, no recent travel, and no contact with anyone sick.   [slot dyn:infection.rash+infection.travel_14d+infection.contacts]
+03:40:03  BOT  Thank you for that information. To help the team prepare, could you tell me when she last ate or drank anything, along with her full name and date of birth?   [slot dyn:L.last_intake+identity.name+identity.dob]
+03:40:04  THEM Her name is [Name not provided] and her date of birth is 30 Jun 1975. She last drank some tea at 4pm.   [slot dyn:L.last_intake+identity.name+identity.dob]
+03:40:07  BOT  Thank you - that's everything for now. Show the code EAGLE-6170 at the counter when you arrive. (ack)

@@ -1,0 +1,41 @@
+session EAGLE-5525   started 2026-10-15 11:57   (generated from messages)
+
+11:57:17  BOT  Is the patient awake and responding to you normally? Also, are they currently having any chest pain, trouble breathing, or heavy bleeding?   [slot dyn:danger_signs.responsive+danger_signs.chest_pain_now]
+11:57:51  THEM He is awake and talking   [slot dyn:danger_signs.responsive+danger_signs.chest_pain_now]
+11:57:56  BOT  I'm glad he's awake and talking. Is he experiencing any chest pain at this moment?   [slot dyn:danger_signs.chest_pain_now]
+11:58:30  THEM no chest pain   [slot dyn:danger_signs.chest_pain_now]
+11:58:36  BOT  I'm glad to hear he's not in chest pain. Is he having any trouble breathing or heavy bleeding right now? Also, what is the main reason you are bringing him in today?   [slot dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category]
+11:59:10  THEM no trouble breathing or bleeding. He fell down four steps at home about an hour ago, landed on his right hip and cannot stand   [slot dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category]
+11:59:19  BOT  I'm sorry to hear about his fall. To help the team prepare, could you tell me his age and if he is male or female?   [slot dyn:patient.age+patient.sex]
+11:59:33  THEM he's 87 and male   [slot dyn:patient.age+patient.sex]
+11:59:40  BOT  I'm sorry to hear about his fall. Does he have a fever or any new rashes on his skin?   [slot dyn:complaint.fever+infection.rash]
+11:59:54  THEM No fever, no rash   [slot dyn:complaint.fever+infection.rash]
+12:00:01  BOT  Thank you for that information. Has he traveled outside the country or been in contact with anyone who has a contagious illness in the last two weeks?   [slot dyn:infection.travel_14d+infection.contacts]
+12:00:09  THEM no travel, no contact with anyone ill   [slot dyn:infection.travel_14d+infection.contacts]
+12:00:16  BOT  I'm sorry he's in so much pain. On a scale of 0 to 10, how bad is his pain right now, and have you noticed him acting more confused or sleepy than usual?   [slot dyn:ams.changed_from_baseline+complaint.pain_rating]
+12:00:56  THEM His pain is 7 out of 10. He is awake and talking   [slot dyn:ams.changed_from_baseline+complaint.pain_rating]
+12:01:03  BOT  I understand he is awake and talking. Compared to his usual self, has he seemed more confused or sleepy lately?   [slot dyn:ams.changed_from_baseline]
+12:01:11  THEM not really   [slot dyn:ams.changed_from_baseline]
+12:01:17  BOT  I'm sorry to hear about his pain. Does he take any blood thinners or medications to prevent blood clots, like warfarin or aspirin?   [slot dyn:M.anticoagulant]
+12:01:52  THEM He takes a small pill to thin his blood and a blood pressure pill i can't name.   [slot dyn:M.anticoagulant]
+12:01:58  BOT  I've noted that he takes a blood thinner. To be specific, is it a medication like warfarin, apixaban, rivaroxaban, or clopidogrel?   [slot confirm.M.anticoagulant]
+12:02:12  THEM yes, the box says wafarin   [slot confirm.M.anticoagulant]
+12:02:16  SYS  floor: at least ESI-2  rules: ['B-30.anticoagulated-trauma'] (floor)
+12:02:18  BOT  I've noted the warfarin. Besides that, what other medications does he take regularly, and does he have any allergies to medicines?   [slot dyn:M.medications+A.allergies]
+12:03:03  THEM he has allergy to penicillin, it makes him rashes. no other regular medicine   [slot dyn:M.medications+A.allergies]
+12:03:09  BOT  I've noted the penicillin allergy. Besides the blood thinner, are there any other medications he takes on a regular basis?   [slot dyn:M.medications]
+12:03:15  THEM nope   [slot dyn:M.medications]
+12:03:20  BOT  I've noted that he has no other regular medications. Does he have any other ongoing medical conditions?   [slot dyn:history.conditions]
+12:03:38  THEM there is some irregular heartbeat and high blood pressure   [slot dyn:history.conditions]
+12:03:44  BOT  Thank you for sharing those details. Could you please tell me the patient's full name and date of birth?   [slot dyn:identity.name+identity.dob]
+12:03:59  THEM Mr Tan Ah Kow, DOB is 2 Jan 1939   [slot dyn:identity.name+identity.dob]
+12:04:05  BOT  I'm sorry, I missed that part. Could you please tell me the patient's date of birth?   [slot dyn:identity.dob]
+12:04:15  THEM 2 jan 1939   [slot dyn:identity.dob]
+12:04:18  BOT  That's enough for the hospital team to prepare. Show the code EAGLE-5525 at the counter when you arrive. I'll ask a few more things while you're on the way; tell me straight away if anything changes. (ack)
+12:04:22  BOT  Is the pain in the injured limb getting worse or feeling like it's under a lot of pressure? Also, are the fingers or toes below the injury numb, tingling, or turning cold or blue?   [slot dyn:complaint.compartment_syndrome_symptoms+limb.numb_tingling]
+12:04:34  SYS  report first opened by staff - waiting-room phase begins (note)
+12:04:52  THEM no such symptoms   [slot dyn:complaint.compartment_syndrome_symptoms+limb.numb_tingling]
+12:04:58  BOT  I'm sorry to hear those symptoms aren't present. Could you tell me how you fell and from what height?   [slot dyn:E.fall_height_meters]
+12:20:42  BOT  How is the patient doing right now compared to when you arrived?   [slot checkin.status] (checkin)
+12:35:42  BOT  How is the patient doing right now compared to when you arrived?   [slot checkin.status] (checkin)
+12:51:42  BOT  How is the patient doing right now compared to when you arrived?   [slot checkin.status] (checkin)

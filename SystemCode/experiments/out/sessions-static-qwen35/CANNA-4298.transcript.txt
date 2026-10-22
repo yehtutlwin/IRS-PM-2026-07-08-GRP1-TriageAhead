@@ -1,0 +1,16 @@
+session CANNA-4298   started 2026-09-26 03:44   (generated from messages)
+
+03:44:17  BOT  Can you please tell me if the patient is awake and responding normally, and if they are experiencing severe chest pain, trouble breathing, or heavy bleeding right now?   [slot red_flags.screen]
+03:44:18  THEM I am awake and responding, though I feel scared. My chest pain is 6/10 and spreading to my arm, and I am feeling breathless when walking.   [slot red_flags.screen]
+03:44:25  SYS  floor: at least ESI-2  rules: ['B-04.chest-pain-acs-suspect'] (floor)
+03:44:26  BOT  Since I haven't noticed any heavy bleeding yet, could you please confirm if you are currently bleeding heavily?   [slot red_flags.screen]
+03:44:27  THEM No, I am not bleeding heavily right now. My main symptoms are chest pressure and shortness of breath.   [slot red_flags.screen]
+03:44:29  BOT  Could you please tell me if you take any regular medications?   [slot M.medications]
+03:44:30  THEM No, I don't take any regular medications. I'm feeling pretty scared right now.   [slot M.medications]
+03:44:32  BOT  Could you please tell me if you have any allergies to medicines or any other medical conditions like heart problems, diabetes, pregnancy, or anything affecting your immune system?   [slot allergies_and_history]
+03:44:32  THEM No, I don't have any known conditions or allergies. I'm a little scared right now.   [slot allergies_and_history]
+03:44:35  BOT  Do you have any fever, rash, recent overseas travel, or contact with anyone who is infectious?   [slot infection.screen]
+03:44:36  THEM No, I don't have a fever, rash, or travel history, and no one around me is sick. I'm just scared right now.   [slot infection.screen]
+03:44:38  BOT  Could you please tell me when you last ate or drank, and also your name and date of birth so we can complete our hospital records?   [slot wrapup]
+03:44:39  THEM I had toast for breakfast at 8am. My name is [Name] and I was born on May 14, 1975.   [slot wrapup]
+03:44:40  BOT  Thank you - that's everything for now. Show the code CANNA-4298 at the counter when you arrive. (ack)

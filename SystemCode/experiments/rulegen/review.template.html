@@ -1,0 +1,145 @@
+<meta charset="utf-8">
+<title>Rulegen Review</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{--paper:#f5f6f3;--surface:#ffffff;--ink:#1d2321;--muted:#5f6a66;--line:#d6dcd8;--accent:#1f6f8b;--accent-ink:#ffffff;--soft:#e4eef2;
+ --ok:#2e7d4f;--ok-bg:#e3f1e8;--warn:#a86d12;--warn-bg:#f7ecd6;--crit:#b23a3a;--crit-bg:#f6e0e0;--chip:#eceeeb;--mono-bg:#eef1ef}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--paper:#171a1b;--surface:#20242a;--ink:#e6e4de;--muted:#9aa39e;--line:#343a3e;--accent:#5fb3cf;--accent-ink:#0f1a1f;--soft:#1e2f36;
+ --ok:#6fc492;--ok-bg:#1d3327;--warn:#e0a94a;--warn-bg:#3a2e17;--crit:#e38383;--crit-bg:#3d2323;--chip:#2b3035;--mono-bg:#262b30}}
+:root[data-theme="dark"]{--paper:#171a1b;--surface:#20242a;--ink:#e6e4de;--muted:#9aa39e;--line:#343a3e;--accent:#5fb3cf;--accent-ink:#0f1a1f;--soft:#1e2f36;
+ --ok:#6fc492;--ok-bg:#1d3327;--warn:#e0a94a;--warn-bg:#3a2e17;--crit:#e38383;--crit-bg:#3d2323;--chip:#2b3035;--mono-bg:#262b30}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:15px;line-height:1.55}
+main{max-width:1100px;margin:0 auto;padding:28px 20px 80px}
+h1,h2,h3{font-family:"Source Serif 4",Georgia,serif;font-weight:600;text-wrap:balance;margin:0}
+h1{font-size:34px;line-height:1.15}h2{font-size:22px;margin-top:44px;padding-top:18px;border-top:1px solid var(--line)}h3{font-size:17px}
+p{max-width:68ch}.lede{color:var(--muted);max-width:70ch;margin-top:8px}
+.eyebrow{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:22px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:12px 14px}
+.stat b{display:block;font-family:"Source Serif 4",serif;font-size:28px;font-weight:600;font-variant-numeric:tabular-nums;line-height:1.1}
+.stat span{color:var(--muted);font-size:12.5px}
+table{border-collapse:collapse;width:100%;font-size:13.5px;font-variant-numeric:tabular-nums}.tw{overflow-x:auto;margin-top:14px;max-width:100%}main{min-width:0;overflow-x:hidden}td,th{white-space:normal}
+th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+td.num{text-align:right}tr.best td{background:var(--soft)}
+ul.find{padding-left:20px;max-width:80ch}ul.find li{margin:10px 0}ul.find b{font-weight:600}
+code,.mono{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:12.5px}code{background:var(--mono-bg);padding:1px 5px;border-radius:3px}
+.bar{position:sticky;top:0;z-index:5;background:var(--paper);padding:12px 0;border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:18px}
+.bar input[type=search]{flex:1 1 220px;padding:8px 10px;border:1px solid var(--line);border-radius:5px;background:var(--surface);color:var(--ink);font:inherit}
+.bar select,.bar button{padding:7px 10px;border:1px solid var(--line);border-radius:5px;background:var(--surface);color:var(--ink);font:inherit;font-size:13.5px}
+.bar button.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.bar .count{color:var(--muted);font-size:13px;margin-left:auto;font-variant-numeric:tabular-nums}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:6px;margin-top:10px}
+.card>summary{list-style:none;cursor:pointer;padding:12px 14px;display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:start}
+.card>summary::-webkit-details-marker{display:none}.card[open]>summary{border-bottom:1px solid var(--line)}
+.cn{font-family:"IBM Plex Mono",monospace;color:var(--muted);font-size:12px;padding-top:3px;min-width:34px}
+.aspan{font-family:"Source Serif 4",serif;font-size:15.5px;line-height:1.4}
+.meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.chip{font-size:11.5px;padding:2px 8px;border-radius:999px;background:var(--chip);color:var(--ink);white-space:nowrap}
+.chip.dp{font-family:"IBM Plex Mono",monospace;font-weight:500}.chip.ok{background:var(--ok-bg);color:var(--ok)}.chip.warn{background:var(--warn-bg);color:var(--warn)}.chip.crit{background:var(--crit-bg);color:var(--crit)}
+.chip.o-spike{background:var(--accent);color:var(--accent-ink)}
+.verdict{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}.verdict button{font:inherit;font-size:12px;padding:4px 8px;border:1px solid var(--line);border-radius:4px;background:var(--surface);color:var(--muted);cursor:pointer}
+.verdict button.on{border-color:var(--accent);background:var(--soft);color:var(--ink);font-weight:600}
+.members{padding:6px 14px 14px}.mem{padding:10px 0;border-top:1px dashed var(--line);display:grid;grid-template-columns:150px 1fr;gap:10px}
+.mem:first-child{border-top:0}.mem .o{font-size:12.5px;color:var(--muted)}.mem .o b{display:block;color:var(--ink);font-weight:600}
+.mem .sp{font-family:"Source Serif 4",serif;font-size:14.5px;line-height:1.45}.mem .sp::before{content:"“"}.mem .sp::after{content:"”"}
+.mem .w{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--muted);margin-top:5px;word-break:break-word}
+.mem .tags{margin-top:6px}.notes{font-size:12.5px;color:var(--muted);margin-top:4px}
+.links{font-size:12.5px;color:var(--muted);padding:0 14px 12px}
+dl.expl{max-width:80ch}dl.expl dt{font-weight:600;margin-top:12px}dl.expl dd{margin:4px 0 0 0;color:var(--muted)}
+textarea{width:100%;min-height:120px;font-family:"IBM Plex Mono",monospace;font-size:12px;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:5px;padding:8px}
+@media (max-width:700px){.card>summary{grid-template-columns:auto 1fr}.verdict{grid-column:1/-1;justify-content:flex-start}.mem{grid-template-columns:1fr}}
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+</style>
+<main>
+<div class="eyebrow">ED triage intake · knowledge engineering · branch <code>rulegen</code></div>
+<h1>Rulegen Review</h1>
+<p class="lede">One schema, one set of gates, seven drafting configurations run over the ESI v5 handbook — and a concept inventory that collapses every draft, including our own reviewed rulebook, into one list to review. Nothing here has entered <code>rules/criteria.yaml</code>; every concept below is a candidate until a person checks it against the cited page.</p>
+<div class="stats" id="stats"></div>
+
+<h2>What the runs showed</h2>
+<ul class="find">
+<li><b>The gates hold for every drafter.</b> Across 409 rulegen drafts there were zero span failures — every quoted span was found verbatim on the cited page — and every page attribution in the whole-document and agentic runs was correct. The source-first protocol is enforceable by code, regardless of model or mode.</li>
+<li><b>A stronger model finds more and obeys less.</b> Pro re-found the most reviewed rules (39 of 47) and produced the most new candidates, but invented 17 field names — per-complaint booleans like <code>complaint.chest_pain</code> in place of the enumerated <code>complaint.category</code> — and labelled a third of its drafts <i>operationalized</i> without saying what it operationalized. Flash stayed inside the vocabulary. Review load scales with capability.</li>
+<li><b>An agent's self-report is not evidence.</b> Two of three Pro agentic runs claimed to have written 34 and 70 entries; no file existed. The transcript is the record, so transcripts are now kept per run.</li>
+<li><b>Keep the workspace clean — that is the whole isolation requirement.</b> The agent did look around when it could (<code>ls /tmp</code>, <code>env</code>, <code>find /</code>); it never reached anything carrying answers, and results were identical with a stricter namespace. A fresh workspace with no prior drafts in reach is enough.</li>
+<li><b>Agents self-verify when allowed.</b> The Pro agent wrote its own schema and span checkers and grepped the pages for exact phrases before quoting them — the payoff of a rich environment, visible as 52 of 52 spans verified.</li>
+<li><b>The modes are complementary.</b> Whole-document reading under-generates but sees figures and tables that text extraction mangles (the algorithm box, the pediatric fever table); per-page over-covers prose; agentic runs cross-check. Union, dedupe through the concept graph, then review.</li>
+</ul>
+
+<h2>Drafters</h2>
+<div class="tw"><table><thead><tr><th>Drafter</th><th>Mode</th><th class="num">Drafts</th><th class="num">Schema-valid</th><th class="num">Span verified</th><th class="num">Reviewed rules re-found (of 47)</th><th>Invented fields</th></tr></thead><tbody>
+<tr><td>Gemini 3.6 Flash via API</td><td>page by page, tools off</td><td class="num">68</td><td class="num">68/68</td><td class="num">68/68</td><td class="num">33</td><td>6 meta-fields (rejected)</td></tr>
+<tr><td>Gemini 3.6 Flash via Antigravity CLI</td><td>page by page, tools off</td><td class="num">75</td><td class="num">75/75</td><td class="num">75/75</td><td class="num">34</td><td>0</td></tr>
+<tr class="best"><td>Gemini 3.1 Pro via Antigravity CLI</td><td>page by page, tools off</td><td class="num">93</td><td class="num">93/93</td><td class="num">93/93</td><td class="num">39</td><td>17 per-complaint booleans</td></tr>
+<tr><td>Gemini 3.6 Flash</td><td>agent with tools, clean workspace</td><td class="num">84</td><td class="num">84/84</td><td class="num">84/84</td><td class="num">35</td><td>1 (<code>vitals.sbp</code>, legitimate)</td></tr>
+<tr><td>Gemini 3.1 Pro</td><td>agent with tools, clean workspace</td><td class="num">52</td><td class="num">52/52</td><td class="num">52/52</td><td class="num">27</td><td>0</td></tr>
+<tr><td>Gemini 3.6 Flash via API</td><td>whole PDF in one call</td><td class="num">37</td><td class="num">37/38</td><td class="num">37/37</td><td class="num">25</td><td>0</td></tr>
+</tbody></table></div>
+<p class="lede">"Re-found" uses a loose criterion-identity matcher and undercounts; the concept inventory below is the better view of agreement.</p>
+<h3 style="margin-top:22px">What each drafter is</h3>
+<dl class="expl">__EXPLAIN__</dl>
+
+<h2>Concept inventory</h2>
+<p class="lede">Every draft from every origin, clustered by strong identity (same span, or same condition). Expand a concept to see each member's quoted span, condition and labels; mark a verdict — verdicts stay in this browser and can be copied out below.</p>
+<div class="bar">
+<input type="search" id="q" placeholder="Search spans, ids, fields…" aria-label="Search">
+<select id="fdp" aria-label="Decision point"><option value="">All decision points</option><option>A</option><option>B</option><option>C</option><option>D</option></select>
+<select id="fstat" aria-label="Status"><option value="">All concepts</option><option value="rev">In reviewed rulebook</option><option value="new">Not in reviewed rulebook</option><option value="single">Found by one origin only</option><option value="dis">Label disagreements</option><option value="var">Same text, different encoding</option></select>
+<select id="forig" aria-label="Origin"><option value="">Any origin</option></select>
+<select id="fver" aria-label="Verdict"><option value="">Any verdict</option><option value="promote">Promote</option><option value="edit">Needs edit</option><option value="reject">Reject</option><option value="unsure">Unsure</option><option value="none">Unmarked</option></select>
+<button id="expand">Expand all</button><button id="collapse">Collapse all</button>
+<span class="count" id="count"></span>
+</div>
+<div id="list"></div>
+
+<h2>Your verdicts</h2>
+<p class="lede">Copy this into the review log (or paste it back to me). Verdicts are per concept, saved in this browser only.</p>
+<div class="bar" style="position:static;border:0"><button class="primary" id="export">Refresh export</button><button id="clear">Clear all verdicts</button></div>
+<textarea id="out" readonly aria-label="Verdict export"></textarea>
+</main>
+<script>
+const DATA = __DATA__; const OL = __OL__;
+const C = DATA.concepts; const list = document.getElementById('list');
+const K='rulegen-verdicts-v1'; let V={}; try{V=JSON.parse(localStorage.getItem(K)||'{}')}catch(e){V={}}
+function save(){try{localStorage.setItem(K,JSON.stringify(V))}catch(e){} exportV()}
+function esc(s){return String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+function ochip(o){return `<span class="chip ${o==='spike'?'o-spike':''}">${esc(OL[o]||o)}</span>`}
+function stats(){
+  const shared=C.filter(c=>c.size>1).length, single=C.length-shared, dis=C.filter(c=>c.dis.length).length, rev=C.filter(c=>c.reviewed).length, members=C.reduce((a,c)=>a+c.size,0);
+  document.getElementById('stats').innerHTML=[[members,'rules drafted, all origins'],[Object.keys(DATA.origins).length,'origins (reviewed rulebook + 7 runs)'],[C.length,'concepts after dedupe'],[shared,'found by two or more origins'],[C.length-rev,'not yet in the reviewed rulebook'],[dis,'with label disagreements']].map(([b,s])=>`<div class="stat"><b>${b}</b><span>${s}</span></div>`).join('')
+}
+function card(c){
+  const v=V[c.n]||'none';
+  const badges=[`<span class="chip">${c.size} member${c.size>1?'s':''}</span>`, ...c.dps.map(d=>`<span class="chip dp">${d}</span>`),
+    c.reviewed?`<span class="chip ok">in reviewed rulebook</span>`:`<span class="chip warn">new candidate</span>`,
+    ...c.dis.map(d=>`<span class="chip crit">disagree: ${esc(d)}</span>`), ...c.variants.filter(x=>x!=='exact duplicates').map(x=>`<span class="chip">${esc(x)}</span>`),
+    ...c.origins.map(ochip)].join('');
+  const mem=c.members.map(m=>`<div class="mem"><div class="o"><b>${esc(OL[m.origin]||m.origin)}</b><span class="mono">${esc(m.id)}</span><br>p.${m.page??'?'} · ${esc(m.provenance)}${m.effect?' · '+esc(m.effect):''}${m.via?' · '+esc(m.via):''}</div>
+   <div><div class="sp">${esc(m.span)}</div><div class="w">${esc(m.when)}</div>${m.notes?`<div class="notes">${esc(m.notes)}</div>`:''}</div></div>`).join('');
+  return `<details class="card" data-n="${c.n}"><summary><span class="cn">#${c.n}</span><span><span class="aspan">${esc(c.aspan)}</span><div class="meta">${badges}</div></span>
+    <span class="verdict">${['promote','edit','reject','unsure'].map(x=>`<button data-v="${x}" class="${v===x?'on':''}" aria-pressed="${v===x}">${x==='edit'?'needs edit':x}</button>`).join('')}</span></summary>
+    <div class="members">${mem}</div>${c.links.length?`<div class="links">split / related to: ${esc(c.links.join(', '))}</div>`:''}</details>`
+}
+function render(){
+  const q=document.getElementById('q').value.toLowerCase(), dp=document.getElementById('fdp').value, st=document.getElementById('fstat').value, org=document.getElementById('forig').value, ver=document.getElementById('fver').value;
+  const rows=C.filter(c=>{
+    if(dp&&!c.dps.includes(dp))return false;
+    if(st==='rev'&&!c.reviewed)return false; if(st==='new'&&c.reviewed)return false; if(st==='single'&&c.size>1)return false;
+    if(st==='dis'&&!c.dis.length)return false; if(st==='var'&&!c.variants.includes('same text, different encoding'))return false;
+    if(org&&!c.origins.includes(org))return false; const v=V[c.n]||'none'; if(ver&&v!==ver)return false;
+    if(q){const hay=(c.aspan+' '+c.members.map(m=>m.id+' '+m.span+' '+m.fields.join(' ')).join(' ')).toLowerCase(); if(!hay.includes(q))return false}
+    return true});
+  list.innerHTML=rows.map(card).join(''); document.getElementById('count').textContent=`${rows.length} of ${C.length} concepts`;
+}
+list.addEventListener('click',e=>{const b=e.target.closest('button[data-v]'); if(!b)return; e.preventDefault(); const n=b.closest('details').dataset.n; V[n]=V[n]===b.dataset.v?undefined:b.dataset.v; if(!V[n])delete V[n]; save(); render()});
+['q','fdp','fstat','forig','fver'].forEach(id=>document.getElementById(id).addEventListener('input',render));
+document.getElementById('expand').onclick=()=>list.querySelectorAll('details').forEach(d=>d.open=true);
+document.getElementById('collapse').onclick=()=>list.querySelectorAll('details').forEach(d=>d.open=false);
+document.getElementById('export').onclick=exportV; document.getElementById('clear').onclick=()=>{if(confirm('Clear all verdicts saved in this browser?')){V={};save();render()}};
+function exportV(){const rows=Object.entries(V).map(([n,v])=>{const c=C.find(x=>x.n==n);return {concept:+n,verdict:v,anchor:c.anchor,span:c.aspan}}); document.getElementById('out').value=JSON.stringify({exported:new Date().toISOString().slice(0,10),verdicts:rows},null,1)}
+const fo=document.getElementById('forig'); Object.keys(DATA.origins).forEach(o=>{const op=document.createElement('option');op.value=o;op.textContent=(OL[o]||o)+` (${DATA.origins[o]})`;fo.appendChild(op)});
+stats(); render(); exportV();
+</script>

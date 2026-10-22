@@ -1,0 +1,574 @@
+{
+ "stamp": "2026-10-18 23:48",
+ "model": "gemma4:12b",
+ "temperature": "0",
+ "seed": "42",
+ "num_ctx": 49152,
+ "probe": [
+  {
+   "probe": "quote condition of A-01.unresponsive",
+   "pass": true,
+   "got": "{'when': '{\"any\": [{\"all\": [{\"field\": \"obs.nonverbal_acute\", \"equals\": true}, {\"field\": \"obs.not_following_commands\", \"equals\": true}]}, {\"field\": \"obs.avpu\", \"in\": [\"P\", \"U\"]}]}'}",
+   "prompt_tokens": 43628
+  },
+  {
+   "probe": "quote condition of B-26.suspected-toxic-ingestion",
+   "pass": true,
+   "got": "{'when': '{\"field\": \"complaint.known_toxic_ingestion\", \"equals\": true}'}",
+   "prompt_tokens": 43633
+  },
+  {
+   "probe": "quote condition of A-22.requires-lifesaving-intervention",
+   "pass": true,
+   "got": "{'when': '{\"field\": \"obs.requires_lifesaving_intervention\", \"equals\": true}'}",
+   "prompt_tokens": 43633
+  },
+  {
+   "probe": "rules that mention pregnancy",
+   "pass": false,
+   "expected": [
+    "A-18.pregnancy-hemodynamic-instability-lifesaving",
+    "B-06.possible-ectopic-stable",
+    "B-17.abdo-pain-pregnant-or-postpartum",
+    "B-21.abdo-pain-vaginal-bleeding",
+    "B-37.pregnant-postpartum-sbp-out-of-range",
+    "B-38.pregnant-chest-pain-breathlessness-abdo-pain-or-headache",
+    "B-39.pregnant-heavy-bleeding-abnormal-vitals-infection",
+    "B-42.unilateral-lower-quadrant-pain-torsion-or-ectopic-consider"
+   ],
+   "got": [
+    "A-18",
+    "B-13",
+    "B-17",
+    "B-38",
+    "B-39"
+   ],
+   "prompt_tokens": 43619
+  },
+  {
+   "probe": "name the rule for fall + warfarin",
+   "pass": true,
+   "got": "{'id': 'B-30'}",
+   "prompt_tokens": 43632
+  }
+ ],
+ "runs": [
+  {
+   "form": "rules",
+   "persona": "P1-fall-anticoag",
+   "expected": "at least ESI-2",
+   "outcome": "no decision in 16 questions",
+   "pass": false,
+   "label": "missing fact",
+   "turns": 16,
+   "danger_first": true,
+   "advice": [],
+   "citation": null,
+   "citation_present": false,
+   "decision": {
+    "decision": "unparsed",
+    "reason": "turn limit reached without a decision"
+   },
+   "max_prompt_tokens": 44205,
+   "num_ctx": 49152,
+   "void": false
+  },
+  {
+   "form": "rules",
+   "persona": "P2-chest-pain",
+   "expected": "at least ESI-2",
+   "outcome": "no decision in 16 questions",
+   "pass": false,
+   "label": "missing fact",
+   "turns": 16,
+   "danger_first": true,
+   "advice": [],
+   "citation": null,
+   "citation_present": false,
+   "decision": {
+    "decision": "unparsed",
+    "reason": "turn limit reached without a decision"
+   },
+   "max_prompt_tokens": 44102,
+   "num_ctx": 49152,
+   "void": false
+  },
+  {
+   "form": "rules",
+   "persona": "P3-abdo-pregnant",
+   "expected": "at least ESI-2",
+   "outcome": "level 2 or floor",
+   "pass": true,
+   "label": null,
+   "turns": 15,
+   "danger_first": true,
+   "advice": [],
+   "citation": "ESI v5 p.14 (Obstetrical and Gynecological Concerns); p.12 (Severe Pain or Distress)",
+   "citation_present": true,
+   "decision": {
+    "done": true,
+    "decision": "at least ESI-2",
+    "reason": "The patient is pregnant and experiencing severe abdominal pain (8/10) that is constant and at its worst on onset, which meets the criteria for a high-risk situation.",
+    "citation": "ESI v5 p.14 (Obstetrical and Gynecological Concerns); p.12 (Severe Pain or Distress)"
+   },
+   "max_prompt_tokens": 44124,
+   "num_ctx": 49152,
+   "void": false
+  },
+  {
+   "form": "rules",
+   "persona": "P4-sore-throat",
+   "expected": null,
+   "outcome": "no floor",
+   "pass": true,
+   "label": null,
+   "turns": 9,
+   "danger_first": true,
+   "advice": [],
+   "citation": "ESI v5 p.19; p.20 (Table 5-2, item 2)",
+   "citation_present": true,
+   "decision": {
+    "done": true,
+    "decision": "no floor",
+    "reason": "The patient is stable, not high-risk, and requires only one resource (a physical exam) to reach a disposition.",
+    "citation": "ESI v5 p.19; p.20 (Table 5-2, item 2)"
+   },
+   "max_prompt_tokens": 43888,
+   "num_ctx": 49152,
+   "void": false
+  },
+  {
+   "form": "rules",
+   "persona": "P6-stroke-resolved",
+   "expected": "at least ESI-2",
+   "outcome": "no decision in 16 questions",
+   "pass": false,
+   "label": "missing fact",
+   "turns": 16,
+   "danger_first": true,
+   "advice": [],
+   "citation": null,
+   "citation_present": false,
+   "decision": {
+    "decision": "unparsed",
+    "reason": "turn limit reached without a decision"
+   },
+   "max_prompt_tokens": 44178,
+   "num_ctx": 49152,
+   "void": false
+  },
+  {
+   "form": "rules",
+   "persona": "P5-fever-chemo",
+   "expected": "at least ESI-2",
+   "outcome": "level 2 or floor",
+   "pass": true,
+   "label": null,
+   "turns": 12,
+   "danger_first": true,
+   "advice": [],
+   "citation": "ESI v5 p.12 (chemotherapy example); p.15 (Transplant); B-07.immunocompromised_fever",
+   "citation_present": true,
+   "decision": {
+    "decision": "at least ESI-2",
+    "reason": "The patient is an immunocompromised adult (on chemotherapy) presenting with a fever, which is a high-risk situation.",
+    "citation": "ESI v5 p.12 (chemotherapy example); p.15 (Transplant); B-07.immunocompromised_fever"
+   },
+   "max_prompt_tokens": 44071,
+   "num_ctx": 49152,
+   "void": false
+  },
+  {
+   "form": "rules",
+   "persona": "P6-acute-gout",
+   "expected": null,
+   "outcome": "no floor",
+   "pass": true,
+   "label": null,
+   "turns": 10,
+   "danger_first": true,
+   "advice": [],
+   "citation": "ESI v5 p.5",
+   "citation_present": true,
+   "decision": {
+    "done": true,
+    "decision": "no floor",
+    "reason": "The patient is stable and does not meet any high-risk criteria (Decision Point B), so the triage level depends on the number of resources required (Decision Point C).",
+    "citation": "ESI v5 p.5"
+   },
+   "max_prompt_tokens": 43983,
+   "num_ctx": 49152,
+   "void": false
+  },
+  {
+   "form": "rules",
+   "persona": "P7-heat-stroke",
+   "expected": "ESI-1",
+   "outcome": "level 2 or floor",
+   "pass": false,
+   "label": "missing fact",
+   "turns": 10,
+   "danger_first": true,
+   "advice": [],
+   "citation": "ESI v5 p.12 (New Onset Confusion, Lethargy, or Disorientation)",
+   "citation_present": true,
+   "decision": {
+    "decision": "at least ESI-2",
+    "reason": "The patient is experiencing a new onset of confusion, drowsiness, or disorientation, which is a high-risk situation.",
+    "citation": "ESI v5 p.12 (New Onset Confusion, Lethargy, or Disorientation)"
+   },
+   "max_prompt_tokens": 43941,
+   "num_ctx": 49152,
+   "void": false
+  },
+  {
+   "form": "rules",
+   "persona": "P8-decompensated-liver-disease",
+   "expected": "at least ESI-2",
+   "outcome": "level 2 or floor",
+   "pass": true,
+   "label": null,
+   "turns": 10,
+   "danger_first": true,
+   "advice": [],
+   "citation": "ESI v5 p.12 (New Onset Confusion, Lethargy, or Disorientation); Rule B-01",
+   "citation_present": true,
+   "decision": {
+    "decision": "at least ESI-2",
+    "reason": "The patient is experiencing a new change in mental status (confusion and sleepiness) which is a high-risk situation.",
+    "citation": "ESI v5 p.12 (New Onset Confusion, Lethargy, or Disorientation); Rule B-01"
+   },
+   "max_prompt_tokens": 43975,
+   "num_ctx": 49152,
+   "void": false
+  },
+  {
+   "form": "rules",
+   "persona": "P9-breathing-no-pain",
+   "expected": null,
+   "outcome": "no decision in 16 questions",
+   "pass": false,
+   "label": "model error (over-call)",
+   "turns": 16,
+   "danger_first": true,
+   "advice": [],
+   "citation": null,
+   "citation_present": false,
+   "decision": {
+    "decision": "unparsed",
+    "reason": "turn limit reached without a decision"
+   },
+   "max_prompt_tokens": 44138,
+   "num_ctx": 49152,
+   "void": false
+  },
+  {
+   "form": "rules",
+   "persona": "P10-infant-fever",
+   "expected": "at least ESI-2",
+   "outcome": "level 2 or floor",
+   "pass": true,
+   "label": null,
+   "turns": 9,
+   "danger_first": true,
+   "advice": [],
+   "citation": "ESI v5 p.23 (Pediatric Vital Signs); p.6 (Pediatric Fever Considerations)",
+   "citation_present": true,
+   "decision": {
+    "decision": "at least ESI-2",
+    "reason": "The patient is an infant under 28 days old with a fever, which is a high-risk situation.",
+    "citation": "ESI v5 p.23 (Pediatric Vital Signs); p.6 (Pediatric Fever Considerations)"
+   },
+   "max_prompt_tokens": 43875,
+   "num_ctx": 49152,
+   "void": false
+  },
+  {
+   "form": "rules",
+   "persona": "P11-asthma-worsening",
+   "expected": "at least ESI-2",
+   "outcome": "level 1",
+   "pass": true,
+   "label": null,
+   "turns": 5,
+   "danger_first": true,
+   "advice": [],
+   "citation": "ESI v5 p.6 (Fig 2-2 list of presentations requiring lifesaving interventions); p.9 (level-1 examples)",
+   "citation_present": true,
+   "decision": {
+    "decision": "ESI-1 indicator",
+    "reason": "The patient is in severe respiratory distress and requires immediate lifesaving intervention.",
+    "citation": "ESI v5 p.6 (Fig 2-2 list of presentations requiring lifesaving interventions); p.9 (level-1 examples)"
+   },
+   "max_prompt_tokens": 43776,
+   "num_ctx": 49152,
+   "void": false
+  },
+  {
+   "form": "rules",
+   "persona": "P12-elderly-confusion-uti",
+   "expected": "at least ESI-2",
+   "outcome": "no decision in 16 questions",
+   "pass": false,
+   "label": "missing fact",
+   "turns": 16,
+   "danger_first": true,
+   "advice": [],
+   "citation": null,
+   "citation_present": false,
+   "decision": {
+    "decision": "unparsed",
+    "reason": "turn limit reached without a decision"
+   },
+   "max_prompt_tokens": 44111,
+   "num_ctx": 49152,
+   "void": false
+  },
+  {
+   "form": "rules",
+   "persona": "P13-cast-too-tight",
+   "expected": "at least ESI-2",
+   "outcome": "no decision in 16 questions",
+   "pass": false,
+   "label": "missing fact",
+   "turns": 16,
+   "danger_first": true,
+   "advice": [],
+   "citation": null,
+   "citation_present": false,
+   "decision": {
+    "decision": "unparsed",
+    "reason": "turn limit reached without a decision"
+   },
+   "max_prompt_tokens": 44065,
+   "num_ctx": 49152,
+   "void": false
+  },
+  {
+   "form": "rules",
+   "persona": "P14-child-knee-cut",
+   "expected": null,
+   "outcome": "no floor",
+   "pass": true,
+   "label": null,
+   "turns": 9,
+   "danger_first": true,
+   "advice": [],
+   "citation": "ESI v5 p.5 (Decision Point C)",
+   "citation_present": true,
+   "decision": {
+    "decision": "no floor",
+    "reason": "The patient is stable and does not meet any high-risk criteria or life-saving intervention criteria; the next step is to determine the number of resources required.",
+    "citation": "ESI v5 p.5 (Decision Point C)"
+   },
+   "max_prompt_tokens": 43890,
+   "num_ctx": 49152,
+   "void": false
+  },
+  {
+   "form": "rules",
+   "persona": "P15-suicidal-thoughts",
+   "expected": "at least ESI-2",
+   "outcome": "level 2 or floor",
+   "pass": true,
+   "label": null,
+   "turns": 9,
+   "danger_first": true,
+   "advice": [],
+   "citation": "ESI v5 p.15 (Mental and Behavioral Health); Rule B-09.suicidal-or-homicidal",
+   "citation_present": true,
+   "decision": {
+    "done": true,
+    "decision": "at least ESI-2",
+    "reason": "The patient is presenting with a mental health concern involving suicidal ideation, which is a high-risk situation.",
+    "citation": "ESI v5 p.15 (Mental and Behavioral Health); Rule B-09.suicidal-or-homicidal"
+   },
+   "max_prompt_tokens": 43937,
+   "num_ctx": 49152,
+   "void": false
+  },
+  {
+   "form": "rules",
+   "persona": "P16-intentional-overdose",
+   "expected": "at least ESI-2",
+   "outcome": "no decision in 16 questions",
+   "pass": false,
+   "label": "missing fact",
+   "turns": 16,
+   "danger_first": true,
+   "advice": [],
+   "citation": null,
+   "citation_present": false,
+   "decision": {
+    "decision": "unparsed",
+    "reason": "turn limit reached without a decision"
+   },
+   "max_prompt_tokens": 44027,
+   "num_ctx": 49152,
+   "void": false
+  },
+  {
+   "form": "rules",
+   "persona": "P17-nosebleed-clotting",
+   "expected": "at least ESI-2",
+   "outcome": "no decision in 16 questions",
+   "pass": false,
+   "label": "missing fact",
+   "turns": 16,
+   "danger_first": true,
+   "advice": [],
+   "citation": null,
+   "citation_present": false,
+   "decision": {
+    "decision": "unparsed",
+    "reason": "turn limit reached without a decision"
+   },
+   "max_prompt_tokens": 44075,
+   "num_ctx": 49152,
+   "void": false
+  },
+  {
+   "form": "rules",
+   "persona": "P18-fall-no-floor",
+   "expected": null,
+   "outcome": "no decision in 16 questions",
+   "pass": false,
+   "label": "model error (over-call)",
+   "turns": 16,
+   "danger_first": true,
+   "advice": [],
+   "citation": null,
+   "citation_present": false,
+   "decision": {
+    "decision": "unparsed",
+    "reason": "turn limit reached without a decision"
+   },
+   "max_prompt_tokens": 44084,
+   "num_ctx": 49152,
+   "void": false
+  },
+  {
+   "form": "rules",
+   "persona": "P19-headache-no-floor",
+   "expected": null,
+   "outcome": "no decision in 16 questions",
+   "pass": false,
+   "label": "model error (over-call)",
+   "turns": 16,
+   "danger_first": true,
+   "advice": [],
+   "citation": null,
+   "citation_present": false,
+   "decision": {
+    "decision": "unparsed",
+    "reason": "turn limit reached without a decision"
+   },
+   "max_prompt_tokens": 44091,
+   "num_ctx": 49152,
+   "void": false
+  },
+  {
+   "form": "rules",
+   "persona": "P20-cancer-pain",
+   "expected": "at least ESI-2",
+   "outcome": "level 2 or floor",
+   "pass": true,
+   "label": null,
+   "turns": 13,
+   "danger_first": true,
+   "advice": [],
+   "citation": "ESI v5 p.12 (Severe Pain or Distress); B-03.severe-pain-systemic-cause",
+   "citation_present": true,
+   "decision": {
+    "decision": "at least ESI-2",
+    "reason": "The patient is experiencing severe pain (9/10) caused by a systemic condition (metastatic ovarian cancer), which meets the criteria for a high-risk situation.",
+    "citation": "ESI v5 p.12 (Severe Pain or Distress); B-03.severe-pain-systemic-cause"
+   },
+   "max_prompt_tokens": 44084,
+   "num_ctx": 49152,
+   "void": false
+  },
+  {
+   "form": "rules",
+   "persona": "P21-child-shunt-not-right",
+   "expected": "at least ESI-2",
+   "outcome": "no decision in 16 questions",
+   "pass": false,
+   "label": "missing fact",
+   "turns": 16,
+   "danger_first": true,
+   "advice": [],
+   "citation": null,
+   "citation_present": false,
+   "decision": {
+    "decision": "unparsed",
+    "reason": "turn limit reached without a decision"
+   },
+   "max_prompt_tokens": 44092,
+   "num_ctx": 49152,
+   "void": false
+  },
+  {
+   "form": "rules",
+   "persona": "P22-teen-threatening-family",
+   "expected": "at least ESI-2",
+   "outcome": "no decision in 16 questions",
+   "pass": false,
+   "label": "missing fact",
+   "turns": 16,
+   "danger_first": true,
+   "advice": [],
+   "citation": null,
+   "citation_present": false,
+   "decision": {
+    "decision": "unparsed",
+    "reason": "turn limit reached without a decision"
+   },
+   "max_prompt_tokens": 44160,
+   "num_ctx": 49152,
+   "void": false
+  },
+  {
+   "form": "rules",
+   "persona": "P23-sawdust-in-eye",
+   "expected": null,
+   "outcome": "no floor",
+   "pass": true,
+   "label": null,
+   "turns": 13,
+   "danger_first": true,
+   "advice": [],
+   "citation": "page 5",
+   "citation_present": true,
+   "decision": {
+    "done": true,
+    "decision": "no floor",
+    "reason": "The patient is stable and does not meet any high-risk criteria; the triage will proceed to resource assessment.",
+    "citation": "page 5"
+   },
+   "max_prompt_tokens": 44039,
+   "num_ctx": 49152,
+   "void": false
+  },
+  {
+   "form": "rules",
+   "persona": "P24-bug-in-ear",
+   "expected": null,
+   "outcome": "no decision in 16 questions",
+   "pass": false,
+   "label": "model error (over-call)",
+   "turns": 16,
+   "danger_first": true,
+   "advice": [],
+   "citation": null,
+   "citation_present": false,
+   "decision": {
+    "decision": "unparsed",
+    "reason": "turn limit reached without a decision"
+   },
+   "max_prompt_tokens": 44059,
+   "num_ctx": 49152,
+   "void": false
+  }
+ ]
+}

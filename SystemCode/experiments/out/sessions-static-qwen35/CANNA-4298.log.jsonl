@@ -1,0 +1,22 @@
+{"t": "03:44:16", "kind": "engine", "note": "session CANNA-4298 started (web)"}
+{"t": "03:44:17", "kind": "question", "slot": "red_flags.screen", "text": "Can you please tell me if the patient is awake and responding normally, and if they are experiencing severe chest pain, trouble breathing, or heavy bleeding right now?"}
+{"t": "03:44:18", "kind": "answer", "slot": "red_flags.screen", "text": "I am awake and responding, though I feel scared. My chest pain is 6/10 and spreading to my arm, and I am feeling breathless when walking."}
+{"t": "03:44:25", "kind": "extract", "writes": [["red_flags.responsive", true], ["red_flags.chest_pain_now", true], ["red_flags.breathing_difficulty", true], ["complaint.text", "chest pain is 6/10 and spreading to my arm", "chest_pain"], ["complaint.pain_rating", 6, "chest_pain"], ["complaint.vaginal_bleeding", false], ["chest_pain_suspicious", true]]}
+{"t": "03:44:25", "kind": "floor", "floor": "at least ESI-2", "fired": ["B-04.chest-pain-acs-suspect"], "sources": ["ESI v5 p.12 (high-risk examples list)"]}
+{"t": "03:44:25", "kind": "extract", "writes": [["E.mechanism", "none"]], "via": "derived-non-injury"}
+{"t": "03:44:26", "kind": "question", "slot": "red_flags.screen", "text": "Since I haven't noticed any heavy bleeding yet, could you please confirm if you are currently bleeding heavily?"}
+{"t": "03:44:27", "kind": "answer", "slot": "red_flags.screen", "text": "No, I am not bleeding heavily right now. My main symptoms are chest pressure and shortness of breath."}
+{"t": "03:44:28", "kind": "extract", "writes": [["red_flags.heavy_bleeding", false], ["complaint.category", "chest_pain"], ["complaint.text", "chest pressure and shortness of breath"], ["complaint.onset", "current"]]}
+{"t": "03:44:29", "kind": "question", "slot": "M.medications", "text": "Could you please tell me if you take any regular medications?"}
+{"t": "03:44:30", "kind": "answer", "slot": "M.medications", "text": "No, I don't take any regular medications. I'm feeling pretty scared right now."}
+{"t": "03:44:31", "kind": "extract", "writes": [["M.medications", []], ["ams.changed_from_baseline", true]]}
+{"t": "03:44:32", "kind": "question", "slot": "allergies_and_history", "text": "Could you please tell me if you have any allergies to medicines or any other medical conditions like heart problems, diabetes, pregnancy, or anything affecting your immune system?"}
+{"t": "03:44:32", "kind": "answer", "slot": "allergies_and_history", "text": "No, I don't have any known conditions or allergies. I'm a little scared right now."}
+{"t": "03:44:34", "kind": "extract", "writes": [["A.allergies", []], ["history.conditions", []], ["history.immunocompromised", false], ["history.pregnant_or_postpartum", false]]}
+{"t": "03:44:35", "kind": "question", "slot": "infection.screen", "text": "Do you have any fever, rash, recent overseas travel, or contact with anyone who is infectious?"}
+{"t": "03:44:36", "kind": "answer", "slot": "infection.screen", "text": "No, I don't have a fever, rash, or travel history, and no one around me is sick. I'm just scared right now."}
+{"t": "03:44:37", "kind": "extract", "writes": [["infection.fever", false], ["infection.rash", false], ["infection.travel_14d", false], ["infection.contacts", false]]}
+{"t": "03:44:38", "kind": "question", "slot": "wrapup", "text": "Could you please tell me when you last ate or drank, and also your name and date of birth so we can complete our hospital records?"}
+{"t": "03:44:39", "kind": "answer", "slot": "wrapup", "text": "I had toast for breakfast at 8am. My name is [Name] and I was born on May 14, 1975."}
+{"t": "03:44:40", "kind": "extract", "writes": [["L.last_intake", "toast"], ["identity.name", "[Name]"], ["identity.dob", "May 14, 1975"]]}
+{"t": "03:44:40", "kind": "engine", "note": "interview complete - no open slots"}

@@ -1,0 +1,518 @@
+{
+ "sid": "LOTUS-8476",
+ "facts": {
+  "danger_signs.responsive": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-18 17:52"
+  },
+  "danger_signs.chest_pain_now": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-18 17:52"
+  },
+  "danger_signs.breathing_difficulty": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-18 17:52"
+  },
+  "danger_signs.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-18 17:52"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "limb_pain_or_swelling",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 4,
+      "ts": "2026-10-18 17:52"
+     },
+     "text": {
+      "value": "She had a cast put on her broken wrist last night. Now her hand is really swollen and the cast is cutting into her fingers.",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 4,
+      "ts": "2026-10-18 17:52"
+     },
+     "onset": {
+      "value": "this morning",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 5,
+      "ts": "2026-10-18 17:53"
+     },
+     "onset_abs": {
+      "value": "~2026-10-18 morning",
+      "status": "reported",
+      "who": "derived",
+      "turn": 5,
+      "ts": "2026-10-18 17:53"
+     },
+     "pain_rating": {
+      "value": 10,
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 11,
+      "ts": "2026-10-18 17:53"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 4
+  },
+  "complaint.category": {
+   "value": [
+    "limb_pain_or_swelling"
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 11,
+   "ts": "2026-10-18 17:53"
+  },
+  "complaint.text": {
+   "value": "She had a cast put on her broken wrist last night. Now her hand is really swollen and the cast is cutting into her fingers.",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 4,
+   "ts": "2026-10-18 17:52"
+  },
+  "complaint.onset": {
+   "value": "this morning",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 5,
+   "ts": "2026-10-18 17:53"
+  },
+  "complaint.onset_abs": {
+   "value": "~2026-10-18 morning (from 'this morning' said 17:53)",
+   "status": "reported",
+   "who": "derived",
+   "turn": 5,
+   "ts": "2026-10-18 17:53"
+  },
+  "E.mechanism": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 6,
+   "ts": "2026-10-18 17:53"
+  },
+  "patient.age": {
+   "value": 35,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 7,
+   "ts": "2026-10-18 17:53"
+  },
+  "patient.sex": {
+   "value": "female",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 7,
+   "ts": "2026-10-18 17:53"
+  },
+  "patient.age_group": {
+   "value": "adult",
+   "status": "reported",
+   "who": "derived",
+   "turn": 7,
+   "ts": "2026-10-18 17:53"
+  },
+  "history.pregnant": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 8,
+   "ts": "2026-10-18 17:53"
+  },
+  "history.postpartum": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 8,
+   "ts": "2026-10-18 17:53"
+  },
+  "complaint.fever": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 9,
+   "ts": "2026-10-18 17:53"
+  },
+  "infection.rash": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 9,
+   "ts": "2026-10-18 17:53"
+  },
+  "infection.travel_14d": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 10,
+   "ts": "2026-10-18 17:53"
+  },
+  "infection.contacts": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 10,
+   "ts": "2026-10-18 17:53"
+  },
+  "complaint.pain_rating": {
+   "value": 10,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 11,
+   "ts": "2026-10-18 17:53"
+  },
+  "complaint.pain_latest": {
+   "value": 10,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 11,
+   "ts": "2026-10-18 17:53"
+  },
+  "ams.changed_from_baseline": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 12,
+   "ts": "2026-10-18 17:53"
+  },
+  "M.medications": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 13,
+   "ts": "2026-10-18 17:53"
+  },
+  "A.allergies": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 13,
+   "ts": "2026-10-18 17:53"
+  },
+  "history.conditions": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 14,
+   "ts": "2026-10-18 17:54"
+  },
+  "history.immunocompromised": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 15,
+   "ts": "2026-10-18 17:54"
+  },
+  "limb.numb_tingling": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 16,
+   "ts": "2026-10-18 17:54"
+  },
+  "complaint.extremity_neurovascular_compromise": {
+   "value": true,
+   "status": "reported",
+   "who": "derived",
+   "turn": 16,
+   "ts": "2026-10-18 17:54"
+  }
+ },
+ "attempts": {
+  "danger_signs.responsive": 1,
+  "danger_signs.chest_pain_now": 2,
+  "danger_signs.breathing_difficulty": 1,
+  "danger_signs.heavy_bleeding": 1,
+  "complaint.category": 1,
+  "complaint.text": 1,
+  "complaint.onset": 1,
+  "E.mechanism": 2,
+  "patient.age": 1,
+  "patient.sex": 1,
+  "history.pregnant": 1,
+  "history.postpartum": 1,
+  "complaint.fever": 1,
+  "infection.rash": 1,
+  "infection.travel_14d": 1,
+  "infection.contacts": 1,
+  "ams.changed_from_baseline": 2,
+  "complaint.pain_rating": 1,
+  "M.medications": 1,
+  "A.allergies": 1,
+  "history.conditions": 1,
+  "history.immunocompromised": 1,
+  "limb.numb_tingling": 1,
+  "limb.cold_pale_blue": 1,
+  "identity.name": 1,
+  "identity.dob": 1
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "Is the patient awake and responding to you? Also, are they currently experiencing any chest pain, trouble breathing, or heavy bleeding?",
+   "ts": "2026-10-18 17:52:21",
+   "kind": "question",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, she's awake. No.",
+   "ts": "2026-10-18 17:52:21",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "bot",
+   "text": "I understand she is awake. Is she experiencing any pain in her chest at this moment?",
+   "ts": "2026-10-18 17:52:28",
+   "kind": "question",
+   "slot": "dyn:danger_signs.chest_pain_now"
+  },
+  {
+   "role": "caregiver",
+   "text": "No.",
+   "ts": "2026-10-18 17:52:28",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.chest_pain_now"
+  },
+  {
+   "role": "bot",
+   "text": "I'm glad she's alert. Is she having any trouble breathing or is there any heavy bleeding?",
+   "ts": "2026-10-18 17:52:36",
+   "kind": "question",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding"
+  },
+  {
+   "role": "caregiver",
+   "text": "No.",
+   "ts": "2026-10-18 17:52:36",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding"
+  },
+  {
+   "role": "bot",
+   "text": "I'm glad to hear that. What is the main reason you are bringing her in today, and can you describe what is happening?",
+   "ts": "2026-10-18 17:52:43",
+   "kind": "question",
+   "slot": "dyn:complaint.category+complaint.text"
+  },
+  {
+   "role": "caregiver",
+   "text": "She had a cast put on her broken wrist last night. Now her hand is really swollen and the cast is cutting into her fingers.",
+   "ts": "2026-10-18 17:52:43",
+   "kind": "answer",
+   "slot": "dyn:complaint.category+complaint.text"
+  },
+  {
+   "role": "bot",
+   "text": "I understand the cast is causing issues. When did this swelling start, and how did she originally break her wrist?",
+   "ts": "2026-10-18 17:52:59",
+   "kind": "question",
+   "slot": "dyn:complaint.onset+E.mechanism"
+  },
+  {
+   "role": "caregiver",
+   "text": "The cast went on last night. It got worse this morning.",
+   "ts": "2026-10-18 17:52:59",
+   "kind": "answer",
+   "slot": "dyn:complaint.onset+E.mechanism"
+  },
+  {
+   "role": "bot",
+   "text": "Could you tell me more about how she originally injured her wrist?",
+   "ts": "2026-10-18 17:53:06",
+   "kind": "question",
+   "slot": "dyn:E.mechanism"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 17:53:06",
+   "kind": "answer",
+   "slot": "dyn:E.mechanism"
+  },
+  {
+   "role": "bot",
+   "text": "I see. How old is she?",
+   "ts": "2026-10-18 17:53:12",
+   "kind": "question",
+   "slot": "dyn:patient.age+patient.sex"
+  },
+  {
+   "role": "caregiver",
+   "text": "She's 35. She's a woman.",
+   "ts": "2026-10-18 17:53:12",
+   "kind": "answer",
+   "slot": "dyn:patient.age+patient.sex"
+  },
+  {
+   "role": "bot",
+   "text": "Is she currently pregnant or has she given birth in the last few weeks?",
+   "ts": "2026-10-18 17:53:19",
+   "kind": "question",
+   "slot": "dyn:history.pregnant+history.postpartum"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 17:53:19",
+   "kind": "answer",
+   "slot": "dyn:history.pregnant+history.postpartum"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Does she have a fever or any new rashes on her skin?",
+   "ts": "2026-10-18 17:53:26",
+   "kind": "question",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 17:53:26",
+   "kind": "answer",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "bot",
+   "text": "Has she traveled outside the country or been in contact with anyone who has a contagious illness in the last two weeks?",
+   "ts": "2026-10-18 17:53:32",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 17:53:32",
+   "kind": "answer",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "bot",
+   "text": "Is she acting differently than usual, such as being more confused or very sleepy? Also, how would you rate her pain on a scale of 0 to 10?",
+   "ts": "2026-10-18 17:53:39",
+   "kind": "question",
+   "slot": "dyn:ams.changed_from_baseline+complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "She says the pain is unbearable.",
+   "ts": "2026-10-18 17:53:39",
+   "kind": "answer",
+   "slot": "dyn:ams.changed_from_baseline+complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "Is she acting differently than usual, such as being more confused or very sleepy?",
+   "ts": "2026-10-18 17:53:46",
+   "kind": "question",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 17:53:46",
+   "kind": "answer",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "bot",
+   "text": "I understand the pain is very severe. Does she take any regular medications or have any known allergies, especially to medicine?",
+   "ts": "2026-10-18 17:53:53",
+   "kind": "question",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 17:53:53",
+   "kind": "answer",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "bot",
+   "text": "Does she have any ongoing medical conditions or health problems?",
+   "ts": "2026-10-18 17:53:59",
+   "kind": "question",
+   "slot": "dyn:history.conditions"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 17:53:59",
+   "kind": "answer",
+   "slot": "dyn:history.conditions"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Has she ever been told she has a weakened immune system or is she currently undergoing any treatments like chemotherapy or for an organ transplant?",
+   "ts": "2026-10-18 17:54:05",
+   "kind": "question",
+   "slot": "dyn:history.immunocompromised"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 17:54:05",
+   "kind": "answer",
+   "slot": "dyn:history.immunocompromised"
+  },
+  {
+   "role": "bot",
+   "text": "Are her fingers or toes below the injury numb, tingling, or turning blue or pale? Also, is she able to move them?",
+   "ts": "2026-10-18 17:54:12",
+   "kind": "question",
+   "slot": "dyn:limb.numb_tingling+limb.cold_pale_blue"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, her fingers are numb.",
+   "ts": "2026-10-18 17:54:12",
+   "kind": "answer",
+   "slot": "dyn:limb.numb_tingling+limb.cold_pale_blue"
+  },
+  {
+   "role": "system",
+   "text": "floor: at least ESI-2  rules: ['B-24.extremity-neurovascular-compromise']",
+   "ts": "2026-10-18 17:54:16",
+   "kind": "floor"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Could you please tell me her full name and date of birth?",
+   "ts": "2026-10-18 17:54:19",
+   "kind": "question",
+   "slot": "dyn:identity.name+identity.dob"
+  }
+ ],
+ "stage": "floor",
+ "floor": "at least ESI-2",
+ "phase": "enroute",
+ "created": "2026-10-18 17:52",
+ "pending_slot": "dyn:identity.name+identity.dob",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {},
+ "considered": [
+  "B-02.severe-pain-consider"
+ ]
+}

@@ -1,0 +1,174 @@
+{
+ "backend": "ollama",
+ "model": "gemma4:12b",
+ "results": [
+  {
+   "floor": "at least ESI-2",
+   "floor_ok": true,
+   "rules_ok": true,
+   "fired": [
+    "B-30.anticoagulated-trauma"
+   ],
+   "hits": 8,
+   "total": 9,
+   "misses": [
+    "infection.fever: want=False got=None"
+   ],
+   "danger_miss": false,
+   "persona": "P1-fall-anticoag",
+   "run": 1,
+   "session": "EAGLE-2829",
+   "turns": 16
+  },
+  {
+   "floor": "at least ESI-2",
+   "floor_ok": true,
+   "rules_ok": true,
+   "fired": [
+    "B-04.chest-pain-acs-suspect"
+   ],
+   "hits": 6,
+   "total": 6,
+   "misses": [],
+   "danger_miss": false,
+   "persona": "P2-chest-pain",
+   "run": 1,
+   "session": "ORCHID-4651",
+   "turns": 10
+  },
+  {
+   "floor": "at least ESI-2",
+   "floor_ok": true,
+   "rules_ok": true,
+   "fired": [
+    "B-17.abdo-pain-pregnant-or-postpartum",
+    "B-38.pregnant-chest-pain-breathlessness-abdo-pain-or-headache"
+   ],
+   "hits": 5,
+   "total": 6,
+   "misses": [
+    "complaint.vaginal_bleeding: want=False got=None"
+   ],
+   "danger_miss": false,
+   "persona": "P3-abdo-pregnant",
+   "run": 1,
+   "session": "DURIAN-3911",
+   "turns": 11
+  },
+  {
+   "floor": null,
+   "floor_ok": true,
+   "rules_ok": true,
+   "fired": [],
+   "hits": 4,
+   "total": 5,
+   "misses": [
+    "infection.fever: want=False got=True"
+   ],
+   "danger_miss": false,
+   "persona": "P4-sore-throat",
+   "run": 1,
+   "session": "MERLION-1075",
+   "turns": 14
+  },
+  {
+   "floor": "at least ESI-2",
+   "floor_ok": true,
+   "rules_ok": true,
+   "fired": [
+    "B-05.stroke-signs"
+   ],
+   "hits": 6,
+   "total": 6,
+   "misses": [],
+   "danger_miss": false,
+   "persona": "P6-stroke-resolved",
+   "run": 1,
+   "session": "HERON-3785",
+   "turns": 12
+  },
+  {
+   "floor": null,
+   "floor_ok": false,
+   "rules_ok": false,
+   "fired": [],
+   "hits": 3,
+   "total": 5,
+   "misses": [
+    "history.immunocompromised: want=True got=None",
+    "complaint.pain_rating: want=0 got=None"
+   ],
+   "danger_miss": false,
+   "persona": "P5-fever-chemo",
+   "run": 1,
+   "session": "CANNA-8686",
+   "turns": 10
+  },
+  {
+   "floor": null,
+   "floor_ok": true,
+   "rules_ok": true,
+   "fired": [],
+   "hits": 5,
+   "total": 7,
+   "misses": [
+    "complaint.trauma: want=False got=None",
+    "history.gout: want=True got=None"
+   ],
+   "danger_miss": false,
+   "persona": "P6-acute-gout",
+   "run": 1,
+   "session": "EAGLE-3329",
+   "turns": 9
+  },
+  {
+   "floor": "at least ESI-2",
+   "floor_ok": false,
+   "rules_ok": false,
+   "fired": [
+    "B-01.new-altered-mental-status",
+    "B-05.stroke-signs"
+   ],
+   "hits": 1,
+   "total": 8,
+   "misses": [
+    "red_flags.responsive: want=True got=False",
+    "red_flags.altered_mental_status: want=True got=None",
+    "complaint.collapse: want=True got=None",
+    "complaint.vomiting: want=True got=None",
+    "infection.fever: want=False got=True",
+    "environment.heat_exposure: want=True got=None",
+    "measurements.temperature_c: want=40.4 got=None"
+   ],
+   "danger_miss": false,
+   "persona": "P7-heat-stroke",
+   "run": 1,
+   "session": "TIGER-3462",
+   "turns": 16
+  },
+  {
+   "floor": "at least ESI-2",
+   "floor_ok": true,
+   "rules_ok": false,
+   "fired": [
+    "B-01.new-altered-mental-status"
+   ],
+   "hits": 5,
+   "total": 12,
+   "misses": [
+    "red_flags.altered_mental_status: want=True got=None",
+    "complaint.hematemesis: want=False got=None",
+    "complaint.melena: want=False got=None",
+    "history.cirrhosis: want=True got=None",
+    "history.hepatitis_b: want=True got=None",
+    "signs.jaundice: want=True got=None",
+    "signs.ascites: want=True got=None"
+   ],
+   "danger_miss": false,
+   "persona": "P8-decompensated-liver-disease",
+   "run": 1,
+   "session": "HERON-7143",
+   "turns": 16
+  }
+ ]
+}

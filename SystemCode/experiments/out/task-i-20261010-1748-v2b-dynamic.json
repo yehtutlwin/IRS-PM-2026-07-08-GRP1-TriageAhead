@@ -1,0 +1,33 @@
+{
+ "persona_backend": "ollama",
+ "persona_model": "gemma4:12b",
+ "interview": {
+  "interview_mode": "dynamic",
+  "backend": "ollama",
+  "model": "gemma4:12b",
+  "dyn_max_fields": 4
+ },
+ "tag": "v2b-dynamic",
+ "results": [
+  {
+   "questions": 25,
+   "reasks": 3,
+   "floor": "at least ESI-2",
+   "floor_ok": true,
+   "rules_ok": true,
+   "fired": [
+    "B-30.anticoagulated-trauma"
+   ],
+   "hits": 8,
+   "total": 9,
+   "misses": [
+    "complaint.pain_rating: want=7 got=10"
+   ],
+   "danger_miss": false,
+   "persona": "P1-fall-anticoag",
+   "run": 1,
+   "session": "MERLION-7561",
+   "turns": 24
+  }
+ ]
+}

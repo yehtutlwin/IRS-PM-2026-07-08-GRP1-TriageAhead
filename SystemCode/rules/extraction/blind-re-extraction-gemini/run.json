@@ -1,0 +1,104 @@
+{
+ "backend": "agy",
+ "label": "gemini",
+ "model": "gemini-3.1-pro-high",
+ "chunks": [
+  {
+   "pages": [
+    1,
+    2,
+    5
+   ],
+   "ok": true,
+   "entries": 20,
+   "model": "gemini-3.1-pro-high"
+  },
+  {
+   "pages": [
+    6,
+    7
+   ],
+   "ok": true,
+   "entries": 64,
+   "model": "gemini-3.1-pro-high"
+  },
+  {
+   "pages": [
+    11,
+    12
+   ],
+   "ok": true,
+   "entries": 34,
+   "model": "gemini-3.1-pro-high"
+  },
+  {
+   "pages": [
+    13
+   ],
+   "ok": true,
+   "entries": 17,
+   "model": "gemini-3.1-pro-high"
+  },
+  {
+   "pages": [
+    9,
+    10
+   ],
+   "ok": true,
+   "entries": 27,
+   "model": "gemini-3.1-pro-high"
+  },
+  {
+   "pages": [
+    14
+   ],
+   "ok": true,
+   "entries": 20,
+   "model": "gemini-3.1-pro-high"
+  },
+  {
+   "pages": [
+    15
+   ],
+   "ok": true,
+   "entries": 36,
+   "model": "gemini-3.1-pro-high"
+  },
+  {
+   "pages": [
+    19,
+    20
+   ],
+   "ok": true,
+   "entries": 25,
+   "model": "gemini-3.1-pro-high"
+  },
+  {
+   "pages": [
+    23
+   ],
+   "ok": true,
+   "entries": 18,
+   "model": "gemini-3.1-pro-high"
+  },
+  {
+   "pages": [
+    24,
+    25
+   ],
+   "ok": true,
+   "entries": 10,
+   "model": "gemini-3.1-pro-high"
+  },
+  {
+   "pages": [
+    27,
+    29,
+    30
+   ],
+   "ok": true,
+   "entries": 47,
+   "model": "gemini-3.1-pro-high"
+  }
+ ]
+}

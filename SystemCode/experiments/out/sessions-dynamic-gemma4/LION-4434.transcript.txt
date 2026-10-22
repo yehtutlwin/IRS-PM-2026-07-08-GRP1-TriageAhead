@@ -1,0 +1,16 @@
+session LION-4434   started 2026-09-26 03:36   (generated from messages)
+
+03:36:23  BOT  I'm here to help get your information to the team. Is the patient awake and responding, and are they currently experiencing any chest pain, trouble breathing, or heavy bleeding?   [slot dyn:red_flags.responsive+red_flags.chest_pain_now+red_flags.breathing_difficulty+red_flags.heavy_bleeding]
+03:36:24  THEM Yes, I'm awake. I have pressure in the center of my chest and I'm a bit breathless.   [slot dyn:red_flags.responsive+red_flags.chest_pain_now+red_flags.breathing_difficulty+red_flags.heavy_bleeding]
+03:36:29  SYS  floor: at least ESI-2  rules: ['B-04.chest-pain-acs-suspect'] (floor)
+03:36:31  BOT  I'm sorry to hear you're feeling this way. Could you tell me when the chest pressure started and how severe it feels on a scale of 0 to 10?   [slot dyn:complaint.onset+complaint.pain_rating]
+03:36:33  THEM It started about 40 minutes ago. It's a 6 out of 10.   [slot dyn:complaint.onset+complaint.pain_rating]
+03:36:37  BOT  I'm sorry you're in pain. Do you take any regular medications, and do you have any allergies or other medical conditions like heart problems or diabetes?   [slot dyn:M.medications+A.allergies+history.conditions+history.immunocompromised]
+03:36:39  THEM No, I don't take any medications and I have no allergies or known conditions.   [slot dyn:M.medications+A.allergies+history.conditions+history.immunocompromised]
+03:36:43  BOT  Thank you for sharing that. Are you currently pregnant or have you given birth recently?   [slot dyn:history.pregnant_or_postpartum]
+03:36:44  THEM No, I'm not pregnant.   [slot dyn:history.pregnant_or_postpartum]
+03:36:48  BOT  Thank you for that information. Have you had a fever, any rashes, traveled outside the country in the last two weeks, or been in contact with anyone who is sick?   [slot dyn:infection.fever+infection.rash+infection.travel_14d+infection.contacts]
+03:36:49  THEM No, I haven't had a fever, no rashes, and I haven't traveled or been around anyone sick.   [slot dyn:infection.fever+infection.rash+infection.travel_14d+infection.contacts]
+03:36:54  BOT  Thank you for confirming those details. To help the team prepare, could you tell me your name, date of birth, and when you last had something to eat or drink?   [slot dyn:L.last_intake+identity.name+identity.dob]
+03:36:55  THEM My name isn't on file yet, but I was born May 14, 1975. I had some toast for breakfast at 8am.   [slot dyn:L.last_intake+identity.name+identity.dob]
+03:36:57  BOT  Thank you - that's everything for now. Show the code LION-4434 at the counter when you arrive. (ack)

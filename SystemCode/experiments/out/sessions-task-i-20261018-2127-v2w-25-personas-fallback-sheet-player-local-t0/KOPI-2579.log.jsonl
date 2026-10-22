@@ -1,0 +1,58 @@
+{"t": "21:19:05", "kind": "engine", "note": "session KOPI-2579 started (web)"}
+{"t": "21:19:08", "kind": "question", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "Is the patient awake and responding to you normally? Also, is he or she experiencing any chest pain, trouble breathing, or heavy bleeding right now?", "fields": ["danger_signs.responsive", "danger_signs.chest_pain_now"], "offered": ["danger_signs.responsive", "danger_signs.chest_pain_now", "danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text"]}
+{"t": "21:19:08", "kind": "answer", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "She's awake and she answers when I talk to her, but she's very sleepy. No."}
+{"t": "21:19:13", "kind": "extract", "writes": [["danger_signs.responsive", true], ["danger_signs.chest_pain_now", false]]}
+{"t": "21:19:17", "kind": "question", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category+complaint.text", "text": "I'm glad she's awake. Is she having any trouble breathing or is there any heavy bleeding? Also, could you tell me what the main problem is and what's happening?", "fields": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text"], "offered": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text", "complaint.onset", "E.mechanism"]}
+{"t": "21:19:17", "kind": "answer", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category+complaint.text", "text": "No, she's breathing normally. No. She's not acting right. She has a shunt in her head and I'm worried it's blocked. My daughter is not acting right. She has a shunt in her head that drains fluid and I'm worried it's blocked. She's sleepy, she says her head hurts and she's going to throw up."}
+{"t": "21:19:31", "kind": "extract", "writes": [["danger_signs.breathing_difficulty", false], ["danger_signs.heavy_bleeding", false], ["complaint.category", "neuro_symptoms"], ["complaint.text", "She's not acting right. She has a shunt in her head and I'm worried it's blocked. She's sleepy, she says her head hurts and she's going to throw up."]]}
+{"t": "21:19:32", "kind": "extract", "writes": [["E.mechanism", "none"]], "via": "derived-non-injury"}
+{"t": "21:19:35", "kind": "question", "slot": "dyn:complaint.onset+patient.age", "text": "I understand your concern about her shunt. When did these symptoms start, and how old is your daughter?", "fields": ["complaint.onset", "patient.age"], "offered": ["complaint.onset", "patient.age", "patient.sex", "complaint.fever", "infection.rash", "infection.travel_14d"]}
+{"t": "21:19:35", "kind": "answer", "slot": "dyn:complaint.onset+patient.age", "text": "Since this morning. She's 4."}
+{"t": "21:19:39", "kind": "extract", "writes": [["complaint.onset", "this morning"], ["patient.age", 4]]}
+{"t": "21:19:42", "kind": "question", "slot": "dyn:patient.sex+complaint.fever", "text": "I've noted she's 4 and the symptoms started this morning. Does she have a fever, and is she a girl or a boy?", "fields": ["patient.sex", "complaint.fever"], "offered": ["patient.sex", "complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts", "stroke.vision_change"]}
+{"t": "21:19:42", "kind": "answer", "slot": "dyn:patient.sex+complaint.fever", "text": "She's a girl, my daughter."}
+{"t": "21:19:46", "kind": "extract", "writes": [["patient.sex", "female"]]}
+{"t": "21:19:49", "kind": "question", "slot": "dyn:complaint.fever", "text": "I've noted she is a girl. Does she have a fever, and if you've checked, what was the temperature?", "fields": ["complaint.fever"], "offered": ["complaint.fever"]}
+{"t": "21:19:49", "kind": "answer", "slot": "dyn:complaint.fever", "text": "I don't know."}
+{"t": "21:19:53", "kind": "extract", "writes": []}
+{"t": "21:19:53", "kind": "extract", "writes": [["complaint.fever", null]], "via": "dont-know"}
+{"t": "21:19:55", "kind": "question", "slot": "dyn:infection.rash", "text": "I understand. Has she developed any new rashes on her skin?", "fields": ["infection.rash"], "offered": ["infection.rash", "infection.travel_14d", "infection.contacts", "stroke.vision_change", "ams.changed_from_baseline", "complaint.pain_rating"]}
+{"t": "21:19:55", "kind": "answer", "slot": "dyn:infection.rash", "text": "I don't know."}
+{"t": "21:19:59", "kind": "extract", "writes": []}
+{"t": "21:19:59", "kind": "extract", "writes": [["infection.rash", null]], "via": "dont-know"}
+{"t": "21:20:02", "kind": "question", "slot": "dyn:infection.travel_14d+infection.contacts", "text": "Has she traveled outside the country or been around anyone who is sick in the last two weeks?", "fields": ["infection.travel_14d", "infection.contacts"], "offered": ["infection.travel_14d", "infection.contacts", "stroke.vision_change", "ams.changed_from_baseline", "complaint.pain_rating", "stroke.face_droop"]}
+{"t": "21:20:02", "kind": "answer", "slot": "dyn:infection.travel_14d+infection.contacts", "text": "I don't know."}
+{"t": "21:20:05", "kind": "extract", "writes": []}
+{"t": "21:20:05", "kind": "extract", "writes": [["infection.travel_14d", null], ["infection.contacts", null]], "via": "dont-know"}
+{"t": "21:20:08", "kind": "question", "slot": "dyn:stroke.vision_change+ams.changed_from_baseline", "text": "Has she had any sudden changes in her vision or is she more confused and harder to wake than usual?", "fields": ["stroke.vision_change", "ams.changed_from_baseline"], "offered": ["stroke.vision_change", "ams.changed_from_baseline", "complaint.pain_rating", "stroke.face_droop", "stroke.arm_weakness", "stroke.speech_change"]}
+{"t": "21:20:08", "kind": "answer", "slot": "dyn:stroke.vision_change+ams.changed_from_baseline", "text": "Yes, she's much sleepier than usual and not herself."}
+{"t": "21:20:13", "kind": "extract", "writes": [["ams.changed_from_baseline", true]]}
+{"t": "21:20:13", "kind": "floor", "floor": "at least ESI-2", "fired": ["B-01.new-altered-mental-status", "B-29.pediatric-subtle-ams"], "sources": ["ESI v5 p.12 (New Onset Confusion, Lethargy, or Disorientation)", "ESI v5 p.13 (pediatric neurological note)"]}
+{"t": "21:20:16", "kind": "question", "slot": "dyn:M.medications+A.allergies", "text": "I understand she is very sleepy. Does she have any allergies to medicine, and what medications does she take regularly?", "fields": ["M.medications", "A.allergies"], "offered": ["M.medications", "A.allergies", "history.conditions", "identity.name", "identity.dob"]}
+{"t": "21:20:16", "kind": "answer", "slot": "dyn:M.medications+A.allergies", "text": "I don't know."}
+{"t": "21:20:19", "kind": "extract", "writes": []}
+{"t": "21:20:19", "kind": "extract", "writes": [["M.medications", null], ["A.allergies", null]], "via": "dont-know"}
+{"t": "21:20:22", "kind": "question", "slot": "dyn:history.conditions", "text": "I understand. Does she have any ongoing medical conditions?", "fields": ["history.conditions"], "offered": ["history.conditions", "identity.name", "identity.dob"]}
+{"t": "21:20:22", "kind": "answer", "slot": "dyn:history.conditions", "text": "She has a ventriculo-peritoneal shunt."}
+{"t": "21:20:34", "kind": "extract", "writes": [["history.conditions", ["ventriculo-peritoneal shunt"]]]}
+{"t": "21:20:37", "kind": "question", "slot": "dyn:identity.name+identity.dob", "text": "I've noted the shunt. Could you please tell me her full name and date of birth?", "fields": ["identity.name", "identity.dob"], "offered": ["identity.name", "identity.dob"]}
+{"t": "21:20:37", "kind": "answer", "slot": "dyn:identity.name+identity.dob", "text": "Melissa Tan. I don't remember the exact date right now, she's 4."}
+{"t": "21:20:41", "kind": "extract", "writes": [["identity.name", "Melissa Tan"], ["patient.age", 4]]}
+{"t": "21:20:44", "kind": "question", "slot": "dyn:identity.dob", "text": "I understand she is 4 years old. Could you tell me her date of birth?", "fields": ["identity.dob"], "offered": ["identity.dob"]}
+{"t": "21:20:44", "kind": "answer", "slot": "dyn:identity.dob", "text": "I don't remember the exact date right now, she's 4."}
+{"t": "21:20:47", "kind": "extract", "writes": []}
+{"t": "21:20:50", "kind": "question", "slot": "dyn:identity.dob", "text": "I understand. Could you please provide her birth date if you can find it?", "fields": ["identity.dob"], "offered": ["identity.dob"]}
+{"t": "21:20:50", "kind": "answer", "slot": "dyn:identity.dob", "text": "I don't remember the exact date right now, she's 4."}
+{"t": "21:20:52", "kind": "extract", "writes": [["patient.age", 4]]}
+{"t": "21:20:52", "kind": "engine", "note": "floor settled - report ready; remaining questions continue"}
+{"t": "21:20:55", "kind": "question", "slot": "dyn:stroke.vision_change", "text": "Has her vision changed suddenly or become blurry?", "fields": ["stroke.vision_change"], "offered": ["stroke.vision_change"]}
+{"t": "21:20:55", "kind": "answer", "slot": "dyn:stroke.vision_change", "text": "I don't know."}
+{"t": "21:20:58", "kind": "extract", "writes": []}
+{"t": "21:20:59", "kind": "extract", "writes": [["stroke.vision_change", null]], "via": "dont-know"}
+{"t": "21:21:02", "kind": "question", "slot": "dyn:complaint.pain_rating", "text": "I understand. On a scale of 0 to 10, where 10 is the worst pain imaginable, how would you rate her pain right now?", "fields": ["complaint.pain_rating"], "offered": ["complaint.pain_rating", "L.last_intake"]}
+{"t": "21:21:02", "kind": "answer", "slot": "dyn:complaint.pain_rating", "text": "I don't know."}
+{"t": "21:21:05", "kind": "extract", "writes": []}
+{"t": "21:21:08", "kind": "question", "slot": "dyn:complaint.pain_rating", "text": "I understand. Can you tell me how much pain she is in on a scale of 0 to 10?", "fields": ["complaint.pain_rating"], "offered": ["complaint.pain_rating"]}
+{"t": "21:21:08", "kind": "answer", "slot": "dyn:complaint.pain_rating", "text": "I don't know."}
+{"t": "21:21:10", "kind": "extract", "writes": []}
+{"t": "21:21:13", "kind": "question", "slot": "dyn:complaint.pain_rating", "text": "I understand it's hard to say. If you had to estimate, how much pain is she in on a scale of 0 to 10?", "fields": ["complaint.pain_rating"], "offered": ["complaint.pain_rating"]}

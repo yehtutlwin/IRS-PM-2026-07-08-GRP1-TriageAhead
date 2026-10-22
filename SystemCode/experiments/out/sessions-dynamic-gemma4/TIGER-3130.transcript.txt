@@ -1,0 +1,14 @@
+session TIGER-3130   started 2026-09-26 03:36   (generated from messages)
+
+03:37:00  BOT  I'm here to help get you started. Is the patient awake and responding normally, and are they experiencing any severe chest pain, trouble breathing, or heavy bleeding right now?   [slot dyn:red_flags.responsive+red_flags.chest_pain_now+red_flags.breathing_difficulty+red_flags.heavy_bleeding]
+03:37:01  THEM I'm awake. No chest pain, trouble breathing, or bleeding.   [slot dyn:red_flags.responsive+red_flags.chest_pain_now+red_flags.breathing_difficulty+red_flags.heavy_bleeding]
+03:37:06  BOT  I'm glad to hear you're feeling alert. Could you tell me what happened, when it started, and how severe the pain is on a scale of 0 to 10?   [slot dyn:complaint.category+complaint.text+complaint.onset+complaint.pain_rating]
+03:37:08  THEM Lower abdominal pain started this morning. It's getting worse, it's an 8 out of 10.   [slot dyn:complaint.category+complaint.text+complaint.onset+complaint.pain_rating]
+03:37:13  BOT  I'm sorry to hear the pain is so severe. Do you take any regular medications, and do you have any allergies or other medical conditions like heart problems or diabetes?   [slot dyn:M.medications+A.allergies+history.conditions+history.immunocompromised]
+03:37:14  THEM Just my pregnancy vitamins. No allergies or other conditions.   [slot dyn:M.medications+A.allergies+history.conditions+history.immunocompromised]
+03:37:17  SYS  floor: at least ESI-2  rules: ['B-17.abdo-pain-pregnant-or-postpartum', 'B-38.pregnant-chest-pain-breathlessness-abdo-pain-or-headache'] (floor)
+03:37:19  BOT  I've noted your medications and allergies. Have you had a fever, any rashes, been traveling outside the country lately, or been in contact with anyone who is sick?   [slot dyn:infection.fever+infection.rash+infection.travel_14d+infection.contacts]
+03:37:21  THEM No fever, no rash, and no recent travel.   [slot dyn:infection.fever+infection.rash+infection.travel_14d+infection.contacts]
+03:37:25  BOT  Thank you for providing those details. Have you been in contact with anyone who is sick recently, and could you tell me your name, date of birth, and when you last had something to eat or drink?   [slot dyn:infection.contacts+L.last_intake+identity.name+identity.dob]
+03:37:26  THEM No. My name is not provided, but my DOB is 03 Sep 1986. I last ate dinner last night.   [slot dyn:infection.contacts+L.last_intake+identity.name+identity.dob]
+03:37:29  BOT  Thank you - that's everything for now. Show the code TIGER-3130 at the counter when you arrive. (ack)

@@ -1,0 +1,53 @@
+{"t": "02:48:23", "kind": "engine", "note": "session CANNA-5795 started (web)"}
+{"t": "02:48:26", "kind": "question", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "Is the patient awake and responding to you normally? Also, is he or she experiencing any chest pain, trouble breathing, or heavy bleeding right now?", "fields": ["danger_signs.responsive", "danger_signs.chest_pain_now"], "offered": ["danger_signs.responsive", "danger_signs.chest_pain_now", "danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text"]}
+{"t": "02:48:26", "kind": "answer", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "Yes, the patient is awake and responding normally. No, the patient is not having chest pain right now."}
+{"t": "02:48:30", "kind": "extract", "writes": [["danger_signs.responsive", true], ["danger_signs.chest_pain_now", false]]}
+{"t": "02:48:34", "kind": "question", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category+complaint.text", "text": "I'm glad to hear they are alert. Is the patient having any trouble breathing or heavy bleeding, and could you tell me what the main problem is that brings you in today?", "fields": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text"], "offered": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text", "complaint.onset", "E.mechanism"]}
+{"t": "02:48:34", "kind": "answer", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category+complaint.text", "text": "No, the patient is not having trouble breathing right now. No, the patient is not bleeding heavily right now. I have pain in my side like the kidney stones I have had before."}
+{"t": "02:48:41", "kind": "extract", "writes": [["danger_signs.breathing_difficulty", false], ["danger_signs.heavy_bleeding", false], ["complaint.category", "urinary_problem"], ["complaint.text", "I have pain in my side like the kidney stones I have had before."]]}
+{"t": "02:48:41", "kind": "extract", "writes": [["E.mechanism", "none"]], "via": "derived-non-injury"}
+{"t": "02:48:44", "kind": "question", "slot": "dyn:complaint.onset+patient.age+patient.sex", "text": "I understand the pain is similar to previous kidney stones. When did this pain start, and could you tell me the patient's age and sex?", "fields": ["complaint.onset", "patient.age", "patient.sex"], "offered": ["complaint.onset", "patient.age", "patient.sex", "complaint.fever", "infection.rash", "infection.travel_14d"]}
+{"t": "02:48:44", "kind": "answer", "slot": "dyn:complaint.onset+patient.age+patient.sex", "text": "You had pain in your side earlier today and took a pain pill you already had at home. The patient is 48 years old. The patient is male."}
+{"t": "02:48:49", "kind": "extract", "writes": [["complaint.onset", "earlier today"], ["patient.age", 48], ["patient.sex", "male"]]}
+{"t": "02:48:52", "kind": "question", "slot": "dyn:complaint.fever+infection.rash", "text": "I see. Does he have a fever or any new rashes on his skin?", "fields": ["complaint.fever", "infection.rash"], "offered": ["complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts", "complaint.uti_symptoms", "ams.changed_from_baseline"]}
+{"t": "02:48:52", "kind": "answer", "slot": "dyn:complaint.fever+infection.rash", "text": "No, the patient does not have fever. I do not know whether the patient has a rash."}
+{"t": "02:48:56", "kind": "extract", "writes": [["complaint.fever", false]]}
+{"t": "02:48:58", "kind": "question", "slot": "dyn:infection.rash", "text": "I understand. Does he have any new rashes on his skin?", "fields": ["infection.rash"], "offered": ["infection.rash"]}
+{"t": "02:48:58", "kind": "answer", "slot": "dyn:infection.rash", "text": "I do not know whether the patient has a rash."}
+{"t": "02:49:02", "kind": "extract", "writes": []}
+{"t": "02:49:04", "kind": "question", "slot": "dyn:infection.rash", "text": "I understand. Can you check if there are any new rashes on his skin?", "fields": ["infection.rash"], "offered": ["infection.rash"]}
+{"t": "02:49:04", "kind": "answer", "slot": "dyn:infection.rash", "text": "I do not know whether the patient has a rash."}
+{"t": "02:49:06", "kind": "extract", "writes": []}
+{"t": "02:49:10", "kind": "question", "slot": "dyn:infection.travel_14d+infection.contacts", "text": "Has he traveled outside the country or been in contact with anyone who is sick in the last two weeks?", "fields": ["infection.travel_14d", "infection.contacts"], "offered": ["infection.travel_14d", "infection.contacts", "complaint.uti_symptoms", "ams.changed_from_baseline", "complaint.pain_rating", "complaint.back_pain"]}
+{"t": "02:49:10", "kind": "answer", "slot": "dyn:infection.travel_14d+infection.contacts", "text": "I do not know whether the patient travelled in the last 14 days. I do not know of any sick contacts."}
+{"t": "02:49:13", "kind": "extract", "writes": []}
+{"t": "02:49:16", "kind": "question", "slot": "dyn:infection.travel_14d", "text": "I understand. To help the team, has he traveled outside the country in the last 14 days?", "fields": ["infection.travel_14d"], "offered": ["infection.travel_14d"]}
+{"t": "02:49:16", "kind": "answer", "slot": "dyn:infection.travel_14d", "text": "I do not know whether the patient travelled in the last 14 days."}
+{"t": "02:49:20", "kind": "extract", "writes": []}
+{"t": "02:49:22", "kind": "question", "slot": "dyn:infection.travel_14d", "text": "I understand. To be clear, has he traveled out of the country in the last 14 days?", "fields": ["infection.travel_14d"], "offered": ["infection.travel_14d"]}
+{"t": "02:49:22", "kind": "answer", "slot": "dyn:infection.travel_14d", "text": "I do not know whether the patient travelled in the last 14 days."}
+{"t": "02:49:25", "kind": "extract", "writes": []}
+{"t": "02:49:28", "kind": "question", "slot": "dyn:infection.contacts", "text": "Has he been around anyone who was sick or had a contagious illness in the last two weeks?", "fields": ["infection.contacts"], "offered": ["infection.contacts"]}
+{"t": "02:49:28", "kind": "answer", "slot": "dyn:infection.contacts", "text": "I do not know of any sick contacts."}
+{"t": "02:49:32", "kind": "extract", "writes": [["infection.contacts", false]]}
+{"t": "02:49:34", "kind": "question", "slot": "dyn:complaint.uti_symptoms", "text": "Does he have any burning or pain when passing urine, or is he going more often than usual?", "fields": ["complaint.uti_symptoms"], "offered": ["complaint.uti_symptoms", "ams.changed_from_baseline", "complaint.pain_rating", "complaint.back_pain", "complaint.severe_flank_pain", "M.medications"]}
+{"t": "02:49:34", "kind": "answer", "slot": "dyn:complaint.uti_symptoms", "text": "I don't know."}
+{"t": "02:49:38", "kind": "extract", "writes": []}
+{"t": "02:49:38", "kind": "extract", "writes": [["complaint.uti_symptoms", null]], "via": "dont-know"}
+{"t": "02:49:41", "kind": "question", "slot": "dyn:ams.changed_from_baseline+complaint.pain_rating", "text": "Is he acting confused or more sleepy than usual? Also, on a scale of 0 to 10, how bad is his pain right now?", "fields": ["ams.changed_from_baseline", "complaint.pain_rating"], "offered": ["ams.changed_from_baseline", "complaint.pain_rating", "complaint.back_pain", "complaint.severe_flank_pain", "M.medications", "A.allergies"]}
+{"t": "02:49:41", "kind": "answer", "slot": "dyn:ams.changed_from_baseline+complaint.pain_rating", "text": "I do not know whether the patient is acting differently from usual. The value is 3."}
+{"t": "02:49:45", "kind": "extract", "writes": [["complaint.pain_rating", 3]]}
+{"t": "02:49:48", "kind": "question", "slot": "dyn:ams.changed_from_baseline", "text": "I understand. Is he acting confused, not making sense, or more sleepy than usual?", "fields": ["ams.changed_from_baseline"], "offered": ["ams.changed_from_baseline"]}
+{"t": "02:49:48", "kind": "answer", "slot": "dyn:ams.changed_from_baseline", "text": "I do not know whether the patient is acting differently from usual."}
+{"t": "02:49:51", "kind": "extract", "writes": []}
+{"t": "02:49:54", "kind": "question", "slot": "dyn:ams.changed_from_baseline", "text": "I understand. Is he more confused, not making sense, or harder to wake up than he normally is?", "fields": ["ams.changed_from_baseline"], "offered": ["ams.changed_from_baseline"]}
+{"t": "02:49:54", "kind": "answer", "slot": "dyn:ams.changed_from_baseline", "text": "I do not know whether the patient is acting differently from usual."}
+{"t": "02:49:56", "kind": "extract", "writes": []}
+{"t": "02:49:59", "kind": "question", "slot": "dyn:complaint.back_pain+complaint.severe_flank_pain", "text": "I understand. Does he have any pain in his back, specifically in the side area between the ribs and the hip?", "fields": ["complaint.back_pain", "complaint.severe_flank_pain"], "offered": ["complaint.back_pain", "complaint.severe_flank_pain", "M.medications", "A.allergies", "history.conditions", "history.immunocompromised"]}
+{"t": "02:49:59", "kind": "answer", "slot": "dyn:complaint.back_pain+complaint.severe_flank_pain", "text": "I don't know."}
+{"t": "02:50:03", "kind": "extract", "writes": []}
+{"t": "02:50:03", "kind": "extract", "writes": [["complaint.back_pain", null], ["complaint.severe_flank_pain", null]], "via": "dont-know"}
+{"t": "02:50:06", "kind": "question", "slot": "dyn:M.medications+A.allergies", "text": "Could you tell me what medications he takes regularly and if he has any allergies, especially to medicines?", "fields": ["M.medications", "A.allergies"], "offered": ["M.medications", "A.allergies", "history.conditions", "history.immunocompromised", "identity.name", "identity.dob"]}
+{"t": "02:50:06", "kind": "answer", "slot": "dyn:M.medications+A.allergies", "text": "I took a pain pill for the kidney-stone pain. The patient has no known allergies."}
+{"t": "02:50:10", "kind": "extract", "writes": [["A.allergies", []]]}
+{"t": "02:50:12", "kind": "question", "slot": "dyn:M.medications", "text": "Could you tell me what medications he takes on a regular basis? You can also send a photo of the boxes.", "fields": ["M.medications"], "offered": ["M.medications"]}

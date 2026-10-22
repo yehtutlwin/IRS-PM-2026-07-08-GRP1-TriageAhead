@@ -1,0 +1,133 @@
+# rules/vocabulary.yaml - the controlled vocabularies of the rulebook: every tag a rule or a fact can carry, with
+# the allowed values, what each value MEANS and what the PROGRAM DOES with it. Part of the knowledge base: a reviewer
+# cannot judge a rule without these meanings. The program's branches on these values live in code; this file is the
+# definition they implement, and rules/validate.py refuses a rule whose tag value is not listed here and checks that
+# rules/criteria.schema.json lists exactly these values.
+# Added 3 Oct 2026. Change log: rules/CHANGELOG.md.
+
+decision_point:
+  about: "Which step of the ESI algorithm the rule belongs to. A rule belongs to one step; it does not produce one."
+  values:
+    A:
+      meaning: "Decision point A: does the patient require an immediate lifesaving intervention? Yes means ESI level 1."
+      program: "A firing A rule is an ESI-1 indicator on the report (never a floor); in the web app it also triggers the call-995 advice when it comes from the danger-sign screen. The nurse confirms on arrival."
+      example: A-01.unresponsive
+    B:
+      meaning: "Decision point B: is this a high-risk situation, new confusion, lethargy or disorientation, or severe pain or distress? Yes means ESI level 2."
+      program: "A firing B rule sets the floor to 'at least ESI-2' unless its effect_override says it only flags. The floor never lowers."
+      example: B-05.stroke-signs
+    C:
+      meaning: "Decision point C: how many different resources will the patient need? None is level 5, one is level 4, two or more is level 3 (then check vitals)."
+      program: "Not executed before arrival; the C entries are non-firing notes that record the handbook's resource lists and band mapping. The report says 'C pending'."
+      example: C-BAND.resource-count-to-level
+    D:
+      meaning: "Decision point D: are the vital signs in the danger zone? If so, consider up-triage from level 3 to level 2."
+      program: "Pending before arrival (no vitals). The report says 'D pending'. Two D entries read reported context (beta-blockers, immunosuppressants) and are context notes, not flags or floors."
+      example: D-01.adult-danger-zone
+    none:
+      meaning: "Not a decision point. Either a statement about how levels are used (ids starting GOV-), or a prompt for an action that is not a level, such as considering isolation (ids starting ISO-)."
+      program: "Never executed as a level rule. Shown to reviewers and cited in the documents; an ISO- prompt becomes a flag on the report once the program supports one."
+      example: GOV-07.no-level-without-assessment
+
+assessed_via:
+  about: "Who can supply the facts the rule reads. This decides whether the chat may ask for them before arrival."
+  values:
+    reported:
+      meaning: "A caregiver can state the facts in a conversation (history, medicines, what happened, symptoms they can see or hear)."
+      program: "Askable: the rule's fields may be collected by the interview and the floor may rest on them. The only class the pre-arrival floor can use."
+      example: B-30.anticoagulated-trauma
+    observed:
+      meaning: "A clinician's eyes or hands are needed (responsiveness on the AVPU scale, airway, perfusion signs, how the patient looks)."
+      program: "Never asked by the chat. Such facts enter only from a clinician (tests write them with status observed). A caregiver's 'not responding to me' does not fire an observed rule; it triggers the escalation advice instead."
+      example: A-01.unresponsive
+    vitals:
+      meaning: "A measurement is needed (heart rate, breathing rate, oxygen saturation, blood pressure, temperature)."
+      program: "Never asked by the chat. Pending before arrival; the rule can be evaluated on datasets that record the measurement."
+      example: D-01.adult-danger-zone
+
+provenance:
+  about: "How faithful the rule is to the handbook sentence it quotes. Decides what review it needs and whether a disagreement with practice is a claim about ESI."
+  values:
+    verbatim:
+      meaning: "The condition is the handbook's own statement, encoded without added thresholds."
+      program: "The quoted sentence must be found on the cited page (validate.py). A disagreement with practice is a finding about the handbook."
+      example: B-05.stroke-signs
+    operationalized:
+      meaning: "The handbook is deliberately vague ('constellation', 'carefully evaluated') and we chose a concrete reading, such as a count or threshold."
+      program: "Same page check; the chosen reading is named in notes and is a subject of the sensitivity sweeps and the clinician review."
+      example: B-28.ocular-high-risk-constellation
+    supplemented:
+      meaning: "Not in the ESI handbook at all; taken from an external guideline (CDC, NICE) with a dual citation."
+      program: "Skipped by the page check against the ESI PDF; scored in its own review file, never as ESI encoding fidelity. A test case that fires it must be marked supplemented."
+      example: B-30.anticoagulated-trauma
+
+effect_override:
+  about: "Set only when the handbook's verb is softer than 'assign'. Absent means the rule's normal effect for its decision point."
+  values:
+    consider:
+      meaning: "The handbook says the nurse should consider level 2 (or consider the finding); it is a judgement, not automatic."
+      program: "The rule goes to the report's 'consider flags' list; it never sets or raises the floor."
+      example: B-02.severe-pain-consider
+    reassess_uptriage_consider:
+      meaning: "Decision point D's own verb: when vitals are in the danger zone, reassess and consider up-triage."
+      program: "A flag, not a floor; pending before arrival."
+      example: D-01.adult-danger-zone
+    context_note:
+      meaning: "Background the handbook gives for reading other findings (for example, a beta-blocker can hide a fast heart rate). The sentence does not ask the nurse to assign or consider a level."
+      program: "When its condition holds, the entry goes to the report's 'context notes' list, at any decision point. Never a consider flag and never a floor."
+      example: D-04.context-beta-blockers-consider
+
+level_from:
+  about: "Where the level in a rule comes from. Absent means the quoted sentence itself names the level or the verb (assign, consider)."
+  values:
+    section:
+      meaning: "The quoted sentence names no level. The level comes from the section or list it sits in (for example the list of examples of high-risk situations). Marked when every blind re-extraction but at most one gave the level as its own inference."
+      program: "None; a record for reviewers. Such a rule is a first candidate for the clinician read."
+      example: B-16.button-battery-or-magnet-ingestion
+
+fact_status:
+  about: "The certainty ladder a stored fact climbs. Some rules gate on it (B-30 fires only on a confirmed anticoagulant). A status never goes down."
+  values:
+    reported:
+      meaning: "The caregiver said it, in their own words, once."
+      program: "Default status of anything the extractor stores from an answer."
+      example: "M.medications = ['warfarin'] after 'he takes warfarin'"
+    probable:
+      meaning: "Derived from lay wording or an indirect clue, not stated outright."
+      program: "Written by a bridge or a derivation; triggers a confirmation question where a rule needs 'confirmed'."
+      example: "M.anticoagulant = true (probable) from 'a pill that thins the blood'"
+    confirmed:
+      meaning: "Stated and then confirmed, or derived from an unambiguous source such as a named medicine."
+      program: "Written when the caregiver answers the confirmation question, or when a medicine name is on the anticoagulant list; satisfies status gates."
+      example: "M.anticoagulant = true (confirmed) from 'warfarin'"
+    observed:
+      meaning: "Seen or measured by a clinician, not reported by a caregiver."
+      program: "Only written by test cases and (later) by a clinician's entry; what observed and vitals rules require."
+      example: "obs.avpu = U (observed) in a handbook test case"
+    unknown:
+      meaning: "Asked, and the caregiver does not know."
+      program: "Recorded so the question is not re-asked; the report shows 'not known to the caregiver'; a rule reading the field does not fire."
+      example: "history.immunocompromised = unknown after 'I don't know'"
+
+origin:
+  about: "Where an entry of the rulebook came from. An entry can have more than one origin, in order."
+  values:
+    consolidation-2026-08-29:
+      meaning: "Written in the consolidation of 29 August 2026, which merged the drafts of eight extraction runs (two Gemini models and Claude, per page and whole document) into one rule per criterion."
+      program: "None; a record for reviewers. The drafts and their comparison are in experiments/rulegen/out/."
+      example: B-05.stroke-signs
+    complete-pass-2026-10-04:
+      meaning: "Found or confirmed by the complete reading pass of 4 October 2026 (one run, Claude Fable 5.1, every level-conditioning sentence of printed pages 1-30). Alone, it means the pass added the entry; after another origin, it means the pass confirmed it."
+      program: "None; a record for reviewers. The statements are in rules/extraction/v5-complete-pass.yaml and the entry's `statements` list points into it."
+      example: A-22.requires-lifesaving-intervention
+    blind-re-extraction-2026-10-05:
+      meaning: "Changed after four blind re-extractions of the handbook (Claude Opus, Claude Fable 5.1, Gemini 3.1 Pro, GPT on pages 1-20) were compared with the rulebook on 5 October 2026: an effect lowered from assign to consider, an entry moved to context_note, or level_from set."
+      program: "None; a record for reviewers. The readings and the analysis are in rules/extraction/ (BLIND-RE-EXTRACTIONS-ANALYSIS.md)."
+      example: B-17.abdo-pain-pregnant-or-postpartum
+    supplemented-2026-08:
+      meaning: "Not from the ESI handbook: added in August 2026 from the CDC field triage guideline and the NICE head injury guideline."
+      program: "None; such an entry has provenance supplemented and no handbook statements."
+      example: B-30.anticoagulated-trauma
+
+rule_id:
+  about: "<decision point>-<two or three digits>.<kebab-case name>, for example B-30.anticoagulated-trauma. Entries that are not level rules use a word instead of digits or a different prefix: A-LIST, C-BAND, C-COUNT, C-LIST, C-NOTE (definitions and notes), GOV- (how levels are used), ISO- (isolation prompts). Drafts from the extraction experiment are numbered from 61 upward and may exceed 99."

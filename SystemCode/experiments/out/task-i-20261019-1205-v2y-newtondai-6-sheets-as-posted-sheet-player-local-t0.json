@@ -1,0 +1,166 @@
+{
+ "persona_backend": "sheet",
+ "persona_model": "answer-sheet replay (no model)",
+ "interview": {
+  "interview_mode": "dynamic",
+  "backend": "ollama",
+  "model": "gemma4:12b",
+  "dyn_max_fields": 4,
+  "temperature": "0"
+ },
+ "tag": "v2y-newtondai-6-sheets-as-posted-sheet-player-local-t0",
+ "cost_usd": {
+  "interview": 0,
+  "persona": 0
+ },
+ "results": [
+  {
+   "sorry": 0,
+   "you_event": 0,
+   "after_report_not_for_nurse": 0,
+   "report_ok": true,
+   "questions": 17,
+   "questions_to_report": 11,
+   "reasks": 5,
+   "floor": "at least ESI-2",
+   "floor_ok": true,
+   "rules_ok": false,
+   "fired": [
+    "B-01.new-altered-mental-status"
+   ],
+   "hits": 6,
+   "total": 8,
+   "misses": [
+    "patient.age_days: want=42 got=None",
+    "patient.age_months: want=1.5 got=None"
+   ],
+   "danger_miss": false,
+   "persona": "P20-infant-fever",
+   "run": 1,
+   "session": "ORCHID-4742",
+   "turns": 16,
+   "transcript": "sessions-task-i-20261019-1205-v2y-newtondai-6-sheets-as-posted-sheet-player-local-t0/ORCHID-4742.transcript.txt"
+  },
+  {
+   "sorry": 0,
+   "you_event": 0,
+   "after_report_not_for_nurse": 0,
+   "report_ok": true,
+   "questions": 17,
+   "questions_to_report": null,
+   "reasks": 7,
+   "floor": "at least ESI-2",
+   "floor_ok": true,
+   "rules_ok": true,
+   "fired": [
+    "B-09.suicidal-or-homicidal"
+   ],
+   "hits": 5,
+   "total": 5,
+   "misses": [],
+   "danger_miss": false,
+   "persona": "P22-teen-self-harm-concern",
+   "run": 1,
+   "session": "KOPI-7948",
+   "turns": 16,
+   "transcript": "sessions-task-i-20261019-1205-v2y-newtondai-6-sheets-as-posted-sheet-player-local-t0/KOPI-7948.transcript.txt"
+  },
+  {
+   "sorry": 1,
+   "you_event": 0,
+   "after_report_not_for_nurse": 0,
+   "report_ok": true,
+   "questions": 17,
+   "questions_to_report": null,
+   "reasks": 5,
+   "floor": "at least ESI-2",
+   "floor_ok": true,
+   "rules_ok": true,
+   "fired": [
+    "B-01.new-altered-mental-status"
+   ],
+   "hits": 6,
+   "total": 7,
+   "misses": [
+    "history.baseline_mental_status: want='known' got=None"
+   ],
+   "danger_miss": false,
+   "persona": "P23-elderly-confusion",
+   "run": 1,
+   "session": "RAFFLES-8618",
+   "turns": 16,
+   "transcript": "sessions-task-i-20261019-1205-v2y-newtondai-6-sheets-as-posted-sheet-player-local-t0/RAFFLES-8618.transcript.txt"
+  },
+  {
+   "sorry": 0,
+   "you_event": 0,
+   "after_report_not_for_nurse": 0,
+   "report_ok": true,
+   "questions": 17,
+   "questions_to_report": null,
+   "reasks": 4,
+   "floor": "at least ESI-2",
+   "floor_ok": true,
+   "rules_ok": true,
+   "fired": [
+    "B-05.stroke-signs"
+   ],
+   "hits": 7,
+   "total": 7,
+   "misses": [],
+   "danger_miss": false,
+   "persona": "P27-resolved-speech-change",
+   "run": 1,
+   "session": "VANDA-4974",
+   "turns": 16,
+   "transcript": "sessions-task-i-20261019-1205-v2y-newtondai-6-sheets-as-posted-sheet-player-local-t0/VANDA-4974.transcript.txt"
+  },
+  {
+   "sorry": 0,
+   "you_event": 0,
+   "after_report_not_for_nurse": 0,
+   "report_ok": true,
+   "questions": 17,
+   "questions_to_report": null,
+   "reasks": 6,
+   "floor": null,
+   "floor_ok": false,
+   "rules_ok": false,
+   "fired": [],
+   "hits": 6,
+   "total": 8,
+   "misses": [
+    "complaint.heavy_vaginal_bleeding: want=True got=None",
+    "complaint.postpartum_hemorrhage: want=True got=None"
+   ],
+   "danger_miss": false,
+   "persona": "P28-postpartum-bleeding",
+   "run": 1,
+   "session": "EAGLE-3954",
+   "turns": 16,
+   "transcript": "sessions-task-i-20261019-1205-v2y-newtondai-6-sheets-as-posted-sheet-player-local-t0/EAGLE-3954.transcript.txt"
+  },
+  {
+   "sorry": 0,
+   "you_event": 0,
+   "after_report_not_for_nurse": 0,
+   "report_ok": true,
+   "questions": 17,
+   "questions_to_report": null,
+   "reasks": 4,
+   "floor": null,
+   "floor_ok": false,
+   "rules_ok": false,
+   "fired": [],
+   "hits": 6,
+   "total": 6,
+   "misses": [],
+   "danger_miss": false,
+   "persona": "P29-pregnant-headache",
+   "run": 1,
+   "session": "CANNA-2617",
+   "turns": 16,
+   "transcript": "sessions-task-i-20261019-1205-v2y-newtondai-6-sheets-as-posted-sheet-player-local-t0/CANNA-2617.transcript.txt"
+  }
+ ]
+}

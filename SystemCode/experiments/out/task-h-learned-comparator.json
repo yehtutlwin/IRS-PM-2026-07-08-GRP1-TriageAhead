@@ -1,0 +1,323 @@
+{
+ "n_rows": 558029,
+ "seed": 42,
+ "split": "visit-level 80/20 stratified (no patient id in the public file)",
+ "features": {
+  "base": "6 triage vitals + age + sex + 200 cc_* flags",
+  "with_ambulance": "base + arrival-by-ambulance"
+ },
+ "binary": [
+  {
+   "model": "base / unweighted",
+   "n_test": 111606,
+   "high_acuity_prevalence": 0.3025,
+   "sensitivity_high_acuity": 0.6307,
+   "under_triage_rate": 0.3693,
+   "specificity": 0.9137,
+   "ppv": 0.7601,
+   "alarm_rate": 0.251,
+   "accuracy": 0.8281,
+   "auroc": 0.8852,
+   "admit_rate_among_missed_high_acuity": 0.506,
+   "confusion": {
+    "tn": 71126,
+    "fp": 6719,
+    "fn": 12468,
+    "tp": 21293
+   }
+  },
+  {
+   "model": "base / class-balanced",
+   "n_test": 111606,
+   "high_acuity_prevalence": 0.3025,
+   "sensitivity_high_acuity": 0.796,
+   "under_triage_rate": 0.204,
+   "specificity": 0.8052,
+   "ppv": 0.6393,
+   "alarm_rate": 0.3766,
+   "accuracy": 0.8024,
+   "auroc": 0.8851,
+   "admit_rate_among_missed_high_acuity": 0.4475,
+   "confusion": {
+    "tn": 62683,
+    "fp": 15162,
+    "fn": 6887,
+    "tp": 26874
+   }
+  },
+  {
+   "model": "with_ambulance / unweighted",
+   "n_test": 111606,
+   "high_acuity_prevalence": 0.3025,
+   "sensitivity_high_acuity": 0.6487,
+   "under_triage_rate": 0.3513,
+   "specificity": 0.9098,
+   "ppv": 0.7573,
+   "alarm_rate": 0.2591,
+   "accuracy": 0.8308,
+   "auroc": 0.8894,
+   "admit_rate_among_missed_high_acuity": 0.497,
+   "confusion": {
+    "tn": 70825,
+    "fp": 7020,
+    "fn": 11860,
+    "tp": 21901
+   }
+  },
+  {
+   "model": "with_ambulance / class-balanced",
+   "n_test": 111606,
+   "high_acuity_prevalence": 0.3025,
+   "sensitivity_high_acuity": 0.8073,
+   "under_triage_rate": 0.1927,
+   "specificity": 0.8057,
+   "ppv": 0.6431,
+   "alarm_rate": 0.3798,
+   "accuracy": 0.8062,
+   "auroc": 0.8895,
+   "admit_rate_among_missed_high_acuity": 0.44,
+   "confusion": {
+    "tn": 62716,
+    "fp": 15129,
+    "fn": 6505,
+    "tp": 27256
+   }
+  }
+ ],
+ "multiclass": [
+  {
+   "model": "base / unweighted",
+   "exact_accuracy": 0.663,
+   "within_one_level": 0.9664,
+   "weighted_kappa_quadratic": 0.6669,
+   "under_triage_true_1_2_predicted_3_5": 0.3364,
+   "per_class": {
+    "1": {
+     "precision": 0.6156,
+     "recall": 0.2552,
+     "f1": 0.3608,
+     "support": 1054
+    },
+    "2": {
+     "precision": 0.7071,
+     "recall": 0.6522,
+     "f1": 0.6785,
+     "support": 32707
+    },
+    "3": {
+     "precision": 0.6586,
+     "recall": 0.7163,
+     "f1": 0.6862,
+     "support": 47246
+    },
+    "4": {
+     "precision": 0.6357,
+     "recall": 0.6929,
+     "f1": 0.6631,
+     "support": 25001
+    },
+    "5": {
+     "precision": 0.5173,
+     "recall": 0.2194,
+     "f1": 0.3081,
+     "support": 5598
+    }
+   },
+   "confusion_rows_true_cols_pred": [
+    [
+     269,
+     652,
+     100,
+     20,
+     13
+    ],
+    [
+     152,
+     21330,
+     10099,
+     1023,
+     103
+    ],
+    [
+     13,
+     7167,
+     33841,
+     5943,
+     282
+    ],
+    [
+     2,
+     758,
+     6171,
+     17322,
+     748
+    ],
+    [
+     1,
+     260,
+     1170,
+     2939,
+     1228
+    ]
+   ]
+  },
+  {
+   "model": "base / class-balanced",
+   "exact_accuracy": 0.5817,
+   "within_one_level": 0.9032,
+   "weighted_kappa_quadratic": 0.5956,
+   "under_triage_true_1_2_predicted_3_5": 0.2515,
+   "per_class": {
+    "1": {
+     "precision": 0.0933,
+     "recall": 0.8055,
+     "f1": 0.1672,
+     "support": 1054
+    },
+    "2": {
+     "precision": 0.6788,
+     "recall": 0.5948,
+     "f1": 0.634,
+     "support": 32707
+    },
+    "3": {
+     "precision": 0.7421,
+     "recall": 0.5479,
+     "f1": 0.6304,
+     "support": 47246
+    },
+    "4": {
+     "precision": 0.6193,
+     "recall": 0.6067,
+     "f1": 0.6129,
+     "support": 25001
+    },
+    "5": {
+     "precision": 0.2465,
+     "recall": 0.6374,
+     "f1": 0.3555,
+     "support": 5598
+    }
+   },
+   "confusion_rows_true_cols_pred": [
+    [
+     849,
+     147,
+     21,
+     11,
+     26
+    ],
+    [
+     4819,
+     19454,
+     5997,
+     1153,
+     1284
+    ],
+    [
+     2406,
+     8302,
+     25885,
+     6878,
+     3775
+    ],
+    [
+     725,
+     657,
+     2631,
+     15168,
+     5820
+    ],
+    [
+     305,
+     98,
+     346,
+     1281,
+     3568
+    ]
+   ]
+  }
+ ],
+ "top_features_binary_balanced": [
+  {
+   "feature": "cc_alcoholintoxication",
+   "auroc_drop": 0.0393
+  },
+  {
+   "feature": "age",
+   "auroc_drop": 0.0375
+  },
+  {
+   "feature": "cc_suicidal",
+   "auroc_drop": 0.0216
+  },
+  {
+   "feature": "cc_psychiatricevaluation",
+   "auroc_drop": 0.0154
+  },
+  {
+   "feature": "cc_chestpain",
+   "auroc_drop": 0.0148
+  },
+  {
+   "feature": "triage_vital_hr",
+   "auroc_drop": 0.0123
+  },
+  {
+   "feature": "cc_alteredmentalstatus",
+   "auroc_drop": 0.0103
+  },
+  {
+   "feature": "cc_shortnessofbreath",
+   "auroc_drop": 0.0075
+  },
+  {
+   "feature": "triage_vital_temp",
+   "auroc_drop": 0.0064
+  },
+  {
+   "feature": "cc_syncope",
+   "auroc_drop": 0.0061
+  },
+  {
+   "feature": "cc_strokealert",
+   "auroc_drop": 0.0052
+  },
+  {
+   "feature": "cc_drugproblem",
+   "auroc_drop": 0.0051
+  },
+  {
+   "feature": "cc_backpain",
+   "auroc_drop": 0.0051
+  },
+  {
+   "feature": "triage_vital_rr",
+   "auroc_drop": 0.0039
+  },
+  {
+   "feature": "cc_rash",
+   "auroc_drop": 0.0037
+  },
+  {
+   "feature": "cc_alcoholproblem",
+   "auroc_drop": 0.0036
+  },
+  {
+   "feature": "cc_neurologicproblem",
+   "auroc_drop": 0.0034
+  },
+  {
+   "feature": "cc_dentalpain",
+   "auroc_drop": 0.0034
+  },
+  {
+   "feature": "cc_sorethroat",
+   "auroc_drop": 0.0033
+  },
+  {
+   "feature": "triage_vital_sbp",
+   "auroc_drop": 0.0031
+  }
+ ]
+}

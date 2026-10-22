@@ -1,0 +1,454 @@
+{
+ "sid": "LION-3981",
+ "facts": {
+  "danger_signs.responsive": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-18 21:23"
+  },
+  "danger_signs.chest_pain_now": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-18 21:23"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "eye_problem",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 3,
+      "ts": "2026-10-18 21:23"
+     },
+     "text": {
+      "value": "I was using my chainsaw without safety goggles and I think I got some sawdust in my left eye. It hurts and it just won't stop tearing.",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 6,
+      "ts": "2026-10-18 21:24"
+     },
+     "onset": {
+      "value": "about an hour ago",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 7,
+      "ts": "2026-10-18 21:24"
+     },
+     "onset_abs": {
+      "value": "~2026-10-18 20:24",
+      "status": "reported",
+      "who": "derived",
+      "turn": 7,
+      "ts": "2026-10-18 21:24"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3
+  },
+  "complaint.category": {
+   "value": [
+    "eye_problem"
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 7,
+   "ts": "2026-10-18 21:24"
+  },
+  "E.mechanism": {
+   "value": "none",
+   "status": "reported",
+   "who": "derived",
+   "turn": 3,
+   "ts": "2026-10-18 21:23"
+  },
+  "danger_signs.breathing_difficulty": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 4,
+   "ts": "2026-10-18 21:24"
+  },
+  "danger_signs.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 5,
+   "ts": "2026-10-18 21:24"
+  },
+  "complaint.text": {
+   "value": "I was using my chainsaw without safety goggles and I think I got some sawdust in my left eye. It hurts and it just won't stop tearing.",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 6,
+   "ts": "2026-10-18 21:24"
+  },
+  "complaint.onset": {
+   "value": "about an hour ago",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 7,
+   "ts": "2026-10-18 21:24"
+  },
+  "complaint.onset_abs": {
+   "value": "~2026-10-18 20:24 (from 'about an hour ago' said 21:24)",
+   "status": "reported",
+   "who": "derived",
+   "turn": 7,
+   "ts": "2026-10-18 21:24"
+  },
+  "patient.age": {
+   "value": 36,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 8,
+   "ts": "2026-10-18 21:24"
+  },
+  "patient.sex": {
+   "value": "male",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 8,
+   "ts": "2026-10-18 21:24"
+  },
+  "patient.age_group": {
+   "value": "adult",
+   "status": "reported",
+   "who": "derived",
+   "turn": 8,
+   "ts": "2026-10-18 21:24"
+  },
+  "complaint.fever": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 9,
+   "ts": "2026-10-18 21:24"
+  },
+  "infection.rash": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 9,
+   "ts": "2026-10-18 21:24"
+  },
+  "infection.travel_14d": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 10,
+   "ts": "2026-10-18 21:24"
+  },
+  "infection.contacts": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 10,
+   "ts": "2026-10-18 21:24"
+  },
+  "stroke.vision_change": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 11,
+   "ts": "2026-10-18 21:24"
+  },
+  "ams.changed_from_baseline": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 12,
+   "ts": "2026-10-18 21:25"
+  },
+  "M.medications": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 15,
+   "ts": "2026-10-18 21:25"
+  },
+  "A.allergies": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 15,
+   "ts": "2026-10-18 21:25"
+  },
+  "history.conditions": {
+   "value": [],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 16,
+   "ts": "2026-10-18 21:25"
+  }
+ },
+ "attempts": {
+  "danger_signs.responsive": 1,
+  "danger_signs.chest_pain_now": 2,
+  "danger_signs.breathing_difficulty": 2,
+  "danger_signs.heavy_bleeding": 2,
+  "complaint.category": 1,
+  "complaint.text": 1,
+  "complaint.onset": 2,
+  "patient.age": 1,
+  "patient.sex": 1,
+  "complaint.fever": 1,
+  "infection.rash": 1,
+  "infection.travel_14d": 1,
+  "infection.contacts": 1,
+  "stroke.vision_change": 1,
+  "ams.changed_from_baseline": 1,
+  "complaint.pain_rating": 3,
+  "M.medications": 1,
+  "A.allergies": 1,
+  "history.conditions": 1,
+  "history.immunocompromised": 1
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "Is the patient awake and responding to you normally? Also, are they currently experiencing any chest pain, trouble breathing, or heavy bleeding?",
+   "ts": "2026-10-18 21:23:39",
+   "kind": "question",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, I'm awake, it's me. No.",
+   "ts": "2026-10-18 21:23:39",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Is the patient experiencing any chest pain at this moment?",
+   "ts": "2026-10-18 21:23:46",
+   "kind": "question",
+   "slot": "dyn:danger_signs.chest_pain_now"
+  },
+  {
+   "role": "caregiver",
+   "text": "No.",
+   "ts": "2026-10-18 21:23:46",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.chest_pain_now"
+  },
+  {
+   "role": "bot",
+   "text": "I'm glad you're able to speak with me. Are you or the patient having any trouble breathing or heavy bleeding right now? Also, what is the main reason for your visit today?",
+   "ts": "2026-10-18 21:23:53",
+   "kind": "question",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category"
+  },
+  {
+   "role": "caregiver",
+   "text": "No. I think I got sawdust in my left eye. I was using a chainsaw without goggles.",
+   "ts": "2026-10-18 21:23:53",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category"
+  },
+  {
+   "role": "bot",
+   "text": "I understand about the eye. Is the patient having any difficulty breathing right now?",
+   "ts": "2026-10-18 21:24:00",
+   "kind": "question",
+   "slot": "dyn:danger_signs.breathing_difficulty"
+  },
+  {
+   "role": "caregiver",
+   "text": "No.",
+   "ts": "2026-10-18 21:24:00",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.breathing_difficulty"
+  },
+  {
+   "role": "bot",
+   "text": "Is there any heavy bleeding occurring right now?",
+   "ts": "2026-10-18 21:24:06",
+   "kind": "question",
+   "slot": "dyn:danger_signs.heavy_bleeding"
+  },
+  {
+   "role": "caregiver",
+   "text": "No.",
+   "ts": "2026-10-18 21:24:06",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.heavy_bleeding"
+  },
+  {
+   "role": "bot",
+   "text": "I'm glad there's no breathing trouble or bleeding. Could you tell me more about the eye problem and when it first started?",
+   "ts": "2026-10-18 21:24:13",
+   "kind": "question",
+   "slot": "dyn:complaint.text+complaint.onset"
+  },
+  {
+   "role": "caregiver",
+   "text": "I was using my chainsaw without safety goggles and I think I got some sawdust in my left eye. It hurts and it just won't stop tearing. About an hour ago.",
+   "ts": "2026-10-18 21:24:13",
+   "kind": "answer",
+   "slot": "dyn:complaint.text+complaint.onset"
+  },
+  {
+   "role": "bot",
+   "text": "I understand it started about an hour ago. Can you tell me exactly what time the pain began?",
+   "ts": "2026-10-18 21:24:22",
+   "kind": "question",
+   "slot": "dyn:complaint.onset"
+  },
+  {
+   "role": "caregiver",
+   "text": "About an hour ago.",
+   "ts": "2026-10-18 21:24:22",
+   "kind": "answer",
+   "slot": "dyn:complaint.onset"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Could you tell me the age and sex of the person who is hurt?",
+   "ts": "2026-10-18 21:24:28",
+   "kind": "question",
+   "slot": "dyn:patient.age+patient.sex"
+  },
+  {
+   "role": "caregiver",
+   "text": "I'm 36. I'm a man.",
+   "ts": "2026-10-18 21:24:28",
+   "kind": "answer",
+   "slot": "dyn:patient.age+patient.sex"
+  },
+  {
+   "role": "bot",
+   "text": "I've noted that. Does he have a fever or any new rashes on his body?",
+   "ts": "2026-10-18 21:24:35",
+   "kind": "question",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 21:24:35",
+   "kind": "answer",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "bot",
+   "text": "Has he traveled outside the country or been in contact with anyone who has a contagious illness in the last two weeks?",
+   "ts": "2026-10-18 21:24:42",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 21:24:42",
+   "kind": "answer",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "bot",
+   "text": "Has he had any sudden changes or loss of vision?",
+   "ts": "2026-10-18 21:24:48",
+   "kind": "question",
+   "slot": "dyn:stroke.vision_change"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I can see, it just hurts and waters.",
+   "ts": "2026-10-18 21:24:48",
+   "kind": "answer",
+   "slot": "dyn:stroke.vision_change"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear about his eye. On a scale of 0 to 10, how bad is his pain right now, and has he seemed more confused or sleepy than usual today?",
+   "ts": "2026-10-18 21:25:03",
+   "kind": "question",
+   "slot": "dyn:ams.changed_from_baseline+complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 21:25:03",
+   "kind": "answer",
+   "slot": "dyn:ams.changed_from_baseline+complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. To help the team, how would you rate his pain level on a scale of 0 to 10, where 10 is the worst possible?",
+   "ts": "2026-10-18 21:25:10",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 21:25:10",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "I understand it's hard to say. If you had to pick a number from 0 to 10, where 10 is the worst pain possible, how much is he hurting right now?",
+   "ts": "2026-10-18 21:25:16",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 21:25:16",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. To help the team prepare, does he take any regular medications or have any known allergies?",
+   "ts": "2026-10-18 21:25:22",
+   "kind": "question",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 21:25:22",
+   "kind": "answer",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Does he have any ongoing medical conditions, like heart issues or diabetes?",
+   "ts": "2026-10-18 21:25:28",
+   "kind": "question",
+   "slot": "dyn:history.conditions"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I'm healthy.",
+   "ts": "2026-10-18 21:25:28",
+   "kind": "answer",
+   "slot": "dyn:history.conditions"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Has he ever been told he has a weakened immune system or is he undergoing any treatments like chemotherapy or steroid medications?",
+   "ts": "2026-10-18 21:25:42",
+   "kind": "question",
+   "slot": "dyn:history.immunocompromised"
+  }
+ ],
+ "stage": "floor",
+ "floor": null,
+ "phase": "enroute",
+ "created": "2026-10-18 21:23",
+ "pending_slot": "dyn:history.immunocompromised",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {}
+}

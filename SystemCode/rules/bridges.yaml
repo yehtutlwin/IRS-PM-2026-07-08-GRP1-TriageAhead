@@ -1,0 +1,161 @@
+# rules/bridges.yaml - bridges: everyday signs a caregiver can report -> the fact a rule reads.
+# Knowledge base and extraction design v2 (issue #55). Rewritten 13 Oct 2026; v1 (25 Aug 2026) had five entries.
+#
+# WHAT A BRIDGE IS. The handbook names clinical facts ("signs of a stroke", "compromised neurovascular function",
+# "altered mental status") that a caregiver cannot name but can observe in parts. A bridge says which observable
+# parts, written as fields of rules/fields.yaml, amount to the clinical fact, and cites where that reading comes from.
+# The language model extracts the parts from the caregiver's words; the bridge assigns the clinical meaning; the rule
+# engine reads only the clinical fact. Nothing clinical is authored here: every `signs` bridge quotes a published
+# patient-facing page or the handbook's own everyday definition.
+#
+# WHICH FACTS GET A BRIDGE (authored list; the criterion is recorded here so a reviewer can disagree with it):
+#   a fact gets a bridge when (1) a rule reads it, (2) a caregiver cannot be asked for it by name, and (3) a published
+#   lay instrument or the handbook itself breaks it into signs worth recording one by one for the nurse.
+#   Facts that fail (3) carry their everyday wording in the field's own `ask` and `meaning` instead (for example
+#   complaint.increasing_respiratory_effort, complaint.heavy_vaginal_bleeding, complaint.brisk_or_posterior_bleeding,
+#   complaint.possible_pelvis_femur_fracture_or_dislocation, complaint.danger_to_self_or_others): the model writes
+#   the fact directly from the description, with no middle layer. That wording is authored in rules/fields.yaml.
+#
+# THREE KINDS OF ENTRY
+#   signs    any one of the listed everyday-sign fields being true makes the target true. Needs `source` and `span`.
+#   count    the target is the number of listed fields that are true (the handbook's "constellation" of eye findings).
+#   entails  one of our own fields implies another by their meanings alone (heavy bleeding is bleeding). No outside
+#            source; the two meanings in rules/fields.yaml are the evidence, and `why` states the reading.
+#
+# HOW THE ENGINE APPLIES THEM (prototype/engine.py, derive): after every extraction turn, a `signs` or `entails`
+# entry writes `target = value` when its `when` holds and the target has no value yet; a `count` entry writes the
+# count whenever at least one listed field is true and overwrites only a value it wrote itself. A fact the caregiver
+# stated directly is never overwritten. Derived facts can only add to what is known, so the floor can only rise.
+# `when` uses the same condition language as rules/criteria.yaml. The derived agenda (rules/derive.py) lets an
+# everyday-sign field inherit the priority of the rules its target feeds, and rules/validate.py checks that every
+# field named here exists and that each field's `feeds` in rules/fields.yaml points back at a bridge here.
+# Computational derivations that need code stay in engine.py: anticoagulant from medicine names, age from date of birth.
+#
+# REVIEW. Each entry is reviewed on the review site like a rule: is the translation what the cited page supports?
+
+# ---------------------------------------------------------------- signs (from a lay instrument or the handbook)
+
+- id: BR-05.stroke-fast
+  kind: signs
+  target: complaint.stroke_signs
+  value: true
+  when: { any: [ { field: stroke.face_droop, equals: true },
+                 { field: stroke.arm_weakness, equals: true },
+                 { field: stroke.speech_change, equals: true },
+                 { field: stroke.vision_change, equals: true },
+                 { field: stroke.balance_loss, equals: true } ] }
+  provenance: operationalized
+  why: "The handbook says 'signs of a stroke' (p.12) and lists only gross deficits; the public stroke campaigns name the signs a bystander can see, and a sign that has passed still counts."
+  source: "NHS, Stroke: symptoms, https://www.nhs.uk/conditions/stroke/symptoms/ (page reviewed 12 Sep 2024; accessed 13 Oct 2026). CDC, Stroke signs and symptoms, https://www.cdc.gov/stroke/signs-symptoms/index.html (last reviewed 19 May 2026; accessed 13 Oct 2026). The American Stroke Association's B.E. F.A.S.T. page, https://www.stroke.org/en/about-stroke/stroke-symptoms, was the page verified on 24 Aug 2026; it refuses automated fetches, so the quotes are from the NHS and CDC pages, which carry the same signs."
+  span: "Call 999 now if: you think you're having, or have had a stroke; you've had signs of a stroke within the last 24 hours even if they've now stopped"
+  sign_sources:
+    stroke.face_droop: "NHS: 'face weakness - one side of your face may droop (fall) and it might be hard to smile'"
+    stroke.arm_weakness: "NHS: 'arm weakness - you may not be able to fully lift both arms and keep them there because of weakness or numbness in 1 arm'; other symptoms: 'weakness or numbness down 1 side of your body'"
+    stroke.speech_change: "NHS: 'speech problems - you may slur your words or sound confused'; 'finding it difficult to speak or think of words'. CDC: 'Sudden confusion, trouble speaking, or difficulty understanding speech'"
+    stroke.vision_change: "NHS: 'blurred vision or loss of sight in 1 or both eyes'. CDC: 'Sudden trouble seeing'"
+    stroke.balance_loss: "NHS: 'feeling dizzy or falling over'. CDC: 'Sudden trouble walking, dizziness, loss of balance, or lack of coordination'"
+  notes: "A resolved episode counts (NHS: 'even if they've now stopped'; CDC: a transient ischemic attack); the fields say 'new today' and the extraction instructions keep a sign that has passed. Sudden severe headache and sudden confusion are also on both lists; they reach the rules through complaint.headache_thunderclap and the mental-status fields, not through this bridge."
+
+- id: BR-24.limb-warning-signs
+  kind: signs
+  target: complaint.extremity_neurovascular_compromise
+  value: true
+  when: { any: [ { field: limb.numb_tingling, equals: true },
+                 { field: limb.cold_pale_blue, equals: true },
+                 { field: limb.cannot_move_digits, equals: true },
+                 { field: limb.cast_too_tight, equals: true } ] }
+  provenance: operationalized
+  why: "The handbook says 'compromised neurovascular function' (p.15); the patient pages for casts and splints list the signs a family can see below an injury or a cast."
+  source: "AAOS OrthoInfo, Care of casts and splints, 'Warning signs', https://www.orthoinfo.org/en/recovery/care-of-casts-and-splints/ (the orthoinfo.aaos.org address verified on 24 Aug 2026 now redirects here; accessed 13 Oct 2026). Royal Children's Hospital Melbourne, Plaster cast care, https://www.rch.org.au/kidsinfo/fact_sheets/plaster_cast_care/ (reviewed Dec 2023; accessed 13 Oct 2026). NHS, Broken arm or wrist, https://www.nhs.uk/conditions/broken-arm-or-wrist/ (page reviewed 2 Oct 2026; accessed 13 Oct 2026)."
+  span: "If you experience any of the following symptoms, contact your doctor's office immediately for advice."
+  sign_sources:
+    limb.numb_tingling: "AAOS: 'Numbness and tingling in your hand or foot.' RCH: 'Your child may say they have pins and needles or numbness.'"
+    limb.cold_pale_blue: "RCH: 'The skin may look pale or bluish in colour.' 'The fingers or toes are cool or hot to touch.' NHS: 'your fingers, wrist and arm look swollen or turn blue or white'"
+    limb.cannot_move_digits: "AAOS: 'Loss of active movement of toes or fingers - meaning they cannot move on their own. This requires an urgent evaluation by your doctor.' RCH: 'Your child may not be able to move their fingers or toes.'"
+    limb.cast_too_tight: "AAOS: 'Increased pain and the feeling that the splint or cast is too tight. This may be caused by swelling.'"
+  notes: "Corrected 13 Oct 2026: the v1 entry quoted 'cold, pale or blue digits' to the AAOS page, which does not say it; the colour and temperature sign is now quoted to the RCH and NHS pages. AAOS also lists 'Burning and stinging' and 'Excessive swelling below the cast'; neither has a field, because swelling and stinging alone are common after any injury. A tight cast with worsening pain also opens the compartment-syndrome question (complaint.compartment_syndrome_symptoms) through its gate; it is not written as that fact, because none of the pages names compartment syndrome."
+
+- id: BR-01.ams-baseline
+  kind: signs
+  target: obs.new_confusion_lethargy_disorientation
+  value: true
+  when: { field: ams.changed_from_baseline, equals: true }
+  provenance: operationalized
+  why: "Before arrival only someone who knows the patient can say whether the mental state is changed; the handbook defines altered mental status as a change from the patient's baseline."
+  source: "ESI v5 p.12 (Is the Patient Experiencing New Onset Confusion, Lethargy, or Disorientation?)"
+  span: "In broad terms, AMS indicates a change in the level of consciousness and/or orientation from a patient's baseline mental status. However, other clinical signs, such as confusion, somnolence, agitation, or belligerence, are commonly referred to as AMS"
+  notes: "The field ams.changed_from_baseline names the handbook's signs in everyday words (more confused, not making sense, unusually sleepy, newly agitated); since 15 Oct 2026 the gloss says that tiredness or irritability from pain is not this (a false floor on the gout persona, run v2q). Written for all ages; a child's change also feeds BR-29."
+
+- id: BR-29.ams-baseline-pediatric
+  kind: signs
+  target: obs.subtle_mental_status_change
+  value: true
+  when: { field: ams.changed_from_baseline, equals: true }
+  provenance: operationalized
+  why: "The handbook's paediatric note reads a subtle change in mental status; the people who know the child are the ones who notice it."
+  source: "ESI v5 p.13 (Decision Point B, pediatric considerations, neurological concerns)"
+  span: "A subtle change in a pediatric patient's mental status can be suggestive of a change in hemodynamics and should be immediately investigated as high risk"
+  notes: "Written for all ages; the rule B-29 itself requires patient.age under 18, so this is inert for adults."
+
+- id: BR-01.not-responding
+  kind: signs
+  target: obs.new_confusion_lethargy_disorientation
+  value: true
+  when: { field: danger_signs.responsive, equals: false }
+  provenance: operationalized
+  why: "A patient who cannot be woken or is not responding normally has at least a changed level of consciousness. The level-1 rule for unresponsiveness needs a clinician's AVPU reading, so before arrival the floor rests on the altered-mental-status rule; the call-995 advice the chat gives on this answer is separate product behaviour."
+  source: "ESI v5 p.12 (Is the Patient Experiencing New Onset Confusion, Lethargy, or Disorientation?)"
+  span: "If the patient's history is unknown, and the patient presents as confused, lethargic, or disoriented, the nurse should assume this condition is new and assign an ESI level 2."
+  notes: "Added 13 Oct 2026; until then no rule read the danger-sign screen (prototype/TODO.md item 5). A wrong 'no' here only raises the floor, which the nurse sees with this bridge named."
+
+# ---------------------------------------------------------------- count (the handbook's constellation of eye findings)
+
+- id: BR-28.eye-findings-count
+  kind: count
+  target: complaint.atso_elements_count
+  count: [stroke.vision_change, eye.double_vision_pupil_or_bulge, eye.red, eye.intolerable_pain, eye.injury, eye.floaters_or_flashes]
+  provenance: operationalized
+  why: "The handbook names six eye findings and says more of them together means a more urgent problem; the rule B-28 reads how many are present, so each finding is recorded on its own and counted."
+  source: "ESI v5 p.13 (Ocular Concerns)"
+  span: "the elements of the score that predict urgency include the presence of altered vision; sudden diplopia, anisocoria, or exophthalmos; red eye; distress/pain (specifically intolerable pain); eye trauma; and \"floaters and flashers,\" with more symptoms in constellation predicting a more emergent problem"
+  notes: "The everyday wording of each element (double vision, pupils of different sizes, an eye that bulges) is authored in rules/fields.yaml; no patient-facing instrument for the ATSO score was found. Altered vision is the same observation as the stroke sign stroke.vision_change, so that one field feeds both bridges (one fact, one name). The count is written only when at least one element is true; the threshold of two is the rule's and is under clinician review (issue #66)."
+
+# ---------------------------------------------------------------- signs from the handbook's own everyday definition
+
+- id: BR-13.heavy-bleeding-postpartum
+  kind: signs
+  target: complaint.postpartum_hemorrhage
+  value: true
+  when: { all: [ { field: complaint.heavy_vaginal_bleeding, equals: true },
+                 { field: history.postpartum, equals: true } ] }
+  provenance: operationalized
+  why: "The handbook's term is 'postpartum hemorrhage'; its own page gives the everyday measure of heavy bleeding and says a postpartum patient with it is level 2."
+  source: "ESI v5 p.14 (Obstetric and gynecologic concerns)"
+  span: "(Heavy vaginal bleeding generally means soaking through a pad an hour, plum-sized clots, bright red bleeding that does not slow down, or bleeding that has increased after a decrease.) Postpartum patients presenting with heavy vaginal bleeding should also be assigned ESI level 2"
+  notes: "Changed 13 Oct 2026: the v1 entry also fired for a patient who is still pregnant, citing the same page; the handbook's pregnant sentence adds abnormal vital signs and suspicion of infection, which is rule B-39, so under decision #69 (a rule says only what its sentence says) the pregnant arm is removed. The v1 everyday field ob.heavy_bleeding was the same fact as complaint.heavy_vaginal_bleeding and is merged into it."
+
+# ---------------------------------------------------------------- entailments (one of our fields implies another)
+
+- id: EN.heavy-bleeding-is-bleeding
+  kind: entails
+  target: complaint.vaginal_bleeding
+  value: true
+  when: { field: complaint.heavy_vaginal_bleeding, equals: true }
+  provenance: logical
+  why: "complaint.vaginal_bleeding is any vaginal bleeding outside a normal period; heavy bleeding is a case of it. Matters for the abdominal-pain rule B-21, which reads the general fact."
+
+- id: EN.changed-baseline-is-altered-now
+  kind: entails
+  target: obs.confusion_lethargy_disorientation
+  value: true
+  when: { field: ams.changed_from_baseline, equals: true }
+  provenance: logical
+  why: "A patient who is more confused, more drowsy or agitated than usual is confused, drowsy or agitated now; the handbook counts all of these as altered mental status (p.12). Matters for the headache rule B-34, which reads the present-state fact."
+
+- id: EN.breathing-difficulty-now-is-shortness-of-breath
+  kind: entails
+  target: complaint.shortness_of_breath
+  value: true
+  when: { field: danger_signs.breathing_difficulty, equals: true }
+  provenance: logical
+  why: "complaint.shortness_of_breath is breathing felt or reported as difficult now or since the problem started; trouble breathing right now, as the caregiver sees it, is a case of it. Matters for the pregnancy rule B-38."

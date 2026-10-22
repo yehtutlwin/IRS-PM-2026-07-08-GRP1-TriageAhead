@@ -1,0 +1,510 @@
+{
+ "sid": "PANDA-1715",
+ "facts": {
+  "danger_signs.responsive": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-18 16:49"
+  },
+  "danger_signs.chest_pain_now": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-18 16:49"
+  },
+  "danger_signs.breathing_difficulty": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-18 16:49"
+  },
+  "danger_signs.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-18 16:49"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "breathing",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 2,
+      "ts": "2026-10-18 16:49"
+     },
+     "text": {
+      "value": "wheezing and struggling to breathe. She has asthma. She started wheezing earlier today and her inhaler isn't helping.",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 2,
+      "ts": "2026-10-18 16:49"
+     },
+     "onset": {
+      "value": "earlier today",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 2,
+      "ts": "2026-10-18 16:49"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2
+  },
+  "complaint.category": {
+   "value": [
+    "breathing"
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-18 16:49"
+  },
+  "complaint.text": {
+   "value": "wheezing and struggling to breathe. She has asthma. She started wheezing earlier today and her inhaler isn't helping.",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-18 16:49"
+  },
+  "complaint.onset": {
+   "value": "earlier today",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-18 16:49"
+  },
+  "history.conditions": {
+   "value": "asthma",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-18 16:49"
+  },
+  "complaint.shortness_of_breath": {
+   "value": true,
+   "status": "reported",
+   "who": "derived",
+   "turn": 2,
+   "ts": "2026-10-18 16:49"
+  },
+  "E.mechanism": {
+   "value": "none",
+   "status": "reported",
+   "who": "derived",
+   "turn": 2,
+   "ts": "2026-10-18 16:49"
+  },
+  "patient.age": {
+   "value": 46,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-18 16:49"
+  },
+  "patient.sex": {
+   "value": "female",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-18 16:49"
+  },
+  "patient.age_group": {
+   "value": "adult",
+   "status": "reported",
+   "who": "derived",
+   "turn": 3,
+   "ts": "2026-10-18 16:49"
+  },
+  "history.pregnant": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 4,
+   "ts": "2026-10-18 16:49"
+  },
+  "history.postpartum": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 4,
+   "ts": "2026-10-18 16:49"
+  },
+  "complaint.fever": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 5,
+   "ts": "2026-10-18 16:50"
+  },
+  "infection.rash": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 6,
+   "ts": "2026-10-18 16:50"
+  },
+  "infection.travel_14d": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 7,
+   "ts": "2026-10-18 16:50"
+  },
+  "infection.contacts": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 7,
+   "ts": "2026-10-18 16:50"
+  },
+  "ams.changed_from_baseline": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 8,
+   "ts": "2026-10-18 16:50"
+  },
+  "complaint.increasing_respiratory_effort": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 9,
+   "ts": "2026-10-18 16:50"
+  },
+  "M.medications": {
+   "value": [
+    "asthma inhaler"
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 10,
+   "ts": "2026-10-18 16:50"
+  },
+  "A.allergies": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 11,
+   "ts": "2026-10-18 16:50"
+  },
+  "identity.name": {
+   "value": "Mary Ong",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 12,
+   "ts": "2026-10-18 16:50"
+  },
+  "identity.dob": {
+   "value": "12 May 1980",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 12,
+   "ts": "2026-10-18 16:50"
+  },
+  "complaint.respiratory_distress_signs": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 15,
+   "ts": "2026-10-18 16:51"
+  },
+  "L.last_intake": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 16,
+   "ts": "2026-10-18 16:51"
+  }
+ },
+ "attempts": {
+  "danger_signs.responsive": 1,
+  "danger_signs.chest_pain_now": 1,
+  "danger_signs.breathing_difficulty": 1,
+  "danger_signs.heavy_bleeding": 1,
+  "complaint.category": 1,
+  "patient.age": 1,
+  "patient.sex": 1,
+  "history.pregnant": 1,
+  "history.postpartum": 1,
+  "complaint.fever": 1,
+  "infection.rash": 2,
+  "infection.travel_14d": 1,
+  "infection.contacts": 1,
+  "ams.changed_from_baseline": 1,
+  "complaint.pain_rating": 3,
+  "complaint.increasing_respiratory_effort": 1,
+  "M.medications": 1,
+  "A.allergies": 2,
+  "identity.name": 1,
+  "identity.dob": 1,
+  "complaint.respiratory_distress_signs": 1,
+  "L.last_intake": 1
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "Is the patient awake and responding to you normally? Also, is he or she experiencing any chest pain, trouble breathing, or heavy bleeding right now?",
+   "ts": "2026-10-18 16:49:19",
+   "kind": "question",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, she's awake and she can answer. No chest pain.",
+   "ts": "2026-10-18 16:49:19",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "bot",
+   "text": "I'm glad she's alert. Is she having any trouble breathing or is there any heavy bleeding? Also, what is the main reason you are bringing her in today?",
+   "ts": "2026-10-18 16:49:27",
+   "kind": "question",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, she's wheezing and struggling to breathe. No. She has asthma. She started wheezing earlier today and her inhaler isn't helping.",
+   "ts": "2026-10-18 16:49:27",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category"
+  },
+  {
+   "role": "bot",
+   "text": "I understand she has asthma. How old is she and is she female?",
+   "ts": "2026-10-18 16:49:44",
+   "kind": "question",
+   "slot": "dyn:patient.age+patient.sex"
+  },
+  {
+   "role": "caregiver",
+   "text": "She's 46. She's a woman, my wife.",
+   "ts": "2026-10-18 16:49:44",
+   "kind": "answer",
+   "slot": "dyn:patient.age+patient.sex"
+  },
+  {
+   "role": "bot",
+   "text": "Is she currently pregnant or has she given birth in the last few weeks?",
+   "ts": "2026-10-18 16:49:51",
+   "kind": "question",
+   "slot": "dyn:history.pregnant+history.postpartum"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 16:49:51",
+   "kind": "answer",
+   "slot": "dyn:history.pregnant+history.postpartum"
+  },
+  {
+   "role": "bot",
+   "text": "Does she have a fever or any new rashes?",
+   "ts": "2026-10-18 16:49:57",
+   "kind": "question",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "No fever.",
+   "ts": "2026-10-18 16:49:57",
+   "kind": "answer",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Does she have any new rashes on her skin?",
+   "ts": "2026-10-18 16:50:04",
+   "kind": "question",
+   "slot": "dyn:infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 16:50:04",
+   "kind": "answer",
+   "slot": "dyn:infection.rash"
+  },
+  {
+   "role": "bot",
+   "text": "Has she traveled outside the country or been in contact with anyone who is sick in the last two weeks?",
+   "ts": "2026-10-18 16:50:10",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 16:50:10",
+   "kind": "answer",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "bot",
+   "text": "Is she acting differently than usual, such as being more confused or unusually sleepy?",
+   "ts": "2026-10-18 16:50:16",
+   "kind": "question",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, she's herself, just struggling to breathe.",
+   "ts": "2026-10-18 16:50:16",
+   "kind": "answer",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "bot",
+   "text": "I understand she is struggling to breathe. On a scale of 0 to 10, how much pain is she in right now, and is her breathing getting harder?",
+   "ts": "2026-10-18 16:50:30",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating+complaint.increasing_respiratory_effort"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, it's getting worse, she's working harder and harder to breathe.",
+   "ts": "2026-10-18 16:50:30",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_rating+complaint.increasing_respiratory_effort"
+  },
+  {
+   "role": "system",
+   "text": "floor: at least ESI-2  rules: ['B-12.increasing-respiratory-effort']",
+   "ts": "2026-10-18 16:50:34",
+   "kind": "floor"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear her breathing is getting harder. Does she have any allergies, especially to medications, and what medicines does she take regularly?",
+   "ts": "2026-10-18 16:50:37",
+   "kind": "question",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "caregiver",
+   "text": "Her asthma inhaler. It isn't helping.",
+   "ts": "2026-10-18 16:50:37",
+   "kind": "answer",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "bot",
+   "text": "Does she have any allergies to medications or other substances?",
+   "ts": "2026-10-18 16:50:44",
+   "kind": "question",
+   "slot": "dyn:A.allergies"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 16:50:44",
+   "kind": "answer",
+   "slot": "dyn:A.allergies"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Could you please tell me her full name and date of birth?",
+   "ts": "2026-10-18 16:50:50",
+   "kind": "question",
+   "slot": "dyn:identity.name+identity.dob"
+  },
+  {
+   "role": "caregiver",
+   "text": "Mary Ong. 12 May 1980.",
+   "ts": "2026-10-18 16:50:50",
+   "kind": "answer",
+   "slot": "dyn:identity.name+identity.dob"
+  },
+  {
+   "role": "bot",
+   "text": "That's enough for the hospital team to prepare. Show the code PANDA-1715 at the counter when you arrive. I'll ask a few more things while you're on the way; tell me straight away if anything changes.",
+   "ts": "2026-10-18 16:50:54",
+   "kind": "ack"
+  },
+  {
+   "role": "bot",
+   "text": "How would you describe the level of pain she is feeling right now on a scale of 0 to 10?",
+   "ts": "2026-10-18 16:50:57",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 16:50:57",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. To help the team, can you estimate how severe her pain is on a scale of 0 to 10?",
+   "ts": "2026-10-18 16:51:03",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 16:51:03",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Is she currently struggling to breathe, such as breathing very fast, wheezing, or only being able to say a few words at a time?",
+   "ts": "2026-10-18 16:51:08",
+   "kind": "question",
+   "slot": "dyn:complaint.respiratory_distress_signs"
+  },
+  {
+   "role": "caregiver",
+   "text": "She's struggling, she's wheezing a lot.",
+   "ts": "2026-10-18 16:51:08",
+   "kind": "answer",
+   "slot": "dyn:complaint.respiratory_distress_signs"
+  },
+  {
+   "role": "bot",
+   "text": "I understand she is wheezing. When was the last time she had anything to eat or drink?",
+   "ts": "2026-10-18 16:51:22",
+   "kind": "question",
+   "slot": "dyn:L.last_intake"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 16:51:22",
+   "kind": "answer",
+   "slot": "dyn:L.last_intake"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you - that's everything. Show the code PANDA-1715 at the counter when you arrive.",
+   "ts": "2026-10-18 16:51:25",
+   "kind": "ack"
+  }
+ ],
+ "stage": "rest",
+ "floor": "at least ESI-2",
+ "phase": "enroute",
+ "created": "2026-10-18 16:49",
+ "pending_slot": "dyn:L.last_intake",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {},
+ "qr_ready": true,
+ "qr_turn": 12,
+ "considered": [
+  "B-54.respiratory-distress-signs-consider"
+ ],
+ "said_done": true
+}

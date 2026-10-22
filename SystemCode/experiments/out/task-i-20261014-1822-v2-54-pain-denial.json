@@ -1,0 +1,33 @@
+{
+ "persona_backend": "ollama",
+ "persona_model": "gemma4:12b",
+ "interview": {
+  "interview_mode": "dynamic",
+  "backend": "ollama",
+  "model": "gemma4:12b",
+  "dyn_max_fields": 4
+ },
+ "tag": "v2-54-pain-denial",
+ "results": [
+  {
+   "questions": 15,
+   "reasks": 3,
+   "floor": "at least ESI-2",
+   "floor_ok": false,
+   "rules_ok": true,
+   "fired": [
+    "B-12.increasing-respiratory-effort"
+   ],
+   "hits": 6,
+   "total": 7,
+   "misses": [
+    "danger_signs.breathing_difficulty: want=True got=False"
+   ],
+   "danger_miss": false,
+   "persona": "P9-breathing-no-pain",
+   "run": 1,
+   "session": "MERLION-2019",
+   "turns": 15
+  }
+ ]
+}

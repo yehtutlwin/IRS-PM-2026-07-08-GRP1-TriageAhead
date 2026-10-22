@@ -1,0 +1,56 @@
+{"t": "01:59:34", "kind": "engine", "note": "session KOPI-1931 started (web)"}
+{"t": "02:00:23", "kind": "question", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "Is the patient awake and responding to you normally? Also, is he or she experiencing any chest pain, trouble breathing, or heavy bleeding right now?", "fields": ["danger_signs.responsive", "danger_signs.chest_pain_now"], "offered": ["danger_signs.responsive", "danger_signs.chest_pain_now", "danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text"]}
+{"t": "02:00:23", "kind": "answer", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "Yes, the patient is awake and responding normally. No, the patient is not having chest pain right now."}
+{"t": "02:00:45", "kind": "extract", "writes": [["danger_signs.responsive", true], ["danger_signs.chest_pain_now", false]]}
+{"t": "02:01:33", "kind": "question", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category", "text": "I'm glad to hear they are alert. Is the patient having any trouble breathing or heavy bleeding right now? Also, what is the main reason you are bringing them in?", "fields": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category"], "offered": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text", "complaint.onset", "E.mechanism"]}
+{"t": "02:01:33", "kind": "answer", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category", "text": "No, the patient is not having trouble breathing right now. No, the patient is not bleeding heavily right now. I came in with a trusted friend after a sexual assault."}
+{"t": "02:02:05", "kind": "extract", "writes": [["danger_signs.heavy_bleeding", false, "quote not in the answer"]], "via": "guard-dropped"}
+{"t": "02:02:05", "kind": "extract", "writes": [["danger_signs.breathing_difficulty", false], ["complaint.category", "allergic_reaction"], ["complaint.text", "sexual assault"], ["complaint.sexual_assault", true]]}
+{"t": "02:02:05", "kind": "floor", "floor": "at least ESI-2", "fired": ["B-11.sexual-assault"], "sources": ["ESI v5 p.12; p.15 (mechanism list: 'and sexual assault')"]}
+{"t": "02:02:05", "kind": "extract", "writes": [["E.mechanism", "none"]], "via": "derived-non-injury"}
+{"t": "02:02:53", "kind": "question", "slot": "dyn:danger_signs.heavy_bleeding", "text": "I understand. Just to confirm, is there any heavy bleeding occurring right now?", "fields": ["danger_signs.heavy_bleeding"], "offered": ["danger_signs.heavy_bleeding"]}
+{"t": "02:02:53", "kind": "answer", "slot": "dyn:danger_signs.heavy_bleeding", "text": "No, the patient is not bleeding heavily right now."}
+{"t": "02:03:15", "kind": "extract", "writes": [["danger_signs.heavy_bleeding", false]]}
+{"t": "02:04:03", "kind": "question", "slot": "dyn:complaint.onset+patient.age+patient.sex", "text": "I'm sorry to hear about what happened. To help the team prepare, how old is the patient, what is their sex, and when did the incident occur?", "fields": ["complaint.onset", "patient.age", "patient.sex"], "offered": ["complaint.onset", "patient.age", "patient.sex", "M.medications", "A.allergies", "history.conditions"]}
+{"t": "02:04:03", "kind": "answer", "slot": "dyn:complaint.onset+patient.age+patient.sex", "text": "It began in detail at the front desk. The patient is 20 years old. The patient\u2019s sex has not been specified as male or female."}
+{"t": "02:04:25", "kind": "extract", "writes": [["patient.age", 20], ["patient.sex", "other"]]}
+{"t": "02:05:14", "kind": "question", "slot": "dyn:complaint.onset", "text": "Could you tell me about how long ago this started?", "fields": ["complaint.onset"], "offered": ["complaint.onset"]}
+{"t": "02:05:14", "kind": "answer", "slot": "dyn:complaint.onset", "text": "It began in detail at the front desk."}
+{"t": "02:05:37", "kind": "extract", "writes": []}
+{"t": "02:06:26", "kind": "question", "slot": "dyn:complaint.onset", "text": "Could you tell me approximately how long ago this started?", "fields": ["complaint.onset"], "offered": ["complaint.onset"]}
+{"t": "02:06:26", "kind": "answer", "slot": "dyn:complaint.onset", "text": "It began in detail at the front desk."}
+{"t": "02:06:46", "kind": "extract", "writes": []}
+{"t": "02:07:34", "kind": "question", "slot": "dyn:M.medications+A.allergies", "text": "I understand. Does the patient take any regular medications or have any known allergies, especially to medicine?", "fields": ["M.medications", "A.allergies"], "offered": ["M.medications", "A.allergies", "history.conditions", "identity.name", "identity.dob"]}
+{"t": "02:07:34", "kind": "answer", "slot": "dyn:M.medications+A.allergies", "text": "I take no regular medicines. The patient has no known allergies."}
+{"t": "02:07:55", "kind": "extract", "writes": [["M.medications", []], ["A.allergies", []]]}
+{"t": "02:08:43", "kind": "question", "slot": "dyn:history.conditions+identity.name+identity.dob", "text": "I've noted that. Could you tell me the patient's full name, date of birth, and if they have any ongoing medical conditions?", "fields": ["history.conditions", "identity.name", "identity.dob"], "offered": ["history.conditions", "identity.name", "identity.dob"]}
+{"t": "02:08:43", "kind": "answer", "slot": "dyn:history.conditions+identity.name+identity.dob", "text": "I do not know the patient\u2019s medical conditions. I have not given the patient\u2019s name. I do not know the exact date of birth."}
+{"t": "02:09:04", "kind": "extract", "writes": []}
+{"t": "02:09:52", "kind": "question", "slot": "dyn:history.conditions", "text": "Does the patient have any other medical conditions or health problems?", "fields": ["history.conditions"], "offered": ["history.conditions"]}
+{"t": "02:09:52", "kind": "answer", "slot": "dyn:history.conditions", "text": "I do not know the patient\u2019s medical conditions."}
+{"t": "02:10:12", "kind": "extract", "writes": []}
+{"t": "02:10:12", "kind": "extract", "writes": [["history.conditions", null]], "via": "dont-know"}
+{"t": "02:11:00", "kind": "question", "slot": "dyn:identity.name", "text": "Could you please tell me the patient's full name?", "fields": ["identity.name"], "offered": ["identity.name"]}
+{"t": "02:11:00", "kind": "answer", "slot": "dyn:identity.name", "text": "I have not given the patient\u2019s name."}
+{"t": "02:11:20", "kind": "extract", "writes": []}
+{"t": "02:12:08", "kind": "question", "slot": "dyn:identity.name", "text": "Could you please tell me the name of the person you are with?", "fields": ["identity.name"], "offered": ["identity.name"]}
+{"t": "02:12:08", "kind": "answer", "slot": "dyn:identity.name", "text": "I have not given the patient\u2019s name."}
+{"t": "02:12:29", "kind": "extract", "writes": []}
+{"t": "02:13:16", "kind": "question", "slot": "dyn:identity.dob", "text": "Could you please tell me the date of birth for the patient?", "fields": ["identity.dob"], "offered": ["identity.dob"]}
+{"t": "02:13:16", "kind": "answer", "slot": "dyn:identity.dob", "text": "I do not know the exact date of birth."}
+{"t": "02:13:37", "kind": "extract", "writes": []}
+{"t": "02:14:26", "kind": "question", "slot": "dyn:identity.dob", "text": "I understand. Could you tell me the date of birth for the patient?", "fields": ["identity.dob"], "offered": ["identity.dob"]}
+{"t": "02:14:26", "kind": "answer", "slot": "dyn:identity.dob", "text": "I do not know the exact date of birth."}
+{"t": "02:15:15", "kind": "extract", "writes": []}
+{"t": "02:15:15", "kind": "engine", "note": "floor settled - report ready; remaining questions continue"}
+{"t": "02:15:34", "kind": "question", "slot": "dyn:history.pregnant+history.postpartum", "text": "Is the patient pregnant or has she given birth in the last few weeks?", "fields": ["history.pregnant", "history.postpartum"], "offered": ["history.pregnant", "history.postpartum", "complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts"]}
+{"t": "02:15:34", "kind": "answer", "slot": "dyn:history.pregnant+history.postpartum", "text": "I don't know."}
+{"t": "02:16:23", "kind": "extract", "writes": []}
+{"t": "02:16:23", "kind": "extract", "writes": [["history.pregnant", null], ["history.postpartum", null]], "via": "dont-know"}
+{"t": "02:16:42", "kind": "question", "slot": "dyn:complaint.fever+infection.rash", "text": "Does the patient have a fever or any new rashes on their skin?", "fields": ["complaint.fever", "infection.rash"], "offered": ["complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts", "complaint.pain_rating", "complaint.respiratory_distress_signs"]}
+{"t": "02:16:43", "kind": "answer", "slot": "dyn:complaint.fever+infection.rash", "text": "I do not know whether the patient has a fever. I do not know whether the patient has a rash."}
+{"t": "02:17:32", "kind": "extract", "writes": []}
+{"t": "02:17:51", "kind": "question", "slot": "dyn:complaint.fever", "text": "I understand. Does the patient have a fever, and if you've checked, what was the temperature?", "fields": ["complaint.fever"], "offered": ["complaint.fever"]}
+{"t": "02:17:51", "kind": "answer", "slot": "dyn:complaint.fever", "text": "I do not know whether the patient has a fever."}
+{"t": "02:18:39", "kind": "extract", "writes": []}
+{"t": "02:18:59", "kind": "question", "slot": "dyn:complaint.fever", "text": "I understand. Have you been able to check if the patient has a fever or if you have a temperature reading?", "fields": ["complaint.fever"], "offered": ["complaint.fever"]}

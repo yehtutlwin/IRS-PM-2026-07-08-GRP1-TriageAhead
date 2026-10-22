@@ -1,0 +1,31 @@
+arm B, form handbook, persona CH-I29-08-sexual-assault, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  What is the main reason the patient is seeking care today?
+A1  I am seeking care after a sexual assault.
+
+Q2  Are you currently experiencing any severe physical distress, such as difficulty breathing, heavy bleeding, or severe pain?
+A2  No, I am not having trouble breathing or bleeding heavily. I am not experiencing chest pain.
+
+Q3  Are you currently feeling confused, lethargic, or disoriented?
+A3  I am awake and responding normally.
+
+Q4  Are you currently experiencing any severe physical distress or are you in a high-risk situation, such as a recent head injury, a severe headache, or a high-risk medical condition like a possible ectopic pregnancy?
+A4  I am not having chest pain or trouble breathing right now. I do not know of any medical conditions.
+
+Q5  Are you currently experiencing any severe physical distress or are you in a high-risk situation, such as a recent head injury, a severe headache, or a high-risk medical condition like a possible ectopic pregnancy?
+A5  I am not having chest pain or trouble breathing right now. I do not know of any medical conditions.
+
+Q6  Are you currently experiencing any severe physical distress or are you in a high-risk situation, such as a recent head injury, a severe headache, or a high-risk medical condition like a possible ectopic pregnancy?
+A6  I am not having chest pain or trouble breathing right now. I do not know of any medical conditions.
+
+Q7  Are you currently experiencing any severe physical distress or are you in a high-risk situation, such as a recent head injury, a severe headache, or a high-risk medical condition like a possible ectopic pregnancy?
+A7  I am not having chest pain or trouble breathing right now. I do not know of any medical conditions.
+
+Q8  Are you currently experiencing any severe physical distress or are you in a high-risk situation, such as a recent head injury, a severe headache, or a high-risk medical condition like a possible ectopic pregnancy?
+A8  I am not having chest pain or trouble breathing right now. I do not know of any medical conditions.
+
+Q9  Are you currently experiencing any severe physical distress or are you in a high-risk situation, such as a recent head injury, a severe headache, or a high-risk medical condition like a possible ectopic pregnancy?
+A9  I am not having chest pain or trouble breathing right now. I do not know of any medical conditions.
+
+DECISION {"decision": "level 2", "reason": "The patient is a survivor of sexual assault, which is explicitly listed as a high-risk situation under Decision Point B.", "citation": "page 12"}
+OUTCOME level 2 or floor | expected at least ESI-2 | pass True | label None | max prompt tokens 30149

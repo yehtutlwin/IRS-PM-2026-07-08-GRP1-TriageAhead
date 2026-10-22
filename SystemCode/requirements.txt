@@ -1,0 +1,26 @@
+# Interview engine and web app (the user guide needs only these three plus Ollama)
+PyYAML
+segno
+pytest
+
+# Language-model backends: the code defaults to Gemini; LLM_BACKEND=ollama in .env selects the local model, which needs no package
+google-genai
+anthropic
+
+# Practice-signal model (prototype/practice_signal.py)
+numpy
+pandas
+joblib
+scikit-learn
+
+# Rule validation against the handbook PDF (rules/validate.py) and nurse review app (review/)
+pymupdf
+jsonschema
+cryptography
+
+# Experiments and data scripts (experiments/, data/)
+pyreadr
+openpyxl
+pyarrow
+networkx
+pyvis

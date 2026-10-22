@@ -1,0 +1,61 @@
+{"t": "16:41:10", "kind": "engine", "note": "session CANNA-5955 started (web)"}
+{"t": "16:41:13", "kind": "question", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "Is the patient awake and responding to you normally? Also, is he or she experiencing any chest pain, trouble breathing, or heavy bleeding right now?", "fields": ["danger_signs.responsive", "danger_signs.chest_pain_now"], "offered": ["danger_signs.responsive", "danger_signs.chest_pain_now", "danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text"]}
+{"t": "16:41:13", "kind": "answer", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "He's awake but only answers with confused words."}
+{"t": "16:41:17", "kind": "extract", "writes": [["danger_signs.responsive", false]]}
+{"t": "16:41:18", "kind": "floor", "floor": "at least ESI-2", "fired": ["B-01.new-altered-mental-status"], "sources": ["ESI v5 p.12 (New Onset Confusion, Lethargy, or Disorientation)"]}
+{"t": "16:41:18", "kind": "advice", "text": "Based on what you just told me, please call 995 NOW if you are not already with paramedics. I have put this at the top of the hospital report."}
+{"t": "16:41:20", "kind": "question", "slot": "dyn:danger_signs.chest_pain_now", "text": "Is he experiencing any chest pain at this moment?", "fields": ["danger_signs.chest_pain_now"], "offered": ["danger_signs.chest_pain_now"]}
+{"t": "16:41:20", "kind": "answer", "slot": "dyn:danger_signs.chest_pain_now", "text": "I don't know."}
+{"t": "16:41:23", "kind": "extract", "writes": []}
+{"t": "16:41:23", "kind": "extract", "writes": [["danger_signs.chest_pain_now", null]], "via": "dont-know"}
+{"t": "16:41:26", "kind": "question", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding", "text": "I understand. Is he having any trouble breathing or is there any heavy bleeding?", "fields": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding"], "offered": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text", "complaint.onset", "patient.age"]}
+{"t": "16:41:26", "kind": "answer", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding", "text": "He's breathing, not struggling that I can see. No bleeding."}
+{"t": "16:41:30", "kind": "extract", "writes": [["danger_signs.breathing_difficulty", false], ["danger_signs.heavy_bleeding", false]]}
+{"t": "16:41:33", "kind": "question", "slot": "dyn:complaint.category+complaint.text", "text": "I've noted that he is breathing well. Could you tell me what the main problem is and what's happening with him?", "fields": ["complaint.category", "complaint.text"], "offered": ["complaint.category", "complaint.text", "complaint.onset", "patient.age", "patient.sex", "M.medications"]}
+{"t": "16:41:33", "kind": "answer", "slot": "dyn:complaint.category+complaint.text", "text": "He collapsed working outdoors in the sun. He had a headache, nausea and dizziness, then got confused and fell. He's very hot and weak now."}
+{"t": "16:41:50", "kind": "extract", "writes": [["danger_signs.breathing_difficulty", false, "denial of something the answer does not address"]], "via": "guard-dropped"}
+{"t": "16:41:50", "kind": "extract", "writes": [["complaint.category", "other"], ["complaint.text", "He collapsed working outdoors in the sun. He had a headache, nausea and dizziness, then got confused and fell. He's very hot and weak now."], ["E.mechanism", "fall"], ["obs.new_confusion_lethargy_disorientation", true]]}
+{"t": "16:41:53", "kind": "question", "slot": "dyn:complaint.onset+patient.age", "text": "I'm sorry to hear about his collapse. When did these symptoms first start and how old is he?", "fields": ["complaint.onset", "patient.age"], "offered": ["complaint.onset", "patient.age", "patient.sex", "M.medications", "A.allergies", "history.conditions"]}
+{"t": "16:41:53", "kind": "answer", "slot": "dyn:complaint.onset+patient.age", "text": "About half an hour ago, after four hours in the sun. 39."}
+{"t": "16:41:58", "kind": "extract", "writes": [["complaint.onset", "About half an hour ago"], ["patient.age", 39]]}
+{"t": "16:42:00", "kind": "question", "slot": "dyn:patient.sex", "text": "I've noted his age. Is he a man or a woman?", "fields": ["patient.sex"], "offered": ["patient.sex", "M.medications", "A.allergies", "history.conditions", "identity.name", "identity.dob"]}
+{"t": "16:42:00", "kind": "answer", "slot": "dyn:patient.sex", "text": "Male."}
+{"t": "16:42:04", "kind": "extract", "writes": [["patient.sex", "male"]]}
+{"t": "16:42:07", "kind": "question", "slot": "dyn:M.medications+A.allergies", "text": "I've noted that he is a man. Does he take any regular medications or have any known allergies?", "fields": ["M.medications", "A.allergies"], "offered": ["M.medications", "A.allergies", "history.conditions", "identity.name", "identity.dob"]}
+{"t": "16:42:07", "kind": "answer", "slot": "dyn:M.medications+A.allergies", "text": "I don't know."}
+{"t": "16:42:11", "kind": "extract", "writes": []}
+{"t": "16:42:11", "kind": "extract", "writes": [["M.medications", null], ["A.allergies", null]], "via": "dont-know"}
+{"t": "16:42:13", "kind": "question", "slot": "dyn:history.conditions", "text": "Does he have any ongoing medical conditions, like heart problems or diabetes?", "fields": ["history.conditions"], "offered": ["history.conditions", "identity.name", "identity.dob"]}
+{"t": "16:42:13", "kind": "answer", "slot": "dyn:history.conditions", "text": "I don't know."}
+{"t": "16:42:17", "kind": "extract", "writes": []}
+{"t": "16:42:17", "kind": "extract", "writes": [["history.conditions", null]], "via": "dont-know"}
+{"t": "16:42:20", "kind": "question", "slot": "dyn:identity.name+identity.dob", "text": "I understand. Could you please tell me his full name and his date of birth?", "fields": ["identity.name", "identity.dob"], "offered": ["identity.name", "identity.dob"]}
+{"t": "16:42:20", "kind": "answer", "slot": "dyn:identity.name+identity.dob", "text": "I don't know."}
+{"t": "16:42:23", "kind": "extract", "writes": []}
+{"t": "16:42:23", "kind": "extract", "writes": [["identity.name", null], ["identity.dob", null]], "via": "dont-know"}
+{"t": "16:42:23", "kind": "engine", "note": "floor settled - report ready; remaining questions continue"}
+{"t": "16:42:26", "kind": "question", "slot": "dyn:complaint.fever+infection.rash", "text": "Does he have a fever or any new rashes on his skin?", "fields": ["complaint.fever", "infection.rash"], "offered": ["complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts", "complaint.pain_rating", "complaint.testicular_or_scrotal_pain"]}
+{"t": "16:42:26", "kind": "answer", "slot": "dyn:complaint.fever+infection.rash", "text": "The thermometer reads 40.4."}
+{"t": "16:42:30", "kind": "extract", "writes": [["complaint.fever", true]]}
+{"t": "16:42:33", "kind": "question", "slot": "dyn:infection.rash", "text": "I see the temperature is high. Does he have any new rashes on his skin?", "fields": ["infection.rash"], "offered": ["infection.rash"]}
+{"t": "16:42:33", "kind": "answer", "slot": "dyn:infection.rash", "text": "I don't know."}
+{"t": "16:42:36", "kind": "extract", "writes": []}
+{"t": "16:42:36", "kind": "extract", "writes": [["infection.rash", null]], "via": "dont-know"}
+{"t": "16:42:40", "kind": "question", "slot": "dyn:infection.travel_14d+infection.contacts", "text": "I've noted the high temperature. Has he traveled abroad or been in contact with anyone who is sick in the last two weeks?", "fields": ["infection.travel_14d", "infection.contacts"], "offered": ["infection.travel_14d", "infection.contacts", "vitals.temp_c", "complaint.pain_rating", "complaint.testicular_or_scrotal_pain", "complaint.possible_pelvis_femur_fracture_or_dislocation"]}
+{"t": "16:42:40", "kind": "answer", "slot": "dyn:infection.travel_14d+infection.contacts", "text": "I don't know."}
+{"t": "16:42:43", "kind": "extract", "writes": []}
+{"t": "16:42:43", "kind": "extract", "writes": [["infection.travel_14d", null], ["infection.contacts", null]], "via": "dont-know"}
+{"t": "16:42:46", "kind": "question", "slot": "dyn:vitals.temp_c", "text": "If you have a thermometer handy, what was his temperature reading?", "fields": ["vitals.temp_c"], "offered": ["vitals.temp_c", "complaint.pain_rating", "complaint.testicular_or_scrotal_pain", "complaint.possible_pelvis_femur_fracture_or_dislocation", "E.abdominal_trauma", "E.head_strike"]}
+{"t": "16:42:46", "kind": "answer", "slot": "dyn:vitals.temp_c", "text": "40.4."}
+{"t": "16:42:50", "kind": "extract", "writes": [["vitals.temp_c", 40.4]]}
+{"t": "16:42:53", "kind": "question", "slot": "dyn:complaint.pain_rating+complaint.testicular_or_scrotal_pain", "text": "I've noted the temperature. On a scale of 0 to 10, how bad is his pain right now, and is he experiencing any pain in his testicles or scrotum?", "fields": ["complaint.pain_rating", "complaint.testicular_or_scrotal_pain"], "offered": ["complaint.pain_rating", "complaint.testicular_or_scrotal_pain", "complaint.possible_pelvis_femur_fracture_or_dislocation", "E.abdominal_trauma", "E.head_strike", "E.loc"]}
+{"t": "16:42:53", "kind": "answer", "slot": "dyn:complaint.pain_rating+complaint.testicular_or_scrotal_pain", "text": "I don't know."}
+{"t": "16:42:57", "kind": "extract", "writes": []}
+{"t": "16:42:58", "kind": "extract", "writes": [["complaint.testicular_or_scrotal_pain", null]], "via": "dont-know"}
+{"t": "16:43:01", "kind": "question", "slot": "dyn:complaint.pain_rating", "text": "I understand you're not sure about the specific location. On a scale of 0 to 10, how much pain is he in overall?", "fields": ["complaint.pain_rating"], "offered": ["complaint.pain_rating"]}
+{"t": "16:43:01", "kind": "answer", "slot": "dyn:complaint.pain_rating", "text": "I don't know."}
+{"t": "16:43:04", "kind": "extract", "writes": []}
+{"t": "16:43:07", "kind": "question", "slot": "dyn:complaint.pain_rating", "text": "I understand it's hard to say. If you had to estimate, how much pain is he in on a scale of 0 to 10?", "fields": ["complaint.pain_rating"], "offered": ["complaint.pain_rating"]}
+{"t": "16:43:07", "kind": "answer", "slot": "dyn:complaint.pain_rating", "text": "I don't know."}
+{"t": "16:43:09", "kind": "extract", "writes": []}
+{"t": "16:43:13", "kind": "question", "slot": "dyn:complaint.possible_pelvis_femur_fracture_or_dislocation+E.abdominal_trauma", "text": "I understand it's hard to judge the pain. Can he put any weight on his leg, and was there any blow or injury to his belly?", "fields": ["complaint.possible_pelvis_femur_fracture_or_dislocation", "E.abdominal_trauma"], "offered": ["complaint.possible_pelvis_femur_fracture_or_dislocation", "E.abdominal_trauma", "E.head_strike", "E.loc", "L.last_intake"]}

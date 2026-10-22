@@ -1,0 +1,2677 @@
+{
+ "summary": {
+  "n_cases": 200,
+  "repeats": 3,
+  "model": "gemma4:12b",
+  "backend": "ollama",
+  "parse_failures_first_run": 0,
+  "llm_exact_agreement": 0.305,
+  "llm_within_one": 0.68,
+  "llm_under_triage_recorded_1_2": 0.35,
+  "llm_over_triage_recorded_3_5": 0.192,
+  "llm_rerun_all_identical": 0.88,
+  "llm_rerun_max_spread": 3,
+  "rules_claim_rate": 0.065,
+  "rules_claims_consistent_with_recorded_1_2": 0.923,
+  "rules_rerun_all_identical": 1.0,
+  "confusion_llm_first_run": {
+   "1": {
+    "1": 4,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 0
+   },
+   "2": {
+    "1": 27,
+    "2": 21,
+    "3": 9,
+    "4": 8,
+    "5": 6
+   },
+   "3": {
+    "1": 3,
+    "2": 7,
+    "3": 8,
+    "4": 5,
+    "5": 6
+   },
+   "5": {
+    "1": 6,
+    "2": 12,
+    "3": 23,
+    "4": 27,
+    "5": 28
+   }
+  }
+ },
+ "cases": [
+  {
+   "esi": 1,
+   "text": "Age 58, male. Chief complaint(s): not recorded. Triage vitals: systolic BP 142, SpO2 % 97. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or clinical information is provided to indicate any acute distress or need for immediate intervention.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 1,
+   "text": "Age 49, male. Chief complaint(s): not recorded. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    3,
+    3,
+    2
+   ],
+   "rationale": "3\nThe lack of clinical data and a chief complaint necessitates a default of ESI 3 until a full assessment can be performed.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 1,
+   "text": "Age 36, male. Chief complaint(s): not recorded. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No clinical information or vital signs are provided to indicate an immediate threat to life or limb.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 1,
+   "text": "Age 77, female. Chief complaint(s): shortnessofbreath. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2\nShortness of breath is a high-acuity symptom requiring immediate clinical evaluation to rule out life-threatening causes.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 1,
+   "text": "Age 27, female. Chief complaint(s): not recorded. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No clinical information or vital signs are provided to indicate an immediate threat to life or limb.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 1,
+   "text": "Age 51, male. Chief complaint(s): not recorded. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2\nThe lack of vital signs and chief complaint in a presenting patient requires an immediate physical assessment to rule out life-threatening conditions.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 1,
+   "text": "Age 52, male. Chief complaint(s): not recorded. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2\nThe lack of clinical data and chief complaint necessitates a higher priority for immediate assessment to rule out life-threatening conditions.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 1,
+   "text": "Age 82, male. Chief complaint(s): not recorded. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2\nThe patient is an elderly individual with no recorded chief complaint or vitals, requiring immediate clinical assessment to determine stability.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 1,
+   "text": "Age 84, male. Chief complaint(s): chestpain. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2\nChest pain in an elderly patient requires immediate evaluation to rule out life-threatening causes like myocardial infarction.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 1,
+   "text": "Age 70, male. Chief complaint(s): not recorded. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2\nThe patient's age and lack of clinical data necessitate a higher priority for immediate assessment to determine stability.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 1,
+   "text": "Age 56, female. Chief complaint(s): not recorded. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    3,
+    3
+   ],
+   "rationale": "2\nThe lack of vital signs and a chief complaint prevents a definitive ESI 3, requiring an immediate clinical assessment to rule out life-threatening conditions.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 1,
+   "text": "Age 29, male. Chief complaint(s): overdose-accidental. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2\nThe patient is presenting with a potential life-threatening condition (overdose) and has missing vital signs, requiring an immediate assessment to determine stability.",
+   "rules_floor": "at least ESI-2",
+   "rules_esi1": false,
+   "rules_fired": [
+    "B-26.suspected-toxic-ingestion"
+   ]
+  },
+  {
+   "esi": 1,
+   "text": "Age 67, female. Chief complaint(s): not recorded. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2\nThe lack of recorded chief complaints or vital signs in a clinical setting requires an immediate physical assessment to rule out life-threatening conditions.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 1,
+   "text": "Age 53, male. Chief complaint(s): chestpain. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2\nChest pain is a high-acuity symptom requiring immediate evaluation for potential life-threatening conditions like myocardial infarction.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 1,
+   "text": "Age 66, male. Chief complaint(s): not recorded. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2. The patient is presenting with a lack of clinical data, requiring an immediate physical assessment to determine stability and severity.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 1,
+   "text": "Age 69, female. Chief complaint(s): not recorded. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2\nThe lack of recorded chief complaints and vitals in a clinical setting requires an immediate physical assessment to rule out life-threatening conditions.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 1,
+   "text": "Age 82, female. Chief complaint(s): not recorded. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2\nThe patient's age and lack of recorded vitals/complaints require an immediate clinical assessment to rule out life-threatening issues.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 1,
+   "text": "Age 89, female. Chief complaint(s): strokealert. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    1,
+    1,
+    1
+   ],
+   "rationale": "1. A \"strokealert\" indicates a potential acute neurological emergency requiring immediate medical intervention.",
+   "rules_floor": "at least ESI-2",
+   "rules_esi1": false,
+   "rules_fired": [
+    "B-05.stroke-signs"
+   ]
+  },
+  {
+   "esi": 1,
+   "text": "Age 49, male. Chief complaint(s): not recorded. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    3,
+    3
+   ],
+   "rationale": "5. No clinical information or vital signs are provided to indicate an immediate threat to life or limb.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 1,
+   "text": "Age 69, female. Chief complaint(s): strokealert. Triage vitals: heart rate 58, systolic BP 208, respiratory rate 16, SpO2 % 98. Medications: none noted. History: none noted.",
+   "preds": [
+    1,
+    1,
+    1
+   ],
+   "rationale": "1. The patient presents with a stroke alert and significantly elevated blood pressure, requiring immediate medical intervention.",
+   "rules_floor": "at least ESI-2",
+   "rules_esi1": false,
+   "rules_fired": [
+    "B-05.stroke-signs"
+   ]
+  },
+  {
+   "esi": 1,
+   "text": "Age 45, male. Chief complaint(s): motorvehiclecrash. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2\nThe patient is involved in a motor vehicle accident and requires immediate evaluation for potential life-threatening trauma, even without recorded vitals.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 1,
+   "text": "Age 52, male. Chief complaint(s): suicidal. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2\nThe patient presents with a psychiatric emergency (suicidal ideation) which requires immediate evaluation and safety assessment.",
+   "rules_floor": "at least ESI-2",
+   "rules_esi1": false,
+   "rules_fired": [
+    "B-09.suicidal-or-homicidal"
+   ]
+  },
+  {
+   "esi": 1,
+   "text": "Age 72, male. Chief complaint(s): not recorded. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2\nThe lack of vital signs and a chief complaint for an elderly patient necessitates an immediate clinical assessment to rule out life-threatening conditions.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 1,
+   "text": "Age 88, female. Chief complaint(s): not recorded. Triage vitals: heart rate 140, respiratory rate 20. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2\nThe patient is elderly and presenting with significant tachycardia (140 bpm), requiring urgent evaluation to determine the underlying cause.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 1,
+   "text": "Age 29, male. Chief complaint(s): not recorded. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    2,
+    3
+   ],
+   "rationale": "5. No clinical information or vital signs are provided to indicate an immediate threat to life or limb.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 1,
+   "text": "Age 65, female. Chief complaint(s): not recorded. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2\nThe patient's status is unknown and no information is provided, requiring an immediate assessment to determine stability.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 1,
+   "text": "Age 78, female. Chief complaint(s): not recorded. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2\nThe patient is an elderly individual with no recorded chief complaint or vitals, requiring immediate clinical assessment to determine stability.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 1,
+   "text": "Age 65, female. Chief complaint(s): not recorded. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2\nThe lack of recorded chief complaints or vitals in an emergency setting necessitates an immediate physical assessment to rule out life-threatening conditions.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 1,
+   "text": "Age 88, female. Chief complaint(s): fall. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2\nThe patient is an elderly individual who has experienced a fall, and the lack of recorded vitals necessitates a higher priority for immediate assessment to rule out life-threatening injuries or inst",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 1,
+   "text": "Age 29, male. Chief complaint(s): not recorded. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    2,
+    5
+   ],
+   "rationale": "5. No clinical information or vital signs are provided to indicate an immediate threat to life or limb.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 1,
+   "text": "Age 75, female. Chief complaint(s): dizziness. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    3,
+    3,
+    3
+   ],
+   "rationale": "3\nThe patient is stable but requires an evaluation of a neurological/cardiovascular symptom (dizziness) in an elderly patient with no recorded vitals.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 1,
+   "text": "Age 31, male. Chief complaint(s): not recorded. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    3,
+    3,
+    3
+   ],
+   "rationale": "3. Insufficient information is provided to determine a higher acuity, and the patient is stable enough to be assigned a default middle-tier level.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 1,
+   "text": "Age 55, male. Chief complaint(s): not recorded. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2\nThe lack of recorded chief complaints or vitals for a presenting patient requires an immediate clinical assessment to rule out life-threatening conditions.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 1,
+   "text": "Age 76, male. Chief complaint(s): chestpain. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2\nChest pain in an elderly patient is a high-acuity symptom requiring immediate evaluation to rule out life-threatening conditions like myocardial infarction.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 1,
+   "text": "Age 42, female. Chief complaint(s): strokealert. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    1,
+    1,
+    1
+   ],
+   "rationale": "1. A \"strokealert\" indicates a potential acute neurological emergency requiring immediate medical intervention.",
+   "rules_floor": "at least ESI-2",
+   "rules_esi1": false,
+   "rules_fired": [
+    "B-05.stroke-signs"
+   ]
+  },
+  {
+   "esi": 1,
+   "text": "Age 41, male. Chief complaint(s): not recorded. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    2,
+    3
+   ],
+   "rationale": "2\nThe lack of recorded chief complaints or vitals in an emergency setting necessitates a higher priority for immediate assessment to rule out life-threatening conditions.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 1,
+   "text": "Age 63, male. Chief complaint(s): overdose-intentional. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2\nIntentional overdose is a high-risk situation requiring immediate assessment for toxicity and potential airway compromise.",
+   "rules_floor": "at least ESI-2",
+   "rules_esi1": false,
+   "rules_fired": [
+    "B-26.suspected-toxic-ingestion"
+   ]
+  },
+  {
+   "esi": 1,
+   "text": "Age 67, female. Chief complaint(s): strokealert. Triage vitals: heart rate 81, systolic BP 156, respiratory rate 22, SpO2 % 97, temperature F 97.8. Medications: none noted. History: none noted.",
+   "preds": [
+    1,
+    1,
+    1
+   ],
+   "rationale": "1. The patient presents with a \"stroke alert,\" which constitutes a time-sensitive neurological emergency requiring immediate intervention.",
+   "rules_floor": "at least ESI-2",
+   "rules_esi1": false,
+   "rules_fired": [
+    "B-05.stroke-signs"
+   ]
+  },
+  {
+   "esi": 1,
+   "text": "Age 24, female. Chief complaint(s): shortnessofbreath. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2\nShortness of breath is a high-acuity symptom requiring immediate clinical assessment to rule out life-threatening causes.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 1,
+   "text": "Age 56, male. Chief complaint(s): not recorded. Triage vitals: not recorded. Medications: none noted. History: coagulation/haemorrhagic disorder.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2\nThe patient has a known high-risk medical condition (coagulation disorder) and no chief complaint or vitals are recorded, necessitating a higher priority for assessment.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 2,
+   "text": "Age 74, male. Chief complaint(s): shortnessofbreath. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    2,
+    3
+   ],
+   "rationale": "2\nShortness of breath is a high-risk symptom requiring immediate clinical assessment to rule out life-threatening causes.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 2,
+   "text": "Age 86, female. Chief complaint(s): chestpain. Triage vitals: heart rate 69, systolic BP 137, respiratory rate 18, SpO2 % 98, temperature F 98.4. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2\nChest pain in an elderly patient requires immediate evaluation to rule out acute cardiac events.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 2,
+   "text": "Age 31, female. Chief complaint(s): dizziness. Triage vitals: heart rate 82, systolic BP 124, respiratory rate 18, temperature F 98.4. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. The patient is hemodynamically stable with a non-urgent chief complaint and no acute distress.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 2,
+   "text": "Age 56, male. Chief complaint(s): not recorded. Triage vitals: heart rate 110, systolic BP 185, respiratory rate 18, SpO2 % 95. Medications: none noted. History: none noted.",
+   "preds": [
+    3,
+    3,
+    3
+   ],
+   "rationale": "3\nThe patient is hemodynamically stable with no reported chief complaint or acute distress, but requires evaluation for hypertension and tachycardia.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 2,
+   "text": "Age 96, male. Chief complaint(s): not recorded. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2\nThe patient is of advanced age and presents with no recorded chief complaint or vitals, requiring immediate clinical assessment to determine stability.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 2,
+   "text": "Age 45, female. Chief complaint(s): not recorded. Triage vitals: heart rate 97, systolic BP 162, respiratory rate 18, SpO2 % 99, temperature F 98. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or clinical symptoms are reported, and vitals are stable.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 2,
+   "text": "Age 58, male. Chief complaint(s): not recorded. Triage vitals: heart rate 65, systolic BP 154, respiratory rate 18, SpO2 % 97, temperature F 97.5. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or clinical symptoms are reported, and all vital signs are stable.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 2,
+   "text": "Age 61, female. Chief complaint(s): chestpain. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2\nChest pain is a high-acuity symptom requiring immediate evaluation for potential life-threatening conditions like myocardial infarction.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 2,
+   "text": "Age 57, female. Chief complaint(s): not recorded. Triage vitals: heart rate 84, systolic BP 141, respiratory rate 18, SpO2 % 96, temperature F 98.1. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or symptoms are documented, and vital signs are stable.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 2,
+   "text": "Age 39, male. Chief complaint(s): not recorded. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2\nThe lack of vital signs and a chief complaint in a presenting patient requires an immediate physical assessment to rule out life-threatening conditions.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 2,
+   "text": "Age 84, female. Chief complaint(s): not recorded. Triage vitals: heart rate 68, systolic BP 149, respiratory rate 18, SpO2 % 96, temperature F 97.7. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or clinical symptoms are reported, and all vital signs are stable.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 2,
+   "text": "Age 52, male. Chief complaint(s): fall. Triage vitals: heart rate 72, systolic BP 109, respiratory rate 16, SpO2 % 98, temperature F 97.9. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. The patient is stable with normal vital signs and a non-life-threatening chief complaint.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 2,
+   "text": "Age 44, female. Chief complaint(s): not recorded. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    3,
+    2,
+    3
+   ],
+   "rationale": "3\nThe lack of reported symptoms or vitals requires a default \"stable\" assignment, but a higher level of clinical assessment is needed to determine the actual acuity.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 2,
+   "text": "Age 23, male. Chief complaint(s): not recorded. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No clinical information or vital signs are provided to indicate an immediate threat to life or limb.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 2,
+   "text": "Age 61, male. Chief complaint(s): shortnessofbreath. Triage vitals: not recorded. Medications: on an anticoagulant. History: none noted.",
+   "preds": [
+    2,
+    2,
+    3
+   ],
+   "rationale": "2\nShortness of breath in a patient on anticoagulants suggests a high-risk potential for pulmonary embolism or other acute cardiopulmonary issues.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 2,
+   "text": "Age 83, female. Chief complaint(s): chestpain. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2\nChest pain in an elderly patient requires immediate evaluation for potential cardiac ischemia.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 2,
+   "text": "Age 29, female. Chief complaint(s): abdominalpainpregnant. Triage vitals: heart rate 68, systolic BP 108, respiratory rate 16, temperature F 96.6. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2\nPregnancy combined with abdominal pain requires a higher level of urgency due to potential risks to both the mother and the fetus.",
+   "rules_floor": "at least ESI-2",
+   "rules_esi1": false,
+   "rules_fired": [
+    "B-17.abdo-pain-pregnant-or-postpartum",
+    "B-38.pregnant-chest-pain-breathlessness-abdo-pain-or-headache"
+   ]
+  },
+  {
+   "esi": 2,
+   "text": "Age 57, male. Chief complaint(s): not recorded. Triage vitals: heart rate 126, systolic BP 134, respiratory rate 18, SpO2 % 94, temperature F 98. Medications: none noted. History: none noted.",
+   "preds": [
+    3,
+    3,
+    3
+   ],
+   "rationale": "3. The patient is hemodynamically stable with a tachycardia, but the lack of a chief complaint prevents a definitive assessment of immediate life threats.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 2,
+   "text": "Age 49, male. Chief complaint(s): chestpain. Triage vitals: heart rate 73, systolic BP 144, respiratory rate 18. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2\nChest pain is a high-acuity symptom requiring immediate evaluation for potential life-threatening causes like myocardial infarction.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 2,
+   "text": "Age 86, male. Chief complaint(s): chestpain. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2\nChest pain in an elderly patient requires immediate evaluation to rule out life-threatening cardiac events.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 2,
+   "text": "Age 19, male. Chief complaint(s): fall. Triage vitals: heart rate 99, systolic BP 139, respiratory rate 18, SpO2 % 99, temperature F 98.3. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. The patient is stable with no acute distress or high-risk symptoms reported.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 2,
+   "text": "Age 19, male. Chief complaint(s): not recorded. Triage vitals: heart rate 63, systolic BP 98, respiratory rate 12, SpO2 % 96, temperature F 97.5. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or clinical symptoms are reported, and all vital signs are stable.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 2,
+   "text": "Age 19, male. Chief complaint(s): not recorded. Triage vitals: heart rate 94, systolic BP 103, SpO2 % 92, temperature F 98.4. Medications: none noted. History: coagulation/haemorrhagic disorder.",
+   "preds": [
+    2,
+    3,
+    2
+   ],
+   "rationale": "2. The patient is experiencing hypoxia (SpO2 92%) and has a significant underlying coagulation disorder, requiring a higher level of urgency.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 2,
+   "text": "Age 94, female. Chief complaint(s): not recorded. Triage vitals: heart rate 76, systolic BP 151, respiratory rate 16, SpO2 % 96, temperature F 98.1. Medications: none noted. History: none noted.",
+   "preds": [
+    3,
+    5,
+    3
+   ],
+   "rationale": "3\nThe patient is stable with normal vital signs, but the lack of a recorded chief complaint requires a higher priority than a non-urgent visit to determine the reason for arrival.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 2,
+   "text": "Age 31, male. Chief complaint(s): not recorded. Triage vitals: heart rate 92, systolic BP 134, respiratory rate 16, SpO2 % 97, temperature F 96.4. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or clinical symptoms are reported, and all vital signs are stable.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 2,
+   "text": "Age 56, male. Chief complaint(s): suicidal. Triage vitals: heart rate 78, systolic BP 134, respiratory rate 16, SpO2 % 97, temperature F 97.1. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2\nThe patient presents with a psychiatric emergency (suicidal ideation) which requires immediate intervention to ensure safety.",
+   "rules_floor": "at least ESI-2",
+   "rules_esi1": false,
+   "rules_fired": [
+    "B-09.suicidal-or-homicidal"
+   ]
+  },
+  {
+   "esi": 2,
+   "text": "Age 93, female. Chief complaint(s): dyspnea. Triage vitals: heart rate 142, systolic BP 127, respiratory rate 40, SpO2 % 90. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2\nThe patient is experiencing severe respiratory distress (RR 40) and hypoxia (SpO2 90%) requiring immediate intervention.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 2,
+   "text": "Age 90, female. Chief complaint(s): not recorded. Triage vitals: not recorded. Medications: on an anticoagulant. History: none noted.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2\nThe patient is elderly and on an anticoagulant, posing a high risk for internal bleeding or complications if a chief complaint is not immediately available.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 2,
+   "text": "Age 52, male. Chief complaint(s): abdominalpain. Triage vitals: heart rate 96, systolic BP 130, respiratory rate 18, SpO2 % 94, temperature F 102.6. Medications: none noted. History: none noted.",
+   "preds": [
+    3,
+    3,
+    3
+   ],
+   "rationale": "3\nThe patient is stable with a fever and abdominal pain, but requires multiple resources (labs/imaging) to rule out acute pathology.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 2,
+   "text": "Age 88, male. Chief complaint(s): feverimmunocompromised. Triage vitals: heart rate 87, systolic BP 132, respiratory rate 16, SpO2 % 96, temperature F 100.3. Medications: none noted. History: none noted.",
+   "preds": [
+    3,
+    3,
+    3
+   ],
+   "rationale": "3\nThe patient is stable with no immediate life threats, but his immunocompromised status and fever require a higher level of urgency than a routine visit.",
+   "rules_floor": "at least ESI-2",
+   "rules_esi1": false,
+   "rules_fired": [
+    "B-07.immunocompromised-fever"
+   ]
+  },
+  {
+   "esi": 2,
+   "text": "Age 69, male. Chief complaint(s): not recorded. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2\nThe lack of recorded chief complaints and vitals in an emergency setting necessitates a higher priority (ESI 2) to perform a rapid assessment and ensure patient safety.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 2,
+   "text": "Age 53, female. Chief complaint(s): chestpain. Triage vitals: heart rate 92, systolic BP 128, respiratory rate 16, SpO2 % 99, temperature F 96.5. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2. Chest pain is a high-acuity symptom requiring immediate evaluation to rule out life-threatening conditions like myocardial infarction.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 2,
+   "text": "Age 33, female. Chief complaint(s): not recorded. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    3,
+    5
+   ],
+   "rationale": "5. No clinical information or vital signs are provided to indicate an acute medical emergency.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 2,
+   "text": "Age 91, male. Chief complaint(s): fall. Triage vitals: not recorded. Medications: on an anticoagulant. History: none noted.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2\nThe patient is elderly, has fallen, and is on an anticoagulant, posing a high risk for internal bleeding or occult injury.",
+   "rules_floor": "at least ESI-2",
+   "rules_esi1": false,
+   "rules_fired": [
+    "B-30.anticoagulated-trauma"
+   ]
+  },
+  {
+   "esi": 2,
+   "text": "Age 65, male. Chief complaint(s): shortnessofbreath. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2\nShortness of breath is a high-risk symptom requiring immediate clinical assessment to rule out life-threatening causes.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 2,
+   "text": "Age 46, male. Chief complaint(s): suicidal. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2\nThe patient presents with a psychiatric emergency (suicidal ideation) requiring immediate evaluation and safety assessment.",
+   "rules_floor": "at least ESI-2",
+   "rules_esi1": false,
+   "rules_fired": [
+    "B-09.suicidal-or-homicidal"
+   ]
+  },
+  {
+   "esi": 2,
+   "text": "Age 87, female. Chief complaint(s): shortnessofbreath. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2\nShortness of breath in an elderly patient requires immediate clinical assessment to rule out acute respiratory distress.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 2,
+   "text": "Age 38, female. Chief complaint(s): vaginalbleeding. Triage vitals: heart rate 80, systolic BP 119, respiratory rate 18, temperature F 98.4. Medications: none noted. History: none noted.",
+   "preds": [
+    3,
+    3,
+    3
+   ],
+   "rationale": "3. Vaginal bleeding is a non-life-threatening chief complaint with stable vital signs, requiring a moderate level of resources.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 2,
+   "text": "Age 60, female. Chief complaint(s): not recorded. Triage vitals: heart rate 74, systolic BP 130, respiratory rate 18, SpO2 % 97, temperature F 98. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or clinical symptoms are reported, and all vital signs are stable.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 2,
+   "text": "Age 63, male. Chief complaint(s): chestpain. Triage vitals: not recorded. Medications: none noted. History: HIV.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2\nChest pain is a high-acuity symptom requiring immediate evaluation for potential cardiac events.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 3,
+   "text": "Age 30, male. Chief complaint(s): abdominalpain. Triage vitals: heart rate 82, systolic BP 142, respiratory rate 22, SpO2 % 99, temperature F 97.8. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. Stable patient with no acute distress, abnormal vitals, or high-risk symptoms.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 3,
+   "text": "Age 24, male. Chief complaint(s): chestpain. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2\nChest pain is a high-acuity symptom that requires immediate evaluation to rule out life-threatening conditions like myocardial infarction.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 3,
+   "text": "Age 25, female. Chief complaint(s): not recorded. Triage vitals: heart rate 80, systolic BP 119, respiratory rate 18, temperature F 98.3. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or symptoms are reported, and vital signs are stable.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 3,
+   "text": "Age 37, male. Chief complaint(s): abdominalpain. Triage vitals: heart rate 76, systolic BP 113, respiratory rate 19, temperature F 97.6. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. The patient is hemodynamically stable with a non-acute chief complaint and no reported comorbidities.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 3,
+   "text": "Age 35, female. Chief complaint(s): abdominalpain. Triage vitals: heart rate 73, systolic BP 150, respiratory rate 16, temperature F 98.8. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. The patient is hemodynamically stable with no acute distress or high-risk symptoms reported.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 3,
+   "text": "Age 31, male. Chief complaint(s): chestpain. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2\nChest pain is a high-acuity symptom requiring immediate evaluation to rule out life-threatening conditions like myocardial infarction.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 3,
+   "text": "Age 52, female. Chief complaint(s): not recorded. Triage vitals: heart rate 78, systolic BP 101, respiratory rate 18, SpO2 % 98, temperature F 98. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or clinical symptoms were reported, and all vital signs are stable.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 3,
+   "text": "Age 59, male. Chief complaint(s): not recorded. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2\nThe lack of vital signs and a chief complaint in a presenting patient requires an immediate physical assessment to rule out life-threatening conditions.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 3,
+   "text": "Age 72, female. Chief complaint(s): not recorded. Triage vitals: heart rate 52, systolic BP 135, respiratory rate 18, temperature F 97.3. Medications: none noted. History: none noted.",
+   "preds": [
+    3,
+    3,
+    3
+   ],
+   "rationale": "3. The patient is hemodynamically stable with a low heart rate, but the lack of a chief complaint necessitates a higher priority for assessment.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 3,
+   "text": "Age 38, female. Chief complaint(s): abdominalpain. Triage vitals: heart rate 86, systolic BP 129, respiratory rate 18, temperature F 99.1. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. The patient is hemodynamically stable with a non-acute chief complaint and no reported red flags.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 3,
+   "text": "Age 23, male. Chief complaint(s): motorvehiclecrash. Triage vitals: heart rate 68, systolic BP 130, respiratory rate 14, SpO2 % 99, temperature F 98. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2\nThe patient is stable but requires immediate evaluation for potential occult injuries following a motor vehicle accident.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 3,
+   "text": "Age 64, female. Chief complaint(s): not recorded. Triage vitals: heart rate 79, systolic BP 135, respiratory rate 18, SpO2 % 98, temperature F 98.8. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or clinical information is provided to indicate any acute distress or need for immediate intervention.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 3,
+   "text": "Age 61, male. Chief complaint(s): dizziness. Triage vitals: heart rate 75, systolic BP 101, respiratory rate 14, SpO2 % 99, temperature F 98. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. The patient is hemodynamically stable with no acute distress or high-risk symptoms reported.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 3,
+   "text": "Age 60, female. Chief complaint(s): shortnessofbreath. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    3,
+    3,
+    3
+   ],
+   "rationale": "3\nShortness of breath is a high-acuity symptom, but without recorded vitals or a reported history of chronic respiratory issues, it requires a standard urgent assessment.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 3,
+   "text": "Age 33, female. Chief complaint(s): abdominalpain. Triage vitals: heart rate 78, systolic BP 135, respiratory rate 16, SpO2 % 97, temperature F 98.3. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. Patient is hemodynamically stable with no acute distress or high-risk indicators.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 3,
+   "text": "Age 26, female. Chief complaint(s): shortnessofbreath. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    3,
+    2,
+    2
+   ],
+   "rationale": "3\nShortness of breath is a high-acuity symptom, but without recorded vitals or a more specific clinical presentation, it requires an urgent evaluation to rule out life-threatening causes.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 3,
+   "text": "Age 35, female. Chief complaint(s): not recorded. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    3,
+    3
+   ],
+   "rationale": "5. No clinical information or vitals are provided to indicate an immediate threat to life or limb.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 3,
+   "text": "Age 87, female. Chief complaint(s): not recorded. Triage vitals: heart rate 66, systolic BP 145, respiratory rate 18, SpO2 % 94, temperature F 98.8. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or symptoms are reported, and all vital signs are stable.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 3,
+   "text": "Age 75, female. Chief complaint(s): abdominalpain. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    3,
+    3,
+    3
+   ],
+   "rationale": "3. The patient is stable with a non-specific complaint and no reported acute distress or vital sign abnormalities.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 3,
+   "text": "Age 20, female. Chief complaint(s): abdominalpain. Triage vitals: heart rate 102, systolic BP 108, respiratory rate 20, SpO2 % 98, temperature F 98.4. Medications: none noted. History: none noted.",
+   "preds": [
+    3,
+    3,
+    3
+   ],
+   "rationale": "3. The patient is hemodynamically stable and the complaint is non-life-threatening, but requires an evaluation of acute abdominal pain.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 3,
+   "text": "Age 54, male. Chief complaint(s): dizziness. Triage vitals: heart rate 69, systolic BP 127, respiratory rate 18, SpO2 % 97, temperature F 97.6. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. Patient is hemodynamically stable with no acute distress or high-risk symptoms.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 3,
+   "text": "Age 23, male. Chief complaint(s): not recorded. Triage vitals: heart rate 83, systolic BP 148, respiratory rate 16, temperature F 98.3. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or clinical symptoms are documented to indicate any acute distress or need for immediate intervention.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 3,
+   "text": "Age 35, female. Chief complaint(s): not recorded. Triage vitals: heart rate 76, systolic BP 112, respiratory rate 18, SpO2 % 98, temperature F 98. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or clinical symptoms are reported, and all vital signs are stable.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 3,
+   "text": "Age 61, male. Chief complaint(s): chestpain. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2\nChest pain is a high-acuity symptom requiring immediate evaluation to rule out life-threatening conditions like myocardial infarction.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 3,
+   "text": "Age 43, female. Chief complaint(s): not recorded. Triage vitals: heart rate 87, systolic BP 155, respiratory rate 18, SpO2 % 99, temperature F 98.1. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or clinical indicators of acute distress are provided.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 3,
+   "text": "Age 61, female. Chief complaint(s): not recorded. Triage vitals: heart rate 64, systolic BP 142, respiratory rate 16, SpO2 % 96, temperature F 97.8. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or clinical symptoms are reported, and all vital signs are stable.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 3,
+   "text": "Age 29, female. Chief complaint(s): not recorded. Triage vitals: heart rate 99, systolic BP 118, respiratory rate 18, temperature F 97.9. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or clinical symptoms are reported, and all vital signs are stable.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 3,
+   "text": "Age 65, male. Chief complaint(s): not recorded. Triage vitals: heart rate 76, systolic BP 108, respiratory rate 14, temperature F 98. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or symptoms are reported, and all vital signs are stable.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 3,
+   "text": "Age 78, female. Chief complaint(s): not recorded. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2\nThe patient is an elderly individual with no recorded chief complaint or vitals, requiring an immediate assessment to determine clinical stability.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 3,
+   "text": "Age 34, female. Chief complaint(s): abdominalpain. Triage vitals: heart rate 70, systolic BP 109, respiratory rate 18, temperature F 98.2. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. Patient is hemodynamically stable with no acute distress or high-risk symptoms.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 3,
+   "text": "Age 86, female. Chief complaint(s): fall>65. Triage vitals: not recorded. Medications: on an anticoagulant. History: none noted.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2. The patient is an elderly individual on anticoagulants who has suffered a fall, posing a high risk for internal bleeding or occult trauma.",
+   "rules_floor": "at least ESI-2",
+   "rules_esi1": false,
+   "rules_fired": [
+    "B-30.anticoagulated-trauma"
+   ]
+  },
+  {
+   "esi": 3,
+   "text": "Age 59, male. Chief complaint(s): not recorded. Triage vitals: heart rate 81, systolic BP 109, respiratory rate 16, SpO2 % 98, temperature F 97.8. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or clinical symptoms were reported, and all vital signs are stable.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 3,
+   "text": "Age 28, female. Chief complaint(s): not recorded. Triage vitals: heart rate 115, systolic BP 113, respiratory rate 16, SpO2 % 98. Medications: none noted. History: none noted.",
+   "preds": [
+    3,
+    3,
+    3
+   ],
+   "rationale": "3. The patient is hemodynamically stable but presents with tachycardia, and the chief complaint is missing, requiring further assessment to rule out acute distress.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 3,
+   "text": "Age 46, male. Chief complaint(s): chestpain. Triage vitals: heart rate 101, systolic BP 136, respiratory rate 28, SpO2 % 96, temperature F 97.9. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2\nChest pain is a high-acuity symptom that requires rapid evaluation to rule out life-threatening causes like myocardial infarction.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 3,
+   "text": "Age 27, female. Chief complaint(s): abdominalpain. Triage vitals: heart rate 88, systolic BP 99, respiratory rate 20, SpO2 % 98, temperature F 97.8. Medications: none noted. History: none noted.",
+   "preds": [
+    3,
+    3,
+    3
+   ],
+   "rationale": "3. The patient is stable with no immediate life threats or signs of acute distress.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 3,
+   "text": "Age 27, female. Chief complaint(s): not recorded. Triage vitals: heart rate 62, systolic BP 111, respiratory rate 16, SpO2 % 94, temperature F 97.5. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or symptoms are documented, and all vital signs are stable.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 3,
+   "text": "Age 19, female. Chief complaint(s): not recorded. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2\nThe lack of vital signs and a chief complaint in a patient presenting to the ED requires an immediate physical assessment to rule out life-threatening conditions.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 3,
+   "text": "Age 85, female. Chief complaint(s): abdominalpain. Triage vitals: heart rate 84.5, systolic BP 133, respiratory rate 17, SpO2 % 96, temperature F 98.3. Medications: none noted. History: none noted.",
+   "preds": [
+    3,
+    3,
+    3
+   ],
+   "rationale": "3\nThe patient is hemodynamically stable with no acute distress, but the age and complaint require an urgent evaluation for potential underlying causes.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 3,
+   "text": "Age 47, female. Chief complaint(s): not recorded. Triage vitals: heart rate 100, systolic BP 130, respiratory rate 16, SpO2 % 97, temperature F 96.9. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or symptoms are reported, and all vital signs are stable.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 3,
+   "text": "Age 33, female. Chief complaint(s): abdominalpain. Triage vitals: heart rate 99, systolic BP 124, respiratory rate 16, SpO2 % 98, temperature F 97.6. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. The patient is hemodynamically stable with no reported acute distress or high-risk symptoms.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 4,
+   "text": "Age 35, female. Chief complaint(s): not recorded. Triage vitals: heart rate 80, systolic BP 110, respiratory rate 18, SpO2 % 99. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or symptoms are reported, and all vital signs are stable.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 4,
+   "text": "Age 20, female. Chief complaint(s): not recorded. Triage vitals: heart rate 84, systolic BP 140, respiratory rate 16. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or clinical symptoms are reported, and all vital signs are stable.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 4,
+   "text": "Age 53, female. Chief complaint(s): not recorded. Triage vitals: heart rate 92, systolic BP 119, respiratory rate 20, temperature F 97.7. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or clinical symptoms are reported, and all vital signs are stable.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 4,
+   "text": "Age 50, male. Chief complaint(s): not recorded. Triage vitals: heart rate 97, systolic BP 119, respiratory rate 16, SpO2 % 96, temperature F 97.9. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or symptoms are reported, and all vital signs are stable.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 4,
+   "text": "Age 25, male. Chief complaint(s): not recorded. Triage vitals: heart rate 57, systolic BP 135, respiratory rate 20, temperature F 97.9. Medications: none noted. History: none noted.",
+   "preds": [
+    3,
+    3,
+    3
+   ],
+   "rationale": "3. No chief complaint or clinical indicators of immediate life threat are documented.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 4,
+   "text": "Age 52, male. Chief complaint(s): not recorded. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2\nThe lack of vital signs and chief complaint necessitates an immediate assessment to rule out life-threatening conditions.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 4,
+   "text": "Age 35, female. Chief complaint(s): not recorded. Triage vitals: heart rate 65, systolic BP 119, respiratory rate 18, temperature F 97.4. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or clinical symptoms are reported, and vitals are stable.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 4,
+   "text": "Age 28, male. Chief complaint(s): not recorded. Triage vitals: heart rate 68, systolic BP 108, respiratory rate 19, temperature F 97. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or symptoms are reported, and all vital signs are stable.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 4,
+   "text": "Age 20, male. Chief complaint(s): sorethroat. Triage vitals: heart rate 82, systolic BP 131, respiratory rate 16, temperature F 98.5. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. The patient is stable with a minor complaint and no acute distress or life-threatening symptoms.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 4,
+   "text": "Age 26, male. Chief complaint(s): not recorded. Triage vitals: heart rate 86, systolic BP 142, respiratory rate 17, temperature F 97.5. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or clinical symptoms are reported, and vitals are stable.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 4,
+   "text": "Age 24, female. Chief complaint(s): motorvehiclecrash. Triage vitals: heart rate 74, systolic BP 118, respiratory rate 18, temperature F 98.1. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2\nThe patient's stable vitals do not indicate an immediate life threat, but a motor vehicle accident requires an urgent evaluation for potential internal injuries or fractures.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 4,
+   "text": "Age 22, female. Chief complaint(s): not recorded. Triage vitals: not recorded. Medications: none noted. History: coagulation/haemorrhagic disorder.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2\nThe patient has a known coagulation/hemorrhagic disorder, which represents a high-risk condition requiring a more urgent assessment than a routine case.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 4,
+   "text": "Age 34, male. Chief complaint(s): not recorded. Triage vitals: heart rate 99, systolic BP 131, respiratory rate 16, SpO2 % 97, temperature F 99.6. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or symptoms are recorded, and all vital signs are stable.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 4,
+   "text": "Age 51, male. Chief complaint(s): not recorded. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2\nThe patient is a \"no-record\" case with no information provided, requiring an immediate physical assessment to determine stability.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 4,
+   "text": "Age 28, female. Chief complaint(s): sorethroat. Triage vitals: heart rate 101, systolic BP 97, respiratory rate 18, SpO2 % 99, temperature F 98.2. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. The patient is stable with a minor complaint and no acute distress or life-threatening symptoms.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 4,
+   "text": "Age 29, male. Chief complaint(s): not recorded. Triage vitals: heart rate 78, systolic BP 123, respiratory rate 18, SpO2 % 99, temperature F 98.7. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or symptoms are documented, and vitals are stable.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 4,
+   "text": "Age 58, female. Chief complaint(s): not recorded. Triage vitals: heart rate 92, systolic BP 139, respiratory rate 17, SpO2 % 98, temperature F 97.4. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or symptoms are reported, and all vital signs are stable.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 4,
+   "text": "Age 22, male. Chief complaint(s): not recorded. Triage vitals: heart rate 84, systolic BP 143, respiratory rate 20, SpO2 % 97, temperature F 97.3. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or clinical indicators of acute distress are provided.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 4,
+   "text": "Age 30, female. Chief complaint(s): not recorded. Triage vitals: heart rate 91, systolic BP 150, respiratory rate 18, temperature F 97.5. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or clinical indicators of acute distress are provided.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 4,
+   "text": "Age 48, male. Chief complaint(s): not recorded. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    3,
+    3,
+    3
+   ],
+   "rationale": "3\nThe lack of clinical data and chief complaint necessitates a default of ESI 3 until a clinical assessment can be performed.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 4,
+   "text": "Age 33, female. Chief complaint(s): not recorded. Triage vitals: heart rate 110, systolic BP 110, respiratory rate 18, SpO2 % 99, temperature F 98.7. Medications: none noted. History: none noted.",
+   "preds": [
+    3,
+    3,
+    3
+   ],
+   "rationale": "3. No chief complaint or clinical symptoms are documented to justify a higher acuity level.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 4,
+   "text": "Age 21, male. Chief complaint(s): not recorded. Triage vitals: heart rate 66, systolic BP 144, respiratory rate 18, temperature F 98.3. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or symptoms are recorded, and vitals are stable.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 4,
+   "text": "Age 26, female. Chief complaint(s): not recorded. Triage vitals: heart rate 75, systolic BP 107, respiratory rate 18, SpO2 % 99, temperature F 98. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or symptoms are reported, and all vital signs are stable.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 4,
+   "text": "Age 19, female. Chief complaint(s): not recorded. Triage vitals: heart rate 91, systolic BP 114, respiratory rate 16, SpO2 % 99, temperature F 98.9. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or symptoms are reported, and all vital signs are stable.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 4,
+   "text": "Age 22, male. Chief complaint(s): not recorded. Triage vitals: heart rate 78, systolic BP 123, respiratory rate 14, SpO2 % 99, temperature F 97.3. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or symptoms are reported, and all vital signs are stable.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 4,
+   "text": "Age 30, male. Chief complaint(s): not recorded. Triage vitals: heart rate 73, systolic BP 131, respiratory rate 18, temperature F 98.2. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or clinical symptoms are reported, and all vital signs are stable.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 4,
+   "text": "Age 35, male. Chief complaint(s): not recorded. Triage vitals: heart rate 90, systolic BP 125, respiratory rate 17, SpO2 % 97, temperature F 97.9. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or symptoms are reported, and all vital signs are stable.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 4,
+   "text": "Age 61, male. Chief complaint(s): not recorded. Triage vitals: heart rate 92, systolic BP 138, respiratory rate 17, SpO2 % 95, temperature F 99. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or clinical indicators of acute distress are provided.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 4,
+   "text": "Age 49, female. Chief complaint(s): not recorded. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    3,
+    5
+   ],
+   "rationale": "5. No clinical information or vital signs are provided to indicate a life-threatening condition or urgency.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 4,
+   "text": "Age 24, female. Chief complaint(s): not recorded. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    3
+   ],
+   "rationale": "5. No clinical information or vitals are provided to indicate an immediate threat to life or limb.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 4,
+   "text": "Age 57, female. Chief complaint(s): not recorded. Triage vitals: heart rate 58, systolic BP 142, respiratory rate 18, SpO2 % 98, temperature F 97.9. Medications: none noted. History: coagulation/haemorrhagic disorder.",
+   "preds": [
+    2,
+    2,
+    3
+   ],
+   "rationale": "2\nThe patient has a history of a coagulation/hemorrhagic disorder, which requires a higher level of priority for potential complications despite stable vitals.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 4,
+   "text": "Age 60, female. Chief complaint(s): not recorded. Triage vitals: heart rate 97, systolic BP 101, respiratory rate 18, SpO2 % 99, temperature F 98.5. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or clinical indicators of acute distress are provided.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 4,
+   "text": "Age 42, male. Chief complaint(s): not recorded. Triage vitals: heart rate 76, systolic BP 139, respiratory rate 20, SpO2 % 96, temperature F 98.3. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or clinical indicators of acute distress are provided.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 4,
+   "text": "Age 70, male. Chief complaint(s): fall>65. Triage vitals: heart rate 78, systolic BP 175, respiratory rate 18, SpO2 % 98, temperature F 98.4. Medications: none noted. History: none noted.",
+   "preds": [
+    3,
+    3,
+    3
+   ],
+   "rationale": "3. The patient is stable with no immediate life-threats, but the mechanism of injury (fall) and age require an urgent evaluation.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 4,
+   "text": "Age 30, female. Chief complaint(s): not recorded. Triage vitals: heart rate 67, systolic BP 114, respiratory rate 20, SpO2 % 99, temperature F 97.7. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or symptoms were reported, and all vital signs are stable.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 4,
+   "text": "Age 84, female. Chief complaint(s): not recorded. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2\nThe lack of recorded chief complaints or vitals for an elderly patient requires an immediate physical assessment to rule out life-threatening conditions.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 4,
+   "text": "Age 25, male. Chief complaint(s): not recorded. Triage vitals: heart rate 78, systolic BP 135, respiratory rate 16, temperature F 97.8. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or clinical symptoms are reported, and vitals are stable.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 4,
+   "text": "Age 44, male. Chief complaint(s): not recorded. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    3,
+    3,
+    2
+   ],
+   "rationale": "3\nThe lack of clinical data and a chief complaint requires a default assignment to a stable status while awaiting further assessment.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 4,
+   "text": "Age 48, male. Chief complaint(s): not recorded. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    3,
+    3
+   ],
+   "rationale": "2\nThe lack of any clinical data or chief complaint necessitates an immediate assessment to rule out life-threatening conditions.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 4,
+   "text": "Age 35, female. Chief complaint(s): motorvehiclecrash. Triage vitals: heart rate 77, systolic BP 127, respiratory rate 18, SpO2 % 98, temperature F 97. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2\nThe patient is stable but requires immediate evaluation for potential internal injuries or occult trauma following a motor vehicle accident.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 5,
+   "text": "Age 71, male. Chief complaint(s): not recorded. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2\nThe patient's age and lack of recorded vitals/complaints require an immediate physical assessment to determine stability.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 5,
+   "text": "Age 21, female. Chief complaint(s): motorvehiclecrash. Triage vitals: heart rate 83, systolic BP 111, respiratory rate 16, temperature F 98.4. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2\nThe patient is involved in a motor vehicle accident and requires an immediate clinical assessment for potential occult trauma or internal injuries.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 5,
+   "text": "Age 30, male. Chief complaint(s): not recorded. Triage vitals: heart rate 70, systolic BP 114, respiratory rate 18, SpO2 % 99, temperature F 98.2. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or symptoms are reported, and all vital signs are stable.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 5,
+   "text": "Age 43, female. Chief complaint(s): not recorded. Triage vitals: heart rate 76, systolic BP 98, respiratory rate 18, SpO2 % 98, temperature F 98.1. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or clinical symptoms are reported, and all vital signs are stable.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 5,
+   "text": "Age 40, female. Chief complaint(s): not recorded. Triage vitals: heart rate 71, systolic BP 123, respiratory rate 16, temperature F 96.7. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or symptoms are reported, and all vital signs are stable.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 5,
+   "text": "Age 56, male. Chief complaint(s): not recorded. Triage vitals: heart rate 74, systolic BP 122, respiratory rate 16, SpO2 % 98, temperature F 97. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or symptoms are recorded, and all vital signs are stable.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 5,
+   "text": "Age 28, female. Chief complaint(s): not recorded. Triage vitals: heart rate 85, systolic BP 128, respiratory rate 18, SpO2 % 98. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or symptoms are reported, and all vital signs are stable.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 5,
+   "text": "Age 35, male. Chief complaint(s): not recorded. Triage vitals: heart rate 79, systolic BP 153, respiratory rate 16, SpO2 % 98, temperature F 97.2. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or symptoms are reported, and all vital signs are stable.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 5,
+   "text": "Age 55, male. Chief complaint(s): not recorded. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2\nThe lack of recorded chief complaints and vitals for a patient presenting to the emergency department necessitates an immediate clinical assessment to determine stability.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 5,
+   "text": "Age 40, female. Chief complaint(s): not recorded. Triage vitals: heart rate 62, systolic BP 173, respiratory rate 18, SpO2 % 98, temperature F 98.1. Medications: none noted. History: none noted.",
+   "preds": [
+    3,
+    3,
+    3
+   ],
+   "rationale": "3\nThe patient is hemodynamically stable with no reported chief complaint or acute distress.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 5,
+   "text": "Age 53, female. Chief complaint(s): not recorded. Triage vitals: not recorded. Medications: none noted. History: HIV.",
+   "preds": [
+    3,
+    3,
+    2
+   ],
+   "rationale": "3. No chief complaint or vitals are provided, requiring a basic assessment to determine the level of urgency.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 5,
+   "text": "Age 66, female. Chief complaint(s): not recorded. Triage vitals: heart rate 81, systolic BP 106, respiratory rate 17, SpO2 % 96, temperature F 97.6. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or clinical symptoms are reported, and all vital signs are stable.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 5,
+   "text": "Age 23, male. Chief complaint(s): not recorded. Triage vitals: heart rate 88, systolic BP 105, respiratory rate 18, SpO2 % 98, temperature F 98.2. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or clinical symptoms are reported, and all vital signs are stable.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 5,
+   "text": "Age 73, female. Chief complaint(s): not recorded. Triage vitals: heart rate 60, systolic BP 145, respiratory rate 17, temperature F 97.5. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or symptoms are recorded, and vital signs are stable.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 5,
+   "text": "Age 20, male. Chief complaint(s): not recorded. Triage vitals: heart rate 57, systolic BP 131, respiratory rate 16, SpO2 % 99, temperature F 98.3. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or clinical symptoms are reported, and all vital signs are stable.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 5,
+   "text": "Age 53, female. Chief complaint(s): not recorded. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2\nThe patient's status is unknown and no information is provided, requiring a higher level of priority until a clinical assessment can be performed.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 5,
+   "text": "Age 45, male. Chief complaint(s): not recorded. Triage vitals: heart rate 71, systolic BP 155, respiratory rate 18, SpO2 % 96, temperature F 98.1. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or symptoms are reported, and all vital signs are stable.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 5,
+   "text": "Age 41, female. Chief complaint(s): not recorded. Triage vitals: heart rate 73, systolic BP 122, respiratory rate 16, SpO2 % 98, temperature F 98.1. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or symptoms are recorded, and all vital signs are stable.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 5,
+   "text": "Age 88, male. Chief complaint(s): not recorded. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2\nThe patient is an elderly individual with no recorded chief complaint or vitals, requiring an immediate assessment to determine clinical stability.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 5,
+   "text": "Age 28, male. Chief complaint(s): not recorded. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    3,
+    2
+   ],
+   "rationale": "5. No clinical information or vital signs are provided to indicate an acute threat to life or limb.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 5,
+   "text": "Age 25, female. Chief complaint(s): not recorded. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    3,
+    3,
+    3
+   ],
+   "rationale": "3\nInsufficient data to determine immediate life threats, requiring a basic assessment to establish acuity.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 5,
+   "text": "Age 31, female. Chief complaint(s): not recorded. Triage vitals: heart rate 72, systolic BP 122, respiratory rate 18, SpO2 % 98, temperature F 97. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or clinical symptoms are reported, and all vital signs are stable.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 5,
+   "text": "Age 26, female. Chief complaint(s): sorethroat. Triage vitals: heart rate 67, systolic BP 117, respiratory rate 17, SpO2 % 98, temperature F 99. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. Stable patient with a minor complaint and no acute distress or physiological instability.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 5,
+   "text": "Age 48, female. Chief complaint(s): not recorded. Triage vitals: heart rate 105, systolic BP 120, respiratory rate 16, SpO2 % 97, temperature F 98. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    3
+   ],
+   "rationale": "5. No chief complaint or clinical symptoms are reported, and vitals are stable.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 5,
+   "text": "Age 55, female. Chief complaint(s): not recorded. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    2,
+    2,
+    2
+   ],
+   "rationale": "2\nThe patient's status is unknown and no clinical information is provided, necessitating a higher priority for assessment to ensure safety.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 5,
+   "text": "Age 22, female. Chief complaint(s): not recorded. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    3,
+    5,
+    5
+   ],
+   "rationale": "3. Insufficient clinical information to determine a higher acuity level, necessitating a default to a standard triage level for further assessment.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 5,
+   "text": "Age 29, male. Chief complaint(s): not recorded. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No clinical information or physiological data is provided to indicate an immediate threat to life or limb.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 5,
+   "text": "Age 40, female. Chief complaint(s): not recorded. Triage vitals: heart rate 95, systolic BP 140, respiratory rate 18, SpO2 % 98, temperature F 97.1. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or symptoms are reported, and all vital signs are stable.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 5,
+   "text": "Age 19, female. Chief complaint(s): not recorded. Triage vitals: heart rate 90, systolic BP 111, respiratory rate 18, SpO2 % 98, temperature F 98. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or clinical symptoms are documented, and all vital signs are stable.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 5,
+   "text": "Age 43, female. Chief complaint(s): fever. Triage vitals: heart rate 124, systolic BP 122, respiratory rate 16, SpO2 % 97, temperature F 100.3. Medications: none noted. History: none noted.",
+   "preds": [
+    3,
+    3,
+    3
+   ],
+   "rationale": "3. The patient is stable but tachycardic, requiring a standard urgent evaluation for the source of the fever.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 5,
+   "text": "Age 22, male. Chief complaint(s): not recorded. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    3,
+    3,
+    5
+   ],
+   "rationale": "3\nInsufficient information to determine a higher acuity level, but the patient is stable enough to be triaged without immediate life-threatening indicators.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 5,
+   "text": "Age 36, female. Chief complaint(s): not recorded. Triage vitals: heart rate 79, systolic BP 119, respiratory rate 18, SpO2 % 98, temperature F 98.2. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or symptoms are reported, and all vital signs are stable.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 5,
+   "text": "Age 18, female. Chief complaint(s): not recorded. Triage vitals: heart rate 85, systolic BP 103, respiratory rate 16, SpO2 % 99, temperature F 97.9. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or symptoms are reported, and vitals are stable.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 5,
+   "text": "Age 36, male. Chief complaint(s): not recorded. Triage vitals: heart rate 92, systolic BP 125, respiratory rate 16, SpO2 % 97, temperature F 97.9. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or symptoms are reported, and all vital signs are stable.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 5,
+   "text": "Age 29, female. Chief complaint(s): not recorded. Triage vitals: not recorded. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No clinical information or vital signs are provided to indicate an immediate threat to life or limb.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 5,
+   "text": "Age 21, male. Chief complaint(s): fall. Triage vitals: heart rate 79, systolic BP 125, respiratory rate 18, temperature F 95. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. The patient is hemodynamically stable with no reported mechanism of injury or acute distress.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 5,
+   "text": "Age 42, male. Chief complaint(s): sorethroat. Triage vitals: heart rate 96, systolic BP 120, respiratory rate 18, SpO2 % 94, temperature F 98.8. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. The patient is stable with a non-urgent chief complaint and no acute distress.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 5,
+   "text": "Age 39, female. Chief complaint(s): not recorded. Triage vitals: heart rate 90, systolic BP 116, respiratory rate 18, SpO2 % 98, temperature F 98.3. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or symptoms are reported, and all vital signs are stable.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 5,
+   "text": "Age 22, female. Chief complaint(s): not recorded. Triage vitals: heart rate 95, systolic BP 115, respiratory rate 20, temperature F 96.8. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or clinical symptoms are reported, and all vital signs are stable.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  },
+  {
+   "esi": 5,
+   "text": "Age 19, male. Chief complaint(s): not recorded. Triage vitals: heart rate 65, systolic BP 105, respiratory rate 17, SpO2 % 97, temperature F 97.5. Medications: none noted. History: none noted.",
+   "preds": [
+    5,
+    5,
+    5
+   ],
+   "rationale": "5. No chief complaint or symptoms are recorded, and all vital signs are stable.",
+   "rules_floor": null,
+   "rules_esi1": false,
+   "rules_fired": []
+  }
+ ]
+}

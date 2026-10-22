@@ -1,0 +1,594 @@
+- id: A-61.lifesaving-intervention
+  decision_point: A
+  when:
+    field: obs.requires_lifesaving_intervention
+    equals: true
+  assessed_via: observed
+  provenance: operationalized
+  source: ESI v5 p.9 (Decision Point A)
+  span: Requires immediate life-saving
+- id: A-62.unresponsive
+  decision_point: A
+  when:
+    field: obs.avpu
+    in:
+    - U
+    - P
+  assessed_via: observed
+  provenance: operationalized
+  source: ESI v5 p.9 (Decision Point A)
+  span: Obtunded/unresponsive patient
+- id: A-63.active-seizure
+  decision_point: A
+  when:
+    field: obs.active_seizure
+    equals: true
+  assessed_via: observed
+  provenance: verbatim
+  source: ESI v5 p.9 (Decision Point A)
+  span: active seizure
+- id: A-64.ineffective-airway
+  decision_point: A
+  when:
+    field: obs.airway_occluded_or_ineffective_clearance
+    equals: true
+  assessed_via: observed
+  provenance: verbatim
+  source: ESI v5 p.9 (Decision Point A)
+  span: Ineffective airway clearance
+- id: A-65.spo2-respiratory-compromise
+  decision_point: A
+  when:
+    all:
+    - field: vitals.spo2
+      lt: 90
+    - field: vitals.spo2_is_patients_norm
+      equals: false
+    - field: obs.respiratory_compromise_signs
+      equals: true
+  assessed_via: vitals
+  provenance: operationalized
+  source: ESI v5 p.9 (Decision Point A)
+  span: SpO2 < 90% that is not the patient’s norm, with other signs of
+- id: A-66.anaphylaxis
+  decision_point: A
+  when:
+    field: obs.anaphylaxis
+    equals: true
+  assessed_via: observed
+  provenance: verbatim
+  source: ESI v5 p.9 (Decision Point A)
+  span: Anaphylaxis
+- id: A-67.hypotension-hypoperfusion
+  decision_point: A
+  when:
+    all:
+    - field: vitals.hypotension
+      equals: true
+    - field: obs.hypoperfusion_signs
+      equals: true
+  assessed_via: vitals
+  provenance: verbatim
+  source: ESI v5 p.9 (Decision Point A)
+  span: Hypotension with signs of hypoperfusion
+- id: A-68.hypoglycemia
+  decision_point: A
+  when:
+    field: vitals.profound_hypoglycemia
+    equals: true
+  assessed_via: vitals
+  provenance: operationalized
+  source: ESI v5 p.9 (Decision Point A)
+  span: Hypoglycemia
+- id: A-69.extreme-heart-rate
+  decision_point: A
+  when:
+    field: vitals.extreme_heart_rate
+    equals: true
+  assessed_via: vitals
+  provenance: operationalized
+  source: ESI v5 p.9 (Decision Point A)
+  span: Severe bradycardia or tachycardia
+- id: A-70.flaccid-infant
+  decision_point: A
+  when:
+    field: obs.flaccid
+    equals: true
+  assessed_via: observed
+  provenance: verbatim
+  source: ESI v5 p.9 (Decision Point A)
+  span: Flaccid infant
+- id: A-71.cardiac-pulmonary-arrest
+  decision_point: A
+  when:
+    field: obs.cardiac_or_pulmonary_arrest
+    equals: true
+  assessed_via: observed
+  provenance: verbatim
+  source: ESI v5 p.9 (Decision Point A)
+  span: Cardiac and/or pulmonary arrest
+- id: B-61.acs-suspicion
+  decision_point: B
+  when:
+    field: complaint.acs_suspicion
+    equals: true
+  assessed_via: reported
+  provenance: verbatim
+  source: ESI v5 p.12 (Decision Point B)
+  span: Active chest pain, suspicious for acute coronary syndrome
+- id: B-62.stroke-signs
+  decision_point: B
+  when:
+    field: complaint.stroke_signs
+    equals: true
+  assessed_via: reported
+  provenance: verbatim
+  source: ESI v5 p.12 (Decision Point B)
+  span: Signs of a stroke but does not meet level-1 criteria
+- id: B-63.possible-ectopic-pregnancy
+  decision_point: B
+  when:
+    field: complaint.possible_ectopic_pregnancy
+    equals: true
+  assessed_via: reported
+  provenance: verbatim
+  source: ESI v5 p.12 (Decision Point B)
+  span: A possible ectopic pregnancy, hemodynamically stable
+- id: B-64.immunocompromised-fever
+  decision_point: B
+  when:
+    all:
+    - field: history.immunocompromised
+      equals: true
+    - field: complaint.fever
+      equals: true
+  assessed_via: reported
+  provenance: verbatim
+  source: ESI v5 p.12 (Decision Point B)
+  span: A patient on chemotherapy, and therefore immunocompromised, with a fever
+- id: B-65.transplant-fever-infection
+  decision_point: B
+  when:
+    all:
+    - field: history.transplant_recipient_or_listed
+      equals: true
+    - any:
+      - field: complaint.fever
+        equals: true
+      - field: complaint.infection_signs
+        equals: true
+  assessed_via: reported
+  provenance: verbatim
+  source: ESI v5 p.12 (Decision Point B)
+  span: Transplant recipient presenting with a fever or other indication of infection
+- id: B-66.danger-to-self-or-others
+  decision_point: B
+  when:
+    field: complaint.danger_to_self_or_others
+    equals: true
+  assessed_via: reported
+  provenance: operationalized
+  source: ESI v5 p.12 (Decision Point B)
+  span: Actively suicidal or homicidal patient
+- id: B-67.needle-stick
+  decision_point: B
+  when:
+    field: complaint.needle_stick_healthcare_worker
+    equals: true
+  assessed_via: reported
+  provenance: verbatim
+  source: ESI v5 p.12 (Decision Point B)
+  span: A needle stick in a health care worker
+- id: B-68.sexual-assault
+  decision_point: B
+  when:
+    field: complaint.sexual_assault
+    equals: true
+  assessed_via: reported
+  provenance: verbatim
+  source: ESI v5 p.12 (Decision Point B)
+  span: Sexual assault survivor
+- id: B-69.increasing-respiratory-effort
+  decision_point: B
+  when:
+    field: complaint.increasing_respiratory_effort
+    equals: true
+  assessed_via: observed
+  provenance: verbatim
+  source: ESI v5 p.12 (Decision Point B)
+  span: Increasing respiratory effort
+- id: B-70.postpartum-hemorrhage
+  decision_point: B
+  when:
+    field: complaint.postpartum_hemorrhage
+    equals: true
+  assessed_via: reported
+  provenance: verbatim
+  source: ESI v5 p.12 (Decision Point B)
+  span: Postpartum hemorrhage
+- id: B-71.new-confusion-lethargy-disorientation
+  decision_point: B
+  when:
+    field: obs.new_confusion_lethargy_disorientation
+    equals: true
+  assessed_via: observed
+  provenance: verbatim
+  source: ESI v5 p.12 (Decision Point B)
+  span: new onset or an altered mental status
+- id: B-72.severe-pain
+  decision_point: B
+  when:
+    field: complaint.pain_rating
+    gte: 7
+  assessed_via: reported
+  provenance: verbatim
+  source: ESI v5 p.12 (Decision Point B)
+  span: pain rating of 7/10 or greater
+- id: B-73.airway-secretions-stridor
+  decision_point: B
+  when:
+    any:
+    - field: obs.cannot_manage_secretions
+      equals: true
+    - field: obs.stridor
+      equals: true
+  assessed_via: observed
+  provenance: verbatim
+  source: ESI v5 p.13 (Decision Point B)
+  span: unable to manage their own secretions and/or exhibit respiratory stridor
+- id: B-74.button-battery
+  decision_point: B
+  when:
+    field: complaint.button_battery_or_magnet_ingestion
+    equals: true
+  assessed_via: reported
+  provenance: verbatim
+  source: ESI v5 p.14 (Decision Point B)
+  span: Button battery or earth magnet ingestion
+- id: A-72.severe-respiratory-distress
+  decision_point: A
+  when:
+    all:
+    - field: obs.severe_respiratory_distress
+      equals: true
+    - field: obs.requires_lifesaving_intervention
+      equals: true
+  assessed_via: observed
+  provenance: verbatim
+  source: ESI v5 p.13 (Decision Point A)
+  span: severe respiratory distress who require immediate lifesaving intervention
+- id: B-75.pregnant-bleeding-infection
+  decision_point: B
+  when:
+    all:
+    - field: history.pregnant_or_postpartum
+      equals: true
+    - field: complaint.vaginal_bleeding
+      equals: true
+    - field: complaint.infection_signs
+      equals: true
+  assessed_via: reported
+  provenance: operationalized
+  source: ESI v5 p.14 (Decision Point B)
+  span: Pregnant patients who present with heavy vaginal bleeding and abnormal vitals with suspicion of
+    infection
+- id: B-76.trauma-mechanisms
+  decision_point: B
+  when:
+    any:
+    - field: E.fall_height_meters
+      gte: 6
+    - field: E.vehicle_ejection
+      equals: true
+    - field: E.mechanical_extrication
+      equals: true
+    - field: complaint.sexual_assault
+      equals: true
+  assessed_via: reported
+  provenance: verbatim
+  source: ESI v5 p.15 (Decision Point B)
+  span: falls of 20 feet (6 meters) or more, ejection from a vehicle, or removal from a vehicle with mechanical
+    extrication tools, and sexual assault
+- id: B-77.orthopedic-injuries
+  decision_point: B
+  when:
+    any:
+    - field: complaint.extremity_neurovascular_compromise
+      equals: true
+    - field: complaint.compartment_syndrome_symptoms
+      equals: true
+    - field: complaint.amputation_partial_or_complete
+      equals: true
+  assessed_via: observed
+  provenance: verbatim
+  source: ESI v5 p.15 (Decision Point B)
+  span: extremity injury with compromised neurovascular function, symptoms of compartment syndrome, or
+    partial or complete amputations
+- id: B-78.toxic-ingestion
+  decision_point: B
+  when:
+    field: complaint.known_toxic_ingestion
+    equals: true
+  assessed_via: reported
+  provenance: verbatim
+  source: ESI v5 p.15 (Decision Point B)
+  span: Toxic ingestion is a high-risk presentation
+- id: B-79.transplant-fever
+  decision_point: B
+  when:
+    all:
+    - field: history.transplant_recipient_or_listed
+      equals: true
+    - any:
+      - field: complaint.fever
+        equals: true
+      - field: complaint.infection_signs
+        equals: true
+  assessed_via: reported
+  provenance: verbatim
+  source: ESI v5 p.15 (Decision Point B)
+  span: presenting with a fever or other indication of infection or rejection
+- id: B-80.transplant-list
+  decision_point: B
+  when:
+    field: history.transplant_recipient_or_listed
+    equals: true
+  assessed_via: reported
+  provenance: verbatim
+  source: ESI v5 p.15 (Decision Point B)
+  span: Patients who are on a transplant list
+- id: B-81.danger-to-self-others
+  decision_point: B
+  when:
+    field: complaint.danger_to_self_or_others
+    equals: true
+  assessed_via: observed
+  provenance: operationalized
+  source: ESI v5 p.15 (Decision Point B)
+  span: suicidal, homicidal, psychotic, or violent
+- id: D-61.spo2-less-than-92
+  decision_point: D
+  when:
+    field: vitals.spo2
+    lt: 92
+  assessed_via: vitals
+  provenance: verbatim
+  source: ESI v5 p.23 (Decision Point D)
+  span: SpO2 < 92%
+- id: D-62.hr-less-than-1-mo
+  decision_point: D
+  when:
+    all:
+    - field: patient.age_months
+      lt: 1
+    - field: vitals.heart_rate
+      gt: 190
+  assessed_via: vitals
+  provenance: verbatim
+  source: ESI v5 p.23 (Decision Point D)
+  span: High-risk vital signs?
+- id: D-63.rr-less-than-1-mo
+  decision_point: D
+  when:
+    all:
+    - field: patient.age_months
+      lt: 1
+    - field: vitals.respiratory_rate
+      gt: 60
+  assessed_via: vitals
+  provenance: verbatim
+  source: ESI v5 p.23 (Decision Point D)
+  span: High-risk vital signs?
+- id: D-64.hr-1-to-12-mo
+  decision_point: D
+  when:
+    all:
+    - field: patient.age_months
+      gte: 1
+    - field: patient.age_months
+      lte: 12
+    - field: vitals.heart_rate
+      gt: 180
+  assessed_via: vitals
+  provenance: verbatim
+  source: ESI v5 p.23 (Decision Point D)
+  span: High-risk vital signs?
+- id: D-65.rr-1-to-12-mo
+  decision_point: D
+  when:
+    all:
+    - field: patient.age_months
+      gte: 1
+    - field: patient.age_months
+      lte: 12
+    - field: vitals.respiratory_rate
+      gt: 55
+  assessed_via: vitals
+  provenance: verbatim
+  source: ESI v5 p.23 (Decision Point D)
+  span: High-risk vital signs?
+- id: D-66.hr-1-to-3-y
+  decision_point: D
+  when:
+    all:
+    - field: patient.age
+      gte: 1
+    - field: patient.age
+      lte: 3
+    - field: vitals.heart_rate
+      gt: 140
+  assessed_via: vitals
+  provenance: verbatim
+  source: ESI v5 p.23 (Decision Point D)
+  span: High-risk vital signs?
+- id: D-67.rr-1-to-3-y
+  decision_point: D
+  when:
+    all:
+    - field: patient.age
+      gte: 1
+    - field: patient.age
+      lte: 3
+    - field: vitals.respiratory_rate
+      gt: 40
+  assessed_via: vitals
+  provenance: verbatim
+  source: ESI v5 p.23 (Decision Point D)
+  span: High-risk vital signs?
+- id: D-68.hr-3-to-5-y
+  decision_point: D
+  when:
+    all:
+    - field: patient.age
+      gt: 3
+    - field: patient.age
+      lte: 5
+    - field: vitals.heart_rate
+      gt: 120
+  assessed_via: vitals
+  provenance: verbatim
+  source: ESI v5 p.23 (Decision Point D)
+  span: High-risk vital signs?
+- id: D-69.rr-3-to-5-y
+  decision_point: D
+  when:
+    all:
+    - field: patient.age
+      gt: 3
+    - field: patient.age
+      lte: 5
+    - field: vitals.respiratory_rate
+      gt: 35
+  assessed_via: vitals
+  provenance: verbatim
+  source: ESI v5 p.23 (Decision Point D)
+  span: High-risk vital signs?
+- id: D-70.hr-5-to-12-y
+  decision_point: D
+  when:
+    all:
+    - field: patient.age
+      gt: 5
+    - field: patient.age
+      lte: 12
+    - field: vitals.heart_rate
+      gt: 120
+  assessed_via: vitals
+  provenance: verbatim
+  source: ESI v5 p.23 (Decision Point D)
+  span: High-risk vital signs?
+- id: D-71.rr-5-to-12-y
+  decision_point: D
+  when:
+    all:
+    - field: patient.age
+      gt: 5
+    - field: patient.age
+      lte: 12
+    - field: vitals.respiratory_rate
+      gt: 30
+  assessed_via: vitals
+  provenance: verbatim
+  source: ESI v5 p.23 (Decision Point D)
+  span: High-risk vital signs?
+- id: D-72.hr-12-to-18-y
+  decision_point: D
+  when:
+    all:
+    - field: patient.age
+      gt: 12
+    - field: patient.age
+      lte: 18
+    - field: vitals.heart_rate
+      gt: 100
+  assessed_via: vitals
+  provenance: verbatim
+  source: ESI v5 p.23 (Decision Point D)
+  span: High-risk vital signs?
+- id: D-73.rr-12-to-18-y
+  decision_point: D
+  when:
+    all:
+    - field: patient.age
+      gt: 12
+    - field: patient.age
+      lte: 18
+    - field: vitals.respiratory_rate
+      gt: 20
+  assessed_via: vitals
+  provenance: verbatim
+  source: ESI v5 p.23 (Decision Point D)
+  span: High-risk vital signs?
+- id: D-74.hr-gt-18-y
+  decision_point: D
+  when:
+    all:
+    - field: patient.age
+      gt: 18
+    - field: vitals.heart_rate
+      gt: 100
+  assessed_via: vitals
+  provenance: verbatim
+  source: ESI v5 p.23 (Decision Point D)
+  span: High-risk vital signs?
+- id: D-75.rr-gt-18-y
+  decision_point: D
+  when:
+    all:
+    - field: patient.age
+      gt: 18
+    - field: vitals.respiratory_rate
+      gt: 20
+  assessed_via: vitals
+  provenance: verbatim
+  source: ESI v5 p.23 (Decision Point D)
+  span: High-risk vital signs?
+- id: B-82.fever-infant-less-than-28-days
+  decision_point: B
+  when:
+    all:
+    - field: patient.age_days
+      lt: 28
+    - field: complaint.fever
+      equals: true
+  assessed_via: reported
+  provenance: operationalized
+  source: ESI v5 p.23 (Decision Point B)
+  span: An infant less than 28 days old with a fever is considered high risk and is assigned to at least
+    ESI level 2.
+- id: B-83.fever-infant-less-than-90-days
+  decision_point: B
+  when:
+    all:
+    - field: patient.age_days
+      lt: 90
+    - field: vitals.temp_c
+      gt: 38
+  assessed_via: vitals
+  provenance: operationalized
+  source: ESI v5 p.24 (Decision Point B)
+  span: Temperature greater than 38°C (100.4°F) in an infant younger than 90 days old
+- id: B-84.hypothermia-child-any-age
+  decision_point: B
+  when:
+    all:
+    - field: patient.age
+      lte: 18
+    - field: vitals.temp_c
+      lt: 36
+  assessed_via: vitals
+  provenance: operationalized
+  source: ESI v5 p.24 (Decision Point B)
+  span: temperature less than 36°C (96.8°F) in a child of any age is hypothermic
+- id: B-85.fever-infant-older-than-3-months
+  decision_point: B
+  when:
+    all:
+    - field: patient.age_months
+      gt: 3
+    - field: vitals.temp_c
+      gt: 38.5
+  assessed_via: vitals
+  provenance: operationalized
+  source: ESI v5 p.24 (Decision Point B)
+  span: Pediatric Temperature Red Flags

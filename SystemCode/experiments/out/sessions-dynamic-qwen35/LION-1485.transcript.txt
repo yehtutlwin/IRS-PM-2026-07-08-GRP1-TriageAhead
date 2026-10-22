@@ -1,0 +1,16 @@
+session LION-1485   started 2026-09-26 03:47   (generated from messages)
+
+03:47:59  BOT  Hello, we need to check for any immediate danger right now. Is the person awake and responding normally? Are they having severe chest pain, trouble breathing, or heavy bleeding?   [slot dyn:red_flags.responsive+red_flags.chest_pain_now+red_flags.breathing_difficulty+red_flags.heavy_bleeding]
+03:48:00  THEM I'm awake and responding, though I feel a bit scared. My chest pain is 6/10 and spreading to my left arm, and I am having trouble breathing.   [slot dyn:red_flags.responsive+red_flags.chest_pain_now+red_flags.breathing_difficulty+red_flags.heavy_bleeding]
+03:48:02  SYS  floor: at least ESI-2  rules: ['B-04.chest-pain-acs-suspect'] (floor)
+03:48:03  BOT  I understand you're feeling scared; to help our team prepare, do you take any regular medications, and do you have any allergies to medicines?   [slot dyn:M.medications+A.allergies]
+03:48:04  THEM No, I don't take any regular medications and I have no known allergies. I feel a bit scared because of my chest pain.   [slot dyn:M.medications+A.allergies]
+03:48:07  BOT  To help our team prepare for your care, do you have any medical conditions such as heart problems, diabetes, or are you pregnant?   [slot dyn:history.conditions]
+03:48:07  THEM No, I don't know of any medical conditions; I have no known issues. I am not pregnant.   [slot dyn:history.conditions]
+03:48:10  BOT  To help our team prepare, do you have any allergies to medicines or other conditions like diabetes or heart problems? Also, have you had a fever, rash, traveled overseas in the last two weeks, or been around anyone who is sick?   [slot dyn:history.immunocompromised+infection.fever+infection.rash+infection.travel_14d]
+03:48:11  THEM No, I don't have any known conditions or allergies. I haven't had a fever, rash, or been near anyone sick recently.   [slot dyn:history.immunocompromised+infection.fever+infection.rash+infection.travel_14d]
+03:48:14  BOT  Thank you for that information. To help us get your name and date of birth on file, and to see how long it's been since you last ate or drank anything, could you please tell us those details?   [slot dyn:infection.travel_14d+L.last_intake+identity.name+identity.dob]
+03:48:15  THEM My name is [Name] and I was born on May 14, 1975. It's been about four hours since I had breakfast toast at 8 am.   [slot dyn:infection.travel_14d+L.last_intake+identity.name+identity.dob]
+03:48:18  BOT  Could you please confirm if you have had any fever, rash, traveled overseas, or been around someone who is sick in the last two weeks?   [slot dyn:infection.travel_14d]
+03:48:19  THEM No, I haven't had a fever, rash, traveled, or been around anyone sick. My husband is driving me in because of my chest pain and shortness of breath.   [slot dyn:infection.travel_14d]
+03:48:20  BOT  Thank you - that's everything for now. Show the code LION-1485 at the counter when you arrive. (ack)

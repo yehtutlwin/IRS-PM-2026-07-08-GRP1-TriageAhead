@@ -1,0 +1,56 @@
+{"t": "21:21:14", "kind": "engine", "note": "session EAGLE-3217 started (web)"}
+{"t": "21:21:16", "kind": "question", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "Is the patient awake and responding to you normally? Also, is he or she experiencing any chest pain, trouble breathing, or heavy bleeding right now?", "fields": ["danger_signs.responsive", "danger_signs.chest_pain_now"], "offered": ["danger_signs.responsive", "danger_signs.chest_pain_now", "danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text"]}
+{"t": "21:21:16", "kind": "answer", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "Yes, he's awake and answering, he's calm now. No."}
+{"t": "21:21:20", "kind": "extract", "writes": [["danger_signs.responsive", true], ["danger_signs.chest_pain_now", false]]}
+{"t": "21:21:24", "kind": "question", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category", "text": "I'm glad he's calm. Is he having any trouble breathing or is there any heavy bleeding right now? Also, what is the main reason you are bringing him in?", "fields": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category"], "offered": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text", "complaint.onset", "E.mechanism"]}
+{"t": "21:21:24", "kind": "answer", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category", "text": "No. He was out of control at home tonight, shouting and hitting things and threatening to kill us. The police brought him."}
+{"t": "21:21:35", "kind": "extract", "writes": [["danger_signs.breathing_difficulty", false, "denial of something the answer does not address"], ["danger_signs.heavy_bleeding", false, "denial of something the answer does not address"]], "via": "guard-dropped"}
+{"t": "21:21:35", "kind": "extract", "writes": [["complaint.category", "mental_health"]]}
+{"t": "21:21:35", "kind": "extract", "writes": [["E.mechanism", "none"]], "via": "derived-non-injury"}
+{"t": "21:21:38", "kind": "question", "slot": "dyn:danger_signs.breathing_difficulty", "text": "I understand. Is he having any difficulty breathing at the moment?", "fields": ["danger_signs.breathing_difficulty"], "offered": ["danger_signs.breathing_difficulty"]}
+{"t": "21:21:38", "kind": "answer", "slot": "dyn:danger_signs.breathing_difficulty", "text": "No."}
+{"t": "21:21:41", "kind": "extract", "writes": [["danger_signs.breathing_difficulty", false]]}
+{"t": "21:21:44", "kind": "question", "slot": "dyn:danger_signs.heavy_bleeding", "text": "Is he bleeding heavily anywhere right now?", "fields": ["danger_signs.heavy_bleeding"], "offered": ["danger_signs.heavy_bleeding"]}
+{"t": "21:21:44", "kind": "answer", "slot": "dyn:danger_signs.heavy_bleeding", "text": "No."}
+{"t": "21:21:47", "kind": "extract", "writes": [["danger_signs.heavy_bleeding", false]]}
+{"t": "21:21:50", "kind": "question", "slot": "dyn:complaint.text+complaint.onset", "text": "I'm glad to hear that. Can you tell me what's happening with him and when it started?", "fields": ["complaint.text", "complaint.onset"], "offered": ["complaint.text", "complaint.onset", "patient.age", "patient.sex", "complaint.fever", "infection.rash"]}
+{"t": "21:21:50", "kind": "answer", "slot": "dyn:complaint.text+complaint.onset", "text": "My son was out of control at home tonight, shouting and hitting things and threatening to kill the family. We called the police and they brought him here. He's calm now. Tonight, a couple of hours ago."}
+{"t": "21:22:02", "kind": "extract", "writes": [["complaint.text", "out of control at home tonight, shouting and hitting things and threatening to kill the family"], ["complaint.onset", "Tonight, a couple of hours ago"]]}
+{"t": "21:22:05", "kind": "question", "slot": "dyn:patient.age+patient.sex", "text": "I understand he is calmer now. How old is your son?", "fields": ["patient.age", "patient.sex"], "offered": ["patient.age", "patient.sex", "complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts"]}
+{"t": "21:22:05", "kind": "answer", "slot": "dyn:patient.age+patient.sex", "text": "He's 17. He's a boy, my son."}
+{"t": "21:22:09", "kind": "extract", "writes": [["patient.age", 17], ["patient.sex", "male"]]}
+{"t": "21:22:12", "kind": "question", "slot": "dyn:complaint.fever+infection.rash", "text": "I understand. Does he have a fever or any new rashes on his body?", "fields": ["complaint.fever", "infection.rash"], "offered": ["complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts", "ams.changed_from_baseline", "complaint.pain_rating"]}
+{"t": "21:22:12", "kind": "answer", "slot": "dyn:complaint.fever+infection.rash", "text": "I don't know."}
+{"t": "21:22:16", "kind": "extract", "writes": []}
+{"t": "21:22:16", "kind": "extract", "writes": [["complaint.fever", null], ["infection.rash", null]], "via": "dont-know"}
+{"t": "21:22:19", "kind": "question", "slot": "dyn:infection.travel_14d+infection.contacts", "text": "I understand. Has he traveled outside the country or been in contact with anyone who has been sick in the last two weeks?", "fields": ["infection.travel_14d", "infection.contacts"], "offered": ["infection.travel_14d", "infection.contacts", "ams.changed_from_baseline", "complaint.pain_rating", "complaint.danger_to_self_or_others", "complaint.known_toxic_ingestion"]}
+{"t": "21:22:19", "kind": "answer", "slot": "dyn:infection.travel_14d+infection.contacts", "text": "I don't know."}
+{"t": "21:22:22", "kind": "extract", "writes": []}
+{"t": "21:22:23", "kind": "extract", "writes": [["infection.travel_14d", null], ["infection.contacts", null]], "via": "dont-know"}
+{"t": "21:22:25", "kind": "question", "slot": "dyn:ams.changed_from_baseline", "text": "Is he acting differently than usual, such as being more confused, not making sense, or unusually sleepy?", "fields": ["ams.changed_from_baseline"], "offered": ["ams.changed_from_baseline", "complaint.pain_rating", "complaint.danger_to_self_or_others", "complaint.known_toxic_ingestion", "complaint.post_ictal_after_seizure", "M.medications"]}
+{"t": "21:22:25", "kind": "answer", "slot": "dyn:ams.changed_from_baseline", "text": "I don't know."}
+{"t": "21:22:29", "kind": "extract", "writes": []}
+{"t": "21:22:29", "kind": "extract", "writes": [["ams.changed_from_baseline", null]], "via": "dont-know"}
+{"t": "21:22:32", "kind": "question", "slot": "dyn:complaint.pain_rating+complaint.danger_to_self_or_others+complaint.known_toxic_ingestion", "text": "I understand you aren't sure about those details. Has he mentioned hurting himself or others, or did he take any medication or substances that could be harmful?", "fields": ["complaint.pain_rating", "complaint.danger_to_self_or_others", "complaint.known_toxic_ingestion"], "offered": ["complaint.pain_rating", "complaint.danger_to_self_or_others", "complaint.known_toxic_ingestion", "complaint.post_ictal_after_seizure", "M.medications", "A.allergies"]}
+{"t": "21:22:32", "kind": "answer", "slot": "dyn:complaint.pain_rating+complaint.danger_to_self_or_others+complaint.known_toxic_ingestion", "text": "Yes, he threatened to kill the family."}
+{"t": "21:22:37", "kind": "extract", "writes": [["complaint.danger_to_self_or_others", true]]}
+{"t": "21:22:37", "kind": "floor", "floor": "at least ESI-2", "fired": ["B-09.suicidal-or-homicidal"], "sources": ["ESI v5 p.12; p.15 (Mental and Behavioral Health)"]}
+{"t": "21:22:39", "kind": "question", "slot": "dyn:M.medications+A.allergies", "text": "I understand. Does he take any regular medications or have any known allergies?", "fields": ["M.medications", "A.allergies"], "offered": ["M.medications", "A.allergies", "history.conditions", "identity.name", "identity.dob"]}
+{"t": "21:22:39", "kind": "answer", "slot": "dyn:M.medications+A.allergies", "text": "He doesn't take any medicines. No allergies."}
+{"t": "21:22:44", "kind": "extract", "writes": [["M.medications", []], ["A.allergies", []]]}
+{"t": "21:22:46", "kind": "question", "slot": "dyn:history.conditions", "text": "Does he have any ongoing medical conditions?", "fields": ["history.conditions"], "offered": ["history.conditions", "identity.name", "identity.dob"]}
+{"t": "21:22:46", "kind": "answer", "slot": "dyn:history.conditions", "text": "No, he's never had any medical problems."}
+{"t": "21:22:56", "kind": "extract", "writes": []}
+{"t": "21:22:59", "kind": "question", "slot": "dyn:history.conditions", "text": "I understand. Does he have any other health conditions or medical problems?", "fields": ["history.conditions"], "offered": ["history.conditions"]}
+{"t": "21:22:59", "kind": "answer", "slot": "dyn:history.conditions", "text": "No, he's never had any medical problems."}
+{"t": "21:23:08", "kind": "extract", "writes": []}
+{"t": "21:23:11", "kind": "question", "slot": "dyn:history.conditions", "text": "To make sure we have everything, does he have any chronic illnesses or regular medical conditions?", "fields": ["history.conditions"], "offered": ["history.conditions"]}
+{"t": "21:23:11", "kind": "answer", "slot": "dyn:history.conditions", "text": "No, he's never had any medical problems."}
+{"t": "21:23:20", "kind": "extract", "writes": []}
+{"t": "21:23:23", "kind": "question", "slot": "dyn:identity.name+identity.dob", "text": "I've noted that. Could you please tell me his full name and date of birth?", "fields": ["identity.name", "identity.dob"], "offered": ["identity.name", "identity.dob"]}
+{"t": "21:23:23", "kind": "answer", "slot": "dyn:identity.name+identity.dob", "text": "Marcus Wong. I don't have it to hand, he's 17."}
+{"t": "21:23:27", "kind": "extract", "writes": [["identity.name", "Marcus Wong"], ["patient.age", 17]]}
+{"t": "21:23:30", "kind": "question", "slot": "dyn:identity.dob", "text": "I understand. Could you please provide his date of birth?", "fields": ["identity.dob"], "offered": ["identity.dob"]}
+{"t": "21:23:30", "kind": "answer", "slot": "dyn:identity.dob", "text": "I don't have it to hand, he's 17."}
+{"t": "21:23:34", "kind": "extract", "writes": [["patient.age", 17]]}
+{"t": "21:23:36", "kind": "question", "slot": "dyn:identity.dob", "text": "I understand. Could you tell me the day and month he was born?", "fields": ["identity.dob"], "offered": ["identity.dob"]}

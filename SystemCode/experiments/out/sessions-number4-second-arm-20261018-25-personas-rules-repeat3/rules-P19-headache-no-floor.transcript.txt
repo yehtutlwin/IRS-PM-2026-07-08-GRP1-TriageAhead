@@ -1,0 +1,52 @@
+arm B, form rules, persona P19-headache-no-floor, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  Is the patient awake and responding normally?
+A1  Yes, she's awake and talking.
+
+Q2  Is the patient having any chest pain right now?
+A2  I don't know.
+
+Q3  Is the patient having any trouble breathing right now?
+A3  I don't know.
+
+Q4  Is the patient bleeding heavily right now?
+A4  I don't know.
+
+Q5  What is the main reason the patient is coming to the emergency department?
+A5  My mother has a headache.
+
+Q6  How severe is the headache, and did it come on suddenly or reach its peak very quickly?
+A6  I don't know.
+
+Q7  Does the headache come with a stiff neck or a very high fever?
+A7  I don't know.
+
+Q8  Does your mother have any other symptoms, like a rash, vomiting, or any weakness or numbness in her face or body?
+A8  I don't know.
+
+Q9  How old is your mother?
+A9  She's 52.
+
+Q10  Is your mother's headache a 'thunderclap' headache (meaning it came on suddenly and reached its peak very quickly, like a blow to the head)?
+A10  I don't know.
+
+Q11  Does your mother have any other symptoms, like a rash, vomiting, or any weakness or numbness in her face or body?
+A11  I don't know.
+
+Q12  Is your mother's headache accompanied by any other symptoms like a stiff neck, a high fever, or any vomiting?
+A12  I don't know.
+
+Q13  Is your mother's headache accompanied by any other symptoms like a stiff neck, a high fever, or any vomiting?
+A13  I don't know.
+
+Q14  Is your mother's headache accompanied by any other symptoms like a stiff neck, a high fever, or any vomiting?
+A14  I don't know.
+
+Q15  Is your mother's headache accompanied by any other symptoms like a stiff neck, a high fever, or any vomiting?
+A15  I don't know.
+
+Q16  Is your mother's headache accompanied by any other symptoms like a stiff neck, a high fever, or any vomiting?
+A16  I don't know.
+
+DECISION {"decision": "unparsed", "reason": "turn limit reached without a decision"}
+OUTCOME no decision in 16 questions | expected None | pass False | label model error (over-call) | max prompt tokens 44096

@@ -1,0 +1,31 @@
+arm B, form rules, persona P4-sore-throat, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  Is the patient awake and responding normally?
+A1  Yes, I'm fine.
+
+Q2  Is the patient experiencing any chest pain right now?
+A2  No.
+
+Q3  Is the patient having any trouble breathing right now?
+A3  No, I'm breathing normally.
+
+Q4  Is the patient bleeding heavily right now?
+A4  No.
+
+Q5  What is the main reason for your visit today?
+A5  I have a sore throat that has lasted for two days and it hurts to swallow.
+
+Q6  How old is the patient?
+A6  I am 25.
+
+Q7  How would you rate your pain on a scale of 0 to 10, where 10 is the worst pain imaginable?
+A7  About 3 out of 10, mild.
+
+Q8  Are you experiencing any other symptoms, such as a fever, a rash, or any other concerns?
+A8  I think I had a slight temperature yesterday, but none today, it was 37.1 when I checked. There is no rash.
+
+Q9  Are you experiencing any other symptoms, such as a cough, runny nose, or any other concerns?
+A9  A sore throat for two days, it hurts to swallow.
+
+DECISION {"done": true, "decision": "no floor", "reason": "The patient is stable, not high-risk, and requires only one resource (a physical exam) to reach a disposition.", "citation": "ESI v5 p.19; p.20 (Table 5-2, item 2)"}
+OUTCOME no floor | expected None | pass True | label None | max prompt tokens 43888

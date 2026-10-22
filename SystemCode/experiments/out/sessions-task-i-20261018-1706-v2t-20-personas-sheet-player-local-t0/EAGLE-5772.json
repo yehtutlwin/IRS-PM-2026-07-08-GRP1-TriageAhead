@@ -1,0 +1,462 @@
+{
+ "sid": "EAGLE-5772",
+ "facts": {
+  "danger_signs.responsive": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-18 16:51"
+  },
+  "danger_signs.chest_pain_now": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-18 16:51"
+  },
+  "danger_signs.breathing_difficulty": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-18 16:51"
+  },
+  "danger_signs.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-18 16:51"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "urinary_problem",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 2,
+      "ts": "2026-10-18 16:51"
+     },
+     "text": {
+      "value": "My mother is just not acting herself. She's sleeping more than usual and she says it hurts to pee.",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 2,
+      "ts": "2026-10-18 16:51"
+     },
+     "onset": {
+      "value": "Over the last day or so",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 3,
+      "ts": "2026-10-18 16:51"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2
+  },
+  "complaint.category": {
+   "value": [
+    "urinary_problem"
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-18 16:51"
+  },
+  "complaint.text": {
+   "value": "My mother is just not acting herself. She's sleeping more than usual and she says it hurts to pee.",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-18 16:51"
+  },
+  "E.mechanism": {
+   "value": "none",
+   "status": "reported",
+   "who": "derived",
+   "turn": 2,
+   "ts": "2026-10-18 16:51"
+  },
+  "complaint.onset": {
+   "value": "Over the last day or so",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-18 16:51"
+  },
+  "patient.age": {
+   "value": 72,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-18 16:51"
+  },
+  "patient.age_group": {
+   "value": "older_adult",
+   "status": "reported",
+   "who": "derived",
+   "turn": 3,
+   "ts": "2026-10-18 16:51"
+  },
+  "patient.sex": {
+   "value": "female",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 4,
+   "ts": "2026-10-18 16:52"
+  },
+  "complaint.uti_symptoms": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 7,
+   "ts": "2026-10-18 16:52"
+  },
+  "M.medications": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 8,
+   "ts": "2026-10-18 16:52"
+  },
+  "A.allergies": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 8,
+   "ts": "2026-10-18 16:52"
+  },
+  "history.conditions": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 9,
+   "ts": "2026-10-18 16:52"
+  },
+  "identity.name": {
+   "value": "Chua Siew Lan",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 10,
+   "ts": "2026-10-18 16:52"
+  },
+  "identity.dob": {
+   "value": "8 March 1954",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 10,
+   "ts": "2026-10-18 16:52"
+  },
+  "infection.rash": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 11,
+   "ts": "2026-10-18 16:52"
+  },
+  "infection.travel_14d": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 12,
+   "ts": "2026-10-18 16:52"
+  },
+  "infection.contacts": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 12,
+   "ts": "2026-10-18 16:52"
+  },
+  "L.last_intake": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 16,
+   "ts": "2026-10-18 16:53"
+  }
+ },
+ "attempts": {
+  "danger_signs.responsive": 1,
+  "danger_signs.chest_pain_now": 1,
+  "danger_signs.breathing_difficulty": 1,
+  "danger_signs.heavy_bleeding": 1,
+  "complaint.category": 1,
+  "complaint.text": 1,
+  "complaint.onset": 1,
+  "patient.age": 1,
+  "patient.sex": 1,
+  "complaint.fever": 3,
+  "infection.rash": 2,
+  "complaint.uti_symptoms": 1,
+  "M.medications": 1,
+  "A.allergies": 1,
+  "history.conditions": 1,
+  "identity.name": 1,
+  "identity.dob": 1,
+  "infection.travel_14d": 1,
+  "infection.contacts": 1,
+  "complaint.pain_rating": 3,
+  "L.last_intake": 1
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "Is the patient awake and responding to you normally? Also, are they currently experiencing any chest pain, trouble breathing, or heavy bleeding?",
+   "ts": "2026-10-18 16:51:29",
+   "kind": "question",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, she answers when I talk to her. No chest pain.",
+   "ts": "2026-10-18 16:51:29",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "bot",
+   "text": "I'm glad she's responsive. Is she having any trouble breathing or is there any heavy bleeding? Also, could you tell me what the main problem is and what's happening?",
+   "ts": "2026-10-18 16:51:37",
+   "kind": "question",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category+complaint.text"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, her breathing is fine. No. My mother is just not acting herself. She's sleeping more than usual and she says it hurts to pee.",
+   "ts": "2026-10-18 16:51:37",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category+complaint.text"
+  },
+  {
+   "role": "bot",
+   "text": "I understand she's having pain when urinating. When did this start, and how old is your mother?",
+   "ts": "2026-10-18 16:51:54",
+   "kind": "question",
+   "slot": "dyn:complaint.onset+patient.age"
+  },
+  {
+   "role": "caregiver",
+   "text": "Over the last day or so. She's 72.",
+   "ts": "2026-10-18 16:51:54",
+   "kind": "answer",
+   "slot": "dyn:complaint.onset+patient.age"
+  },
+  {
+   "role": "bot",
+   "text": "I've noted that. To help the team, could you tell me if she has a fever and if you've measured her temperature?",
+   "ts": "2026-10-18 16:52:02",
+   "kind": "question",
+   "slot": "dyn:patient.sex+complaint.fever"
+  },
+  {
+   "role": "caregiver",
+   "text": "She's a woman, my mother. I haven't taken her temperature.",
+   "ts": "2026-10-18 16:52:02",
+   "kind": "answer",
+   "slot": "dyn:patient.sex+complaint.fever"
+  },
+  {
+   "role": "bot",
+   "text": "I understand you haven't measured it yet. Does she seem to have a fever or feel hot to the touch?",
+   "ts": "2026-10-18 16:52:08",
+   "kind": "question",
+   "slot": "dyn:complaint.fever"
+  },
+  {
+   "role": "caregiver",
+   "text": "I haven't taken her temperature.",
+   "ts": "2026-10-18 16:52:08",
+   "kind": "answer",
+   "slot": "dyn:complaint.fever"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Does she seem to have a fever or feel hot to the touch?",
+   "ts": "2026-10-18 16:52:14",
+   "kind": "question",
+   "slot": "dyn:complaint.fever"
+  },
+  {
+   "role": "caregiver",
+   "text": "I haven't taken her temperature.",
+   "ts": "2026-10-18 16:52:14",
+   "kind": "answer",
+   "slot": "dyn:complaint.fever"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Does she have any new rashes, and does it burn or hurt when she tries to pee?",
+   "ts": "2026-10-18 16:52:20",
+   "kind": "question",
+   "slot": "dyn:infection.rash+complaint.uti_symptoms"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, she says it hurts to pee.",
+   "ts": "2026-10-18 16:52:20",
+   "kind": "answer",
+   "slot": "dyn:infection.rash+complaint.uti_symptoms"
+  },
+  {
+   "role": "system",
+   "text": "floor: at least ESI-2  rules: ['B-43.uti-elderly-or-urosepsis-signs']",
+   "ts": "2026-10-18 16:52:24",
+   "kind": "floor"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. What medications does she take regularly, and does she have any allergies to medicines?",
+   "ts": "2026-10-18 16:52:26",
+   "kind": "question",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 16:52:26",
+   "kind": "answer",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Does she have any other ongoing medical conditions?",
+   "ts": "2026-10-18 16:52:33",
+   "kind": "question",
+   "slot": "dyn:history.conditions"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 16:52:33",
+   "kind": "answer",
+   "slot": "dyn:history.conditions"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Could you please tell me your mother's full name and her date of birth?",
+   "ts": "2026-10-18 16:52:39",
+   "kind": "question",
+   "slot": "dyn:identity.name+identity.dob"
+  },
+  {
+   "role": "caregiver",
+   "text": "Chua Siew Lan. 8 March 1954.",
+   "ts": "2026-10-18 16:52:39",
+   "kind": "answer",
+   "slot": "dyn:identity.name+identity.dob"
+  },
+  {
+   "role": "bot",
+   "text": "That's enough for the hospital team to prepare. Show the code EAGLE-5772 at the counter when you arrive. I'll ask a few more things while you're on the way; tell me straight away if anything changes.",
+   "ts": "2026-10-18 16:52:43",
+   "kind": "ack"
+  },
+  {
+   "role": "bot",
+   "text": "Has she developed any new rashes on her skin?",
+   "ts": "2026-10-18 16:52:46",
+   "kind": "question",
+   "slot": "dyn:infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 16:52:46",
+   "kind": "answer",
+   "slot": "dyn:infection.rash"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Has she traveled abroad or been in contact with anyone who has a contagious illness in the last two weeks?",
+   "ts": "2026-10-18 16:52:53",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 16:52:53",
+   "kind": "answer",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "bot",
+   "text": "On a scale of 0 to 10, where 10 is the worst pain imaginable, how bad is her pain right now?",
+   "ts": "2026-10-18 16:52:59",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 16:52:59",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. To help the team, how severe would you say her pain is on a scale of 0 to 10?",
+   "ts": "2026-10-18 16:53:05",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 16:53:05",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "I understand it's hard to say. If you had to estimate, how much is she struggling with the pain right now on a scale of 0 to 10?",
+   "ts": "2026-10-18 16:53:11",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 16:53:11",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. When was the last time she had anything to eat or drink?",
+   "ts": "2026-10-18 16:53:16",
+   "kind": "question",
+   "slot": "dyn:L.last_intake"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 16:53:16",
+   "kind": "answer",
+   "slot": "dyn:L.last_intake"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you - that's everything. Show the code EAGLE-5772 at the counter when you arrive.",
+   "ts": "2026-10-18 16:53:19",
+   "kind": "ack"
+  }
+ ],
+ "stage": "rest",
+ "floor": "at least ESI-2",
+ "phase": "enroute",
+ "created": "2026-10-18 16:51",
+ "pending_slot": "dyn:L.last_intake",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {},
+ "qr_ready": true,
+ "qr_turn": 10,
+ "said_done": true
+}

@@ -1,0 +1,52 @@
+arm B, form rules, persona P6-stroke-resolved, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  Is the patient awake and responding normally?
+A1  Yes, she's awake and talking clearly now.
+
+Q2  Is the patient experiencing chest pain right now?
+A2  No chest pain.
+
+Q3  Is the patient having any trouble breathing right now?
+A3  I don't know.
+
+Q4  Is the patient bleeding heavily right now?
+A4  No.
+
+Q5  Is the patient having any trouble breathing right now?
+A5  I don't know.
+
+Q6  Can you describe any difficulty breathing, such as gasping for air, a very fast breathing rate, or a wheezing sound?
+A6  I don't know.
+
+Q7  Is the patient in any severe pain or distress?
+A7  She has no pain, 0 out of 10.
+
+Q8  Is the patient's condition a result of a recent injury, such as a fall, a car accident, or a wound from a knife or bullet?
+A8  No fall, no injury.
+
+Q9  Is the patient's condition a result of a recent injury, such as a fall, a car accident, or a wound from a knife or bullet?
+A9  No fall, no injury.
+
+Q10  What is the main reason the patient is coming to the emergency department today?
+A10  This morning her speech suddenly went slurred and her left arm went weak, and she couldn't lift her teacup. It lasted about 45 minutes and then passed completely.
+
+Q11  Is the patient's speech slurred, or is her face drooping or an arm weak, right now?
+A11  No, she's as clear as usual now and her arm is back to normal. I didn't notice her face drooping.
+
+Q12  Is the patient's speech slurred, or is her face drooping or an arm weak, right now?
+A12  No, she's as clear as usual now and her arm is back to normal. I didn't notice her face drooping.
+
+Q13  Is the patient's condition a result of a recent injury, such as a fall, a car accident, or a wound from a knife or bullet?
+A13  No fall, no injury.
+
+Q14  Is the patient currently experiencing any other symptoms, such as a severe headache, a fever, or a cough?
+A14  No, she has no fever.
+
+Q15  Does the patient have a severe headache, such as one that came on suddenly and reached its peak very quickly?
+A15  No.
+
+Q16  Is the patient currently experiencing any other symptoms, such as a cough or a feeling of being unwell?
+A16  No.
+
+DECISION {"decision": "unparsed", "reason": "turn limit reached without a decision"}
+OUTCOME no decision in 16 questions | expected at least ESI-2 | pass False | label missing fact | max prompt tokens 44178

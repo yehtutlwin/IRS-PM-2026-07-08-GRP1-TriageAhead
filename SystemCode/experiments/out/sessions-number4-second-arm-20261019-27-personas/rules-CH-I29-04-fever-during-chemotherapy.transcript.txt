@@ -1,0 +1,37 @@
+arm B, form rules, persona CH-I29-04-fever-during-chemotherapy, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  Is the patient awake and responding normally?
+A1  Yes, the patient is awake and responding normally.
+
+Q2  Is the patient having chest pain right now?
+A2  No, the patient is not having chest pain right now.
+
+Q3  Is the patient having trouble breathing right now?
+A3  No, the patient is not having trouble breathing right now.
+
+Q4  Is the patient bleeding heavily right now?
+A4  No, the patient is not bleeding heavily right now.
+
+Q5  What is the main reason the patient is coming to the emergency department?
+A5  She has been shivering and feels hot while receiving chemotherapy.
+
+Q6  Is the patient currently having a fever?
+A6  Yes, the patient has fever.
+
+Q7  Is the patient currently undergoing chemotherapy or is she immunocompromised?
+A7  She is receiving chemotherapy and has a weakened immune system.
+
+Q8  How old is the patient?
+A8  The patient is 63 years old.
+
+Q9  Is the patient's fever a new development or is it a known issue?
+A9  She has been shivering since this afternoon and the thermometer read 38.5 degrees Celsius.
+
+Q10  Is the patient's fever a new development or is it a known issue?
+A10  She has been shivering since this afternoon and the thermometer read 38.5 degrees Celsius.
+
+Q11  Is the patient's fever a new development or is it a known issue?
+A11  She has been shivering since this afternoon and the thermometer read 38.5 degrees Celsius.
+
+DECISION {"decision": "at least ESI-2", "reason": "The patient is an immunocompromised individual (on chemotherapy) presenting with a fever, which is a high-risk situation.", "citation": "ESI v5 p.12 (chemotherapy example); p.15 (Transplant); rule B-07, B-08"}
+OUTCOME level 2 or floor | expected at least ESI-2 | pass True | label None | max prompt tokens 43957

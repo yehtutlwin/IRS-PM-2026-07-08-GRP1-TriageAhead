@@ -1,0 +1,40 @@
+arm B, form handbook, persona ND-P29-pregnant-headache, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  What is the main reason the patient is seeking care today?
+A1  I am thirty weeks pregnant and have had a severe headache and blurred vision since this morning.
+
+Q2  Are you experiencing any other symptoms, such as chest pain, shortness of breath, or swelling in your face or hands?
+A2  No chest pain and no breathing difficulty.
+
+Q3  Are you experiencing any other symptoms, such as a severe headache with a fever or a stiff neck?
+A3  I have a severe headache and blurred vision since this morning. I don't know.
+
+Q4  Are you experiencing any other symptoms, such as a high blood pressure reading or any other concerns?
+A4  I don't know.
+
+Q5  Are you currently experiencing any other symptoms, such as a severe headache with a fever or a stiff neck?
+A5  I have a severe headache and blurred vision since this morning. I don't know.
+
+Q6  What is your current blood pressure?
+A6  I don't know.
+
+Q7  Are you experiencing any other symptoms, such as a severe headache with a fever or a stiff neck?
+A7  I have a severe headache and blurred vision since this morning. I don't know.
+
+Q8  Are you experiencing any other symptoms, such as a severe headache with a fever or a stiff neck?
+A8  I have a severe headache and blurred vision since this morning. I don't know.
+
+Q9  Are you currently experiencing any other symptoms, such as a severe headache with a fever or a stiff neck?
+A9  I have a severe headache and blurred vision since this morning. I don't know.
+
+Q10  Are you experiencing any other symptoms, such as a sudden change in your vision, difficulty speaking, or weakness in your face or limbs?
+A10  I have had blurred vision since this morning. I don't know.
+
+Q11  Are you currently experiencing any other symptoms, such as a severe headache with a fever or a stiff neck?
+A11  I have a severe headache and blurred vision since this morning. I don't know.
+
+Q12  Are you currently experiencing any other symptoms, such as a severe headache with a fever or a stiff neck?
+A12  I have a severe headache and blurred vision since this morning. I don't know.
+
+DECISION {"done": true, "decision": "level 2", "reason": "The patient is pregnant and presents with a severe headache and blurred vision, which are high-risk symptoms for a pregnant patient (potential preeclampsia).", "citation": "page 14"}
+OUTCOME level 2 or floor | expected at least ESI-2 | pass True | label None | max prompt tokens 30131

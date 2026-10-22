@@ -1,0 +1,54 @@
+{"t": "02:50:12", "kind": "engine", "note": "session EAGLE-1766 started (web)"}
+{"t": "02:50:15", "kind": "question", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "Is the patient awake and responding to you normally? Also, is he or she experiencing any chest pain, trouble breathing, or heavy bleeding right now?", "fields": ["danger_signs.responsive", "danger_signs.chest_pain_now"], "offered": ["danger_signs.responsive", "danger_signs.chest_pain_now", "danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text"]}
+{"t": "02:50:15", "kind": "answer", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "Yes, the patient is awake and responding normally. No, the patient is not having chest pain right now."}
+{"t": "02:50:20", "kind": "extract", "writes": [["danger_signs.responsive", true], ["danger_signs.chest_pain_now", false]]}
+{"t": "02:50:23", "kind": "question", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category", "text": "I'm glad to hear they are alert. Is the patient having any trouble breathing or heavy bleeding right now? Also, what is the main reason you are bringing them in?", "fields": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category"], "offered": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text", "complaint.onset", "E.mechanism"]}
+{"t": "02:50:23", "kind": "answer", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category", "text": "No, the patient is not having trouble breathing right now. No, the patient is not bleeding heavily right now. My son has been constipated and says his whole stomach hurts."}
+{"t": "02:50:38", "kind": "extract", "writes": [["danger_signs.breathing_difficulty", false], ["danger_signs.heavy_bleeding", false], ["complaint.category", "abdominal_pain"], ["complaint.text", "My son has been constipated and says his whole stomach hurts."], ["patient.sex", "male"]]}
+{"t": "02:50:38", "kind": "extract", "writes": [["E.mechanism", "none"]], "via": "derived-non-injury"}
+{"t": "02:50:41", "kind": "question", "slot": "dyn:complaint.onset+patient.age", "text": "I understand he has stomach pain. How old is your son, and when did the pain start?", "fields": ["complaint.onset", "patient.age"], "offered": ["complaint.onset", "patient.age", "complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts"]}
+{"t": "02:50:41", "kind": "answer", "slot": "dyn:complaint.onset+patient.age", "text": "Today he says his whole stomach hurts, about 7/10, but he is awake and talking with you. The patient is 10 years old."}
+{"t": "02:50:58", "kind": "extract", "writes": [["complaint.onset", "today"], ["patient.age", 10], ["danger_signs.responsive", true], ["complaint.text", "his whole stomach hurts"], ["complaint.pain_rating", 7]]}
+{"t": "02:50:58", "kind": "engine", "consider": ["B-02.severe-pain-consider"]}
+{"t": "02:51:01", "kind": "question", "slot": "dyn:complaint.fever+infection.rash", "text": "I've noted the stomach pain. Does he have a fever or any new rashes on his body?", "fields": ["complaint.fever", "infection.rash"], "offered": ["complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts", "complaint.uti_symptoms", "ams.changed_from_baseline"]}
+{"t": "02:51:01", "kind": "answer", "slot": "dyn:complaint.fever+infection.rash", "text": "No, the patient does not have fever. I do not know whether the patient has a rash."}
+{"t": "02:51:05", "kind": "extract", "writes": [["complaint.fever", false]]}
+{"t": "02:51:08", "kind": "question", "slot": "dyn:infection.rash", "text": "I understand. Have you noticed any new rashes on his skin?", "fields": ["infection.rash"], "offered": ["infection.rash"]}
+{"t": "02:51:08", "kind": "answer", "slot": "dyn:infection.rash", "text": "I do not know whether the patient has a rash."}
+{"t": "02:51:11", "kind": "extract", "writes": []}
+{"t": "02:51:14", "kind": "question", "slot": "dyn:infection.rash", "text": "I understand. To be clear, have you noticed any new rashes or spots on his skin?", "fields": ["infection.rash"], "offered": ["infection.rash"]}
+{"t": "02:51:14", "kind": "answer", "slot": "dyn:infection.rash", "text": "I do not know whether the patient has a rash."}
+{"t": "02:51:16", "kind": "extract", "writes": []}
+{"t": "02:51:19", "kind": "question", "slot": "dyn:infection.travel_14d+infection.contacts", "text": "I understand. Has he traveled outside the country or been in contact with anyone who is sick in the last two weeks?", "fields": ["infection.travel_14d", "infection.contacts"], "offered": ["infection.travel_14d", "infection.contacts", "complaint.uti_symptoms", "ams.changed_from_baseline", "complaint.pain_cause_class", "complaint.button_battery_or_magnet_ingestion"]}
+{"t": "02:51:19", "kind": "answer", "slot": "dyn:infection.travel_14d+infection.contacts", "text": "I do not know whether the patient travelled in the last 14 days. I do not know of any sick contacts."}
+{"t": "02:51:23", "kind": "extract", "writes": []}
+{"t": "02:51:26", "kind": "question", "slot": "dyn:infection.travel_14d", "text": "I understand. To be clear, has he been on any trips outside of the country in the last two weeks?", "fields": ["infection.travel_14d"], "offered": ["infection.travel_14d"]}
+{"t": "02:51:26", "kind": "answer", "slot": "dyn:infection.travel_14d", "text": "I do not know whether the patient travelled in the last 14 days."}
+{"t": "02:51:29", "kind": "extract", "writes": []}
+{"t": "02:51:32", "kind": "question", "slot": "dyn:infection.travel_14d", "text": "I understand. To be clear, has he been on any trips outside of the country in the last 14 days?", "fields": ["infection.travel_14d"], "offered": ["infection.travel_14d"]}
+{"t": "02:51:32", "kind": "answer", "slot": "dyn:infection.travel_14d", "text": "I do not know whether the patient travelled in the last 14 days."}
+{"t": "02:51:34", "kind": "extract", "writes": []}
+{"t": "02:51:37", "kind": "question", "slot": "dyn:infection.contacts", "text": "Has he been around anyone who was sick or had a contagious illness lately?", "fields": ["infection.contacts"], "offered": ["infection.contacts"]}
+{"t": "02:51:37", "kind": "answer", "slot": "dyn:infection.contacts", "text": "I do not know of any sick contacts."}
+{"t": "02:51:41", "kind": "extract", "writes": [["infection.contacts", false]]}
+{"t": "02:51:44", "kind": "question", "slot": "dyn:complaint.uti_symptoms", "text": "Does he have any pain or burning when he goes to the bathroom, or is his urine cloudy or smelly?", "fields": ["complaint.uti_symptoms"], "offered": ["complaint.uti_symptoms", "ams.changed_from_baseline", "complaint.pain_cause_class", "complaint.button_battery_or_magnet_ingestion", "complaint.known_toxic_ingestion", "complaint.severe_flank_pain"]}
+{"t": "02:51:44", "kind": "answer", "slot": "dyn:complaint.uti_symptoms", "text": "I don't know."}
+{"t": "02:51:47", "kind": "extract", "writes": []}
+{"t": "02:51:47", "kind": "extract", "writes": [["complaint.uti_symptoms", null]], "via": "dont-know"}
+{"t": "02:51:50", "kind": "question", "slot": "dyn:ams.changed_from_baseline", "text": "Is he acting differently than usual, such as being more confused or very sleepy?", "fields": ["ams.changed_from_baseline"], "offered": ["ams.changed_from_baseline", "complaint.pain_cause_class", "complaint.button_battery_or_magnet_ingestion", "complaint.known_toxic_ingestion", "complaint.severe_flank_pain", "complaint.vomiting"]}
+{"t": "02:51:50", "kind": "answer", "slot": "dyn:ams.changed_from_baseline", "text": "I do not know whether the patient is acting differently from usual."}
+{"t": "02:51:53", "kind": "extract", "writes": []}
+{"t": "02:51:56", "kind": "question", "slot": "dyn:ams.changed_from_baseline", "text": "Is he acting differently than usual, such as being more confused or very sleepy?", "fields": ["ams.changed_from_baseline"], "offered": ["ams.changed_from_baseline"]}
+{"t": "02:51:56", "kind": "answer", "slot": "dyn:ams.changed_from_baseline", "text": "I do not know whether the patient is acting differently from usual."}
+{"t": "02:51:58", "kind": "extract", "writes": []}
+{"t": "02:52:01", "kind": "question", "slot": "dyn:ams.changed_from_baseline", "text": "Is he having any trouble staying awake or seems confused lately?", "fields": ["ams.changed_from_baseline"], "offered": ["ams.changed_from_baseline"]}
+{"t": "02:52:01", "kind": "answer", "slot": "dyn:ams.changed_from_baseline", "text": "I do not know whether the patient is acting differently from usual."}
+{"t": "02:52:03", "kind": "extract", "writes": []}
+{"t": "02:52:07", "kind": "question", "slot": "dyn:complaint.pain_cause_class+complaint.button_battery_or_magnet_ingestion+complaint.known_toxic_ingestion", "text": "Does he have any known medical conditions, or is it possible he swallowed something like a button battery or any medication he shouldn't have?", "fields": ["complaint.pain_cause_class", "complaint.button_battery_or_magnet_ingestion", "complaint.known_toxic_ingestion"], "offered": ["complaint.pain_cause_class", "complaint.button_battery_or_magnet_ingestion", "complaint.known_toxic_ingestion", "complaint.severe_flank_pain", "complaint.vomiting", "M.medications"]}
+{"t": "02:52:07", "kind": "answer", "slot": "dyn:complaint.pain_cause_class+complaint.button_battery_or_magnet_ingestion+complaint.known_toxic_ingestion", "text": "I don't know."}
+{"t": "02:52:11", "kind": "extract", "writes": []}
+{"t": "02:52:11", "kind": "extract", "writes": [["complaint.pain_cause_class", null], ["complaint.button_battery_or_magnet_ingestion", null], ["complaint.known_toxic_ingestion", null]], "via": "dont-know"}
+{"t": "02:52:14", "kind": "question", "slot": "dyn:complaint.severe_flank_pain+complaint.vomiting", "text": "I understand. Is he experiencing any severe pain in his side or back, or has he been vomiting?", "fields": ["complaint.severe_flank_pain", "complaint.vomiting"], "offered": ["complaint.severe_flank_pain", "complaint.vomiting", "M.medications", "A.allergies", "history.conditions", "history.immunocompromised"]}
+{"t": "02:52:14", "kind": "answer", "slot": "dyn:complaint.severe_flank_pain+complaint.vomiting", "text": "No, the patient does not have vomiting."}
+{"t": "02:52:18", "kind": "extract", "writes": [["complaint.vomiting", false]]}
+{"t": "02:52:21", "kind": "question", "slot": "dyn:complaint.severe_flank_pain", "text": "Does he have any severe pain in his side or back area?", "fields": ["complaint.severe_flank_pain"], "offered": ["complaint.severe_flank_pain"]}

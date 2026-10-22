@@ -1,0 +1,28 @@
+arm B, form rules, persona P15-suicidal-thoughts, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  Is the patient awake and responding normally?
+A1  Yes, she's awake and talking.
+
+Q2  Is the patient having any chest pain right now?
+A2  I don't know.
+
+Q3  Is the patient having any trouble breathing right now?
+A3  I don't know.
+
+Q4  Is the patient bleeding heavily right now?
+A4  I don't know.
+
+Q5  What is the main reason the patient is coming to the emergency department?
+A5  My sister told me today she's been thinking about killing herself.
+
+Q6  Is the patient currently in a state of severe distress or is she acting in a way that suggests she might harm herself or others right now?
+A6  My sister told me today she's been thinking about killing herself.
+
+Q7  Is your sister currently in a state of severe distress, or is she acting in a way that suggests she might harm herself or others right now?
+A7  My sister told me today she's been thinking about killing herself.
+
+Q8  Is your sister currently in a state of severe distress, or is she acting in a way that suggests she might harm herself or others right now?
+A8  My sister told me today she's been thinking about killing herself.
+
+DECISION {"done": true, "decision": "at least ESI-2", "reason": "The patient is presenting with a mental health concern involving suicidal ideation, which is a high-risk situation.", "citation": "ESI v5 p.15 (Mental and Behavioral Health); Rule B-09.suicidal-or-homicidal"}
+OUTCOME level 2 or floor | expected at least ESI-2 | pass True | label None | max prompt tokens 43886

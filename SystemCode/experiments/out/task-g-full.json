@@ -1,0 +1,518 @@
+{
+ "n_rows": 560486,
+ "n_with_esi": 558029,
+ "arms": {
+  "history_only": {
+   "rows": 558029,
+   "claims_made": 16056,
+   "reach_pct": 2.88,
+   "consistent_with_recorded_1_2": 13274,
+   "consistent_pct_of_claims": 82.7,
+   "overshoot_floor_vs_recorded_3_5": 2782,
+   "overshoot_pct_of_floors": 17.3,
+   "overshoot_admit_rate": 25.7,
+   "control_admit_rate_recorded_3_5_no_claim": 18.3,
+   "recorded_1_2_total": 168805,
+   "recorded_1_2_caught": 13274,
+   "silent_miss": 155521,
+   "silent_miss_pct_of_recorded_1_2": 92.1,
+   "rows_with_no_evaluable_rule": 11,
+   "unique_signatures": 6291,
+   "d_reconsider_rows": 2522,
+   "per_rule": {
+    "B-05.stroke-signs": {
+     "fires": 2187,
+     "recorded_esi": {
+      "1": 805,
+      "2": 1372,
+      "3": 10
+     },
+     "below_floor_pct": 0.5,
+     "admit_rate": 89.8
+    },
+    "B-07.immunocompromised-fever": {
+     "fires": 625,
+     "recorded_esi": {
+      "1": 2,
+      "2": 530,
+      "3": 91,
+      "4": 1,
+      "5": 1
+     },
+     "below_floor_pct": 14.9,
+     "admit_rate": 81.6
+    },
+    "B-09.suicidal-or-homicidal": {
+     "fires": 8286,
+     "recorded_esi": {
+      "1": 13,
+      "2": 8019,
+      "3": 235,
+      "4": 13,
+      "5": 6
+     },
+     "below_floor_pct": 3.1,
+     "admit_rate": 38.3
+    },
+    "B-15.high-risk-epistaxis": {
+     "fires": 173,
+     "recorded_esi": {
+      "2": 67,
+      "3": 79,
+      "4": 24,
+      "5": 3
+     },
+     "below_floor_pct": 61.3,
+     "admit_rate": 46.2
+    },
+    "B-17.abdo-pain-pregnant-or-postpartum": {
+     "fires": 2051,
+     "recorded_esi": {
+      "2": 647,
+      "3": 1388,
+      "4": 14,
+      "5": 2
+     },
+     "below_floor_pct": 68.5,
+     "admit_rate": 7.4
+    },
+    "B-21.abdo-pain-vaginal-bleeding": {
+     "fires": 383,
+     "recorded_esi": {
+      "2": 83,
+      "3": 297,
+      "4": 2,
+      "5": 1
+     },
+     "below_floor_pct": 78.3,
+     "admit_rate": 8.1
+    },
+    "B-26.suspected-toxic-ingestion": {
+     "fires": 1259,
+     "recorded_esi": {
+      "1": 63,
+      "2": 1059,
+      "3": 130,
+      "4": 7
+     },
+     "below_floor_pct": 10.9,
+     "admit_rate": 47.7
+    },
+    "B-30.anticoagulated-trauma": {
+     "fires": 1298,
+     "recorded_esi": {
+      "1": 17,
+      "2": 718,
+      "3": 513,
+      "4": 45,
+      "5": 5
+     },
+     "below_floor_pct": 43.4,
+     "admit_rate": 83.8
+    },
+    "B-38.pregnant-chest-pain-breathlessness-abdo-pain-or-headache": {
+     "fires": 2051,
+     "recorded_esi": {
+      "2": 647,
+      "3": 1388,
+      "4": 14,
+      "5": 2
+     },
+     "below_floor_pct": 68.5,
+     "admit_rate": 7.4
+    },
+    "D-05.context-immunosuppression-consider": {
+     "fires": 2522,
+     "recorded_esi": {
+      "1": 23,
+      "2": 1544,
+      "3": 836,
+      "4": 88,
+      "5": 31
+     },
+     "below_floor_pct": 37.9,
+     "admit_rate": 90.7
+    }
+   },
+   "coverage_by_presenting_complaint": {
+    "(no mapped complaint)": {
+     "rows": 369908,
+     "claims": 9225,
+     "rec_1_2": 107464,
+     "claim_pct": 2.5
+    },
+    "abdominal_pain": {
+     "rows": 55533,
+     "claims": 2369,
+     "rec_1_2": 8554,
+     "claim_pct": 4.3
+    },
+    "injury_fall": {
+     "rows": 43899,
+     "claims": 1348,
+     "rec_1_2": 10379,
+     "claim_pct": 3.1
+    },
+    "chest_pain": {
+     "rows": 35694,
+     "claims": 111,
+     "rec_1_2": 18893,
+     "claim_pct": 0.3
+    },
+    "breathing": {
+     "rows": 28665,
+     "claims": 23,
+     "rec_1_2": 16500,
+     "claim_pct": 0.1
+    },
+    "dizziness": {
+     "rows": 11825,
+     "claims": 12,
+     "rec_1_2": 3628,
+     "claim_pct": 0.1
+    },
+    "sore_throat": {
+     "rows": 7291,
+     "claims": 1,
+     "rec_1_2": 136,
+     "claim_pct": 0.0
+    },
+    "neuro_symptoms": {
+     "rows": 2179,
+     "claims": 2179,
+     "rec_1_2": 2170,
+     "claim_pct": 100.0
+    },
+    "nosebleed": {
+     "rows": 1934,
+     "claims": 172,
+     "rec_1_2": 448,
+     "claim_pct": 8.9
+    },
+    "fever": {
+     "rows": 1101,
+     "claims": 616,
+     "rec_1_2": 633,
+     "claim_pct": 55.9
+    }
+   }
+  },
+  "with_vitals": {
+   "rows": 558029,
+   "claims_made": 16726,
+   "reach_pct": 3.0,
+   "consistent_with_recorded_1_2": 13850,
+   "consistent_pct_of_claims": 82.8,
+   "overshoot_floor_vs_recorded_3_5": 2782,
+   "overshoot_pct_of_floors": 17.3,
+   "overshoot_admit_rate": 25.7,
+   "control_admit_rate_recorded_3_5_no_claim": 18.3,
+   "recorded_1_2_total": 168805,
+   "recorded_1_2_caught": 13850,
+   "silent_miss": 154949,
+   "silent_miss_pct_of_recorded_1_2": 91.8,
+   "rows_with_no_evaluable_rule": 7,
+   "unique_signatures": 357777,
+   "d_reconsider_rows": 77149,
+   "per_rule": {
+    "A-12.severe-brady-or-tachycardia": {
+     "fires": 682,
+     "recorded_esi": {
+      "1": 41,
+      "2": 547,
+      "3": 85,
+      "4": 9
+     },
+     "below_floor_pct": 13.8,
+     "admit_rate": 65.8
+    },
+    "B-05.stroke-signs": {
+     "fires": 2187,
+     "recorded_esi": {
+      "1": 805,
+      "2": 1372,
+      "3": 10
+     },
+     "below_floor_pct": 0.5,
+     "admit_rate": 89.8
+    },
+    "B-07.immunocompromised-fever": {
+     "fires": 625,
+     "recorded_esi": {
+      "1": 2,
+      "2": 530,
+      "3": 91,
+      "4": 1,
+      "5": 1
+     },
+     "below_floor_pct": 14.9,
+     "admit_rate": 81.6
+    },
+    "B-09.suicidal-or-homicidal": {
+     "fires": 8286,
+     "recorded_esi": {
+      "1": 13,
+      "2": 8019,
+      "3": 235,
+      "4": 13,
+      "5": 6
+     },
+     "below_floor_pct": 3.1,
+     "admit_rate": 38.3
+    },
+    "B-15.high-risk-epistaxis": {
+     "fires": 173,
+     "recorded_esi": {
+      "2": 67,
+      "3": 79,
+      "4": 24,
+      "5": 3
+     },
+     "below_floor_pct": 61.3,
+     "admit_rate": 46.2
+    },
+    "B-17.abdo-pain-pregnant-or-postpartum": {
+     "fires": 2051,
+     "recorded_esi": {
+      "2": 647,
+      "3": 1388,
+      "4": 14,
+      "5": 2
+     },
+     "below_floor_pct": 68.5,
+     "admit_rate": 7.4
+    },
+    "B-21.abdo-pain-vaginal-bleeding": {
+     "fires": 383,
+     "recorded_esi": {
+      "2": 83,
+      "3": 297,
+      "4": 2,
+      "5": 1
+     },
+     "below_floor_pct": 78.3,
+     "admit_rate": 8.1
+    },
+    "B-26.suspected-toxic-ingestion": {
+     "fires": 1259,
+     "recorded_esi": {
+      "1": 63,
+      "2": 1059,
+      "3": 130,
+      "4": 7
+     },
+     "below_floor_pct": 10.9,
+     "admit_rate": 47.7
+    },
+    "B-30.anticoagulated-trauma": {
+     "fires": 1298,
+     "recorded_esi": {
+      "1": 17,
+      "2": 718,
+      "3": 513,
+      "4": 45,
+      "5": 5
+     },
+     "below_floor_pct": 43.4,
+     "admit_rate": 83.8
+    },
+    "B-38.pregnant-chest-pain-breathlessness-abdo-pain-or-headache": {
+     "fires": 2051,
+     "recorded_esi": {
+      "2": 647,
+      "3": 1388,
+      "4": 14,
+      "5": 2
+     },
+     "below_floor_pct": 68.5,
+     "admit_rate": 7.4
+    },
+    "D-01.adult-danger-zone": {
+     "fires": 75100,
+     "recorded_esi": {
+      "1": 371,
+      "2": 28439,
+      "3": 33420,
+      "4": 11517,
+      "5": 1353
+     },
+     "below_floor_pct": 61.6,
+     "admit_rate": 37.9
+    },
+    "D-05.context-immunosuppression-consider": {
+     "fires": 2522,
+     "recorded_esi": {
+      "1": 23,
+      "2": 1544,
+      "3": 836,
+      "4": 88,
+      "5": 31
+     },
+     "below_floor_pct": 37.9,
+     "admit_rate": 90.7
+    },
+    "D-11.spo2-below-92-any-age": {
+     "fires": 3566,
+     "recorded_esi": {
+      "1": 79,
+      "2": 2503,
+      "3": 843,
+      "4": 121,
+      "5": 20
+     },
+     "below_floor_pct": 27.6,
+     "admit_rate": 75.4
+    }
+   },
+   "coverage_by_presenting_complaint": {
+    "(no mapped complaint)": {
+     "rows": 369908,
+     "claims": 9693,
+     "rec_1_2": 107464,
+     "claim_pct": 2.6
+    },
+    "abdominal_pain": {
+     "rows": 55533,
+     "claims": 2412,
+     "rec_1_2": 8554,
+     "claim_pct": 4.3
+    },
+    "injury_fall": {
+     "rows": 43899,
+     "claims": 1364,
+     "rec_1_2": 10379,
+     "claim_pct": 3.1
+    },
+    "chest_pain": {
+     "rows": 35694,
+     "claims": 180,
+     "rec_1_2": 18893,
+     "claim_pct": 0.5
+    },
+    "breathing": {
+     "rows": 28665,
+     "claims": 81,
+     "rec_1_2": 16500,
+     "claim_pct": 0.3
+    },
+    "dizziness": {
+     "rows": 11825,
+     "claims": 25,
+     "rec_1_2": 3628,
+     "claim_pct": 0.2
+    },
+    "sore_throat": {
+     "rows": 7291,
+     "claims": 4,
+     "rec_1_2": 136,
+     "claim_pct": 0.1
+    },
+    "neuro_symptoms": {
+     "rows": 2179,
+     "claims": 2179,
+     "rec_1_2": 2170,
+     "claim_pct": 100.0
+    },
+    "nosebleed": {
+     "rows": 1934,
+     "claims": 172,
+     "rec_1_2": 448,
+     "claim_pct": 8.9
+    },
+    "fever": {
+     "rows": 1101,
+     "claims": 616,
+     "rec_1_2": 633,
+     "claim_pct": 55.9
+    }
+   }
+  }
+ },
+ "delta": {
+  "rows_newly_claimed_with_vitals": 670,
+  "of_which_recorded_1_2": 576,
+  "of_which_recorded_3_5": 94,
+  "d_reconsider_rows": 77149,
+  "d_reconsider_recorded_esi": {
+   "1": 391,
+   "2": 29667,
+   "3": 34111,
+   "4": 11597,
+   "5": 1383
+  }
+ },
+ "not_mapped": {
+  "complaint.acs_suspicion": "judgment field - cc_chestpain does not establish ACS features",
+  "obs.*": "eyes-on findings - no examination columns in Yale (cc_unresponsive is a reason for visit)",
+  "complaint.pain_rating": "no pain score column",
+  "E.head_strike / E.loc / fall height": "not recorded"
+ },
+ "mapping": {
+  "cc_to_category": {
+   "cc_chestpain": "chest_pain",
+   "cc_abdominalpain": "abdominal_pain",
+   "cc_abdominalpainpregnant": "abdominal_pain",
+   "cc_fall": "injury_fall",
+   "cc_fall>65": "injury_fall",
+   "cc_fever": "fever",
+   "cc_feverimmunocompromised": "fever",
+   "cc_sorethroat": "sore_throat",
+   "cc_dizziness": "dizziness",
+   "cc_epistaxis": "nosebleed",
+   "cc_shortnessofbreath": "breathing",
+   "cc_breathingdifficulty": "breathing",
+   "cc_dyspnea": "breathing",
+   "cc_strokealert": "neuro_symptoms",
+   "cc_motorvehiclecrash": "injury_fall",
+   "cc_assaultvictim": "injury_fall"
+  },
+  "mechanism": {
+   "cc_fall": "fall",
+   "cc_fall>65": "fall",
+   "cc_motorvehiclecrash": "road_accident",
+   "cc_assaultvictim": "assault"
+  },
+  "flag_facts": {
+   "cc_strokealert": [
+    "complaint.stroke_signs",
+    true
+   ],
+   "cc_suicidal": [
+    "complaint.danger_to_self_or_others",
+    true
+   ],
+   "cc_vaginalbleeding": [
+    "complaint.vaginal_bleeding",
+    true
+   ],
+   "cc_overdose-intentional": [
+    "complaint.known_toxic_ingestion",
+    true
+   ],
+   "cc_overdose-accidental": [
+    "complaint.known_toxic_ingestion",
+    true
+   ],
+   "cc_abdominalpainpregnant": [
+    "history.pregnant_or_postpartum",
+    true
+   ],
+   "cc_fever": [
+    "complaint.fever",
+    true
+   ],
+   "cc_feverimmunocompromised": [
+    "complaint.fever",
+    true
+   ]
+  },
+  "other": [
+   "meds_anticoagulants>=1 -> M.anticoagulant confirmed",
+   "meds_immunosuppressants>=1 -> M.immunosuppressant_or_steroid",
+   "cc_feverimmunocompromised|hivinfectn|maintchemr -> history.immunocompromised",
+   "coaghemrdx -> history.thrombocytopenia_or_clotting_disorder",
+   "age -> patient.age",
+   "arm 2: hr/rr/o2/sbp/temp -> vitals.*; extreme HR = >150 or <40; hypotension = SBP<90 (documented assumptions)"
+  ]
+ }
+}

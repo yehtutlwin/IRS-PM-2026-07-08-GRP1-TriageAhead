@@ -1,0 +1,52 @@
+arm B, form rules, persona CH-I29-03-possible-ectopic, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  Is the patient awake and responding normally?
+A1  Yes, the patient is awake and responding normally.
+
+Q2  Is the patient experiencing chest pain right now?
+A2  No, the patient is not having chest pain right now.
+
+Q3  Is the patient having any trouble breathing right now?
+A3  No, the patient is not having trouble breathing right now.
+
+Q4  Is the patient bleeding heavily right now?
+A4  No, the patient is not bleeding heavily right now.
+
+Q5  What is the main reason the patient is coming to the emergency department?
+A5  I have sharp pain low on the right side of my abdomen and some spotting.
+
+Q6  Are you currently pregnant or have you recently given birth?
+A6  Yes, the patient has pregnancy.
+
+Q7  Is the patient's pain very severe, for example, a 7 out of 10 or higher?
+A7  I don't know.
+
+Q8  Is the pain in the abdomen constant or did it reach its maximum intensity the moment it started?
+A8  I don't know.
+
+Q9  Is the patient's pain a result of a systemic issue, such as a kidney stone or a cancer?
+A9  I don't know.
+
+Q10  Is the patient's pain a result of a systemic issue, such as a kidney stone or a cancer?
+A10  I don't know.
+
+Q11  Is the patient's pain a result of a systemic issue, such as a kidney stone or a cancer?
+A11  I don't know.
+
+Q12  Is the patient having any vaginal bleeding?
+A12  Yes, the patient has vaginal bleeding.
+
+Q13  Is the patient's pain constant or did it reach its maximum intensity the moment it started?
+A13  I don't know.
+
+Q14  Is the patient's pain a result of a systemic issue, such as a kidney stone or a cancer?
+A14  I don't know.
+
+Q15  Is the patient's vaginal bleeding heavy, such as soaking through a pad in an hour or with large clots?
+A15  No, the patient is not bleeding heavily right now.
+
+Q16  Is the patient's pain a result of a systemic issue, such as a kidney stone or a cancer?
+A16  I don't know.
+
+DECISION {"decision": "unparsed", "reason": "turn limit reached without a decision"}
+OUTCOME no decision in 16 questions | expected at least ESI-2 | pass False | label missing fact | max prompt tokens 44104

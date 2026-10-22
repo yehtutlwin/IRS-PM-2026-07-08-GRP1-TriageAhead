@@ -1,0 +1,24 @@
+session OTTER-3378   started 2026-09-26 03:49   (generated from messages)
+
+03:49:05  BOT  Is the person awake and responding normally right now? Also, do they have severe chest pain, trouble breathing, or heavy bleeding?   [slot dyn:red_flags.responsive+red_flags.chest_pain_now+red_flags.breathing_difficulty+red_flags.heavy_bleeding]
+03:49:06  THEM Yes, she is back to normal, awake, and talking clearly with no pain. She does not have chest pain, trouble breathing, or heavy bleeding.   [slot dyn:red_flags.responsive+red_flags.chest_pain_now+red_flags.breathing_difficulty+red_flags.heavy_bleeding]
+03:49:08  BOT  She sounds much better now. Could you tell us what happened to her and when it started?   [slot dyn:complaint.category]
+03:49:09  THEM This morning around 9am, my mother's speech suddenly went slurred and her left arm became weak, unable to lift her teacup. The episode lasted about 45 minutes before passing completely.   [slot dyn:complaint.category]
+03:49:12  SYS  floor: at least ESI-2  rules: ['B-05.stroke-signs'] (floor)
+03:49:13  BOT  At any point today, did you notice her face drooping on one side, an arm going weak or numb, or slurred speech?   [slot dyn:stroke.face_droop]
+03:49:14  THEM Yes, around 9am this morning her speech suddenly went slurred and her left arm went weak so she could not lift her teacup. It lasted about 45 minutes before passing completely.   [slot dyn:stroke.face_droop]
+03:49:16  BOT  Did you notice her face drooping on one side at any point today?   [slot dyn:stroke.face_droop]
+03:49:18  THEM I don't know if her face was drooping, but she couldn't lift her left arm and her speech went slurred this morning. It lasted about 45 minutes before she was back to normal.   [slot dyn:stroke.face_droop]
+03:49:20  BOT  Can you tell us exactly what happened and when it started?   [slot dyn:E.mechanism]
+03:49:21  THEM My mom's speech suddenly went slurred and her left arm became weak this morning around 9am. It lasted about 45 minutes before passing completely.   [slot dyn:E.mechanism]
+03:49:24  BOT  Did she have any pain during those symptoms, and if so, how bad was it on a scale from 0 to 10?   [slot dyn:complaint.pain_rating]
+03:49:25  THEM No, she had no pain during the episode.   [slot dyn:complaint.pain_rating]
+03:49:27  BOT  Does she take any regular medications?   [slot dyn:M.medications]
+03:49:28  THEM She takes one aspirin daily. She does not take anything else.   [slot dyn:M.medications]
+03:49:30  BOT  Does she have any allergies to medicines, and does she have other medical conditions like heart problems, diabetes, pregnancy, or anything affecting her immune system?   [slot dyn:A.allergies]
+03:49:31  THEM She has no medicine allergies. Her only other condition is the stroke she had two years ago; she doesn't have heart problems, diabetes, pregnancy, or immune issues.   [slot dyn:A.allergies]
+03:49:34  BOT  Has she had a fever, rash, been traveling overseas, or been around anyone who is sick in the last two weeks?   [slot dyn:infection.fever+infection.rash+infection.travel_14d+infection.contacts]
+03:49:34  THEM No, she has no fever or rash, hasn't traveled, and hasn't been around anyone sick.   [slot dyn:infection.fever+infection.rash+infection.travel_14d+infection.contacts]
+03:49:37  BOT  When was she last able to eat or drink, and could you please provide her name and date of birth for our records?   [slot dyn:L.last_intake+identity.name+identity.dob]
+03:49:38  THEM She ate breakfast at 8am, but I don't know her specific name; her date of birth is March 15, 1938.   [slot dyn:L.last_intake+identity.name+identity.dob]
+03:49:40  BOT  Thank you - that's everything for now. Show the code OTTER-3378 at the counter when you arrive. (ack)

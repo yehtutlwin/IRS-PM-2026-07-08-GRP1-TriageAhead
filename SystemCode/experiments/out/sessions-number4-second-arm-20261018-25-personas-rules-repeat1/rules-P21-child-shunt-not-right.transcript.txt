@@ -1,0 +1,52 @@
+arm B, form rules, persona P21-child-shunt-not-right, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  Is the patient awake and responding normally?
+A1  She's awake and she answers when I talk to her, but she's very sleepy.
+
+Q2  Is she having any chest pain right now?
+A2  No.
+
+Q3  Is she having any trouble breathing right now?
+A3  No, she's breathing normally.
+
+Q4  Is she bleeding heavily right now?
+A4  No.
+
+Q5  How old is the patient?
+A5  She's 4.
+
+Q6  Is the child's sleepiness a new change, or is she usually this sleepy?
+A6  Yes, she's much sleepier than usual and not herself.
+
+Q7  Is the child's sleepiness a new change, or is she usually this sleepy?
+A7  Yes, she's much sleepier than usual and not herself.
+
+Q8  Is the child's sleepiness accompanied by any other symptoms, like a fever or a cough?
+A8  No.
+
+Q9  Is the child's sleepiness a new change, or is she usually this sleepy?
+A9  Yes, she's much sleepier than usual and not herself.
+
+Q10  Is the child's sleepiness accompanied by any other symptoms, like a fever or a cough?
+A10  No.
+
+Q11  Is the child's sleepiness a result of a recent injury, such as a fall or a hit to the head?
+A11  No.
+
+Q12  Is the child's sleepiness a result of a recent injury, such as a fall or a hit to the head?
+A12  No.
+
+Q13  Is the child's sleepiness a new change, or is she usually this sleepy?
+A13  Yes, she's much sleepier than usual and not herself.
+
+Q14  Is the child's sleepiness a result of a recent injury, such as a fall or a hit to the head?
+A14  No.
+
+Q15  Is the child's sleepiness a result of a recent injury, such as a fall or a hit to the head?
+A15  No.
+
+Q16  Is the child's sleepiness a new change, or is she usually this sleepy?
+A16  Yes, she's much sleepier than usual and not herself.
+
+DECISION {"decision": "unparsed", "reason": "turn limit reached without a decision"}
+OUTCOME no decision in 16 questions | expected at least ESI-2 | pass False | label missing fact | max prompt tokens 44092

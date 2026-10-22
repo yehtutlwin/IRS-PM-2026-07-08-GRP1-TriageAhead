@@ -1,0 +1,599 @@
+{
+ "sid": "LOTUS-9447",
+ "facts": {
+  "danger_signs.responsive": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-15 17:40"
+  },
+  "danger_signs.chest_pain_now": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-15 17:40"
+  },
+  "danger_signs.breathing_difficulty": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-15 17:40"
+  },
+  "danger_signs.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-15 17:40"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "abdominal_pain",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 4,
+      "ts": "2026-10-15 17:41"
+     },
+     "text": {
+      "value": "pain in lower abdomen",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 17,
+      "ts": "2026-10-15 17:43"
+     },
+     "onset": {
+      "value": "this morning",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 5,
+      "ts": "2026-10-15 17:41"
+     },
+     "onset_abs": {
+      "value": "~2026-10-15 morning",
+      "status": "reported",
+      "who": "derived",
+      "turn": 5,
+      "ts": "2026-10-15 17:41"
+     },
+     "pain_rating": {
+      "value": 8,
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 15,
+      "ts": "2026-10-15 17:43"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 4
+  },
+  "complaint.category": {
+   "value": [
+    "abdominal_pain"
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 17,
+   "ts": "2026-10-15 17:43"
+  },
+  "complaint.text": {
+   "value": "pain in lower abdomen",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 17,
+   "ts": "2026-10-15 17:43"
+  },
+  "E.mechanism": {
+   "value": "none",
+   "status": "reported",
+   "who": "derived",
+   "turn": 4,
+   "ts": "2026-10-15 17:41"
+  },
+  "patient.age": {
+   "value": 40,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 5,
+   "ts": "2026-10-15 17:41"
+  },
+  "complaint.onset": {
+   "value": "this morning",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 5,
+   "ts": "2026-10-15 17:41"
+  },
+  "complaint.onset_abs": {
+   "value": "~2026-10-15 morning (from 'this morning' said 17:41)",
+   "status": "reported",
+   "who": "derived",
+   "turn": 5,
+   "ts": "2026-10-15 17:41"
+  },
+  "patient.age_group": {
+   "value": "adult",
+   "status": "reported",
+   "who": "derived",
+   "turn": 5,
+   "ts": "2026-10-15 17:41"
+  },
+  "patient.sex": {
+   "value": "female",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 6,
+   "ts": "2026-10-15 17:41"
+  },
+  "history.pregnant": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 7,
+   "ts": "2026-10-15 17:41"
+  },
+  "A.allergies": {
+   "value": [],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 8,
+   "ts": "2026-10-15 17:41"
+  },
+  "M.medications": {
+   "value": [
+    "pregnancy vitamins"
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 9,
+   "ts": "2026-10-15 17:42"
+  },
+  "identity.name": {
+   "value": "[Name]",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 13,
+   "ts": "2026-10-15 17:42"
+  },
+  "identity.dob": {
+   "value": "03 Sep 1986",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 13,
+   "ts": "2026-10-15 17:42"
+  },
+  "infection.rash": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 14,
+   "ts": "2026-10-15 17:42"
+  },
+  "infection.travel_14d": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 14,
+   "ts": "2026-10-15 17:42"
+  },
+  "complaint.pain_rating": {
+   "value": 8,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 17,
+   "ts": "2026-10-15 17:43"
+  },
+  "complaint.pain_latest": {
+   "value": 8,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 15,
+   "ts": "2026-10-15 17:43"
+  },
+  "complaint.vaginal_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 15,
+   "ts": "2026-10-15 17:43"
+  },
+  "infection.contacts": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 16,
+   "ts": "2026-10-15 17:43"
+  },
+  "complaint.pain_refractory_constant_or_maximal_onset": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 17,
+   "ts": "2026-10-15 17:43"
+  },
+  "E.abdominal_trauma": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 20,
+   "ts": "2026-10-15 17:44"
+  },
+  "L.last_intake": {
+   "value": "Dinner last night",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 21,
+   "ts": "2026-10-15 17:44"
+  },
+  "L.last_intake_abs": {
+   "value": "~2026-10-14 night (from 'Dinner last night' said 17:44)",
+   "status": "reported",
+   "who": "derived",
+   "turn": 21,
+   "ts": "2026-10-15 17:44"
+  }
+ },
+ "attempts": {
+  "danger_signs.responsive": 1,
+  "danger_signs.chest_pain_now": 2,
+  "danger_signs.breathing_difficulty": 1,
+  "danger_signs.heavy_bleeding": 1,
+  "complaint.category": 1,
+  "complaint.text": 1,
+  "complaint.onset": 1,
+  "patient.age": 1,
+  "patient.sex": 2,
+  "history.pregnant": 1,
+  "history.postpartum": 1,
+  "M.medications": 2,
+  "A.allergies": 1,
+  "history.conditions": 3,
+  "identity.name": 1,
+  "identity.dob": 1,
+  "infection.rash": 1,
+  "infection.travel_14d": 1,
+  "infection.contacts": 2,
+  "complaint.pain_rating": 1,
+  "complaint.vaginal_bleeding": 1,
+  "complaint.pain_refractory_constant_or_maximal_onset": 1,
+  "complaint.unilateral_lower_quadrant_pain": 3,
+  "E.abdominal_trauma": 1,
+  "L.last_intake": 1
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "Is the patient awake and responding normally? Also, is he or she experiencing any chest pain, trouble breathing, or heavy bleeding right now?",
+   "ts": "2026-10-15 17:40:22",
+   "kind": "question",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "caregiver",
+   "text": "I'm awake. No chest pain, trouble breathing, or bleeding.",
+   "ts": "2026-10-15 17:40:23",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Is the patient experiencing any pain in their chest at this moment?",
+   "ts": "2026-10-15 17:40:30",
+   "kind": "question",
+   "slot": "dyn:danger_signs.chest_pain_now"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, just the pain in my lower abdomen.",
+   "ts": "2026-10-15 17:40:31",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.chest_pain_now"
+  },
+  {
+   "role": "bot",
+   "text": "I've noted the abdominal pain. Is the patient having any trouble breathing or any heavy bleeding right now?",
+   "ts": "2026-10-15 17:40:44",
+   "kind": "question",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding"
+  },
+  {
+   "role": "caregiver",
+   "text": "No bleeding. No trouble breathing.",
+   "ts": "2026-10-15 17:40:46",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding"
+  },
+  {
+   "role": "bot",
+   "text": "I've noted the abdominal pain. Could you tell me more about what is happening and what the main problem is today?",
+   "ts": "2026-10-15 17:40:52",
+   "kind": "question",
+   "slot": "dyn:complaint.category+complaint.text"
+  },
+  {
+   "role": "caregiver",
+   "text": "It's my lower abdomen. The pain has been constant since this morning and it's getting worse.",
+   "ts": "2026-10-15 17:40:54",
+   "kind": "answer",
+   "slot": "dyn:complaint.category+complaint.text"
+  },
+  {
+   "role": "bot",
+   "text": "I understand the pain is getting worse. How old is the patient, and when exactly did this pain start?",
+   "ts": "2026-10-15 17:41:11",
+   "kind": "question",
+   "slot": "dyn:complaint.onset+patient.age+patient.sex"
+  },
+  {
+   "role": "caregiver",
+   "text": "I'm 40. It started this morning.",
+   "ts": "2026-10-15 17:41:12",
+   "kind": "answer",
+   "slot": "dyn:complaint.onset+patient.age+patient.sex"
+  },
+  {
+   "role": "bot",
+   "text": "Is the patient a man or a woman?",
+   "ts": "2026-10-15 17:41:19",
+   "kind": "question",
+   "slot": "dyn:patient.sex"
+  },
+  {
+   "role": "caregiver",
+   "text": "I'm a woman.",
+   "ts": "2026-10-15 17:41:20",
+   "kind": "answer",
+   "slot": "dyn:patient.sex"
+  },
+  {
+   "role": "bot",
+   "text": "Is she pregnant or has she given birth in the last few weeks?",
+   "ts": "2026-10-15 17:41:36",
+   "kind": "question",
+   "slot": "dyn:history.pregnant+history.postpartum"
+  },
+  {
+   "role": "caregiver",
+   "text": "I'm 28 weeks pregnant.",
+   "ts": "2026-10-15 17:41:38",
+   "kind": "answer",
+   "slot": "dyn:history.pregnant+history.postpartum"
+  },
+  {
+   "role": "system",
+   "text": "floor: at least ESI-2  rules: ['B-38.pregnant-chest-pain-breathlessness-abdo-pain-or-headache']",
+   "ts": "2026-10-15 17:41:41",
+   "kind": "floor"
+  },
+  {
+   "role": "bot",
+   "text": "I see she is 28 weeks pregnant. Does she have any allergies to medications, and is she currently taking any regular medications?",
+   "ts": "2026-10-15 17:41:45",
+   "kind": "question",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "caregiver",
+   "text": "No allergies. Just my pregnancy vitamins.",
+   "ts": "2026-10-15 17:41:46",
+   "kind": "answer",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "bot",
+   "text": "Could you tell me the names of any other medications she takes regularly? You can also send a photo of the boxes.",
+   "ts": "2026-10-15 17:41:53",
+   "kind": "question",
+   "slot": "dyn:M.medications"
+  },
+  {
+   "role": "caregiver",
+   "text": "Just my pregnancy vitamins.",
+   "ts": "2026-10-15 17:41:54",
+   "kind": "answer",
+   "slot": "dyn:M.medications"
+  },
+  {
+   "role": "bot",
+   "text": "Does she have any other ongoing medical conditions?",
+   "ts": "2026-10-15 17:42:10",
+   "kind": "question",
+   "slot": "dyn:history.conditions"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, just the pregnancy.",
+   "ts": "2026-10-15 17:42:11",
+   "kind": "answer",
+   "slot": "dyn:history.conditions"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Does she have any other medical conditions or health issues we should know about?",
+   "ts": "2026-10-15 17:42:17",
+   "kind": "question",
+   "slot": "dyn:history.conditions"
+  },
+  {
+   "role": "caregiver",
+   "text": "No other conditions besides the pregnancy.",
+   "ts": "2026-10-15 17:42:18",
+   "kind": "answer",
+   "slot": "dyn:history.conditions"
+  },
+  {
+   "role": "bot",
+   "text": "To make sure we have everything, are there any other medical conditions or health issues she has?",
+   "ts": "2026-10-15 17:42:23",
+   "kind": "question",
+   "slot": "dyn:history.conditions"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, just the pregnancy.",
+   "ts": "2026-10-15 17:42:24",
+   "kind": "answer",
+   "slot": "dyn:history.conditions"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. To help the team prepare, could you please tell me her full name and date of birth?",
+   "ts": "2026-10-15 17:42:30",
+   "kind": "question",
+   "slot": "dyn:identity.name+identity.dob"
+  },
+  {
+   "role": "caregiver",
+   "text": "My name is [Name] and my birthday is 03 Sep 1986.",
+   "ts": "2026-10-15 17:42:31",
+   "kind": "answer",
+   "slot": "dyn:identity.name+identity.dob"
+  },
+  {
+   "role": "bot",
+   "text": "That's enough for the hospital team to prepare. Show the code LOTUS-9447 at the counter when you arrive. I'll ask a few more things while you're on the way; tell me straight away if anything changes.",
+   "ts": "2026-10-15 17:42:36",
+   "kind": "ack"
+  },
+  {
+   "role": "bot",
+   "text": "Has she developed any new rashes, or has she traveled abroad or been in contact with anyone who is sick in the last two weeks?",
+   "ts": "2026-10-15 17:42:39",
+   "kind": "question",
+   "slot": "dyn:infection.rash+infection.travel_14d"
+  },
+  {
+   "role": "caregiver",
+   "text": "No rashes. No, I haven't traveled or been around anyone sick.",
+   "ts": "2026-10-15 17:42:41",
+   "kind": "answer",
+   "slot": "dyn:infection.rash+infection.travel_14d"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry, could you tell me how bad is her pain on a scale of 0 to 10, and is she experiencing any vaginal bleeding?",
+   "ts": "2026-10-15 17:42:51",
+   "kind": "question",
+   "slot": "dyn:infection.contacts+complaint.pain_rating+complaint.vaginal_bleeding"
+  },
+  {
+   "role": "caregiver",
+   "text": "It's an 8 out of 10. No bleeding.",
+   "ts": "2026-10-15 17:42:54",
+   "kind": "answer",
+   "slot": "dyn:infection.contacts+complaint.pain_rating+complaint.vaginal_bleeding"
+  },
+  {
+   "role": "bot",
+   "text": "To make sure we have everything, has she been around anyone who was sick or had a contagious illness recently?",
+   "ts": "2026-10-15 17:43:06",
+   "kind": "question",
+   "slot": "dyn:infection.contacts"
+  },
+  {
+   "role": "caregiver",
+   "text": "No.",
+   "ts": "2026-10-15 17:43:08",
+   "kind": "answer",
+   "slot": "dyn:infection.contacts"
+  },
+  {
+   "role": "bot",
+   "text": "Is her belly pain constant and not easing, and is it located on just one side of her lower abdomen?",
+   "ts": "2026-10-15 17:43:21",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_refractory_constant_or_maximal_onset+complaint.unilateral_lower_quadrant_pain"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, the pain is constant and getting worse. It's in my lower abdomen.",
+   "ts": "2026-10-15 17:43:23",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_refractory_constant_or_maximal_onset+complaint.unilateral_lower_quadrant_pain"
+  },
+  {
+   "role": "bot",
+   "text": "I understand the pain is getting worse. To clarify, is the pain located only on one side of her lower abdomen?",
+   "ts": "2026-10-15 17:43:40",
+   "kind": "question",
+   "slot": "dyn:complaint.unilateral_lower_quadrant_pain"
+  },
+  {
+   "role": "caregiver",
+   "text": "It's in my lower abdomen. It's getting worse.",
+   "ts": "2026-10-15 17:43:42",
+   "kind": "answer",
+   "slot": "dyn:complaint.unilateral_lower_quadrant_pain"
+  },
+  {
+   "role": "bot",
+   "text": "To make sure I have it right, is the pain located on just one side of her lower abdomen?",
+   "ts": "2026-10-15 17:43:50",
+   "kind": "question",
+   "slot": "dyn:complaint.unilateral_lower_quadrant_pain"
+  },
+  {
+   "role": "caregiver",
+   "text": "It's all over my lower abdomen. It's getting worse.",
+   "ts": "2026-10-15 17:43:51",
+   "kind": "answer",
+   "slot": "dyn:complaint.unilateral_lower_quadrant_pain"
+  },
+  {
+   "role": "bot",
+   "text": "I've noted the pain is in her lower abdomen. Was there any recent blow or injury to her belly?",
+   "ts": "2026-10-15 17:43:57",
+   "kind": "question",
+   "slot": "dyn:E.abdominal_trauma"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, no injury. Just the pain.",
+   "ts": "2026-10-15 17:43:59",
+   "kind": "answer",
+   "slot": "dyn:E.abdominal_trauma"
+  },
+  {
+   "role": "bot",
+   "text": "I've noted there was no injury. When was the last time she had anything to eat or drink?",
+   "ts": "2026-10-15 17:44:21",
+   "kind": "question",
+   "slot": "dyn:L.last_intake"
+  },
+  {
+   "role": "caregiver",
+   "text": "Dinner last night.",
+   "ts": "2026-10-15 17:44:23",
+   "kind": "answer",
+   "slot": "dyn:L.last_intake"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you - that's everything. Show the code LOTUS-9447 at the counter when you arrive.",
+   "ts": "2026-10-15 17:44:40",
+   "kind": "ack"
+  }
+ ],
+ "stage": "rest",
+ "floor": "at least ESI-2",
+ "phase": "enroute",
+ "created": "2026-10-15 17:40",
+ "pending_slot": "dyn:L.last_intake",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {},
+ "considered": [
+  "B-17.abdo-pain-pregnant-or-postpartum",
+  "B-02.severe-pain-consider",
+  "B-20.abdo-pain-refractory-constant-maximal"
+ ],
+ "qr_ready": true,
+ "qr_turn": 13,
+ "said_done": true
+}

@@ -1,0 +1,55 @@
+{"t": "01:00:22", "kind": "engine", "note": "session PANDA-7429 started (web)"}
+{"t": "01:01:11", "kind": "question", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "Is the patient awake and responding to you normally? Also, is he or she experiencing any chest pain, trouble breathing, or heavy bleeding right now?", "fields": ["danger_signs.responsive", "danger_signs.chest_pain_now"], "offered": ["danger_signs.responsive", "danger_signs.chest_pain_now", "danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text"]}
+{"t": "01:01:11", "kind": "answer", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "Yes, the patient is awake and responding normally. No, the patient is not having chest pain right now."}
+{"t": "01:01:34", "kind": "extract", "writes": [["danger_signs.responsive", true], ["danger_signs.chest_pain_now", false]]}
+{"t": "01:02:25", "kind": "question", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category", "text": "I'm glad to hear they are alert. Is the patient having any trouble breathing or heavy bleeding right now? Also, what is the main reason you are bringing them in?", "fields": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category"], "offered": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text", "complaint.onset", "E.mechanism"]}
+{"t": "01:02:25", "kind": "answer", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category", "text": "No, the patient is not having trouble breathing right now. No, the patient is not bleeding heavily right now. I have sharp pain low on the right side of my abdomen and some spotting."}
+{"t": "01:02:48", "kind": "extract", "writes": [["danger_signs.breathing_difficulty", false], ["danger_signs.heavy_bleeding", false], ["complaint.category", "abdominal_pain"]]}
+{"t": "01:02:48", "kind": "extract", "writes": [["E.mechanism", "none"]], "via": "derived-non-injury"}
+{"t": "01:03:37", "kind": "question", "slot": "dyn:complaint.text+complaint.onset", "text": "I understand there is sharp pain and spotting. Can you describe the pain in your own words and tell me when it started?", "fields": ["complaint.text", "complaint.onset"], "offered": ["complaint.text", "complaint.onset", "patient.age", "patient.sex", "complaint.fever", "infection.rash"]}
+{"t": "01:03:37", "kind": "answer", "slot": "dyn:complaint.text+complaint.onset", "text": "I have sharp pain low on the right side of my abdomen and some spotting. It began this afternoon and is getting worse."}
+{"t": "01:04:10", "kind": "extract", "writes": [["complaint.text", "sharp pain low on the right side of my abdomen and some spotting"], ["complaint.onset", "this afternoon"], ["complaint.unilateral_lower_quadrant_pain", true]]}
+{"t": "01:04:58", "kind": "question", "slot": "dyn:patient.age+patient.sex", "text": "I've noted the pain started this afternoon. To help the team prepare, could you tell me the patient's age and if they are male or female?", "fields": ["patient.age", "patient.sex"], "offered": ["patient.age", "patient.sex", "complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts"]}
+{"t": "01:04:58", "kind": "answer", "slot": "dyn:patient.age+patient.sex", "text": "The patient is 29 years old. The patient is female."}
+{"t": "01:05:20", "kind": "extract", "writes": [["patient.age", 29], ["patient.sex", "female"]]}
+{"t": "01:06:08", "kind": "question", "slot": "dyn:history.pregnant+history.postpartum", "text": "I've noted she is 29. Is she currently pregnant or has she given birth in the last few weeks?", "fields": ["history.pregnant", "history.postpartum"], "offered": ["history.pregnant", "history.postpartum", "complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts"]}
+{"t": "01:06:08", "kind": "answer", "slot": "dyn:history.pregnant+history.postpartum", "text": "Yes, the patient has pregnancy."}
+{"t": "01:06:29", "kind": "extract", "writes": [["history.pregnant", true]]}
+{"t": "01:06:29", "kind": "floor", "floor": "at least ESI-2", "fired": ["B-38.pregnant-chest-pain-breathlessness-abdo-pain-or-headache"], "sources": ["ESI v5 p.14"]}
+{"t": "01:06:29", "kind": "engine", "consider": ["B-17.abdo-pain-pregnant-or-postpartum"]}
+{"t": "01:07:17", "kind": "question", "slot": "dyn:M.medications+A.allergies", "text": "I've noted she is pregnant. Does she have any allergies to medications, and what medicines does she take regularly?", "fields": ["M.medications", "A.allergies"], "offered": ["M.medications", "A.allergies", "history.conditions", "identity.name", "identity.dob"]}
+{"t": "01:07:17", "kind": "answer", "slot": "dyn:M.medications+A.allergies", "text": "I take no regular medicines. The patient has no known allergies."}
+{"t": "01:07:38", "kind": "extract", "writes": [["M.medications", []], ["A.allergies", []]]}
+{"t": "01:08:26", "kind": "question", "slot": "dyn:history.conditions", "text": "I've noted she has no allergies. Does she have any other ongoing medical conditions?", "fields": ["history.conditions"], "offered": ["history.conditions", "identity.name", "identity.dob"]}
+{"t": "01:08:26", "kind": "answer", "slot": "dyn:history.conditions", "text": "I do not know the patient\u2019s medical conditions."}
+{"t": "01:08:46", "kind": "extract", "writes": []}
+{"t": "01:08:46", "kind": "extract", "writes": [["history.conditions", null]], "via": "dont-know"}
+{"t": "01:09:35", "kind": "question", "slot": "dyn:identity.name+identity.dob", "text": "I've noted that. Could you please tell me her full name and date of birth?", "fields": ["identity.name", "identity.dob"], "offered": ["identity.name", "identity.dob"]}
+{"t": "01:09:35", "kind": "answer", "slot": "dyn:identity.name+identity.dob", "text": "I have not given the patient\u2019s name. I do not know the exact date of birth."}
+{"t": "01:09:55", "kind": "extract", "writes": []}
+{"t": "01:10:43", "kind": "question", "slot": "dyn:identity.name", "text": "Could you please tell me her full name?", "fields": ["identity.name"], "offered": ["identity.name"]}
+{"t": "01:10:43", "kind": "answer", "slot": "dyn:identity.name", "text": "I have not given the patient\u2019s name."}
+{"t": "01:11:04", "kind": "extract", "writes": []}
+{"t": "01:11:53", "kind": "question", "slot": "dyn:identity.name", "text": "I understand. Could you please tell me her name so I can get her information started?", "fields": ["identity.name"], "offered": ["identity.name"]}
+{"t": "01:11:53", "kind": "answer", "slot": "dyn:identity.name", "text": "I have not given the patient\u2019s name."}
+{"t": "01:12:13", "kind": "extract", "writes": []}
+{"t": "01:13:01", "kind": "question", "slot": "dyn:identity.dob", "text": "I understand. Could you please tell me her date of birth?", "fields": ["identity.dob"], "offered": ["identity.dob"]}
+{"t": "01:13:01", "kind": "answer", "slot": "dyn:identity.dob", "text": "I do not know the exact date of birth."}
+{"t": "01:13:22", "kind": "extract", "writes": []}
+{"t": "01:14:10", "kind": "question", "slot": "dyn:identity.dob", "text": "I understand. Could you please provide her birth date?", "fields": ["identity.dob"], "offered": ["identity.dob"]}
+{"t": "01:14:10", "kind": "answer", "slot": "dyn:identity.dob", "text": "I do not know the exact date of birth."}
+{"t": "01:14:30", "kind": "extract", "writes": []}
+{"t": "01:14:30", "kind": "engine", "note": "floor settled - report ready; remaining questions continue"}
+{"t": "01:15:18", "kind": "question", "slot": "dyn:complaint.fever+infection.rash", "text": "Does she have a fever or any new rashes?", "fields": ["complaint.fever", "infection.rash"], "offered": ["complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts", "complaint.pain_rating", "patient.has_ovaries"]}
+{"t": "01:15:18", "kind": "answer", "slot": "dyn:complaint.fever+infection.rash", "text": "No, the patient does not have fever. I do not know whether the patient has a rash."}
+{"t": "01:15:39", "kind": "extract", "writes": [["complaint.fever", false]]}
+{"t": "01:16:27", "kind": "question", "slot": "dyn:infection.rash", "text": "I understand about the fever. Does she have any new rashes on her skin?", "fields": ["infection.rash"], "offered": ["infection.rash"]}
+{"t": "01:16:27", "kind": "answer", "slot": "dyn:infection.rash", "text": "I do not know whether the patient has a rash."}
+{"t": "01:16:48", "kind": "extract", "writes": []}
+{"t": "01:17:35", "kind": "question", "slot": "dyn:infection.rash", "text": "I understand. Is there any new rash on her skin?", "fields": ["infection.rash"], "offered": ["infection.rash"]}
+{"t": "01:17:35", "kind": "answer", "slot": "dyn:infection.rash", "text": "I do not know whether the patient has a rash."}
+{"t": "01:17:55", "kind": "extract", "writes": []}
+{"t": "01:18:43", "kind": "question", "slot": "dyn:infection.travel_14d+infection.contacts", "text": "I understand. Has she traveled outside the country or been in contact with anyone who is sick in the last two weeks?", "fields": ["infection.travel_14d", "infection.contacts"], "offered": ["infection.travel_14d", "infection.contacts", "complaint.pain_rating", "patient.has_ovaries", "complaint.vaginal_bleeding", "complaint.pain_refractory_constant_or_maximal_onset"]}
+{"t": "01:18:43", "kind": "answer", "slot": "dyn:infection.travel_14d+infection.contacts", "text": "I do not know whether the patient travelled in the last 14 days. I do not know of any sick contacts."}
+{"t": "01:19:04", "kind": "extract", "writes": []}
+{"t": "01:19:52", "kind": "question", "slot": "dyn:infection.travel_14d", "text": "I understand. Has she traveled outside the country in the last 14 days?", "fields": ["infection.travel_14d"], "offered": ["infection.travel_14d"]}

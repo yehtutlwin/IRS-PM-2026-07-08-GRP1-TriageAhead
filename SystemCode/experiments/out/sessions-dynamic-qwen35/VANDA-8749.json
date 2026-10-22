@@ -1,0 +1,428 @@
+{
+ "sid": "VANDA-8749",
+ "facts": {
+  "red_flags.responsive": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-09-26 03:51"
+  },
+  "red_flags.chest_pain_now": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-09-26 03:51"
+  },
+  "red_flags.breathing_difficulty": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-09-26 03:51"
+  },
+  "red_flags.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-09-26 03:51"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "abdominal_pain",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "persona",
+      "turn": 2,
+      "ts": "2026-09-26 03:51"
+     }
+    },
+    {
+     "category": "other",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "persona",
+      "turn": 2,
+      "ts": "2026-09-26 03:51"
+     },
+     "text": {
+      "value": "abdomen got swollen over the last two days with yellow eyes, sleepiness, confusion, and shaky hands",
+      "status": "reported",
+      "who": "persona",
+      "turn": 4,
+      "ts": "2026-09-26 03:51"
+     },
+     "onset": {
+      "value": "over the last two days",
+      "status": "reported",
+      "who": "persona",
+      "turn": 4,
+      "ts": "2026-09-26 03:51"
+     },
+     "pain_rating": {
+      "value": 3,
+      "status": "reported",
+      "who": "persona",
+      "turn": 4,
+      "ts": "2026-09-26 03:51"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 2
+  },
+  "complaint.category": {
+   "value": [
+    "abdominal_pain",
+    "other"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 4,
+   "ts": "2026-09-26 03:51"
+  },
+  "complaint.text": {
+   "value": "abdomen got swollen over the last two days with yellow eyes, sleepiness, confusion, and shaky hands",
+   "status": "reported",
+   "who": "persona",
+   "turn": 4,
+   "ts": "2026-09-26 03:51"
+  },
+  "complaint.onset": {
+   "value": "over the last two days",
+   "status": "reported",
+   "who": "persona",
+   "turn": 4,
+   "ts": "2026-09-26 03:51"
+  },
+  "complaint.pain_rating": {
+   "value": 3,
+   "status": "reported",
+   "who": "persona",
+   "turn": 4,
+   "ts": "2026-09-26 03:51"
+  },
+  "complaint.pain_latest": {
+   "value": 3,
+   "status": "reported",
+   "who": "persona",
+   "turn": 4,
+   "ts": "2026-09-26 03:51"
+  },
+  "stroke.face_droop": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-09-26 03:51"
+  },
+  "stroke.arm_weakness": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-09-26 03:51"
+  },
+  "stroke.speech_change": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-09-26 03:51"
+  },
+  "ams.changed_from_baseline": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-09-26 03:51"
+  },
+  "obs.new_confusion_lethargy_disorientation": {
+   "value": true,
+   "status": "reported",
+   "who": "derived",
+   "turn": 3,
+   "ts": "2026-09-26 03:51"
+  },
+  "obs.subtle_mental_status_change": {
+   "value": true,
+   "status": "reported",
+   "who": "derived",
+   "turn": 3,
+   "ts": "2026-09-26 03:51"
+  },
+  "E.mechanism": {
+   "value": "none",
+   "status": "reported",
+   "who": "persona",
+   "turn": 4,
+   "ts": "2026-09-26 03:51"
+  },
+  "identity.name": {
+   "value": "he",
+   "status": "reported",
+   "who": "persona",
+   "turn": 4,
+   "ts": "2026-09-26 03:51"
+  },
+  "history.conditions": {
+   "value": [],
+   "status": "reported",
+   "who": "persona",
+   "turn": 8,
+   "ts": "2026-09-26 03:51"
+  },
+  "M.medications": {
+   "value": [
+    "lactulose",
+    "spironolactone",
+    "furosemide"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 7,
+   "ts": "2026-09-26 03:51"
+  },
+  "confirm.M.anticoagulant": {
+   "value": null,
+   "status": "reported",
+   "who": "persona",
+   "turn": 8,
+   "ts": "2026-09-26 03:51"
+  },
+  "A.allergies": {
+   "value": [],
+   "status": "reported",
+   "who": "persona",
+   "turn": 8,
+   "ts": "2026-09-26 03:51"
+  },
+  "history.immunocompromised": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 8,
+   "ts": "2026-09-26 03:51"
+  },
+  "infection.fever": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-09-26 03:51"
+  },
+  "infection.rash": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-09-26 03:51"
+  },
+  "infection.travel_14d": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-09-26 03:51"
+  },
+  "infection.contacts": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-09-26 03:51"
+  },
+  "L.last_intake": {
+   "value": "small bowl of rice at noon",
+   "status": "reported",
+   "who": "persona",
+   "turn": 6,
+   "ts": "2026-09-26 03:51"
+  },
+  "identity.dob": {
+   "value": "07 Jul 1968",
+   "status": "reported",
+   "who": "persona",
+   "turn": 6,
+   "ts": "2026-09-26 03:51"
+  },
+  "patient.age": {
+   "value": 58,
+   "status": "reported",
+   "who": "derived",
+   "turn": 6,
+   "ts": "2026-09-26 03:51"
+  },
+  "history.pregnant_or_postpartum": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 8,
+   "ts": "2026-09-26 03:51"
+  }
+ },
+ "attempts": {
+  "red_flags.responsive": 1,
+  "red_flags.chest_pain_now": 1,
+  "red_flags.breathing_difficulty": 1,
+  "red_flags.heavy_bleeding": 1,
+  "complaint.category": 1,
+  "stroke.face_droop": 1,
+  "stroke.arm_weakness": 1,
+  "stroke.speech_change": 1,
+  "E.mechanism": 1,
+  "M.medications": 1,
+  "A.allergies": 1,
+  "history.conditions": 1,
+  "history.immunocompromised": 1,
+  "infection.fever": 1,
+  "infection.rash": 1,
+  "infection.travel_14d": 1,
+  "history.pregnant_or_postpartum": 3,
+  "L.last_intake": 1,
+  "identity.dob": 1
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "Is the person awake and responding normally right now? Are they having severe chest pain, trouble breathing, or heavy bleeding?",
+   "ts": "2026-09-26 03:51:11",
+   "kind": "question",
+   "slot": "dyn:red_flags.responsive+red_flags.chest_pain_now+red_flags.breathing_difficulty+red_flags.heavy_bleeding"
+  },
+  {
+   "role": "caregiver",
+   "text": "He is awake but answers slowly; he is not having chest pain, trouble breathing, or heavy bleeding.",
+   "ts": "2026-09-26 03:51:12",
+   "kind": "answer",
+   "slot": "dyn:red_flags.responsive+red_flags.chest_pain_now+red_flags.breathing_difficulty+red_flags.heavy_bleeding"
+  },
+  {
+   "role": "bot",
+   "text": "Can you tell us what happened, when it started, and how bad the pain is on a scale from 0 to 10?",
+   "ts": "2026-09-26 03:51:15",
+   "kind": "question",
+   "slot": "dyn:complaint.category"
+  },
+  {
+   "role": "caregiver",
+   "text": "His symptoms of swelling, yellowing eyes, and confusion started worsening over the past two days. He reports mild abdominal discomfort at 3/10.",
+   "ts": "2026-09-26 03:51:16",
+   "kind": "answer",
+   "slot": "dyn:complaint.category"
+  },
+  {
+   "role": "bot",
+   "text": "Has he had any face drooping, arm weakness, or slurred speech today?",
+   "ts": "2026-09-26 03:51:19",
+   "kind": "question",
+   "slot": "dyn:stroke.face_droop+stroke.arm_weakness+stroke.speech_change"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, he has not had face drooping, arm weakness, or slurred speech today. He is awake and breathing normally but answers slowly.",
+   "ts": "2026-09-26 03:51:20",
+   "kind": "answer",
+   "slot": "dyn:stroke.face_droop+stroke.arm_weakness+stroke.speech_change"
+  },
+  {
+   "role": "system",
+   "text": "floor: at least ESI-2  rules: ['B-01.new-altered-mental-status']",
+   "ts": "2026-09-26 03:51:22",
+   "kind": "floor"
+  },
+  {
+   "role": "bot",
+   "text": "Can you tell us exactly what happened, when it started, how bad the pain is on a scale of 0 to 10, and also let us know if he takes any regular medicines or has any allergies or medical conditions like heart problems or diabetes?",
+   "ts": "2026-09-26 03:51:23",
+   "kind": "question",
+   "slot": "dyn:E.mechanism+M.medications+A.allergies+history.conditions"
+  },
+  {
+   "role": "caregiver",
+   "text": "He has cirrhosis from chronic hepatitis B; his abdomen got swollen over the last two days with yellow eyes, sleepiness, confusion, and shaky hands. He reports mild abdominal discomfort at 3/10 and takes lactulose, spironolactone, and furosemide but missed some doses, with no blood thinners or known allergies.",
+   "ts": "2026-09-26 03:51:25",
+   "kind": "answer",
+   "slot": "dyn:E.mechanism+M.medications+A.allergies+history.conditions"
+  },
+  {
+   "role": "bot",
+   "text": "Could you also tell us if he has any conditions that affect his immune system, like diabetes or heart problems, and if he has had a fever, rash, traveled overseas in the last two weeks, or been around anyone who is sick?",
+   "ts": "2026-09-26 03:51:29",
+   "kind": "question",
+   "slot": "dyn:history.immunocompromised+infection.fever+infection.rash+infection.travel_14d"
+  },
+  {
+   "role": "caregiver",
+   "text": "He does not have diabetes, heart problems, a fever, a rash, recent overseas travel, or exposure to anyone sick. His only known condition is cirrhosis caused by chronic hepatitis B.",
+   "ts": "2026-09-26 03:51:30",
+   "kind": "answer",
+   "slot": "dyn:history.immunocompromised+infection.fever+infection.rash+infection.travel_14d"
+  },
+  {
+   "role": "bot",
+   "text": "When was the last time he ate or drank, and could you please provide his name and date of birth for our records?",
+   "ts": "2026-09-26 03:51:33",
+   "kind": "question",
+   "slot": "dyn:history.pregnant_or_postpartum+L.last_intake+identity.dob"
+  },
+  {
+   "role": "caregiver",
+   "text": "He last had a small bowl of rice at noon. His name is not provided in my description, but his date of birth is 07 Jul 1968.",
+   "ts": "2026-09-26 03:51:34",
+   "kind": "answer",
+   "slot": "dyn:history.pregnant_or_postpartum+L.last_intake+identity.dob"
+  },
+  {
+   "role": "bot",
+   "text": "Could you please list any other medical conditions he has and the names of all his current medications?",
+   "ts": "2026-09-26 03:51:37",
+   "kind": "question",
+   "slot": "dyn:history.pregnant_or_postpartum"
+  },
+  {
+   "role": "caregiver",
+   "text": "He has cirrhosis caused by chronic hepatitis B. His current medications are lactulose, spironolactone, and furosemide.",
+   "ts": "2026-09-26 03:51:38",
+   "kind": "answer",
+   "slot": "dyn:history.pregnant_or_postpartum"
+  },
+  {
+   "role": "bot",
+   "text": "Does he have any allergies to medicines, and does he have other conditions like heart problems, diabetes, pregnancy, or anything affecting his immune system?",
+   "ts": "2026-09-26 03:51:40",
+   "kind": "question",
+   "slot": "dyn:history.pregnant_or_postpartum"
+  },
+  {
+   "role": "caregiver",
+   "text": "No known allergies, no blood thinners, and no history of heart problems, diabetes, pregnancy, or immune system issues.",
+   "ts": "2026-09-26 03:51:41",
+   "kind": "answer",
+   "slot": "dyn:history.pregnant_or_postpartum"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you - that's everything for now. Show the code VANDA-8749 at the counter when you arrive.",
+   "ts": "2026-09-26 03:51:43",
+   "kind": "ack"
+  }
+ ],
+ "active_ids": [
+  "stroke.screen"
+ ],
+ "floor": "at least ESI-2",
+ "phase": "enroute",
+ "opened": [],
+ "created": "2026-09-26 03:51",
+ "pending_slot": "dyn:history.pregnant_or_postpartum",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {},
+ "said_done": true
+}

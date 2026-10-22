@@ -1,0 +1,471 @@
+{
+ "sid": "LION-8092",
+ "facts": {
+  "danger_signs.responsive": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-19 14:23"
+  },
+  "danger_signs.chest_pain_now": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-19 14:23"
+  },
+  "danger_signs.breathing_difficulty": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-19 14:23"
+  },
+  "danger_signs.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-19 14:23"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "poisoning_or_overdose",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 2,
+      "ts": "2026-10-19 14:23"
+     },
+     "text": {
+      "value": "My friend took an overdose of pills on purpose.",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 2,
+      "ts": "2026-10-19 14:23"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2
+  },
+  "complaint.category": {
+   "value": [
+    "poisoning_or_overdose"
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-19 14:23"
+  },
+  "complaint.text": {
+   "value": "My friend took an overdose of pills on purpose.",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-19 14:23"
+  },
+  "E.mechanism": {
+   "value": "none",
+   "status": "reported",
+   "who": "derived",
+   "turn": 2,
+   "ts": "2026-10-19 14:23"
+  },
+  "patient.age": {
+   "value": 20,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 16,
+   "ts": "2026-10-19 14:25"
+  },
+  "patient.sex": {
+   "value": "male",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-19 14:23"
+  },
+  "patient.age_group": {
+   "value": "adult",
+   "status": "reported",
+   "who": "derived",
+   "turn": 3,
+   "ts": "2026-10-19 14:23"
+  },
+  "complaint.fever": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 6,
+   "ts": "2026-10-19 14:24"
+  },
+  "infection.rash": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 6,
+   "ts": "2026-10-19 14:24"
+  },
+  "infection.travel_14d": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 7,
+   "ts": "2026-10-19 14:24"
+  },
+  "infection.contacts": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 7,
+   "ts": "2026-10-19 14:24"
+  },
+  "ams.changed_from_baseline": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 8,
+   "ts": "2026-10-19 14:24"
+  },
+  "complaint.vomiting": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 8,
+   "ts": "2026-10-19 14:24"
+  },
+  "complaint.danger_to_self_or_others": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 9,
+   "ts": "2026-10-19 14:24"
+  },
+  "complaint.known_toxic_ingestion": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 12,
+   "ts": "2026-10-19 14:24"
+  },
+  "M.medications": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 13,
+   "ts": "2026-10-19 14:24"
+  },
+  "A.allergies": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 14,
+   "ts": "2026-10-19 14:24"
+  },
+  "history.conditions": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 14,
+   "ts": "2026-10-19 14:24"
+  },
+  "identity.name": {
+   "value": "Daniel Koh",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 15,
+   "ts": "2026-10-19 14:24"
+  },
+  "identity.dob": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 16,
+   "ts": "2026-10-19 14:25"
+  }
+ },
+ "attempts": {
+  "danger_signs.responsive": 1,
+  "danger_signs.chest_pain_now": 1,
+  "danger_signs.breathing_difficulty": 1,
+  "danger_signs.heavy_bleeding": 1,
+  "complaint.category": 1,
+  "complaint.onset": 3,
+  "patient.age": 1,
+  "patient.sex": 1,
+  "complaint.fever": 1,
+  "infection.rash": 1,
+  "infection.travel_14d": 1,
+  "infection.contacts": 1,
+  "ams.changed_from_baseline": 1,
+  "complaint.vomiting": 1,
+  "complaint.pain_rating": 3,
+  "complaint.danger_to_self_or_others": 1,
+  "complaint.known_toxic_ingestion": 1,
+  "M.medications": 2,
+  "A.allergies": 1,
+  "history.conditions": 1,
+  "identity.name": 1,
+  "identity.dob": 2,
+  "L.last_intake": 1
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "Is the patient awake and responding to you normally? Also, is he or she experiencing any chest pain, trouble breathing, or heavy bleeding right now?",
+   "ts": "2026-10-19 14:23:22",
+   "kind": "question",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, he's awake and talking. No.",
+   "ts": "2026-10-19 14:23:22",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "bot",
+   "text": "I'm glad he's awake. Is he having any trouble breathing or is there any heavy bleeding? Also, what is the main reason you are bringing him in today?",
+   "ts": "2026-10-19 14:23:30",
+   "kind": "question",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category"
+  },
+  {
+   "role": "caregiver",
+   "text": "No. My friend took an overdose of pills on purpose.",
+   "ts": "2026-10-19 14:23:30",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. About how long ago did he take the pills, and could you tell me his age and gender?",
+   "ts": "2026-10-19 14:23:39",
+   "kind": "question",
+   "slot": "dyn:complaint.onset+patient.age+patient.sex"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know exactly when. He's 20. He's a man.",
+   "ts": "2026-10-19 14:23:39",
+   "kind": "answer",
+   "slot": "dyn:complaint.onset+patient.age+patient.sex"
+  },
+  {
+   "role": "bot",
+   "text": "Do you know roughly how long ago he took the pills?",
+   "ts": "2026-10-19 14:23:46",
+   "kind": "question",
+   "slot": "dyn:complaint.onset"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know exactly when.",
+   "ts": "2026-10-19 14:23:46",
+   "kind": "answer",
+   "slot": "dyn:complaint.onset"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. About how long ago did he take the pills?",
+   "ts": "2026-10-19 14:23:52",
+   "kind": "question",
+   "slot": "dyn:complaint.onset"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know exactly when.",
+   "ts": "2026-10-19 14:23:52",
+   "kind": "answer",
+   "slot": "dyn:complaint.onset"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Does he have a fever or any new rashes on his skin?",
+   "ts": "2026-10-19 14:23:57",
+   "kind": "question",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-19 14:23:57",
+   "kind": "answer",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "bot",
+   "text": "Has he traveled outside the country or been in contact with anyone who has a contagious illness in the last two weeks?",
+   "ts": "2026-10-19 14:24:04",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-19 14:24:04",
+   "kind": "answer",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "bot",
+   "text": "Is he currently confused, very sleepy, or having any trouble staying awake? Also, has he been vomiting?",
+   "ts": "2026-10-19 14:24:11",
+   "kind": "question",
+   "slot": "dyn:ams.changed_from_baseline+complaint.vomiting"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-19 14:24:11",
+   "kind": "answer",
+   "slot": "dyn:ams.changed_from_baseline+complaint.vomiting"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. On a scale of 0 to 10, how much pain is he in right now? Also, has he said anything about wanting to hurt himself or anyone else?",
+   "ts": "2026-10-19 14:24:17",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating+complaint.danger_to_self_or_others"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-19 14:24:18",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_rating+complaint.danger_to_self_or_others"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Can you tell me how much pain he seems to be in right now on a scale of 0 to 10?",
+   "ts": "2026-10-19 14:24:24",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-19 14:24:24",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "I understand it's hard to tell. Does he seem to be in any physical pain at all right now?",
+   "ts": "2026-10-19 14:24:30",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-19 14:24:30",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Do you know exactly what pills he took or how many he took? Also, does he take any other medications regularly?",
+   "ts": "2026-10-19 14:24:36",
+   "kind": "question",
+   "slot": "dyn:complaint.known_toxic_ingestion+M.medications"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, he took an overdose of pills. I don't know which ones or how many.",
+   "ts": "2026-10-19 14:24:36",
+   "kind": "answer",
+   "slot": "dyn:complaint.known_toxic_ingestion+M.medications"
+  },
+  {
+   "role": "system",
+   "text": "floor: at least ESI-2  rules: ['B-26.suspected-toxic-ingestion']",
+   "ts": "2026-10-19 14:24:40",
+   "kind": "floor"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Does he take any other medications on a regular basis? You can also send a photo of the boxes if that's easier.",
+   "ts": "2026-10-19 14:24:43",
+   "kind": "question",
+   "slot": "dyn:M.medications"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-19 14:24:43",
+   "kind": "answer",
+   "slot": "dyn:M.medications"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Does he have any allergies to medications or any other ongoing medical conditions?",
+   "ts": "2026-10-19 14:24:49",
+   "kind": "question",
+   "slot": "dyn:A.allergies+history.conditions"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-19 14:24:49",
+   "kind": "answer",
+   "slot": "dyn:A.allergies+history.conditions"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Could you please tell me the patient's full name and date of birth?",
+   "ts": "2026-10-19 14:24:55",
+   "kind": "question",
+   "slot": "dyn:identity.name+identity.dob"
+  },
+  {
+   "role": "caregiver",
+   "text": "Daniel Koh. I'm not sure of the date, he's 20.",
+   "ts": "2026-10-19 14:24:55",
+   "kind": "answer",
+   "slot": "dyn:identity.name+identity.dob"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Could you tell me his date of birth?",
+   "ts": "2026-10-19 14:25:02",
+   "kind": "question",
+   "slot": "dyn:identity.dob"
+  },
+  {
+   "role": "caregiver",
+   "text": "I'm not sure of the date, he's 20.",
+   "ts": "2026-10-19 14:25:02",
+   "kind": "answer",
+   "slot": "dyn:identity.dob"
+  },
+  {
+   "role": "bot",
+   "text": "That's enough for the hospital team to prepare. Show the code LION-8092 at the counter when you arrive. I'll ask a few more things while you're on the way; tell me straight away if anything changes.",
+   "ts": "2026-10-19 14:25:05",
+   "kind": "ack"
+  },
+  {
+   "role": "bot",
+   "text": "When was the last time he had anything to eat or drink, and what was it?",
+   "ts": "2026-10-19 14:25:08",
+   "kind": "question",
+   "slot": "dyn:L.last_intake"
+  }
+ ],
+ "stage": "rest",
+ "floor": "at least ESI-2",
+ "phase": "enroute",
+ "created": "2026-10-19 14:23",
+ "pending_slot": "dyn:L.last_intake",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {},
+ "qr_ready": true,
+ "qr_turn": 16
+}

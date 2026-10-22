@@ -1,0 +1,264 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "criteria.schema.json",
+ "title": "ESI criterion (rule entry) — the shape of rules/criteria.yaml entries that carry a `when`",
+ "type": "object",
+ "additionalProperties": false,
+ "required": [
+  "id",
+  "decision_point",
+  "when",
+  "assessed_via",
+  "provenance",
+  "source",
+  "span",
+  "statements",
+  "origin"
+ ],
+ "properties": {
+  "id": {
+   "type": "string",
+   "pattern": "^[ABCD]-[0-9]{2,3}\\.[a-z0-9][a-z0-9-]*$",
+   "description": "<decision-point>-<2-3 digits>.<kebab-slug>, e.g. B-30.anticoagulated-trauma (drafts are renumbered from 61 upward and may exceed 99)"
+  },
+  "decision_point": {
+   "enum": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "none"
+   ]
+  },
+  "when": {
+   "$ref": "#/$defs/condition"
+  },
+  "effect_override": {
+   "enum": [
+    "consider",
+    "reassess_uptriage_consider",
+    "context_note"
+   ],
+   "description": "only when the source's verb is softer than 'assign' (e.g. 'should be considered', 'reassess')"
+  },
+  "assessed_via": {
+   "enum": [
+    "reported",
+    "observed",
+    "vitals"
+   ]
+  },
+  "provenance": {
+   "enum": [
+    "verbatim",
+    "operationalized",
+    "supplemented"
+   ]
+  },
+  "source": {
+   "oneOf": [
+    {
+     "type": "string",
+     "minLength": 4
+    },
+    {
+     "type": "array",
+     "minItems": 2,
+     "items": {
+      "type": "string",
+      "minLength": 4
+     }
+    }
+   ],
+   "description": "page-cited; a list (>=2) only for supplemented rules (dual citation)"
+  },
+  "span": {
+   "type": "string",
+   "minLength": 8,
+   "description": "quoted text copied from the cited page; must be findable there"
+  },
+  "notes": {
+   "type": "string"
+  },
+  "statements": {
+   "type": "array",
+   "items": {
+    "type": "integer"
+   },
+   "description": "numbers of the supporting sentences in rules/extraction/v5-complete-pass.yaml; empty only for a supplemented rule"
+  },
+  "origin": {
+   "type": "array",
+   "items": {
+    "enum": [
+     "consolidation-2026-08-29",
+     "complete-pass-2026-10-04",
+     "supplemented-2026-08",
+     "blind-re-extraction-2026-10-05"
+    ]
+   },
+   "minItems": 1,
+   "description": "where the entry came from; meanings in rules/vocabulary.yaml"
+  },
+  "refinement_pending": {
+   "type": "string"
+  },
+  "level_from": {
+   "enum": [
+    "section"
+   ],
+   "description": "set when the quoted sentence names no level and the level comes from the section or list the sentence sits in"
+  },
+  "terms": {
+   "type": "array",
+   "items": {
+    "type": "string"
+   },
+   "description": "the fuzzy terms (rules/terms.yaml) whose numbers this rule's condition carries; the validator checks the numbers agree"
+  }
+ },
+ "$defs": {
+  "leaf": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "field"
+   ],
+   "properties": {
+    "field": {
+     "type": "string",
+     "pattern": "^(obs|vitals|complaint|history|patient|E|M)\\.[a-z0-9_]+(\\.(value|status))?$",
+     "description": "dotted field path in the fact schema; prefer the known vocabulary (x-known-fields)"
+    },
+    "equals": {},
+    "in": {
+     "type": "array",
+     "minItems": 1
+    },
+    "lt": {
+     "type": "number"
+    },
+    "gt": {
+     "type": "number"
+    },
+    "gte": {
+     "type": "number"
+    },
+    "lte": {
+     "type": "number"
+    }
+   },
+   "minProperties": 2,
+   "maxProperties": 2
+  },
+  "group": {
+   "type": "object",
+   "additionalProperties": false,
+   "minProperties": 1,
+   "maxProperties": 1,
+   "properties": {
+    "all": {
+     "type": "array",
+     "minItems": 1,
+     "items": {
+      "$ref": "#/$defs/condition"
+     }
+    },
+    "any": {
+     "type": "array",
+     "minItems": 1,
+     "items": {
+      "$ref": "#/$defs/condition"
+     }
+    }
+   }
+  },
+  "condition": {
+   "oneOf": [
+    {
+     "$ref": "#/$defs/leaf"
+    },
+    {
+     "$ref": "#/$defs/group"
+    }
+   ]
+  }
+ },
+ "x-known-fields": [
+  "E.abdominal_trauma",
+  "E.body_region",
+  "E.fall_height_meters",
+  "E.mechanical_extrication",
+  "E.mechanism",
+  "E.vehicle_ejection",
+  "M.anticoagulant.status",
+  "M.anticoagulant.value",
+  "M.beta_blocker",
+  "M.immunosuppressant_or_steroid",
+  "complaint.acs_suspicion",
+  "complaint.amputation_partial_or_complete",
+  "complaint.atso_elements_count",
+  "complaint.brisk_or_posterior_bleeding",
+  "complaint.button_battery_or_magnet_ingestion",
+  "complaint.category",
+  "complaint.compartment_syndrome_symptoms",
+  "complaint.danger_to_self_or_others",
+  "complaint.extremity_neurovascular_compromise",
+  "complaint.fever",
+  "complaint.increasing_respiratory_effort",
+  "complaint.infection_signs",
+  "complaint.known_toxic_ingestion",
+  "complaint.needle_stick_healthcare_worker",
+  "complaint.pain_cause_class",
+  "complaint.pain_rating",
+  "complaint.pain_refractory_constant_or_maximal_onset",
+  "complaint.possible_ectopic_pregnancy",
+  "complaint.possible_pelvis_femur_fracture_or_dislocation",
+  "complaint.postpartum_hemorrhage",
+  "complaint.sexual_assault",
+  "complaint.stroke_signs",
+  "complaint.vaginal_bleeding",
+  "history.baseline_mental_status",
+  "history.immunocompromised",
+  "history.pregnant",
+  "history.postpartum",
+  "history.thrombocytopenia_or_clotting_disorder",
+  "history.transplant_recipient_or_listed",
+  "obs.active_seizure",
+  "obs.airway_occluded_or_ineffective_clearance",
+  "obs.anaphylaxis",
+  "obs.apneic",
+  "obs.avpu",
+  "obs.cannot_manage_secretions",
+  "obs.cardiac_or_pulmonary_arrest",
+  "obs.confusion_lethargy_disorientation",
+  "obs.flaccid",
+  "obs.hemodynamically_unstable",
+  "obs.hypoperfusion_signs",
+  "obs.intubated",
+  "obs.new_confusion_lethargy_disorientation",
+  "obs.nonverbal_acute",
+  "obs.not_following_commands",
+  "obs.pulseless",
+  "obs.requires_lifesaving_intervention",
+  "obs.respiratory_compromise_signs",
+  "obs.sepsis_signs",
+  "obs.severe_respiratory_distress",
+  "obs.stridor",
+  "obs.subtle_mental_status_change",
+  "obs.unexplained_ams_breathing_or_rhythm_change",
+  "patient.age",
+  "patient.age_days",
+  "patient.age_group",
+  "patient.age_months",
+  "vitals.extreme_heart_rate",
+  "vitals.heart_rate",
+  "vitals.hypotension",
+  "vitals.profound_hypoglycemia",
+  "vitals.respiratory_rate",
+  "vitals.spo2",
+  "vitals.spo2_is_patients_norm",
+  "vitals.temp_c"
+ ],
+ "x-note": "Operators: equals | in | lt | gt | gte | lte (exactly one per leaf). Nesting via all/any. Derived from the 48 rule entries of criteria.yaml on 27 Aug 2026; entries without `when` (C bands/lists, D-02 bands, GOV policies) are out of this schema's scope."
+}

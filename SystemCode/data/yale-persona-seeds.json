@@ -1,0 +1,67 @@
+[
+ {
+  "yale_row": 1048,
+  "note": "elderly fall on anticoagulants",
+  "age": 87,
+  "gender": "Male",
+  "esi_label": "2",
+  "arrivalmode": "ambulance",
+  "disposition": "Discharge",
+  "hr": null,
+  "rr": null,
+  "spo2": null,
+  "on_anticoagulants": true
+ },
+ {
+  "yale_row": 116,
+  "note": "chest pain, ACS-suspect age",
+  "age": 51,
+  "gender": "Female",
+  "esi_label": "2",
+  "arrivalmode": "Car",
+  "disposition": "Discharge",
+  "hr": 71.0,
+  "rr": 18.0,
+  "spo2": null,
+  "on_anticoagulants": false
+ },
+ {
+  "yale_row": 873,
+  "note": "abdominal pain, pregnant",
+  "age": 40,
+  "gender": "Female",
+  "esi_label": "2",
+  "arrivalmode": "ambulance",
+  "disposition": "Discharge",
+  "hr": 99.0,
+  "rr": 20.0,
+  "spo2": null,
+  "on_anticoagulants": false
+ },
+ {
+  "yale_row": 1339,
+  "note": "healthy young sore throat",
+  "age": 25,
+  "gender": "Female",
+  "esi_label": "4",
+  "arrivalmode": "Car",
+  "disposition": "Discharge",
+  "hr": 87.0,
+  "rr": 20.0,
+  "spo2": 98.0,
+  "on_anticoagulants": false
+ },
+ {
+  "yale_row": 744,
+  "note": "fever, immunocompromised",
+  "age": 51,
+  "gender": "Female",
+  "esi_label": "2",
+  "arrivalmode": "Car",
+  "disposition": "Admit",
+  "hr": null,
+  "rr": null,
+  "spo2": null,
+  "on_anticoagulants": false
+ }
+]

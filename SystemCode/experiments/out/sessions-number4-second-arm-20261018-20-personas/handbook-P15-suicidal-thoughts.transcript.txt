@@ -1,0 +1,40 @@
+arm B, form handbook, persona P15-suicidal-thoughts, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  What is the main reason the patient is seeking care today?
+A1  My sister told me today she's been thinking about killing herself.
+
+Q2  Is your sister currently in any physical danger, such as having a weapon or having already taken any pills or substances?
+A2  I don't know.
+
+Q3  Is your sister currently able to speak to you and is she alert, or is she acting in a way that suggests she is in immediate danger or having a mental health crisis?
+A3  Yes, she's awake and talking. My sister told me today she's been thinking about killing herself.
+
+Q4  Is your sister currently expressing a plan or intent to harm herself or others right now?
+A4  Yes, she said she wants to kill herself.
+
+Q5  Is your sister currently in a state of severe distress, such as being combative, distraught, or in a state of acute psychological crisis?
+A5  My sister told me today she's been thinking about killing herself.
+
+Q6  Is your sister currently in a state of severe distress, such as being distraught, combative, or in a state of acute psychological crisis?
+A6  My sister told me today she's been thinking about killing herself.
+
+Q7  Is your sister currently in a state of severe distress, such as being distraught, combative, or in a state of acute psychological crisis?
+A7  My sister told me today she's been thinking about killing herself.
+
+Q8  Is your sister currently in a state of severe distress, such as being distraught, combative, or in a state of acute psychological crisis?
+A8  My sister told me today she's been thinking about killing herself.
+
+Q9  Is your sister currently in a state of severe distress, such as being distraught, combative, or in a state of acute psychological crisis?
+A9  My sister told me today she's been thinking about killing herself.
+
+Q10  Is your sister currently in a state of severe distress, such as being distraught, combative, or in a state of acute psychological crisis?
+A10  My sister told me today she's been thinking about killing herself.
+
+Q11  Is your sister currently in a state of severe distress, such as being distraught, combative, or in a state of acute psychological crisis?
+A11  My sister told me today she's been thinking about killing herself.
+
+Q12  Is your sister currently in a state of severe distress, such as being distraught, combative, or in a state of acute psychological crisis?
+A12  My sister told me today she's been thinking about killing herself.
+
+DECISION {"done": true, "decision": "level 2", "reason": "The patient is presenting with a mental health crisis involving suicidal ideation and intent, which constitutes a high-risk situation (suicidal ideation, plan, or attempt) as defined in Decision Point B.", "citation": "page 12, 15"}
+OUTCOME level 2 or floor | expected at least ESI-2 | pass True | label None | max prompt tokens 30195

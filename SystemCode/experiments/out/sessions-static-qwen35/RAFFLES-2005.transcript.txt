@@ -1,0 +1,20 @@
+session RAFFLES-2005   started 2026-09-26 03:45   (generated from messages)
+
+03:45:43  BOT  Are you awake and responding normally without any severe chest pain, trouble breathing, or heavy bleeding right now?   [slot red_flags.screen]
+03:45:44  THEM Yes, she is awake and talking. She does not have severe chest pain, trouble breathing, or heavy bleeding.   [slot red_flags.screen]
+03:45:46  BOT  Can you tell us what happened, when it started, and how bad the pain is on a scale of 0 to 10?   [slot complaint.main]
+03:45:47  THEM She has had a fever since this afternoon and is shivering, but I don't know about pain. She is awake and talking while we drive her in now.   [slot complaint.main]
+03:45:50  BOT  Since you mentioned she doesn't have severe pain yet, could you please tell us how bad her discomfort is on a scale of 0 to 10?   [slot complaint.main]
+03:45:51  THEM I don't know exactly what she means by "discomfort" since she isn't complaining of severe pain. She seems very tired and shivering from the fever, but I haven't heard her rate that specific feeling on a scale yet.   [slot complaint.main]
+03:45:52  SYS  floor: at least ESI-2  rules: ['B-01.new-altered-mental-status'] (floor)
+03:45:53  BOT  Since she isn't complaining of severe pain yet, could you please tell us how bad her discomfort is on a scale of 0 to 10?   [slot complaint.main]
+03:45:54  THEM She doesn't seem to be in pain right now. I don't know her specific discomfort level on that scale.   [slot complaint.main]
+03:45:56  BOT  Could you please let us know if she takes any regular medications?   [slot M.medications]
+03:45:57  THEM Yes, she takes "the chemo tablets" and omeprazole. She has no allergies.   [slot M.medications]
+03:45:59  BOT  Could you please tell us if she has any other medical conditions, such as heart problems or diabetes, or if she is pregnant/postpartum or has a weakened immune system?   [slot allergies_and_history]
+03:46:00  THEM She is on chemotherapy for breast cancer, which means her immune system is weakened. I don't know about other conditions like heart problems or diabetes, and she is not pregnant or postpartum.   [slot allergies_and_history]
+03:46:02  BOT  Could you please tell us if she has developed a rash recently, traveled overseas in the last two weeks, or had contact with anyone who is infectious?   [slot infection.screen]
+03:46:03  THEM No, she has not developed a rash, traveled overseas, or had contact with anyone who is infectious.   [slot infection.screen]
+03:46:05  BOT  Could you please tell us when she last ate or drank, and provide her name and date of birth so we can share this information with the hospital team?   [slot wrapup]
+03:46:06  THEM She last drank some tea at 4pm. Her name is [Patient Name] and she was born on June 30, 1975.   [slot wrapup]
+03:46:08  BOT  Thank you - that's everything for now. Show the code RAFFLES-2005 at the counter when you arrive. (ack)

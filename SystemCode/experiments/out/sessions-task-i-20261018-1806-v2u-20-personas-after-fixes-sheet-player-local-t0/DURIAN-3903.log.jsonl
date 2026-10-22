@@ -1,0 +1,57 @@
+{"t": "17:48:18", "kind": "engine", "note": "session DURIAN-3903 started (web)"}
+{"t": "17:48:20", "kind": "question", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "Is the patient awake and responding to you normally? Also, is he or she experiencing any chest pain, trouble breathing, or heavy bleeding right now?", "fields": ["danger_signs.responsive", "danger_signs.chest_pain_now"], "offered": ["danger_signs.responsive", "danger_signs.chest_pain_now", "danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text"]}
+{"t": "17:48:20", "kind": "answer", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "Yes, she's awake and she can answer. No chest pain."}
+{"t": "17:48:25", "kind": "extract", "writes": [["danger_signs.responsive", true], ["danger_signs.chest_pain_now", false]]}
+{"t": "17:48:28", "kind": "question", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category", "text": "I'm glad she's alert. Is she having any trouble breathing or is there any heavy bleeding? Also, what is the main reason you are bringing her in today?", "fields": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category"], "offered": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text", "complaint.onset", "E.mechanism"]}
+{"t": "17:48:28", "kind": "answer", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category", "text": "Yes, she's wheezing and struggling to breathe. No. She has asthma. She started wheezing earlier today and her inhaler isn't helping."}
+{"t": "17:48:45", "kind": "extract", "writes": [["danger_signs.breathing_difficulty", true], ["danger_signs.heavy_bleeding", false], ["complaint.category", "breathing"], ["complaint.text", "wheezing and struggling to breathe. She has asthma. She started wheezing earlier today and her inhaler isn't helping."], ["complaint.onset", "earlier today"]]}
+{"t": "17:48:45", "kind": "extract", "writes": [["E.mechanism", "none"]], "via": "derived-non-injury"}
+{"t": "17:48:48", "kind": "question", "slot": "dyn:patient.age+patient.sex", "text": "I understand she is struggling to breathe. How old is she?", "fields": ["patient.age", "patient.sex"], "offered": ["patient.age", "patient.sex", "complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts"]}
+{"t": "17:48:48", "kind": "answer", "slot": "dyn:patient.age+patient.sex", "text": "She's 46. She's a woman, my wife."}
+{"t": "17:48:52", "kind": "extract", "writes": [["patient.age", 46], ["patient.sex", "female"]]}
+{"t": "17:48:55", "kind": "question", "slot": "dyn:history.pregnant+history.postpartum", "text": "Is she currently pregnant or has she given birth in the last few weeks?", "fields": ["history.pregnant", "history.postpartum"], "offered": ["history.pregnant", "history.postpartum", "complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts"]}
+{"t": "17:48:55", "kind": "answer", "slot": "dyn:history.pregnant+history.postpartum", "text": "I don't know."}
+{"t": "17:48:59", "kind": "extract", "writes": []}
+{"t": "17:48:59", "kind": "extract", "writes": [["history.pregnant", null], ["history.postpartum", null]], "via": "dont-know"}
+{"t": "17:49:01", "kind": "question", "slot": "dyn:complaint.fever+infection.rash", "text": "Does she have a fever or any new rashes on her skin?", "fields": ["complaint.fever", "infection.rash"], "offered": ["complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts", "ams.changed_from_baseline", "complaint.pain_rating"]}
+{"t": "17:49:01", "kind": "answer", "slot": "dyn:complaint.fever+infection.rash", "text": "No fever."}
+{"t": "17:49:05", "kind": "extract", "writes": [["complaint.fever", false]]}
+{"t": "17:49:08", "kind": "question", "slot": "dyn:infection.rash", "text": "I understand. Does she have any new rashes on her skin?", "fields": ["infection.rash"], "offered": ["infection.rash"]}
+{"t": "17:49:08", "kind": "answer", "slot": "dyn:infection.rash", "text": "I don't know."}
+{"t": "17:49:11", "kind": "extract", "writes": []}
+{"t": "17:49:11", "kind": "extract", "writes": [["infection.rash", null]], "via": "dont-know"}
+{"t": "17:49:14", "kind": "question", "slot": "dyn:infection.travel_14d+infection.contacts", "text": "I see. Has she traveled outside the country or been in contact with anyone who is sick in the last two weeks?", "fields": ["infection.travel_14d", "infection.contacts"], "offered": ["infection.travel_14d", "infection.contacts", "ams.changed_from_baseline", "complaint.pain_rating", "complaint.increasing_respiratory_effort", "M.medications"]}
+{"t": "17:49:14", "kind": "answer", "slot": "dyn:infection.travel_14d+infection.contacts", "text": "I don't know."}
+{"t": "17:49:18", "kind": "extract", "writes": []}
+{"t": "17:49:18", "kind": "extract", "writes": [["infection.travel_14d", null], ["infection.contacts", null]], "via": "dont-know"}
+{"t": "17:49:20", "kind": "question", "slot": "dyn:ams.changed_from_baseline", "text": "Is she acting differently than usual, such as being more confused or harder to wake up?", "fields": ["ams.changed_from_baseline"], "offered": ["ams.changed_from_baseline", "complaint.pain_rating", "complaint.increasing_respiratory_effort", "M.medications", "A.allergies", "history.conditions"]}
+{"t": "17:49:20", "kind": "answer", "slot": "dyn:ams.changed_from_baseline", "text": "No, she's herself, just struggling to breathe."}
+{"t": "17:49:33", "kind": "extract", "writes": [["ams.changed_from_baseline", false]]}
+{"t": "17:49:36", "kind": "question", "slot": "dyn:complaint.pain_rating+complaint.increasing_respiratory_effort", "text": "I understand. On a scale of 0 to 10, where 10 is the worst pain imaginable, how bad is her pain right now? Also, is her breathing getting harder than it was earlier?", "fields": ["complaint.pain_rating", "complaint.increasing_respiratory_effort"], "offered": ["complaint.pain_rating", "complaint.increasing_respiratory_effort", "M.medications", "A.allergies", "history.conditions", "history.immunocompromised"]}
+{"t": "17:49:36", "kind": "answer", "slot": "dyn:complaint.pain_rating+complaint.increasing_respiratory_effort", "text": "Yes, it's getting worse, she's working harder and harder to breathe."}
+{"t": "17:49:41", "kind": "extract", "writes": [["complaint.increasing_respiratory_effort", true]]}
+{"t": "17:49:41", "kind": "floor", "floor": "at least ESI-2", "fired": ["B-12.increasing-respiratory-effort"], "sources": ["ESI v5 p.12"]}
+{"t": "17:49:44", "kind": "question", "slot": "dyn:M.medications+A.allergies", "text": "I'm sorry to hear her breathing is getting harder. Does she have any allergies to medications, and what medicines does she take regularly?", "fields": ["M.medications", "A.allergies"], "offered": ["M.medications", "A.allergies", "history.conditions", "identity.name", "identity.dob"]}
+{"t": "17:49:44", "kind": "answer", "slot": "dyn:M.medications+A.allergies", "text": "Her asthma inhaler. It isn't helping."}
+{"t": "17:49:47", "kind": "extract", "writes": []}
+{"t": "17:49:50", "kind": "question", "slot": "dyn:M.medications", "text": "I understand the inhaler isn't helping. Besides the inhaler, what other medications does she take on a regular basis?", "fields": ["M.medications"], "offered": ["M.medications"]}
+{"t": "17:49:50", "kind": "answer", "slot": "dyn:M.medications", "text": "Her asthma inhaler. It isn't helping."}
+{"t": "17:50:02", "kind": "extract", "writes": [["M.medications", ["asthma inhaler"]]]}
+{"t": "17:50:05", "kind": "question", "slot": "dyn:A.allergies", "text": "Does she have any allergies to medications?", "fields": ["A.allergies"], "offered": ["A.allergies"]}
+{"t": "17:50:05", "kind": "answer", "slot": "dyn:A.allergies", "text": "I don't know."}
+{"t": "17:50:08", "kind": "extract", "writes": []}
+{"t": "17:50:08", "kind": "extract", "writes": [["A.allergies", null]], "via": "dont-know"}
+{"t": "17:50:11", "kind": "question", "slot": "dyn:history.conditions", "text": "Does she have any other ongoing medical conditions?", "fields": ["history.conditions"], "offered": ["history.conditions", "identity.name", "identity.dob"]}
+{"t": "17:50:11", "kind": "answer", "slot": "dyn:history.conditions", "text": "Asthma. The last time she was in hospital for it, she needed a breathing tube."}
+{"t": "17:50:22", "kind": "extract", "writes": [["history.conditions", ["asthma"]]]}
+{"t": "17:50:25", "kind": "question", "slot": "dyn:identity.name+identity.dob", "text": "I've noted the asthma. Could you please tell me her full name and date of birth?", "fields": ["identity.name", "identity.dob"], "offered": ["identity.name", "identity.dob"]}
+{"t": "17:50:25", "kind": "answer", "slot": "dyn:identity.name+identity.dob", "text": "Mary Ong. 12 May 1980."}
+{"t": "17:50:30", "kind": "extract", "writes": [["identity.name", "Mary Ong"], ["identity.dob", "12 May 1980"]]}
+{"t": "17:50:30", "kind": "engine", "note": "floor settled - report ready; remaining questions continue"}
+{"t": "17:50:32", "kind": "question", "slot": "dyn:complaint.pain_rating", "text": "How would you describe her pain level on a scale of 0 to 10, where 10 is the worst possible?", "fields": ["complaint.pain_rating"], "offered": ["complaint.pain_rating"]}
+{"t": "17:50:32", "kind": "answer", "slot": "dyn:complaint.pain_rating", "text": "I don't know."}
+{"t": "17:50:36", "kind": "extract", "writes": []}
+{"t": "17:50:39", "kind": "question", "slot": "dyn:complaint.pain_rating", "text": "I understand. To help the team, can you describe how severe her pain is at this moment?", "fields": ["complaint.pain_rating"], "offered": ["complaint.pain_rating"]}
+{"t": "17:50:39", "kind": "answer", "slot": "dyn:complaint.pain_rating", "text": "I don't know."}
+{"t": "17:50:41", "kind": "extract", "writes": []}
+{"t": "17:50:44", "kind": "question", "slot": "dyn:complaint.respiratory_distress_signs", "text": "Is she currently struggling to breathe, such as breathing very fast, wheezing, or only being able to say a few words at a time?", "fields": ["complaint.respiratory_distress_signs"], "offered": ["complaint.respiratory_distress_signs", "L.last_intake"]}

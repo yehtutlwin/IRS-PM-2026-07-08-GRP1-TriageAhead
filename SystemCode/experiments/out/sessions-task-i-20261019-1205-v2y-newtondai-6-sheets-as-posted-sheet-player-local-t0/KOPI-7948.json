@@ -1,0 +1,432 @@
+{
+ "sid": "KOPI-7948",
+ "facts": {
+  "danger_signs.responsive": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-19 11:55"
+  },
+  "danger_signs.chest_pain_now": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-19 11:56"
+  },
+  "danger_signs.breathing_difficulty": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-19 11:56"
+  },
+  "danger_signs.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-19 11:56"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "mental_health",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 4,
+      "ts": "2026-10-19 11:56"
+     },
+     "text": {
+      "value": "thoughts of hurting themselves",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 4,
+      "ts": "2026-10-19 11:56"
+     },
+     "onset": {
+      "value": "Today",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 5,
+      "ts": "2026-10-19 11:56"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 4
+  },
+  "complaint.category": {
+   "value": [
+    "mental_health"
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 5,
+   "ts": "2026-10-19 11:56"
+  },
+  "complaint.text": {
+   "value": "thoughts of hurting themselves",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 4,
+   "ts": "2026-10-19 11:56"
+  },
+  "E.mechanism": {
+   "value": "none",
+   "status": "reported",
+   "who": "derived",
+   "turn": 4,
+   "ts": "2026-10-19 11:56"
+  },
+  "complaint.onset": {
+   "value": "Today",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 5,
+   "ts": "2026-10-19 11:56"
+  },
+  "patient.age": {
+   "value": 16,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 5,
+   "ts": "2026-10-19 11:56"
+  },
+  "patient.age_group": {
+   "value": "child",
+   "status": "reported",
+   "who": "derived",
+   "turn": 5,
+   "ts": "2026-10-19 11:56"
+  },
+  "history.pregnant": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 8,
+   "ts": "2026-10-19 11:56"
+  },
+  "complaint.fever": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 9,
+   "ts": "2026-10-19 11:56"
+  },
+  "history.postpartum": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 10,
+   "ts": "2026-10-19 11:57"
+  },
+  "infection.rash": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 11,
+   "ts": "2026-10-19 11:57"
+  },
+  "infection.travel_14d": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 11,
+   "ts": "2026-10-19 11:57"
+  },
+  "infection.contacts": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 12,
+   "ts": "2026-10-19 11:57"
+  },
+  "ams.changed_from_baseline": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 12,
+   "ts": "2026-10-19 11:57"
+  },
+  "complaint.danger_to_self_or_others": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 13,
+   "ts": "2026-10-19 11:57"
+  }
+ },
+ "attempts": {
+  "danger_signs.responsive": 1,
+  "danger_signs.chest_pain_now": 2,
+  "danger_signs.breathing_difficulty": 1,
+  "danger_signs.heavy_bleeding": 1,
+  "complaint.category": 1,
+  "complaint.text": 1,
+  "complaint.onset": 1,
+  "patient.age": 1,
+  "patient.sex": 3,
+  "history.pregnant": 1,
+  "history.postpartum": 2,
+  "complaint.fever": 1,
+  "infection.rash": 1,
+  "infection.travel_14d": 1,
+  "infection.contacts": 1,
+  "ams.changed_from_baseline": 1,
+  "complaint.pain_rating": 1,
+  "complaint.danger_to_self_or_others": 1,
+  "M.medications": 3,
+  "A.allergies": 2
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "Is the patient awake and responding to you normally? Also, is he or she experiencing any chest pain, trouble breathing, or heavy bleeding right now?",
+   "ts": "2026-10-19 11:55:50",
+   "kind": "question",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, the patient is awake and can respond. No",
+   "ts": "2026-10-19 11:55:50",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Is the patient experiencing any pain in their chest at this moment?",
+   "ts": "2026-10-19 11:55:57",
+   "kind": "question",
+   "slot": "dyn:danger_signs.chest_pain_now"
+  },
+  {
+   "role": "caregiver",
+   "text": "No",
+   "ts": "2026-10-19 11:55:57",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.chest_pain_now"
+  },
+  {
+   "role": "bot",
+   "text": "Is the patient having any trouble breathing or any heavy bleeding right now?",
+   "ts": "2026-10-19 11:56:03",
+   "kind": "question",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding"
+  },
+  {
+   "role": "caregiver",
+   "text": "No breathing problem No",
+   "ts": "2026-10-19 11:56:03",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding"
+  },
+  {
+   "role": "bot",
+   "text": "I'm glad to hear they are breathing okay. What is the main problem that brings the patient in today, and can you describe what is happening?",
+   "ts": "2026-10-19 11:56:11",
+   "kind": "question",
+   "slot": "dyn:complaint.category+complaint.text"
+  },
+  {
+   "role": "caregiver",
+   "text": "My niece or nephew told me they have thoughts of hurting themselves.",
+   "ts": "2026-10-19 11:56:11",
+   "kind": "answer",
+   "slot": "dyn:complaint.category+complaint.text"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. When did these thoughts first start, and could you tell me the age and gender of your niece or nephew?",
+   "ts": "2026-10-19 11:56:25",
+   "kind": "question",
+   "slot": "dyn:complaint.onset+patient.age+patient.sex"
+  },
+  {
+   "role": "caregiver",
+   "text": "Today They are sixteen. I am not sure how they identify; please ask them directly.",
+   "ts": "2026-10-19 11:56:25",
+   "kind": "answer",
+   "slot": "dyn:complaint.onset+patient.age+patient.sex"
+  },
+  {
+   "role": "bot",
+   "text": "To help the team prepare, is the patient a boy or a girl?",
+   "ts": "2026-10-19 11:56:32",
+   "kind": "question",
+   "slot": "dyn:patient.sex"
+  },
+  {
+   "role": "caregiver",
+   "text": "I am not sure how they identify; please ask them directly.",
+   "ts": "2026-10-19 11:56:32",
+   "kind": "answer",
+   "slot": "dyn:patient.sex"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. To help the team, could you tell me if the patient is a boy or a girl?",
+   "ts": "2026-10-19 11:56:38",
+   "kind": "question",
+   "slot": "dyn:patient.sex"
+  },
+  {
+   "role": "caregiver",
+   "text": "I am not sure how they identify; please ask them directly.",
+   "ts": "2026-10-19 11:56:38",
+   "kind": "answer",
+   "slot": "dyn:patient.sex"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Is the patient pregnant?",
+   "ts": "2026-10-19 11:56:43",
+   "kind": "question",
+   "slot": "dyn:history.pregnant"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-19 11:56:43",
+   "kind": "answer",
+   "slot": "dyn:history.pregnant"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Has the patient had a fever or a high temperature recently?",
+   "ts": "2026-10-19 11:56:50",
+   "kind": "question",
+   "slot": "dyn:history.postpartum+complaint.fever"
+  },
+  {
+   "role": "caregiver",
+   "text": "No fever known",
+   "ts": "2026-10-19 11:56:50",
+   "kind": "answer",
+   "slot": "dyn:history.postpartum+complaint.fever"
+  },
+  {
+   "role": "bot",
+   "text": "Has the patient given birth in the last few weeks?",
+   "ts": "2026-10-19 11:56:57",
+   "kind": "question",
+   "slot": "dyn:history.postpartum"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-19 11:56:57",
+   "kind": "answer",
+   "slot": "dyn:history.postpartum"
+  },
+  {
+   "role": "bot",
+   "text": "I see. Does the patient have any new rashes, and have they traveled outside the country in the last two weeks?",
+   "ts": "2026-10-19 11:57:03",
+   "kind": "question",
+   "slot": "dyn:infection.rash+infection.travel_14d"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-19 11:57:03",
+   "kind": "answer",
+   "slot": "dyn:infection.rash+infection.travel_14d"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Has the patient been in contact with anyone who has an infectious illness recently, and are they acting more confused or sleepy than usual?",
+   "ts": "2026-10-19 11:57:10",
+   "kind": "question",
+   "slot": "dyn:infection.contacts+ams.changed_from_baseline"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-19 11:57:10",
+   "kind": "answer",
+   "slot": "dyn:infection.contacts+ams.changed_from_baseline"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. On a scale of 0 to 10, how much pain is the patient in right now? Also, has the patient said or done anything to suggest they might hurt themselves or someone else?",
+   "ts": "2026-10-19 11:57:17",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating+complaint.danger_to_self_or_others"
+  },
+  {
+   "role": "caregiver",
+   "text": "They told me today they have thoughts of hurting themselves. I do not know whether they took any tablets.",
+   "ts": "2026-10-19 11:57:17",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_rating+complaint.danger_to_self_or_others"
+  },
+  {
+   "role": "system",
+   "text": "floor: at least ESI-2  rules: ['B-09.suicidal-or-homicidal']",
+   "ts": "2026-10-19 11:57:21",
+   "kind": "floor"
+  },
+  {
+   "role": "bot",
+   "text": "I've noted the concerns about self-harm. Does the patient take any regular medications, and do they have any known allergies, especially to medicine?",
+   "ts": "2026-10-19 11:57:25",
+   "kind": "question",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "caregiver",
+   "text": "Unknown; I have not checked Unknown",
+   "ts": "2026-10-19 11:57:25",
+   "kind": "answer",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Does the patient take any regular medications? You can also send a photo of the boxes if that's easier.",
+   "ts": "2026-10-19 11:57:31",
+   "kind": "question",
+   "slot": "dyn:M.medications"
+  },
+  {
+   "role": "caregiver",
+   "text": "Unknown; I have not checked",
+   "ts": "2026-10-19 11:57:31",
+   "kind": "answer",
+   "slot": "dyn:M.medications"
+  },
+  {
+   "role": "bot",
+   "text": "I understand you're not sure. Are there any medications the patient takes on a regular basis?",
+   "ts": "2026-10-19 11:57:37",
+   "kind": "question",
+   "slot": "dyn:M.medications"
+  },
+  {
+   "role": "caregiver",
+   "text": "Unknown; I have not checked",
+   "ts": "2026-10-19 11:57:37",
+   "kind": "answer",
+   "slot": "dyn:M.medications"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Does the patient have any allergies to medications or other substances?",
+   "ts": "2026-10-19 11:57:42",
+   "kind": "question",
+   "slot": "dyn:A.allergies"
+  }
+ ],
+ "stage": "floor",
+ "floor": "at least ESI-2",
+ "phase": "enroute",
+ "created": "2026-10-19 11:55",
+ "pending_slot": "dyn:A.allergies",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {}
+}

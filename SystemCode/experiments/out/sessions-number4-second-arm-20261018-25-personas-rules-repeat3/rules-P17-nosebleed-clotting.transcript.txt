@@ -1,0 +1,46 @@
+arm B, form rules, persona P17-nosebleed-clotting, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  Is the patient awake and responding normally?
+A1  Yes, he's awake and talking.
+
+Q2  Is the patient having any chest pain right now?
+A2  I don't know.
+
+Q3  Is the patient having any trouble breathing right now?
+A3  I don't know.
+
+Q4  Is the patient bleeding heavily right now?
+A4  His nose is bleeding and it won't stop.
+
+Q5  Is the nosebleed fast, will not stop with pressure, or is it running down the back of his throat?
+A5  His nose has been bleeding and it won't stop.
+
+Q6  Is the nosebleed fast, will not stop with pressure, or is it running down the back of his throat?
+A6  His nose has been bleeding and it won't stop.
+
+Q7  Is the patient's nosebleed fast, will not stop with pressure, or is it running down the back of his throat?
+A7  His nose has been bleeding and it won't stop.
+
+Q8  Is the nosebleed coming from the back of his nose or throat, or is it very fast and won't stop with pressure?
+A8  His nose has been bleeding and it won't stop.
+
+Q9  Is the nosebleed coming from the back of his nose or throat, or is it very fast and won't stop with pressure?
+A9  His nose has been bleeding and it won't stop.
+
+Q10  Is the nosebleed coming from the back of his nose or throat, or is it very fast and won't stop with pressure?
+A10  His nose has been bleeding and it won't stop.
+
+Q11  Is the nosebleed fast, will not stop with pressure, or is it running down the back of his throat?
+A11  His nose has been bleeding and it won't stop.
+
+Q12  Is the nosebleed fast, will not stop with pressure, or is it running down the back of his throat?
+A12  His nose has been bleeding and it won't stop.
+
+Q13  Is the nosebleed fast, will not stop with pressure, or is it running down the back of his throat?
+A13  His nose has been bleeding and it won't stop.
+
+Q14  Is the nosebleed fast, will not stop with pressure, or is it running down the back of his throat?
+A14  His nose has been bleeding and it won't stop.
+
+DECISION {"done": true, "decision": "ESI-1 indicator", "reason": "The patient has a nosebleed that is described as not stopping, which meets the criteria for a high-risk epistaxis (brisk or posterior) requiring immediate evaluation.", "citation": "ESI v5 p.13 (epistasis); Rule B-15"}
+OUTCOME level 1 | expected at least ESI-2 | pass True | label None | max prompt tokens 44158

@@ -1,0 +1,831 @@
+{
+ "sid": "TIGER-1326",
+ "facts": {
+  "danger_signs.responsive": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 14,
+   "ts": "2026-10-15 00:00"
+  },
+  "danger_signs.chest_pain_now": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-10-14 23:58"
+  },
+  "danger_signs.breathing_difficulty": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-10-14 23:58"
+  },
+  "danger_signs.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 4,
+   "ts": "2026-10-14 23:58"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "neuro_symptoms",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "persona",
+      "turn": 5,
+      "ts": "2026-10-14 23:58"
+     },
+     "text": {
+      "value": "increasingly sleepy and confused, and he can't state the correct date",
+      "status": "reported",
+      "who": "persona",
+      "turn": 5,
+      "ts": "2026-10-14 23:58"
+     }
+    },
+    {
+     "category": "abdominal_pain",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "persona",
+      "turn": 5,
+      "ts": "2026-10-14 23:58"
+     },
+     "text": {
+      "value": "mild abdominal discomfort",
+      "status": "reported",
+      "who": "persona",
+      "turn": 25,
+      "ts": "2026-10-15 00:01"
+     },
+     "onset": {
+      "value": "over the past two days",
+      "status": "reported",
+      "who": "persona",
+      "turn": 6,
+      "ts": "2026-10-14 23:59"
+     },
+     "pain_rating": {
+      "value": 3,
+      "status": "reported",
+      "who": "persona",
+      "turn": 25,
+      "ts": "2026-10-15 00:01"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 5
+  },
+  "complaint.category": {
+   "value": [
+    "neuro_symptoms",
+    "abdominal_pain"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 25,
+   "ts": "2026-10-15 00:01"
+  },
+  "complaint.text": {
+   "value": "mild abdominal discomfort",
+   "status": "reported",
+   "who": "persona",
+   "turn": 25,
+   "ts": "2026-10-15 00:01"
+  },
+  "obs.new_confusion_lethargy_disorientation": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 13,
+   "ts": "2026-10-14 23:59"
+  },
+  "E.mechanism": {
+   "value": "none",
+   "status": "reported",
+   "who": "derived",
+   "turn": 5,
+   "ts": "2026-10-14 23:58"
+  },
+  "complaint.onset": {
+   "value": "over the past two days",
+   "status": "reported",
+   "who": "persona",
+   "turn": 6,
+   "ts": "2026-10-14 23:59"
+  },
+  "patient.age": {
+   "value": 58,
+   "status": "reported",
+   "who": "persona",
+   "turn": 6,
+   "ts": "2026-10-14 23:59"
+  },
+  "patient.age_group": {
+   "value": "adult",
+   "status": "reported",
+   "who": "derived",
+   "turn": 6,
+   "ts": "2026-10-14 23:59"
+  },
+  "patient.sex": {
+   "value": "male",
+   "status": "reported",
+   "who": "persona",
+   "turn": 7,
+   "ts": "2026-10-14 23:59"
+  },
+  "complaint.fever": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 8,
+   "ts": "2026-10-14 23:59"
+  },
+  "infection.rash": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 8,
+   "ts": "2026-10-14 23:59"
+  },
+  "infection.travel_14d": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 9,
+   "ts": "2026-10-14 23:59"
+  },
+  "infection.contacts": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 9,
+   "ts": "2026-10-14 23:59"
+  },
+  "complaint.pain_rating": {
+   "value": 3,
+   "status": "reported",
+   "who": "persona",
+   "turn": 25,
+   "ts": "2026-10-15 00:01"
+  },
+  "complaint.pain_latest": {
+   "value": 3,
+   "status": "reported",
+   "who": "persona",
+   "turn": 25,
+   "ts": "2026-10-15 00:01"
+  },
+  "complaint.uti_symptoms": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 10,
+   "ts": "2026-10-14 23:59"
+  },
+  "ams.changed_from_baseline": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 11,
+   "ts": "2026-10-14 23:59"
+  },
+  "obs.confusion_lethargy_disorientation": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 11,
+   "ts": "2026-10-14 23:59"
+  },
+  "obs.subtle_mental_status_change": {
+   "value": true,
+   "status": "reported",
+   "who": "derived",
+   "turn": 11,
+   "ts": "2026-10-14 23:59"
+  },
+  "stroke.vision_change": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 12,
+   "ts": "2026-10-14 23:59"
+  },
+  "stroke.face_droop": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 13,
+   "ts": "2026-10-14 23:59"
+  },
+  "stroke.arm_weakness": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 13,
+   "ts": "2026-10-14 23:59"
+  },
+  "stroke.speech_change": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 14,
+   "ts": "2026-10-15 00:00"
+  },
+  "stroke.balance_loss": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 14,
+   "ts": "2026-10-15 00:00"
+  },
+  "complaint.danger_to_self_or_others": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 15,
+   "ts": "2026-10-15 00:00"
+  },
+  "complaint.known_toxic_ingestion": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 16,
+   "ts": "2026-10-15 00:00"
+  },
+  "M.medications": {
+   "value": [
+    "lactulose",
+    "spironolactone",
+    "furosemide"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 16,
+   "ts": "2026-10-15 00:00"
+  },
+  "complaint.post_ictal_after_seizure": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 20,
+   "ts": "2026-10-15 00:00"
+  },
+  "complaint.vomiting": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 20,
+   "ts": "2026-10-15 00:00"
+  },
+  "A.allergies": {
+   "value": [],
+   "status": "reported",
+   "who": "persona",
+   "turn": 21,
+   "ts": "2026-10-15 00:00"
+  },
+  "history.conditions": {
+   "value": [
+    "cirrhosis",
+    "chronic hepatitis B"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 21,
+   "ts": "2026-10-15 00:00"
+  },
+  "history.immunocompromised": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 22,
+   "ts": "2026-10-15 00:01"
+  },
+  "history.baseline_mental_status": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 22,
+   "ts": "2026-10-15 00:01"
+  },
+  "identity.dob": {
+   "value": "07 Jul 1968",
+   "status": "reported",
+   "who": "persona",
+   "turn": 23,
+   "ts": "2026-10-15 00:01"
+  },
+  "identity.name": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 24,
+   "ts": "2026-10-15 00:01"
+  },
+  "complaint.pain_refractory_constant_or_maximal_onset": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 25,
+   "ts": "2026-10-15 00:01"
+  },
+  "complaint.unilateral_lower_quadrant_pain": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 25,
+   "ts": "2026-10-15 00:01"
+  },
+  "complaint.testicular_or_scrotal_pain": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 26,
+   "ts": "2026-10-15 00:01"
+  },
+  "E.abdominal_trauma": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 27,
+   "ts": "2026-10-15 00:01"
+  },
+  "L.last_intake": {
+   "value": "a small bowl of rice at noon today",
+   "status": "reported",
+   "who": "persona",
+   "turn": 28,
+   "ts": "2026-10-15 00:01"
+  }
+ },
+ "attempts": {
+  "danger_signs.responsive": 1,
+  "danger_signs.chest_pain_now": 2,
+  "danger_signs.breathing_difficulty": 1,
+  "danger_signs.heavy_bleeding": 2,
+  "complaint.category": 2,
+  "complaint.onset": 1,
+  "patient.age": 1,
+  "patient.sex": 1,
+  "complaint.fever": 1,
+  "infection.rash": 1,
+  "infection.travel_14d": 1,
+  "infection.contacts": 1,
+  "complaint.uti_symptoms": 1,
+  "stroke.vision_change": 2,
+  "ams.changed_from_baseline": 1,
+  "stroke.face_droop": 1,
+  "stroke.arm_weakness": 1,
+  "stroke.speech_change": 1,
+  "stroke.balance_loss": 1,
+  "complaint.danger_to_self_or_others": 1,
+  "complaint.known_toxic_ingestion": 1,
+  "complaint.severe_flank_pain": 3,
+  "complaint.vomiting": 2,
+  "complaint.post_ictal_after_seizure": 1,
+  "A.allergies": 1,
+  "history.conditions": 1,
+  "history.immunocompromised": 1,
+  "history.baseline_mental_status": 1,
+  "identity.name": 2,
+  "identity.dob": 1,
+  "complaint.pain_refractory_constant_or_maximal_onset": 1,
+  "complaint.unilateral_lower_quadrant_pain": 1,
+  "complaint.testicular_or_scrotal_pain": 1,
+  "E.abdominal_trauma": 1,
+  "L.last_intake": 1
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "I'm here to help get the team ready. Is the person awake and responding to you, and are they currently experiencing any chest pain, trouble breathing, or heavy bleeding?",
+   "ts": "2026-10-14 23:58:26",
+   "kind": "question",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "caregiver",
+   "text": "He is awake and breathing normally, but he answers slowly. He has no chest pain, no trouble breathing, and no heavy bleeding.",
+   "ts": "2026-10-14 23:58:27",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "bot",
+   "text": "I understand he's breathing okay. Just to be certain, is he feeling any pain in his chest at this moment?",
+   "ts": "2026-10-14 23:58:33",
+   "kind": "question",
+   "slot": "dyn:danger_signs.chest_pain_now"
+  },
+  {
+   "role": "caregiver",
+   "text": "He reports mild abdominal discomfort, but he hasn't mentioned any chest pain.",
+   "ts": "2026-10-14 23:58:34",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.chest_pain_now"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear about his abdominal discomfort. To help the team prepare, is he having any trouble breathing or is there any heavy bleeding?",
+   "ts": "2026-10-14 23:58:39",
+   "kind": "question",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category"
+  },
+  {
+   "role": "caregiver",
+   "text": "He is breathing normally and there has been no vomiting of blood.",
+   "ts": "2026-10-14 23:58:40",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear about the discomfort. Is he currently bleeding heavily from any wound?",
+   "ts": "2026-10-14 23:58:45",
+   "kind": "question",
+   "slot": "dyn:danger_signs.heavy_bleeding"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, there has been no vomiting of blood and his stools are not black.",
+   "ts": "2026-10-14 23:58:47",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.heavy_bleeding"
+  },
+  {
+   "role": "bot",
+   "text": "Could you tell me more about what is bothering him the most today?",
+   "ts": "2026-10-14 23:58:52",
+   "kind": "question",
+   "slot": "dyn:complaint.category"
+  },
+  {
+   "role": "caregiver",
+   "text": "He is increasingly sleepy and confused, and he can't state the correct date. He also has some mild abdominal discomfort.",
+   "ts": "2026-10-14 23:58:53",
+   "kind": "answer",
+   "slot": "dyn:complaint.category"
+  },
+  {
+   "role": "system",
+   "text": "floor: at least ESI-2  rules: ['B-01.new-altered-mental-status']",
+   "ts": "2026-10-14 23:58:58",
+   "kind": "floor"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear about his confusion. When did these symptoms first start, and could you tell me his age?",
+   "ts": "2026-10-14 23:59:00",
+   "kind": "question",
+   "slot": "dyn:complaint.onset+patient.age"
+  },
+  {
+   "role": "caregiver",
+   "text": "His abdomen has been swelling and he's been getting more confused over the past two days. He is 58 years old.",
+   "ts": "2026-10-14 23:59:02",
+   "kind": "answer",
+   "slot": "dyn:complaint.onset+patient.age"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear he's feeling this way. Is he a man or a woman?",
+   "ts": "2026-10-14 23:59:08",
+   "kind": "question",
+   "slot": "dyn:patient.sex"
+  },
+  {
+   "role": "caregiver",
+   "text": "He is a man.",
+   "ts": "2026-10-14 23:59:09",
+   "kind": "answer",
+   "slot": "dyn:patient.sex"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry he's going through this. Does he have a fever, and have you noticed any new rashes on his skin?",
+   "ts": "2026-10-14 23:59:14",
+   "kind": "question",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "He has no fever. I haven't noticed any new rashes.",
+   "ts": "2026-10-14 23:59:16",
+   "kind": "answer",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear about the swelling. Has he traveled outside the country in the last two weeks, or been in contact with anyone who has been sick recently?",
+   "ts": "2026-10-14 23:59:22",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-14 23:59:23",
+   "kind": "answer",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Does he have any pain or burning when he goes to the bathroom, or have you noticed any changes in how often he goes?",
+   "ts": "2026-10-14 23:59:28",
+   "kind": "question",
+   "slot": "dyn:complaint.uti_symptoms"
+  },
+  {
+   "role": "caregiver",
+   "text": "He reports mild abdominal discomfort, 3/10. I don't know if he has pain or burning when he goes to the bathroom.",
+   "ts": "2026-10-14 23:59:31",
+   "kind": "answer",
+   "slot": "dyn:complaint.uti_symptoms"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry you're not sure about the bathroom symptoms. Has he had any sudden changes in his vision, or does he seem more confused or sleepy than usual?",
+   "ts": "2026-10-14 23:59:37",
+   "kind": "question",
+   "slot": "dyn:stroke.vision_change+ams.changed_from_baseline"
+  },
+  {
+   "role": "caregiver",
+   "text": "He has been increasingly sleepy and confused. He is awake but answers very slowly.",
+   "ts": "2026-10-14 23:59:39",
+   "kind": "answer",
+   "slot": "dyn:stroke.vision_change+ams.changed_from_baseline"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear he's having trouble staying alert. Have you noticed any sudden changes or problems with his vision?",
+   "ts": "2026-10-14 23:59:44",
+   "kind": "question",
+   "slot": "dyn:stroke.vision_change"
+  },
+  {
+   "role": "caregiver",
+   "text": "I haven't noticed any problems with his vision.",
+   "ts": "2026-10-14 23:59:46",
+   "kind": "answer",
+   "slot": "dyn:stroke.vision_change"
+  },
+  {
+   "role": "bot",
+   "text": "I understand he is very sleepy. Have you noticed any drooping on one side of his face or any weakness or numbness in his arms or legs?",
+   "ts": "2026-10-14 23:59:51",
+   "kind": "question",
+   "slot": "dyn:stroke.face_droop+stroke.arm_weakness"
+  },
+  {
+   "role": "caregiver",
+   "text": "I haven't noticed any drooping or weakness in his limbs. He is just very sleepy and confused.",
+   "ts": "2026-10-14 23:59:53",
+   "kind": "answer",
+   "slot": "dyn:stroke.face_droop+stroke.arm_weakness"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear he's so confused. Has his speech become slurred or strange, or has he suddenly had any trouble with his balance?",
+   "ts": "2026-10-14 23:59:59",
+   "kind": "question",
+   "slot": "dyn:stroke.speech_change+stroke.balance_loss"
+  },
+  {
+   "role": "caregiver",
+   "text": "He is awake and breathing normally but answers slowly. I don't know if his speech is slurred or if he has trouble with his balance.",
+   "ts": "2026-10-15 00:00:01",
+   "kind": "answer",
+   "slot": "dyn:stroke.speech_change+stroke.balance_loss"
+  },
+  {
+   "role": "bot",
+   "text": "I understand he is responding slowly. Has he said or done anything that makes you concerned he might hurt himself or anyone else?",
+   "ts": "2026-10-15 00:00:07",
+   "kind": "question",
+   "slot": "dyn:complaint.danger_to_self_or_others"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, he hasn't done anything to hurt himself or anyone else.",
+   "ts": "2026-10-15 00:00:08",
+   "kind": "answer",
+   "slot": "dyn:complaint.danger_to_self_or_others"
+  },
+  {
+   "role": "bot",
+   "text": "I'm glad to hear he isn't a danger to himself. Has he swallowed or taken anything that could be poisonous, or perhaps more of a medicine than he should have?",
+   "ts": "2026-10-15 00:00:14",
+   "kind": "question",
+   "slot": "dyn:complaint.known_toxic_ingestion"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, he hasn't taken anything poisonous or extra medication. He only takes lactulose, spironolactone, and furosemide.",
+   "ts": "2026-10-15 00:00:16",
+   "kind": "answer",
+   "slot": "dyn:complaint.known_toxic_ingestion"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you for confirming his medications. Is he experiencing any severe pain in his side or back, or has he been vomiting?",
+   "ts": "2026-10-15 00:00:22",
+   "kind": "question",
+   "slot": "dyn:complaint.severe_flank_pain+complaint.vomiting"
+  },
+  {
+   "role": "caregiver",
+   "text": "He reports mild abdominal discomfort, 3/10. He has not been vomiting any blood.",
+   "ts": "2026-10-15 00:00:24",
+   "kind": "answer",
+   "slot": "dyn:complaint.severe_flank_pain+complaint.vomiting"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear about the discomfort. Is he experiencing any severe pain in his side or back, specifically between the ribs and the hip?",
+   "ts": "2026-10-15 00:00:30",
+   "kind": "question",
+   "slot": "dyn:complaint.severe_flank_pain"
+  },
+  {
+   "role": "caregiver",
+   "text": "He reports mild abdominal discomfort, 3/10.",
+   "ts": "2026-10-15 00:00:31",
+   "kind": "answer",
+   "slot": "dyn:complaint.severe_flank_pain"
+  },
+  {
+   "role": "bot",
+   "text": "I understand the discomfort is mild. To be specific, is he having any sharp or severe pain in his side or back, between the ribs and the hip?",
+   "ts": "2026-10-15 00:00:38",
+   "kind": "question",
+   "slot": "dyn:complaint.severe_flank_pain"
+  },
+  {
+   "role": "caregiver",
+   "text": "He reports mild abdominal discomfort, 3/10.",
+   "ts": "2026-10-15 00:00:39",
+   "kind": "answer",
+   "slot": "dyn:complaint.severe_flank_pain"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear about the discomfort. Has he had a seizure or fit recently, and has he been vomiting?",
+   "ts": "2026-10-15 00:00:44",
+   "kind": "question",
+   "slot": "dyn:complaint.post_ictal_after_seizure+complaint.vomiting"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, he hasn't had a seizure or fit. He hasn't been vomiting.",
+   "ts": "2026-10-15 00:00:46",
+   "kind": "answer",
+   "slot": "dyn:complaint.post_ictal_after_seizure+complaint.vomiting"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear about his discomfort. Does he have any known allergies, especially to medications, or any other ongoing medical conditions?",
+   "ts": "2026-10-15 00:00:52",
+   "kind": "question",
+   "slot": "dyn:A.allergies+history.conditions"
+  },
+  {
+   "role": "caregiver",
+   "text": "He has no known allergies. He has cirrhosis caused by chronic hepatitis B.",
+   "ts": "2026-10-15 00:00:53",
+   "kind": "answer",
+   "slot": "dyn:A.allergies+history.conditions"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you for sharing those details. Has he ever been told his immune system is weakened, or is he currently being treated for cancer or an organ transplant?",
+   "ts": "2026-10-15 00:00:59",
+   "kind": "question",
+   "slot": "dyn:history.immunocompromised+history.baseline_mental_status"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-15 00:01:00",
+   "kind": "answer",
+   "slot": "dyn:history.immunocompromised+history.baseline_mental_status"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you for that information. Could you please tell me the patient's full name and date of birth?",
+   "ts": "2026-10-15 00:01:05",
+   "kind": "question",
+   "slot": "dyn:identity.name+identity.dob"
+  },
+  {
+   "role": "caregiver",
+   "text": "His name is not provided, but his date of birth is 07 Jul 1968.",
+   "ts": "2026-10-15 00:01:07",
+   "kind": "answer",
+   "slot": "dyn:identity.name+identity.dob"
+  },
+  {
+   "role": "bot",
+   "text": "I understand you don't have his name right now, but could you please provide his full name if you find it?",
+   "ts": "2026-10-15 00:01:12",
+   "kind": "question",
+   "slot": "dyn:identity.name"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-15 00:01:13",
+   "kind": "answer",
+   "slot": "dyn:identity.name"
+  },
+  {
+   "role": "bot",
+   "text": "That's enough for the hospital team to prepare. Show the code TIGER-1326 at the counter when you arrive. I'll ask a few more things while you're on the way; tell me straight away if anything changes.",
+   "ts": "2026-10-15 00:01:16",
+   "kind": "ack"
+  },
+  {
+   "role": "bot",
+   "text": "Is the pain in his belly constant and not getting better with any medicine, and is it located only on one side of the lower abdomen?",
+   "ts": "2026-10-15 00:01:19",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_refractory_constant_or_maximal_onset+complaint.unilateral_lower_quadrant_pain"
+  },
+  {
+   "role": "caregiver",
+   "text": "He reports mild abdominal discomfort, 3/10. I don't know if it's constant or only on one side.",
+   "ts": "2026-10-15 00:01:20",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_refractory_constant_or_maximal_onset+complaint.unilateral_lower_quadrant_pain"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Is he also experiencing any pain in his testicles or the scrotum?",
+   "ts": "2026-10-15 00:01:26",
+   "kind": "question",
+   "slot": "dyn:complaint.testicular_or_scrotal_pain"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-15 00:01:27",
+   "kind": "answer",
+   "slot": "dyn:complaint.testicular_or_scrotal_pain"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Was there any recent injury or blow to his abdomen?",
+   "ts": "2026-10-15 00:01:32",
+   "kind": "question",
+   "slot": "dyn:E.abdominal_trauma"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, there has been no injury or blow to his abdomen.",
+   "ts": "2026-10-15 00:01:34",
+   "kind": "answer",
+   "slot": "dyn:E.abdominal_trauma"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. When was the last time he had anything to eat or drink, and what was it?",
+   "ts": "2026-10-15 00:01:39",
+   "kind": "question",
+   "slot": "dyn:L.last_intake"
+  },
+  {
+   "role": "caregiver",
+   "text": "He last ate a small bowl of rice at noon today.",
+   "ts": "2026-10-15 00:01:40",
+   "kind": "answer",
+   "slot": "dyn:L.last_intake"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you - that's everything. Show the code TIGER-1326 at the counter when you arrive.",
+   "ts": "2026-10-15 00:01:43",
+   "kind": "ack"
+  }
+ ],
+ "stage": "rest",
+ "floor": "at least ESI-2",
+ "phase": "enroute",
+ "opened": [],
+ "created": "2026-10-14 23:58",
+ "pending_slot": "dyn:L.last_intake",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {},
+ "qr_ready": true,
+ "qr_turn": 24,
+ "said_done": true
+}

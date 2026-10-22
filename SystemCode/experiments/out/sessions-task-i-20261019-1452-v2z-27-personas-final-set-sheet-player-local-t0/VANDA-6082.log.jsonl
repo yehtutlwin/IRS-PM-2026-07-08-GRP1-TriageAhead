@@ -1,0 +1,50 @@
+{"t": "14:03:03", "kind": "engine", "note": "session VANDA-6082 started (web)"}
+{"t": "14:03:07", "kind": "question", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "Is the patient awake and responding to you normally? Also, are they currently experiencing any chest pain, trouble breathing, or heavy bleeding?", "fields": ["danger_signs.responsive", "danger_signs.chest_pain_now"], "offered": ["danger_signs.responsive", "danger_signs.chest_pain_now", "danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text"]}
+{"t": "14:03:07", "kind": "answer", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "Yes. No."}
+{"t": "14:03:11", "kind": "extract", "writes": [["danger_signs.responsive", true], ["danger_signs.chest_pain_now", false]]}
+{"t": "14:03:14", "kind": "question", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding", "text": "I understand. Is the patient having any trouble breathing or bleeding heavily right now?", "fields": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding"], "offered": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text", "complaint.onset", "E.mechanism"]}
+{"t": "14:03:14", "kind": "answer", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding", "text": "No breathing trouble. No."}
+{"t": "14:03:18", "kind": "extract", "writes": [["danger_signs.breathing_difficulty", false], ["danger_signs.heavy_bleeding", false]]}
+{"t": "14:03:21", "kind": "question", "slot": "dyn:complaint.category+complaint.text", "text": "I'm glad to hear they are breathing okay. Could you tell me what the main problem is and a bit more about what is happening?", "fields": ["complaint.category", "complaint.text"], "offered": ["complaint.category", "complaint.text", "complaint.onset", "E.mechanism", "patient.age", "patient.sex"]}
+{"t": "14:03:21", "kind": "answer", "slot": "dyn:complaint.category+complaint.text", "text": "A sore throat for two days, it hurts to swallow."}
+{"t": "14:03:32", "kind": "extract", "writes": [["complaint.category", "sore_throat"], ["complaint.text", "A sore throat for two days, it hurts to swallow."]]}
+{"t": "14:03:32", "kind": "extract", "writes": [["E.mechanism", "none"]], "via": "derived-non-injury"}
+{"t": "14:03:35", "kind": "question", "slot": "dyn:complaint.onset+patient.age+patient.sex", "text": "I see. How old is the patient, and when did the sore throat begin?", "fields": ["complaint.onset", "patient.age", "patient.sex"], "offered": ["complaint.onset", "patient.age", "patient.sex", "complaint.fever", "infection.rash", "infection.travel_14d"]}
+{"t": "14:03:35", "kind": "answer", "slot": "dyn:complaint.onset+patient.age+patient.sex", "text": "Two days ago. 25. Female."}
+{"t": "14:03:40", "kind": "extract", "writes": [["complaint.onset", "Two days ago"], ["patient.age", 25], ["patient.sex", "female"]]}
+{"t": "14:03:43", "kind": "question", "slot": "dyn:history.pregnant+history.postpartum", "text": "I understand. Is she currently pregnant or has she given birth in the last few weeks?", "fields": ["history.pregnant", "history.postpartum"], "offered": ["history.pregnant", "history.postpartum", "complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts"]}
+{"t": "14:03:43", "kind": "answer", "slot": "dyn:history.pregnant+history.postpartum", "text": "No."}
+{"t": "14:03:47", "kind": "extract", "writes": [["history.pregnant", false], ["history.postpartum", false]]}
+{"t": "14:03:50", "kind": "question", "slot": "dyn:complaint.fever+infection.rash", "text": "Does she have a fever, and have you noticed any new rashes?", "fields": ["complaint.fever", "infection.rash"], "offered": ["complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts", "ams.changed_from_baseline", "complaint.pain_rating"]}
+{"t": "14:03:50", "kind": "answer", "slot": "dyn:complaint.fever+infection.rash", "text": "I think I had a slight temperature yesterday, but none today, it was 37.1 when I checked. No rash."}
+{"t": "14:03:54", "kind": "extract", "writes": [["complaint.fever", false], ["infection.rash", false]]}
+{"t": "14:03:57", "kind": "question", "slot": "dyn:infection.travel_14d+infection.contacts", "text": "I see. Has she traveled outside the country in the last two weeks, or been in contact with anyone who has been sick?", "fields": ["infection.travel_14d", "infection.contacts"], "offered": ["infection.travel_14d", "infection.contacts", "ams.changed_from_baseline", "complaint.pain_rating", "M.medications", "A.allergies"]}
+{"t": "14:03:57", "kind": "answer", "slot": "dyn:infection.travel_14d+infection.contacts", "text": "No. Not that I know of."}
+{"t": "14:04:02", "kind": "extract", "writes": [["infection.travel_14d", false], ["infection.contacts", false]]}
+{"t": "14:04:04", "kind": "question", "slot": "dyn:ams.changed_from_baseline", "text": "Has she seemed more confused, out of it, or unusually sleepy lately?", "fields": ["ams.changed_from_baseline"], "offered": ["ams.changed_from_baseline", "complaint.pain_rating", "M.medications", "A.allergies", "history.conditions", "history.immunocompromised"]}
+{"t": "14:04:04", "kind": "answer", "slot": "dyn:ams.changed_from_baseline", "text": "No, I'm fine."}
+{"t": "14:04:15", "kind": "extract", "writes": [["ams.changed_from_baseline", false]]}
+{"t": "14:04:18", "kind": "question", "slot": "dyn:complaint.pain_rating", "text": "On a scale of 0 to 10, where 10 is the worst pain imaginable, how bad is her pain right now?", "fields": ["complaint.pain_rating"], "offered": ["complaint.pain_rating", "M.medications", "A.allergies", "history.conditions", "history.immunocompromised", "identity.name"]}
+{"t": "14:04:18", "kind": "answer", "slot": "dyn:complaint.pain_rating", "text": "About 3 out of 10, mild."}
+{"t": "14:04:22", "kind": "extract", "writes": [["complaint.pain_rating", 3]]}
+{"t": "14:04:25", "kind": "question", "slot": "dyn:M.medications+A.allergies", "text": "I understand. Does she have any allergies to medications, and what medicines does she take regularly?", "fields": ["M.medications", "A.allergies"], "offered": ["M.medications", "A.allergies", "history.conditions", "history.immunocompromised", "identity.name", "identity.dob"]}
+{"t": "14:04:25", "kind": "answer", "slot": "dyn:M.medications+A.allergies", "text": "No medicines. None."}
+{"t": "14:04:29", "kind": "extract", "writes": [["M.medications", []]]}
+{"t": "14:04:33", "kind": "question", "slot": "dyn:A.allergies", "text": "To be clear, does she have any allergies to medications?", "fields": ["A.allergies"], "offered": ["A.allergies"]}
+{"t": "14:04:33", "kind": "answer", "slot": "dyn:A.allergies", "text": "None."}
+{"t": "14:04:44", "kind": "extract", "writes": [["A.allergies", []]]}
+{"t": "14:04:47", "kind": "question", "slot": "dyn:history.conditions+history.immunocompromised", "text": "Does she have any ongoing medical conditions or any treatments that might weaken her immune system?", "fields": ["history.conditions", "history.immunocompromised"], "offered": ["history.conditions", "history.immunocompromised", "identity.name", "identity.dob"]}
+{"t": "14:04:47", "kind": "answer", "slot": "dyn:history.conditions+history.immunocompromised", "text": "None. No."}
+{"t": "14:04:51", "kind": "extract", "writes": [["history.immunocompromised", false]]}
+{"t": "14:04:54", "kind": "question", "slot": "dyn:history.conditions", "text": "Does she have any other medical conditions, like asthma or diabetes?", "fields": ["history.conditions"], "offered": ["history.conditions"]}
+{"t": "14:04:54", "kind": "answer", "slot": "dyn:history.conditions", "text": "None."}
+{"t": "14:04:57", "kind": "extract", "writes": []}
+{"t": "14:04:57", "kind": "extract", "writes": [["history.conditions", []]], "via": "blanket-no"}
+{"t": "14:05:00", "kind": "question", "slot": "dyn:identity.name+identity.dob", "text": "I'm glad to hear she's healthy. Could you please tell me her full name and date of birth?", "fields": ["identity.name", "identity.dob"], "offered": ["identity.name", "identity.dob"]}
+{"t": "14:05:00", "kind": "answer", "slot": "dyn:identity.name+identity.dob", "text": "Priya Nair. 21 November 2000."}
+{"t": "14:05:05", "kind": "extract", "writes": [["identity.name", "Priya Nair"], ["identity.dob", "21 November 2000"]]}
+{"t": "14:05:05", "kind": "engine", "note": "floor settled - report ready; remaining questions continue"}
+{"t": "14:05:07", "kind": "question", "slot": "dyn:L.last_intake", "text": "When was the last time she had anything to eat or drink?", "fields": ["L.last_intake"], "offered": ["L.last_intake"]}
+{"t": "14:05:07", "kind": "answer", "slot": "dyn:L.last_intake", "text": "Soup about an hour ago."}
+{"t": "14:05:11", "kind": "extract", "writes": [["L.last_intake", "Soup about an hour ago"]]}
+{"t": "14:05:11", "kind": "engine", "note": "interview complete - no open fields"}

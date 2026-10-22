@@ -1,0 +1,52 @@
+arm B, form rules, persona P16-intentional-overdose, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  Is the patient awake and responding normally?
+A1  Yes, he's awake and talking.
+
+Q2  Is the patient having any chest pain right now?
+A2  I don't know.
+
+Q3  Is the patient having any trouble breathing right now?
+A3  I don't know.
+
+Q4  Is the patient bleeding heavily right now?
+A4  I don't know.
+
+Q5  What is the main reason the patient is coming to the emergency department?
+A5  My friend took an overdose of pills on purpose.
+
+Q6  Is the patient's breathing pattern unusual, or are they having any difficulty breathing?
+A6  I don't know.
+
+Q7  Is the patient's breathing pattern unusual, or are they having any difficulty breathing?
+A7  I don't know.
+
+Q8  Is the patient's breathing pattern unusual, or are they having any difficulty breathing?
+A8  I don't know.
+
+Q9  Is the patient's breathing pattern unusual, or are they having any difficulty breathing?
+A9  I don't know.
+
+Q10  Is the patient's breathing pattern unusual, or are they having any difficulty breathing?
+A10  I don't know.
+
+Q11  Was the overdose of pills intentional, and does the patient have any other symptoms like being very sleepy, confused, or having a very slow or fast heart rate?
+A11  My friend took an overdose of pills on purpose. I don't know.
+
+Q12  Is the patient currently showing any signs of a very slow or fast heart rate, or are they very sleepy or confused?
+A12  I don't know.
+
+Q13  Is the patient's breathing pattern unusual, or are they having any difficulty breathing?
+A13  I don't know.
+
+Q14  Is the patient currently showing any signs of a very slow or fast heart rate, or are they very sleepy or confused?
+A14  I don't know.
+
+Q15  Is the patient currently showing any signs of a very slow or fast heart rate, or are they very sleepy or confused?
+A15  I don't know.
+
+Q16  Is the patient currently showing any signs of a very slow or fast heart rate, or are they very sleepy or confused?
+A16  I don't know.
+
+DECISION {"decision": "unparsed", "reason": "turn limit reached without a decision"}
+OUTCOME no decision in 16 questions | expected at least ESI-2 | pass False | label missing fact | max prompt tokens 44098

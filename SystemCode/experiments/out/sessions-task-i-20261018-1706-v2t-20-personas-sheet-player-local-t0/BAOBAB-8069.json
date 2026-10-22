@@ -1,0 +1,472 @@
+{
+ "sid": "BAOBAB-8069",
+ "facts": {
+  "danger_signs.responsive": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-18 16:55"
+  },
+  "danger_signs.chest_pain_now": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-18 16:55"
+  },
+  "danger_signs.breathing_difficulty": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-18 16:55"
+  },
+  "danger_signs.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-18 16:55"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "wound",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 2,
+      "ts": "2026-10-18 16:55"
+     },
+     "text": {
+      "value": "cut on his knee. He fell running across the playground and cut his right knee. It's about 3 centimetres long.",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 2,
+      "ts": "2026-10-18 16:55"
+     },
+     "onset": {
+      "value": "Just now",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 3,
+      "ts": "2026-10-18 16:55"
+     },
+     "onset_abs": {
+      "value": "~2026-10-18 16:55",
+      "status": "reported",
+      "who": "derived",
+      "turn": 3,
+      "ts": "2026-10-18 16:55"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2
+  },
+  "complaint.category": {
+   "value": [
+    "wound"
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-18 16:55"
+  },
+  "complaint.text": {
+   "value": "cut on his knee. He fell running across the playground and cut his right knee. It's about 3 centimetres long.",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-18 16:55"
+  },
+  "complaint.onset": {
+   "value": "Just now",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-18 16:55"
+  },
+  "patient.age": {
+   "value": 6,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-18 16:55"
+  },
+  "complaint.onset_abs": {
+   "value": "~2026-10-18 16:55 (from 'Just now' said 16:55)",
+   "status": "reported",
+   "who": "derived",
+   "turn": 3,
+   "ts": "2026-10-18 16:55"
+  },
+  "patient.age_group": {
+   "value": "child",
+   "status": "reported",
+   "who": "derived",
+   "turn": 3,
+   "ts": "2026-10-18 16:55"
+  },
+  "E.mechanism": {
+   "value": "fall",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 4,
+   "ts": "2026-10-18 16:55"
+  },
+  "patient.sex": {
+   "value": "male",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 4,
+   "ts": "2026-10-18 16:55"
+  },
+  "complaint.fever": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 5,
+   "ts": "2026-10-18 16:55"
+  },
+  "infection.rash": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 5,
+   "ts": "2026-10-18 16:55"
+  },
+  "infection.travel_14d": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 6,
+   "ts": "2026-10-18 16:55"
+  },
+  "infection.contacts": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 6,
+   "ts": "2026-10-18 16:55"
+  },
+  "ams.changed_from_baseline": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 7,
+   "ts": "2026-10-18 16:56"
+  },
+  "complaint.infection_signs": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 10,
+   "ts": "2026-10-18 16:56"
+  },
+  "M.anticoagulant": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 11,
+   "ts": "2026-10-18 16:56"
+  },
+  "complaint.compartment_syndrome_symptoms": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 12,
+   "ts": "2026-10-18 16:56"
+  },
+  "E.fall_height_meters": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 12,
+   "ts": "2026-10-18 16:56"
+  },
+  "M.medications": {
+   "value": [],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 13,
+   "ts": "2026-10-18 16:56"
+  },
+  "A.allergies": {
+   "value": [],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 13,
+   "ts": "2026-10-18 16:56"
+  }
+ },
+ "attempts": {
+  "danger_signs.responsive": 1,
+  "danger_signs.chest_pain_now": 1,
+  "danger_signs.breathing_difficulty": 1,
+  "danger_signs.heavy_bleeding": 1,
+  "complaint.category": 1,
+  "complaint.text": 1,
+  "complaint.onset": 1,
+  "patient.age": 1,
+  "E.mechanism": 1,
+  "patient.sex": 1,
+  "complaint.fever": 1,
+  "infection.rash": 1,
+  "infection.travel_14d": 1,
+  "infection.contacts": 1,
+  "ams.changed_from_baseline": 1,
+  "complaint.pain_rating": 3,
+  "complaint.infection_signs": 1,
+  "M.anticoagulant": 1,
+  "complaint.compartment_syndrome_symptoms": 1,
+  "E.fall_height_meters": 1,
+  "M.medications": 1,
+  "A.allergies": 1,
+  "history.conditions": 3,
+  "history.immunocompromised": 1
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "Is the patient awake and responding to you normally? Also, is he or she experiencing any chest pain, trouble breathing, or heavy bleeding right now?",
+   "ts": "2026-10-18 16:55:12",
+   "kind": "question",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, he's awake and talking. No.",
+   "ts": "2026-10-18 16:55:12",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "bot",
+   "text": "I'm glad he's awake. Is he having any trouble breathing or is there any heavy bleeding? Also, could you tell me what the main problem is and what's happening?",
+   "ts": "2026-10-18 16:55:20",
+   "kind": "question",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category+complaint.text"
+  },
+  {
+   "role": "caregiver",
+   "text": "No. No, it's just a cut on his knee. He fell running across the playground and cut his right knee. It's about 3 centimetres long.",
+   "ts": "2026-10-18 16:55:20",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category+complaint.text"
+  },
+  {
+   "role": "bot",
+   "text": "I understand it's a cut on his knee. About how old is he, and when did this happen?",
+   "ts": "2026-10-18 16:55:29",
+   "kind": "question",
+   "slot": "dyn:complaint.onset+patient.age"
+  },
+  {
+   "role": "caregiver",
+   "text": "Just now, at the playground. He's 6.",
+   "ts": "2026-10-18 16:55:29",
+   "kind": "answer",
+   "slot": "dyn:complaint.onset+patient.age"
+  },
+  {
+   "role": "bot",
+   "text": "I see. Can you tell me more about how he fell and if he is a boy or a girl?",
+   "ts": "2026-10-18 16:55:37",
+   "kind": "question",
+   "slot": "dyn:E.mechanism+patient.sex"
+  },
+  {
+   "role": "caregiver",
+   "text": "He fell while running. He's a boy.",
+   "ts": "2026-10-18 16:55:37",
+   "kind": "answer",
+   "slot": "dyn:E.mechanism+patient.sex"
+  },
+  {
+   "role": "bot",
+   "text": "I've noted that. Does he have a fever or any new rashes on his body?",
+   "ts": "2026-10-18 16:55:44",
+   "kind": "question",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 16:55:44",
+   "kind": "answer",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Has he traveled outside the country or been around anyone with a contagious illness in the last two weeks?",
+   "ts": "2026-10-18 16:55:51",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 16:55:51",
+   "kind": "answer",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "bot",
+   "text": "Is he acting like himself, or is he unusually sleepy or confused? Also, on a scale of 0 to 10, how much pain is he in right now?",
+   "ts": "2026-10-18 16:55:58",
+   "kind": "question",
+   "slot": "dyn:ams.changed_from_baseline+complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 16:55:58",
+   "kind": "answer",
+   "slot": "dyn:ams.changed_from_baseline+complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. How much pain is he in right now on a scale of 0 to 10?",
+   "ts": "2026-10-18 16:56:05",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 16:56:05",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "I understand it's hard to tell. If you had to pick a number from 0 to 10, how much is he hurting right now?",
+   "ts": "2026-10-18 16:56:11",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 16:56:11",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "Does the wound look red, hot, swollen, or is it oozing?",
+   "ts": "2026-10-18 16:56:17",
+   "kind": "question",
+   "slot": "dyn:complaint.infection_signs"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 16:56:17",
+   "kind": "answer",
+   "slot": "dyn:complaint.infection_signs"
+  },
+  {
+   "role": "bot",
+   "text": "Does he take any medicine to prevent blood clots, like warfarin or apixaban?",
+   "ts": "2026-10-18 16:56:23",
+   "kind": "question",
+   "slot": "dyn:M.anticoagulant"
+  },
+  {
+   "role": "caregiver",
+   "text": "No.",
+   "ts": "2026-10-18 16:56:23",
+   "kind": "answer",
+   "slot": "dyn:M.anticoagulant"
+  },
+  {
+   "role": "bot",
+   "text": "Is the pain in his limb getting worse or does the limb feel very tight or hard? Also, how high did he fall from?",
+   "ts": "2026-10-18 16:56:30",
+   "kind": "question",
+   "slot": "dyn:complaint.compartment_syndrome_symptoms+E.fall_height_meters"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 16:56:30",
+   "kind": "answer",
+   "slot": "dyn:complaint.compartment_syndrome_symptoms+E.fall_height_meters"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Does he take any other regular medications, and does he have any known allergies to medicine?",
+   "ts": "2026-10-18 16:56:37",
+   "kind": "question",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "caregiver",
+   "text": "No medicines. No allergies.",
+   "ts": "2026-10-18 16:56:37",
+   "kind": "answer",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "bot",
+   "text": "Does he have any ongoing medical conditions, such as heart issues or diabetes?",
+   "ts": "2026-10-18 16:56:44",
+   "kind": "question",
+   "slot": "dyn:history.conditions"
+  },
+  {
+   "role": "caregiver",
+   "text": "He's healthy.",
+   "ts": "2026-10-18 16:56:44",
+   "kind": "answer",
+   "slot": "dyn:history.conditions"
+  },
+  {
+   "role": "bot",
+   "text": "To make sure the team is prepared, does he have any chronic health conditions like heart problems or diabetes?",
+   "ts": "2026-10-18 16:56:50",
+   "kind": "question",
+   "slot": "dyn:history.conditions"
+  },
+  {
+   "role": "caregiver",
+   "text": "He's healthy.",
+   "ts": "2026-10-18 16:56:50",
+   "kind": "answer",
+   "slot": "dyn:history.conditions"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Just to be certain, does he have any other medical conditions or health problems we should know about?",
+   "ts": "2026-10-18 16:56:55",
+   "kind": "question",
+   "slot": "dyn:history.conditions"
+  },
+  {
+   "role": "caregiver",
+   "text": "He's healthy.",
+   "ts": "2026-10-18 16:56:55",
+   "kind": "answer",
+   "slot": "dyn:history.conditions"
+  },
+  {
+   "role": "bot",
+   "text": "That's good to know. Has he ever been told he has a weakened immune system or any conditions like cancer or HIV?",
+   "ts": "2026-10-18 16:57:01",
+   "kind": "question",
+   "slot": "dyn:history.immunocompromised"
+  }
+ ],
+ "stage": "floor",
+ "floor": null,
+ "phase": "enroute",
+ "created": "2026-10-18 16:55",
+ "pending_slot": "dyn:history.immunocompromised",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {}
+}

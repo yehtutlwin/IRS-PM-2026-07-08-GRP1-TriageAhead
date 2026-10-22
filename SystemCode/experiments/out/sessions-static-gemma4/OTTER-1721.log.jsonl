@@ -1,0 +1,34 @@
+{"t": "03:32:00", "kind": "engine", "note": "session OTTER-1721 started (web)"}
+{"t": "03:32:01", "kind": "question", "slot": "red_flags.screen", "text": "Is the patient awake and responding normally, and are they experiencing any severe chest pain, trouble breathing, or heavy bleeding right now?"}
+{"t": "03:32:02", "kind": "answer", "slot": "red_flags.screen", "text": "She is awake and talking. No, she isn't having chest pain, trouble breathing, or heavy bleeding."}
+{"t": "03:32:05", "kind": "extract", "writes": [["red_flags.responsive", true], ["red_flags.chest_pain_now", false], ["red_flags.breathing_difficulty", false], ["red_flags.heavy_bleeding", false]]}
+{"t": "03:32:06", "kind": "question", "slot": "complaint.main", "text": "Can you tell me what happened, when it started, and how bad the pain is on a scale of 0 to 10?"}
+{"t": "03:32:08", "kind": "answer", "slot": "complaint.main", "text": "She's had a fever since this afternoon and is shivering and very tired. I'm not sure about the pain level."}
+{"t": "03:32:10", "kind": "extract", "writes": [["complaint.category", "fever", "fever"], ["complaint.text", "fever, shivering, and very tired", "fever"], ["complaint.onset", "this afternoon", "fever"], ["infection.fever", true]]}
+{"t": "03:32:10", "kind": "extract", "writes": [["E.mechanism", "none"]], "via": "derived-non-injury"}
+{"t": "03:32:12", "kind": "question", "slot": "complaint.main", "text": "Could you tell me how much pain she is in on a scale of 0 to 10?"}
+{"t": "03:32:13", "kind": "answer", "slot": "complaint.main", "text": "I'm not sure how to rate her pain on a scale. She is just very tired and has been shivering."}
+{"t": "03:32:14", "kind": "extract", "writes": []}
+{"t": "03:32:16", "kind": "question", "slot": "complaint.main", "text": "Could you try to estimate her pain level on a scale of 0 to 10 to help the team?"}
+{"t": "03:32:17", "kind": "answer", "slot": "complaint.main", "text": "I'm not sure, I haven't asked her about a specific pain level."}
+{"t": "03:32:18", "kind": "extract", "writes": []}
+{"t": "03:32:19", "kind": "question", "slot": "M.medications", "text": "Does she take any regular medications?"}
+{"t": "03:32:20", "kind": "answer", "slot": "M.medications", "text": "She takes \"the chemo tablets\" and omeprazole."}
+{"t": "03:32:22", "kind": "extract", "writes": [["M.medications", ["the chemo tablets", "omeprazole"]]]}
+{"t": "03:32:23", "kind": "question", "slot": "allergies_and_history", "text": "Does she have any allergies to medication or other conditions like heart problems, diabetes, or pregnancy?"}
+{"t": "03:32:24", "kind": "answer", "slot": "allergies_and_history", "text": "No, she has no known allergies."}
+{"t": "03:32:25", "kind": "extract", "writes": [["A.allergies", []]]}
+{"t": "03:32:27", "kind": "question", "slot": "allergies_and_history", "text": "Does she have any other conditions, such as being pregnant, postpartum, or having a weakened immune system?"}
+{"t": "03:32:28", "kind": "answer", "slot": "allergies_and_history", "text": "She is undergoing chemotherapy for breast cancer."}
+{"t": "03:32:29", "kind": "extract", "writes": [["history.conditions", ["breast cancer"]], ["history.immunocompromised", true]]}
+{"t": "03:32:29", "kind": "floor", "floor": "at least ESI-2", "fired": ["B-07.immunocompromised-fever"], "sources": ["ESI v5 p.12 (chemotherapy example)"]}
+{"t": "03:32:31", "kind": "question", "slot": "allergies_and_history", "text": "Is she currently pregnant or in the postpartum period?"}
+{"t": "03:32:32", "kind": "answer", "slot": "allergies_and_history", "text": "No, she is not."}
+{"t": "03:32:33", "kind": "extract", "writes": [["history.pregnant_or_postpartum", false]]}
+{"t": "03:32:34", "kind": "question", "slot": "infection.screen", "text": "Has she had any rashes, traveled overseas in the last two weeks, or been in contact with anyone who is unwell?"}
+{"t": "03:32:36", "kind": "answer", "slot": "infection.screen", "text": "No, she hasn't had any rashes, no recent travel, and no contact with anyone unwell."}
+{"t": "03:32:37", "kind": "extract", "writes": [["infection.rash", false], ["infection.travel_14d", false], ["infection.contacts", false]]}
+{"t": "03:32:39", "kind": "question", "slot": "wrapup", "text": "Could you please tell me when she last ate or drank, and provide her name and date of birth for the hospital's records?"}
+{"t": "03:32:40", "kind": "answer", "slot": "wrapup", "text": "She last drank some tea at 4pm. Her name is not provided, but her date of birth is 30 Jun 1975."}
+{"t": "03:32:42", "kind": "extract", "writes": [["L.last_intake", "tea at 4pm"], ["identity.name", null], ["identity.dob", "30 Jun 1975"]]}
+{"t": "03:32:42", "kind": "engine", "note": "interview complete - no open slots"}

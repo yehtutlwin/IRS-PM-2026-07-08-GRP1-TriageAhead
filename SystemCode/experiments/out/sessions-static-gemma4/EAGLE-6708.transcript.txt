@@ -1,0 +1,28 @@
+session EAGLE-6708   started 2026-09-26 03:31   (generated from messages)
+
+03:31:07  BOT  Is the patient awake and responding normally, and are they experiencing any severe chest pain, trouble breathing, or heavy bleeding right now?   [slot red_flags.screen]
+03:31:09  THEM She is awake and talking clearly now. She is not experiencing any chest pain, trouble breathing, or bleeding.   [slot red_flags.screen]
+03:31:11  BOT  Is she currently experiencing any chest pain, trouble breathing, or heavy bleeding?   [slot red_flags.screen]
+03:31:12  THEM No, she isn't experiencing any pain, breathing issues, or bleeding right now.   [slot red_flags.screen]
+03:31:16  BOT  Could you tell me what happened, when it started, and how severe the pain is on a scale of 0 to 10?   [slot complaint.main]
+03:31:18  THEM Her speech became slurred and her left arm went weak at 9am, but it lasted 45 minutes and passed. She has no pain right now (0/10).   [slot complaint.main]
+03:31:20  SYS  floor: at least ESI-2  rules: ['B-05.stroke-signs'] (floor)
+03:31:22  BOT  Did you notice her face drooping on one side at any point today?   [slot stroke.screen]
+03:31:23  THEM I didn't notice any facial drooping, but her speech was slurred and her left arm went weak.   [slot stroke.screen]
+03:31:26  BOT  Could you tell me more about how her symptoms started or what she was doing when they began?   [slot complaint.main]
+03:31:28  THEM Around 9am, her speech became slurred and her left arm went weak so she couldn't lift her teacup. It lasted about 45 minutes and then passed completely.   [slot complaint.main]
+03:31:33  BOT  Can you describe what she was doing or what triggered the symptoms when they first started?   [slot complaint.main]
+03:31:34  THEM I don't know.   [slot complaint.main]
+03:31:36  BOT  Does she take any regular medications?   [slot M.medications]
+03:31:37  THEM She takes one aspirin daily.   [slot M.medications]
+03:31:40  BOT  Does she have any allergies to medication or other medical conditions like heart problems, diabetes, or pregnancy?   [slot allergies_and_history]
+03:31:41  THEM She has no allergies and her only other condition is a stroke she had two years ago.   [slot allergies_and_history]
+03:31:44  BOT  Is she currently pregnant or in the postpartum period?   [slot allergies_and_history]
+03:31:45  THEM No, she is not.   [slot allergies_and_history]
+03:31:48  BOT  Could you let me know if she has any conditions that affect her immune system?   [slot allergies_and_history]
+03:31:49  THEM She had a stroke two years ago.   [slot allergies_and_history]
+03:31:52  BOT  Has she had a fever, a rash, traveled abroad, or been in contact with anyone who is unwell in the last two weeks?   [slot infection.screen]
+03:31:53  THEM No, she hasn't had a fever, a rash, traveled, or been in contact with anyone unwell.   [slot infection.screen]
+03:31:56  BOT  Could you please tell me her name, date of birth, and when she last had something to eat or drink?   [slot wrapup]
+03:31:57  THEM Her name is Mrs. Lim, her date of birth is 15 Mar 1938, and she last ate breakfast at 8am.   [slot wrapup]
+03:32:00  BOT  Thank you - that's everything for now. Show the code EAGLE-6708 at the counter when you arrive. (ack)

@@ -1,0 +1,1020 @@
+# rules/extraction/v5-complete-pass.yaml - one complete reading of the ESI handbook, 5th edition (ENA 2023), with a single aim:
+# list EVERY sentence that assigns or conditions a level, a flag, a reassessment, or a rule about how levels are used.
+# PROCESS: extracted from sources. One run, by Claude Fable 5.1 (an AI agent), 4 Oct 2026, reading the text of printed
+# pages 1-30 (the reference lists excluded), constrained by rules/criteria.schema.json, rules/vocabulary.yaml and
+# rules/fields.yaml. Each span is contiguous text from its printed page; rules/extraction/check_pass.py verifies that
+# mechanically. NOT yet read by a person against the pages; NOT yet compared with another model's run. Issue #50.
+# page = printed page number (PDF page = printed + 6).
+# kind: level1 | level2 | consider | resources | vitals | governance | definition | negative | example
+# disposition:
+#   matches       the statement is already encoded by the listed rule(s) in rules/criteria.yaml
+#   new           no rule encodes it; `proposal` is the id a new entry would take
+#   refine        an existing rule or its field captures it only partly; `rule` names it
+#   not_a_rule    context, a definition, or a statement that NO level follows; recorded so the pass is complete
+#   test_material worked examples in the handbook itself
+
+statements:
+- n: 1
+  page: 1
+  span: "The ESI does not define expected time intervals to physician evaluation"
+  kind: governance
+  disposition: new
+  proposal: GOV-09.no-time-targets
+  note: "ESI gives no waiting-time targets, unlike the Australasian, Canadian and Manchester scales; the report must not imply one."
+- n: 2
+  page: 5
+  span: The decision points must be performed in order
+  kind: governance
+  disposition: new
+  proposal: GOV-03.decision-points-in-order
+  note: "The handbook's own basis for asking about immediate danger before anything else."
+- n: 3
+  page: 5
+  span: "Decision point A is the only one needed for ESI level-1 patients, who are defined as in need of immediate lifesaving intervention"
+  kind: level1
+  disposition: new
+  proposal: A-22.requires-lifesaving-intervention
+  note: "The generic level-1 criterion. Today obs.requires_lifesaving_intervention is read only together with other facts (A-14, A-17, A-18); no rule fires\
+    \ on it alone."
+- n: 4
+  page: 5
+  span: "Both of these decisions may require a full set of vital signs and a focused assessment"
+  kind: governance
+  disposition: not_a_rule
+  note: "Context: decisions A and B may need vital signs; see GOV-07."
+- n: 5
+  page: 6
+  span: "intubated, unresponsive, pulselessness, apneic, severe respiratory distress, profound hypotension or hypoglycemia"
+  kind: level1
+  disposition: matches
+  rules:
+  - A-15.intubated
+  - A-01.unresponsive
+  - A-04.pulseless
+  - A-03.apneic
+  - A-05.severe-respiratory-distress
+  - A-16.profound-hypotension
+  - A-11.hypoglycemia
+- n: 6
+  page: 6
+  span: Is nonverbal and not following commands (acutely)
+  kind: level1
+  disposition: matches
+  rules:
+  - A-01.unresponsive
+- n: 7
+  page: 6
+  span: Requires noxious stimulus (P or U on AVPU scale)
+  kind: level1
+  disposition: matches
+  rules:
+  - A-01.unresponsive
+- n: 8
+  page: 6
+  span: "Severe pain or distress is determined by patient report, corroborated with clinical observation"
+  kind: definition
+  disposition: matches
+  rules:
+  - B-02.severe-pain-consider
+  - B-35.severe-psychological-distress-consider
+  note: How severe pain or distress is established.
+- n: 9
+  page: 6
+  span: "Count the number of different types of resources, not the individual tests or radiographs"
+  kind: resources
+  disposition: matches
+  rules:
+  - C-COUNT.types-not-tests
+- n: 10
+  page: 6
+  span: "Simple procedure = 1 (laceration repair, urinary catheter)"
+  kind: resources
+  disposition: matches
+  rules:
+  - C-LIST.resources
+- n: 11
+  page: 6
+  span: Saline or heparin lock
+  kind: resources
+  disposition: matches
+  rules:
+  - C-LIST.not-resources
+- n: 12
+  page: 6
+  span: "Reassess to determine whether the patient warrants a higher acuity level if a patient has one or more vital signs outside the normal parameters\
+    \ for the patient"
+  kind: vitals
+  disposition: matches
+  rules:
+  - D-01.adult-danger-zone
+  - D-02.pediatric-danger-zone-under-1-month
+  - D-06.pediatric-danger-zone-1-to-12-months
+  - D-07.pediatric-danger-zone-1-to-3-years
+  - D-08.pediatric-danger-zone-3-to-5-years
+  - D-09.pediatric-danger-zone-5-to-12-years
+  - D-10.pediatric-danger-zone-12-to-18-years
+  note: Thresholds are in the figure on the same page.
+- n: 13
+  page: 6
+  span: "SpO2 < 92%"
+  kind: vitals
+  disposition: matches
+  rules:
+  - D-11.spo2-below-92-any-age
+  - D-01.adult-danger-zone
+- n: 14
+  page: 6
+  span: "1-28 days of age: Assign at least ESI 2 if T > 38"
+  kind: level2
+  disposition: matches
+  rules:
+  - B-56.infant-under-28-days-fever
+  - B-57.infant-under-90-days-temperature-over-38
+- n: 15
+  page: 6
+  span: "1-3 months: Consider assigning ESI 2 if T > 38"
+  kind: consider
+  disposition: matches
+  rules:
+  - B-58.infant-1-to-3-months-fever-consider
+- n: 16
+  page: 6
+  span: "3 months and older: Consider assigning ESI 2 or 3 if"
+  kind: consider
+  disposition: matches
+  rules:
+  - B-59.child-over-3-months-fever-consider
+- n: 17
+  page: 7
+  span: "Prior to a provider evaluation, a patient change in condition can be reflected in an amended ESI level"
+  kind: governance
+  disposition: matches
+  rules:
+  - GOV-01.acuity-changes-up-only
+- n: 18
+  page: 7
+  span: "should reflect the patient’s current risk, not the environmental conditions of the ED"
+  kind: governance
+  disposition: matches
+  rules:
+  - GOV-02.environment-independence
+- n: 19
+  page: 9
+  span: "Signs of instability requiring immediate, lifesaving intervention include unresponsiveness, active seizure, occluded airway, ineffective gas exchange,\
+    \ and ineffective/ decreased perfusion"
+  kind: level1
+  disposition: matches
+  rules:
+  - A-01.unresponsive
+  - A-07.active-seizure
+  - A-06.occluded-airway
+  - A-21.impaired-gas-exchange
+  - A-19.ineffective-tissue-perfusion
+- n: 20
+  page: 9
+  span: Ineffective airway clearance
+  kind: level1
+  disposition: matches
+  rules:
+  - A-06.occluded-airway
+- n: 21
+  page: 9
+  span: Ineffective respiratory pattern
+  kind: level1
+  disposition: matches
+  rules:
+  - A-20.ineffective-respiratory-pattern
+- n: 22
+  page: 9
+  span: Impaired gas exchange
+  kind: level1
+  disposition: matches
+  rules:
+  - A-21.impaired-gas-exchange
+- n: 23
+  page: 9
+  span: Ineffective tissue perfusion
+  kind: level1
+  disposition: matches
+  rules:
+  - A-19.ineffective-tissue-perfusion
+- n: 24
+  page: 9
+  span: "Obtunded/unresponsive patient"
+  kind: level1
+  disposition: matches
+  rules:
+  - A-01.unresponsive
+- n: 25
+  page: 9
+  span: "SpO2 < 90% that is not the patient’s norm, with other signs of respiratory compromise"
+  kind: level1
+  disposition: matches
+  rules:
+  - A-08.spo2-below-90-with-compromise
+- n: 26
+  page: 9
+  span: Anaphylaxis
+  kind: level1
+  disposition: matches
+  rules:
+  - A-09.anaphylaxis
+- n: 27
+  page: 9
+  span: Hypotension with signs of hypoperfusion
+  kind: level1
+  disposition: matches
+  rules:
+  - A-10.hypotension-with-hypoperfusion
+- n: 28
+  page: 9
+  span: Hypoglycemia
+  kind: level1
+  disposition: matches
+  rules:
+  - A-11.hypoglycemia
+- n: 29
+  page: 9
+  span: Severe bradycardia or tachycardia
+  kind: level1
+  disposition: matches
+  rules:
+  - A-12.severe-brady-or-tachycardia
+- n: 30
+  page: 9
+  span: Flaccid infant
+  kind: level1
+  disposition: matches
+  rules:
+  - A-13.flaccid-infant
+- n: 31
+  page: 9
+  span: "Cardiac and/or pulmonary arrest (or appears to be imminent)"
+  kind: level1
+  disposition: matches
+  rules:
+  - A-02.arrest-or-imminent
+- n: 32
+  page: 9
+  span: "Penetrating trauma of head, neck, abdomen, chest requiring a lifesaving intervention"
+  kind: level1
+  disposition: matches
+  rules:
+  - A-14.penetrating-trauma-unstable
+- n: 33
+  page: 9
+  span: Table 3-1. Examples of Lifesaving Interventions
+  kind: definition
+  disposition: new
+  proposal: A-LIST.lifesaving-interventions
+  note: "A non-firing list that defines obs.requires_lifesaving_intervention: assisted ventilation, intubation, surgical airway, emergent non-invasive ventilation;\
+    \ defibrillation, cardioversion, pacing; needle decompression, pericardiocentesis, thoracotomy; significant fluid resuscitation, blood, control of external\
+    \ hemorrhage; adenosine, atropine, dextrose, dopamine, epinephrine, naloxone."
+- n: 34
+  page: 9
+  span: Control of external hemorrhage
+  kind: level1
+  disposition: new
+  proposal: A-LIST.lifesaving-interventions
+  note: "Bleeding that needs to be controlled is a lifesaving intervention. The caregiver's 'heavy bleeding' danger-sign answer has no rule today; this\
+    \ is the handbook sentence it would rest on."
+- n: 35
+  page: 9
+  span: Note that diagnostics are not interventions
+  kind: definition
+  disposition: new
+  proposal: A-LIST.lifesaving-interventions
+  note: "A scan or the catheter lab for a stable patient does not make level 1."
+- n: 36
+  page: 10
+  span: "The triage nurse should not consider the method of arrival as a barrier to assigning the appropriate ESI level"
+  kind: governance
+  disposition: new
+  proposal: GOV-04.arrival-mode-independence
+  note: "Arrival by car or ambulance must not change the level. Relevant to issue #62."
+- n: 37
+  page: 10
+  span: "The likelihood of discharge does not have an impact on assigning ESI 1"
+  kind: governance
+  disposition: new
+  proposal: GOV-05.disposition-independence
+- n: 38
+  page: 11
+  span: "If the situation is high-risk or the patient is at elevated risk for physical or psychological deterioration, the patient is triaged as ESI level\
+    \ 2"
+  kind: definition
+  disposition: not_a_rule
+  note: "The definition of decision point B; every B rule is an instance of it. No facts are stated, so it cannot be a rule on its own."
+- n: 39
+  page: 11
+  span: "This is a patient who has a potential threat to life, limb, sight, or organ"
+  kind: definition
+  disposition: not_a_rule
+  note: Definition of high risk.
+- n: 40
+  page: 11
+  span: "Consider vital signs in the context of medications before assigning an ESI level"
+  kind: consider
+  disposition: matches
+  rules:
+  - B-52.geriatric-vitals-medication-context-consider
+- n: 41
+  page: 12
+  span: "Active chest pain, suspicious for acute coronary syndrome"
+  kind: level2
+  disposition: matches
+  rules:
+  - B-04.chest-pain-acs-suspect
+- n: 42
+  page: 12
+  span: "Signs of a stroke but does not meet level-1 criteria"
+  kind: level2
+  disposition: matches
+  rules:
+  - B-05.stroke-signs
+- n: 43
+  page: 12
+  span: "A possible ectopic pregnancy, hemodynamically stable"
+  kind: level2
+  disposition: matches
+  rules:
+  - B-06.possible-ectopic-stable
+- n: 44
+  page: 12
+  span: "A patient on chemotherapy, and therefore immunocompromised, with a fever"
+  kind: level2
+  disposition: matches
+  rules:
+  - B-07.immunocompromised-fever
+- n: 45
+  page: 12
+  span: "Transplant recipient presenting with a fever or other indication of infection"
+  kind: level2
+  disposition: matches
+  rules:
+  - B-08.transplant-fever-or-infection
+- n: 46
+  page: 12
+  span: Actively suicidal or homicidal patient
+  kind: level2
+  disposition: matches
+  rules:
+  - B-09.suicidal-or-homicidal
+- n: 47
+  page: 12
+  span: A needle stick in a health care worker
+  kind: level2
+  disposition: matches
+  rules:
+  - B-10.needle-stick-hcw
+- n: 48
+  page: 12
+  span: Sexual assault survivor
+  kind: level2
+  disposition: matches
+  rules:
+  - B-11.sexual-assault
+- n: 49
+  page: 12
+  span: Increasing respiratory effort
+  kind: level2
+  disposition: matches
+  rules:
+  - B-12.increasing-respiratory-effort
+- n: 50
+  page: 12
+  span: Postpartum hemorrhage
+  kind: level2
+  disposition: matches
+  rules:
+  - B-13.postpartum-hemorrhage
+- n: 51
+  page: 12
+  span: "the nurse should assume this condition is new and assign an ESI level 2"
+  kind: level2
+  disposition: matches
+  rules:
+  - B-01.new-altered-mental-status
+- n: 52
+  page: 12
+  span: "other clinical signs, such as confusion, somnolence, agitation, or belligerence, are commonly referred to as AMS"
+  kind: definition
+  disposition: refine
+  rule: B-01.new-altered-mental-status
+  note: "The field's meaning should name somnolence, agitation and belligerence; today it names confusion, lethargy and disorientation only."
+- n: 53
+  page: 12
+  span: "All patients who have a pain rating of 7/10 or greater should be considered for meeting ESI level-2 criteria"
+  kind: consider
+  disposition: matches
+  rules:
+  - B-02.severe-pain-consider
+- n: 54
+  page: 12
+  span: "not all patients with a pain score greater than 7 should be triaged as ESI level 2"
+  kind: consider
+  disposition: matches
+  rules:
+  - B-02.severe-pain-consider
+  note: Why B-02 is a consider flag.
+- n: 55
+  page: 12
+  span: However, this patient can wait to be seen
+  kind: negative
+  disposition: not_a_rule
+  note: "Severe pain from an orthopedic injury with no neurovascular compromise can wait: no level 2. Worth recording in B-02's notes."
+- n: 56
+  page: 12
+  span: "colic, cancer, or sickle cell crisis, should be triaged as ESI level 2"
+  kind: level2
+  disposition: matches
+  rules:
+  - B-03.severe-pain-systemic-cause
+- n: 57
+  page: 12
+  span: "In consideration of assigning an ESI level 2, the nurse must assess for severe distress, which can be physiological or psychological"
+  kind: consider
+  disposition: matches
+  rules:
+  - B-35.severe-psychological-distress-consider
+- n: 58
+  page: 12
+  span: Survivor of domestic violence
+  kind: consider
+  disposition: refine
+  rule: B-35.severe-psychological-distress-consider
+  note: "The handbook lists eight examples of severe psychological distress: distraught after a sexual assault, behavioral outbursts at triage, combativeness,\
+    \ survivor of sexual violence, survivor of domestic violence, acute grief reaction, suicidal ideation plan or attempt, prenatal loss. B-35 reads one\
+    \ judgement field; domestic violence, grief and prenatal loss have no field of their own. Decide: list them in the field's meaning, or give them fields."
+- n: 59
+  page: 12
+  span: "which is often associated with subarachnoid hemorrhage"
+  kind: level2
+  disposition: matches
+  rules:
+  - B-32.thunderclap-headache
+- n: 60
+  page: 12
+  span: "Any headache accompanied by neck pain or nuchal rigidity falls into this category"
+  kind: level2
+  disposition: matches
+  rules:
+  - B-33.headache-with-neck-pain-or-nuchal-rigidity
+- n: 61
+  page: 12
+  span: "headache plus fever, vomiting, lower back pain, altered mental status, and/or signs and symptoms of stroke"
+  kind: level2
+  disposition: matches
+  rules:
+  - B-34.headache-red-flags
+- n: 62
+  page: 12
+  span: "including gross deficits such as aphasia, apraxia, agnosia, or dysarthria"
+  kind: definition
+  disposition: refine
+  rule: B-05.stroke-signs
+  note: "The stroke-signs field's meaning should name these deficits (loss of speech, of purposeful movement, of recognition, slurred speech)."
+- n: 63
+  page: 12
+  span: "Patients presenting post-ictal are triaged as ESI level 2"
+  kind: level2
+  disposition: matches
+  rules:
+  - B-31.post-ictal
+- n: 64
+  page: 12
+  span: "Patients with a known seizure history who are alert and oriented after having a seizure prior to ED presentation can be triaged according to their\
+    \ physiological presentation and expected resource needs"
+  kind: negative
+  disposition: not_a_rule
+  note: "A reported seizure in an alert patient with a known history sets no floor."
+- n: 65
+  page: 13
+  span: "Pediatric patients presenting as alert and appropriate after a febrile seizure can be triaged based on their physiological assessment and anticipated\
+    \ resource needs"
+  kind: negative
+  disposition: not_a_rule
+  note: "No floor for a child alert after a febrile seizure."
+- n: 66
+  page: 13
+  span: "A subtle change in a pediatric patient’s mental status can be suggestive of a change in hemodynamics and should be immediately investigated as\
+    \ high risk"
+  kind: level2
+  disposition: matches
+  rules:
+  - B-29.pediatric-subtle-ams
+- n: 67
+  page: 13
+  span: "with more symptoms in constellation predicting a more emergent problem"
+  kind: consider
+  disposition: matches
+  rules:
+  - B-28.ocular-high-risk-constellation
+- n: 68
+  page: 13
+  span: few of these merit an ESI level-2 designation
+  kind: negative
+  disposition: not_a_rule
+  note: "Conjunctivitis, corneal erosion and allergic conjunctivitis in children rarely merit level 2."
+- n: 69
+  page: 13
+  span: "exhibit respiratory stridor are extremely high-risk patients and should be assigned an ESI level of 2"
+  kind: level2
+  disposition: matches
+  rules:
+  - B-14.stridor-or-secretions
+- n: 70
+  page: 13
+  span: brisk bleeding secondary to posterior nosebleed
+  kind: level2
+  disposition: matches
+  rules:
+  - B-15.high-risk-epistaxis
+- n: 71
+  page: 13
+  span: "Esophageal button battery ingestion has a high risk of complication"
+  kind: level2
+  disposition: matches
+  rules:
+  - B-16.button-battery-or-magnet-ingestion
+- n: 72
+  page: 13
+  span: "especially in children less than 6 years of age and involving batteries greater than 20 mm in diameter"
+  kind: definition
+  disposition: refine
+  rule: B-16.button-battery-or-magnet-ingestion
+  note: "The rule fires on any ingestion; the age and size that raise the risk are not captured."
+- n: 73
+  page: 13
+  span: "Signs of distress can include tachypnea, tachycardia, tripoding, speaking in short, 2-to-3-word sentences; audible stridor; wheezing; or congestion"
+  kind: consider
+  disposition: matches
+  rules:
+  - B-54.respiratory-distress-signs-consider
+  note: "The source of the field's meaning; several of these signs a caregiver can report."
+- n: 74
+  page: 13
+  span: "should be further evaluated for respiratory rate and pulse oximetry to determine whether they should be categorized as ESI level 2"
+  kind: consider
+  disposition: matches
+  rules:
+  - B-54.respiratory-distress-signs-consider
+- n: 75
+  page: 13
+  span: "Patients in severe respiratory distress who require immediate lifesaving intervention, such as intubation, meet level-1 criteria"
+  kind: level1
+  disposition: matches
+  rules:
+  - A-05.severe-respiratory-distress
+- n: 76
+  page: 13
+  span: "Grunting, belly breathing, and retractions suggest respiratory distress"
+  kind: consider
+  disposition: matches
+  rules:
+  - B-53.pediatric-respiratory-distress-signs-consider
+- n: 77
+  page: 13
+  span: "Patients with cardiac events may present with fatigue, nausea, vomiting, and/or weakness"
+  kind: consider
+  disposition: new
+  proposal: B-62.possible-acs-without-chest-pain-consider
+  note: "B-04 requires a chest-pain complaint, so a heart attack presenting as fatigue, nausea, vomiting or weakness cannot fire it. The handbook warns\
+    \ of exactly this and asks for close attention to female patients. Proposed as a consider flag; needs clinical review."
+- n: 78
+  page: 13
+  span: "Patients with chest pain who are physiologically unstable and require immediate interventions such as intubation or hemodynamic support should\
+    \ be triaged as ESI level 1"
+  kind: level1
+  disposition: matches
+  rules:
+  - A-17.chest-pain-unstable-lifesaving
+- n: 79
+  page: 13
+  span: "If the ECG is abnormal, patients would be assigned level 2"
+  kind: level2
+  disposition: matches
+  rules:
+  - B-36.abnormal-ecg-chest-pain
+- n: 80
+  page: 13
+  span: A recent Covid-19 infection increases cardiac risk
+  kind: consider
+  disposition: matches
+  rules:
+  - B-55.recent-covid-cardiac-risk-consider
+- n: 81
+  page: 14
+  span: "Is the patient pregnant or postpartum?"
+  kind: level2
+  disposition: matches
+  rules:
+  - B-17.abdo-pain-pregnant-or-postpartum
+- n: 82
+  page: 14
+  span: "Does the patient show signs of sepsis?"
+  kind: level2
+  disposition: matches
+  rules:
+  - B-18.abdo-pain-sepsis-or-hypoperfusion
+- n: 83
+  page: 14
+  span: "Does the patient show signs of hypoperfusion?"
+  kind: level2
+  disposition: matches
+  rules:
+  - B-18.abdo-pain-sepsis-or-hypoperfusion
+- n: 84
+  page: 14
+  span: "Was there blunt or penetrating trauma to the abdomen?"
+  kind: level2
+  disposition: matches
+  rules:
+  - B-19.abdo-pain-trauma
+- n: 85
+  page: 14
+  span: "pain refractory to analgesia, constant, and /or maximal on onset"
+  kind: level2
+  disposition: matches
+  rules:
+  - B-20.abdo-pain-refractory-constant-maximal
+- n: 86
+  page: 14
+  span: "Differentiation between ESI 2 and ESI 3 in the context of abdominal pain may depend on vital signs, patient age, and previous history"
+  kind: definition
+  disposition: not_a_rule
+  note: "Context: abdominal pain often cannot be settled before vital signs."
+- n: 87
+  page: 14
+  span: "In younger children, pneumonia can present as abdominal pain"
+  kind: definition
+  disposition: not_a_rule
+  note: Context.
+- n: 88
+  page: 14
+  span: "Button battery or earth magnet ingestion are time sensitive presentations"
+  kind: level2
+  disposition: matches
+  rules:
+  - B-16.button-battery-or-magnet-ingestion
+- n: 89
+  page: 14
+  span: "Elderly patients with abdominal pain are likely to need hospitalization"
+  kind: consider
+  disposition: new
+  proposal: B-63.elderly-abdominal-pain-consider
+  note: "The handbook assigns no level here but warns that patients over 80 with abdominal pain are the most under-triaged (same page). Proposed as a consider\
+    \ flag; today only the general geriatric flag B-52 fires. Needs clinical review."
+- n: 90
+  page: 14
+  span: "Abdominal pain with vaginal bleeding can suggest ectopic pregnancy"
+  kind: level2
+  disposition: matches
+  rules:
+  - B-21.abdo-pain-vaginal-bleeding
+- n: 91
+  page: 14
+  span: "The pregnant or postpartum patient with a SBP of < 90 or > 150 should be designated an ESI 2"
+  kind: level2
+  disposition: matches
+  rules:
+  - B-37.pregnant-postpartum-sbp-out-of-range
+- n: 92
+  page: 14
+  span: "abdominal pain, or headache (Sperling et al., 2015) should be triaged as ESI 2"
+  kind: level2
+  disposition: matches
+  rules:
+  - "B-38.pregnant-chest-pain-breathlessness-abdo-pain-or-headache"
+- n: 93
+  page: 14
+  span: "Pregnant patients who present with heavy vaginal bleeding and abnormal vitals with suspicion of infection should be categorized at ESI level 2"
+  kind: level2
+  disposition: matches
+  rules:
+  - "B-39.pregnant-heavy-bleeding-abnormal-vitals-infection"
+- n: 94
+  page: 14
+  span: "Heavy vaginal bleeding generally means soaking through a pad an hour"
+  kind: definition
+  disposition: matches
+  rules:
+  - "B-39.pregnant-heavy-bleeding-abnormal-vitals-infection"
+  - B-13.postpartum-hemorrhage
+  note: "The handbook's own everyday definition; the source of the heavy-bleeding bridge."
+- n: 95
+  page: 14
+  span: "Postpartum patients presenting with heavy vaginal bleeding should also be assigned ESI level 2"
+  kind: level2
+  disposition: matches
+  rules:
+  - B-13.postpartum-hemorrhage
+- n: 96
+  page: 14
+  span: "who presents with significant hemodynamic instability and who needs immediate lifesaving interventions should be triaged as ESI level 1"
+  kind: level1
+  disposition: matches
+  rules:
+  - A-18.pregnancy-hemodynamic-instability-lifesaving
+- n: 97
+  page: 14
+  span: "Assessing for current or recent COVID-19 infection is important to assessing risk"
+  kind: definition
+  disposition: not_a_rule
+  note: "Context for pregnant and postpartum patients; no level is assigned. B-55 covers chest pain with recent Covid."
+- n: 98
+  page: 14
+  span: "Testicular or scrotal pain should be immediately evaluated for testicular torsion"
+  kind: consider
+  disposition: matches
+  rules:
+  - B-41.testicular-or-scrotal-pain-torsion-consider
+- n: 99
+  page: 14
+  span: "pain in patients with ovaries should be evaluated for ovarian torsion and ectopic pregnancy"
+  kind: consider
+  disposition: matches
+  rules:
+  - "B-42.unilateral-lower-quadrant-pain-torsion-or-ectopic-consider"
+- n: 100
+  page: 14
+  span: "may have urosepsis and should also be assigned to ESI 2"
+  kind: level2
+  disposition: matches
+  rules:
+  - B-43.uti-elderly-or-urosepsis-signs
+- n: 101
+  page: 14
+  span: "Patients presenting with severe flank pain receive a level-2 designation"
+  kind: level2
+  disposition: matches
+  rules:
+  - B-49.severe-flank-pain
+- n: 102
+  page: 15
+  span: "of 20 feet (6 meters) or more, ejection from a vehicle, or removal from a vehicle with mechanical extrication tools, and sexual assault"
+  kind: level2
+  disposition: matches
+  rules:
+  - B-22.fall-from-6-metres-or-more
+  - B-44.vehicle-ejection
+  - B-45.mechanical-extrication
+  - B-11.sexual-assault
+- n: 103
+  page: 15
+  span: "the head, neck, chest, and abdomen without signs of hemodynamic instability"
+  kind: level2
+  disposition: matches
+  rules:
+  - B-23.penetrating-trauma-stable
+- n: 104
+  page: 15
+  span: "Occult hypoperfusion with normal vital signs is associated with age greater than 55"
+  kind: consider
+  disposition: matches
+  rules:
+  - B-27.geriatric-trauma-caution
+- n: 105
+  page: 15
+  span: "any extremity injury with compromised neurovascular function, symptoms of compartment syndrome, or partial or complete amputations"
+  kind: level2
+  disposition: matches
+  rules:
+  - B-24.extremity-neurovascular-compromise
+  - B-46.compartment-syndrome-symptoms
+  - B-47.partial-or-complete-amputation
+- n: 106
+  page: 15
+  span: "dislocations should be carefully evaluated and vital signs considered"
+  kind: consider
+  disposition: matches
+  rules:
+  - B-25.pelvis-femur-fracture-consider
+- n: 107
+  page: 15
+  span: "Toxic ingestion is a high-risk presentation which needs to be rapidly evaluated"
+  kind: level2
+  disposition: matches
+  rules:
+  - B-26.suspected-toxic-ingestion
+- n: 108
+  page: 15
+  span: possible toxic ingestion
+  kind: consider
+  disposition: matches
+  rules:
+  - "B-48.unexplained-changes-possible-ingestion-consider"
+- n: 109
+  page: 15
+  span: "other indication of infection or rejection should be designated ESI level 2"
+  kind: level2
+  disposition: refine
+  rule: B-08.transplant-fever-or-infection
+  note: "B-08 reads fever or infection signs; 'or rejection' is not in its condition."
+- n: 110
+  page: 15
+  span: "Patients who are on a transplant list are also usually considered high-risk"
+  kind: consider
+  disposition: matches
+  rules:
+  - B-50.transplant-list-consider
+- n: 111
+  page: 15
+  span: "Patients who are suicidal, homicidal, psychotic, or violent should be assigned an ESI level of 2"
+  kind: level2
+  disposition: matches
+  rules:
+  - B-09.suicidal-or-homicidal
+  - B-51.psychotic-or-violent
+- n: 112
+  page: 15
+  span: "high risk if they are a danger either to themselves, others, or the environment"
+  kind: definition
+  disposition: refine
+  rule: B-09.suicidal-or-homicidal
+  note: "'or the environment' is not in the field's meaning."
+- n: 113
+  page: 19
+  span: "more resources are assigned level 3, those who require one resource are assigned level 4, and those who require no resources are assigned level\
+    \ 5"
+  kind: resources
+  disposition: matches
+  rules:
+  - C-BAND.resource-count-to-level
+- n: 114
+  page: 19
+  span: "count the number of different types of resources needed to determine the patient’s disposition, not the number of individual tests"
+  kind: resources
+  disposition: matches
+  rules:
+  - C-COUNT.types-not-tests
+- n: 115
+  page: 19
+  span: "Resource determination is independent of type of hospital"
+  kind: governance
+  disposition: new
+  proposal: C-NOTE.resource-count-independent-of-hospital
+  note: Non-firing note for decision point C.
+- n: 116
+  page: 20
+  span: "Follow the institution’s policy on what constitutes a resource"
+  kind: governance
+  disposition: new
+  proposal: C-NOTE.institution-policy
+  note: "Non-firing note for decision point C: the resource list can vary locally."
+- n: 117
+  page: 20
+  span: "Table 5-2 Patient Presentations and Predicting Resources"
+  kind: example
+  disposition: test_material
+  note: "Six worked presentations with their level (5, 5, 4, 4, 3, 3). The fifth edition's own cases; all decided by resources."
+- n: 118
+  page: 23
+  span: "1 or 2 do not need vitals taken if it is going to delay initiation of care"
+  kind: governance
+  disposition: new
+  proposal: GOV-06.no-vitals-if-they-delay-care
+  note: "Levels 1 and 2 can be recognised before vital signs. Supports a floor computed without vitals."
+- n: 119
+  page: 23
+  span: "These patients may appear pale, diaphoretic, or cyanotic"
+  kind: consider
+  disposition: new
+  proposal: B-64.pale-diaphoretic-or-cyanotic-appearance
+  note: "Appearance that indicates high risk or need for immediate intervention. Today pale and sweaty exist only inside obs.hypoperfusion_signs, tied to\
+    \ low blood pressure (A-10) or abdominal pain (B-18). A caregiver can report this appearance. Proposed as a flag with an everyday-wording bridge; this\
+    \ is the gap behind the ill-appearing case in issue #10. Needs clinical review."
+- n: 120
+  page: 23
+  span: "heart rate of 32 beats/minute or 180 beats/minute is discovered during vital sign measurement"
+  kind: level1
+  disposition: matches
+  rules:
+  - A-12.severe-brady-or-tachycardia
+- n: 121
+  page: 23
+  span: "Vital signs explicitly included in the ESI algorithm include heart rate, respiratory rate, and oxygen saturation"
+  kind: vitals
+  disposition: matches
+  rules:
+  - D-01.adult-danger-zone
+  - D-11.spo2-below-92-any-age
+  note: Scope of decision point D.
+- n: 122
+  page: 23
+  span: such as beta blockers, need to be accounted for
+  kind: consider
+  disposition: matches
+  rules:
+  - D-04.context-beta-blockers-consider
+- n: 123
+  page: 23
+  span: such as corticosteroids, must also be noted
+  kind: consider
+  disposition: matches
+  rules:
+  - D-05.context-immunosuppression-consider
+- n: 124
+  page: 23
+  span: "An infant less than 28 days old with a fever is considered high risk and is assigned to at least ESI level 2"
+  kind: level2
+  disposition: matches
+  rules:
+  - B-56.infant-under-28-days-fever
+- n: 125
+  page: 23
+  span: "non-petechial rash, and incomplete immunizations should prompt the triage nurse to consider isolation"
+  kind: consider
+  disposition: new
+  proposal: "ISO-01.fever-rash-incomplete-immunizations-isolation-consider"
+  note: "Not a level: a prompt to consider isolation. The handbook source for asking about a rash and immunizations in the infection screen (issue #58)."
+- n: 126
+  page: 23
+  span: then a rating of 4 or 5 may be appropriate
+  kind: negative
+  disposition: not_a_rule
+  note: "A fever with an identifiable source and complete immunizations sets no floor."
+- n: 127
+  page: 24
+  span: "is a red flag and the patient should be considered high risk and assigned at least ESI level 2"
+  kind: level2
+  disposition: matches
+  rules:
+  - B-57.infant-under-90-days-temperature-over-38
+- n: 128
+  page: 24
+  span: "in a child of any age is hypothermic and concerning for sepsis"
+  kind: consider
+  disposition: matches
+  rules:
+  - B-60.child-hypothermia-under-36-consider
+- n: 129
+  page: 24
+  span: "> 3 months old"
+  kind: consider
+  disposition: matches
+  rules:
+  - "B-61.child-over-3-months-temperature-red-flag-consider"
+  note: Table 6-2.
+- n: 130
+  page: 24
+  span: "Table 6-1 lists the normal vital sign ranges for each pediatric age group"
+  kind: vitals
+  disposition: matches
+  rules:
+  - D-02.pediatric-danger-zone-under-1-month
+  - D-06.pediatric-danger-zone-1-to-12-months
+  - D-07.pediatric-danger-zone-1-to-3-years
+  - D-08.pediatric-danger-zone-3-to-5-years
+  - D-09.pediatric-danger-zone-5-to-12-years
+  - D-10.pediatric-danger-zone-12-to-18-years
+  note: "The table also gives systolic blood pressure ranges, which the algorithm does not use."
+- n: 131
+  page: 24
+  span: "The following cases are examples of the need for vital signs on every patient"
+  kind: example
+  disposition: test_material
+  note: "Five worked cases (pages 24-25) with their level: 2, 2, 2, 3, 2, all decided at decision point D. With Table 5-2 the fifth edition has eleven worked\
+    \ examples of its own."
+- n: 132
+  page: 25
+  span: "reassess the patient and uptriage the patient from level 3 to level 2 if the vital signs remain out of range"
+  kind: vitals
+  disposition: matches
+  rules:
+  - D-01.adult-danger-zone
+  note: The effect of every D rule.
+- n: 133
+  page: 27
+  span: "The only change that should be made is to increase acuity"
+  kind: governance
+  disposition: matches
+  rules:
+  - GOV-01.acuity-changes-up-only
+- n: 134
+  page: 27
+  span: "is not appropriate to change the ESI once a patient has been seen by a physician or advanced practice provider"
+  kind: governance
+  disposition: matches
+  rules:
+  - GOV-01.acuity-changes-up-only
+- n: 135
+  page: 27
+  span: "Assigning an ESI level without an assessment may result in significant undertriage"
+  kind: governance
+  disposition: new
+  proposal: GOV-07.no-level-without-assessment
+  note: "The handbook's own statement of why a system without an assessment must not assign a level. The citation for 'a floor, not a level'."
+- n: 136
+  page: 27
+  span: "an assessment including a full set of vital signs should be made before assigning an ESI level"
+  kind: governance
+  disposition: new
+  proposal: GOV-07.no-level-without-assessment
+- n: 137
+  page: 27
+  span: "ESI levels are ordinal data, not interval data, and so cannot be meaningfully averaged"
+  kind: governance
+  disposition: new
+  proposal: GOV-08.levels-are-ordinal
+  note: "Bears on evaluation: levels may be compared and counted, not averaged."

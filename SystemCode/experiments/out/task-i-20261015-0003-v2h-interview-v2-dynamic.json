@@ -1,0 +1,226 @@
+{
+ "persona_backend": "ollama",
+ "persona_model": "gemma4:12b",
+ "interview": {
+  "interview_mode": "dynamic",
+  "backend": "ollama",
+  "model": "gemma4:12b",
+  "dyn_max_fields": 4
+ },
+ "tag": "v2h-interview-v2-dynamic",
+ "results": [
+  {
+   "questions": 27,
+   "questions_to_report": 23,
+   "reasks": 6,
+   "floor": "at least ESI-2",
+   "floor_ok": true,
+   "rules_ok": true,
+   "fired": [
+    "B-30.anticoagulated-trauma"
+   ],
+   "hits": 9,
+   "total": 9,
+   "misses": [],
+   "danger_miss": false,
+   "persona": "P1-fall-anticoag",
+   "run": 1,
+   "session": "CANNA-9136",
+   "turns": 28
+  },
+  {
+   "questions": 26,
+   "questions_to_report": 24,
+   "reasks": 11,
+   "floor": "at least ESI-2",
+   "floor_ok": true,
+   "rules_ok": true,
+   "fired": [
+    "B-04.chest-pain-acs-suspect",
+    "B-12.increasing-respiratory-effort"
+   ],
+   "hits": 6,
+   "total": 6,
+   "misses": [],
+   "danger_miss": false,
+   "persona": "P2-chest-pain",
+   "run": 1,
+   "session": "LOTUS-2395",
+   "turns": 30
+  },
+  {
+   "questions": 22,
+   "questions_to_report": null,
+   "reasks": 10,
+   "floor": "at least ESI-2",
+   "floor_ok": true,
+   "rules_ok": true,
+   "fired": [
+    "B-38.pregnant-chest-pain-breathlessness-abdo-pain-or-headache"
+   ],
+   "hits": 5,
+   "total": 6,
+   "misses": [
+    "complaint.vaginal_bleeding: want=False got=None"
+   ],
+   "danger_miss": false,
+   "persona": "P3-abdo-pregnant",
+   "run": 1,
+   "session": "PANDA-8265",
+   "turns": 30
+  },
+  {
+   "questions": 22,
+   "questions_to_report": 21,
+   "reasks": 8,
+   "floor": null,
+   "floor_ok": true,
+   "rules_ok": true,
+   "fired": [],
+   "hits": 4,
+   "total": 5,
+   "misses": [
+    "complaint.fever: want=False got=True"
+   ],
+   "danger_miss": false,
+   "persona": "P4-sore-throat",
+   "run": 1,
+   "session": "BAOBAB-7786",
+   "turns": 22
+  },
+  {
+   "questions": 20,
+   "questions_to_report": 19,
+   "reasks": 5,
+   "floor": "at least ESI-2",
+   "floor_ok": true,
+   "rules_ok": true,
+   "fired": [
+    "B-05.stroke-signs"
+   ],
+   "hits": 5,
+   "total": 6,
+   "misses": [
+    "stroke.arm_weakness: want=True got=False"
+   ],
+   "danger_miss": false,
+   "persona": "P6-stroke-resolved",
+   "run": 1,
+   "session": "KOPI-8702",
+   "turns": 20
+  },
+  {
+   "questions": 19,
+   "questions_to_report": 18,
+   "reasks": 4,
+   "floor": "at least ESI-2",
+   "floor_ok": true,
+   "rules_ok": true,
+   "fired": [
+    "B-07.immunocompromised-fever"
+   ],
+   "hits": 4,
+   "total": 5,
+   "misses": [
+    "complaint.pain_rating: want=0 got=None"
+   ],
+   "danger_miss": false,
+   "persona": "P5-fever-chemo",
+   "run": 1,
+   "session": "LOTUS-4515",
+   "turns": 19
+  },
+  {
+   "questions": 17,
+   "questions_to_report": 15,
+   "reasks": 5,
+   "floor": null,
+   "floor_ok": true,
+   "rules_ok": true,
+   "fired": [],
+   "hits": 5,
+   "total": 7,
+   "misses": [
+    "complaint.trauma: want=False got=None",
+    "history.gout: want=True got=None"
+   ],
+   "danger_miss": false,
+   "persona": "P6-acute-gout",
+   "run": 1,
+   "session": "OTTER-6318",
+   "turns": 17
+  },
+  {
+   "questions": 20,
+   "questions_to_report": 19,
+   "reasks": 6,
+   "floor": "at least ESI-2",
+   "floor_ok": false,
+   "rules_ok": false,
+   "fired": [
+    "B-01.new-altered-mental-status"
+   ],
+   "hits": 2,
+   "total": 8,
+   "misses": [
+    "danger_signs.responsive: want=True got=False",
+    "danger_signs.altered_mental_status: want=True got=None",
+    "complaint.collapse: want=True got=None",
+    "complaint.fever: want=False got=True",
+    "environment.heat_exposure: want=True got=None",
+    "measurements.temperature_c: want=40.4 got=None"
+   ],
+   "danger_miss": false,
+   "persona": "P7-heat-stroke",
+   "run": 1,
+   "session": "LION-8199",
+   "turns": 22
+  },
+  {
+   "questions": 28,
+   "questions_to_report": 24,
+   "reasks": 7,
+   "floor": "at least ESI-2",
+   "floor_ok": true,
+   "rules_ok": false,
+   "fired": [
+    "B-01.new-altered-mental-status"
+   ],
+   "hits": 5,
+   "total": 12,
+   "misses": [
+    "danger_signs.altered_mental_status: want=True got=None",
+    "complaint.hematemesis: want=False got=None",
+    "complaint.melena: want=False got=None",
+    "history.cirrhosis: want=True got=None",
+    "history.hepatitis_b: want=True got=None",
+    "signs.jaundice: want=True got=None",
+    "signs.ascites: want=True got=None"
+   ],
+   "danger_miss": false,
+   "persona": "P8-decompensated-liver-disease",
+   "run": 1,
+   "session": "TIGER-1326",
+   "turns": 29
+  },
+  {
+   "questions": 18,
+   "questions_to_report": 16,
+   "reasks": 5,
+   "floor": "at least ESI-2",
+   "floor_ok": true,
+   "rules_ok": true,
+   "fired": [
+    "B-12.increasing-respiratory-effort"
+   ],
+   "hits": 7,
+   "total": 7,
+   "misses": [],
+   "danger_miss": false,
+   "persona": "P9-breathing-no-pain",
+   "run": 1,
+   "session": "TIGER-4066",
+   "turns": 18
+  }
+ ]
+}

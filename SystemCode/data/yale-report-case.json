@@ -1,0 +1,115 @@
+{
+ "yale_row": 466081,
+ "source": "Hong WS, Haimovich AD, Taylor RA (2018) PLoS ONE 13(7): e0201016 - public, de-identified",
+ "age": 53,
+ "gender": "Male",
+ "arrivalmode": "Walk-in",
+ "lang": "English",
+ "maritalstatus": "Single",
+ "employstatus": "Not Employed",
+ "esi_recorded": "2",
+ "disposition": "Admit",
+ "previousdispo": "Admit",
+ "n_edvisits": 1,
+ "n_admissions": 1,
+ "chief_complaints": [
+  "cc_chestpain",
+  "cc_cough",
+  "cc_fever-9weeksto74years"
+ ],
+ "med_classes": {
+  "meds_analgesics": {
+   "count": 2,
+   "label": "painkiller"
+  },
+  "meds_antiasthmatics": {
+   "count": 4,
+   "label": "asthma/COPD inhaler or tablet"
+  },
+  "meds_antibiotics": {
+   "count": 1,
+   "label": "antibiotic"
+  },
+  "meds_antihistamines": {
+   "count": 1,
+   "label": "antihistamine"
+  },
+  "meds_antihyperglycemics": {
+   "count": 2,
+   "label": "blood-sugar-lowering drug"
+  },
+  "meds_cardiacdrugs": {
+   "count": 1,
+   "label": "cardiac drug"
+  },
+  "meds_cardiovascular": {
+   "count": 2,
+   "label": "cardiovascular drug"
+  },
+  "meds_cnsdrugs": {
+   "count": 1,
+   "label": "CNS drug"
+  },
+  "meds_elect/caloric/h2o": {
+   "count": 1,
+   "label": "electrolyte / supplement"
+  },
+  "meds_gastrointestinal": {
+   "count": 1,
+   "label": "gastrointestinal drug"
+  },
+  "meds_hormones": {
+   "count": 1,
+   "label": "hormone"
+  },
+  "meds_immunosuppressants": {
+   "count": 1,
+   "label": "immunosuppressant"
+  },
+  "meds_musclerelaxants": {
+   "count": 1,
+   "label": "muscle relaxant"
+  },
+  "meds_psychotherapeuticdrugs": {
+   "count": 2,
+   "label": "psychiatric drug"
+  },
+  "meds_sedative/hypnotics": {
+   "count": 1,
+   "label": "sedative / sleeping tablet"
+  },
+  "meds_smokingdeterrents": {
+   "count": 1,
+   "label": "smoking-cessation aid"
+  },
+  "meds_vitamins": {
+   "count": 1,
+   "label": "vitamin"
+  }
+ },
+ "pmh": {
+  "asthma": "asthma",
+  "copd": "COPD",
+  "htn": "hypertension",
+  "esophgealdx": "oesophageal disorder",
+  "gastroent": "gastroenteritis (past)",
+  "othergidx": "other GI disorder",
+  "backproblem": "back problem",
+  "pleurisy": "pleurisy / pleural effusion (past)",
+  "othlowresp": "other lower-respiratory disease",
+  "poisnotmed": "poisoning, non-medicinal (past)",
+  "othnervdx": "other nervous-system disorder",
+  "othskindx": "skin disorder",
+  "otjointdx": "joint disorder",
+  "unclassified": "(unclassified category)"
+ },
+ "triage_vitals": {
+  "triage_vital_hr": null,
+  "triage_vital_sbp": null,
+  "triage_vital_dbp": null,
+  "triage_vital_rr": null,
+  "triage_vital_o2": null,
+  "triage_vital_o2_device": null,
+  "triage_vital_temp": null
+ }
+}

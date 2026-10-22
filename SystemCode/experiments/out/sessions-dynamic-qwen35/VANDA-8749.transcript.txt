@@ -1,0 +1,20 @@
+session VANDA-8749   started 2026-09-26 03:51   (generated from messages)
+
+03:51:11  BOT  Is the person awake and responding normally right now? Are they having severe chest pain, trouble breathing, or heavy bleeding?   [slot dyn:red_flags.responsive+red_flags.chest_pain_now+red_flags.breathing_difficulty+red_flags.heavy_bleeding]
+03:51:12  THEM He is awake but answers slowly; he is not having chest pain, trouble breathing, or heavy bleeding.   [slot dyn:red_flags.responsive+red_flags.chest_pain_now+red_flags.breathing_difficulty+red_flags.heavy_bleeding]
+03:51:15  BOT  Can you tell us what happened, when it started, and how bad the pain is on a scale from 0 to 10?   [slot dyn:complaint.category]
+03:51:16  THEM His symptoms of swelling, yellowing eyes, and confusion started worsening over the past two days. He reports mild abdominal discomfort at 3/10.   [slot dyn:complaint.category]
+03:51:19  BOT  Has he had any face drooping, arm weakness, or slurred speech today?   [slot dyn:stroke.face_droop+stroke.arm_weakness+stroke.speech_change]
+03:51:20  THEM No, he has not had face drooping, arm weakness, or slurred speech today. He is awake and breathing normally but answers slowly.   [slot dyn:stroke.face_droop+stroke.arm_weakness+stroke.speech_change]
+03:51:22  SYS  floor: at least ESI-2  rules: ['B-01.new-altered-mental-status'] (floor)
+03:51:23  BOT  Can you tell us exactly what happened, when it started, how bad the pain is on a scale of 0 to 10, and also let us know if he takes any regular medicines or has any allergies or medical conditions like heart problems or diabetes?   [slot dyn:E.mechanism+M.medications+A.allergies+history.conditions]
+03:51:25  THEM He has cirrhosis from chronic hepatitis B; his abdomen got swollen over the last two days with yellow eyes, sleepiness, confusion, and shaky hands. He reports mild abdominal discomfort at 3/10 and takes lactulose, spironolactone, and furosemide but missed some doses, with no blood thinners or known allergies.   [slot dyn:E.mechanism+M.medications+A.allergies+history.conditions]
+03:51:29  BOT  Could you also tell us if he has any conditions that affect his immune system, like diabetes or heart problems, and if he has had a fever, rash, traveled overseas in the last two weeks, or been around anyone who is sick?   [slot dyn:history.immunocompromised+infection.fever+infection.rash+infection.travel_14d]
+03:51:30  THEM He does not have diabetes, heart problems, a fever, a rash, recent overseas travel, or exposure to anyone sick. His only known condition is cirrhosis caused by chronic hepatitis B.   [slot dyn:history.immunocompromised+infection.fever+infection.rash+infection.travel_14d]
+03:51:33  BOT  When was the last time he ate or drank, and could you please provide his name and date of birth for our records?   [slot dyn:history.pregnant_or_postpartum+L.last_intake+identity.dob]
+03:51:34  THEM He last had a small bowl of rice at noon. His name is not provided in my description, but his date of birth is 07 Jul 1968.   [slot dyn:history.pregnant_or_postpartum+L.last_intake+identity.dob]
+03:51:37  BOT  Could you please list any other medical conditions he has and the names of all his current medications?   [slot dyn:history.pregnant_or_postpartum]
+03:51:38  THEM He has cirrhosis caused by chronic hepatitis B. His current medications are lactulose, spironolactone, and furosemide.   [slot dyn:history.pregnant_or_postpartum]
+03:51:40  BOT  Does he have any allergies to medicines, and does he have other conditions like heart problems, diabetes, pregnancy, or anything affecting his immune system?   [slot dyn:history.pregnant_or_postpartum]
+03:51:41  THEM No known allergies, no blood thinners, and no history of heart problems, diabetes, pregnancy, or immune system issues.   [slot dyn:history.pregnant_or_postpartum]
+03:51:43  BOT  Thank you - that's everything for now. Show the code VANDA-8749 at the counter when you arrive. (ack)

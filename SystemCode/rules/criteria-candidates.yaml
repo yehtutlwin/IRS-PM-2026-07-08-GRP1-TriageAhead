@@ -1,0 +1,126 @@
+# criteria-candidates.yaml — CANDIDATE rules drafted from the newly acquired sources
+# (CDC Field Triage 2011 MMWR; NICE NG232 main guideline, see sources/).
+# STATUS: DRAFTED, NOT REVIEWED, NOT IN THE TESTED SET. Promote to criteria.yaml only
+# after team review; all are supplemented-class (ESI provides the high-risk slot,
+# these guidelines provide the content). All are askable pre-arrival.
+#
+# COVERAGE CAVEAT (user challenge, 6 Aug): these candidates are all trauma/head-injury
+# flavored - example-driven drift from the Mr. Tan walkthrough. CDC = transport
+# decision, NICE = CT decision; neither is a triage scale, so each supplement rests on
+# the inference "guideline-grade serious-risk criterion => plausibly ESI-B high-risk"
+# - which is exactly what expert review must bless. Team decision needed: systematic
+# supplementation across ALL of ESI-B's vague spots (per-presentation NICE guidelines),
+# or deliberate trauma-focused restraint with the concentration stated honestly.
+
+- id: B-31.head-injury-repeated-vomiting
+  decision_point: B
+  when: { all: [ { field: E.head_strike, equals: true },
+                 { field: complaint.vomiting_episodes, gte: 2 } ] }
+  assessed_via: reported
+  provenance: supplemented
+  source: "NICE NG232 rec 1.5.8 (adult CT-within-1-hour risk factors)"
+  span: "more than 1 episode of vomiting"
+  notes: "Needs new slot complaint.vomiting_episodes (activated on head_strike=true)."
+
+- id: B-32.head-injury-post-traumatic-seizure
+  decision_point: B
+  when: { all: [ { field: E.head_strike, equals: true },
+                 { field: complaint.seizure_since_injury, equals: true } ] }
+  assessed_via: reported
+  provenance: supplemented
+  source: "NICE NG232 rec 1.5.8"
+  span: "post-traumatic seizure"
+
+- id: B-33.head-injury-loc-elderly-or-clotting
+  decision_point: B
+  when: { all: [ { field: E.head_strike, equals: true },
+                 { any: [ { field: E.loc, equals: true },
+                          { field: complaint.amnesia_since_injury, equals: true } ] },
+                 { any: [ { field: patient.age, gte: 65 },
+                          { field: history.thrombocytopenia_or_clotting_disorder, equals: true } ] } ] }
+  assessed_via: reported
+  provenance: supplemented
+  source: "NICE NG232 rec 1.5.9 (CT within 8 hours: age 65+, bleeding/clotting disorders)"
+  span: "age 65 or over • any current bleeding or clotting disorders"
+
+- id: B-34.struck-by-vehicle
+  decision_point: B
+  when: { field: E.mechanism, equals: pedestrian_or_cyclist_struck }
+  assessed_via: reported
+  provenance: supplemented
+  source:
+    - "CDC Field Triage 2011, Step Three (auto v. pedestrian/bicyclist)"
+    - "NICE NG232 rec 1.5.9 dangerous mechanism: 'a pedestrian or cyclist struck by a motor vehicle'"
+  notes: "Needs E.mechanism enum extended with pedestrian_or_cyclist_struck."
+
+- id: B-35.trauma-in-pregnancy
+  decision_point: B
+  when: { all: [ { field: E.mechanism, in: [fall, road_accident, assault, penetrating_trauma,
+                                            pedestrian_or_cyclist_struck] },
+                 { any: [ { field: history.pregnant, equals: true }, { field: history.postpartum, equals: true } ] } ] }
+  assessed_via: reported
+  provenance: supplemented
+  source: "CDC Field Triage 2011, Step Four special considerations (pregnancy)"
+  notes: "CDC criterion is pregnancy >20 weeks; our slot is coarser - operationalization
+          choice to review: keep coarse (conservative) or add gestation weeks."
+
+- id: B-36.dangerous-fall-height-head-context
+  decision_point: B
+  effect_override: consider
+  when: { all: [ { field: E.mechanism, equals: fall },
+                 { field: E.head_strike, equals: true },
+                 { field: E.fall_height_meters, gt: 1 } ] }
+  assessed_via: reported
+  provenance: supplemented
+  source: "NICE NG232 rec 1.5.9 dangerous mechanism: 'a fall from a height of more than 1 m or 5 stairs'"
+  notes: "OPEN TENSION for expert review: ESI B-22 (trauma-center transport) uses 6 m;
+          NICE (head-injury CT risk) uses >1 m / 5 stairs. Different purposes, very
+          different thresholds. Encoded as consider-flag pending review. Note Mr. Tan's
+          4 steps sits below BOTH - B-30 (anticoagulation) is what catches him, which
+          illustrates why the rules are layered."
+
+# ============ PROPOSED BY THE COMPLETE READING PASS (4 Oct 2026) — WEAK: the handbook warns, it does not assign a level ============
+# Each quotes a fifth-edition sentence that names a risk without assigning a level. Proposed as consider flags only.
+# NOT in the tested set. A clinician decides whether any becomes a rule, and the conditions below are placeholders.
+
+- id: B-62.possible-acs-without-chest-pain-consider
+  decision_point: B
+  when: { field: complaint.possible_acs_without_chest_pain, equals: true }
+  effect_override: consider
+  assessed_via: reported
+  provenance: operationalized
+  source: "ESI v5 p.13 (Cardiovascular)"
+  span: "Patients with cardiac events may present with fatigue, nausea, vomiting, and/or weakness"
+  notes: "B-04 needs a chest-pain complaint, so a heart attack presenting without chest pain cannot fire it. The handbook warns of
+          this and asks for close attention to female patients. Which combination of symptoms and risk should raise the flag is
+          not stated: the single field is a placeholder for that judgement."
+  statements: [77]
+  origin: [complete-pass-2026-10-04]
+
+- id: B-63.elderly-abdominal-pain-consider
+  decision_point: B
+  when: { all: [ { field: complaint.category, equals: abdominal_pain }, { field: patient.age, gte: 65 } ] }
+  effect_override: consider
+  assessed_via: reported
+  provenance: operationalized
+  source: "ESI v5 p.14 (Abdominal and Gastrointestinal Concerns, geriatric considerations)"
+  span: "Elderly patients with abdominal pain are likely to need hospitalization"
+  notes: "The same page says patients over 80 with abdominal pain are the most under-triaged. The age of 65 is OUR reading of
+          'elderly', taken from the handbook's older-adult definition on p.11."
+  statements: [89]
+  origin: [complete-pass-2026-10-04]
+
+- id: B-64.pale-diaphoretic-or-cyanotic-appearance
+  decision_point: B
+  when: { field: obs.pale_diaphoretic_or_cyanotic, equals: true }
+  effect_override: consider
+  assessed_via: observed
+  provenance: operationalized
+  source: "ESI v5 p.23"
+  span: "These patients may appear pale, diaphoretic, or cyanotic"
+  notes: "Appearance that the handbook ties to high risk or the need for immediate intervention. A caregiver can report it in
+          everyday words (very pale, sweaty, blue lips), so it would need a bridge. This is the gap behind the ill-appearing
+          94-year-old in the fourth edition's post-test (issue #10)."
+  statements: [119]
+  origin: [complete-pass-2026-10-04]
+

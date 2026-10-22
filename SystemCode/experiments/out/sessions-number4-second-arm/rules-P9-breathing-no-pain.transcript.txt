@@ -1,0 +1,52 @@
+arm B, form rules, persona P9-breathing-no-pain, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  Is the patient awake and responding normally?
+A1  Yes, he's awake and talking normally.
+
+Q2  Is the patient experiencing chest pain right now?
+A2  No chest pain.
+
+Q3  Is the patient having any trouble breathing right now?
+A3  Yes, he's more short of breath than usual, but he can speak in full sentences.
+
+Q4  Is the patient bleeding heavily right now?
+A4  No.
+
+Q5  Is the patient's breathing difficulty severe enough that they are struggling to speak or are in significant distress?
+A5  No, he can speak in full sentences and is not in significant distress.
+
+Q6  Is the patient's breathing difficulty a new problem or a change from his usual condition?
+A6  He's been more short of breath than usual since this morning.
+
+Q7  Is the patient's breathing difficulty a new problem or a change from his usual condition?
+A7  He's been more short of breath than usual since this morning.
+
+Q8  Does the patient have any other symptoms, such as a cough, fever, or a recent injury?
+A8  No fever, no rash, and no injury.
+
+Q9  How long has the patient been experiencing this increased shortness of breath?
+A9  He's been more short of breath than usual since this morning.
+
+Q10  Does the patient have any other symptoms, such as a cough, fever, or a recent injury?
+A10  No fever, no rash, and no injury.
+
+Q11  How old is the patient?
+A11  He is 72.
+
+Q12  Does the patient have any other medical conditions, such as heart or lung problems, or is he on any medications like steroids?
+A12  He has heart failure and COPD. He takes a water pill, frusemide, and an inhaler.
+
+Q13  Does the patient have any other medical conditions, such as heart or lung problems, or is he on any medications like steroids?
+A13  He has heart failure and COPD. He takes a water pill, frusemide, and an inhaler.
+
+Q14  What is the patient's current oxygen saturation level (SpO2)?
+A14  I don't know.
+
+Q15  Is the patient's breathing difficulty a new problem or a change from his usual condition?
+A15  He's been more short of breath than usual since this morning.
+
+Q16  Does the patient have any other medical conditions, such as heart or lung problems, or is he on any medications like steroids?
+A16  He has heart failure and COPD. He takes a water pill, frusemide, and an inhaler.
+
+DECISION {"decision": "unparsed", "reason": "turn limit reached without a decision"}
+OUTCOME unparsed | expected None | pass False | label model error (over-call) | max prompt tokens 44152

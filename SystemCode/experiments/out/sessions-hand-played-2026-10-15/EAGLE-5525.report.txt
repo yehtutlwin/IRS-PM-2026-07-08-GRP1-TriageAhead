@@ -1,0 +1,61 @@
+========================================================================
+PRE-ARRIVAL INTAKE REPORT       session EAGLE-5525   (prototype output)
+========================================================================
+Patient AS DECLARED by caregiver: Mr Tan Ah Kow, DOB 2 jan 1939
+>> NOT verified by the system - confirm name/DOB against the patient. <<
+------------------------------------------------------------------------
+FLOOR: AT LEAST ESI-2 - computed WITHOUT vitals
+    rule B-30.anticoagulated-trauma
+      source: CDC Field Triage Guidelines (MMWR 2012 vol. 61 no. 1), Step Four special considerations, p.14 of the report (PDF p.16) · NICE NG232 (2023), recommendation 1.5.13 (PDF p.21)
+CONSIDER FLAGS (handbook: judgment, not automatic):
+    B-02.severe-pain-consider  [ESI v5 p.12 (Severe Pain or Distress)]
+CONTEXT NOTES (handbook background for reading other findings; not a flag):
+    B-27.geriatric-trauma-caution  "Occult hypoperfusion with normal vital signs is associated with age greater than 55, and so a careful assessment should be made in the older patient"  [ESI v5 p.15 (Trauma, older adults)]
+    B-52.geriatric-vitals-medication-context-consider  "Consider vital signs in the context of medications before assigning an ESI level"  [ESI v5 p.11 (Geriatric Considerations note)]
+Pending decision points: C (resources), D (vitals not available pre-arrival)
+This is a floor, not a final level. Nurse assessment prevails.
+PRACTICE SIGNAL (learned from past visits; does not change the floor above):
+    Most similar past visits (age 87, injury, fall, anticoagulated) were ESI 1 or 2.
+------------------------------------------------------------------------
+COMPLAINTS (in order reported; first = presenting)
+  1. injury  (presenting)                [persona - turn 3 - reported]
+       text              = 'fell down four steps at home about an hour ago, landed on his right hip and cannot stand' [persona - turn 3 - reported]
+       onset             = 'about an hour ago'               [persona - turn 3 - reported]
+       pain_rating       = 7                                 [persona - turn 7 - reported]
+
+PATIENT
+  age                    = 87                                     [persona - turn 4 - reported]
+  sex                    = 'male'                                 [persona - turn 4 - reported]
+
+EVENTS & CONTEXT
+  mechanism              = 'fall'                                 [persona - turn 3 - reported]
+
+A - ALLERGIES
+  allergies              = ['penicillin']                         [persona - turn 11 - reported]
+
+M - MEDICATIONS
+  medications            = []                                     [persona - turn 12 - reported]
+  anticoagulant          = True                                   [caregiver - turn 10 - confirmed]
+
+P - PAST HISTORY
+  conditions             = ['irregular heartbeat', 'high blood pressure'] [persona - turn 13 - reported]
+
+INFECTION SCREEN
+  fever                  = False                                  [persona - turn 5 - reported]
+  rash                   = False                                  [persona - turn 5 - reported]
+  travel_14d             = False                                  [persona - turn 6 - reported]
+  contacts               = False                                  [persona - turn 6 - reported]
+
+DANGER SIGNS (asked first)
+  responsive             = True                                   [persona - turn 7 - reported]
+  chest_pain_now         = False                                  [persona - turn 2 - reported]
+  breathing_difficulty   = False                                  [persona - turn 3 - reported]
+  heavy_bleeding         = False                                  [persona - turn 3 - reported]
+
+NOT COLLECTED (not asked, or not answered):
+  history.immunocompromised
+  L.last_intake
+
+Advisory only. All items caregiver/patient-reported unless marked confirmed.
+This report never assigns a final triage level; only the nurse does.
+========================================================================

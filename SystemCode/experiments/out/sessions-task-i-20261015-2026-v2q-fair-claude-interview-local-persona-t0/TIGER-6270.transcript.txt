@@ -1,0 +1,33 @@
+session TIGER-6270   started 2026-10-15 20:21   (generated from messages)
+
+20:21:34  BOT  Is the patient awake and responding to you normally, and does the patient have any chest pain right now?   [slot dyn:danger_signs.responsive+danger_signs.chest_pain_now]
+20:21:35  THEM I'm awake and I can answer you, but I'm in a lot of pain. I don't have any chest pain.   [slot dyn:danger_signs.responsive+danger_signs.chest_pain_now]
+20:21:47  BOT  Thank you for letting me know about the pain. Are you having any trouble breathing right now, and are you bleeding heavily anywhere?   [slot dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding]
+20:21:48  THEM No, I'm not having any trouble breathing and I'm not bleeding.   [slot dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding]
+20:21:56  BOT  Can you tell me in your own words what main problem brings you in today, and when it started?   [slot dyn:complaint.category+complaint.text+complaint.onset]
+20:21:57  THEM I've got severe pain in my right big toe joint that started suddenly during the night. It's red, swollen, and hot.   [slot dyn:complaint.category+complaint.text+complaint.onset]
+20:22:12  BOT  Did anything happen to your toe, like a knock, a stub or a fall, or did the pain come on without any injury?   [slot dyn:E.mechanism]
+20:22:13  THEM There was no fall or other injury. The pain just came on.   [slot dyn:E.mechanism]
+20:22:19  BOT  Thanks for explaining. How old are you, and are you male or female?   [slot dyn:patient.age+patient.sex]
+20:22:20  THEM I'm a 52-year-old man.   [slot dyn:patient.age+patient.sex]
+20:22:26  BOT  Have you had a fever, and if you measured it, what was your temperature? Have you also noticed any new rash anywhere?   [slot dyn:complaint.fever+infection.rash]
+20:22:27  THEM No, I don't have a fever or any rashes.   [slot dyn:complaint.fever+infection.rash]
+20:22:32  BOT  Got it. In the last two weeks, have you travelled overseas, or been around anyone with an infectious illness?   [slot dyn:infection.travel_14d+infection.contacts]
+20:22:34  THEM I don't know.   [slot dyn:infection.travel_14d+infection.contacts]
+20:22:44  BOT  That's fine. Compared with how you usually are, do you feel more confused, more sleepy than normal, or just not like yourself?   [slot dyn:ams.changed_from_baseline]
+20:22:45  THEM I'm just not feeling like myself because of this pain. It's making me very tired and irritable.   [slot dyn:ams.changed_from_baseline]
+20:22:50  SYS  floor: at least ESI-2  rules: ['B-01.new-altered-mental-status'] (floor)
+20:22:56  BOT  Thanks for telling me. What medicines do you take regularly (a photo of the boxes works too), and are you allergic to any medicines?   [slot dyn:M.medications+A.allergies]
+20:22:58  THEM I take amlodipine for my high blood pressure. I have no known allergies.   [slot dyn:M.medications+A.allergies]
+20:23:04  BOT  Got it. Could you tell me your full name and your date of birth?   [slot dyn:identity.name+identity.dob]
+20:23:06  THEM My name is not provided, but my date of birth is 18 Feb 1974.   [slot dyn:identity.name+identity.dob]
+20:23:15  BOT  What name should the hospital team use for you, first and last?   [slot dyn:identity.name]
+20:23:17  THEM I'm not telling you my name, just get someone here to help with this pain.   [slot dyn:identity.name]
+20:23:24  BOT  The staff at the front counter can help you get someone right away. What name can we put on your form, even just your first name?   [slot dyn:identity.name]
+20:23:25  THEM My name is [Name not provided].   [slot dyn:identity.name]
+20:23:29  BOT  That's enough for the hospital team to prepare. Show the code TIGER-6270 at the counter when you arrive. I'll ask a few more things while you're on the way; tell me straight away if anything changes. (ack)
+20:23:33  BOT  On a scale from 0 to 10, where 10 is the worst pain imaginable, how bad is your pain right now? And is any of it in your testicles or scrotum?   [slot dyn:complaint.pain_rating+complaint.testicular_or_scrotal_pain]
+20:23:35  THEM The pain is an 8 out of 10. No, there is no pain in my testicles or scrotum.   [slot dyn:complaint.pain_rating+complaint.testicular_or_scrotal_pain]
+20:23:47  BOT  Thank you. When did you last eat or drink anything, and what was it?   [slot dyn:L.last_intake]
+20:23:48  THEM I had a large seafood dinner and several beers at 9pm yesterday.   [slot dyn:L.last_intake]
+20:23:50  BOT  Thank you - that's everything. Show the code TIGER-6270 at the counter when you arrive. (ack)

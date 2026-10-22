@@ -1,0 +1,55 @@
+{"t": "11:57:42", "kind": "engine", "note": "session RAFFLES-8618 started (web)"}
+{"t": "11:57:45", "kind": "question", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "Is the patient awake and responding normally? Also, is he or she experiencing any chest pain, trouble breathing, or heavy bleeding right now?", "fields": ["danger_signs.responsive", "danger_signs.chest_pain_now"], "offered": ["danger_signs.responsive", "danger_signs.chest_pain_now", "danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text"]}
+{"t": "11:57:45", "kind": "answer", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "Yes, the patient is awake and can respond. No"}
+{"t": "11:57:49", "kind": "extract", "writes": [["danger_signs.responsive", true]]}
+{"t": "11:57:52", "kind": "question", "slot": "dyn:danger_signs.chest_pain_now", "text": "I understand. Is the patient experiencing any pain in their chest at this moment?", "fields": ["danger_signs.chest_pain_now"], "offered": ["danger_signs.chest_pain_now"]}
+{"t": "11:57:52", "kind": "answer", "slot": "dyn:danger_signs.chest_pain_now", "text": "No"}
+{"t": "11:57:56", "kind": "extract", "writes": [["danger_signs.chest_pain_now", false]]}
+{"t": "11:57:59", "kind": "question", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding", "text": "I'm glad to hear they are awake. Is the patient having any trouble breathing or any heavy bleeding right now?", "fields": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding"], "offered": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text", "complaint.onset", "E.mechanism"]}
+{"t": "11:57:59", "kind": "answer", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding", "text": "No breathing difficulty noticed No"}
+{"t": "11:58:03", "kind": "extract", "writes": [["danger_signs.breathing_difficulty", false], ["danger_signs.heavy_bleeding", false]]}
+{"t": "11:58:06", "kind": "question", "slot": "dyn:complaint.category+complaint.text", "text": "I've noted that. What is the main reason you are bringing the patient in today, and can you describe what is happening?", "fields": ["complaint.category", "complaint.text"], "offered": ["complaint.category", "complaint.text", "complaint.onset", "E.mechanism", "patient.age", "patient.sex"]}
+{"t": "11:58:06", "kind": "answer", "slot": "dyn:complaint.category+complaint.text", "text": "My husband is suddenly confused."}
+{"t": "11:58:17", "kind": "extract", "writes": [["complaint.category", "neuro_symptoms"], ["complaint.text", "suddenly confused"]]}
+{"t": "11:58:17", "kind": "extract", "writes": [["E.mechanism", "none"]], "via": "derived-non-injury"}
+{"t": "11:58:20", "kind": "question", "slot": "dyn:complaint.onset+patient.age", "text": "I understand he is confused. When did this start, and how old is your husband?", "fields": ["complaint.onset", "patient.age"], "offered": ["complaint.onset", "patient.age", "patient.sex", "complaint.fever", "infection.rash", "infection.travel_14d"]}
+{"t": "11:58:20", "kind": "answer", "slot": "dyn:complaint.onset+patient.age", "text": "This afternoon He is seventy-nine."}
+{"t": "11:58:25", "kind": "extract", "writes": [["complaint.onset", "This afternoon"], ["patient.age", 79]]}
+{"t": "11:58:28", "kind": "question", "slot": "dyn:patient.sex+complaint.fever", "text": "I've noted that he is 79. Does he have a fever, and has he developed any new rashes?", "fields": ["patient.sex", "complaint.fever"], "offered": ["patient.sex", "complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts", "stroke.vision_change"]}
+{"t": "11:58:28", "kind": "answer", "slot": "dyn:patient.sex+complaint.fever", "text": "He is male. No temperature checked"}
+{"t": "11:58:31", "kind": "extract", "writes": [["patient.sex", "male"]]}
+{"t": "11:58:34", "kind": "question", "slot": "dyn:complaint.fever", "text": "I understand. Has he had a fever or a high temperature today?", "fields": ["complaint.fever"], "offered": ["complaint.fever"]}
+{"t": "11:58:34", "kind": "answer", "slot": "dyn:complaint.fever", "text": "No temperature checked"}
+{"t": "11:58:37", "kind": "extract", "writes": []}
+{"t": "11:58:40", "kind": "question", "slot": "dyn:complaint.fever", "text": "I understand. Have you been able to check if he has a fever or a high temperature?", "fields": ["complaint.fever"], "offered": ["complaint.fever"]}
+{"t": "11:58:40", "kind": "answer", "slot": "dyn:complaint.fever", "text": "No temperature checked"}
+{"t": "11:58:42", "kind": "extract", "writes": []}
+{"t": "11:58:46", "kind": "question", "slot": "dyn:infection.rash+stroke.vision_change", "text": "I understand. Has he developed any new rashes or had any sudden changes in his vision?", "fields": ["infection.rash", "stroke.vision_change"], "offered": ["infection.rash", "infection.travel_14d", "infection.contacts", "stroke.vision_change", "ams.changed_from_baseline", "complaint.pain_rating"]}
+{"t": "11:58:46", "kind": "answer", "slot": "dyn:infection.rash+stroke.vision_change", "text": "I don't know."}
+{"t": "11:58:49", "kind": "extract", "writes": []}
+{"t": "11:58:49", "kind": "extract", "writes": [["infection.rash", null], ["stroke.vision_change", null]], "via": "dont-know"}
+{"t": "11:58:52", "kind": "question", "slot": "dyn:infection.travel_14d+infection.contacts", "text": "I understand. Has he traveled outside the country or been in contact with anyone who is sick in the last two weeks?", "fields": ["infection.travel_14d", "infection.contacts"], "offered": ["infection.travel_14d", "infection.contacts", "ams.changed_from_baseline", "complaint.pain_rating", "stroke.face_droop", "stroke.arm_weakness"]}
+{"t": "11:58:52", "kind": "answer", "slot": "dyn:infection.travel_14d+infection.contacts", "text": "I don't know."}
+{"t": "11:58:56", "kind": "extract", "writes": []}
+{"t": "11:58:56", "kind": "extract", "writes": [["infection.travel_14d", null], ["infection.contacts", null]], "via": "dont-know"}
+{"t": "11:59:00", "kind": "question", "slot": "dyn:ams.changed_from_baseline+stroke.face_droop", "text": "Is he more confused or harder to wake than usual? Also, does he have any drooping on one side of his face, weakness in his limbs, or is his speech slurred?", "fields": ["ams.changed_from_baseline", "stroke.face_droop"], "offered": ["ams.changed_from_baseline", "complaint.pain_rating", "stroke.face_droop", "stroke.arm_weakness", "stroke.speech_change", "stroke.balance_loss"]}
+{"t": "11:59:00", "kind": "answer", "slot": "dyn:ams.changed_from_baseline+stroke.face_droop", "text": "This afternoon he suddenly became confused and kept asking where he was."}
+{"t": "11:59:04", "kind": "extract", "writes": [["ams.changed_from_baseline", true]]}
+{"t": "11:59:04", "kind": "floor", "floor": "at least ESI-2", "fired": ["B-01.new-altered-mental-status"], "sources": ["ESI v5 p.12 (New Onset Confusion, Lethargy, or Disorientation)"]}
+{"t": "11:59:07", "kind": "question", "slot": "dyn:M.medications+A.allergies", "text": "I'm sorry to hear about his confusion. What medications does he take regularly, and does he have any known allergies?", "fields": ["M.medications", "A.allergies"], "offered": ["M.medications", "A.allergies", "history.conditions", "identity.name", "identity.dob"]}
+{"t": "11:59:07", "kind": "answer", "slot": "dyn:M.medications+A.allergies", "text": "Several daily tablets, names unknown Unknown"}
+{"t": "11:59:10", "kind": "extract", "writes": [["M.medications", ["Several daily tablets"]]]}
+{"t": "11:59:13", "kind": "question", "slot": "dyn:A.allergies", "text": "Does he have any known allergies, especially to medications?", "fields": ["A.allergies"], "offered": ["A.allergies"]}
+{"t": "11:59:13", "kind": "answer", "slot": "dyn:A.allergies", "text": "Unknown"}
+{"t": "11:59:16", "kind": "extract", "writes": []}
+{"t": "11:59:19", "kind": "question", "slot": "dyn:A.allergies", "text": "I understand the names of his medications are unknown. Does he have any known allergies to medications?", "fields": ["A.allergies"], "offered": ["A.allergies"]}
+{"t": "11:59:19", "kind": "answer", "slot": "dyn:A.allergies", "text": "Unknown"}
+{"t": "11:59:22", "kind": "extract", "writes": []}
+{"t": "11:59:25", "kind": "question", "slot": "dyn:history.conditions", "text": "Does he have any ongoing medical conditions, such as heart disease or diabetes?", "fields": ["history.conditions"], "offered": ["history.conditions", "identity.name", "identity.dob"]}
+{"t": "11:59:25", "kind": "answer", "slot": "dyn:history.conditions", "text": "High blood pressure"}
+{"t": "11:59:37", "kind": "extract", "writes": [["history.conditions", ["high blood pressure"]]]}
+{"t": "11:59:39", "kind": "question", "slot": "dyn:identity.name", "text": "Could you please tell me his full name?", "fields": ["identity.name"], "offered": ["identity.name", "identity.dob"]}
+{"t": "11:59:39", "kind": "answer", "slot": "dyn:identity.name", "text": "I don't know."}
+{"t": "11:59:43", "kind": "extract", "writes": []}
+{"t": "11:59:43", "kind": "extract", "writes": [["identity.name", null]], "via": "dont-know"}
+{"t": "11:59:45", "kind": "question", "slot": "dyn:identity.dob", "text": "I understand. Could you please tell me his date of birth?", "fields": ["identity.dob"], "offered": ["identity.dob"]}

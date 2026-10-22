@@ -1,0 +1,48 @@
+{"t": "20:45:04", "kind": "engine", "note": "session ORCHID-1354 started (web)"}
+{"t": "20:45:07", "kind": "question", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "Is the patient awake and responding to you normally? Also, is he or she experiencing any chest pain, trouble breathing, or heavy bleeding right now?", "fields": ["danger_signs.responsive", "danger_signs.chest_pain_now"], "offered": ["danger_signs.responsive", "danger_signs.chest_pain_now", "danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text"]}
+{"t": "20:45:07", "kind": "answer", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "Yes, she's awake and talking clearly now. No chest pain."}
+{"t": "20:45:11", "kind": "extract", "writes": [["danger_signs.responsive", true], ["danger_signs.chest_pain_now", false]]}
+{"t": "20:45:15", "kind": "question", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category+complaint.text", "text": "I'm glad she's talking clearly. Is she having any trouble breathing or is there any heavy bleeding? Also, could you tell me what the main problem is and what's happening?", "fields": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text"], "offered": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text", "complaint.onset", "E.mechanism"]}
+{"t": "20:45:15", "kind": "answer", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category+complaint.text", "text": "No. This morning her speech suddenly went slurred and her left arm went weak, she couldn't lift her teacup. It lasted about 45 minutes and then passed completely."}
+{"t": "20:45:21", "kind": "extract", "writes": [["danger_signs.breathing_difficulty", false], ["danger_signs.heavy_bleeding", false], ["complaint.category", "neuro_symptoms"], ["complaint.text", "This morning her speech suddenly went slurred and her left arm went weak, she couldn't lift her teacup. It lasted about 45 minutes and then passed completely."]]}
+{"t": "20:45:21", "kind": "extract", "writes": [["E.mechanism", "none"]], "via": "derived-non-injury"}
+{"t": "20:45:25", "kind": "question", "slot": "dyn:complaint.onset+patient.age", "text": "I understand the symptoms passed. To help the team, could you tell me exactly what time this morning it started and how old she is?", "fields": ["complaint.onset", "patient.age"], "offered": ["complaint.onset", "patient.age", "patient.sex", "complaint.fever", "infection.rash", "infection.travel_14d"]}
+{"t": "20:45:25", "kind": "answer", "slot": "dyn:complaint.onset+patient.age", "text": "Around 9 this morning. She's 88."}
+{"t": "20:45:29", "kind": "extract", "writes": [["complaint.onset", "Around 9 this morning"], ["patient.age", 88]]}
+{"t": "20:45:32", "kind": "question", "slot": "dyn:patient.sex", "text": "I've noted her age and the time it started. To help the team, could you tell me if she is a woman or a man?", "fields": ["patient.sex"], "offered": ["patient.sex", "complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts", "stroke.vision_change"]}
+{"t": "20:45:32", "kind": "answer", "slot": "dyn:patient.sex", "text": "Female."}
+{"t": "20:45:44", "kind": "extract", "writes": [["patient.sex", "female"]]}
+{"t": "20:45:47", "kind": "question", "slot": "dyn:complaint.fever+infection.rash", "text": "I've noted that she is female. Does she have a fever or any new rashes?", "fields": ["complaint.fever", "infection.rash"], "offered": ["complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts", "stroke.vision_change", "ams.changed_from_baseline"]}
+{"t": "20:45:47", "kind": "answer", "slot": "dyn:complaint.fever+infection.rash", "text": "No fever. No rash."}
+{"t": "20:45:52", "kind": "extract", "writes": [["patient.sex", "female", "quote not in the answer"]], "via": "guard-dropped"}
+{"t": "20:45:52", "kind": "extract", "writes": [["complaint.fever", false], ["infection.rash", false]]}
+{"t": "20:45:55", "kind": "question", "slot": "dyn:infection.travel_14d+infection.contacts", "text": "Has she traveled outside the country or been in contact with anyone who has been sick in the last two weeks?", "fields": ["infection.travel_14d", "infection.contacts"], "offered": ["infection.travel_14d", "infection.contacts", "stroke.vision_change", "ams.changed_from_baseline", "complaint.pain_rating", "stroke.face_droop"]}
+{"t": "20:45:55", "kind": "answer", "slot": "dyn:infection.travel_14d+infection.contacts", "text": "No."}
+{"t": "20:45:59", "kind": "extract", "writes": [["infection.travel_14d", false], ["infection.contacts", false]]}
+{"t": "20:46:03", "kind": "question", "slot": "dyn:stroke.vision_change+ams.changed_from_baseline", "text": "I've noted that. Has she had any sudden changes in her vision or seemed more confused or sleepy than usual?", "fields": ["stroke.vision_change", "ams.changed_from_baseline"], "offered": ["stroke.vision_change", "ams.changed_from_baseline", "complaint.pain_rating", "stroke.face_droop", "stroke.arm_weakness", "stroke.speech_change"]}
+{"t": "20:46:03", "kind": "answer", "slot": "dyn:stroke.vision_change+ams.changed_from_baseline", "text": "No change in her vision that I know of. No, she's as clear as usual now."}
+{"t": "20:46:07", "kind": "extract", "writes": [["stroke.vision_change", false]]}
+{"t": "20:46:10", "kind": "question", "slot": "dyn:ams.changed_from_baseline", "text": "I understand. Is she acting more confused, not making sense, or seems unusually sleepy and hard to wake compared to how she normally is?", "fields": ["ams.changed_from_baseline"], "offered": ["ams.changed_from_baseline"]}
+{"t": "20:46:10", "kind": "answer", "slot": "dyn:ams.changed_from_baseline", "text": "No, she's as clear as usual now."}
+{"t": "20:46:14", "kind": "extract", "writes": [["ams.changed_from_baseline", false]]}
+{"t": "20:46:18", "kind": "question", "slot": "dyn:complaint.pain_rating+stroke.face_droop+stroke.arm_weakness", "text": "I'm glad she is alert. On a scale of 0 to 10, how bad is her pain right now? Also, has she had any drooping in her face, weakness in her arms or legs, or any slurring or difficulty with her speech?", "fields": ["complaint.pain_rating", "stroke.face_droop", "stroke.arm_weakness"], "offered": ["complaint.pain_rating", "stroke.face_droop", "stroke.arm_weakness", "stroke.speech_change", "stroke.balance_loss", "obs.confusion_lethargy_disorientation"]}
+{"t": "20:46:18", "kind": "answer", "slot": "dyn:complaint.pain_rating+stroke.face_droop+stroke.arm_weakness", "text": "She has no pain, 0 out of 10. I didn't notice her face drooping. Yes, her left arm went weak, she couldn't lift her cup; it's back to normal now."}
+{"t": "20:46:25", "kind": "extract", "writes": [["complaint.pain_rating", 0], ["stroke.face_droop", false], ["stroke.arm_weakness", true]]}
+{"t": "20:46:25", "kind": "floor", "floor": "at least ESI-2", "fired": ["B-05.stroke-signs"], "sources": ["ESI v5 p.12"]}
+{"t": "20:46:28", "kind": "question", "slot": "dyn:M.medications+A.allergies", "text": "I've noted that she has no pain. Does she have any allergies to medications, and what medicines does she take regularly?", "fields": ["M.medications", "A.allergies"], "offered": ["M.medications", "A.allergies", "history.conditions", "identity.name", "identity.dob"]}
+{"t": "20:46:28", "kind": "answer", "slot": "dyn:M.medications+A.allergies", "text": "One aspirin daily, nothing else. None."}
+{"t": "20:46:32", "kind": "extract", "writes": [["M.medications", ["aspirin"]]]}
+{"t": "20:46:34", "kind": "question", "slot": "dyn:A.allergies", "text": "To confirm, does she have any allergies to medications?", "fields": ["A.allergies"], "offered": ["A.allergies"]}
+{"t": "20:46:34", "kind": "answer", "slot": "dyn:A.allergies", "text": "None."}
+{"t": "20:46:38", "kind": "extract", "writes": [["A.allergies", []]]}
+{"t": "20:46:40", "kind": "question", "slot": "dyn:history.conditions", "text": "Does she have any other ongoing medical conditions?", "fields": ["history.conditions"], "offered": ["history.conditions", "identity.name", "identity.dob"]}
+{"t": "20:46:40", "kind": "answer", "slot": "dyn:history.conditions", "text": "She had a stroke two years ago."}
+{"t": "20:46:52", "kind": "extract", "writes": [["history.conditions", ["stroke"]]]}
+{"t": "20:46:54", "kind": "question", "slot": "dyn:identity.name+identity.dob", "text": "I've noted her history. Could you please tell me her full name and date of birth?", "fields": ["identity.name", "identity.dob"], "offered": ["identity.name", "identity.dob"]}
+{"t": "20:46:54", "kind": "answer", "slot": "dyn:identity.name+identity.dob", "text": "Lim Ah Mui. 15 March 1938."}
+{"t": "20:46:59", "kind": "extract", "writes": [["identity.name", "Lim Ah Mui"], ["identity.dob", "15 March 1938"]]}
+{"t": "20:46:59", "kind": "engine", "note": "floor settled - report ready; remaining questions continue"}
+{"t": "20:47:02", "kind": "question", "slot": "dyn:L.last_intake", "text": "I've noted her details. When was the last time she had anything to eat or drink?", "fields": ["L.last_intake"], "offered": ["L.last_intake"]}
+{"t": "20:47:02", "kind": "answer", "slot": "dyn:L.last_intake", "text": "Breakfast at 8am."}
+{"t": "20:47:05", "kind": "extract", "writes": [["L.last_intake", "Breakfast at 8am"]]}
+{"t": "20:47:05", "kind": "engine", "note": "interview complete - no open fields"}

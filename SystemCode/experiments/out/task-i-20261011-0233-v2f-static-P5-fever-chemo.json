@@ -1,0 +1,33 @@
+{
+ "persona_backend": "ollama",
+ "persona_model": "gemma4:12b",
+ "interview": {
+  "interview_mode": "static",
+  "backend": "ollama",
+  "model": "gemma4:12b",
+  "dyn_max_fields": 4
+ },
+ "tag": "v2f-static-P5-fever-chemo",
+ "results": [
+  {
+   "questions": 17,
+   "reasks": 3,
+   "floor": "at least ESI-2",
+   "floor_ok": true,
+   "rules_ok": true,
+   "fired": [
+    "B-07.immunocompromised-fever"
+   ],
+   "hits": 4,
+   "total": 5,
+   "misses": [
+    "complaint.pain_rating: want=0 got=None"
+   ],
+   "danger_miss": false,
+   "persona": "P5-fever-chemo",
+   "run": 1,
+   "session": "EAGLE-6174",
+   "turns": 17
+  }
+ ]
+}

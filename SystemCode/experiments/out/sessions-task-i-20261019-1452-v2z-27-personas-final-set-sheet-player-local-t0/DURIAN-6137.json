@@ -1,0 +1,509 @@
+{
+ "sid": "DURIAN-6137",
+ "facts": {
+  "danger_signs.responsive": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-19 14:30"
+  },
+  "danger_signs.chest_pain_now": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-19 14:30"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "other",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 3,
+      "ts": "2026-10-19 14:31"
+     },
+     "text": {
+      "value": "My pain medications are not working anymore. I have metastatic ovarian cancer and my oncologist told me to come in.",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 3,
+      "ts": "2026-10-19 14:31"
+     },
+     "onset": {
+      "value": "last night",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 6,
+      "ts": "2026-10-19 14:31"
+     },
+     "onset_abs": {
+      "value": "~2026-10-18 night",
+      "status": "reported",
+      "who": "derived",
+      "turn": 6,
+      "ts": "2026-10-19 14:31"
+     },
+     "pain_rating": {
+      "value": 9,
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 14,
+      "ts": "2026-10-19 14:32"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3
+  },
+  "complaint.category": {
+   "value": [
+    "other"
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 14,
+   "ts": "2026-10-19 14:32"
+  },
+  "complaint.text": {
+   "value": "My pain medications are not working anymore. I have metastatic ovarian cancer and my oncologist told me to come in.",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-19 14:31"
+  },
+  "history.conditions": {
+   "value": "metastatic ovarian cancer",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-19 14:31"
+  },
+  "danger_signs.breathing_difficulty": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 4,
+   "ts": "2026-10-19 14:31"
+  },
+  "danger_signs.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 5,
+   "ts": "2026-10-19 14:31"
+  },
+  "complaint.onset": {
+   "value": "last night",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 6,
+   "ts": "2026-10-19 14:31"
+  },
+  "complaint.onset_abs": {
+   "value": "~2026-10-18 night (from 'last night' said 14:31)",
+   "status": "reported",
+   "who": "derived",
+   "turn": 6,
+   "ts": "2026-10-19 14:31"
+  },
+  "E.mechanism": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 7,
+   "ts": "2026-10-19 14:31"
+  },
+  "patient.age": {
+   "value": 47,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 8,
+   "ts": "2026-10-19 14:31"
+  },
+  "patient.sex": {
+   "value": "female",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 8,
+   "ts": "2026-10-19 14:31"
+  },
+  "patient.age_group": {
+   "value": "adult",
+   "status": "reported",
+   "who": "derived",
+   "turn": 8,
+   "ts": "2026-10-19 14:31"
+  },
+  "history.pregnant": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 9,
+   "ts": "2026-10-19 14:31"
+  },
+  "history.postpartum": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 9,
+   "ts": "2026-10-19 14:31"
+  },
+  "complaint.fever": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 10,
+   "ts": "2026-10-19 14:32"
+  },
+  "infection.rash": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 10,
+   "ts": "2026-10-19 14:32"
+  },
+  "infection.travel_14d": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 11,
+   "ts": "2026-10-19 14:32"
+  },
+  "infection.contacts": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 11,
+   "ts": "2026-10-19 14:32"
+  },
+  "complaint.uti_symptoms": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 12,
+   "ts": "2026-10-19 14:32"
+  },
+  "ams.changed_from_baseline": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 13,
+   "ts": "2026-10-19 14:32"
+  },
+  "complaint.pain_rating": {
+   "value": 9,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 14,
+   "ts": "2026-10-19 14:32"
+  },
+  "complaint.pain_latest": {
+   "value": 9,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 14,
+   "ts": "2026-10-19 14:32"
+  },
+  "stroke.face_droop": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 15,
+   "ts": "2026-10-19 14:32"
+  },
+  "stroke.arm_weakness": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 15,
+   "ts": "2026-10-19 14:32"
+  },
+  "stroke.speech_change": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 16,
+   "ts": "2026-10-19 14:32"
+  },
+  "stroke.balance_loss": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 16,
+   "ts": "2026-10-19 14:32"
+  }
+ },
+ "attempts": {
+  "danger_signs.responsive": 1,
+  "danger_signs.chest_pain_now": 2,
+  "danger_signs.breathing_difficulty": 2,
+  "danger_signs.heavy_bleeding": 2,
+  "complaint.category": 1,
+  "complaint.onset": 1,
+  "E.mechanism": 1,
+  "patient.age": 1,
+  "patient.sex": 1,
+  "history.pregnant": 1,
+  "history.postpartum": 1,
+  "complaint.fever": 1,
+  "infection.rash": 1,
+  "infection.travel_14d": 1,
+  "infection.contacts": 1,
+  "complaint.uti_symptoms": 1,
+  "ams.changed_from_baseline": 1,
+  "complaint.pain_rating": 1,
+  "stroke.face_droop": 1,
+  "stroke.arm_weakness": 1,
+  "stroke.speech_change": 1,
+  "stroke.balance_loss": 1,
+  "complaint.pain_cause_class": 1
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "Is the patient awake and responding to you normally? Also, is he or she experiencing any chest pain, trouble breathing, or heavy bleeding right now?",
+   "ts": "2026-10-19 14:30:38",
+   "kind": "question",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, I'm awake, it's me talking. No.",
+   "ts": "2026-10-19 14:30:38",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. To be clear, is the patient experiencing any chest pain at this moment?",
+   "ts": "2026-10-19 14:30:45",
+   "kind": "question",
+   "slot": "dyn:danger_signs.chest_pain_now"
+  },
+  {
+   "role": "caregiver",
+   "text": "No.",
+   "ts": "2026-10-19 14:30:45",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.chest_pain_now"
+  },
+  {
+   "role": "bot",
+   "text": "I'm glad you're able to speak. Is the patient having any trouble breathing or any heavy bleeding right now? Also, what is the main reason for the visit today?",
+   "ts": "2026-10-19 14:30:52",
+   "kind": "question",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category"
+  },
+  {
+   "role": "caregiver",
+   "text": "No. My pain medications are not working anymore. I have metastatic ovarian cancer and my oncologist told me to come in.",
+   "ts": "2026-10-19 14:30:52",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category"
+  },
+  {
+   "role": "bot",
+   "text": "Is the patient having any difficulty breathing right now?",
+   "ts": "2026-10-19 14:31:09",
+   "kind": "question",
+   "slot": "dyn:danger_signs.breathing_difficulty"
+  },
+  {
+   "role": "caregiver",
+   "text": "No.",
+   "ts": "2026-10-19 14:31:09",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.breathing_difficulty"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Is there any heavy bleeding occurring right now?",
+   "ts": "2026-10-19 14:31:15",
+   "kind": "question",
+   "slot": "dyn:danger_signs.heavy_bleeding"
+  },
+  {
+   "role": "caregiver",
+   "text": "No.",
+   "ts": "2026-10-19 14:31:15",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.heavy_bleeding"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear the medication isn't helping. When did this pain start?",
+   "ts": "2026-10-19 14:31:22",
+   "kind": "question",
+   "slot": "dyn:complaint.onset"
+  },
+  {
+   "role": "caregiver",
+   "text": "It got much worse last night.",
+   "ts": "2026-10-19 14:31:22",
+   "kind": "answer",
+   "slot": "dyn:complaint.onset"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear the pain has worsened. Can you tell me what caused the pain or how it started?",
+   "ts": "2026-10-19 14:31:37",
+   "kind": "question",
+   "slot": "dyn:E.mechanism"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-19 14:31:37",
+   "kind": "answer",
+   "slot": "dyn:E.mechanism"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. To help the team prepare, could you tell me the patient's age and if she is female?",
+   "ts": "2026-10-19 14:31:43",
+   "kind": "question",
+   "slot": "dyn:patient.age+patient.sex"
+  },
+  {
+   "role": "caregiver",
+   "text": "I'm 47. I'm a woman.",
+   "ts": "2026-10-19 14:31:43",
+   "kind": "answer",
+   "slot": "dyn:patient.age+patient.sex"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you for that information. Is she currently pregnant or has she given birth in the last few weeks?",
+   "ts": "2026-10-19 14:31:50",
+   "kind": "question",
+   "slot": "dyn:history.pregnant+history.postpartum"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-19 14:31:50",
+   "kind": "answer",
+   "slot": "dyn:history.pregnant+history.postpartum"
+  },
+  {
+   "role": "bot",
+   "text": "I see. Does she have a fever or any new rashes on her skin?",
+   "ts": "2026-10-19 14:31:57",
+   "kind": "question",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-19 14:31:57",
+   "kind": "answer",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Has she traveled outside the country or been in contact with anyone who is sick in the last two weeks?",
+   "ts": "2026-10-19 14:32:03",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-19 14:32:03",
+   "kind": "answer",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "bot",
+   "text": "Does she have any pain or burning when she passes urine, or is she going more often than usual?",
+   "ts": "2026-10-19 14:32:09",
+   "kind": "question",
+   "slot": "dyn:complaint.uti_symptoms"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-19 14:32:09",
+   "kind": "answer",
+   "slot": "dyn:complaint.uti_symptoms"
+  },
+  {
+   "role": "bot",
+   "text": "Has she seemed more confused, out of it, or unusually sleepy since this started?",
+   "ts": "2026-10-19 14:32:15",
+   "kind": "question",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-19 14:32:15",
+   "kind": "answer",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "bot",
+   "text": "On a scale of 0 to 10, where 10 is the worst pain imaginable, how bad is her pain right now?",
+   "ts": "2026-10-19 14:32:22",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "It's 9 out of 10.",
+   "ts": "2026-10-19 14:32:22",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "I understand the pain is very severe. Does she have any drooping on one side of her face or any weakness or numbness in her arms or legs?",
+   "ts": "2026-10-19 14:32:29",
+   "kind": "question",
+   "slot": "dyn:stroke.face_droop+stroke.arm_weakness"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-19 14:32:29",
+   "kind": "answer",
+   "slot": "dyn:stroke.face_droop+stroke.arm_weakness"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Is her speech slurred or strange, or has she suddenly lost her balance or coordination?",
+   "ts": "2026-10-19 14:32:35",
+   "kind": "question",
+   "slot": "dyn:stroke.speech_change+stroke.balance_loss"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-19 14:32:35",
+   "kind": "answer",
+   "slot": "dyn:stroke.speech_change+stroke.balance_loss"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Does she have a known medical condition, like kidney stones or cancer, that causes this pain?",
+   "ts": "2026-10-19 14:32:41",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_cause_class"
+  }
+ ],
+ "stage": "floor",
+ "floor": null,
+ "phase": "enroute",
+ "created": "2026-10-19 14:30",
+ "pending_slot": "dyn:complaint.pain_cause_class",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {},
+ "considered": [
+  "B-02.severe-pain-consider"
+ ]
+}

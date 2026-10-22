@@ -1,0 +1,40 @@
+arm B, form handbook, persona P8-decompensated-liver-disease, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  What is the main reason the patient is seeking care today?
+A1  He has cirrhosis and over the past two days his belly has gotten more swollen, his eyes more yellow, and he has become sleepy and confused.
+
+Q2  Is the patient currently able to follow commands or is he unresponsive?
+A2  He's awake but slow to answer.
+
+Q3  Is the patient's confusion or sleepiness a new change from his normal baseline?
+A3  Yes, he is much more confused and sleepy than usual.
+
+Q4  Is the patient's breathing difficult or is he in severe respiratory distress?
+A4  He is breathing normally.
+
+Q5  Is the patient's heart rate, respiratory rate, or oxygen saturation level currently abnormal or concerning?
+A5  I don't know.
+
+Q6  Is the patient's confusion or sleepiness a new development or a change from his baseline?
+A6  Yes, he is much more confused and sleepy than usual.
+
+Q7  Is the patient's heart rate, respiratory rate, or oxygen saturation level currently abnormal or concerning?
+A7  I don't know.
+
+Q8  Is the patient's condition a high-risk situation, such as a potential for rapid deterioration or a threat to life, limb, sight, or organ?
+A8  I don't know.
+
+Q9  Is the patient's confusion or sleepiness a new development or a change from his baseline?
+A9  Yes, he is much more confused and sleepy than usual.
+
+Q10  Is the patient's confusion or sleepiness a new development or a change from his baseline?
+A10  Yes, he is much more confused and sleepy than usual.
+
+Q11  Is the patient's confusion or sleepiness a new development or a change from his baseline?
+A11  Yes, he is much more confused and sleepy than usual.
+
+Q12  Is the patient's confusion or sleepiness a new development or a change from his baseline?
+A12  Yes, he is much more confused and sleepy than usual.
+
+DECISION {"done": true, "decision": "level 2", "reason": "The patient presents with a new onset of altered mental status (confusion and sleepiness) which is a high-risk situation according to Decision Point B.", "citation": "page 12"}
+OUTCOME level 2 or floor | expected at least ESI-2 | pass True | label None | max prompt tokens 30076

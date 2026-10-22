@@ -1,0 +1,623 @@
+{
+ "sid": "LION-8199",
+ "facts": {
+  "danger_signs.responsive": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-10-14 23:56"
+  },
+  "obs.new_confusion_lethargy_disorientation": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 18,
+   "ts": "2026-10-14 23:58"
+  },
+  "danger_signs.chest_pain_now": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-14 23:56"
+  },
+  "danger_signs.breathing_difficulty": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-10-14 23:56"
+  },
+  "danger_signs.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-10-14 23:56"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "fever",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "persona",
+      "turn": 4,
+      "ts": "2026-10-14 23:56"
+     },
+     "text": {
+      "value": "headache, nausea, and dizziness before becoming confused and falling",
+      "status": "reported",
+      "who": "persona",
+      "turn": 5,
+      "ts": "2026-10-14 23:56"
+     },
+     "onset": {
+      "value": "four hours",
+      "status": "reported",
+      "who": "persona",
+      "turn": 6,
+      "ts": "2026-10-14 23:56"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 4
+  },
+  "complaint.category": {
+   "value": [
+    "fever"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 6,
+   "ts": "2026-10-14 23:56"
+  },
+  "complaint.text": {
+   "value": "headache, nausea, and dizziness before becoming confused and falling",
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-10-14 23:56"
+  },
+  "ams.changed_from_baseline": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 4,
+   "ts": "2026-10-14 23:56"
+  },
+  "obs.subtle_mental_status_change": {
+   "value": true,
+   "status": "reported",
+   "who": "derived",
+   "turn": 4,
+   "ts": "2026-10-14 23:56"
+  },
+  "obs.confusion_lethargy_disorientation": {
+   "value": true,
+   "status": "reported",
+   "who": "derived",
+   "turn": 4,
+   "ts": "2026-10-14 23:56"
+  },
+  "E.mechanism": {
+   "value": "none",
+   "status": "reported",
+   "who": "derived",
+   "turn": 4,
+   "ts": "2026-10-14 23:56"
+  },
+  "patient.age": {
+   "value": 39,
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-10-14 23:56"
+  },
+  "patient.age_group": {
+   "value": "adult",
+   "status": "reported",
+   "who": "derived",
+   "turn": 5,
+   "ts": "2026-10-14 23:56"
+  },
+  "complaint.onset": {
+   "value": "four hours",
+   "status": "reported",
+   "who": "persona",
+   "turn": 6,
+   "ts": "2026-10-14 23:56"
+  },
+  "patient.sex": {
+   "value": "male",
+   "status": "reported",
+   "who": "persona",
+   "turn": 7,
+   "ts": "2026-10-14 23:56"
+  },
+  "complaint.fever": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 8,
+   "ts": "2026-10-14 23:57"
+  },
+  "infection.rash": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 8,
+   "ts": "2026-10-14 23:57"
+  },
+  "infection.travel_14d": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 9,
+   "ts": "2026-10-14 23:57"
+  },
+  "infection.contacts": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 9,
+   "ts": "2026-10-14 23:57"
+  },
+  "complaint.uti_symptoms": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 10,
+   "ts": "2026-10-14 23:57"
+  },
+  "vitals.temp_c": {
+   "value": 40.4,
+   "status": "reported",
+   "who": "persona",
+   "turn": 11,
+   "ts": "2026-10-14 23:57"
+  },
+  "complaint.vomiting": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 14,
+   "ts": "2026-10-14 23:57"
+  },
+  "complaint.infection_signs": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 14,
+   "ts": "2026-10-14 23:57"
+  },
+  "complaint.chills_or_rigors": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 15,
+   "ts": "2026-10-14 23:57"
+  },
+  "M.medications": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 16,
+   "ts": "2026-10-14 23:57"
+  },
+  "A.allergies": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 16,
+   "ts": "2026-10-14 23:57"
+  },
+  "history.conditions": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 17,
+   "ts": "2026-10-14 23:58"
+  },
+  "history.immunocompromised": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 17,
+   "ts": "2026-10-14 23:58"
+  },
+  "history.transplant_recipient_or_listed": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 18,
+   "ts": "2026-10-14 23:58"
+  },
+  "history.baseline_mental_status": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 18,
+   "ts": "2026-10-14 23:58"
+  },
+  "identity.name": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 19,
+   "ts": "2026-10-14 23:58"
+  },
+  "identity.dob": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 19,
+   "ts": "2026-10-14 23:58"
+  },
+  "L.last_intake": {
+   "value": "breakfast at 7am, and he has drank very little water",
+   "status": "reported",
+   "who": "persona",
+   "turn": 20,
+   "ts": "2026-10-14 23:58"
+  },
+  "L.last_intake_abs": {
+   "value": "~2026-10-14 07:00 (from 'breakfast at 7am, and he has drank very little water' said 23:58)",
+   "status": "reported",
+   "who": "derived",
+   "turn": 20,
+   "ts": "2026-10-14 23:58"
+  }
+ },
+ "attempts": {
+  "danger_signs.responsive": 1,
+  "danger_signs.chest_pain_now": 1,
+  "danger_signs.breathing_difficulty": 1,
+  "danger_signs.heavy_bleeding": 2,
+  "complaint.category": 1,
+  "complaint.text": 1,
+  "complaint.onset": 2,
+  "patient.age": 1,
+  "patient.sex": 2,
+  "complaint.fever": 1,
+  "infection.rash": 1,
+  "infection.travel_14d": 1,
+  "infection.contacts": 1,
+  "complaint.uti_symptoms": 1,
+  "vitals.temp_c": 1,
+  "complaint.pain_rating": 3,
+  "complaint.infection_signs": 1,
+  "complaint.chills_or_rigors": 2,
+  "M.medications": 1,
+  "A.allergies": 1,
+  "history.conditions": 1,
+  "history.immunocompromised": 1,
+  "history.transplant_recipient_or_listed": 1,
+  "history.baseline_mental_status": 1,
+  "identity.name": 1,
+  "identity.dob": 1,
+  "L.last_intake": 1
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "I'm here to help get the information ready for the medical team. Is the patient awake and responding normally, and are they currently having any chest pain, trouble breathing, or heavy bleeding?",
+   "ts": "2026-10-14 23:56:06",
+   "kind": "question",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "caregiver",
+   "text": "He is awake but only responding with confused words. I don't know if he has chest pain, trouble breathing, or heavy bleeding.",
+   "ts": "2026-10-14 23:56:08",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "system",
+   "text": "floor: at least ESI-2  rules: ['B-01.new-altered-mental-status']",
+   "ts": "2026-10-14 23:56:10",
+   "kind": "floor"
+  },
+  {
+   "role": "bot",
+   "text": "Based on what you just told me, please call 995 NOW if you are not already with paramedics. I have put this at the top of the hospital report.",
+   "ts": "2026-10-14 23:56:10",
+   "kind": "advice"
+  },
+  {
+   "role": "bot",
+   "text": "I understand he is confused. Is he having any trouble breathing or heavy bleeding right now?",
+   "ts": "2026-10-14 23:56:13",
+   "kind": "question",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, he is not having any trouble breathing or heavy bleeding.",
+   "ts": "2026-10-14 23:56:14",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding"
+  },
+  {
+   "role": "bot",
+   "text": "I understand he isn't struggling to breathe. Is he bleeding heavily anywhere right now?",
+   "ts": "2026-10-14 23:56:20",
+   "kind": "question",
+   "slot": "dyn:danger_signs.heavy_bleeding"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, he is not bleeding.",
+   "ts": "2026-10-14 23:56:21",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.heavy_bleeding"
+  },
+  {
+   "role": "bot",
+   "text": "I'm glad to hear he isn't struggling to breathe. Could you tell me what the main problem is and what's happening with him?",
+   "ts": "2026-10-14 23:56:26",
+   "kind": "question",
+   "slot": "dyn:complaint.category+complaint.text"
+  },
+  {
+   "role": "caregiver",
+   "text": "He's very hot, weak, and only saying confused words after collapsing while working in the sun. He has a temperature of 40.4 degrees Celsius and has vomited once.",
+   "ts": "2026-10-14 23:56:28",
+   "kind": "answer",
+   "slot": "dyn:complaint.category+complaint.text"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear he's feeling so poorly. How old is he, and when did these symptoms start?",
+   "ts": "2026-10-14 23:56:37",
+   "kind": "question",
+   "slot": "dyn:complaint.onset+patient.age+patient.sex"
+  },
+  {
+   "role": "caregiver",
+   "text": "He is 39 years old. He had a headache, nausea, and dizziness before becoming confused and falling.",
+   "ts": "2026-10-14 23:56:38",
+   "kind": "answer",
+   "slot": "dyn:complaint.onset+patient.age+patient.sex"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry he's feeling so poorly. About how long ago did these symptoms begin?",
+   "ts": "2026-10-14 23:56:44",
+   "kind": "question",
+   "slot": "dyn:complaint.onset"
+  },
+  {
+   "role": "caregiver",
+   "text": "He had been working for about four hours before he became confused and fell.",
+   "ts": "2026-10-14 23:56:45",
+   "kind": "answer",
+   "slot": "dyn:complaint.onset"
+  },
+  {
+   "role": "bot",
+   "text": "To help the team prepare, is the patient a man or a woman?",
+   "ts": "2026-10-14 23:56:50",
+   "kind": "question",
+   "slot": "dyn:patient.sex"
+  },
+  {
+   "role": "caregiver",
+   "text": "He is a man.",
+   "ts": "2026-10-14 23:56:52",
+   "kind": "answer",
+   "slot": "dyn:patient.sex"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear he's feeling this way. Does he have a fever, and have you noticed any new rashes on his body?",
+   "ts": "2026-10-14 23:56:57",
+   "kind": "question",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "His temperature is 40.4 degrees Celsius. I haven't seen any rashes.",
+   "ts": "2026-10-14 23:56:58",
+   "kind": "answer",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you for that information. Has he traveled outside the country in the last two weeks, or been in contact with anyone who has been sick?",
+   "ts": "2026-10-14 23:57:04",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-14 23:57:05",
+   "kind": "answer",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "bot",
+   "text": "I've noted the high temperature. Is he experiencing any pain or burning when he goes to the bathroom, or have you noticed any changes in how often he goes?",
+   "ts": "2026-10-14 23:57:10",
+   "kind": "question",
+   "slot": "dyn:complaint.uti_symptoms"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-14 23:57:13",
+   "kind": "answer",
+   "slot": "dyn:complaint.uti_symptoms"
+  },
+  {
+   "role": "bot",
+   "text": "I understand you're not sure about those details. If you have a thermometer handy, what was his temperature, and on a scale of 0 to 10, how much pain is he in?",
+   "ts": "2026-10-14 23:57:19",
+   "kind": "question",
+   "slot": "dyn:vitals.temp_c+complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "His temperature is 40.4 degrees Celsius. I don't know how much pain he is in.",
+   "ts": "2026-10-14 23:57:20",
+   "kind": "answer",
+   "slot": "dyn:vitals.temp_c+complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "I understand that's hard to tell. If he is able to communicate, how much pain would you say he is in on a scale of 0 to 10?",
+   "ts": "2026-10-14 23:57:26",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "He is only responding with confused words, so I don't know.",
+   "ts": "2026-10-14 23:57:27",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "I understand he's hard to communicate with. If he makes any sounds or gestures when you touch him, does it seem like he is in a lot of pain?",
+   "ts": "2026-10-14 23:57:32",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "He is only responding with confused words and I'm not sure if he is in pain.",
+   "ts": "2026-10-14 23:57:33",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry he's so difficult to communicate with right now. Besides the fever, has he had any shivering chills or been vomiting, and do you notice any red or swollen wounds on his body?",
+   "ts": "2026-10-14 23:57:38",
+   "kind": "question",
+   "slot": "dyn:complaint.infection_signs+complaint.chills_or_rigors"
+  },
+  {
+   "role": "caregiver",
+   "text": "He has vomited once. I don't see any red or swollen wounds.",
+   "ts": "2026-10-14 23:57:40",
+   "kind": "answer",
+   "slot": "dyn:complaint.infection_signs+complaint.chills_or_rigors"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear he's so confused. Has he had any shivering or shaking chills?",
+   "ts": "2026-10-14 23:57:45",
+   "kind": "question",
+   "slot": "dyn:complaint.chills_or_rigors"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-14 23:57:47",
+   "kind": "answer",
+   "slot": "dyn:complaint.chills_or_rigors"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. To help the team prepare, could you tell me what medications he takes regularly and if he has any known allergies, especially to medicine?",
+   "ts": "2026-10-14 23:57:52",
+   "kind": "question",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know his medications or any allergies.",
+   "ts": "2026-10-14 23:57:53",
+   "kind": "answer",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Does he have any ongoing medical conditions or is he taking any medications that affect his immune system?",
+   "ts": "2026-10-14 23:57:58",
+   "kind": "question",
+   "slot": "dyn:history.conditions+history.immunocompromised"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know his medications or medical history.",
+   "ts": "2026-10-14 23:57:59",
+   "kind": "answer",
+   "slot": "dyn:history.conditions+history.immunocompromised"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. To help the team, has he ever had an organ transplant or is he on a waiting list for one? Also, is he usually alert and clear-headed?",
+   "ts": "2026-10-14 23:58:05",
+   "kind": "question",
+   "slot": "dyn:history.transplant_recipient_or_listed+history.baseline_mental_status"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know. He was confused and only saying confused words before he fell.",
+   "ts": "2026-10-14 23:58:06",
+   "kind": "answer",
+   "slot": "dyn:history.transplant_recipient_or_listed+history.baseline_mental_status"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear he was confused. To help the medical team, could you please tell me his full name and date of birth?",
+   "ts": "2026-10-14 23:58:12",
+   "kind": "question",
+   "slot": "dyn:identity.name+identity.dob"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know his name or date of birth.",
+   "ts": "2026-10-14 23:58:13",
+   "kind": "answer",
+   "slot": "dyn:identity.name+identity.dob"
+  },
+  {
+   "role": "bot",
+   "text": "That's enough for the hospital team to prepare. Show the code LION-8199 at the counter when you arrive. I'll ask a few more things while you're on the way; tell me straight away if anything changes.",
+   "ts": "2026-10-14 23:58:16",
+   "kind": "ack"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. To help the team prepare, could you tell me when he last had anything to eat or drink and what it was?",
+   "ts": "2026-10-14 23:58:18",
+   "kind": "question",
+   "slot": "dyn:L.last_intake"
+  },
+  {
+   "role": "caregiver",
+   "text": "He had breakfast at 7am, and he has drank very little water.",
+   "ts": "2026-10-14 23:58:20",
+   "kind": "answer",
+   "slot": "dyn:L.last_intake"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you - that's everything. Show the code LION-8199 at the counter when you arrive.",
+   "ts": "2026-10-14 23:58:23",
+   "kind": "ack"
+  }
+ ],
+ "stage": "rest",
+ "floor": "at least ESI-2",
+ "phase": "enroute",
+ "opened": [],
+ "created": "2026-10-14 23:56",
+ "pending_slot": "dyn:L.last_intake",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {},
+ "advised995": true,
+ "qr_ready": true,
+ "qr_turn": 19,
+ "said_done": true
+}

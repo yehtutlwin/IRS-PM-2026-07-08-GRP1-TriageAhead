@@ -1,0 +1,31 @@
+session EAGLE-6532   started 2026-10-18 17:41   (generated from messages)
+
+17:42:02  BOT  Is the patient awake and responding to you normally? Also, is he or she experiencing any chest pain, trouble breathing, or heavy bleeding right now?   [slot dyn:danger_signs.responsive+danger_signs.chest_pain_now]
+17:42:02  THEM He's awake but slow to answer. No chest pain.   [slot dyn:danger_signs.responsive+danger_signs.chest_pain_now]
+17:42:11  BOT  I understand. Is he having any trouble breathing or is there any heavy bleeding? Also, what is the main reason you are bringing him in today?   [slot dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category]
+17:42:11  THEM Breathing normally. No. He has cirrhosis. Over two days his belly has got more swollen, his eyes more yellow, and he's sleepy and confused; today he can't say the date and his hands shake.   [slot dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category]
+17:42:32  BOT  I see he has cirrhosis. When did these new symptoms start?   [slot dyn:complaint.onset]
+17:42:32  THEM Over the past two days.   [slot dyn:complaint.onset]
+17:42:48  BOT  I understand. How old is he and what is his gender? Also, can you tell me what caused these symptoms to start?   [slot dyn:E.mechanism+patient.age+patient.sex]
+17:42:48  THEM No injury. 58. Male.   [slot dyn:E.mechanism+patient.age+patient.sex]
+17:42:56  BOT  I'm sorry to hear about his condition. Does he have a fever or any new rashes on his skin?   [slot dyn:complaint.fever+infection.rash]
+17:42:56  THEM No fever. No rash.   [slot dyn:complaint.fever+infection.rash]
+17:43:04  BOT  Has he traveled outside the country or been in contact with anyone who has a known infection in the last two weeks?   [slot dyn:infection.travel_14d+infection.contacts]
+17:43:04  THEM No.   [slot dyn:infection.travel_14d+infection.contacts]
+17:43:11  BOT  Is he having any pain or burning when he goes to the bathroom, or is his urine cloudy or smelly?   [slot dyn:complaint.uti_symptoms]
+17:43:11  THEM I don't know.   [slot dyn:complaint.uti_symptoms]
+17:43:18  BOT  Is he more confused, not making sense, or more sleepy than usual?   [slot dyn:ams.changed_from_baseline]
+17:43:18  THEM Yes, much more confused and sleepy than usual.   [slot dyn:ams.changed_from_baseline]
+17:43:31  SYS  floor: at least ESI-2  rules: ['B-01.new-altered-mental-status'] (floor)
+17:43:34  BOT  I understand he is very confused. What medications does he take regularly, and does he have any allergies to medicines?   [slot dyn:M.medications+A.allergies]
+17:43:34  THEM Lactulose, spironolactone and furosemide; he missed several lactulose doses this week. None.   [slot dyn:M.medications+A.allergies]
+17:43:43  BOT  I've noted his medications. Could you please tell me his full name and date of birth?   [slot dyn:identity.name+identity.dob]
+17:43:43  THEM Rajan Kumar. 7 July 1968.   [slot dyn:identity.name+identity.dob]
+17:43:47  BOT  That's enough for the hospital team to prepare. Show the code EAGLE-6532 at the counter when you arrive. I'll ask a few more things while you're on the way; tell me straight away if anything changes. (ack)
+17:43:50  BOT  On a scale of 0 to 10, where 10 is the worst pain imaginable, how bad is his pain right now?   [slot dyn:complaint.pain_rating]
+17:43:50  THEM Mild belly discomfort, 3 out of 10.   [slot dyn:complaint.pain_rating]
+17:43:58  BOT  I've noted the belly discomfort. Is he also experiencing any pain in his testicles or scrotum?   [slot dyn:complaint.testicular_or_scrotal_pain]
+17:43:58  THEM I don't know.   [slot dyn:complaint.testicular_or_scrotal_pain]
+17:44:04  BOT  I understand. When was the last time he had anything to eat or drink, and what did he have?   [slot dyn:L.last_intake]
+17:44:04  THEM A small bowl of rice at noon.   [slot dyn:L.last_intake]
+17:44:08  BOT  Thank you - that's everything. Show the code EAGLE-6532 at the counter when you arrive. (ack)

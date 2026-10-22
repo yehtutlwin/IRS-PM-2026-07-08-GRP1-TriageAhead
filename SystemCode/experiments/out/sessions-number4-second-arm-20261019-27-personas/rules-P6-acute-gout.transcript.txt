@@ -1,0 +1,28 @@
+arm B, form rules, persona P6-acute-gout, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  Is the patient awake and responding normally?
+A1  Yes, I'm awake and can answer you.
+
+Q2  Is the patient experiencing chest pain right now?
+A2  No chest pain.
+
+Q3  Is the patient having any trouble breathing right now?
+A3  No.
+
+Q4  Is the patient bleeding heavily right now?
+A4  No.
+
+Q5  Is the patient experiencing any other symptoms, such as a severe headache, abdominal pain, or a high fever?
+A5  No.
+
+Q6  How old is the patient?
+A6  I am 52.
+
+Q7  Is the patient's condition a result of a recent injury, such as a fall or a car accident?
+A7  No fall or injury, it just came on.
+
+Q8  Are you currently experiencing any other symptoms, such as a severe headache, abdominal pain, or a high fever?
+A8  No.
+
+DECISION {"done": true, "decision": "no floor", "reason": "The patient is stable, does not meet high-risk criteria, and the number of resources required has not been determined.", "citation": "page 5"}
+OUTCOME no floor | expected None | pass True | label None | max prompt tokens 43813

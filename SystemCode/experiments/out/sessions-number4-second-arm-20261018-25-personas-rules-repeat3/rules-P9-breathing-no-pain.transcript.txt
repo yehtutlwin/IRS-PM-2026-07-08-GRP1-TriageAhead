@@ -1,0 +1,52 @@
+arm B, form rules, persona P9-breathing-no-pain, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  Is the patient awake and responding normally?
+A1  Yes, he's awake and talking normally.
+
+Q2  Is the patient experiencing chest pain right now?
+A2  No chest pain.
+
+Q3  Is the patient having any trouble breathing right now?
+A3  Yes, he's more short of breath than usual, but he can speak in full sentences.
+
+Q4  Is the patient bleeding heavily right now?
+A4  No.
+
+Q5  Is the patient's breathing very difficult or is he struggling to speak in full sentences?
+A5  He is more short of breath than usual, but he can speak in full sentences.
+
+Q6  Is the patient's breathing difficulty a new problem or a change from his usual condition?
+A6  He's been more short of breath than usual since this morning.
+
+Q7  Is the patient's breathing difficulty a new problem or a change from his usual condition?
+A7  He's been more short of breath than usual since this morning.
+
+Q8  Is the patient's breathing difficulty a new problem or a change from his usual condition?
+A8  He's been more short of breath than usual since this morning.
+
+Q9  Is the patient's breathing difficulty a new problem or a change from his usual condition?
+A9  He's been more short of breath than usual since this morning.
+
+Q10  Is the patient's breathing difficulty a new problem or a change from his usual condition?
+A10  He's been more short of breath than usual since this morning.
+
+Q11  Is the patient's breathing difficulty a new problem or a change from his usual condition?
+A11  He's been more short of breath than usual since this morning.
+
+Q12  Is the patient's breathing difficulty a result of a known medical condition, like asthma or COPD?
+A12  Yes, he has heart failure and COPD.
+
+Q13  Does he have any other symptoms like a cough, fever, or a recent infection?
+A13  No fever. No rash.
+
+Q14  Is the patient's breathing difficulty a result of a known medical condition, like asthma or COPD?
+A14  Yes, he has heart failure and COPD.
+
+Q15  Is the patient's breathing difficulty a result of a known medical condition, like asthma or COPD?
+A15  Yes, he has heart failure and COPD.
+
+Q16  Does the patient have any other symptoms like a cough, fever, or a recent infection?
+A16  No fever. No rash.
+
+DECISION {"decision": "unparsed", "reason": "turn limit reached without a decision"}
+OUTCOME no decision in 16 questions | expected None | pass False | label model error (over-call) | max prompt tokens 44143

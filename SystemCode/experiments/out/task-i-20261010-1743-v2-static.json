@@ -1,0 +1,34 @@
+{
+ "persona_backend": "ollama",
+ "persona_model": "gemma4:12b",
+ "interview": {
+  "interview_mode": "static",
+  "backend": "ollama",
+  "model": "gemma4:12b",
+  "dyn_max_fields": 4
+ },
+ "tag": "v2-static",
+ "results": [
+  {
+   "questions": 16,
+   "reasks": 0,
+   "floor": null,
+   "floor_ok": false,
+   "rules_ok": false,
+   "fired": [],
+   "hits": 5,
+   "total": 9,
+   "misses": [
+    "E.head_strike: want=False got=None",
+    "E.loc: want=False got=None",
+    "infection.fever: want=False got=None",
+    "history.conditions: want=['atrial fibrillation or irregular heartbeat', 'hypertension'] got=None"
+   ],
+   "danger_miss": false,
+   "persona": "P1-fall-anticoag",
+   "run": 1,
+   "session": "ORCHID-4525",
+   "turns": 16
+  }
+ ]
+}

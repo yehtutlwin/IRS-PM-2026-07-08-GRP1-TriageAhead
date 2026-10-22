@@ -1,0 +1,34 @@
+arm B, form rules, persona P8-decompensated-liver-disease, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  Is the patient awake and responding normally?
+A1  He's awake but slow to answer.
+
+Q2  Is he having any chest pain right now?
+A2  No, he has no chest pain.
+
+Q3  Is he having any trouble breathing right now?
+A3  He is breathing normally.
+
+Q4  Is he bleeding heavily right now?
+A4  No.
+
+Q5  How old is the patient?
+A5  He is 58.
+
+Q6  Is the patient's slow response due to a new change in his mental state, such as being confused, drowsy, or disoriented?
+A6  Yes, he is much more confused and sleepy than usual.
+
+Q7  Is the patient's confusion or sleepiness a new change from his usual mental state?
+A7  Yes, he is much more confused and sleepy than usual.
+
+Q8  Is the patient's confusion or sleepiness a result of a known condition, or is it a new, unexplained change?
+A8  It is a new change; he is much more confused and sleepy than usual.
+
+Q9  Is the patient's confusion or sleepiness a result of a known condition, or is it a new, unexplained change?
+A9  It is a new change; he is much more confused and sleepy than usual.
+
+Q10  Is the patient's confusion or sleepiness a result of a known condition, or is it a new, unexplained change?
+A10  It is a new change; he is much more confused and sleepy than usual.
+
+DECISION {"decision": "at least ESI-2", "reason": "The patient is experiencing a new, unexplained change in mental status (confusion and sleepiness), which is a high-risk situation.", "citation": "ESI v5 p.12 (New Onset Confusion, Lethargy, or Disorientation); Rule B-01"}
+OUTCOME level 2 or floor | expected at least ESI-2 | pass True | label None | max prompt tokens 43948

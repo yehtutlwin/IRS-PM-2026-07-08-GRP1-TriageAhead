@@ -1,0 +1,82 @@
+{"t": "00:09:19", "kind": "engine", "note": "session LOTUS-6608 started (web)"}
+{"t": "00:09:23", "kind": "question", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "I'm here to help gather some information for the medical team. Is the patient awake and responding normally, and are they currently experiencing any chest pain, trouble breathing, or heavy bleeding?", "fields": ["danger_signs.responsive", "danger_signs.chest_pain_now"], "offered": ["danger_signs.responsive", "danger_signs.chest_pain_now", "danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text"]}
+{"t": "00:09:25", "kind": "answer", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "Yes, I'm awake. I have pressure in the center of my chest and I'm a bit breathless."}
+{"t": "00:09:28", "kind": "extract", "writes": [["danger_signs.responsive", true], ["danger_signs.chest_pain_now", true], ["danger_signs.breathing_difficulty", true]]}
+{"t": "00:09:31", "kind": "question", "slot": "dyn:danger_signs.heavy_bleeding+complaint.category", "text": "I'm sorry to hear about the chest pressure. Are you bleeding heavily right now, and what is the main reason you are seeking care today?", "fields": ["danger_signs.heavy_bleeding", "complaint.category"], "offered": ["danger_signs.heavy_bleeding", "complaint.category", "complaint.text", "complaint.onset", "E.mechanism", "patient.age"]}
+{"t": "00:09:33", "kind": "answer", "slot": "dyn:danger_signs.heavy_bleeding+complaint.category", "text": "No, I'm not bleeding. I have a lot of pressure in the center of my chest and it's spreading to my arm."}
+{"t": "00:09:37", "kind": "extract", "writes": [["danger_signs.heavy_bleeding", false], ["complaint.category", "chest_pain"], ["complaint.text", "pressure in the center of my chest and it's spreading to my arm"]]}
+{"t": "00:09:37", "kind": "extract", "writes": [["E.mechanism", "none"]], "via": "derived-non-injury"}
+{"t": "00:09:40", "kind": "question", "slot": "dyn:complaint.onset+patient.age+patient.sex", "text": "I'm sorry you're feeling this way. To help the team prepare, could you tell me how long this chest pressure has been going on, and what is your age and sex?", "fields": ["complaint.onset", "patient.age", "patient.sex"], "offered": ["complaint.onset", "patient.age", "patient.sex", "complaint.fever", "infection.rash", "infection.travel_14d"]}
+{"t": "00:09:42", "kind": "answer", "slot": "dyn:complaint.onset+patient.age+patient.sex", "text": "It's been going on for about 40 minutes. I'm a 51-year-old woman."}
+{"t": "00:09:45", "kind": "extract", "writes": [["complaint.onset", "40 minutes"], ["patient.age", 51], ["patient.sex", "female"]]}
+{"t": "00:09:48", "kind": "question", "slot": "dyn:history.pregnant+history.postpartum", "text": "Thank you for that information. Are you currently pregnant or have you given birth in the last few weeks?", "fields": ["history.pregnant", "history.postpartum"], "offered": ["history.pregnant", "history.postpartum", "complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts"]}
+{"t": "00:09:49", "kind": "answer", "slot": "dyn:history.pregnant+history.postpartum", "text": "No, I'm not."}
+{"t": "00:09:52", "kind": "extract", "writes": [["history.pregnant", false], ["history.postpartum", false]], "via": "dropped-not-stated"}
+{"t": "00:09:52", "kind": "extract", "writes": []}
+{"t": "00:09:55", "kind": "question", "slot": "dyn:history.pregnant", "text": "I understand. Just to confirm for the medical team, are you currently pregnant?", "fields": ["history.pregnant"], "offered": ["history.pregnant"]}
+{"t": "00:09:57", "kind": "answer", "slot": "dyn:history.pregnant", "text": "No, I'm not."}
+{"t": "00:09:59", "kind": "extract", "writes": [["history.pregnant", false]], "via": "dropped-not-stated"}
+{"t": "00:09:59", "kind": "extract", "writes": []}
+{"t": "00:10:02", "kind": "question", "slot": "dyn:history.pregnant", "text": "I understand. To make sure the team has the right details, are you currently pregnant?", "fields": ["history.pregnant"], "offered": ["history.pregnant"]}
+{"t": "00:10:05", "kind": "answer", "slot": "dyn:history.pregnant", "text": "No, I'm not."}
+{"t": "00:10:07", "kind": "extract", "writes": [["history.pregnant", false]], "via": "dropped-not-stated"}
+{"t": "00:10:07", "kind": "extract", "writes": []}
+{"t": "00:10:10", "kind": "question", "slot": "dyn:history.postpartum", "text": "I understand. Have you given birth in the last few weeks?", "fields": ["history.postpartum"], "offered": ["history.postpartum"]}
+{"t": "00:10:11", "kind": "answer", "slot": "dyn:history.postpartum", "text": "No, I haven't."}
+{"t": "00:10:14", "kind": "extract", "writes": [["history.postpartum", false]], "via": "dropped-not-stated"}
+{"t": "00:10:14", "kind": "extract", "writes": []}
+{"t": "00:10:16", "kind": "question", "slot": "dyn:history.postpartum", "text": "I understand. Just to be clear, have you had any babies in the last few weeks?", "fields": ["history.postpartum"], "offered": ["history.postpartum"]}
+{"t": "00:10:19", "kind": "answer", "slot": "dyn:history.postpartum", "text": "No, I haven't had any babies."}
+{"t": "00:10:21", "kind": "extract", "writes": [["history.postpartum", false]], "via": "dropped-not-stated"}
+{"t": "00:10:21", "kind": "extract", "writes": []}
+{"t": "00:10:24", "kind": "question", "slot": "dyn:complaint.fever", "text": "I'm sorry to hear about the chest pain. Do you have a fever or a feverish feeling right now?", "fields": ["complaint.fever"], "offered": ["complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts", "ams.changed_from_baseline", "complaint.pain_rating"]}
+{"t": "00:10:25", "kind": "answer", "slot": "dyn:complaint.fever", "text": "No, I don't have a fever."}
+{"t": "00:10:28", "kind": "extract", "writes": [["complaint.fever", false]]}
+{"t": "00:10:31", "kind": "question", "slot": "dyn:infection.rash", "text": "I'm sorry you're feeling so unwell. Have you noticed any new rashes on your skin?", "fields": ["infection.rash"], "offered": ["infection.rash", "infection.travel_14d", "infection.contacts", "ams.changed_from_baseline", "complaint.pain_rating", "complaint.acs_suspicion"]}
+{"t": "00:10:32", "kind": "answer", "slot": "dyn:infection.rash", "text": "No, I don't have any rashes."}
+{"t": "00:10:34", "kind": "extract", "writes": [["infection.rash", false]]}
+{"t": "00:10:37", "kind": "question", "slot": "dyn:infection.travel_14d+infection.contacts", "text": "I'm glad you don't have a fever or a rash. Have you traveled outside the country or been around anyone who was sick in the last two weeks?", "fields": ["infection.travel_14d", "infection.contacts"], "offered": ["infection.travel_14d", "infection.contacts", "ams.changed_from_baseline", "complaint.pain_rating", "complaint.acs_suspicion", "complaint.increasing_respiratory_effort"]}
+{"t": "00:10:38", "kind": "answer", "slot": "dyn:infection.travel_14d+infection.contacts", "text": "No, I haven't."}
+{"t": "00:10:41", "kind": "extract", "writes": [["infection.travel_14d", false], ["infection.contacts", false]]}
+{"t": "00:10:45", "kind": "question", "slot": "dyn:ams.changed_from_baseline+complaint.pain_rating", "text": "I'm sorry you're feeling this way. On a scale of 0 to 10, how bad is your pain right now, and have you noticed any changes in your mental clarity or feeling more sleepy than usual?", "fields": ["ams.changed_from_baseline", "complaint.pain_rating"], "offered": ["ams.changed_from_baseline", "complaint.pain_rating", "complaint.acs_suspicion", "complaint.increasing_respiratory_effort", "M.medications", "A.allergies"]}
+{"t": "00:10:46", "kind": "answer", "slot": "dyn:ams.changed_from_baseline+complaint.pain_rating", "text": "The pain is a 6 out of 10. I'm just feeling a bit scared."}
+{"t": "00:10:49", "kind": "extract", "writes": [["complaint.pain_rating", 6]]}
+{"t": "00:10:52", "kind": "question", "slot": "dyn:ams.changed_from_baseline", "text": "I understand that you're feeling scared. Are you feeling more confused or sleepy than you normally do?", "fields": ["ams.changed_from_baseline"], "offered": ["ams.changed_from_baseline"]}
+{"t": "00:10:53", "kind": "answer", "slot": "dyn:ams.changed_from_baseline", "text": "No, I just feel scared and a bit breathless."}
+{"t": "00:10:55", "kind": "extract", "writes": [["ams.changed_from_baseline", false]]}
+{"t": "00:10:59", "kind": "question", "slot": "dyn:complaint.acs_suspicion+complaint.increasing_respiratory_effort", "text": "I'm sorry to hear you're feeling breathless. Does the pain feel like pressure or squeezing, and is it getting harder for you to breathe than it was a little while ago?", "fields": ["complaint.acs_suspicion", "complaint.increasing_respiratory_effort"], "offered": ["complaint.acs_suspicion", "complaint.increasing_respiratory_effort", "M.medications", "A.allergies", "history.conditions", "history.immunocompromised"]}
+{"t": "00:11:00", "kind": "answer", "slot": "dyn:complaint.acs_suspicion+complaint.increasing_respiratory_effort", "text": "It feels like pressure in the center of my chest. I'm feeling a bit breathless when I walk."}
+{"t": "00:11:04", "kind": "extract", "writes": [["complaint.acs_suspicion", true], ["complaint.text", "pressure in the center of my chest; feeling a bit breathless when I walk."]]}
+{"t": "00:11:04", "kind": "floor", "floor": "at least ESI-2", "fired": ["B-04.chest-pain-acs-suspect"], "sources": ["ESI v5 p.12 (high-risk examples list)"]}
+{"t": "00:11:07", "kind": "question", "slot": "dyn:M.medications+A.allergies", "text": "I'm sorry to hear about the chest pressure. To help the medical team prepare, could you tell me what medications you take regularly and if you have any allergies, especially to medicines?", "fields": ["M.medications", "A.allergies"], "offered": ["M.medications", "A.allergies", "history.conditions", "identity.name", "identity.dob"]}
+{"t": "00:11:08", "kind": "answer", "slot": "dyn:M.medications+A.allergies", "text": "I don't take any regular medications and I don't have any allergies."}
+{"t": "00:11:11", "kind": "extract", "writes": [["M.medications", []]]}
+{"t": "00:11:14", "kind": "question", "slot": "dyn:A.allergies", "text": "I understand you don't take any regular medications. Just to be safe, are you allergic to any specific medicines?", "fields": ["A.allergies"], "offered": ["A.allergies"]}
+{"t": "00:11:15", "kind": "answer", "slot": "dyn:A.allergies", "text": "No, I don't have any allergies."}
+{"t": "00:11:17", "kind": "extract", "writes": [["A.allergies", []]]}
+{"t": "00:11:20", "kind": "question", "slot": "dyn:history.conditions", "text": "Thank you for confirming that. To help the team prepare, do you have any ongoing medical conditions?", "fields": ["history.conditions"], "offered": ["history.conditions", "identity.name", "identity.dob"]}
+{"t": "00:11:21", "kind": "answer", "slot": "dyn:history.conditions", "text": "No, I don't have any known conditions."}
+{"t": "00:11:24", "kind": "extract", "writes": [["history.conditions", []]]}
+{"t": "00:11:27", "kind": "question", "slot": "dyn:identity.name+identity.dob", "text": "Thank you for that information. To get started, could you please tell me your full name and date of birth?", "fields": ["identity.name", "identity.dob"], "offered": ["identity.name", "identity.dob"]}
+{"t": "00:11:28", "kind": "answer", "slot": "dyn:identity.name+identity.dob", "text": "My name is [Name] and my date of birth is 14 May 1975."}
+{"t": "00:11:30", "kind": "extract", "writes": [["identity.name", "[Name]"]]}
+{"t": "00:11:33", "kind": "question", "slot": "dyn:identity.dob", "text": "I have your name, but could you please tell me your date of birth again just to make sure I have it right?", "fields": ["identity.dob"], "offered": ["identity.dob"]}
+{"t": "00:11:34", "kind": "answer", "slot": "dyn:identity.dob", "text": "It's May 14, 1975."}
+{"t": "00:11:37", "kind": "extract", "writes": [["identity.dob", "1975-05-14"]]}
+{"t": "00:11:37", "kind": "engine", "note": "floor settled - report ready; remaining questions continue"}
+{"t": "00:11:39", "kind": "question", "slot": "dyn:complaint.increasing_respiratory_effort", "text": "Is your breathing getting harder or more difficult than it was before?", "fields": ["complaint.increasing_respiratory_effort"], "offered": ["complaint.increasing_respiratory_effort"]}
+{"t": "00:11:41", "kind": "answer", "slot": "dyn:complaint.increasing_respiratory_effort", "text": "Yes, I'm feeling a bit breathless when I walk."}
+{"t": "00:11:43", "kind": "extract", "writes": [["complaint.increasing_respiratory_effort", true]]}
+{"t": "00:11:46", "kind": "question", "slot": "dyn:history.immunocompromised+complaint.respiratory_distress_signs", "text": "I'm sorry to hear you're feeling breathless. To help the team prepare, are you currently taking any medications that weaken your immune system, and are you having any trouble speaking in full sentences or making a wheezing sound?", "fields": ["history.immunocompromised", "complaint.respiratory_distress_signs"], "offered": ["history.immunocompromised", "complaint.respiratory_distress_signs", "history.recent_covid_infection", "L.last_intake"]}
+{"t": "00:11:48", "kind": "answer", "slot": "dyn:history.immunocompromised+complaint.respiratory_distress_signs", "text": "No, I don't take any medications. I can speak, but I'm just a bit scared."}
+{"t": "00:11:51", "kind": "extract", "writes": [["history.immunocompromised", false]], "via": "dropped-not-stated"}
+{"t": "00:11:51", "kind": "extract", "writes": [["complaint.respiratory_distress_signs", false]]}
+{"t": "00:11:54", "kind": "question", "slot": "dyn:history.immunocompromised", "text": "I understand you're feeling scared. To help the doctors, has a doctor ever told you that you have a weakened immune system or a condition that makes it harder for you to fight off infections?", "fields": ["history.immunocompromised"], "offered": ["history.immunocompromised"]}
+{"t": "00:11:55", "kind": "answer", "slot": "dyn:history.immunocompromised", "text": "No, I don't have any known conditions."}
+{"t": "00:11:58", "kind": "extract", "writes": [["history.immunocompromised", false]], "via": "dropped-not-stated"}
+{"t": "00:11:58", "kind": "extract", "writes": []}
+{"t": "00:12:00", "kind": "question", "slot": "dyn:history.immunocompromised", "text": "I understand. Just to be sure, have you ever been told by a doctor that you have a condition that makes it harder for your body to fight off infections?", "fields": ["history.immunocompromised"], "offered": ["history.immunocompromised"]}
+{"t": "00:12:03", "kind": "answer", "slot": "dyn:history.immunocompromised", "text": "No, I don't have any known conditions."}
+{"t": "00:12:05", "kind": "extract", "writes": [["history.immunocompromised", false]], "via": "dropped-not-stated"}
+{"t": "00:12:05", "kind": "extract", "writes": []}
+{"t": "00:12:07", "kind": "question", "slot": "dyn:history.recent_covid_infection", "text": "I understand. Have you had a COVID-19 infection recently?", "fields": ["history.recent_covid_infection"], "offered": ["history.recent_covid_infection", "L.last_intake"]}

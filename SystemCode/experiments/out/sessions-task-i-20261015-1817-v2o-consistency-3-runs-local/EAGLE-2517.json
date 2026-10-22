@@ -1,0 +1,597 @@
+{
+ "sid": "EAGLE-2517",
+ "facts": {
+  "danger_signs.responsive": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-15 17:22"
+  },
+  "danger_signs.chest_pain_now": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-15 17:22"
+  },
+  "patient.sex": {
+   "value": "male",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-15 17:22"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "injury",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 2,
+      "ts": "2026-10-15 17:22"
+     },
+     "text": {
+      "value": "fell down four steps at home an hour ago and landed on his right hip. He can't stand up and is in a lot of pain.",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 2,
+      "ts": "2026-10-15 17:22"
+     },
+     "onset": {
+      "value": "an hour ago",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 5,
+      "ts": "2026-10-15 17:23"
+     },
+     "onset_abs": {
+      "value": "~2026-10-15 16:23",
+      "status": "reported",
+      "who": "derived",
+      "turn": 5,
+      "ts": "2026-10-15 17:23"
+     },
+     "pain_rating": {
+      "value": 7,
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 8,
+      "ts": "2026-10-15 17:23"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2
+  },
+  "complaint.category": {
+   "value": [
+    "injury"
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 8,
+   "ts": "2026-10-15 17:23"
+  },
+  "complaint.text": {
+   "value": "fell down four steps at home an hour ago and landed on his right hip. He can't stand up and is in a lot of pain.",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-15 17:22"
+  },
+  "E.mechanism": {
+   "value": "fall",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-15 17:22"
+  },
+  "danger_signs.breathing_difficulty": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-15 17:23"
+  },
+  "danger_signs.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 4,
+   "ts": "2026-10-15 17:23"
+  },
+  "patient.age": {
+   "value": 87,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 5,
+   "ts": "2026-10-15 17:23"
+  },
+  "complaint.onset": {
+   "value": "an hour ago",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 5,
+   "ts": "2026-10-15 17:23"
+  },
+  "complaint.onset_abs": {
+   "value": "~2026-10-15 16:23 (from 'an hour ago' said 17:23)",
+   "status": "reported",
+   "who": "derived",
+   "turn": 5,
+   "ts": "2026-10-15 17:23"
+  },
+  "patient.age_group": {
+   "value": "older_adult",
+   "status": "reported",
+   "who": "derived",
+   "turn": 5,
+   "ts": "2026-10-15 17:23"
+  },
+  "complaint.fever": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 6,
+   "ts": "2026-10-15 17:23"
+  },
+  "infection.rash": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 6,
+   "ts": "2026-10-15 17:23"
+  },
+  "infection.travel_14d": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 7,
+   "ts": "2026-10-15 17:23"
+  },
+  "infection.contacts": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 7,
+   "ts": "2026-10-15 17:23"
+  },
+  "complaint.pain_rating": {
+   "value": 7,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 8,
+   "ts": "2026-10-15 17:23"
+  },
+  "complaint.pain_latest": {
+   "value": 7,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 8,
+   "ts": "2026-10-15 17:23"
+  },
+  "ams.changed_from_baseline": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 9,
+   "ts": "2026-10-15 17:24"
+  },
+  "M.anticoagulant": {
+   "value": true,
+   "status": "confirmed",
+   "who": "caregiver",
+   "turn": 11,
+   "ts": "2026-10-15 17:24"
+  },
+  "confirm.M.anticoagulant": {
+   "value": "warfarin",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 11,
+   "ts": "2026-10-15 17:24"
+  },
+  "M.medications": {
+   "value": [
+    "blood pressure pill",
+    "warfarin"
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 12,
+   "ts": "2026-10-15 17:24"
+  },
+  "A.allergies": {
+   "value": [
+    "penicillin (rash)"
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 12,
+   "ts": "2026-10-15 17:24"
+  },
+  "history.conditions": {
+   "value": [
+    "irregular heartbeat",
+    "high blood pressure"
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 13,
+   "ts": "2026-10-15 17:24"
+  },
+  "identity.name": {
+   "value": "Tan Ah Kow",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 14,
+   "ts": "2026-10-15 17:24"
+  },
+  "identity.dob": {
+   "value": "02 Jan 1939",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 14,
+   "ts": "2026-10-15 17:24"
+  },
+  "complaint.possible_pelvis_femur_fracture_or_dislocation": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 15,
+   "ts": "2026-10-15 17:25"
+  },
+  "E.head_strike": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 16,
+   "ts": "2026-10-15 17:25"
+  },
+  "E.loc": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 16,
+   "ts": "2026-10-15 17:25"
+  },
+  "E.abdominal_trauma": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 17,
+   "ts": "2026-10-15 17:25"
+  },
+  "L.last_intake": {
+   "value": "porridge for lunch at 1pm",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 18,
+   "ts": "2026-10-15 17:25"
+  },
+  "L.last_intake_abs": {
+   "value": "~2026-10-15 13:00 (from 'porridge for lunch at 1pm' said 17:25)",
+   "status": "reported",
+   "who": "derived",
+   "turn": 18,
+   "ts": "2026-10-15 17:25"
+  }
+ },
+ "attempts": {
+  "danger_signs.responsive": 1,
+  "danger_signs.chest_pain_now": 1,
+  "danger_signs.breathing_difficulty": 2,
+  "danger_signs.heavy_bleeding": 2,
+  "complaint.category": 1,
+  "complaint.text": 1,
+  "complaint.onset": 1,
+  "patient.age": 1,
+  "complaint.fever": 1,
+  "infection.rash": 1,
+  "infection.travel_14d": 1,
+  "infection.contacts": 1,
+  "ams.changed_from_baseline": 2,
+  "complaint.pain_rating": 1,
+  "M.anticoagulant": 1,
+  "confirm.M.anticoagulant": 1,
+  "M.medications": 1,
+  "A.allergies": 1,
+  "history.conditions": 1,
+  "identity.name": 1,
+  "identity.dob": 1,
+  "complaint.possible_pelvis_femur_fracture_or_dislocation": 1,
+  "E.abdominal_trauma": 2,
+  "E.head_strike": 1,
+  "L.last_intake": 1
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "Is the patient awake and responding to you normally? Also, is he or she experiencing any chest pain, trouble breathing, or heavy bleeding right now?",
+   "ts": "2026-10-15 17:22:34",
+   "kind": "question",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, he is awake and talking. No, he isn't experiencing chest pain, trouble breathing, or heavy bleeding.",
+   "ts": "2026-10-15 17:22:36",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Could you tell me what the main problem is and what is happening with him?",
+   "ts": "2026-10-15 17:22:43",
+   "kind": "question",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category+complaint.text"
+  },
+  {
+   "role": "caregiver",
+   "text": "My father fell down four steps at home an hour ago and landed on his right hip. He can't stand up and is in a lot of pain.",
+   "ts": "2026-10-15 17:22:45",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category+complaint.text"
+  },
+  {
+   "role": "bot",
+   "text": "I understand he's in a lot of pain. Is he having any trouble breathing at the moment?",
+   "ts": "2026-10-15 17:22:55",
+   "kind": "question",
+   "slot": "dyn:danger_signs.breathing_difficulty"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, he is not having any trouble breathing.",
+   "ts": "2026-10-15 17:22:56",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.breathing_difficulty"
+  },
+  {
+   "role": "bot",
+   "text": "Is he bleeding heavily from the area where he fell?",
+   "ts": "2026-10-15 17:23:02",
+   "kind": "question",
+   "slot": "dyn:danger_signs.heavy_bleeding"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, he isn't bleeding heavily.",
+   "ts": "2026-10-15 17:23:04",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.heavy_bleeding"
+  },
+  {
+   "role": "bot",
+   "text": "I'm glad to hear he's breathing okay. How old is he, and exactly what time did the fall happen?",
+   "ts": "2026-10-15 17:23:20",
+   "kind": "question",
+   "slot": "dyn:complaint.onset+patient.age"
+  },
+  {
+   "role": "caregiver",
+   "text": "He is 87 years old. He fell about an hour ago.",
+   "ts": "2026-10-15 17:23:21",
+   "kind": "answer",
+   "slot": "dyn:complaint.onset+patient.age"
+  },
+  {
+   "role": "bot",
+   "text": "Does he have a fever or any new rashes on his skin?",
+   "ts": "2026-10-15 17:23:29",
+   "kind": "question",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, he doesn't have a fever or any rashes.",
+   "ts": "2026-10-15 17:23:30",
+   "kind": "answer",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "bot",
+   "text": "Has he traveled outside the country or been in contact with anyone who is sick in the last two weeks?",
+   "ts": "2026-10-15 17:23:38",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, he hasn't traveled or been in contact with anyone sick.",
+   "ts": "2026-10-15 17:23:39",
+   "kind": "answer",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear about his fall. Does he seem more confused or sleepy than usual, and on a scale of 0 to 10, how bad is his pain right now?",
+   "ts": "2026-10-15 17:23:47",
+   "kind": "question",
+   "slot": "dyn:ams.changed_from_baseline+complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "He is awake and talking, but his pain is a 7 out of 10.",
+   "ts": "2026-10-15 17:23:49",
+   "kind": "answer",
+   "slot": "dyn:ams.changed_from_baseline+complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "Is he acting differently today, such as being more confused or sleepy than usual?",
+   "ts": "2026-10-15 17:23:56",
+   "kind": "question",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, he is awake and talking.",
+   "ts": "2026-10-15 17:23:57",
+   "kind": "answer",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "bot",
+   "text": "Does he take any blood thinners or medications to prevent blood clots, like warfarin or apixaban?",
+   "ts": "2026-10-15 17:24:04",
+   "kind": "question",
+   "slot": "dyn:M.anticoagulant"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, he takes a small pill to thin his blood called warfarin.",
+   "ts": "2026-10-15 17:24:06",
+   "kind": "answer",
+   "slot": "dyn:M.anticoagulant"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Just to confirm for the medical team, is he currently taking a blood thinner like warfarin or apixaban?",
+   "ts": "2026-10-15 17:24:12",
+   "kind": "question",
+   "slot": "confirm.M.anticoagulant"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, he takes a small pill to thin his blood called warfarin.",
+   "ts": "2026-10-15 17:24:14",
+   "kind": "answer",
+   "slot": "confirm.M.anticoagulant"
+  },
+  {
+   "role": "system",
+   "text": "floor: at least ESI-2  rules: ['B-30.anticoagulated-trauma']",
+   "ts": "2026-10-15 17:24:17",
+   "kind": "floor"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you for confirming that. Could you tell me what other medications he takes regularly and if he has any allergies, especially to medicines?",
+   "ts": "2026-10-15 17:24:20",
+   "kind": "question",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "caregiver",
+   "text": "He takes a blood pressure pill and a blood thinner called warfarin. He is allergic to penicillin, which gives him a rash.",
+   "ts": "2026-10-15 17:24:22",
+   "kind": "answer",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "bot",
+   "text": "I've noted his medications and allergy. Does he have any other ongoing medical conditions?",
+   "ts": "2026-10-15 17:24:30",
+   "kind": "question",
+   "slot": "dyn:history.conditions"
+  },
+  {
+   "role": "caregiver",
+   "text": "He has an irregular heartbeat and high blood pressure.",
+   "ts": "2026-10-15 17:24:31",
+   "kind": "answer",
+   "slot": "dyn:history.conditions"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you for that information. Could you please tell me his full name and date of birth?",
+   "ts": "2026-10-15 17:24:47",
+   "kind": "question",
+   "slot": "dyn:identity.name+identity.dob"
+  },
+  {
+   "role": "caregiver",
+   "text": "His name is Tan Ah Kow and he was born on 02 Jan 1939.",
+   "ts": "2026-10-15 17:24:48",
+   "kind": "answer",
+   "slot": "dyn:identity.name+identity.dob"
+  },
+  {
+   "role": "bot",
+   "text": "That's enough for the hospital team to prepare. Show the code EAGLE-2517 at the counter when you arrive. I'll ask a few more things while you're on the way; tell me straight away if anything changes.",
+   "ts": "2026-10-15 17:24:53",
+   "kind": "ack"
+  },
+  {
+   "role": "bot",
+   "text": "Can he put any weight on the leg, and does the leg look shorter or turned outwards?",
+   "ts": "2026-10-15 17:24:56",
+   "kind": "question",
+   "slot": "dyn:complaint.possible_pelvis_femur_fracture_or_dislocation"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, he cannot stand. I'm not sure if the leg looks shorter or turned outwards.",
+   "ts": "2026-10-15 17:24:57",
+   "kind": "answer",
+   "slot": "dyn:complaint.possible_pelvis_femur_fracture_or_dislocation"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Was there any blow or injury to his belly, or did he hit his head during the incident?",
+   "ts": "2026-10-15 17:25:14",
+   "kind": "question",
+   "slot": "dyn:E.abdominal_trauma+E.head_strike"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, there was no head strike and no blackout.",
+   "ts": "2026-10-15 17:25:15",
+   "kind": "answer",
+   "slot": "dyn:E.abdominal_trauma+E.head_strike"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Was there any injury or hit to his stomach area?",
+   "ts": "2026-10-15 17:25:22",
+   "kind": "question",
+   "slot": "dyn:E.abdominal_trauma"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, he landed on his right hip.",
+   "ts": "2026-10-15 17:25:24",
+   "kind": "answer",
+   "slot": "dyn:E.abdominal_trauma"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear about the fall. When was the last time he had something to eat or drink?",
+   "ts": "2026-10-15 17:25:39",
+   "kind": "question",
+   "slot": "dyn:L.last_intake"
+  },
+  {
+   "role": "caregiver",
+   "text": "He had some porridge for lunch at 1pm.",
+   "ts": "2026-10-15 17:25:40",
+   "kind": "answer",
+   "slot": "dyn:L.last_intake"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you - that's everything. Show the code EAGLE-2517 at the counter when you arrive.",
+   "ts": "2026-10-15 17:25:52",
+   "kind": "ack"
+  }
+ ],
+ "stage": "rest",
+ "floor": "at least ESI-2",
+ "phase": "enroute",
+ "created": "2026-10-15 17:22",
+ "pending_slot": "dyn:L.last_intake",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {},
+ "considered": [
+  "B-02.severe-pain-consider",
+  "B-25.pelvis-femur-fracture-consider"
+ ],
+ "qr_ready": true,
+ "qr_turn": 14,
+ "said_done": true
+}

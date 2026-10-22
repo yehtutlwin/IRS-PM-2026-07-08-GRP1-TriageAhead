@@ -1,0 +1,354 @@
+{
+ "sid": "MERLION-9889",
+ "facts": {
+  "danger_signs.responsive": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-19 03:12"
+  },
+  "danger_signs.chest_pain_now": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-19 03:12"
+  },
+  "danger_signs.breathing_difficulty": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-19 03:12"
+  },
+  "danger_signs.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-19 03:12"
+  },
+  "request": {
+   "value": "note for employer",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 4,
+   "ts": "2026-10-19 03:13"
+  },
+  "complaint.text": {
+   "value": "I feel well and came to ask for a note for my employer.",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 5,
+   "ts": "2026-10-19 03:13"
+  },
+  "patient.age": {
+   "value": 22,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 9,
+   "ts": "2026-10-19 03:13"
+  },
+  "patient.sex": {
+   "value": "other",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 9,
+   "ts": "2026-10-19 03:13"
+  },
+  "patient.age_group": {
+   "value": "adult",
+   "status": "reported",
+   "who": "derived",
+   "turn": 9,
+   "ts": "2026-10-19 03:13"
+  },
+  "E.mechanism": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 10,
+   "ts": "2026-10-19 03:14"
+  },
+  "history.pregnant": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 11,
+   "ts": "2026-10-19 03:14"
+  },
+  "history.postpartum": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 12,
+   "ts": "2026-10-19 03:14"
+  },
+  "complaint.fever": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 13,
+   "ts": "2026-10-19 03:14"
+  }
+ },
+ "attempts": {
+  "danger_signs.responsive": 1,
+  "danger_signs.chest_pain_now": 1,
+  "danger_signs.breathing_difficulty": 1,
+  "danger_signs.heavy_bleeding": 1,
+  "complaint.category": 3,
+  "complaint.text": 1,
+  "complaint.onset": 3,
+  "E.mechanism": 2,
+  "patient.age": 1,
+  "patient.sex": 1,
+  "history.pregnant": 1,
+  "history.postpartum": 1,
+  "complaint.fever": 1,
+  "infection.rash": 3,
+  "infection.travel_14d": 2,
+  "infection.contacts": 1
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "Is the patient awake and responding to you normally? Also, is he or she experiencing any chest pain, trouble breathing, or heavy bleeding right now?",
+   "ts": "2026-10-19 03:12:38",
+   "kind": "question",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, the patient is awake and responding normally. No, the patient is not having chest pain right now.",
+   "ts": "2026-10-19 03:12:38",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "bot",
+   "text": "I'm glad to hear they are alert. Is the patient having any trouble breathing or heavy bleeding right now? Also, what is the main reason you are bringing them in?",
+   "ts": "2026-10-19 03:12:46",
+   "kind": "question",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, the patient is not having trouble breathing right now. No, the patient is not bleeding heavily right now. I feel well and came to ask for a note for my employer.",
+   "ts": "2026-10-19 03:12:46",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category"
+  },
+  {
+   "role": "bot",
+   "text": "I understand you need a note for your employer. Could you tell me what the main medical reason is for bringing the patient in today?",
+   "ts": "2026-10-19 03:12:54",
+   "kind": "question",
+   "slot": "dyn:complaint.category"
+  },
+  {
+   "role": "caregiver",
+   "text": "I feel well and came to ask for a note for my employer.",
+   "ts": "2026-10-19 03:12:54",
+   "kind": "answer",
+   "slot": "dyn:complaint.category"
+  },
+  {
+   "role": "bot",
+   "text": "I understand you need a note. To help the team prepare, could you tell me what is the main medical reason for the visit?",
+   "ts": "2026-10-19 03:13:07",
+   "kind": "question",
+   "slot": "dyn:complaint.category"
+  },
+  {
+   "role": "caregiver",
+   "text": "I feel well and came to ask for a note for my employer.",
+   "ts": "2026-10-19 03:13:07",
+   "kind": "answer",
+   "slot": "dyn:complaint.category"
+  },
+  {
+   "role": "bot",
+   "text": "I understand you're looking for a note. To help the team prepare, could you describe what is wrong or what symptoms the patient is experiencing?",
+   "ts": "2026-10-19 03:13:20",
+   "kind": "question",
+   "slot": "dyn:complaint.text"
+  },
+  {
+   "role": "caregiver",
+   "text": "I feel well and came to ask for a note for my employer.",
+   "ts": "2026-10-19 03:13:20",
+   "kind": "answer",
+   "slot": "dyn:complaint.text"
+  },
+  {
+   "role": "bot",
+   "text": "I understand you're feeling well now. To help the team, could you tell me when the issue first started?",
+   "ts": "2026-10-19 03:13:33",
+   "kind": "question",
+   "slot": "dyn:complaint.onset"
+  },
+  {
+   "role": "caregiver",
+   "text": "You came to ask for a note for your employer because you missed work yesterday.",
+   "ts": "2026-10-19 03:13:33",
+   "kind": "answer",
+   "slot": "dyn:complaint.onset"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Could you tell me what happened yesterday that caused you to miss work?",
+   "ts": "2026-10-19 03:13:39",
+   "kind": "question",
+   "slot": "dyn:complaint.onset"
+  },
+  {
+   "role": "caregiver",
+   "text": "You came to ask for a note for your employer because you missed work yesterday.",
+   "ts": "2026-10-19 03:13:39",
+   "kind": "answer",
+   "slot": "dyn:complaint.onset"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Could you tell me roughly what time or day the problem first began?",
+   "ts": "2026-10-19 03:13:44",
+   "kind": "question",
+   "slot": "dyn:complaint.onset"
+  },
+  {
+   "role": "caregiver",
+   "text": "You came to ask for a note for your employer because you missed work yesterday.",
+   "ts": "2026-10-19 03:13:44",
+   "kind": "answer",
+   "slot": "dyn:complaint.onset"
+  },
+  {
+   "role": "bot",
+   "text": "I see. To help the team, could you tell me what happened to cause the issue, and what is the patient's age and gender?",
+   "ts": "2026-10-19 03:13:49",
+   "kind": "question",
+   "slot": "dyn:E.mechanism+patient.age+patient.sex"
+  },
+  {
+   "role": "caregiver",
+   "text": "The patient is 22 years old. The patient\u2019s sex has not been specified as male or female.",
+   "ts": "2026-10-19 03:13:49",
+   "kind": "answer",
+   "slot": "dyn:E.mechanism+patient.age+patient.sex"
+  },
+  {
+   "role": "bot",
+   "text": "Could you tell me more about what happened to cause the injury?",
+   "ts": "2026-10-19 03:13:56",
+   "kind": "question",
+   "slot": "dyn:E.mechanism"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-19 03:13:56",
+   "kind": "answer",
+   "slot": "dyn:E.mechanism"
+  },
+  {
+   "role": "bot",
+   "text": "Is the patient pregnant?",
+   "ts": "2026-10-19 03:14:02",
+   "kind": "question",
+   "slot": "dyn:history.pregnant"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-19 03:14:02",
+   "kind": "answer",
+   "slot": "dyn:history.pregnant"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Has the patient given birth in the last few weeks?",
+   "ts": "2026-10-19 03:14:08",
+   "kind": "question",
+   "slot": "dyn:history.postpartum"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-19 03:14:08",
+   "kind": "answer",
+   "slot": "dyn:history.postpartum"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Does the patient have a fever or any new rashes?",
+   "ts": "2026-10-19 03:14:14",
+   "kind": "question",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, the patient does not have fever. I do not know whether the patient has a rash.",
+   "ts": "2026-10-19 03:14:14",
+   "kind": "answer",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Is there any new rash on the patient's skin?",
+   "ts": "2026-10-19 03:14:20",
+   "kind": "question",
+   "slot": "dyn:infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient has a rash.",
+   "ts": "2026-10-19 03:14:20",
+   "kind": "answer",
+   "slot": "dyn:infection.rash"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. To be clear, have you noticed any new rashes on their skin?",
+   "ts": "2026-10-19 03:14:26",
+   "kind": "question",
+   "slot": "dyn:infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient has a rash.",
+   "ts": "2026-10-19 03:14:26",
+   "kind": "answer",
+   "slot": "dyn:infection.rash"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Has the patient traveled outside the country or been in contact with anyone who has a contagious illness in the last two weeks?",
+   "ts": "2026-10-19 03:14:32",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient travelled in the last 14 days. I do not know of any sick contacts.",
+   "ts": "2026-10-19 03:14:32",
+   "kind": "answer",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. To be sure, has the patient traveled outside of the country in the last two weeks?",
+   "ts": "2026-10-19 03:14:38",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d"
+  }
+ ],
+ "stage": "floor",
+ "floor": null,
+ "phase": "enroute",
+ "created": "2026-10-19 03:12",
+ "pending_slot": "dyn:infection.travel_14d",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {}
+}

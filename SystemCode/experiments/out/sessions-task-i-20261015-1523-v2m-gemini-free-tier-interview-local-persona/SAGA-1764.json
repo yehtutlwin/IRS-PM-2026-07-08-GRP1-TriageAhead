@@ -1,0 +1,226 @@
+{
+ "sid": "SAGA-1764",
+ "facts": {
+  "danger_signs.responsive": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-15 15:46"
+  },
+  "danger_signs.chest_pain_now": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-15 15:46"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "abdominal_pain",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 1,
+      "ts": "2026-10-15 15:46"
+     },
+     "text": {
+      "value": "getting worse",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 2,
+      "ts": "2026-10-15 15:47"
+     },
+     "onset": {
+      "value": "this morning",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 2,
+      "ts": "2026-10-15 15:47"
+     },
+     "onset_abs": {
+      "value": "~2026-10-15 morning",
+      "status": "reported",
+      "who": "derived",
+      "turn": 2,
+      "ts": "2026-10-15 15:47"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1
+  },
+  "complaint.category": {
+   "value": [
+    "abdominal_pain"
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-15 15:47"
+  },
+  "complaint.text": {
+   "value": "getting worse",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-15 15:47"
+  },
+  "E.mechanism": {
+   "value": "none",
+   "status": "reported",
+   "who": "derived",
+   "turn": 1,
+   "ts": "2026-10-15 15:46"
+  },
+  "danger_signs.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-15 15:47"
+  },
+  "complaint.onset": {
+   "value": "this morning",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-15 15:47"
+  },
+  "complaint.onset_abs": {
+   "value": "~2026-10-15 morning (from 'this morning' said 15:47)",
+   "status": "reported",
+   "who": "derived",
+   "turn": 2,
+   "ts": "2026-10-15 15:47"
+  },
+  "danger_signs.breathing_difficulty": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-15 15:47"
+  },
+  "complaint.fever": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 4,
+   "ts": "2026-10-15 15:48"
+  },
+  "patient.age": {
+   "value": 40,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 5,
+   "ts": "2026-10-15 15:49"
+  },
+  "patient.age_group": {
+   "value": "adult",
+   "status": "reported",
+   "who": "derived",
+   "turn": 5,
+   "ts": "2026-10-15 15:49"
+  }
+ },
+ "attempts": {
+  "danger_signs.responsive": 1,
+  "danger_signs.chest_pain_now": 1,
+  "complaint.category": 1,
+  "danger_signs.breathing_difficulty": 2,
+  "danger_signs.heavy_bleeding": 1,
+  "complaint.onset": 1,
+  "patient.age": 2,
+  "patient.sex": 2,
+  "complaint.fever": 1
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "Hello. Is the patient awake and responding to you normally, and do they have chest pain right now? Also, what is the main problem that brings them in today?",
+   "ts": "2026-10-15 15:46:00",
+   "kind": "question",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now+complaint.category"
+  },
+  {
+   "role": "caregiver",
+   "text": "I'm awake. No chest pain, but I have constant lower abdominal pain that's getting worse.",
+   "ts": "2026-10-15 15:46:02",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now+complaint.category"
+  },
+  {
+   "role": "bot",
+   "text": "Thanks for letting me know about the abdominal pain. Are you having trouble breathing or bleeding heavily right now? And when did the pain start?",
+   "ts": "2026-10-15 15:46:42",
+   "kind": "question",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.onset"
+  },
+  {
+   "role": "caregiver",
+   "text": "No bleeding. It started this morning and is getting worse.",
+   "ts": "2026-10-15 15:46:43",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.onset"
+  },
+  {
+   "role": "bot",
+   "text": "Okay, no bleeding. Are you finding it hard to breathe?",
+   "ts": "2026-10-15 15:47:27",
+   "kind": "question",
+   "slot": "dyn:danger_signs.breathing_difficulty"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I'm not having trouble breathing.",
+   "ts": "2026-10-15 15:47:28",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.breathing_difficulty"
+  },
+  {
+   "role": "bot",
+   "text": "Okay, no trouble breathing. How old is the patient, and is the patient male or female? Also, does the patient have a fever?",
+   "ts": "2026-10-15 15:48:06",
+   "kind": "question",
+   "slot": "dyn:patient.age+patient.sex+complaint.fever"
+  },
+  {
+   "role": "caregiver",
+   "text": "I'm 40 and female. No fever.",
+   "ts": "2026-10-15 15:48:08",
+   "kind": "answer",
+   "slot": "dyn:patient.age+patient.sex+complaint.fever"
+  },
+  {
+   "role": "bot",
+   "text": "Okay, you're 40 and female, and no fever. How old are you?",
+   "ts": "2026-10-15 15:48:54",
+   "kind": "question",
+   "slot": "dyn:patient.age"
+  },
+  {
+   "role": "caregiver",
+   "text": "I'm 40.",
+   "ts": "2026-10-15 15:48:55",
+   "kind": "answer",
+   "slot": "dyn:patient.age"
+  },
+  {
+   "role": "bot",
+   "text": "Are you male or female?",
+   "ts": "2026-10-15 15:49:43",
+   "kind": "question",
+   "slot": "dyn:patient.sex"
+  }
+ ],
+ "stage": "floor",
+ "floor": null,
+ "phase": "enroute",
+ "created": "2026-10-15 15:45",
+ "pending_slot": "dyn:patient.sex",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {}
+}

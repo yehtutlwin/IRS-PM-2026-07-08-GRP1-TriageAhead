@@ -1,0 +1,1226 @@
+# rules/derived/fields-index.yaml - DERIVED DETERMINISTICALLY by rules/derive.py. DO NOT EDIT: regenerate.
+# For each field in rules/fields.yaml: which rules read it, who can supply it (from the rules' assessed_via tag),
+# the comparisons the rules make, and the bridges that feed it or that it feeds.
+# askable = at least one rule tagged 'reported' reads the field.  rule_fed = at least one rule reads it.
+counts:
+  fields: 136
+  read_by_a_rule: 103
+  askable: 68
+fields:
+  patient.age:
+    read_by:
+    - B-27.geriatric-trauma-caution
+    - B-29.pediatric-subtle-ams
+    - B-43.uti-elderly-or-urosepsis-signs
+    - B-52.geriatric-vitals-medication-context-consider
+    - B-53.pediatric-respiratory-distress-signs-consider
+    - B-59.child-over-3-months-fever-consider
+    - B-60.child-hypothermia-under-36-consider
+    - B-61.child-over-3-months-temperature-red-flag-consider
+    - D-01.adult-danger-zone
+    assessed_via:
+    - reported
+    - vitals
+    compared:
+    - gte 55
+    - lt 18
+    - gte 65
+    - gt 18
+    askable: true
+    rule_fed: true
+  patient.age_months:
+    read_by:
+    - B-58.infant-1-to-3-months-fever-consider
+    - B-59.child-over-3-months-fever-consider
+    - B-61.child-over-3-months-temperature-red-flag-consider
+    - D-02.pediatric-danger-zone-under-1-month
+    - D-06.pediatric-danger-zone-1-to-12-months
+    - D-07.pediatric-danger-zone-1-to-3-years
+    - D-08.pediatric-danger-zone-3-to-5-years
+    - D-09.pediatric-danger-zone-5-to-12-years
+    - D-10.pediatric-danger-zone-12-to-18-years
+    assessed_via:
+    - reported
+    - vitals
+    compared:
+    - gte 1
+    - lt 3
+    - gte 3
+    - gt 3
+    - lt 1
+    - lt 12
+    - gte 12
+    - lt 36
+    - gte 36
+    - lt 60
+    - gte 60
+    - lt 144
+    - gte 144
+    - lt 216
+    askable: true
+    rule_fed: true
+  patient.age_days:
+    read_by:
+    - B-56.infant-under-28-days-fever
+    - B-57.infant-under-90-days-temperature-over-38
+    assessed_via:
+    - reported
+    - vitals
+    compared:
+    - lt 28
+    - lt 90
+    askable: true
+    rule_fed: true
+  patient.age_group:
+    read_by:
+    - A-13.flaccid-infant
+    assessed_via:
+    - observed
+    compared:
+    - equals infant
+    askable: false
+    rule_fed: true
+  patient.sex:
+    askable: false
+    rule_fed: false
+  patient.has_ovaries:
+    read_by:
+    - B-42.unilateral-lower-quadrant-pain-torsion-or-ectopic-consider
+    assessed_via:
+    - reported
+    compared:
+    - equals True
+    askable: true
+    rule_fed: true
+  patient.immunizations_incomplete:
+    read_by:
+    - B-59.child-over-3-months-fever-consider
+    assessed_via:
+    - reported
+    compared:
+    - equals True
+    askable: true
+    rule_fed: true
+  identity.name:
+    askable: false
+    rule_fed: false
+  identity.dob:
+    askable: false
+    rule_fed: false
+  complaint.category:
+    read_by:
+    - A-17.chest-pain-unstable-lifesaving
+    - B-04.chest-pain-acs-suspect
+    - B-15.high-risk-epistaxis
+    - B-17.abdo-pain-pregnant-or-postpartum
+    - B-18.abdo-pain-sepsis-or-hypoperfusion
+    - B-19.abdo-pain-trauma
+    - B-20.abdo-pain-refractory-constant-maximal
+    - B-21.abdo-pain-vaginal-bleeding
+    - B-28.ocular-high-risk-constellation
+    - B-32.thunderclap-headache
+    - B-33.headache-with-neck-pain-or-nuchal-rigidity
+    - B-34.headache-red-flags
+    - B-36.abnormal-ecg-chest-pain
+    - B-38.pregnant-chest-pain-breathlessness-abdo-pain-or-headache
+    - B-55.recent-covid-cardiac-risk-consider
+    assessed_via:
+    - observed
+    - reported
+    - vitals
+    compared:
+    - equals chest_pain
+    - equals nosebleed
+    - equals abdominal_pain
+    - equals eye_problem
+    - equals headache
+    - in ['chest_pain', 'abdominal_pain', 'headache']
+    askable: true
+    rule_fed: true
+  complaint.text:
+    askable: false
+    rule_fed: false
+  complaint.onset:
+    askable: false
+    rule_fed: false
+  complaint.pain_rating:
+    read_by:
+    - B-02.severe-pain-consider
+    - B-03.severe-pain-systemic-cause
+    assessed_via:
+    - reported
+    compared:
+    - gte 7
+    askable: true
+    rule_fed: true
+  complaint.pain_cause_class:
+    read_by:
+    - B-03.severe-pain-systemic-cause
+    assessed_via:
+    - reported
+    compared:
+    - in ['renal_colic', 'cancer', 'sickle_cell_crisis']
+    askable: true
+    rule_fed: true
+  complaint.acs_suspicion:
+    read_by:
+    - B-04.chest-pain-acs-suspect
+    assessed_via:
+    - reported
+    compared:
+    - equals True
+    askable: true
+    rule_fed: true
+  complaint.stroke_signs:
+    read_by:
+    - B-05.stroke-signs
+    - B-34.headache-red-flags
+    assessed_via:
+    - reported
+    compared:
+    - equals True
+    fed_by_bridge:
+    - BR-05.stroke-fast
+    askable: true
+    rule_fed: true
+  complaint.possible_ectopic_pregnancy:
+    read_by:
+    - B-06.possible-ectopic-stable
+    assessed_via:
+    - reported
+    compared:
+    - equals True
+    askable: true
+    rule_fed: true
+  complaint.fever:
+    read_by:
+    - B-07.immunocompromised-fever
+    - B-08.transplant-fever-or-infection
+    - B-34.headache-red-flags
+    - B-56.infant-under-28-days-fever
+    assessed_via:
+    - reported
+    compared:
+    - equals True
+    askable: true
+    rule_fed: true
+  complaint.fever_no_obvious_source:
+    read_by:
+    - B-59.child-over-3-months-fever-consider
+    assessed_via:
+    - reported
+    compared:
+    - equals True
+    askable: true
+    rule_fed: true
+  complaint.infection_signs:
+    read_by:
+    - B-08.transplant-fever-or-infection
+    - B-39.pregnant-heavy-bleeding-abnormal-vitals-infection
+    assessed_via:
+    - reported
+    - vitals
+    compared:
+    - equals True
+    askable: true
+    rule_fed: true
+  complaint.danger_to_self_or_others:
+    read_by:
+    - B-09.suicidal-or-homicidal
+    assessed_via:
+    - reported
+    compared:
+    - equals True
+    askable: true
+    rule_fed: true
+  complaint.needle_stick_healthcare_worker:
+    read_by:
+    - B-10.needle-stick-hcw
+    assessed_via:
+    - reported
+    compared:
+    - equals True
+    askable: true
+    rule_fed: true
+  complaint.sexual_assault:
+    read_by:
+    - B-11.sexual-assault
+    assessed_via:
+    - reported
+    compared:
+    - equals True
+    askable: true
+    rule_fed: true
+  complaint.increasing_respiratory_effort:
+    read_by:
+    - B-12.increasing-respiratory-effort
+    assessed_via:
+    - reported
+    compared:
+    - equals True
+    askable: true
+    rule_fed: true
+  complaint.respiratory_distress_signs:
+    read_by:
+    - B-54.respiratory-distress-signs-consider
+    assessed_via:
+    - reported
+    compared:
+    - equals True
+    askable: true
+    rule_fed: true
+  complaint.shortness_of_breath:
+    read_by:
+    - B-38.pregnant-chest-pain-breathlessness-abdo-pain-or-headache
+    assessed_via:
+    - reported
+    compared:
+    - equals True
+    fed_by_bridge:
+    - EN.breathing-difficulty-now-is-shortness-of-breath
+    askable: true
+    rule_fed: true
+  complaint.postpartum_hemorrhage:
+    read_by:
+    - B-13.postpartum-hemorrhage
+    assessed_via:
+    - reported
+    compared:
+    - equals True
+    fed_by_bridge:
+    - BR-13.heavy-bleeding-postpartum
+    askable: true
+    rule_fed: true
+  complaint.vaginal_bleeding:
+    read_by:
+    - B-21.abdo-pain-vaginal-bleeding
+    assessed_via:
+    - reported
+    compared:
+    - equals True
+    fed_by_bridge:
+    - EN.heavy-bleeding-is-bleeding
+    askable: true
+    rule_fed: true
+  complaint.heavy_vaginal_bleeding:
+    read_by:
+    - B-39.pregnant-heavy-bleeding-abnormal-vitals-infection
+    assessed_via:
+    - vitals
+    compared:
+    - equals True
+    feeds_through_bridge:
+    - BR-13.heavy-bleeding-postpartum
+    - EN.heavy-bleeding-is-bleeding
+    askable: false
+    rule_fed: true
+  complaint.brisk_or_posterior_bleeding:
+    read_by:
+    - B-15.high-risk-epistaxis
+    assessed_via:
+    - reported
+    compared:
+    - equals True
+    askable: true
+    rule_fed: true
+  complaint.button_battery_or_magnet_ingestion:
+    read_by:
+    - B-16.button-battery-or-magnet-ingestion
+    assessed_via:
+    - reported
+    compared:
+    - equals True
+    askable: true
+    rule_fed: true
+  complaint.known_toxic_ingestion:
+    read_by:
+    - B-26.suspected-toxic-ingestion
+    assessed_via:
+    - reported
+    compared:
+    - equals True
+    askable: true
+    rule_fed: true
+  complaint.pain_refractory_constant_or_maximal_onset:
+    read_by:
+    - B-20.abdo-pain-refractory-constant-maximal
+    assessed_via:
+    - reported
+    compared:
+    - equals True
+    askable: true
+    rule_fed: true
+  complaint.unilateral_lower_quadrant_pain:
+    read_by:
+    - B-42.unilateral-lower-quadrant-pain-torsion-or-ectopic-consider
+    assessed_via:
+    - reported
+    compared:
+    - equals True
+    askable: true
+    rule_fed: true
+  complaint.testicular_or_scrotal_pain:
+    read_by:
+    - B-41.testicular-or-scrotal-pain-torsion-consider
+    assessed_via:
+    - reported
+    compared:
+    - equals True
+    askable: true
+    rule_fed: true
+  complaint.severe_flank_pain:
+    read_by:
+    - B-49.severe-flank-pain
+    assessed_via:
+    - reported
+    compared:
+    - equals True
+    askable: true
+    rule_fed: true
+  complaint.uti_symptoms:
+    read_by:
+    - B-43.uti-elderly-or-urosepsis-signs
+    assessed_via:
+    - reported
+    compared:
+    - equals True
+    askable: true
+    rule_fed: true
+  complaint.back_pain:
+    read_by:
+    - B-34.headache-red-flags
+    - B-43.uti-elderly-or-urosepsis-signs
+    assessed_via:
+    - reported
+    compared:
+    - equals lower
+    - in ['lower', 'upper_or_middle']
+    askable: true
+    rule_fed: true
+  complaint.chills_or_rigors:
+    read_by:
+    - B-43.uti-elderly-or-urosepsis-signs
+    assessed_via:
+    - reported
+    compared:
+    - equals True
+    askable: true
+    rule_fed: true
+  complaint.extremity_neurovascular_compromise:
+    read_by:
+    - B-24.extremity-neurovascular-compromise
+    assessed_via:
+    - reported
+    compared:
+    - equals True
+    fed_by_bridge:
+    - BR-24.limb-warning-signs
+    askable: true
+    rule_fed: true
+  complaint.compartment_syndrome_symptoms:
+    read_by:
+    - B-46.compartment-syndrome-symptoms
+    assessed_via:
+    - reported
+    compared:
+    - equals True
+    askable: true
+    rule_fed: true
+  complaint.possible_pelvis_femur_fracture_or_dislocation:
+    read_by:
+    - B-25.pelvis-femur-fracture-consider
+    assessed_via:
+    - reported
+    compared:
+    - equals True
+    askable: true
+    rule_fed: true
+  complaint.amputation_partial_or_complete:
+    read_by:
+    - B-47.partial-or-complete-amputation
+    assessed_via:
+    - reported
+    compared:
+    - equals True
+    askable: true
+    rule_fed: true
+  complaint.atso_elements_count:
+    read_by:
+    - B-28.ocular-high-risk-constellation
+    assessed_via:
+    - reported
+    compared:
+    - gte 2
+    fed_by_bridge:
+    - BR-28.eye-findings-count
+    askable: true
+    rule_fed: true
+  complaint.post_ictal_after_seizure:
+    read_by:
+    - B-31.post-ictal
+    assessed_via:
+    - reported
+    compared:
+    - equals True
+    askable: true
+    rule_fed: true
+  complaint.headache_thunderclap:
+    read_by:
+    - B-32.thunderclap-headache
+    assessed_via:
+    - reported
+    compared:
+    - equals True
+    askable: true
+    rule_fed: true
+  complaint.neck_pain:
+    read_by:
+    - B-33.headache-with-neck-pain-or-nuchal-rigidity
+    assessed_via:
+    - reported
+    compared:
+    - equals True
+    askable: true
+    rule_fed: true
+  complaint.vomiting:
+    read_by:
+    - B-34.headache-red-flags
+    assessed_via:
+    - reported
+    compared:
+    - equals True
+    askable: true
+    rule_fed: true
+  complaint.severe_psychological_distress:
+    read_by:
+    - B-35.severe-psychological-distress-consider
+    assessed_via:
+    - reported
+    compared:
+    - equals True
+    askable: true
+    rule_fed: true
+  complaint.psychotic_or_violent:
+    read_by:
+    - B-51.psychotic-or-violent
+    assessed_via:
+    - reported
+    compared:
+    - equals True
+    askable: true
+    rule_fed: true
+  E.mechanism:
+    read_by:
+    - A-14.penetrating-trauma-unstable
+    - B-23.penetrating-trauma-stable
+    - B-27.geriatric-trauma-caution
+    - B-30.anticoagulated-trauma
+    assessed_via:
+    - observed
+    - reported
+    compared:
+    - equals penetrating_trauma
+    - in ['fall', 'road_accident', 'assault', 'penetrating_trauma']
+    - in ['fall', 'road_accident', 'assault']
+    askable: true
+    rule_fed: true
+  E.body_region:
+    read_by:
+    - A-14.penetrating-trauma-unstable
+    - B-23.penetrating-trauma-stable
+    assessed_via:
+    - observed
+    - reported
+    compared:
+    - in ['head', 'neck', 'chest', 'abdomen']
+    askable: true
+    rule_fed: true
+  E.fall_height_meters:
+    read_by:
+    - B-22.fall-from-6-metres-or-more
+    assessed_via:
+    - reported
+    compared:
+    - gte 6
+    askable: true
+    rule_fed: true
+  E.vehicle_ejection:
+    read_by:
+    - B-44.vehicle-ejection
+    assessed_via:
+    - reported
+    compared:
+    - equals True
+    askable: true
+    rule_fed: true
+  E.mechanical_extrication:
+    read_by:
+    - B-45.mechanical-extrication
+    assessed_via:
+    - reported
+    compared:
+    - equals True
+    askable: true
+    rule_fed: true
+  E.abdominal_trauma:
+    read_by:
+    - B-19.abdo-pain-trauma
+    assessed_via:
+    - reported
+    compared:
+    - equals True
+    askable: true
+    rule_fed: true
+  E.head_strike:
+    askable: false
+    rule_fed: false
+  E.loc:
+    askable: false
+    rule_fed: false
+  M.medications:
+    askable: false
+    rule_fed: false
+  M.anticoagulant:
+    read_by:
+    - B-15.high-risk-epistaxis
+    - B-30.anticoagulated-trauma
+    assessed_via:
+    - reported
+    compared:
+    - equals True (value)
+    - equals confirmed (status)
+    askable: true
+    rule_fed: true
+  M.beta_blocker:
+    read_by:
+    - D-04.context-beta-blockers-consider
+    assessed_via:
+    - reported
+    compared:
+    - equals True
+    askable: true
+    rule_fed: true
+  M.immunosuppressant_or_steroid:
+    read_by:
+    - D-05.context-immunosuppression-consider
+    assessed_via:
+    - reported
+    compared:
+    - equals True
+    askable: true
+    rule_fed: true
+  A.allergies:
+    askable: false
+    rule_fed: false
+  history.conditions:
+    askable: false
+    rule_fed: false
+  history.immunocompromised:
+    read_by:
+    - B-07.immunocompromised-fever
+    assessed_via:
+    - reported
+    compared:
+    - equals True
+    askable: true
+    rule_fed: true
+  history.pregnant:
+    read_by:
+    - A-18.pregnancy-hemodynamic-instability-lifesaving
+    - B-17.abdo-pain-pregnant-or-postpartum
+    - B-37.pregnant-postpartum-sbp-out-of-range
+    - B-38.pregnant-chest-pain-breathlessness-abdo-pain-or-headache
+    - B-39.pregnant-heavy-bleeding-abnormal-vitals-infection
+    assessed_via:
+    - observed
+    - reported
+    - vitals
+    compared:
+    - equals True
+    askable: true
+    rule_fed: true
+  history.postpartum:
+    read_by:
+    - A-18.pregnancy-hemodynamic-instability-lifesaving
+    - B-17.abdo-pain-pregnant-or-postpartum
+    - B-37.pregnant-postpartum-sbp-out-of-range
+    assessed_via:
+    - observed
+    - reported
+    - vitals
+    compared:
+    - equals True
+    feeds_through_bridge:
+    - BR-13.heavy-bleeding-postpartum
+    askable: true
+    rule_fed: true
+  history.transplant_recipient_or_listed:
+    read_by:
+    - B-08.transplant-fever-or-infection
+    assessed_via:
+    - reported
+    compared:
+    - equals True
+    askable: true
+    rule_fed: true
+  complaint.transplant_rejection_signs:
+    read_by:
+    - B-08.transplant-fever-or-infection
+    assessed_via:
+    - reported
+    compared:
+    - equals True
+    askable: true
+    rule_fed: true
+  history.on_transplant_list:
+    read_by:
+    - B-50.transplant-list-consider
+    assessed_via:
+    - reported
+    compared:
+    - equals True
+    askable: true
+    rule_fed: true
+  history.thrombocytopenia_or_clotting_disorder:
+    read_by:
+    - B-15.high-risk-epistaxis
+    assessed_via:
+    - reported
+    compared:
+    - equals True
+    askable: true
+    rule_fed: true
+  history.recent_covid_infection:
+    read_by:
+    - B-55.recent-covid-cardiac-risk-consider
+    assessed_via:
+    - reported
+    compared:
+    - equals True
+    askable: true
+    rule_fed: true
+  history.baseline_mental_status:
+    read_by:
+    - B-01.new-altered-mental-status
+    assessed_via:
+    - reported
+    compared:
+    - equals unknown
+    askable: true
+    rule_fed: true
+  L.last_intake:
+    askable: false
+    rule_fed: false
+  infection.rash:
+    askable: false
+    rule_fed: false
+  infection.travel_14d:
+    askable: false
+    rule_fed: false
+  infection.contacts:
+    askable: false
+    rule_fed: false
+  danger_signs.responsive:
+    feeds_through_bridge:
+    - BR-01.not-responding
+    askable: false
+    rule_fed: false
+  danger_signs.chest_pain_now:
+    askable: false
+    rule_fed: false
+  danger_signs.breathing_difficulty:
+    feeds_through_bridge:
+    - EN.breathing-difficulty-now-is-shortness-of-breath
+    askable: false
+    rule_fed: false
+  danger_signs.heavy_bleeding:
+    askable: false
+    rule_fed: false
+  stroke.face_droop:
+    feeds_through_bridge:
+    - BR-05.stroke-fast
+    askable: false
+    rule_fed: false
+  stroke.arm_weakness:
+    feeds_through_bridge:
+    - BR-05.stroke-fast
+    askable: false
+    rule_fed: false
+  stroke.speech_change:
+    feeds_through_bridge:
+    - BR-05.stroke-fast
+    askable: false
+    rule_fed: false
+  stroke.vision_change:
+    feeds_through_bridge:
+    - BR-05.stroke-fast
+    - BR-28.eye-findings-count
+    askable: false
+    rule_fed: false
+  stroke.balance_loss:
+    feeds_through_bridge:
+    - BR-05.stroke-fast
+    askable: false
+    rule_fed: false
+  eye.double_vision_pupil_or_bulge:
+    feeds_through_bridge:
+    - BR-28.eye-findings-count
+    askable: false
+    rule_fed: false
+  eye.red:
+    feeds_through_bridge:
+    - BR-28.eye-findings-count
+    askable: false
+    rule_fed: false
+  eye.intolerable_pain:
+    feeds_through_bridge:
+    - BR-28.eye-findings-count
+    askable: false
+    rule_fed: false
+  eye.injury:
+    feeds_through_bridge:
+    - BR-28.eye-findings-count
+    askable: false
+    rule_fed: false
+  eye.floaters_or_flashes:
+    feeds_through_bridge:
+    - BR-28.eye-findings-count
+    askable: false
+    rule_fed: false
+  limb.numb_tingling:
+    feeds_through_bridge:
+    - BR-24.limb-warning-signs
+    askable: false
+    rule_fed: false
+  limb.cold_pale_blue:
+    feeds_through_bridge:
+    - BR-24.limb-warning-signs
+    askable: false
+    rule_fed: false
+  limb.cannot_move_digits:
+    feeds_through_bridge:
+    - BR-24.limb-warning-signs
+    askable: false
+    rule_fed: false
+  limb.cast_too_tight:
+    feeds_through_bridge:
+    - BR-24.limb-warning-signs
+    askable: false
+    rule_fed: false
+  ams.changed_from_baseline:
+    feeds_through_bridge:
+    - BR-01.ams-baseline
+    - BR-29.ams-baseline-pediatric
+    - EN.changed-baseline-is-altered-now
+    askable: false
+    rule_fed: false
+  obs.new_confusion_lethargy_disorientation:
+    read_by:
+    - B-01.new-altered-mental-status
+    assessed_via:
+    - reported
+    compared:
+    - equals True
+    fed_by_bridge:
+    - BR-01.ams-baseline
+    - BR-01.not-responding
+    askable: true
+    rule_fed: true
+  obs.confusion_lethargy_disorientation:
+    read_by:
+    - B-01.new-altered-mental-status
+    - B-34.headache-red-flags
+    assessed_via:
+    - reported
+    compared:
+    - equals True
+    fed_by_bridge:
+    - EN.changed-baseline-is-altered-now
+    askable: true
+    rule_fed: true
+  obs.subtle_mental_status_change:
+    read_by:
+    - B-29.pediatric-subtle-ams
+    assessed_via:
+    - reported
+    compared:
+    - equals True
+    fed_by_bridge:
+    - BR-29.ams-baseline-pediatric
+    askable: true
+    rule_fed: true
+  obs.nuchal_rigidity:
+    read_by:
+    - B-33.headache-with-neck-pain-or-nuchal-rigidity
+    assessed_via:
+    - reported
+    compared:
+    - equals True
+    askable: true
+    rule_fed: true
+  obs.grunting_belly_breathing_or_retractions:
+    read_by:
+    - B-53.pediatric-respiratory-distress-signs-consider
+    assessed_via:
+    - reported
+    compared:
+    - equals True
+    askable: true
+    rule_fed: true
+  obs.avpu:
+    read_by:
+    - A-01.unresponsive
+    assessed_via:
+    - observed
+    compared:
+    - in ['P', 'U']
+    askable: false
+    rule_fed: true
+  obs.nonverbal_acute:
+    read_by:
+    - A-01.unresponsive
+    assessed_via:
+    - observed
+    compared:
+    - equals True
+    askable: false
+    rule_fed: true
+  obs.not_following_commands:
+    read_by:
+    - A-01.unresponsive
+    assessed_via:
+    - observed
+    compared:
+    - equals True
+    askable: false
+    rule_fed: true
+  obs.cardiac_or_pulmonary_arrest:
+    read_by:
+    - A-02.arrest-or-imminent
+    assessed_via:
+    - observed
+    compared:
+    - equals True
+    askable: false
+    rule_fed: true
+  obs.apneic:
+    read_by:
+    - A-03.apneic
+    assessed_via:
+    - observed
+    compared:
+    - equals True
+    askable: false
+    rule_fed: true
+  obs.pulseless:
+    read_by:
+    - A-04.pulseless
+    assessed_via:
+    - observed
+    compared:
+    - equals True
+    askable: false
+    rule_fed: true
+  obs.severe_respiratory_distress:
+    read_by:
+    - A-05.severe-respiratory-distress
+    assessed_via:
+    - observed
+    compared:
+    - equals True
+    askable: false
+    rule_fed: true
+  obs.airway_occluded_or_ineffective_clearance:
+    read_by:
+    - A-06.occluded-airway
+    assessed_via:
+    - observed
+    compared:
+    - equals True
+    askable: false
+    rule_fed: true
+  obs.active_seizure:
+    read_by:
+    - A-07.active-seizure
+    assessed_via:
+    - observed
+    compared:
+    - equals True
+    askable: false
+    rule_fed: true
+  obs.respiratory_compromise_signs:
+    read_by:
+    - A-08.spo2-below-90-with-compromise
+    assessed_via:
+    - vitals
+    compared:
+    - equals True
+    askable: false
+    rule_fed: true
+  obs.anaphylaxis:
+    read_by:
+    - A-09.anaphylaxis
+    assessed_via:
+    - observed
+    compared:
+    - equals True
+    askable: false
+    rule_fed: true
+  obs.hypoperfusion_signs:
+    read_by:
+    - A-10.hypotension-with-hypoperfusion
+    - B-18.abdo-pain-sepsis-or-hypoperfusion
+    assessed_via:
+    - observed
+    - vitals
+    compared:
+    - equals True
+    askable: false
+    rule_fed: true
+  obs.flaccid:
+    read_by:
+    - A-13.flaccid-infant
+    assessed_via:
+    - observed
+    compared:
+    - equals True
+    askable: false
+    rule_fed: true
+  obs.requires_lifesaving_intervention:
+    read_by:
+    - A-14.penetrating-trauma-unstable
+    - A-17.chest-pain-unstable-lifesaving
+    - A-18.pregnancy-hemodynamic-instability-lifesaving
+    - A-22.requires-lifesaving-intervention
+    assessed_via:
+    - observed
+    compared:
+    - equals True
+    askable: false
+    rule_fed: true
+  obs.intubated:
+    read_by:
+    - A-15.intubated
+    assessed_via:
+    - observed
+    compared:
+    - equals True
+    askable: false
+    rule_fed: true
+  obs.hemodynamically_unstable:
+    read_by:
+    - A-17.chest-pain-unstable-lifesaving
+    - A-18.pregnancy-hemodynamic-instability-lifesaving
+    - B-23.penetrating-trauma-stable
+    assessed_via:
+    - observed
+    - reported
+    compared:
+    - equals True
+    - equals False
+    askable: true
+    rule_fed: true
+  obs.ineffective_tissue_perfusion:
+    read_by:
+    - A-19.ineffective-tissue-perfusion
+    assessed_via:
+    - observed
+    compared:
+    - equals True
+    askable: false
+    rule_fed: true
+  obs.ineffective_respiratory_pattern:
+    read_by:
+    - A-20.ineffective-respiratory-pattern
+    assessed_via:
+    - observed
+    compared:
+    - equals True
+    askable: false
+    rule_fed: true
+  obs.impaired_gas_exchange:
+    read_by:
+    - A-21.impaired-gas-exchange
+    assessed_via:
+    - observed
+    compared:
+    - equals True
+    askable: false
+    rule_fed: true
+  obs.stridor:
+    read_by:
+    - B-14.stridor-or-secretions
+    assessed_via:
+    - observed
+    compared:
+    - equals True
+    askable: false
+    rule_fed: true
+  obs.cannot_manage_secretions:
+    read_by:
+    - B-14.stridor-or-secretions
+    assessed_via:
+    - observed
+    compared:
+    - equals True
+    askable: false
+    rule_fed: true
+  obs.sepsis_signs:
+    read_by:
+    - B-18.abdo-pain-sepsis-or-hypoperfusion
+    assessed_via:
+    - observed
+    compared:
+    - equals True
+    askable: false
+    rule_fed: true
+  obs.unexplained_ams_breathing_or_rhythm_change:
+    read_by:
+    - B-48.unexplained-changes-possible-ingestion-consider
+    assessed_via:
+    - observed
+    compared:
+    - equals True
+    askable: false
+    rule_fed: true
+  vitals.spo2:
+    read_by:
+    - A-08.spo2-below-90-with-compromise
+    - D-01.adult-danger-zone
+    - D-11.spo2-below-92-any-age
+    assessed_via:
+    - vitals
+    compared:
+    - lt 90
+    - lt 92
+    askable: false
+    rule_fed: true
+  vitals.spo2_is_patients_norm:
+    read_by:
+    - A-08.spo2-below-90-with-compromise
+    assessed_via:
+    - vitals
+    compared:
+    - equals False
+    askable: false
+    rule_fed: true
+  vitals.heart_rate:
+    read_by:
+    - D-01.adult-danger-zone
+    - D-02.pediatric-danger-zone-under-1-month
+    - D-06.pediatric-danger-zone-1-to-12-months
+    - D-07.pediatric-danger-zone-1-to-3-years
+    - D-08.pediatric-danger-zone-3-to-5-years
+    - D-09.pediatric-danger-zone-5-to-12-years
+    - D-10.pediatric-danger-zone-12-to-18-years
+    assessed_via:
+    - vitals
+    compared:
+    - gt 100
+    - gt 190
+    - gt 180
+    - gt 140
+    - gt 120
+    askable: false
+    rule_fed: true
+  vitals.respiratory_rate:
+    read_by:
+    - D-01.adult-danger-zone
+    - D-02.pediatric-danger-zone-under-1-month
+    - D-06.pediatric-danger-zone-1-to-12-months
+    - D-07.pediatric-danger-zone-1-to-3-years
+    - D-08.pediatric-danger-zone-3-to-5-years
+    - D-09.pediatric-danger-zone-5-to-12-years
+    - D-10.pediatric-danger-zone-12-to-18-years
+    assessed_via:
+    - vitals
+    compared:
+    - gt 20
+    - gt 60
+    - gt 55
+    - gt 40
+    - gt 35
+    - gt 30
+    askable: false
+    rule_fed: true
+  vitals.sbp:
+    read_by:
+    - B-37.pregnant-postpartum-sbp-out-of-range
+    assessed_via:
+    - vitals
+    compared:
+    - lt 90
+    - gt 150
+    askable: false
+    rule_fed: true
+  vitals.temp_c:
+    read_by:
+    - B-57.infant-under-90-days-temperature-over-38
+    - B-58.infant-1-to-3-months-fever-consider
+    - B-59.child-over-3-months-fever-consider
+    - B-60.child-hypothermia-under-36-consider
+    - B-61.child-over-3-months-temperature-red-flag-consider
+    assessed_via:
+    - reported
+    - vitals
+    compared:
+    - gt 38.0
+    - gt 39.0
+    - lt 36.0
+    - gt 38.5
+    askable: true
+    rule_fed: true
+  vitals.hypotension:
+    read_by:
+    - A-10.hypotension-with-hypoperfusion
+    assessed_via:
+    - vitals
+    compared:
+    - equals True
+    askable: false
+    rule_fed: true
+  vitals.profound_hypotension:
+    read_by:
+    - A-16.profound-hypotension
+    assessed_via:
+    - vitals
+    compared:
+    - equals True
+    askable: false
+    rule_fed: true
+  vitals.profound_hypoglycemia:
+    read_by:
+    - A-11.hypoglycemia
+    assessed_via:
+    - vitals
+    compared:
+    - equals True
+    askable: false
+    rule_fed: true
+  vitals.extreme_heart_rate:
+    read_by:
+    - A-12.severe-brady-or-tachycardia
+    assessed_via:
+    - vitals
+    compared:
+    - equals True
+    askable: false
+    rule_fed: true
+  vitals.ecg_abnormal:
+    read_by:
+    - B-36.abnormal-ecg-chest-pain
+    assessed_via:
+    - vitals
+    compared:
+    - equals True
+    askable: false
+    rule_fed: true
+  vitals.abnormal_for_patient:
+    read_by:
+    - B-39.pregnant-heavy-bleeding-abnormal-vitals-infection
+    assessed_via:
+    - vitals
+    compared:
+    - equals True
+    askable: false
+    rule_fed: true

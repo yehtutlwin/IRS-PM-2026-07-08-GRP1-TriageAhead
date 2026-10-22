@@ -1,0 +1,34 @@
+{
+ "persona_backend": "ollama",
+ "persona_model": "gemma4:12b",
+ "interview": {
+  "interview_mode": "dynamic",
+  "backend": "ollama",
+  "model": "gemma4:12b",
+  "dyn_max_fields": 4
+ },
+ "tag": "v2f-dynamic-P6-stroke-resolved",
+ "results": [
+  {
+   "questions": 16,
+   "reasks": 1,
+   "floor": "at least ESI-2",
+   "floor_ok": true,
+   "rules_ok": true,
+   "fired": [
+    "B-05.stroke-signs"
+   ],
+   "hits": 4,
+   "total": 6,
+   "misses": [
+    "stroke.speech_change: want=True got=False",
+    "stroke.arm_weakness: want=True got=False"
+   ],
+   "danger_miss": false,
+   "persona": "P6-stroke-resolved",
+   "run": 1,
+   "session": "DURIAN-2937",
+   "turns": 16
+  }
+ ]
+}

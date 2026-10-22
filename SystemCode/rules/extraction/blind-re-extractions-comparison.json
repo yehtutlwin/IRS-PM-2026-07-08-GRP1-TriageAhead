@@ -1,0 +1,2685 @@
+{
+ "readers": {
+  "opus": 415,
+  "fable": 335,
+  "gpt": 282,
+  "gemini": 318
+ },
+ "rows": [
+  {
+   "rule": "A-01.unresponsive",
+   "ours": "assign 1",
+   "readers": {
+    "opus": "assign 1",
+    "fable": "assign 1",
+    "gpt": "assign 1 (inferred)",
+    "gemini": "assign 1"
+   },
+   "agree": 4,
+   "weaker_or_different": [],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "A-02.arrest-or-imminent",
+   "ours": "assign 1",
+   "readers": {
+    "opus": "assign 1",
+    "fable": "assign 1",
+    "gpt": "assign 1 (inferred)",
+    "gemini": "assign 1"
+   },
+   "agree": 4,
+   "weaker_or_different": [],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "A-03.apneic",
+   "ours": "assign 1",
+   "readers": {
+    "opus": "assign 1",
+    "fable": "assign 1 (inferred)",
+    "gpt": "not a rule (definition)",
+    "gemini": "no entry"
+   },
+   "agree": 2,
+   "weaker_or_different": [
+    "gpt"
+   ],
+   "silent": [
+    "gemini"
+   ],
+   "title": ""
+  },
+  {
+   "rule": "A-04.pulseless",
+   "ours": "assign 1",
+   "readers": {
+    "opus": "assign 1",
+    "fable": "assign 1 (inferred)",
+    "gpt": "not a rule (definition)",
+    "gemini": "no entry"
+   },
+   "agree": 2,
+   "weaker_or_different": [
+    "gpt"
+   ],
+   "silent": [
+    "gemini"
+   ],
+   "title": ""
+  },
+  {
+   "rule": "A-05.severe-respiratory-distress",
+   "ours": "assign 1",
+   "readers": {
+    "opus": "assign 1",
+    "fable": "assign 1",
+    "gpt": "assign 1",
+    "gemini": "assign 1"
+   },
+   "agree": 4,
+   "weaker_or_different": [],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "A-06.occluded-airway",
+   "ours": "assign 1",
+   "readers": {
+    "opus": "assign 1",
+    "fable": "assign 1",
+    "gpt": "assign 1 (inferred)",
+    "gemini": "assign 1"
+   },
+   "agree": 4,
+   "weaker_or_different": [],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "A-07.active-seizure",
+   "ours": "assign 1",
+   "readers": {
+    "opus": "assign 1",
+    "fable": "assign 1",
+    "gpt": "assign 1 (inferred)",
+    "gemini": "no entry"
+   },
+   "agree": 3,
+   "weaker_or_different": [],
+   "silent": [
+    "gemini"
+   ],
+   "title": ""
+  },
+  {
+   "rule": "A-08.spo2-below-90-with-compromise",
+   "ours": "assign 1",
+   "readers": {
+    "opus": "assign 1",
+    "fable": "assign 1",
+    "gpt": "assign 1 (inferred)",
+    "gemini": "assign 1"
+   },
+   "agree": 4,
+   "weaker_or_different": [],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "A-09.anaphylaxis",
+   "ours": "assign 1",
+   "readers": {
+    "opus": "assign 1",
+    "fable": "assign 1",
+    "gpt": "assign 1 (inferred)",
+    "gemini": "assign 1"
+   },
+   "agree": 4,
+   "weaker_or_different": [],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "A-10.hypotension-with-hypoperfusion",
+   "ours": "assign 1",
+   "readers": {
+    "opus": "assign 1",
+    "fable": "assign 1",
+    "gpt": "assign 1 (inferred)",
+    "gemini": "assign 1"
+   },
+   "agree": 4,
+   "weaker_or_different": [],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "A-11.hypoglycemia",
+   "ours": "assign 1",
+   "readers": {
+    "opus": "assign 1",
+    "fable": "assign 1",
+    "gpt": "assign 1 (inferred)",
+    "gemini": "assign 1"
+   },
+   "agree": 4,
+   "weaker_or_different": [],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "A-12.severe-brady-or-tachycardia",
+   "ours": "assign 1",
+   "readers": {
+    "opus": "assign 1 (inferred)",
+    "fable": "assign 1 (inferred)",
+    "gpt": "assign 1 (inferred)",
+    "gemini": "assign 1"
+   },
+   "agree": 4,
+   "weaker_or_different": [],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "A-13.flaccid-infant",
+   "ours": "assign 1",
+   "readers": {
+    "opus": "assign 1 (inferred)",
+    "fable": "assign 1",
+    "gpt": "assign 1 (inferred)",
+    "gemini": "assign 1"
+   },
+   "agree": 4,
+   "weaker_or_different": [],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "A-14.penetrating-trauma-unstable",
+   "ours": "assign 1",
+   "readers": {
+    "opus": "assign 1",
+    "fable": "assign 1",
+    "gpt": "assign 1 (inferred)",
+    "gemini": "assign 1"
+   },
+   "agree": 4,
+   "weaker_or_different": [],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "A-15.intubated",
+   "ours": "assign 1",
+   "readers": {
+    "opus": "assign 1",
+    "fable": "assign 1 (inferred)",
+    "gpt": "not a rule (definition)",
+    "gemini": "no entry"
+   },
+   "agree": 2,
+   "weaker_or_different": [
+    "gpt"
+   ],
+   "silent": [
+    "gemini"
+   ],
+   "title": ""
+  },
+  {
+   "rule": "A-16.profound-hypotension",
+   "ours": "assign 1",
+   "readers": {
+    "opus": "assign 1",
+    "fable": "assign 1 (inferred)",
+    "gpt": "not a rule (definition)",
+    "gemini": "no entry"
+   },
+   "agree": 2,
+   "weaker_or_different": [
+    "gpt"
+   ],
+   "silent": [
+    "gemini"
+   ],
+   "title": ""
+  },
+  {
+   "rule": "A-17.chest-pain-unstable-lifesaving",
+   "ours": "assign 1",
+   "readers": {
+    "opus": "assign 1",
+    "fable": "assign 1",
+    "gpt": "assign 1",
+    "gemini": "assign 1"
+   },
+   "agree": 4,
+   "weaker_or_different": [],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "A-18.pregnancy-hemodynamic-instability-lifesaving",
+   "ours": "assign 1",
+   "readers": {
+    "opus": "assign 1",
+    "fable": "assign 1 (inferred)",
+    "gpt": "no entry",
+    "gemini": "assign 1"
+   },
+   "agree": 3,
+   "weaker_or_different": [],
+   "silent": [
+    "gpt"
+   ],
+   "title": ""
+  },
+  {
+   "rule": "A-19.ineffective-tissue-perfusion",
+   "ours": "assign 1",
+   "readers": {
+    "opus": "assign 1",
+    "fable": "assign 1",
+    "gpt": "assign 1 (inferred)",
+    "gemini": "assign 1"
+   },
+   "agree": 4,
+   "weaker_or_different": [],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "A-20.ineffective-respiratory-pattern",
+   "ours": "assign 1",
+   "readers": {
+    "opus": "assign 1",
+    "fable": "assign 1",
+    "gpt": "assign 1 (inferred)",
+    "gemini": "assign 1"
+   },
+   "agree": 4,
+   "weaker_or_different": [],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "A-21.impaired-gas-exchange",
+   "ours": "assign 1",
+   "readers": {
+    "opus": "assign 1",
+    "fable": "assign 1",
+    "gpt": "assign 1 (inferred)",
+    "gemini": "assign 1"
+   },
+   "agree": 4,
+   "weaker_or_different": [],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "B-01.new-altered-mental-status",
+   "ours": "assign 2",
+   "readers": {
+    "opus": "assign 2",
+    "fable": "assign 2",
+    "gpt": "assign 2",
+    "gemini": "assign 2"
+   },
+   "agree": 4,
+   "weaker_or_different": [],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "B-02.severe-pain-consider",
+   "ours": "consider 2",
+   "readers": {
+    "opus": "assign 2 / consider 2",
+    "fable": "consider 2",
+    "gpt": "assign 2 / consider 2",
+    "gemini": "consider 2"
+   },
+   "agree": 4,
+   "weaker_or_different": [],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "B-03.severe-pain-systemic-cause",
+   "ours": "assign 2",
+   "readers": {
+    "opus": "assign 2",
+    "fable": "assign 2 (inferred)",
+    "gpt": "no entry",
+    "gemini": "assign 2"
+   },
+   "agree": 3,
+   "weaker_or_different": [],
+   "silent": [
+    "gpt"
+   ],
+   "title": ""
+  },
+  {
+   "rule": "B-04.chest-pain-acs-suspect",
+   "ours": "assign 2",
+   "readers": {
+    "opus": "assign 2",
+    "fable": "assign 2 (inferred)",
+    "gpt": "assign 2 (inferred)",
+    "gemini": "assign 2 (inferred)"
+   },
+   "agree": 4,
+   "weaker_or_different": [],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "B-05.stroke-signs",
+   "ours": "assign 2",
+   "readers": {
+    "opus": "assign 2",
+    "fable": "assign 2 (inferred)",
+    "gpt": "assign 2 (inferred)",
+    "gemini": "assign 2 (inferred)"
+   },
+   "agree": 4,
+   "weaker_or_different": [],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "B-06.possible-ectopic-stable",
+   "ours": "assign 2",
+   "readers": {
+    "opus": "assign 2",
+    "fable": "assign 2 (inferred)",
+    "gpt": "assign 2 (inferred)",
+    "gemini": "assign 2 (inferred)"
+   },
+   "agree": 4,
+   "weaker_or_different": [],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "B-07.immunocompromised-fever",
+   "ours": "assign 2",
+   "readers": {
+    "opus": "assign 2",
+    "fable": "assign 2 (inferred)",
+    "gpt": "assign 2 (inferred)",
+    "gemini": "assign 2 (inferred)"
+   },
+   "agree": 4,
+   "weaker_or_different": [],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "B-08.transplant-fever-or-infection",
+   "ours": "assign 2",
+   "readers": {
+    "opus": "assign 2",
+    "fable": "assign 2",
+    "gpt": "assign 2",
+    "gemini": "assign 2 (inferred)"
+   },
+   "agree": 4,
+   "weaker_or_different": [],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "B-09.suicidal-or-homicidal",
+   "ours": "assign 2",
+   "readers": {
+    "opus": "assign 2",
+    "fable": "assign 2",
+    "gpt": "assign 2",
+    "gemini": "assign 2"
+   },
+   "agree": 4,
+   "weaker_or_different": [],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "B-10.needle-stick-hcw",
+   "ours": "assign 2",
+   "readers": {
+    "opus": "assign 2",
+    "fable": "assign 2 (inferred)",
+    "gpt": "assign 2 (inferred)",
+    "gemini": "assign 2 (inferred)"
+   },
+   "agree": 4,
+   "weaker_or_different": [],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "B-11.sexual-assault",
+   "ours": "assign 2",
+   "readers": {
+    "opus": "assign 2",
+    "fable": "assign 2 / consider 2",
+    "gpt": "assign 2",
+    "gemini": "assign 2"
+   },
+   "agree": 4,
+   "weaker_or_different": [],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "B-12.increasing-respiratory-effort",
+   "ours": "assign 2",
+   "readers": {
+    "opus": "assign 2",
+    "fable": "assign 2 (inferred)",
+    "gpt": "assign 2 (inferred)",
+    "gemini": "assign 2 (inferred)"
+   },
+   "agree": 4,
+   "weaker_or_different": [],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "B-13.postpartum-hemorrhage",
+   "ours": "assign 2",
+   "readers": {
+    "opus": "assign 2",
+    "fable": "assign 2",
+    "gpt": "assign 2",
+    "gemini": "assign 2"
+   },
+   "agree": 4,
+   "weaker_or_different": [],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "B-14.stridor-or-secretions",
+   "ours": "assign 2",
+   "readers": {
+    "opus": "assign 2",
+    "fable": "assign 2",
+    "gpt": "assign 2",
+    "gemini": "assign 2"
+   },
+   "agree": 4,
+   "weaker_or_different": [],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "B-15.high-risk-epistaxis",
+   "ours": "assign 2",
+   "readers": {
+    "opus": "assign 2 (inferred)",
+    "fable": "assign 2 (inferred)",
+    "gpt": "assign 2",
+    "gemini": "assign 2"
+   },
+   "agree": 4,
+   "weaker_or_different": [],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "B-16.button-battery-or-magnet-ingestion",
+   "ours": "assign 2",
+   "readers": {
+    "opus": "assign 2 (inferred)",
+    "fable": "assign 2 (inferred)",
+    "gpt": "consider 2 (inferred)",
+    "gemini": "assign 2 (inferred)"
+   },
+   "agree": 3,
+   "weaker_or_different": [
+    "gpt"
+   ],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "B-17.abdo-pain-pregnant-or-postpartum",
+   "ours": "consider 2",
+   "readers": {
+    "opus": "consider 2 (inferred)",
+    "fable": "consider 2 (inferred)",
+    "gpt": "consider 2 (inferred)",
+    "gemini": "consider 2"
+   },
+   "agree": 4,
+   "weaker_or_different": [],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "B-18.abdo-pain-sepsis-or-hypoperfusion",
+   "ours": "consider 2",
+   "readers": {
+    "opus": "consider 2 (inferred)",
+    "fable": "consider 2 (inferred)",
+    "gpt": "consider 2 (inferred)",
+    "gemini": "consider 2"
+   },
+   "agree": 4,
+   "weaker_or_different": [],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "B-19.abdo-pain-trauma",
+   "ours": "consider 2",
+   "readers": {
+    "opus": "consider 2 (inferred)",
+    "fable": "consider 2 (inferred)",
+    "gpt": "consider 2 (inferred)",
+    "gemini": "consider 2"
+   },
+   "agree": 4,
+   "weaker_or_different": [],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "B-20.abdo-pain-refractory-constant-maximal",
+   "ours": "consider 2",
+   "readers": {
+    "opus": "consider 2 (inferred)",
+    "fable": "consider 2 (inferred)",
+    "gpt": "consider 2 (inferred)",
+    "gemini": "consider 2"
+   },
+   "agree": 4,
+   "weaker_or_different": [],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "B-21.abdo-pain-vaginal-bleeding",
+   "ours": "consider 2",
+   "readers": {
+    "opus": "consider 2 (inferred)",
+    "fable": "not a rule (context)",
+    "gpt": "no entry",
+    "gemini": "consider 2 (inferred)"
+   },
+   "agree": 2,
+   "weaker_or_different": [
+    "fable"
+   ],
+   "silent": [
+    "gpt"
+   ],
+   "title": ""
+  },
+  {
+   "rule": "B-22.fall-from-6-metres-or-more",
+   "ours": "assign 2",
+   "readers": {
+    "opus": "assign 2",
+    "fable": "assign 2",
+    "gpt": "assign 2",
+    "gemini": "assign 2"
+   },
+   "agree": 4,
+   "weaker_or_different": [],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "B-23.penetrating-trauma-stable",
+   "ours": "consider 2",
+   "readers": {
+    "opus": "consider 2 (inferred)",
+    "fable": "consider 2 (inferred)",
+    "gpt": "no entry",
+    "gemini": "consider 2"
+   },
+   "agree": 3,
+   "weaker_or_different": [],
+   "silent": [
+    "gpt"
+   ],
+   "title": ""
+  },
+  {
+   "rule": "B-24.extremity-neurovascular-compromise",
+   "ours": "assign 2",
+   "readers": {
+    "opus": "assign 2 (inferred)",
+    "fable": "assign 2 (inferred)",
+    "gpt": "not a rule (context)",
+    "gemini": "assign 2 (inferred)"
+   },
+   "agree": 3,
+   "weaker_or_different": [
+    "gpt"
+   ],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "B-25.pelvis-femur-fracture-consider",
+   "ours": "consider 2",
+   "readers": {
+    "opus": "consider 2 (inferred)",
+    "fable": "consider 2 (inferred)",
+    "gpt": "not a rule (context)",
+    "gemini": "no effect"
+   },
+   "agree": 2,
+   "weaker_or_different": [
+    "gpt",
+    "gemini"
+   ],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "B-26.suspected-toxic-ingestion",
+   "ours": "assign 2",
+   "readers": {
+    "opus": "assign 2 (inferred)",
+    "fable": "assign 2 (inferred)",
+    "gpt": "not a rule (context)",
+    "gemini": "assign 2 (inferred)"
+   },
+   "agree": 3,
+   "weaker_or_different": [
+    "gpt"
+   ],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "B-27.geriatric-trauma-caution",
+   "ours": "assign 2",
+   "readers": {
+    "opus": "not a rule (usage)",
+    "fable": "consider 2 (inferred)",
+    "gpt": "no entry",
+    "gemini": "not a rule (context)"
+   },
+   "agree": 0,
+   "weaker_or_different": [
+    "opus",
+    "fable",
+    "gemini"
+   ],
+   "silent": [
+    "gpt"
+   ],
+   "title": ""
+  },
+  {
+   "rule": "B-28.ocular-high-risk-constellation",
+   "ours": "consider 2",
+   "readers": {
+    "opus": "no entry",
+    "fable": "no entry",
+    "gpt": "no entry",
+    "gemini": "not a rule (context)"
+   },
+   "agree": 0,
+   "weaker_or_different": [
+    "gemini"
+   ],
+   "silent": [
+    "opus",
+    "fable",
+    "gpt"
+   ],
+   "title": ""
+  },
+  {
+   "rule": "B-29.pediatric-subtle-ams",
+   "ours": "assign 2",
+   "readers": {
+    "opus": "consider 2 (inferred)",
+    "fable": "consider 2 (inferred)",
+    "gpt": "consider 2 (inferred)",
+    "gemini": "assign 2 (inferred)"
+   },
+   "agree": 1,
+   "weaker_or_different": [
+    "opus",
+    "fable",
+    "gpt"
+   ],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "B-30.anticoagulated-trauma",
+   "ours": "assign 2",
+   "readers": {
+    "opus": "no entry",
+    "fable": "no entry",
+    "gpt": "no entry",
+    "gemini": "no entry"
+   },
+   "agree": 0,
+   "weaker_or_different": [],
+   "silent": [
+    "opus",
+    "fable",
+    "gpt",
+    "gemini"
+   ],
+   "title": ""
+  },
+  {
+   "rule": "B-31.post-ictal",
+   "ours": "assign 2",
+   "readers": {
+    "opus": "assign 2",
+    "fable": "assign 2",
+    "gpt": "assign 2",
+    "gemini": "assign 2"
+   },
+   "agree": 4,
+   "weaker_or_different": [],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "B-32.thunderclap-headache",
+   "ours": "assign 2",
+   "readers": {
+    "opus": "no entry",
+    "fable": "assign 2 (inferred)",
+    "gpt": "no entry",
+    "gemini": "assign 2 (inferred)"
+   },
+   "agree": 2,
+   "weaker_or_different": [],
+   "silent": [
+    "opus",
+    "gpt"
+   ],
+   "title": ""
+  },
+  {
+   "rule": "B-33.headache-with-neck-pain-or-nuchal-rigidity",
+   "ours": "assign 2",
+   "readers": {
+    "opus": "assign 2 (inferred)",
+    "fable": "assign 2 (inferred)",
+    "gpt": "assign 2 (inferred)",
+    "gemini": "assign 2 (inferred)"
+   },
+   "agree": 4,
+   "weaker_or_different": [],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "B-34.headache-red-flags",
+   "ours": "assign 2",
+   "readers": {
+    "opus": "no entry",
+    "fable": "assign 2 (inferred)",
+    "gpt": "assign 2",
+    "gemini": "assign 2"
+   },
+   "agree": 3,
+   "weaker_or_different": [],
+   "silent": [
+    "opus"
+   ],
+   "title": ""
+  },
+  {
+   "rule": "B-35.severe-psychological-distress-consider",
+   "ours": "consider 2",
+   "readers": {
+    "opus": "assign 2",
+    "fable": "consider 2 (inferred)",
+    "gpt": "assign 2 / consider 2",
+    "gemini": "assign 2 (inferred)"
+   },
+   "agree": 2,
+   "weaker_or_different": [
+    "opus",
+    "gemini"
+   ],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "B-36.abnormal-ecg-chest-pain",
+   "ours": "assign 2",
+   "readers": {
+    "opus": "assign 2",
+    "fable": "assign 2",
+    "gpt": "assign 2",
+    "gemini": "assign 2"
+   },
+   "agree": 4,
+   "weaker_or_different": [],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "B-37.pregnant-postpartum-sbp-out-of-range",
+   "ours": "assign 2",
+   "readers": {
+    "opus": "assign 2",
+    "fable": "assign 2",
+    "gpt": "assign 2",
+    "gemini": "assign 2"
+   },
+   "agree": 4,
+   "weaker_or_different": [],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "B-38.pregnant-chest-pain-breathlessness-abdo-pain-or-headache",
+   "ours": "assign 2",
+   "readers": {
+    "opus": "no entry",
+    "fable": "assign 2",
+    "gpt": "no entry",
+    "gemini": "no entry"
+   },
+   "agree": 1,
+   "weaker_or_different": [],
+   "silent": [
+    "opus",
+    "gpt",
+    "gemini"
+   ],
+   "title": ""
+  },
+  {
+   "rule": "B-39.pregnant-heavy-bleeding-abnormal-vitals-infection",
+   "ours": "assign 2",
+   "readers": {
+    "opus": "assign 2 (inferred)",
+    "fable": "assign 2 (inferred)",
+    "gpt": "assign 2",
+    "gemini": "assign 2"
+   },
+   "agree": 4,
+   "weaker_or_different": [],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "B-41.testicular-or-scrotal-pain-torsion-consider",
+   "ours": "consider 2",
+   "readers": {
+    "opus": "consider 2 (inferred)",
+    "fable": "consider 2 (inferred)",
+    "gpt": "consider 2 (inferred)",
+    "gemini": "no entry"
+   },
+   "agree": 3,
+   "weaker_or_different": [],
+   "silent": [
+    "gemini"
+   ],
+   "title": ""
+  },
+  {
+   "rule": "B-42.unilateral-lower-quadrant-pain-torsion-or-ectopic-consider",
+   "ours": "consider 2",
+   "readers": {
+    "opus": "consider 2 (inferred)",
+    "fable": "consider 2 (inferred)",
+    "gpt": "consider 2 (inferred)",
+    "gemini": "no entry"
+   },
+   "agree": 3,
+   "weaker_or_different": [],
+   "silent": [
+    "gemini"
+   ],
+   "title": ""
+  },
+  {
+   "rule": "B-43.uti-elderly-or-urosepsis-signs",
+   "ours": "assign 2",
+   "readers": {
+    "opus": "assign 2",
+    "fable": "assign 2 (inferred)",
+    "gpt": "no entry",
+    "gemini": "no entry"
+   },
+   "agree": 2,
+   "weaker_or_different": [],
+   "silent": [
+    "gpt",
+    "gemini"
+   ],
+   "title": ""
+  },
+  {
+   "rule": "B-44.vehicle-ejection",
+   "ours": "assign 2",
+   "readers": {
+    "opus": "assign 2",
+    "fable": "assign 2",
+    "gpt": "assign 2",
+    "gemini": "assign 2"
+   },
+   "agree": 4,
+   "weaker_or_different": [],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "B-45.mechanical-extrication",
+   "ours": "assign 2",
+   "readers": {
+    "opus": "assign 2",
+    "fable": "assign 2",
+    "gpt": "assign 2",
+    "gemini": "assign 2"
+   },
+   "agree": 4,
+   "weaker_or_different": [],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "B-46.compartment-syndrome-symptoms",
+   "ours": "assign 2",
+   "readers": {
+    "opus": "assign 2 (inferred)",
+    "fable": "assign 2 (inferred)",
+    "gpt": "not a rule (context)",
+    "gemini": "assign 2 (inferred)"
+   },
+   "agree": 3,
+   "weaker_or_different": [
+    "gpt"
+   ],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "B-47.partial-or-complete-amputation",
+   "ours": "assign 2",
+   "readers": {
+    "opus": "assign 2 (inferred)",
+    "fable": "assign 2 (inferred)",
+    "gpt": "not a rule (context)",
+    "gemini": "assign 2 (inferred)"
+   },
+   "agree": 3,
+   "weaker_or_different": [
+    "gpt"
+   ],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "B-48.unexplained-changes-possible-ingestion-consider",
+   "ours": "consider 2",
+   "readers": {
+    "opus": "assign 2 (inferred)",
+    "fable": "assign 2 / consider 2 (inferred)",
+    "gpt": "not a rule (context)",
+    "gemini": "assign 2 (inferred)"
+   },
+   "agree": 1,
+   "weaker_or_different": [
+    "opus",
+    "gpt",
+    "gemini"
+   ],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "B-49.severe-flank-pain",
+   "ours": "assign 2",
+   "readers": {
+    "opus": "assign 2",
+    "fable": "assign 2",
+    "gpt": "assign 2",
+    "gemini": "no entry"
+   },
+   "agree": 3,
+   "weaker_or_different": [],
+   "silent": [
+    "gemini"
+   ],
+   "title": ""
+  },
+  {
+   "rule": "B-50.transplant-list-consider",
+   "ours": "consider 2",
+   "readers": {
+    "opus": "consider 2",
+    "fable": "consider 2 (inferred)",
+    "gpt": "not a rule (context)",
+    "gemini": "consider 2 (inferred)"
+   },
+   "agree": 3,
+   "weaker_or_different": [
+    "gpt"
+   ],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "B-51.psychotic-or-violent",
+   "ours": "assign 2",
+   "readers": {
+    "opus": "assign 2",
+    "fable": "assign 2",
+    "gpt": "assign 2",
+    "gemini": "assign 2"
+   },
+   "agree": 4,
+   "weaker_or_different": [],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "B-52.geriatric-vitals-medication-context-consider",
+   "ours": "assign 2",
+   "readers": {
+    "opus": "not a rule (usage)",
+    "fable": "not a rule (context)",
+    "gpt": "no entry",
+    "gemini": "not a rule (context)"
+   },
+   "agree": 0,
+   "weaker_or_different": [
+    "opus",
+    "fable",
+    "gemini"
+   ],
+   "silent": [
+    "gpt"
+   ],
+   "title": ""
+  },
+  {
+   "rule": "B-53.pediatric-respiratory-distress-signs-consider",
+   "ours": "assign 2",
+   "readers": {
+    "opus": "not a rule (definition)",
+    "fable": "not a rule (definition)",
+    "gpt": "no entry",
+    "gemini": "not a rule (definition)"
+   },
+   "agree": 0,
+   "weaker_or_different": [
+    "opus",
+    "fable",
+    "gemini"
+   ],
+   "silent": [
+    "gpt"
+   ],
+   "title": ""
+  },
+  {
+   "rule": "B-54.respiratory-distress-signs-consider",
+   "ours": "consider 2",
+   "readers": {
+    "opus": "consider 2",
+    "fable": "consider 2",
+    "gpt": "consider 2",
+    "gemini": "consider 2"
+   },
+   "agree": 4,
+   "weaker_or_different": [],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "B-55.recent-covid-cardiac-risk-consider",
+   "ours": "assign 2",
+   "readers": {
+    "opus": "no entry",
+    "fable": "not a rule (context)",
+    "gpt": "no entry",
+    "gemini": "not a rule (context)"
+   },
+   "agree": 0,
+   "weaker_or_different": [
+    "fable",
+    "gemini"
+   ],
+   "silent": [
+    "opus",
+    "gpt"
+   ],
+   "title": ""
+  },
+  {
+   "rule": "B-56.infant-under-28-days-fever",
+   "ours": "assign 2",
+   "readers": {
+    "opus": "assign 2",
+    "fable": "assign 2",
+    "gpt": "assign 2",
+    "gemini": "assign 2"
+   },
+   "agree": 4,
+   "weaker_or_different": [],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "B-57.infant-under-90-days-temperature-over-38",
+   "ours": "assign 2",
+   "readers": {
+    "opus": "assign 2",
+    "fable": "assign 2",
+    "gpt": "assign 2",
+    "gemini": "assign 2"
+   },
+   "agree": 4,
+   "weaker_or_different": [],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "B-58.infant-1-to-3-months-fever-consider",
+   "ours": "consider 2",
+   "readers": {
+    "opus": "consider 2",
+    "fable": "consider 2 (inferred)",
+    "gpt": "consider 2",
+    "gemini": "consider 2"
+   },
+   "agree": 4,
+   "weaker_or_different": [],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "B-59.child-over-3-months-fever-consider",
+   "ours": "consider 2",
+   "readers": {
+    "opus": "no entry",
+    "fable": "consider 2",
+    "gpt": "consider 2",
+    "gemini": "consider 2"
+   },
+   "agree": 3,
+   "weaker_or_different": [],
+   "silent": [
+    "opus"
+   ],
+   "title": ""
+  },
+  {
+   "rule": "B-60.child-hypothermia-under-36-consider",
+   "ours": "consider 2",
+   "readers": {
+    "opus": "consider 2 (inferred)",
+    "fable": "consider 2 (inferred)",
+    "gpt": "no entry",
+    "gemini": "consider 2 (inferred)"
+   },
+   "agree": 3,
+   "weaker_or_different": [],
+   "silent": [
+    "gpt"
+   ],
+   "title": ""
+  },
+  {
+   "rule": "B-61.child-over-3-months-temperature-red-flag-consider",
+   "ours": "consider 2",
+   "readers": {
+    "opus": "consider 2 (inferred)",
+    "fable": "consider 2 (inferred)",
+    "gpt": "no entry",
+    "gemini": "consider 2 (inferred)"
+   },
+   "agree": 3,
+   "weaker_or_different": [],
+   "silent": [
+    "gpt"
+   ],
+   "title": ""
+  },
+  {
+   "rule": "D-01.adult-danger-zone",
+   "ours": "reassess",
+   "readers": {
+    "opus": "assign 2 / reassess",
+    "fable": "reassess",
+    "gpt": "reassess",
+    "gemini": "reassess"
+   },
+   "agree": 4,
+   "weaker_or_different": [],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "D-02.pediatric-danger-zone-under-1-month",
+   "ours": "reassess",
+   "readers": {
+    "opus": "reassess",
+    "fable": "reassess (inferred)",
+    "gpt": "reassess",
+    "gemini": "reassess"
+   },
+   "agree": 4,
+   "weaker_or_different": [],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "D-06.pediatric-danger-zone-1-to-12-months",
+   "ours": "reassess",
+   "readers": {
+    "opus": "reassess",
+    "fable": "reassess (inferred)",
+    "gpt": "reassess",
+    "gemini": "reassess"
+   },
+   "agree": 4,
+   "weaker_or_different": [],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "D-07.pediatric-danger-zone-1-to-3-years",
+   "ours": "reassess",
+   "readers": {
+    "opus": "reassess",
+    "fable": "reassess (inferred)",
+    "gpt": "reassess",
+    "gemini": "reassess"
+   },
+   "agree": 4,
+   "weaker_or_different": [],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "D-08.pediatric-danger-zone-3-to-5-years",
+   "ours": "reassess",
+   "readers": {
+    "opus": "reassess",
+    "fable": "reassess (inferred)",
+    "gpt": "reassess",
+    "gemini": "reassess"
+   },
+   "agree": 4,
+   "weaker_or_different": [],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "D-09.pediatric-danger-zone-5-to-12-years",
+   "ours": "reassess",
+   "readers": {
+    "opus": "reassess",
+    "fable": "reassess (inferred)",
+    "gpt": "reassess",
+    "gemini": "reassess"
+   },
+   "agree": 4,
+   "weaker_or_different": [],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "D-10.pediatric-danger-zone-12-to-18-years",
+   "ours": "reassess",
+   "readers": {
+    "opus": "reassess",
+    "fable": "reassess (inferred)",
+    "gpt": "reassess",
+    "gemini": "reassess"
+   },
+   "agree": 4,
+   "weaker_or_different": [],
+   "silent": [],
+   "title": ""
+  },
+  {
+   "rule": "D-11.spo2-below-92-any-age",
+   "ours": "reassess",
+   "readers": {
+    "opus": "reassess",
+    "fable": "reassess",
+    "gpt": "no entry",
+    "gemini": "reassess"
+   },
+   "agree": 3,
+   "weaker_or_different": [],
+   "silent": [
+    "gpt"
+   ],
+   "title": ""
+  },
+  {
+   "rule": "D-04.context-beta-blockers-consider",
+   "ours": "reassess",
+   "readers": {
+    "opus": "not a rule (usage)",
+    "fable": "not a rule (context)",
+    "gpt": "no entry",
+    "gemini": "no entry"
+   },
+   "agree": 0,
+   "weaker_or_different": [
+    "opus",
+    "fable"
+   ],
+   "silent": [
+    "gpt",
+    "gemini"
+   ],
+   "title": ""
+  },
+  {
+   "rule": "D-05.context-immunosuppression-consider",
+   "ours": "reassess",
+   "readers": {
+    "opus": "not a rule (usage)",
+    "fable": "not a rule (context)",
+    "gpt": "no entry",
+    "gemini": "no entry"
+   },
+   "agree": 0,
+   "weaker_or_different": [
+    "opus",
+    "fable"
+   ],
+   "silent": [
+    "gpt",
+    "gemini"
+   ],
+   "title": ""
+  },
+  {
+   "rule": "A-22.requires-lifesaving-intervention",
+   "ours": "assign 1",
+   "readers": {
+    "opus": "assign 1",
+    "fable": "assign 1",
+    "gpt": "assign 1",
+    "gemini": "assign 1"
+   },
+   "agree": 4,
+   "weaker_or_different": [],
+   "silent": [],
+   "title": ""
+  }
+ ],
+ "unmatched_rule_entries": {
+  "opus": 117,
+  "fable": 35,
+  "gpt": 42,
+  "gemini": 81
+ },
+ "shared_only_in_readers": [
+  {
+   "page": 6,
+   "span": "High-risk situation?",
+   "by": {
+    "opus": [
+     {
+      "id": "B-006",
+      "effect": "assign_level_2",
+      "interpretation": "verbatim"
+     }
+    ],
+    "fable": [
+     {
+      "id": "B-004",
+      "effect": "assign_level_2",
+      "interpretation": "interpreted"
+     },
+     {
+      "id": "B-005",
+      "effect": "assign_level_2",
+      "interpretation": "interpreted"
+     },
+     {
+      "id": "B-006",
+      "effect": "assign_level_2",
+      "interpretation": "verbatim"
+     },
+     {
+      "id": "B-007",
+      "effect": "assign_level_2",
+      "interpretation": "verbatim"
+     }
+    ],
+    "gpt": [
+     {
+      "id": "gpt-031",
+      "effect": "assign_level_2",
+      "interpretation": "effect_inferred"
+     }
+    ],
+    "gemini": [
+     {
+      "id": "gemini-032",
+      "effect": "assign_level_2",
+      "interpretation": "verbatim"
+     },
+     {
+      "id": "gemini-058",
+      "effect": "reassess_uptriage",
+      "interpretation": "verbatim"
+     }
+    ]
+   }
+  },
+  {
+   "page": 5,
+   "span": "Decision point B is used to determine whether the patient is likely to deteriorate and/or require more immediate care",
+   "by": {
+    "opus": [
+     {
+      "id": "B-001",
+      "effect": "assign_level_2",
+      "interpretation": "verbatim"
+     }
+    ],
+    "fable": [
+     {
+      "id": "B-001",
+      "effect": "assign_level_2",
+      "interpretation": "interpreted"
+     }
+    ],
+    "gemini": [
+     {
+      "id": "gemini-008",
+      "effect": "assign_level_2",
+      "interpretation": "verbatim"
+     }
+    ]
+   }
+  },
+  {
+   "page": 5,
+   "span": "None One Many",
+   "by": {
+    "opus": [
+     {
+      "id": "C-005",
+      "effect": "resource_band",
+      "interpretation": "interpreted"
+     },
+     {
+      "id": "C-006",
+      "effect": "resource_band",
+      "interpretation": "verbatim"
+     },
+     {
+      "id": "C-007",
+      "effect": "resource_band",
+      "interpretation": "verbatim"
+     }
+    ],
+    "gpt": [
+     {
+      "id": "gpt-016",
+      "effect": "resource_band",
+      "interpretation": "interpreted"
+     }
+    ],
+    "gemini": [
+     {
+      "id": "gemini-019",
+      "effect": "resource_band",
+      "interpretation": "verbatim"
+     }
+    ]
+   }
+  },
+  {
+   "page": 6,
+   "span": "Requires immediate lifesaving intervention?",
+   "by": {
+    "opus": [
+     {
+      "id": "A-003",
+      "effect": "assign_level_1",
+      "interpretation": "verbatim"
+     }
+    ],
+    "gpt": [
+     {
+      "id": "gpt-019",
+      "effect": "assign_level_1",
+      "interpretation": "effect_inferred"
+     }
+    ],
+    "gemini": [
+     {
+      "id": "gemini-021",
+      "effect": "assign_level_1",
+      "interpretation": "verbatim"
+     }
+    ]
+   }
+  },
+  {
+   "page": 6,
+   "span": "> 190 > 180 > 140 > 120 > 120 > 100 > 100",
+   "by": {
+    "opus": [
+     {
+      "id": "D-004",
+      "effect": "reassess_uptriage",
+      "interpretation": "interpreted"
+     },
+     {
+      "id": "D-006",
+      "effect": "reassess_uptriage",
+      "interpretation": "interpreted"
+     },
+     {
+      "id": "D-008",
+      "effect": "reassess_uptriage",
+      "interpretation": "interpreted"
+     },
+     {
+      "id": "D-010",
+      "effect": "reassess_uptriage",
+      "interpretation": "interpreted"
+     },
+     {
+      "id": "D-012",
+      "effect": "reassess_uptriage",
+      "interpretation": "interpreted"
+     },
+     {
+      "id": "D-014",
+      "effect": "reassess_uptriage",
+      "interpretation": "interpreted"
+     },
+     {
+      "id": "D-016",
+      "effect": "reassess_uptriage",
+      "interpretation": "interpreted"
+     }
+    ],
+    "fable": [
+     {
+      "id": "D-003",
+      "effect": "reassess_uptriage",
+      "interpretation": "interpreted"
+     },
+     {
+      "id": "D-004",
+      "effect": "reassess_uptriage",
+      "interpretation": "interpreted"
+     },
+     {
+      "id": "D-005",
+      "effect": "reassess_uptriage",
+      "interpretation": "interpreted"
+     },
+     {
+      "id": "D-006",
+      "effect": "reassess_uptriage",
+      "interpretation": "interpreted"
+     },
+     {
+      "id": "D-007",
+      "effect": "reassess_uptriage",
+      "interpretation": "interpreted"
+     },
+     {
+      "id": "D-008",
+      "effect": "reassess_uptriage",
+      "interpretation": "interpreted"
+     },
+     {
+      "id": "D-009",
+      "effect": "reassess_uptriage",
+      "interpretation": "interpreted"
+     }
+    ],
+    "gemini": [
+     {
+      "id": "gemini-063",
+      "effect": "reassess_uptriage",
+      "interpretation": "verbatim"
+     },
+     {
+      "id": "gemini-065",
+      "effect": "reassess_uptriage",
+      "interpretation": "verbatim"
+     }
+    ]
+   }
+  },
+  {
+   "page": 9,
+   "span": "When these signs are present, the patient is assigned an ESI level of 1",
+   "by": {
+    "fable": [
+     {
+      "id": "A-013",
+      "effect": "assign_level_1",
+      "interpretation": "interpreted"
+     },
+     {
+      "id": "A-014",
+      "effect": "assign_level_1",
+      "interpretation": "interpreted"
+     },
+     {
+      "id": "A-015",
+      "effect": "assign_level_1",
+      "interpretation": "interpreted"
+     },
+     {
+      "id": "A-016",
+      "effect": "assign_level_1",
+      "interpretation": "interpreted"
+     },
+     {
+      "id": "A-017",
+      "effect": "assign_level_1",
+      "interpretation": "interpreted"
+     }
+    ],
+    "gpt": [
+     {
+      "id": "gpt-072",
+      "effect": "assign_level_1",
+      "interpretation": "interpreted"
+     }
+    ],
+    "gemini": [
+     {
+      "id": "gemini-136",
+      "effect": "assign_level_1",
+      "interpretation": "verbatim"
+     },
+     {
+      "id": "gemini-137",
+      "effect": "assign_level_1",
+      "interpretation": "verbatim"
+     },
+     {
+      "id": "gemini-138",
+      "effect": "assign_level_1",
+      "interpretation": "verbatim"
+     },
+     {
+      "id": "gemini-140",
+      "effect": "assign_level_1",
+      "interpretation": "verbatim"
+     }
+    ]
+   }
+  },
+  {
+   "page": 11,
+   "span": "Severe pain/distress?",
+   "by": {
+    "opus": [
+     {
+      "id": "B-017",
+      "effect": "assign_level_2",
+      "interpretation": "verbatim"
+     },
+     {
+      "id": "B-018",
+      "effect": "assign_level_2",
+      "interpretation": "verbatim"
+     },
+     {
+      "id": "B-022",
+      "effect": "assign_level_2",
+      "interpretation": "verbatim"
+     },
+     {
+      "id": "B-023",
+      "effect": "assign_level_2",
+      "interpretation": "verbatim"
+     }
+    ],
+    "fable": [
+     {
+      "id": "B-015",
+      "effect": "consider_level_2",
+      "interpretation": "interpreted"
+     }
+    ],
+    "gpt": [
+     {
+      "id": "gpt-121",
+      "effect": "assign_level_2",
+      "interpretation": "effect_inferred"
+     }
+    ]
+   }
+  },
+  {
+   "page": 12,
+   "span": "Behavioral outbursts at triage",
+   "by": {
+    "opus": [
+     {
+      "id": "B-050",
+      "effect": "assign_level_2",
+      "interpretation": "interpreted"
+     }
+    ],
+    "fable": [
+     {
+      "id": "B-042",
+      "effect": "consider_level_2",
+      "interpretation": "interpreted"
+     }
+    ],
+    "gemini": [
+     {
+      "id": "gemini-106",
+      "effect": "assign_level_2",
+      "interpretation": "effect_inferred"
+     }
+    ]
+   }
+  },
+  {
+   "page": 12,
+   "span": "Combativeness",
+   "by": {
+    "opus": [
+     {
+      "id": "B-051",
+      "effect": "assign_level_2",
+      "interpretation": "interpreted"
+     }
+    ],
+    "fable": [
+     {
+      "id": "B-043",
+      "effect": "consider_level_2",
+      "interpretation": "interpreted"
+     }
+    ],
+    "gemini": [
+     {
+      "id": "gemini-107",
+      "effect": "assign_level_2",
+      "interpretation": "effect_inferred"
+     }
+    ]
+   }
+  },
+  {
+   "page": 12,
+   "span": "Survivor of sexual violence",
+   "by": {
+    "opus": [
+     {
+      "id": "B-052",
+      "effect": "assign_level_2",
+      "interpretation": "interpreted"
+     }
+    ],
+    "fable": [
+     {
+      "id": "B-044",
+      "effect": "consider_level_2",
+      "interpretation": "interpreted"
+     }
+    ],
+    "gemini": [
+     {
+      "id": "gemini-108",
+      "effect": "assign_level_2",
+      "interpretation": "effect_inferred"
+     }
+    ]
+   }
+  },
+  {
+   "page": 12,
+   "span": "Acute grief reaction",
+   "by": {
+    "opus": [
+     {
+      "id": "B-054",
+      "effect": "assign_level_2",
+      "interpretation": "interpreted"
+     }
+    ],
+    "fable": [
+     {
+      "id": "B-046",
+      "effect": "consider_level_2",
+      "interpretation": "interpreted"
+     }
+    ],
+    "gemini": [
+     {
+      "id": "gemini-110",
+      "effect": "assign_level_2",
+      "interpretation": "effect_inferred"
+     }
+    ]
+   }
+  },
+  {
+   "page": 12,
+   "span": "Suicidal ideation, plan, or attempt",
+   "by": {
+    "opus": [
+     {
+      "id": "B-055",
+      "effect": "assign_level_2",
+      "interpretation": "interpreted"
+     }
+    ],
+    "fable": [
+     {
+      "id": "B-047",
+      "effect": "consider_level_2",
+      "interpretation": "interpreted"
+     }
+    ],
+    "gemini": [
+     {
+      "id": "gemini-111",
+      "effect": "assign_level_2",
+      "interpretation": "effect_inferred"
+     }
+    ]
+   }
+  },
+  {
+   "page": 12,
+   "span": "Prenatal loss",
+   "by": {
+    "opus": [
+     {
+      "id": "B-056",
+      "effect": "assign_level_2",
+      "interpretation": "interpreted"
+     }
+    ],
+    "fable": [
+     {
+      "id": "B-048",
+      "effect": "consider_level_2",
+      "interpretation": "interpreted"
+     }
+    ],
+    "gemini": [
+     {
+      "id": "gemini-112",
+      "effect": "assign_level_2",
+      "interpretation": "effect_inferred"
+     }
+    ]
+   }
+  },
+  {
+   "page": 14,
+   "span": "Pregnant patients with chest pain and/or shortness of breath, abdominal pain, or headache",
+   "by": {
+    "opus": [
+     {
+      "id": "B-096",
+      "effect": "assign_level_2",
+      "interpretation": "verbatim"
+     },
+     {
+      "id": "B-097",
+      "effect": "assign_level_2",
+      "interpretation": "verbatim"
+     },
+     {
+      "id": "B-098",
+      "effect": "assign_level_2",
+      "interpretation": "verbatim"
+     },
+     {
+      "id": "B-099",
+      "effect": "assign_level_2",
+      "interpretation": "verbatim"
+     }
+    ],
+    "gpt": [
+     {
+      "id": "gpt-208",
+      "effect": "assign_level_2",
+      "interpretation": "interpreted"
+     }
+    ],
+    "gemini": [
+     {
+      "id": "gemini-178",
+      "effect": "assign_level_2",
+      "interpretation": "verbatim"
+     }
+    ]
+   }
+  },
+  {
+   "page": 19,
+   "span": "Patients who require two or more resources are assigned level 3",
+   "by": {
+    "opus": [
+     {
+      "id": "C-031",
+      "effect": "resource_band",
+      "interpretation": "verbatim"
+     }
+    ],
+    "gpt": [
+     {
+      "id": "gpt-244",
+      "effect": "resource_band",
+      "interpretation": "verbatim"
+     }
+    ],
+    "gemini": [
+     {
+      "id": "gemini-219",
+      "effect": "assign_level_3",
+      "interpretation": "verbatim"
+     }
+    ]
+   }
+  },
+  {
+   "page": 5,
+   "span": "High risk-confused/distress?",
+   "by": {
+    "opus": [
+     {
+      "id": "B-002",
+      "effect": "assign_level_2",
+      "interpretation": "verbatim"
+     },
+     {
+      "id": "B-003",
+      "effect": "assign_level_2",
+      "interpretation": "interpreted"
+     },
+     {
+      "id": "B-004",
+      "effect": "assign_level_2",
+      "interpretation": "interpreted"
+     },
+     {
+      "id": "B-005",
+      "effect": "assign_level_2",
+      "interpretation": "interpreted"
+     }
+    ],
+    "gemini": [
+     {
+      "id": "gemini-018",
+      "effect": "assign_level_2",
+      "interpretation": "verbatim"
+     }
+    ]
+   }
+  },
+  {
+   "page": 5,
+   "span": "High-risk vital signs?",
+   "by": {
+    "opus": [
+     {
+      "id": "D-003",
+      "effect": "reassess_uptriage",
+      "interpretation": "verbatim"
+     }
+    ],
+    "gemini": [
+     {
+      "id": "gemini-020",
+      "effect": "reassess_uptriage",
+      "interpretation": "verbatim"
+     }
+    ]
+   }
+  },
+  {
+   "page": 5,
+   "span": "ESI levels 3, 4, and 5 are based on how many resources the nurse anticipates will be used",
+   "by": {
+    "gpt": [
+     {
+      "id": "gpt-015",
+      "effect": "resource_band",
+      "interpretation": "verbatim"
+     }
+    ],
+    "gemini": [
+     {
+      "id": "gemini-011",
+      "effect": "resource_band",
+      "interpretation": "verbatim"
+     }
+    ]
+   }
+  },
+  {
+   "page": 5,
+   "span": "reassess the acuity decision, potentially resulting in assignment of a higher acuity level as appropriate",
+   "by": {
+    "gpt": [
+     {
+      "id": "gpt-017",
+      "effect": "reassess_uptriage",
+      "interpretation": "verbatim"
+     }
+    ],
+    "gemini": [
+     {
+      "id": "gemini-012",
+      "effect": "reassess_uptriage",
+      "interpretation": "verbatim"
+     }
+    ]
+   }
+  },
+  {
+   "page": 6,
+   "span": "Confused/lethargic/disoriented?",
+   "by": {
+    "opus": [
+     {
+      "id": "B-007",
+      "effect": "assign_level_2",
+      "interpretation": "verbatim"
+     }
+    ],
+    "gpt": [
+     {
+      "id": "gpt-032",
+      "effect": "assign_level_2",
+      "interpretation": "effect_inferred"
+     }
+    ]
+   }
+  },
+  {
+   "page": 6,
+   "span": "> 60 > 55 > 40 > 35 > 30 > 20 > 20",
+   "by": {
+    "opus": [
+     {
+      "id": "D-005",
+      "effect": "reassess_uptriage",
+      "interpretation": "interpreted"
+     },
+     {
+      "id": "D-007",
+      "effect": "reassess_uptriage",
+      "interpretation": "interpreted"
+     },
+     {
+      "id": "D-009",
+      "effect": "reassess_uptriage",
+      "interpretation": "interpreted"
+     },
+     {
+      "id": "D-011",
+      "effect": "reassess_uptriage",
+      "interpretation": "interpreted"
+     },
+     {
+      "id": "D-013",
+      "effect": "reassess_uptriage",
+      "interpretation": "interpreted"
+     },
+     {
+      "id": "D-015",
+      "effect": "reassess_uptriage",
+      "interpretation": "interpreted"
+     },
+     {
+      "id": "D-017",
+      "effect": "reassess_uptriage",
+      "interpretation": "interpreted"
+     }
+    ],
+    "gemini": [
+     {
+      "id": "gemini-064",
+      "effect": "reassess_uptriage",
+      "interpretation": "verbatim"
+     },
+     {
+      "id": "gemini-066",
+      "effect": "reassess_uptriage",
+      "interpretation": "verbatim"
+     }
+    ]
+   }
+  },
+  {
+   "page": 6,
+   "span": "Incomplete immunizations",
+   "by": {
+    "opus": [
+     {
+      "id": "D-024",
+      "effect": "consider_level_2",
+      "interpretation": "interpreted"
+     }
+    ],
+    "fable": [
+     {
+      "id": "D-022",
+      "effect": "consider_level_2",
+      "interpretation": "interpreted"
+     }
+    ]
+   }
+  },
+  {
+   "page": 6,
+   "span": "No obvious source of fever",
+   "by": {
+    "opus": [
+     {
+      "id": "D-025",
+      "effect": "consider_level_2",
+      "interpretation": "interpreted"
+     }
+    ],
+    "fable": [
+     {
+      "id": "D-023",
+      "effect": "consider_level_2",
+      "interpretation": "interpreted"
+     }
+    ]
+   }
+  },
+  {
+   "page": 6,
+   "span": "How many different resources are needed?",
+   "by": {
+    "gpt": [
+     {
+      "id": "gpt-036",
+      "effect": "resource_band",
+      "interpretation": "effect_inferred"
+     },
+     {
+      "id": "gpt-037",
+      "effect": "resource_band",
+      "interpretation": "effect_inferred"
+     },
+     {
+      "id": "gpt-038",
+      "effect": "resource_band",
+      "interpretation": "effect_inferred"
+     }
+    ],
+    "gemini": [
+     {
+      "id": "gemini-035",
+      "effect": "resource_band",
+      "interpretation": "verbatim"
+     },
+     {
+      "id": "gemini-036",
+      "effect": "resource_band",
+      "interpretation": "verbatim"
+     },
+     {
+      "id": "gemini-037",
+      "effect": "resource_band",
+      "interpretation": "interpreted"
+     }
+    ]
+   }
+  },
+  {
+   "page": 11,
+   "span": "Confused/lethargic/disoriented?",
+   "by": {
+    "opus": [
+     {
+      "id": "B-016",
+      "effect": "assign_level_2",
+      "interpretation": "verbatim"
+     }
+    ],
+    "gpt": [
+     {
+      "id": "gpt-120",
+      "effect": "assign_level_2",
+      "interpretation": "effect_inferred"
+     }
+    ]
+   }
+  },
+  {
+   "page": 11,
+   "span": "Is the situation high-risk?",
+   "by": {
+    "opus": [
+     {
+      "id": "B-019",
+      "effect": "assign_level_2",
+      "interpretation": "verbatim"
+     }
+    ],
+    "fable": [
+     {
+      "id": "B-012",
+      "effect": "consider_level_2",
+      "interpretation": "interpreted"
+     }
+    ]
+   }
+  },
+  {
+   "page": 11,
+   "span": "Is the patient likely to deteriorate?",
+   "by": {
+    "opus": [
+     {
+      "id": "B-020",
+      "effect": "assign_level_2",
+      "interpretation": "verbatim"
+     }
+    ],
+    "fable": [
+     {
+      "id": "B-013",
+      "effect": "consider_level_2",
+      "interpretation": "interpreted"
+     }
+    ]
+   }
+  },
+  {
+   "page": 11,
+   "span": "Does the patient have an acute change in mental status?",
+   "by": {
+    "opus": [
+     {
+      "id": "B-021",
+      "effect": "assign_level_2",
+      "interpretation": "verbatim"
+     }
+    ],
+    "fable": [
+     {
+      "id": "B-014",
+      "effect": "consider_level_2",
+      "interpretation": "interpreted"
+     }
+    ]
+   }
+  },
+  {
+   "page": 12,
+   "span": "AMS is a high-risk complaint",
+   "by": {
+    "opus": [
+     {
+      "id": "B-041",
+      "effect": "assign_level_2",
+      "interpretation": "interpreted"
+     }
+    ],
+    "fable": [
+     {
+      "id": "B-034",
+      "effect": "assign_level_2",
+      "interpretation": "interpreted"
+     }
+    ]
+   }
+  },
+  {
+   "page": 13,
+   "span": "The high-risk patient is one who is currently ventilating and oxygenating adequately but is in respiratory distress and has the potential to rapidly deteriorate.",
+   "by": {
+    "opus": [
+     {
+      "id": "B-079",
+      "effect": "assign_level_2",
+      "interpretation": "interpreted"
+     }
+    ],
+    "fable": [
+     {
+      "id": "B-073",
+      "effect": "assign_level_2",
+      "interpretation": "interpreted"
+     }
+    ]
+   }
+  },
+  {
+   "page": 15,
+   "span": "Mechanisms of injury that warrant an ESI 2 designation include falls of 20 feet (6 meters) or more",
+   "by": {
+    "gpt": [
+     {
+      "id": "gpt-218",
+      "effect": "assign_level_2",
+      "interpretation": "verbatim"
+     }
+    ],
+    "gemini": [
+     {
+      "id": "gemini-183",
+      "effect": "assign_level_2",
+      "interpretation": "verbatim"
+     }
+    ]
+   }
+  },
+  {
+   "page": 20,
+   "span": "If that is the case the patient would be an ESI level 5",
+   "by": {
+    "gpt": [
+     {
+      "id": "gpt-282",
+      "effect": "resource_band",
+      "interpretation": "verbatim"
+     }
+    ],
+    "gemini": [
+     {
+      "id": "gemini-242",
+      "effect": "assign_level_5",
+      "interpretation": "verbatim"
+     }
+    ]
+   }
+  },
+  {
+   "page": 23,
+   "span": "SpO2 < 92%",
+   "by": {
+    "opus": [
+     {
+      "id": "D-042",
+      "effect": "reassess_uptriage",
+      "interpretation": "verbatim"
+     }
+    ],
+    "gemini": [
+     {
+      "id": "gemini-244",
+      "effect": "reassess_uptriage",
+      "interpretation": "verbatim"
+     }
+    ]
+   }
+  },
+  {
+   "page": 24,
+   "span": "< 90 days > 38\u00b0C (100.4\u00b0F) or < 36\u00b0C (96.8\u00b0F)",
+   "by": {
+    "opus": [
+     {
+      "id": "D-063",
+      "effect": "assign_level_2",
+      "interpretation": "interpreted"
+     },
+     {
+      "id": "D-064",
+      "effect": "consider_level_2",
+      "interpretation": "interpreted"
+     }
+    ],
+    "fable": [
+     {
+      "id": "D-049",
+      "effect": "consider_level_2",
+      "interpretation": "interpreted"
+     }
+    ]
+   }
+  },
+  {
+   "page": 29,
+   "span": "Requires immediate lifesaving intervention?",
+   "by": {
+    "opus": [
+     {
+      "id": "A-049",
+      "effect": "assign_level_1",
+      "interpretation": "verbatim"
+     }
+    ],
+    "gemini": [
+     {
+      "id": "gemini-279",
+      "effect": "assign_level_1",
+      "interpretation": "verbatim"
+     }
+    ]
+   }
+  },
+  {
+   "page": 29,
+   "span": "High-risk situation?",
+   "by": {
+    "opus": [
+     {
+      "id": "B-132",
+      "effect": "assign_level_2",
+      "interpretation": "verbatim"
+     }
+    ],
+    "gemini": [
+     {
+      "id": "gemini-280",
+      "effect": "assign_level_2",
+      "interpretation": "verbatim"
+     }
+    ]
+   }
+  },
+  {
+   "page": 29,
+   "span": "SpO2 < 92%",
+   "by": {
+    "opus": [
+     {
+      "id": "D-089",
+      "effect": "reassess_uptriage",
+      "interpretation": "verbatim"
+     }
+    ],
+    "gemini": [
+     {
+      "id": "gemini-284",
+      "effect": "reassess_uptriage",
+      "interpretation": "verbatim"
+     },
+     {
+      "id": "gemini-285",
+      "effect": "reassess_uptriage",
+      "interpretation": "verbatim"
+     },
+     {
+      "id": "gemini-286",
+      "effect": "reassess_uptriage",
+      "interpretation": "verbatim"
+     },
+     {
+      "id": "gemini-287",
+      "effect": "reassess_uptriage",
+      "interpretation": "verbatim"
+     },
+     {
+      "id": "gemini-288",
+      "effect": "reassess_uptriage",
+      "interpretation": "verbatim"
+     },
+     {
+      "id": "gemini-289",
+      "effect": "reassess_uptriage",
+      "interpretation": "verbatim"
+     },
+     {
+      "id": "gemini-290",
+      "effect": "reassess_uptriage",
+      "interpretation": "verbatim"
+     }
+    ]
+   }
+  },
+  {
+   "page": 30,
+   "span": "Clinical presentations requiring lifesaving interventions include the following: intubated, unresponsive, pulselessness, apneic, severe respiratory distress, profound hypotension or hypoglycemia.",
+   "by": {
+    "opus": [
+     {
+      "id": "A-051",
+      "effect": "assign_level_1",
+      "interpretation": "verbatim"
+     },
+     {
+      "id": "A-052",
+      "effect": "assign_level_1",
+      "interpretation": "verbatim"
+     },
+     {
+      "id": "A-053",
+      "effect": "assign_level_1",
+      "interpretation": "verbatim"
+     },
+     {
+      "id": "A-054",
+      "effect": "assign_level_1",
+      "interpretation": "verbatim"
+     },
+     {
+      "id": "A-055",
+      "effect": "assign_level_1",
+      "interpretation": "verbatim"
+     },
+     {
+      "id": "A-056",
+      "effect": "assign_level_1",
+      "interpretation": "verbatim"
+     },
+     {
+      "id": "A-057",
+      "effect": "assign_level_1",
+      "interpretation": "interpreted"
+     }
+    ],
+    "gemini": [
+     {
+      "id": "gemini-292",
+      "effect": "assign_level_1",
+      "interpretation": "effect_inferred"
+     }
+    ]
+   }
+  },
+  {
+   "page": 30,
+   "span": "Reassess to determine whether the patient warrants a higher acuity level if a patient has one or more vital signs outside the normal parameters for the patient.",
+   "by": {
+    "opus": [
+     {
+      "id": "D-090",
+      "effect": "reassess_uptriage",
+      "interpretation": "verbatim"
+     }
+    ],
+    "gemini": [
+     {
+      "id": "gemini-315",
+      "effect": "reassess_uptriage",
+      "interpretation": "verbatim"
+     }
+    ]
+   }
+  },
+  {
+   "page": 30,
+   "span": "1-28 days of age: Assign at least ESI 2 if T > 38\u00b0 C",
+   "by": {
+    "opus": [
+     {
+      "id": "D-091",
+      "effect": "assign_level_2",
+      "interpretation": "verbatim"
+     }
+    ],
+    "gemini": [
+     {
+      "id": "gemini-316",
+      "effect": "assign_level_2",
+      "interpretation": "verbatim"
+     }
+    ]
+   }
+  },
+  {
+   "page": 30,
+   "span": "1-3 months: Consider assigning ESI 2 if T > 38 \u00b0 C",
+   "by": {
+    "opus": [
+     {
+      "id": "D-092",
+      "effect": "consider_level_2",
+      "interpretation": "verbatim"
+     }
+    ],
+    "gemini": [
+     {
+      "id": "gemini-317",
+      "effect": "consider_level_2",
+      "interpretation": "verbatim"
+     }
+    ]
+   }
+  },
+  {
+   "page": 30,
+   "span": "T > 39\u00b0C (102.2\u00b0F) or < 36\u00b0C (96.8\u00b0F)",
+   "by": {
+    "opus": [
+     {
+      "id": "D-093",
+      "effect": "consider_level_2",
+      "interpretation": "interpreted"
+     },
+     {
+      "id": "D-094",
+      "effect": "consider_level_2",
+      "interpretation": "interpreted"
+     }
+    ],
+    "gemini": [
+     {
+      "id": "gemini-318",
+      "effect": "consider_level_2",
+      "interpretation": "verbatim"
+     }
+    ]
+   }
+  }
+ ]
+}

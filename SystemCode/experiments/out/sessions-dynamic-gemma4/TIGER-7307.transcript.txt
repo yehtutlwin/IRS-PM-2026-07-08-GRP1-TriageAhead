@@ -1,0 +1,21 @@
+session TIGER-7307   started 2026-09-26 03:42   (generated from messages)
+
+03:42:28  BOT  I'm here to help get you started. Is the patient awake and responding normally, and are they currently experiencing any chest pain, trouble breathing, or heavy bleeding?   [slot dyn:red_flags.responsive+red_flags.chest_pain_now+red_flags.breathing_difficulty+red_flags.heavy_bleeding]
+03:42:29  THEM He is awake and breathing normally, but he answers slowly. There is no heavy bleeding or trouble breathing.   [slot dyn:red_flags.responsive+red_flags.chest_pain_now+red_flags.breathing_difficulty+red_flags.heavy_bleeding]
+03:42:33  BOT  I'm glad to hear he is awake and breathing. To make sure we have the full picture, is he currently experiencing any chest pain, trouble breathing, or heavy bleeding?   [slot dyn:red_flags.chest_pain_now+red_flags.breathing_difficulty+red_flags.heavy_bleeding]
+03:42:34  THEM No, he is not having any chest pain, trouble breathing, or heavy bleeding.   [slot dyn:red_flags.chest_pain_now+red_flags.breathing_difficulty+red_flags.heavy_bleeding]
+03:42:39  BOT  I'm glad he's stable. Could you tell me what happened, when it started, and how severe the pain is on a scale of 0 to 10?   [slot dyn:complaint.category+complaint.text+complaint.onset+complaint.pain_rating]
+03:42:40  THEM His abdomen has been swelling and his eyes have been yellowing for two days. He reports his abdominal discomfort is a 3/10.   [slot dyn:complaint.category+complaint.text+complaint.onset+complaint.pain_rating]
+03:42:47  BOT  I'm sorry to hear about the swelling and yellowing. To help the team prepare, does he take any regular medications, and does he have any known allergies or other medical conditions like heart problems or diabetes?   [slot dyn:M.medications+A.allergies+history.conditions+history.immunocompromised]
+03:42:48  THEM He takes lactulose, spironolactone, and furosemide. He has cirrhosis from chronic hepatitis B and has no known allergies.   [slot dyn:M.medications+A.allergies+history.conditions+history.immunocompromised]
+03:42:53  BOT  Thank you for sharing those details. Is he immunocompromised, or is there any chance of pregnancy if the patient is female?   [slot dyn:history.immunocompromised+history.pregnant_or_postpartum]
+03:42:54  THEM I don't know.   [slot dyn:history.immunocompromised+history.pregnant_or_postpartum]
+03:42:58  BOT  I understand. To help the team further, has he had any fever, a rash, traveled outside the country in the last two weeks, or been in contact with anyone who is sick?   [slot dyn:infection.fever+infection.rash+infection.travel_14d+infection.contacts]
+03:42:59  THEM He has no fever. I don't know about a rash, travel, or contact with anyone sick.   [slot dyn:infection.fever+infection.rash+infection.travel_14d+infection.contacts]
+03:43:03  BOT  Thank you for confirming there is no fever. Could you tell me if he has developed any rashes, traveled outside the country in the last two weeks, or been in contact with anyone who is sick?   [slot dyn:infection.rash+infection.travel_14d+infection.contacts]
+03:43:04  THEM I don't know.   [slot dyn:infection.rash+infection.travel_14d+infection.contacts]
+03:43:08  BOT  I understand. To help the team, could you tell me when he last had anything to eat or drink, and provide his full name and date of birth?   [slot dyn:L.last_intake+identity.name+identity.dob]
+03:43:09  THEM He last ate a small bowl of rice at noon. His name is not provided, but his date of birth is 07 Jul 1968.   [slot dyn:L.last_intake+identity.name+identity.dob]
+03:43:13  BOT  Thank you for providing his birth date. Could you please tell me his full name so I can update the hospital records?   [slot dyn:identity.name]
+03:43:15  THEM I don't know.   [slot dyn:identity.name]
+03:43:16  BOT  Thank you - that's everything for now. Show the code TIGER-7307 at the counter when you arrive. (ack)

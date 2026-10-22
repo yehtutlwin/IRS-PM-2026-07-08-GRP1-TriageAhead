@@ -1,0 +1,188 @@
+{
+ "persona_backend": "ollama",
+ "persona_model": "gemma4:12b",
+ "interview": {
+  "interview_mode": "dynamic",
+  "backend": "claude",
+  "model": "claude-opus-5-5",
+  "dyn_max_fields": 4,
+  "temperature": "backend default",
+  "usage": {
+   "calls": 158,
+   "input": 472438,
+   "output": 38895,
+   "cache_read": 0,
+   "cache_write": 0
+  },
+  "cost_usd": 2.6677
+ },
+ "tag": "v2q-fair-claude-interview-local-persona-t0",
+ "cost_usd": {
+  "interview": 2.6677,
+  "persona": 0
+ },
+ "results": [
+  {
+   "sorry": 0,
+   "you_event": 1,
+   "after_report_not_for_nurse": 0,
+   "report_ok": true,
+   "questions": 20,
+   "questions_to_report": 13,
+   "reasks": 4,
+   "floor": "at least ESI-2",
+   "floor_ok": true,
+   "rules_ok": true,
+   "fired": [
+    "B-30.anticoagulated-trauma"
+   ],
+   "hits": 9,
+   "total": 9,
+   "misses": [],
+   "danger_miss": false,
+   "persona": "P1-fall-anticoag",
+   "run": 1,
+   "session": "MERLION-8874",
+   "turns": 20,
+   "interview_tokens": {
+    "calls": 40,
+    "input": 123681,
+    "output": 10593,
+    "cache_read": 0,
+    "cache_write": 0
+   },
+   "transcript": "sessions-task-i-20261015-2026-v2q-fair-claude-interview-local-persona-t0/MERLION-8874.transcript.txt"
+  },
+  {
+   "sorry": 0,
+   "you_event": 0,
+   "after_report_not_for_nurse": 0,
+   "report_ok": true,
+   "questions": 19,
+   "questions_to_report": 10,
+   "reasks": 4,
+   "floor": "at least ESI-2",
+   "floor_ok": true,
+   "rules_ok": true,
+   "fired": [
+    "B-38.pregnant-chest-pain-breathlessness-abdo-pain-or-headache"
+   ],
+   "hits": 5,
+   "total": 6,
+   "misses": [
+    "complaint.fever: want=False got=None"
+   ],
+   "danger_miss": false,
+   "persona": "P3-abdo-pregnant",
+   "run": 1,
+   "session": "OTTER-9597",
+   "turns": 19,
+   "interview_tokens": {
+    "calls": 38,
+    "input": 116783,
+    "output": 8385,
+    "cache_read": 0,
+    "cache_write": 0
+   },
+   "transcript": "sessions-task-i-20261015-2026-v2q-fair-claude-interview-local-persona-t0/OTTER-9597.transcript.txt"
+  },
+  {
+   "sorry": 0,
+   "you_event": 0,
+   "after_report_not_for_nurse": 0,
+   "report_ok": true,
+   "questions": 11,
+   "questions_to_report": 6,
+   "reasks": 0,
+   "floor": "at least ESI-2",
+   "floor_ok": true,
+   "rules_ok": true,
+   "fired": [
+    "B-05.stroke-signs"
+   ],
+   "hits": 3,
+   "total": 6,
+   "misses": [
+    "stroke.speech_change: want=True got=None",
+    "stroke.arm_weakness: want=True got=None",
+    "complaint.fever: want=False got=None"
+   ],
+   "danger_miss": false,
+   "persona": "P6-stroke-resolved",
+   "run": 1,
+   "session": "EAGLE-1162",
+   "turns": 11,
+   "interview_tokens": {
+    "calls": 22,
+    "input": 65485,
+    "output": 5127,
+    "cache_read": 0,
+    "cache_write": 0
+   },
+   "transcript": "sessions-task-i-20261015-2026-v2q-fair-claude-interview-local-persona-t0/EAGLE-1162.transcript.txt"
+  },
+  {
+   "sorry": 0,
+   "you_event": 0,
+   "after_report_not_for_nurse": 0,
+   "report_ok": true,
+   "questions": 14,
+   "questions_to_report": 12,
+   "reasks": 2,
+   "floor": "at least ESI-2",
+   "floor_ok": false,
+   "rules_ok": true,
+   "fired": [
+    "B-01.new-altered-mental-status"
+   ],
+   "hits": 5,
+   "total": 7,
+   "misses": [
+    "complaint.trauma: want=False got=None",
+    "history.gout: want=True got=None"
+   ],
+   "danger_miss": false,
+   "persona": "P6-acute-gout",
+   "run": 1,
+   "session": "TIGER-6270",
+   "turns": 14,
+   "interview_tokens": {
+    "calls": 28,
+    "input": 79767,
+    "output": 6201,
+    "cache_read": 0,
+    "cache_write": 0
+   },
+   "transcript": "sessions-task-i-20261015-2026-v2q-fair-claude-interview-local-persona-t0/TIGER-6270.transcript.txt"
+  },
+  {
+   "sorry": 0,
+   "you_event": 0,
+   "after_report_not_for_nurse": 0,
+   "report_ok": true,
+   "questions": 15,
+   "questions_to_report": 13,
+   "reasks": 2,
+   "floor": null,
+   "floor_ok": true,
+   "rules_ok": true,
+   "fired": [],
+   "hits": 7,
+   "total": 7,
+   "misses": [],
+   "danger_miss": false,
+   "persona": "P9-breathing-no-pain",
+   "run": 1,
+   "session": "DURIAN-8332",
+   "turns": 15,
+   "interview_tokens": {
+    "calls": 30,
+    "input": 86722,
+    "output": 8589,
+    "cache_read": 0,
+    "cache_write": 0
+   },
+   "transcript": "sessions-task-i-20261015-2026-v2q-fair-claude-interview-local-persona-t0/DURIAN-8332.transcript.txt"
+  }
+ ]
+}

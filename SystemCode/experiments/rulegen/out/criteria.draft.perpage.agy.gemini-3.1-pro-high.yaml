@@ -1,0 +1,1132 @@
+- assessed_via: reported
+  decision_point: B
+  id: B-61.acs-suspicion
+  provenance: verbatim
+  source: ESI v5 p.12 (Examples of high-risk situations)
+  span: Active chest pain, suspicious for acute coronary syndrome but does not require an immediate lifesaving
+    intervention.
+  when:
+    equals: true
+    field: complaint.acs_suspicion
+- assessed_via: observed
+  decision_point: B
+  id: B-62.stroke-signs
+  provenance: verbatim
+  source: ESI v5 p.12 (Examples of high-risk situations)
+  span: Signs of a stroke but does not meet level-1 criteria.
+  when:
+    equals: true
+    field: complaint.stroke_signs
+- assessed_via: reported
+  decision_point: B
+  id: B-63.ectopic-pregnancy
+  provenance: verbatim
+  source: ESI v5 p.12 (Examples of high-risk situations)
+  span: A possible ectopic pregnancy, hemodynamically stable.
+  when:
+    equals: true
+    field: complaint.possible_ectopic_pregnancy
+- assessed_via: reported
+  decision_point: B
+  id: B-64.immunocompromised-fever
+  provenance: verbatim
+  source: ESI v5 p.12 (Examples of high-risk situations)
+  span: A patient on chemotherapy, and therefore immunocompromised, with a fever.
+  when:
+    all:
+    - equals: true
+      field: history.immunocompromised
+    - equals: true
+      field: complaint.fever
+- assessed_via: reported
+  decision_point: B
+  id: B-65.transplant-fever-infection
+  provenance: verbatim
+  source: ESI v5 p.12 (Examples of high-risk situations)
+  span: Transplant recipient presenting with a fever or other indication of infection.
+  when:
+    all:
+    - equals: true
+      field: history.transplant_recipient_or_listed
+    - any:
+      - equals: true
+        field: complaint.fever
+      - equals: true
+        field: complaint.infection_signs
+- assessed_via: reported
+  decision_point: B
+  id: B-66.suicidal-homicidal
+  provenance: verbatim
+  source: ESI v5 p.12 (Examples of high-risk situations)
+  span: Actively suicidal or homicidal patient
+  when:
+    equals: true
+    field: complaint.danger_to_self_or_others
+- assessed_via: reported
+  decision_point: B
+  id: B-67.needle-stick
+  provenance: verbatim
+  source: ESI v5 p.12 (Examples of high-risk situations)
+  span: A needle stick in a health care worker (time sensitive to postexposure prophylaxis treatment)
+  when:
+    equals: true
+    field: complaint.needle_stick_healthcare_worker
+- assessed_via: reported
+  decision_point: B
+  id: B-68.sexual-assault
+  provenance: verbatim
+  source: ESI v5 p.12 (Examples of high-risk situations)
+  span: Sexual assault survivor
+  when:
+    equals: true
+    field: complaint.sexual_assault
+- assessed_via: observed
+  decision_point: B
+  id: B-69.increasing-respiratory-effort
+  provenance: verbatim
+  source: ESI v5 p.12 (Examples of high-risk situations)
+  span: Increasing respiratory effort
+  when:
+    equals: true
+    field: complaint.increasing_respiratory_effort
+- assessed_via: reported
+  decision_point: B
+  id: B-70.postpartum-hemorrhage
+  provenance: verbatim
+  source: ESI v5 p.12 (Examples of high-risk situations)
+  span: Postpartum hemorrhage
+  when:
+    equals: true
+    field: complaint.postpartum_hemorrhage
+- assessed_via: observed
+  decision_point: B
+  id: B-71.new-confusion
+  provenance: verbatim
+  source: ESI v5 p.12 (New Onset Confusion, Lethargy, or Disorientation)
+  span: If the patient’s history is unknown, and the patient presents as confused, lethargic, or disoriented,
+    the nurse should assume this condition is new and assign an ESI level 2.
+  when:
+    equals: true
+    field: obs.new_confusion_lethargy_disorientation
+- assessed_via: reported
+  decision_point: B
+  effect_override: consider
+  id: B-72.severe-pain
+  provenance: verbatim
+  source: ESI v5 p.12 (Severe Pain or Distress)
+  span: All patients who have a pain rating of 7/10 or greater should be considered for meeting ESI level-2
+    criteria.
+  when:
+    field: complaint.pain_rating
+    gte: 7
+- assessed_via: reported
+  decision_point: B
+  id: B-73.systemic-pain
+  notes: Operationalized 'systemic disruption' to a specific string value for pain_cause_class.
+  provenance: operationalized
+  source: ESI v5 p.12 (Severe Pain or Distress)
+  span: Patients experiencing severe pain or distress as a result of a systemic disruption, for example,
+    renal colic, cancer, or sickle cell crisis, should be triaged as ESI level 2
+  when:
+    equals: systemic
+    field: complaint.pain_cause_class
+- assessed_via: observed
+  decision_point: B
+  id: B-74.severe-distress
+  notes: Grouped the various examples of physiological/psychological distress into a single field.
+  provenance: operationalized
+  source: ESI v5 p.12 (Distress)
+  span: In consideration of assigning an ESI level 2, the nurse must assess for severe distress, which
+    can be physiological or psychological.
+  when:
+    equals: true
+    field: obs.severe_psychological_distress
+- assessed_via: reported
+  decision_point: B
+  id: B-75.thunderclap-headache
+  notes: Created an operationalized field for headache_type to capture thunderclap headaches.
+  provenance: operationalized
+  source: ESI v5 p.12 (Neurological Concerns)
+  span: Most concerning is the “thunderclap headache” (a severe, rapid-onset headache), which is often
+    associated with subarachnoid hemorrhage (Edlow, 2018) and warrants immediate evaluation.
+  when:
+    equals: thunderclap
+    field: complaint.headache_type
+- assessed_via: reported
+  decision_point: B
+  id: B-76.headache-neck-pain
+  notes: Combined headache with neck pain or nuchal rigidity into a logical rule.
+  provenance: operationalized
+  source: ESI v5 p.12 (Neurological Concerns)
+  span: Any headache accompanied by neck pain or nuchal rigidity falls into this category.
+  when:
+    all:
+    - equals: true
+      field: complaint.headache
+    - any:
+      - equals: true
+        field: complaint.neck_pain
+      - equals: true
+        field: obs.nuchal_rigidity
+- assessed_via: reported
+  decision_point: B
+  id: B-77.headache-plus-symptoms
+  notes: Created combinations of headache with other specified concerning symptoms.
+  provenance: operationalized
+  source: ESI v5 p.12 (Neurological Concerns)
+  span: Other presentations of concern that warrant an ESI 2 designation include headache plus fever,
+    vomiting, lower back pain, altered mental status, and/or signs and symptoms of stroke
+  when:
+    all:
+    - equals: true
+      field: complaint.headache
+    - any:
+      - equals: true
+        field: complaint.fever
+      - equals: true
+        field: complaint.vomiting
+      - equals: true
+        field: complaint.lower_back_pain
+      - equals: true
+        field: obs.new_confusion_lethargy_disorientation
+      - equals: true
+        field: complaint.stroke_signs
+- assessed_via: observed
+  decision_point: B
+  id: B-78.post-ictal
+  notes: Created an operationalized obs.post_ictal field.
+  provenance: operationalized
+  source: ESI v5 p.12 (Neurological Concerns)
+  span: Patients presenting post-ictal are triaged as ESI level 2 (altered mental status).
+  when:
+    equals: true
+    field: obs.post_ictal
+- assessed_via: observed
+  decision_point: A
+  id: A-61.requires-lifesaving-intervention
+  provenance: verbatim
+  source: ESI v5 p.9 (Decision Point A)
+  span: Requires immediate life-saving intervention?
+  when:
+    equals: true
+    field: obs.requires_lifesaving_intervention
+- assessed_via: observed
+  decision_point: A
+  id: A-62.unresponsiveness
+  notes: Mapped 'unresponsiveness' to AVPU equals U.
+  provenance: operationalized
+  source: ESI v5 p.9 (Decision Point A)
+  span: unresponsiveness
+  when:
+    equals: U
+    field: obs.avpu
+- assessed_via: observed
+  decision_point: A
+  id: A-63.active-seizure
+  provenance: verbatim
+  source: ESI v5 p.9 (Decision Point A)
+  span: active seizure
+  when:
+    equals: true
+    field: obs.active_seizure
+- assessed_via: observed
+  decision_point: A
+  id: A-64.occluded-airway
+  notes: Mapped 'occluded airway' to obs.airway_occluded_or_ineffective_clearance from standard vocabulary.
+  provenance: operationalized
+  source: ESI v5 p.9 (Decision Point A)
+  span: occluded airway
+  when:
+    equals: true
+    field: obs.airway_occluded_or_ineffective_clearance
+- assessed_via: observed
+  decision_point: A
+  id: A-65.ineffective-gas-exchange
+  notes: Mapped to a new field 'obs.impaired_gas_exchange'.
+  provenance: operationalized
+  source: ESI v5 p.9 (Decision Point A)
+  span: ineffective gas exchange
+  when:
+    equals: true
+    field: obs.impaired_gas_exchange
+- assessed_via: observed
+  decision_point: A
+  id: A-66.ineffective-decreased-perfusion
+  notes: Mapped to 'obs.hypoperfusion_signs' from standard vocabulary.
+  provenance: operationalized
+  source: ESI v5 p.9 (Decision Point A)
+  span: ineffective/decreased perfusion
+  when:
+    equals: true
+    field: obs.hypoperfusion_signs
+- assessed_via: observed
+  decision_point: A
+  id: A-67.ineffective-airway-clearance
+  provenance: verbatim
+  source: ESI v5 p.9 (Examples of ESI Level-1 Criteria)
+  span: Ineffective airway clearance
+  when:
+    equals: true
+    field: obs.airway_occluded_or_ineffective_clearance
+- assessed_via: observed
+  decision_point: A
+  id: A-68.ineffective-respiratory-pattern
+  notes: Mapped to 'obs.severe_respiratory_distress'.
+  provenance: operationalized
+  source: ESI v5 p.9 (Examples of ESI Level-1 Criteria)
+  span: Ineffective respiratory pattern
+  when:
+    equals: true
+    field: obs.severe_respiratory_distress
+- assessed_via: observed
+  decision_point: A
+  id: A-69.impaired-gas-exchange
+  provenance: verbatim
+  source: ESI v5 p.9 (Examples of ESI Level-1 Criteria)
+  span: Impaired gas exchange
+  when:
+    equals: true
+    field: obs.impaired_gas_exchange
+- assessed_via: observed
+  decision_point: A
+  id: A-70.ineffective-tissue-perfusion
+  provenance: verbatim
+  source: ESI v5 p.9 (Examples of ESI Level-1 Criteria)
+  span: Ineffective tissue perfusion
+  when:
+    equals: true
+    field: obs.hypoperfusion_signs
+- assessed_via: observed
+  decision_point: A
+  id: A-71.obtunded-unresponsive-patient
+  provenance: verbatim
+  source: ESI v5 p.9 (Examples of ESI Level-1 Criteria)
+  span: Obtunded/unresponsive patient
+  when:
+    equals: true
+    field: obs.obtunded_unresponsive
+- assessed_via: vitals
+  decision_point: A
+  id: A-72.spo2-lt-90-respiratory-compromise
+  provenance: verbatim
+  source: ESI v5 p.9 (Examples of ESI Level-1 Criteria)
+  span: SpO2 < 90% that is not the patient’s norm, with other signs of respiratory compromise
+  when:
+    all:
+    - field: vitals.spo2
+      lt: 90
+    - equals: false
+      field: vitals.spo2_is_patients_norm
+    - equals: true
+      field: obs.respiratory_compromise_signs
+- assessed_via: observed
+  decision_point: A
+  id: A-73.anaphylaxis
+  provenance: verbatim
+  source: ESI v5 p.9 (Examples of ESI Level-1 Criteria)
+  span: Anaphylaxis
+  when:
+    equals: true
+    field: obs.anaphylaxis
+- assessed_via: vitals
+  decision_point: A
+  id: A-74.hypotension-hypoperfusion
+  provenance: verbatim
+  source: ESI v5 p.9 (Examples of ESI Level-1 Criteria)
+  span: Hypotension with signs of hypoperfusion
+  when:
+    all:
+    - equals: true
+      field: vitals.hypotension
+    - equals: true
+      field: obs.hypoperfusion_signs
+- assessed_via: vitals
+  decision_point: A
+  id: A-75.hypoglycemia
+  notes: Mapped to 'vitals.profound_hypoglycemia' from standard vocabulary.
+  provenance: operationalized
+  source: ESI v5 p.9 (Examples of ESI Level-1 Criteria)
+  span: Hypoglycemia
+  when:
+    equals: true
+    field: vitals.profound_hypoglycemia
+- assessed_via: vitals
+  decision_point: A
+  id: A-76.severe-bradycardia-tachycardia
+  notes: Mapped to 'vitals.extreme_heart_rate' from standard vocabulary.
+  provenance: operationalized
+  source: ESI v5 p.9 (Examples of ESI Level-1 Criteria)
+  span: Severe bradycardia or tachycardia
+  when:
+    equals: true
+    field: vitals.extreme_heart_rate
+- assessed_via: observed
+  decision_point: A
+  id: A-77.flaccid-infant
+  provenance: verbatim
+  source: ESI v5 p.9 (Examples of ESI Level-1 Criteria)
+  span: Flaccid infant
+  when:
+    all:
+    - equals: infant
+      field: patient.age_group
+    - equals: true
+      field: obs.flaccid
+- assessed_via: observed
+  decision_point: A
+  id: A-78.cardiac-pulmonary-arrest
+  provenance: verbatim
+  source: ESI v5 p.9 (Examples of ESI Level-1 Criteria)
+  span: Cardiac and/or pulmonary arrest (or appears to be imminent)
+  when:
+    equals: true
+    field: obs.cardiac_or_pulmonary_arrest
+- assessed_via: observed
+  decision_point: A
+  id: A-79.penetrating-trauma
+  notes: Operationalized 'penetrating trauma' and specific regions into distinct fields.
+  provenance: operationalized
+  source: ESI v5 p.9 (Examples of ESI Level-1 Criteria)
+  span: Penetrating trauma of head, neck, abdomen, chest requiring a lifesaving intervention
+  when:
+    all:
+    - equals: penetrating_trauma
+      field: E.mechanism
+    - field: E.body_region
+      in:
+      - head
+      - neck
+      - abdomen
+      - chest
+    - equals: true
+      field: obs.requires_lifesaving_intervention
+- assessed_via: observed
+  decision_point: B
+  id: B-79.high-risk-situation
+  provenance: verbatim
+  source: ESI v5 p.11 (Decision Point B)
+  span: Is the situation high-risk?
+  when:
+    equals: true
+    field: obs.high_risk_situation
+- assessed_via: observed
+  decision_point: B
+  id: B-80.likely-to-deteriorate
+  provenance: verbatim
+  source: ESI v5 p.11 (Decision Point B)
+  span: Is the patient likely to deteriorate?
+  when:
+    equals: true
+    field: obs.likely_to_deteriorate
+- assessed_via: observed
+  decision_point: B
+  id: B-81.acute-change-mental-status
+  provenance: verbatim
+  source: ESI v5 p.11 (Decision Point B)
+  span: Does the patient have an acute change in mental status?
+  when:
+    equals: true
+    field: obs.new_confusion_lethargy_disorientation
+- assessed_via: reported
+  decision_point: B
+  id: B-82.severe-pain-or-distress
+  provenance: verbatim
+  source: ESI v5 p.11 (Decision Point B)
+  span: Is the patient in severe pain or distress (physiological or psychological)?
+  when:
+    equals: true
+    field: complaint.severe_pain_or_distress
+- assessed_via: observed
+  decision_point: B
+  id: B-83.time-sensitive-treatment
+  provenance: verbatim
+  source: ESI v5 p.11 (Decision Point B)
+  span: presents with symptoms suggestive of a condition requiring time-sensitive treatment
+  when:
+    equals: true
+    field: obs.condition_requiring_time_sensitive_treatment
+- assessed_via: observed
+  decision_point: B
+  id: B-84.threat-to-life-limb-sight-organ
+  provenance: verbatim
+  source: ESI v5 p.11 (Decision Point B)
+  span: potential threat to life, limb, sight, or organ
+  when:
+    equals: true
+    field: obs.potential_threat_life_limb_sight_organ
+- assessed_via: observed
+  decision_point: B
+  id: B-85.subtle-mental-status-change-pediatric
+  provenance: verbatim
+  source: ESI v5 p.13 (Neurological concerns)
+  span: A subtle change in a pediatric patient’s mental status can be suggestive of a change in hemodynamics
+    and should be immediately investigated as high risk.
+  when:
+    all:
+    - equals: pediatric
+      field: patient.age_group
+    - equals: true
+      field: obs.subtle_mental_status_change
+- assessed_via: observed
+  decision_point: B
+  id: B-86.cannot-manage-secretions-or-stridor
+  provenance: verbatim
+  source: ESI v5 p.13 (Ear, Nose, and Throat Concerns)
+  span: Patients who are unable to manage their own secretions and/or exhibit respiratory stridor are
+    extremely high-risk patients and should be assigned an ESI level of 2.
+  when:
+    any:
+    - equals: true
+      field: obs.cannot_manage_secretions
+    - equals: true
+      field: obs.stridor
+- assessed_via: reported
+  decision_point: B
+  id: B-87.high-risk-epistaxis
+  notes: Operationalized specific epistaxis high-risk criteria using an 'all' block for epistaxis combined
+    with an 'any' block for the specific conditions mentioned.
+  provenance: operationalized
+  source: ESI v5 p.13 (Ear, Nose, and Throat Concerns)
+  span: Several etiologies of epistaxis represent high-risk situations. Examples include brisk bleeding
+    secondary to posterior nosebleed or when experienced by a patient with known thrombocytopenia, clotting
+    dyscrasias, and use of warfarin or other anti-coagulants (Krulewitz & Fix, 2019; Hamlett et al., 2021).
+    In these situations, patients are assigned an ESI level of 2.
+  when:
+    all:
+    - equals: true
+      field: complaint.epistaxis
+    - any:
+      - equals: true
+        field: complaint.brisk_or_posterior_bleeding
+      - equals: true
+        field: history.thrombocytopenia_or_clotting_disorder
+      - equals: true
+        field: M.anticoagulant.status
+- assessed_via: reported
+  decision_point: B
+  id: B-88.button-battery-ingestion
+  notes: Operationalized 'high risk of complication' and 'extremely time sensitive' as a Decision Point
+    B criterion.
+  provenance: operationalized
+  source: ESI v5 p.13 (Ear, Nose, and Throat Concerns)
+  span: Esophageal button battery ingestion has a high risk of complication, especially in children less
+    than 6 years of age and involving batteries greater than 20 mm in diameter (Mubarak et al., 2021).
+    This presentation is extremely time sensitive.
+  when:
+    equals: true
+    field: complaint.button_battery_or_magnet_ingestion
+- assessed_via: observed
+  decision_point: A
+  id: A-80.severe-respiratory-distress
+  provenance: verbatim
+  source: ESI v5 p.13 (Respiratory Concerns)
+  span: Patients in severe respiratory distress who require immediate lifesaving intervention, such as
+    intubation, meet level-1 criteria.
+  when:
+    all:
+    - equals: true
+      field: obs.severe_respiratory_distress
+    - equals: true
+      field: obs.requires_lifesaving_intervention
+- assessed_via: observed
+  decision_point: A
+  id: A-81.unstable-chest-pain
+  notes: Mapped 'physiologically unstable' to hemodynamically_unstable and 'require immediate interventions'
+    to requires_lifesaving_intervention.
+  provenance: operationalized
+  source: ESI v5 p.13 (Cardiovascular)
+  span: Patients with chest pain who are physiologically unstable and require immediate interventions
+    such as intubation or hemodynamic support should be triaged as ESI level 1.
+  when:
+    all:
+    - equals: true
+      field: complaint.chest_pain
+    - equals: true
+      field: obs.hemodynamically_unstable
+    - equals: true
+      field: obs.requires_lifesaving_intervention
+- assessed_via: observed
+  decision_point: B
+  id: B-89.chest-pain-abnormal-ecg
+  provenance: verbatim
+  source: ESI v5 p.13 (Cardiovascular)
+  span: An ECG within 10 minutes for patients with concerns of chest pain may also be helpful in determining
+    acuity. If the ECG is abnormal, patients would be assigned level 2.
+  when:
+    all:
+    - equals: true
+      field: complaint.chest_pain
+    - equals: true
+      field: obs.abnormal_ecg
+- assessed_via: reported
+  decision_point: B
+  id: B-90.button-battery-magnet-ingestion
+  notes: Operationalized 'time sensitive presentations, with high morbidity' as ESI 2 (high risk).
+  provenance: operationalized
+  source: ESI v5 p.14 (Abdominal and Gastrointestinal Concerns)
+  span: Button battery or earth magnet ingestion are time sensitive presentations, with high morbidity
+  when:
+    equals: true
+    field: complaint.button_battery_or_magnet_ingestion
+- assessed_via: reported
+  decision_point: B
+  id: B-91.abd-pain-pregnant-postpartum
+  notes: Positive answer to high-risk assessment question for abdominal pain operationalized as ESI 2.
+  provenance: operationalized
+  source: ESI v5 p.14 (Abdominal and Gastrointestinal Concerns)
+  span: Is the patient pregnant or postpartum?
+  when:
+    all:
+    - equals: abdominal_pain
+      field: complaint.category
+    - equals: true
+      field: history.pregnant_or_postpartum
+- assessed_via: observed
+  decision_point: B
+  id: B-92.abd-pain-sepsis-signs
+  notes: Positive answer to high-risk assessment question for abdominal pain operationalized as ESI 2.
+  provenance: operationalized
+  source: ESI v5 p.14 (Abdominal and Gastrointestinal Concerns)
+  span: Does the patient show signs of sepsis?
+  when:
+    all:
+    - equals: abdominal_pain
+      field: complaint.category
+    - equals: true
+      field: obs.sepsis_signs
+- assessed_via: observed
+  decision_point: B
+  id: B-93.abd-pain-hypoperfusion
+  notes: Positive answer to high-risk assessment question for abdominal pain operationalized as ESI 2.
+  provenance: operationalized
+  source: ESI v5 p.14 (Abdominal and Gastrointestinal Concerns)
+  span: Does the patient show signs of hypoperfusion?
+  when:
+    all:
+    - equals: abdominal_pain
+      field: complaint.category
+    - equals: true
+      field: obs.hypoperfusion_signs
+- assessed_via: reported
+  decision_point: B
+  id: B-94.abd-pain-trauma
+  notes: Positive answer to high-risk assessment question for abdominal pain operationalized as ESI 2.
+  provenance: operationalized
+  source: ESI v5 p.14 (Abdominal and Gastrointestinal Concerns)
+  span: Was there blunt or penetrating trauma to the abdomen?
+  when:
+    all:
+    - equals: abdominal_pain
+      field: complaint.category
+    - equals: true
+      field: E.abdominal_trauma
+- assessed_via: reported
+  decision_point: B
+  id: B-95.abd-pain-refractory-constant
+  notes: Positive answer to high-risk assessment question for abdominal pain operationalized as ESI 2.
+  provenance: operationalized
+  source: ESI v5 p.14 (Abdominal and Gastrointestinal Concerns)
+  span: "Is the patient’s pain refractory to analgesia, constant, and /or \nmaximal on onset?"
+  when:
+    all:
+    - equals: abdominal_pain
+      field: complaint.category
+    - equals: true
+      field: complaint.pain_refractory_constant_or_maximal_onset
+- assessed_via: reported
+  decision_point: B
+  id: B-96.abd-pain-vaginal-bleeding
+  notes: Operationalized emergent ectopic pregnancy suggestion as high risk / ESI 2.
+  provenance: operationalized
+  source: ESI v5 p.14 (Abdominal and Gastrointestinal Concerns)
+  span: Abdominal pain with vaginal bleeding can suggest ectopic pregnancy or other emergent pregnancy
+    complications.
+  when:
+    all:
+    - equals: abdominal_pain
+      field: complaint.category
+    - equals: true
+      field: complaint.vaginal_bleeding
+- assessed_via: vitals
+  decision_point: B
+  id: B-97.pregnant-postpartum-abnormal-sbp
+  provenance: verbatim
+  source: ESI v5 p.14 (Obstetrical and Gynecological Concerns)
+  span: The pregnant or postpartum patient with a SBP of < 90 or > 150 should be designated an ESI 2 even
+    in the absence of other symptoms
+  when:
+    all:
+    - equals: true
+      field: history.pregnant_or_postpartum
+    - any:
+      - field: vitals.systolic_bp
+        lt: 90
+      - field: vitals.systolic_bp
+        gt: 150
+- assessed_via: reported
+  decision_point: B
+  id: B-98.pregnant-chest-sob-abd-headache
+  provenance: verbatim
+  source: ESI v5 p.14 (Obstetrical and Gynecological Concerns)
+  span: Pregnant patients with chest pain and/or shortness of breath,  abdominal pain, or headache (Sperling
+    et al., 2015) should be triaged as ESI 2
+  when:
+    all:
+    - equals: true
+      field: history.pregnant
+    - field: complaint.category
+      in:
+      - chest_pain
+      - shortness_of_breath
+      - abdominal_pain
+      - headache
+- assessed_via: vitals
+  decision_point: B
+  id: B-99.pregnant-heavy-bleeding-infection
+  provenance: verbatim
+  source: ESI v5 p.14 (Obstetrical and Gynecological Concerns)
+  span: Pregnant patients who present with heavy vaginal bleeding and abnormal vitals with suspicion of
+    infection should be categorized at ESI level 2.
+  when:
+    all:
+    - equals: true
+      field: history.pregnant
+    - equals: true
+      field: complaint.heavy_vaginal_bleeding
+    - equals: true
+      field: vitals.abnormal
+    - equals: true
+      field: complaint.infection_signs
+- assessed_via: reported
+  decision_point: B
+  id: B-100.postpartum-heavy-bleeding
+  provenance: verbatim
+  source: ESI v5 p.14 (Obstetrical and Gynecological Concerns)
+  span: Postpartum patients presenting with heavy vaginal bleeding should also be assigned ESI level 2
+    and seen by a provider immediately
+  when:
+    all:
+    - equals: true
+      field: history.postpartum
+    - equals: true
+      field: complaint.heavy_vaginal_bleeding
+- assessed_via: observed
+  decision_point: A
+  id: A-82.pregnancy-hemodynamic-instability
+  provenance: verbatim
+  source: ESI v5 p.14 (Obstetrical and Gynecological Concerns)
+  span: Any pregnancy-capable patient, whether pregnant or postpartum, who presents with significant hemodynamic
+    instability and who needs immediate lifesaving interventions should be triaged as ESI level 1.
+  when:
+    all:
+    - equals: true
+      field: patient.pregnancy_capable
+    - equals: true
+      field: obs.hemodynamically_unstable
+    - equals: true
+      field: obs.requires_lifesaving_intervention
+- assessed_via: reported
+  decision_point: B
+  id: B-101.testicular-scrotal-pain
+  notes: Operationalized 'immediately evaluated' and 'time-sensitive clinical situation' as ESI 2.
+  provenance: operationalized
+  source: ESI v5 p.14 (Genitourinary)
+  span: Testicular or scrotal pain should be immediately evaluated for testicular torsion
+  when:
+    field: complaint.category
+    in:
+    - testicular_pain
+    - scrotal_pain
+- assessed_via: reported
+  decision_point: B
+  id: B-102.unilateral-lower-quadrant-ovaries
+  notes: Operationalized 'evaluated for ovarian torsion and ectopic pregnancy' as time-sensitive / ESI
+    2.
+  provenance: operationalized
+  source: ESI v5 p.14 (Genitourinary)
+  span: unilateral lower quadrant pain in patients with ovaries should be evaluated for ovarian torsion
+    and ectopic pregnancy
+  when:
+    all:
+    - equals: true
+      field: complaint.unilateral_lower_quadrant_pain
+    - equals: true
+      field: patient.has_ovaries
+- assessed_via: reported
+  decision_point: B
+  id: B-103.uti-elderly-or-systemic
+  provenance: verbatim
+  source: ESI v5 p.14 (Genitourinary)
+  span: The patient with symptoms of a UTI who is elderly (Liang,  2017) or who also complains of back
+    pain, chills, and rigors may have urosepsis and should also be assigned to ESI 2.
+  when:
+    all:
+    - equals: uti_symptoms
+      field: complaint.category
+    - any:
+      - equals: elderly
+        field: patient.age_group
+      - all:
+        - equals: true
+          field: complaint.back_pain
+        - equals: true
+          field: complaint.chills_or_rigors
+- assessed_via: reported
+  decision_point: B
+  id: B-104.severe-flank-pain
+  provenance: verbatim
+  source: ESI v5 p.14 (Genitourinary)
+  span: Patients presenting with severe flank pain receive a level-2 designation
+  when:
+    equals: true
+    field: complaint.severe_flank_pain
+- assessed_via: reported
+  decision_point: B
+  id: B-105.fall-6-meters
+  provenance: verbatim
+  source: ESI v5 p.15 (Trauma)
+  span: falls of 20 feet (6 meters) or more
+  when:
+    field: E.fall_height_meters
+    gte: 6
+- assessed_via: reported
+  decision_point: B
+  id: B-106.vehicle-ejection
+  provenance: verbatim
+  source: ESI v5 p.15 (Trauma)
+  span: ejection from a vehicle
+  when:
+    equals: true
+    field: E.vehicle_ejection
+- assessed_via: reported
+  decision_point: B
+  id: B-107.mechanical-extrication
+  provenance: verbatim
+  source: ESI v5 p.15 (Trauma)
+  span: removal from a vehicle with mechanical extrication tools
+  when:
+    equals: true
+    field: E.mechanical_extrication
+- assessed_via: reported
+  decision_point: B
+  id: B-108.sexual-assault
+  provenance: verbatim
+  source: ESI v5 p.15 (Trauma)
+  span: sexual assault
+  when:
+    equals: true
+    field: complaint.sexual_assault
+- assessed_via: reported
+  decision_point: B
+  id: B-109.penetrating-trauma-trunk-head-neck
+  provenance: verbatim
+  source: ESI v5 p.15 (Trauma)
+  span: penetrating trauma of the head, neck, chest, and abdomen without signs of hemodynamic instability
+  when:
+    all:
+    - equals: penetrating
+      field: E.mechanism
+    - field: E.body_region
+      in:
+      - head
+      - neck
+      - chest
+      - abdomen
+- assessed_via: observed
+  decision_point: B
+  id: B-110.extremity-neurovascular-compromise
+  provenance: verbatim
+  source: ESI v5 p.15 (Trauma)
+  span: extremity injury with compromised neurovascular function
+  when:
+    equals: true
+    field: complaint.extremity_neurovascular_compromise
+- assessed_via: observed
+  decision_point: B
+  id: B-111.compartment-syndrome
+  provenance: verbatim
+  source: ESI v5 p.15 (Trauma)
+  span: symptoms of compartment syndrome
+  when:
+    equals: true
+    field: complaint.compartment_syndrome_symptoms
+- assessed_via: observed
+  decision_point: B
+  id: B-112.amputation
+  provenance: verbatim
+  source: ESI v5 p.15 (Trauma)
+  span: partial or complete amputations
+  when:
+    equals: true
+    field: complaint.amputation_partial_or_complete
+- assessed_via: observed
+  decision_point: B
+  effect_override: consider
+  id: B-113.possible-pelvis-femur-fracture-dislocation
+  provenance: verbatim
+  source: ESI v5 p.15 (Trauma)
+  span: possible fractures of the pelvis, femur, or dislocations
+  when:
+    equals: true
+    field: complaint.possible_pelvis_femur_fracture_or_dislocation
+- assessed_via: reported
+  decision_point: B
+  id: B-114.toxic-ingestion
+  provenance: verbatim
+  source: ESI v5 p.15 (Ingestions)
+  span: Toxic ingestion is a high-risk presentation
+  when:
+    equals: true
+    field: complaint.known_toxic_ingestion
+- assessed_via: observed
+  decision_point: B
+  effect_override: consider
+  id: B-115.unexplained-ams-breathing-rhythm
+  provenance: verbatim
+  source: ESI v5 p.15 (Ingestions)
+  span: alterations in mental status, difficulty breathing, changes in breathing pattern, or changes in
+    heart rate and/or rhythm without an obvious cause
+  when:
+    equals: true
+    field: obs.unexplained_ams_breathing_or_rhythm_change
+- assessed_via: reported
+  decision_point: B
+  id: B-116.transplant-infection-fever
+  provenance: verbatim
+  source: ESI v5 p.15 (Transplant)
+  span: Patients presenting with a fever or other indication of infection or rejection should be designated
+    ESI level 2
+  when:
+    all:
+    - equals: true
+      field: history.transplant_recipient_or_listed
+    - any:
+      - equals: true
+        field: complaint.fever
+      - equals: true
+        field: complaint.infection_signs
+      - equals: true
+        field: obs.transplant_rejection_signs
+- assessed_via: reported
+  decision_point: B
+  effect_override: consider
+  id: B-117.transplant-list
+  provenance: verbatim
+  source: ESI v5 p.15 (Transplant)
+  span: Patients who are on a transplant list are also usually considered high-risk.
+  when:
+    equals: true
+    field: history.transplant_recipient_or_listed
+- assessed_via: observed
+  decision_point: B
+  id: B-118.danger-self-others
+  provenance: verbatim
+  source: ESI v5 p.15 (Mental and Behavioral Health)
+  span: danger either to themselves, others, or the environment
+  when:
+    equals: true
+    field: complaint.danger_to_self_or_others
+- assessed_via: observed
+  decision_point: B
+  id: B-119.psychiatric-high-risk
+  provenance: verbatim
+  source: ESI v5 p.15 (Mental and Behavioral Health)
+  span: suicidal, homicidal, psychotic, or violent
+  when:
+    equals: true
+    field: obs.suicidal_homicidal_psychotic_or_violent
+- assessed_via: vitals
+  decision_point: A
+  id: A-83.elderly-dizziness-extreme-hr
+  notes: Operationalized specific example in text for ESI 1 rule for elderly with dizziness and extreme
+    HR. Assumed elderly as age >= 65.
+  provenance: operationalized
+  source: ESI v5 p.23
+  span: elderly patient who presents with dizziness might be found to have a life-threatening condition
+    when a heart rate of 32 beats/minute or 180 beats/minute is discovered
+  when:
+    all:
+    - equals: true
+      field: complaint.dizziness
+    - field: patient.age
+      gte: 65
+    - any:
+      - field: vitals.heart_rate
+        lte: 32
+      - field: vitals.heart_rate
+        gte: 180
+- assessed_via: vitals
+  decision_point: B
+  id: B-120.neonate-fever
+  provenance: verbatim
+  source: ESI v5 p.23 (Pediatric Vital Signs)
+  span: An infant less than 28 days old with a fever is considered high risk and is assigned to at least
+    ESI level 2.
+  when:
+    all:
+    - field: patient.age_days
+      lt: 28
+    - equals: true
+      field: complaint.fever
+- assessed_via: vitals
+  decision_point: D
+  id: D-61.hr-rr-under-1mo
+  notes: Extracted from column-formatted table Figure 6-1 for < 1 mo.
+  provenance: operationalized
+  source: ESI v5 p.23 (Figure 6-1)
+  span: High-risk vital signs?
+  when:
+    all:
+    - field: patient.age_months
+      lt: 1
+    - any:
+      - field: vitals.heart_rate
+        gt: 190
+      - field: vitals.respiratory_rate
+        gt: 60
+- assessed_via: vitals
+  decision_point: D
+  id: D-62.hr-rr-1-to-12mo
+  notes: Extracted from column-formatted table Figure 6-1 for 1-12 mo.
+  provenance: operationalized
+  source: ESI v5 p.23 (Figure 6-1)
+  span: High-risk vital signs?
+  when:
+    all:
+    - field: patient.age_months
+      gte: 1
+    - field: patient.age_months
+      lte: 12
+    - any:
+      - field: vitals.heart_rate
+        gt: 180
+      - field: vitals.respiratory_rate
+        gt: 55
+- assessed_via: vitals
+  decision_point: D
+  id: D-63.hr-rr-1-to-3y
+  notes: Extracted from column-formatted table Figure 6-1 for 1-3 y.
+  provenance: operationalized
+  source: ESI v5 p.23 (Figure 6-1)
+  span: High-risk vital signs?
+  when:
+    all:
+    - field: patient.age
+      gte: 1
+    - field: patient.age
+      lte: 3
+    - any:
+      - field: vitals.heart_rate
+        gt: 140
+      - field: vitals.respiratory_rate
+        gt: 40
+- assessed_via: vitals
+  decision_point: D
+  id: D-64.hr-rr-3-to-5y
+  notes: Extracted from column-formatted table Figure 6-1 for 3-5 y.
+  provenance: operationalized
+  source: ESI v5 p.23 (Figure 6-1)
+  span: High-risk vital signs?
+  when:
+    all:
+    - field: patient.age
+      gte: 3
+    - field: patient.age
+      lte: 5
+    - any:
+      - field: vitals.heart_rate
+        gt: 120
+      - field: vitals.respiratory_rate
+        gt: 35
+- assessed_via: vitals
+  decision_point: D
+  id: D-65.hr-rr-5-to-12y
+  notes: Extracted from column-formatted table Figure 6-1 for 5-12 y.
+  provenance: operationalized
+  source: ESI v5 p.23 (Figure 6-1)
+  span: High-risk vital signs?
+  when:
+    all:
+    - field: patient.age
+      gte: 5
+    - field: patient.age
+      lte: 12
+    - any:
+      - field: vitals.heart_rate
+        gt: 120
+      - field: vitals.respiratory_rate
+        gt: 30
+- assessed_via: vitals
+  decision_point: D
+  id: D-66.hr-rr-over-12y
+  notes: Extracted from column-formatted table Figure 6-1. Combined 12-18 y and > 18 y as thresholds are
+    identical.
+  provenance: operationalized
+  source: ESI v5 p.23 (Figure 6-1)
+  span: High-risk vital signs?
+  when:
+    all:
+    - field: patient.age
+      gt: 12
+    - any:
+      - field: vitals.heart_rate
+        gt: 100
+      - field: vitals.respiratory_rate
+        gt: 20
+- assessed_via: vitals
+  decision_point: D
+  id: D-67.spo2-under-92
+  provenance: verbatim
+  source: ESI v5 p.23 (Figure 6-1)
+  span: SpO2 < 92%
+  when:
+    field: vitals.spo2
+    lt: 92
+- assessed_via: vitals
+  decision_point: B
+  effect_override: consider
+  id: B-121.infant-under-90-days-fever
+  notes: Directly assigns infant < 90 days with temp > 38 to consider high risk.
+  provenance: verbatim
+  source: ESI v5 p.24 (Pediatric Temperatures)
+  span: Temperature greater than 38°C (100.4°F) in an infant younger than 90 days old is a red flag and
+    the patient should be considered high risk and assigned at least ESI level 2.
+  when:
+    all:
+    - field: patient.age_days
+      lt: 90
+    - field: vitals.temp_c
+      gt: 38
+- assessed_via: vitals
+  decision_point: B
+  effect_override: consider
+  id: B-122.pediatric-hypothermia
+  notes: Operationalized 'child of any age' to age < 18 years. Effect set to 'consider' as it is labeled
+    a 'Red Flag' concerning for sepsis.
+  provenance: operationalized
+  source: ESI v5 p.24 (Pediatric Temperatures)
+  span: A temperature less than 36°C (96.8°F) in a child of any age is hypothermic and concerning for
+    sepsis
+  when:
+    all:
+    - field: patient.age
+      lt: 18
+    - field: vitals.temp_c
+      lt: 36
+- assessed_via: vitals
+  decision_point: B
+  effect_override: consider
+  id: B-123.child-over-3-months-fever
+  notes: Table 6-2 explicitly lists this as a Pediatric Temperature Red Flag. The hypothermia component
+    is covered by the separate pediatric hypothermia rule.
+  provenance: verbatim
+  source: ESI v5 p.24 (Table 6-2)
+  span: '> 3 months old
+
+    > 38.5 °C (101.3°F) or < 36°C (96.8°F)'
+  when:
+    all:
+    - field: patient.age_months
+      gt: 3
+    - field: vitals.temp_c
+      gt: 38.5

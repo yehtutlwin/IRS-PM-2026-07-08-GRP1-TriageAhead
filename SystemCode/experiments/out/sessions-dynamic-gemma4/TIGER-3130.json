@@ -1,0 +1,346 @@
+{
+ "sid": "TIGER-3130",
+ "facts": {
+  "red_flags.responsive": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-09-26 03:37"
+  },
+  "red_flags.chest_pain_now": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-09-26 03:37"
+  },
+  "red_flags.breathing_difficulty": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-09-26 03:37"
+  },
+  "red_flags.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-09-26 03:37"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "abdominal_pain",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "persona",
+      "turn": 2,
+      "ts": "2026-09-26 03:37"
+     },
+     "text": {
+      "value": "Lower abdominal pain",
+      "status": "reported",
+      "who": "persona",
+      "turn": 2,
+      "ts": "2026-09-26 03:37"
+     },
+     "onset": {
+      "value": "this morning",
+      "status": "reported",
+      "who": "persona",
+      "turn": 2,
+      "ts": "2026-09-26 03:37"
+     },
+     "pain_rating": {
+      "value": 8,
+      "status": "reported",
+      "who": "persona",
+      "turn": 2,
+      "ts": "2026-09-26 03:37"
+     },
+     "onset_abs": {
+      "value": "~2026-09-26 morning",
+      "status": "reported",
+      "who": "derived",
+      "turn": 2,
+      "ts": "2026-09-26 03:37"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 2
+  },
+  "complaint.category": {
+   "value": [
+    "abdominal_pain"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-09-26 03:37"
+  },
+  "complaint.text": {
+   "value": "Lower abdominal pain",
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-09-26 03:37"
+  },
+  "complaint.onset": {
+   "value": "this morning",
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-09-26 03:37"
+  },
+  "complaint.pain_rating": {
+   "value": 8,
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-09-26 03:37"
+  },
+  "complaint.pain_latest": {
+   "value": 8,
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-09-26 03:37"
+  },
+  "complaint.onset_abs": {
+   "value": "~2026-09-26 morning (from 'this morning' said 03:37)",
+   "status": "reported",
+   "who": "derived",
+   "turn": 2,
+   "ts": "2026-09-26 03:37"
+  },
+  "E.mechanism": {
+   "value": "none",
+   "status": "reported",
+   "who": "derived",
+   "turn": 2,
+   "ts": "2026-09-26 03:37"
+  },
+  "M.medications": {
+   "value": [
+    "pregnancy vitamins"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-09-26 03:37"
+  },
+  "A.allergies": {
+   "value": [],
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-09-26 03:37"
+  },
+  "history.conditions": {
+   "value": [],
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-09-26 03:37"
+  },
+  "history.immunocompromised": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-09-26 03:37"
+  },
+  "history.pregnant_or_postpartum": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-09-26 03:37"
+  },
+  "infection.fever": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 4,
+   "ts": "2026-09-26 03:37"
+  },
+  "infection.rash": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 4,
+   "ts": "2026-09-26 03:37"
+  },
+  "infection.travel_14d": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 4,
+   "ts": "2026-09-26 03:37"
+  },
+  "infection.contacts": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-09-26 03:37"
+  },
+  "identity.name": {
+   "value": null,
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-09-26 03:37"
+  },
+  "identity.dob": {
+   "value": "03 Sep 1986",
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-09-26 03:37"
+  },
+  "L.last_intake": {
+   "value": "dinner last night",
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-09-26 03:37"
+  },
+  "L.last_intake_abs": {
+   "value": "~2026-09-25 night (from 'dinner last night' said 03:37)",
+   "status": "reported",
+   "who": "derived",
+   "turn": 5,
+   "ts": "2026-09-26 03:37"
+  },
+  "patient.age": {
+   "value": 40,
+   "status": "reported",
+   "who": "derived",
+   "turn": 5,
+   "ts": "2026-09-26 03:37"
+  }
+ },
+ "attempts": {
+  "red_flags.responsive": 1,
+  "red_flags.chest_pain_now": 1,
+  "red_flags.breathing_difficulty": 1,
+  "red_flags.heavy_bleeding": 1,
+  "complaint.category": 1,
+  "complaint.text": 1,
+  "complaint.onset": 1,
+  "complaint.pain_rating": 1,
+  "M.medications": 1,
+  "A.allergies": 1,
+  "history.conditions": 1,
+  "history.immunocompromised": 1,
+  "infection.fever": 1,
+  "infection.rash": 1,
+  "infection.travel_14d": 1,
+  "infection.contacts": 2,
+  "L.last_intake": 1,
+  "identity.name": 1,
+  "identity.dob": 1
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "I'm here to help get you started. Is the patient awake and responding normally, and are they experiencing any severe chest pain, trouble breathing, or heavy bleeding right now?",
+   "ts": "2026-09-26 03:37:00",
+   "kind": "question",
+   "slot": "dyn:red_flags.responsive+red_flags.chest_pain_now+red_flags.breathing_difficulty+red_flags.heavy_bleeding"
+  },
+  {
+   "role": "caregiver",
+   "text": "I'm awake. No chest pain, trouble breathing, or bleeding.",
+   "ts": "2026-09-26 03:37:01",
+   "kind": "answer",
+   "slot": "dyn:red_flags.responsive+red_flags.chest_pain_now+red_flags.breathing_difficulty+red_flags.heavy_bleeding"
+  },
+  {
+   "role": "bot",
+   "text": "I'm glad to hear you're feeling alert. Could you tell me what happened, when it started, and how severe the pain is on a scale of 0 to 10?",
+   "ts": "2026-09-26 03:37:06",
+   "kind": "question",
+   "slot": "dyn:complaint.category+complaint.text+complaint.onset+complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "Lower abdominal pain started this morning. It's getting worse, it's an 8 out of 10.",
+   "ts": "2026-09-26 03:37:08",
+   "kind": "answer",
+   "slot": "dyn:complaint.category+complaint.text+complaint.onset+complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear the pain is so severe. Do you take any regular medications, and do you have any allergies or other medical conditions like heart problems or diabetes?",
+   "ts": "2026-09-26 03:37:13",
+   "kind": "question",
+   "slot": "dyn:M.medications+A.allergies+history.conditions+history.immunocompromised"
+  },
+  {
+   "role": "caregiver",
+   "text": "Just my pregnancy vitamins. No allergies or other conditions.",
+   "ts": "2026-09-26 03:37:14",
+   "kind": "answer",
+   "slot": "dyn:M.medications+A.allergies+history.conditions+history.immunocompromised"
+  },
+  {
+   "role": "system",
+   "text": "floor: at least ESI-2  rules: ['B-17.abdo-pain-pregnant-or-postpartum', 'B-38.pregnant-chest-pain-breathlessness-abdo-pain-or-headache']",
+   "ts": "2026-09-26 03:37:17",
+   "kind": "floor"
+  },
+  {
+   "role": "bot",
+   "text": "I've noted your medications and allergies. Have you had a fever, any rashes, been traveling outside the country lately, or been in contact with anyone who is sick?",
+   "ts": "2026-09-26 03:37:19",
+   "kind": "question",
+   "slot": "dyn:infection.fever+infection.rash+infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "caregiver",
+   "text": "No fever, no rash, and no recent travel.",
+   "ts": "2026-09-26 03:37:21",
+   "kind": "answer",
+   "slot": "dyn:infection.fever+infection.rash+infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you for providing those details. Have you been in contact with anyone who is sick recently, and could you tell me your name, date of birth, and when you last had something to eat or drink?",
+   "ts": "2026-09-26 03:37:25",
+   "kind": "question",
+   "slot": "dyn:infection.contacts+L.last_intake+identity.name+identity.dob"
+  },
+  {
+   "role": "caregiver",
+   "text": "No. My name is not provided, but my DOB is 03 Sep 1986. I last ate dinner last night.",
+   "ts": "2026-09-26 03:37:26",
+   "kind": "answer",
+   "slot": "dyn:infection.contacts+L.last_intake+identity.name+identity.dob"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you - that's everything for now. Show the code TIGER-3130 at the counter when you arrive.",
+   "ts": "2026-09-26 03:37:29",
+   "kind": "ack"
+  }
+ ],
+ "active_ids": [],
+ "floor": "at least ESI-2",
+ "phase": "enroute",
+ "opened": [],
+ "created": "2026-09-26 03:36",
+ "pending_slot": "dyn:infection.contacts+L.last_intake+identity.name+identity.dob",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {},
+ "considered": [
+  "B-02.severe-pain-consider"
+ ],
+ "said_done": true
+}

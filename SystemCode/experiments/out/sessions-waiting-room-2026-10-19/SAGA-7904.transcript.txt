@@ -1,0 +1,44 @@
+session SAGA-7904   started 2026-10-19 15:43   (generated from messages)
+
+15:44:16  BOT  Is the patient awake and responding to you normally? Also, is he or she experiencing any chest pain, trouble breathing, or heavy bleeding right now?   [slot dyn:danger_signs.responsive+danger_signs.chest_pain_now]
+15:44:16  THEM Yes, he's awake and talking. No chest pain.   [slot dyn:danger_signs.responsive+danger_signs.chest_pain_now]
+15:45:27  BOT  I'm glad he's awake. Is he having any trouble breathing or is there any heavy bleeding? Also, what is the main reason you are bringing him in today?   [slot dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category]
+15:45:27  THEM No, he's breathing fine. No bleeding. He fell down 4 steps at home and landed on his right hip. He can't stand.   [slot dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category]
+15:46:50  BOT  I understand he can't stand after the fall. When did this happen, and how old is he?   [slot dyn:complaint.onset+patient.age]
+15:46:50  THEM About an hour ago. He's 87.   [slot dyn:complaint.onset+patient.age]
+15:48:00  BOT  I'm sorry to hear about his fall. Is he a man or a woman?   [slot dyn:patient.sex]
+15:48:00  THEM He's a man, my father.   [slot dyn:patient.sex]
+15:49:11  BOT  Does he have a fever or any new rashes on his skin?   [slot dyn:complaint.fever+infection.rash]
+15:49:11  THEM No fever. No rash.   [slot dyn:complaint.fever+infection.rash]
+15:50:23  BOT  I understand. Has he traveled outside the country or been in contact with anyone who has a contagious illness in the last two weeks?   [slot dyn:infection.travel_14d+infection.contacts]
+15:50:23  THEM No, he hasn't travelled. No, nobody sick around him.   [slot dyn:infection.travel_14d+infection.contacts]
+15:51:36  BOT  Is he acting differently than usual, such as being more confused or very sleepy? Also, on a scale of 0 to 10, how would you rate his pain right now?   [slot dyn:ams.changed_from_baseline+complaint.pain_rating]
+15:51:36  THEM No, he's as alert as usual. He says the pain is 7 out of 10.   [slot dyn:ams.changed_from_baseline+complaint.pain_rating]
+15:52:48  BOT  Does he take any blood thinners or medications to prevent blood clots, like warfarin or apixaban?   [slot dyn:M.anticoagulant]
+15:52:48  THEM Yes, I checked the box, it's warfarin.   [slot dyn:M.anticoagulant]
+15:54:00  BOT  I see you mentioned he takes warfarin. To be sure for the team, does he take any other blood thinners or medications to prevent blood clots?   [slot confirm.M.anticoagulant]
+15:54:00  THEM Yes, I checked the box, it's warfarin.   [slot confirm.M.anticoagulant]
+15:54:51  SYS  floor: at least ESI-2  rules: ['B-30.anticoagulated-trauma'] (floor)
+15:55:11  BOT  Thank you for confirming the warfarin. Does he take any other regular medications, and does he have any allergies to medicines?   [slot dyn:M.medications+A.allergies]
+15:55:11  THEM He takes a small pill to thin his blood, and a blood pressure pill, I don't know its name. He's allergic to penicillin, it gives him a rash.   [slot dyn:M.medications+A.allergies]
+15:56:35  BOT  I've noted his medications and allergy. Does he have any other ongoing medical conditions?   [slot dyn:history.conditions]
+15:56:35  THEM He has an irregular heartbeat and high blood pressure.   [slot dyn:history.conditions]
+15:58:33  BOT  I have noted his medical history. Could you please tell me his full name?   [slot dyn:identity.name]
+15:58:33  THEM Tan Ah Kow.   [slot dyn:identity.name]
+16:00:29  BOT  Thank you. Could you please provide his date of birth?   [slot dyn:identity.dob]
+16:00:29  THEM 2 January 1939.   [slot dyn:identity.dob]
+16:01:28  BOT  That's enough for the hospital team to prepare. Show the code SAGA-7904 at the counter when you arrive. I'll ask a few more things while you're on the way; tell me straight away if anything changes. (ack)
+16:01:53  BOT  Can he put any weight on the leg, and does the leg look shorter or turned outwards?   [slot dyn:complaint.possible_pelvis_femur_fracture_or_dislocation]
+16:01:53  THEM He can't put any weight on the leg.   [slot dyn:complaint.possible_pelvis_femur_fracture_or_dislocation]
+16:03:27  BOT  I understand he can't put weight on it. Was there any blow to his belly or did he hit his head when it happened?   [slot dyn:E.abdominal_trauma+E.head_strike]
+16:03:27  THEM No, he landed on his hip. No, he didn't hit his head.   [slot dyn:E.abdominal_trauma+E.head_strike]
+16:04:47  BOT  Did he pass out or black out at any point when it happened?   [slot dyn:E.loc]
+16:04:47  THEM No, he didn't black out.   [slot dyn:E.loc]
+16:05:57  BOT  I understand. When was the last time he had anything to eat or drink?   [slot dyn:L.last_intake]
+16:05:57  SYS  family reports arrival - waiting-room phase begins (note)
+16:05:57  BOT  Welcome. Show the code at the counter if you have not yet. I will check in with you now and then; if anything gets worse before then, tell the counter staff straight away. (ack)
+16:05:59  BOT  How is the patient doing right now compared to when you arrived?   [slot checkin.status] (checkin)
+16:06:01  THEM He is worse than when we got here. The hip pain is up to 9 now and he has gone very drowsy, he is hardly answering me.   [slot checkin.status]
+16:06:56  BOT  Thank you - please tell the counter staff now that the patient is feeling worse. I have also put this change at the top of the hospital report. (advice)
+16:06:56  SYS  worsening reported - family asked to alert the counter (note)
+16:07:16  BOT  I understand he is becoming more drowsy. When was the last time he had anything to eat or drink?   [slot dyn:L.last_intake]

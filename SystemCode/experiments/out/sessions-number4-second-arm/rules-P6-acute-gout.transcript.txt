@@ -1,0 +1,46 @@
+arm B, form rules, persona P6-acute-gout, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  Is the patient awake and responding normally?
+A1  Yes, I'm awake and can answer you.
+
+Q2  Is the patient experiencing chest pain right now?
+A2  No chest pain.
+
+Q3  Is the patient having any trouble breathing right now?
+A3  No.
+
+Q4  Is the patient bleeding heavily right now?
+A4  No.
+
+Q5  What is the main reason the patient is coming to the emergency department?
+A5  Sudden severe pain in the joint at the base of my right big toe; it's red, swollen and hot.
+
+Q6  Is the joint at the base of your big toe showing any signs of being a severe infection, such as a fever or feeling very unwell?
+A6  No fever, no chills. I'm thinking clearly, just tired from the pain.
+
+Q7  Is the joint at the base of your big toe a result of a recent injury, such as a fall, a cut, or a crush?
+A7  No fall or injury, it just came on.
+
+Q8  How would you describe the pain in your toe? For example, is it a sharp, throbbing, or constant pain?
+A8  It is sudden severe pain in the joint at the base of my right big toe. It is bad but not getting worse by the minute.
+
+Q9  Is the joint at the base of your big toe a result of a recent injury, such as a fall, a cut, or a crush?
+A9  No fall or injury, it just came on.
+
+Q10  Is the joint at the base of your big toe a result of a recent injury, such as a fall, a cut, or a crush?
+A10  No fall or injury, it just came on.
+
+Q11  Is the joint at the base of your big toe a result of a recent injury, such as a fall, a cut, or a crush?
+A11  No fall or injury, it just came on.
+
+Q12  Is the joint at the base of your big toe an injury that has caused any numbness, tingling, or a change in color or temperature in the rest of your foot?
+A12  No fall or injury, it just came on. The toe is red, hot and swollen, no wound.
+
+Q13  How would you rate the pain in your toe on a scale of 0 to 10, where 10 is the worst pain imaginable?
+A13  It is an 8 out of 10.
+
+Q14  Is the joint at the base of your big toe an injury that has caused any numbness, tingling, or a change in color or temperature in the rest of your foot?
+A14  No fall or injury, it just came on. The toe is red, hot and swollen, no wound.
+
+DECISION {"done": true, "decision": "no floor", "reason": "The patient is stable and does not meet any high-risk criteria (ESI 1 or 2). The triage process will continue to determine the number of resources required.", "citation": "ESI v5 p.5"}
+OUTCOME no floor | expected None | pass True | label None | max prompt tokens 44225

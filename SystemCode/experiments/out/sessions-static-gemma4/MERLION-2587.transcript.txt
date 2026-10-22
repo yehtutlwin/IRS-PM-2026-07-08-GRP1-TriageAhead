@@ -1,0 +1,25 @@
+session MERLION-2587   started 2026-09-26 03:33   (generated from messages)
+
+03:33:36  BOT  Is the patient awake and responding normally, and are they experiencing any severe chest pain, trouble breathing, or heavy bleeding right now?   [slot red_flags.screen]
+03:33:37  THEM He is awake but only responding with confused words. There is no chest pain, trouble breathing, or heavy bleeding.   [slot red_flags.screen]
+03:33:40  SYS  floor: at least ESI-2  rules: ['B-01.new-altered-mental-status'] (floor)
+03:33:40  BOT  Based on what you just told me, please call 995 NOW if you are not already with paramedics. I have put this at the top of the hospital report. (advice)
+03:33:42  BOT  Can you tell me what happened, when it started, and how bad the pain is on a scale of 0 to 10?   [slot complaint.main]
+03:33:43  THEM He was working outside in the sun for four hours and started feeling dizzy and nauseous before collapsing. I don't know how bad his pain is.   [slot complaint.main]
+03:33:47  BOT  At any point today, did you notice his face drooping, an arm becoming weak or numb, or his speech becoming slurred or strange?   [slot stroke.screen]
+03:33:48  THEM He is responding with only confused words. I don't know if his face drooped or his arm became weak.   [slot stroke.screen]
+03:33:51  BOT  Did you notice his face drooping on one side or his arm becoming weak or numb at any point today?   [slot stroke.screen]
+03:33:52  THEM I don't know.   [slot stroke.screen]
+03:33:55  BOT  Could you please tell me if you noticed any drooping on one side of his face or any weakness in his arm at any point today?   [slot stroke.screen]
+03:34:00  THEM I don't know.   [slot stroke.screen]
+03:34:02  BOT  On a scale of 0 to 10, how bad is his pain right now?   [slot complaint.main]
+03:34:04  THEM I don't know. He is only responding with confused words.   [slot complaint.main]
+03:34:07  BOT  Can you give me a rough idea of how much pain he is in on a scale of 0 to 10?   [slot complaint.main]
+03:34:08  THEM I don't know. He is confused and only responding with words that don't make sense.   [slot complaint.main]
+03:34:10  BOT  Does he take any regular medications?   [slot M.medications]
+03:34:11  THEM I don't know.   [slot M.medications]
+03:34:14  BOT  Does he have any allergies to medication or other medical conditions, such as heart problems, diabetes, or a weakened immune system?   [slot allergies_and_history]
+03:34:15  THEM I don't know his medications, allergies, or medical history.   [slot allergies_and_history]
+03:34:18  BOT  Has he had a fever, any rashes, traveled abroad in the last two weeks, or been in contact with anyone who is sick?   [slot infection.screen]
+03:34:19  THEM I don't know if he had a fever or a rash, and I don't know about his travel or contact with anyone sick.   [slot infection.screen]
+03:34:22  BOT  Could you tell me his name, date of birth, and when he last had something to eat or drink?   [slot wrapup]

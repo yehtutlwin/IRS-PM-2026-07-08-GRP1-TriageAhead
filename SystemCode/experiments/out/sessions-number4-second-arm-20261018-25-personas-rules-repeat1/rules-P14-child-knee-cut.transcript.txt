@@ -1,0 +1,31 @@
+arm B, form rules, persona P14-child-knee-cut, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  Is the patient awake and responding normally?
+A1  Yes, he's awake and talking.
+
+Q2  Is the patient having any chest pain right now?
+A2  No.
+
+Q3  Is the patient having any trouble breathing right now?
+A3  No.
+
+Q4  Is the patient bleeding heavily right now?
+A4  No.
+
+Q5  What is the main reason the patient is coming to the emergency department?
+A5  He fell running across the playground and cut his right knee. It's about 3 centimetres long.
+
+Q6  How would you describe the wound on his knee? For example, is it a deep cut, or is it bleeding a lot?
+A6  It's just a cut on his knee. It's about 3 centimetres long.
+
+Q7  How old is the patient?
+A7  He's 6.
+
+Q8  Is the child's knee wound deep enough that you can see bone, muscle, or fat, or is it a very large and gaping wound?
+A8  No, it's just a cut on his knee.
+
+Q9  Is the child's knee wound a large or gaping wound that is difficult to close?
+A9  No, it's just a cut on his knee.
+
+DECISION {"decision": "no floor", "reason": "The patient is stable and does not meet any high-risk criteria or life-saving intervention criteria; the next step is to determine the number of resources required.", "citation": "ESI v5 p.5 (Decision Point C)"}
+OUTCOME no floor | expected None | pass True | label None | max prompt tokens 43890

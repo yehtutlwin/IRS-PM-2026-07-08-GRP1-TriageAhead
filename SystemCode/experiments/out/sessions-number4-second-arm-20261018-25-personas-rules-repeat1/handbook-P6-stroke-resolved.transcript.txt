@@ -1,0 +1,46 @@
+arm B, form handbook, persona P6-stroke-resolved, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  What is the main reason the patient is seeking care today?
+A1  This morning her speech suddenly went slurred and her left arm went weak, and she couldn't lift her teacup. It lasted about 45 minutes and then passed completely.
+
+Q2  Is the patient currently experiencing any other symptoms, such as a severe headache, facial drooping, or difficulty breathing?
+A2  I didn't notice her face drooping. She has no pain, 0 out of 10.
+
+Q3  Is the patient currently experiencing any other symptoms, such as a severe headache, facial drooping, or difficulty breathing?
+A3  I didn't notice her face drooping. She has no pain, 0 out of 10.
+
+Q4  Is the patient currently experiencing any other symptoms, such as a severe headache, facial drooping, or difficulty breathing?
+A4  I didn't notice her face drooping. She has no pain, 0 out of 10.
+
+Q5  Is the patient currently experiencing any other symptoms, such as a severe headache, facial drooping, or difficulty breathing?
+A5  I didn't notice her face drooping. She has no pain, 0 out of 10.
+
+Q6  Is the patient currently experiencing any other symptoms, such as a severe headache, facial drooping, or difficulty breathing?
+A6  I didn't notice her face drooping. She has no pain, 0 out of 10.
+
+Q7  What is the patient's current level of consciousness and ability to follow commands?
+A7  She's awake and talking clearly now.
+
+Q8  What are the patient's current vital signs (heart rate, respiratory rate, blood pressure, and oxygen saturation)?
+A8  I don't know.
+
+Q9  Is the patient currently experiencing any other symptoms, such as a severe headache, facial drooping, or difficulty breathing?
+A9  I didn't notice her face drooping. She has no pain, 0 out of 10.
+
+Q10  Is the patient currently experiencing any other symptoms, such as a severe headache, facial drooping, or difficulty breathing?
+A10  I didn't notice her face drooping. She has no pain, 0 out of 10.
+
+Q11  Is the patient currently experiencing any other symptoms, such as a severe headache, facial drooping, or difficulty breathing?
+A11  I didn't notice her face drooping. She has no pain, 0 out of 10.
+
+Q12  Is the patient currently experiencing any other symptoms, such as a severe headache, facial drooping, or difficulty breathing?
+A12  I didn't notice her face drooping. She has no pain, 0 out of 10.
+
+Q13  Is the patient currently experiencing any other symptoms, such as a severe headache, facial drooping, or difficulty breathing?
+A13  I didn't notice her face drooping. She has no pain, 0 out of 10.
+
+Q14  Is the patient currently experiencing any other symptoms, such as a severe headache, facial drooping, or difficulty breathing?
+A14  I didn't notice her face drooping. She has no pain, 0 out of 10.
+
+DECISION {"done": true, "decision": "level 2", "reason": "The patient's presentation of sudden slurred speech and arm weakness is consistent with a stroke, which is a high-risk situation (Decision Point B) even though the symptoms have currently resolved.", "citation": "page 12, 'Signs of a stroke but does not meet level-1 criteria' under High-risk situation."}
+OUTCOME level 2 or floor | expected at least ESI-2 | pass True | label None | max prompt tokens 30326

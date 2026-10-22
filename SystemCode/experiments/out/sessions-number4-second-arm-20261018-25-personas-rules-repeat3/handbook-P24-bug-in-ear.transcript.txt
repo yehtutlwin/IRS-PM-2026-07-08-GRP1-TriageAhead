@@ -1,0 +1,43 @@
+arm B, form handbook, persona P24-bug-in-ear, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  What is the main reason the patient is seeking care today?
+A1  A bug flew into my right ear while I was gardening and I can't get it out.
+
+Q2  Is the patient experiencing any severe pain, distress, or difficulty breathing?
+A2  The buzzing noise is driving me crazy.
+
+Q3  Are you experiencing any other symptoms, such as dizziness, facial weakness, or any other physical concerns?
+A3  No, nothing, I've never had any medical problems.
+
+Q4  How would you describe the level of pain or distress you are feeling right now on a scale of 1 to 10?
+A4  I don't know.
+
+Q5  Can you describe the buzzing or the feeling in your ear more specifically? For example, is it a constant noise, or is there any pain, drainage, or hearing loss?
+A5  The buzzing noise is driving me crazy. I tried to get it out with a cotton bud.
+
+Q6  Are you experiencing any other symptoms, such as drainage from the ear, hearing loss, or any facial weakness?
+A6  No, nothing, I've never had any medical problems.
+
+Q7  Are you experiencing any other symptoms, such as dizziness, facial weakness, or any other physical concerns?
+A7  No, nothing, I've never had any medical problems.
+
+Q8  Are you experiencing any other symptoms, such as drainage from the ear, hearing loss, or any facial weakness?
+A8  No, nothing, I've never had any medical problems.
+
+Q9  Can you tell me if you have any other symptoms like a fever, or if you have any trouble hearing or moving your face?
+A9  No, nothing, I've never had any medical problems.
+
+Q10  Can you tell me if you have any other symptoms like a fever, or if you have any trouble hearing or moving your face?
+A10  No, nothing, I've never had any medical problems.
+
+Q11  Can you tell me if you have any other symptoms like a fever, or if you have any trouble hearing or moving your face?
+A11  No, nothing, I've never had any medical problems.
+
+Q12  Can you tell me if you are experiencing any other symptoms like a fever, or if you have any trouble hearing or moving your face?
+A12  No, nothing, I've never had any medical problems.
+
+Q13  Can you tell me if you are experiencing any other symptoms like a fever, or if you have any trouble hearing or moving your face?
+A13  No, nothing, I've never had any medical problems.
+
+DECISION {"decision": "level 5", "reason": "The patient is stable, not in a high-risk situation, and only requires a physical exam to address a localized ear issue.", "citation": "page 20, Table 5-2"}
+OUTCOME level 5 | expected None | pass True | label None | max prompt tokens 30202

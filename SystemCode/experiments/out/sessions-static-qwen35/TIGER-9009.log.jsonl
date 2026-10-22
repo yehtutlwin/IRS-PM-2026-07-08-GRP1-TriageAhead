@@ -1,0 +1,31 @@
+{"t": "03:46:08", "kind": "engine", "note": "session TIGER-9009 started (web)"}
+{"t": "03:46:09", "kind": "question", "slot": "red_flags.screen", "text": "Can you please tell me if the patient is awake and responding normally, and whether they are experiencing any severe chest pain, trouble breathing, or heavy bleeding right now?"}
+{"t": "03:46:10", "kind": "answer", "slot": "red_flags.screen", "text": "Yes, I am awake and answering clearly, though I am tired and irritable from the pain. I do not have chest pain, trouble breathing, or heavy bleeding."}
+{"t": "03:46:11", "kind": "extract", "writes": [["red_flags.responsive", true], ["red_flags.chest_pain_now", false], ["red_flags.breathing_difficulty", false], ["red_flags.heavy_bleeding", false]]}
+{"t": "03:46:12", "kind": "question", "slot": "complaint.main", "text": "Can you tell me what happened, when it started, and how bad the pain is on a scale of 0 to 10?"}
+{"t": "03:46:13", "kind": "answer", "slot": "complaint.main", "text": "I woke up last night with sudden, severe pain in my right big toe joint that feels red, swollen, hot, and tender. The pain is an 8 out of 10."}
+{"t": "03:46:15", "kind": "extract", "writes": [["complaint.text", "sudden, severe pain in my right big toe joint that feels red, swollen, hot, and tender", "toe_pain"], ["complaint.onset", "woke up last night", "toe_pain"], ["complaint.pain_rating", 8, "toe_pain"]]}
+{"t": "03:46:15", "kind": "engine", "consider": ["B-02.severe-pain-consider"]}
+{"t": "03:46:15", "kind": "extract", "writes": [["complaint.category", "toe_pain->other"]], "via": "normalised"}
+{"t": "03:46:16", "kind": "question", "slot": "stroke.screen", "text": "Did you notice any face drooping, arm weakness, numbness, or slurred speech at any point today?"}
+{"t": "03:46:17", "kind": "answer", "slot": "stroke.screen", "text": "No, I have no facial drooping, arm weakness, numbness, or slurred speech. My symptoms are limited to the severe pain and swelling in my right big toe."}
+{"t": "03:46:19", "kind": "extract", "writes": [["stroke.face_droop", false], ["stroke.arm_weakness", false], ["stroke.speech_change", false], ["stroke.numb_tingling", false], ["complaint.category", "injury_fall"], ["complaint.text", "severe pain and swelling in my right big toe"], ["complaint.onset", "today"]]}
+{"t": "03:46:20", "kind": "question", "slot": "limb.screen", "text": "Are your fingers or toes numb, cold, pale, blue, or unable to move, and if you have a cast or splint, does it feel far too tight?"}
+{"t": "03:46:21", "kind": "answer", "slot": "limb.screen", "text": "No, my toe is red, swollen, hot, and extremely tender but not numb, cold, pale, blue, or immobile. I do not have a cast or splint."}
+{"t": "03:46:22", "kind": "extract", "writes": [["limb.numb_tingling", false, "toe"], ["limb.cold_pale_blue", false, "toe"], ["limb.cannot_move_digits", false, "toe"], ["limb.cast_too_tight", false]]}
+{"t": "03:46:23", "kind": "question", "slot": "complaint.main", "text": "Since you haven't mentioned how you injured your toe yet, could you please tell me what happened to cause this pain?"}
+{"t": "03:46:24", "kind": "answer", "slot": "complaint.main", "text": "There was no injury; I woke up with sudden severe pain after eating seafood and drinking beers yesterday."}
+{"t": "03:46:26", "kind": "extract", "writes": [["complaint.category", "injury_fall"], ["complaint.text", "sudden severe pain"], ["complaint.onset", "woke up after eating seafood and drinking beers yesterday"], ["red_flags.responsive", true], ["E.mechanism", "none"]]}
+{"t": "03:46:26", "kind": "question", "slot": "M.medications", "text": "Could you please tell me if you take any regular medications?"}
+{"t": "03:46:27", "kind": "answer", "slot": "M.medications", "text": "Yes, I take amlodipine for high blood pressure. I do not take allopurinol or blood thinners."}
+{"t": "03:46:28", "kind": "extract", "writes": [["M.medications", ["amlodipine"]], ["confirm.M.anticoagulant", "none"]]}
+{"t": "03:46:29", "kind": "question", "slot": "allergies_and_history", "text": "Do you have any allergies to medicines or other medical conditions such as heart problems, diabetes, pregnancy, or issues affecting your immune system?"}
+{"t": "03:46:30", "kind": "answer", "slot": "allergies_and_history", "text": "No, I have no known allergies. My only medical condition is high blood pressure, which I treat with amlodipine; I do not have heart problems, diabetes, or any immune system issues."}
+{"t": "03:46:32", "kind": "extract", "writes": [["A.allergies", []], ["M.medications", ["amlodipine"]], ["history.conditions", ["high blood pressure"]], ["history.immunocompromised", false], ["history.pregnant_or_postpartum", false]]}
+{"t": "03:46:33", "kind": "question", "slot": "infection.screen", "text": "Do you have any fever, rash, overseas travel in the last two weeks, or contact with anyone who is infectious?"}
+{"t": "03:46:34", "kind": "answer", "slot": "infection.screen", "text": "No, I do not have a fever, rash, or breathing trouble. I have not traveled overseas recently nor had contact with anyone who is infectious."}
+{"t": "03:46:35", "kind": "extract", "writes": [["infection.fever", false], ["infection.rash", false], ["infection.travel_14d", false], ["infection.contacts", false]]}
+{"t": "03:46:36", "kind": "question", "slot": "wrapup", "text": "Could you please tell me when you last ate or drank, and provide your name and date of birth for our hospital records?"}
+{"t": "03:46:37", "kind": "answer", "slot": "wrapup", "text": "I had a large seafood dinner and several beers at 9pm yesterday. My name is not provided in my description, but my date of birth is February 18, 1974."}
+{"t": "03:46:38", "kind": "extract", "writes": [["L.last_intake", "seafood dinner and several beers at 9pm yesterday"], ["identity.name", "not provided"], ["identity.dob", "February 18, 1974"]]}
+{"t": "03:46:38", "kind": "engine", "note": "interview complete - no open slots"}

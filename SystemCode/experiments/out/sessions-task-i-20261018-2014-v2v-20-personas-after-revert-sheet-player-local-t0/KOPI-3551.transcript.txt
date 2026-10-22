@@ -1,0 +1,31 @@
+session KOPI-3551   started 2026-10-18 19:44   (generated from messages)
+
+19:44:43  BOT  Is the patient awake and responding to you normally? Also, is he or she experiencing any chest pain, trouble breathing, or heavy bleeding right now?   [slot dyn:danger_signs.responsive+danger_signs.chest_pain_now]
+19:44:43  THEM Yes, she's awake and talking. No chest pain.   [slot dyn:danger_signs.responsive+danger_signs.chest_pain_now]
+19:44:51  BOT  I'm glad she's awake. Is she having any trouble breathing or is there any heavy bleeding? Also, could you tell me what the main problem is and what's happening?   [slot dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category+complaint.text]
+19:44:51  THEM No trouble breathing. No. She's had a fever since this afternoon, 38.6 on our thermometer, shivering and very tired. She's on chemotherapy for breast cancer.   [slot dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category+complaint.text]
+19:45:07  SYS  floor: at least ESI-2  rules: ['B-07.immunocompromised-fever'] (floor)
+19:45:10  BOT  I see she has a fever. How old is she, and exactly when did the fever start?   [slot dyn:complaint.onset+patient.age]
+19:45:10  THEM Since this afternoon. She's 51.   [slot dyn:complaint.onset+patient.age]
+19:45:17  BOT  I've noted her age and the fever. To help the team, could you tell me her name and if she is female or male?   [slot dyn:patient.sex]
+19:45:17  THEM Female.   [slot dyn:patient.sex]
+19:45:24  BOT  I've noted she is 51. What medications does she take regularly, and does she have any allergies to medicines?   [slot dyn:M.medications+A.allergies]
+19:45:24  THEM The chemo tablets, capecitabine, and omeprazole. None.   [slot dyn:M.medications+A.allergies]
+19:45:31  BOT  I've noted her medications and lack of allergies. Could you tell me her full name and if she has any other ongoing medical conditions?   [slot dyn:history.conditions+identity.name]
+19:45:31  THEM Breast cancer, on chemotherapy. Chen Li Hua.   [slot dyn:history.conditions+identity.name]
+19:45:38  BOT  Thank you. Could you please provide her date of birth?   [slot dyn:identity.dob]
+19:45:38  THEM 30 June 1975.   [slot dyn:identity.dob]
+19:45:42  BOT  That's enough for the hospital team to prepare. Show the code KOPI-3551 at the counter when you arrive. I'll ask a few more things while you're on the way; tell me straight away if anything changes. (ack)
+19:45:45  BOT  Is she currently pregnant or has she given birth in the last few weeks?   [slot dyn:history.pregnant+history.postpartum]
+19:45:45  THEM No.   [slot dyn:history.pregnant+history.postpartum]
+19:45:52  BOT  I see. Does she have any new rashes, and has she traveled outside the country in the last two weeks?   [slot dyn:infection.rash+infection.travel_14d]
+19:45:52  THEM No rash. No.   [slot dyn:infection.rash+infection.travel_14d]
+19:45:59  BOT  Has she been in contact with anyone who has an infectious illness in the last two weeks?   [slot dyn:infection.contacts]
+19:45:59  THEM No.   [slot dyn:infection.contacts]
+19:46:05  BOT  I've noted that. Have you taken her temperature, and if so, what was it?   [slot dyn:vitals.temp_c]
+19:46:05  THEM 38.6.   [slot dyn:vitals.temp_c]
+19:46:12  BOT  On a scale of 0 to 10, where 10 is the worst pain imaginable, how bad is her pain right now?   [slot dyn:complaint.pain_rating]
+19:46:12  THEM She has no pain, 0.   [slot dyn:complaint.pain_rating]
+19:46:18  BOT  I've noted that she isn't in any pain. When was the last time she had anything to eat or drink?   [slot dyn:L.last_intake]
+19:46:18  THEM Some tea at 4pm.   [slot dyn:L.last_intake]
+19:46:30  BOT  Thank you - that's everything. Show the code KOPI-3551 at the counter when you arrive. (ack)

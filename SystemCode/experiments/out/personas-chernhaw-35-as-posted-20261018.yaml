@@ -1,0 +1,1717 @@
+# 35 persona answer sheets for issue #29: 10 randomly selected 'at least ESI-2' sheets (seed 20261018) plus all 25 ESI-3/4/5 reference sheets.
+# Selected ESI-2 ids: I29-02-resolved-stroke, I29-03-possible-ectopic, I29-04-fever-during-chemotherapy, I29-07-healthcare-needlestick, I29-08-sexual-assault, I29-09-child-increasing-work-of-breathing, I29-11-stridor, I29-15-infant-fever, I29-17-sudden-maximal-abdominal-pain, I29-18-abdominal-pain-and-bleeding
+- id: I29-02-resolved-stroke
+  # ESI v5 p.12: "Signs of a stroke but does not meet level-1 criteria"
+  expect_floor: "at least ESI-2"
+  expect_rules: [B-05.stroke-signs]
+  voice: >
+    You are the husband of an 81-year-old woman. At 10 this morning her words became
+    slurred and her right arm went weak for about 20 minutes. She is back to her usual
+    self now, awake and talking, and you wonder if it was just tiredness. She has
+    a
+    history of high blood pressure and takes a daily blood pressure tablet whose name
+    you do not know. No fall, injury, pain, fever, or blood thinner. When first asked
+    what happened, say she seemed fine by the time you left home; describe the slurred
+    speech and weak arm if asked what was unusual.
+  truth:
+    complaint.stroke_signs: true
+    danger_signs.responsive: true
+    history.conditions: [hypertension]
+    M.anticoagulant: absent
+    complaint.fever: false
+    complaint.category: neuro_symptoms
+    complaint.text: Her speech became slurred and her right arm became weak, but she is back to normal now.
+    complaint.onset: At 10 this morning her words became slurred and her right arm went weak for about 20 minutes.
+    patient.age: 81
+    patient.sex: female
+  source: Invented scenario; ESI v5, printed page 12
+  say:
+    complaint.stroke_signs: Yes, the patient has stroke-like symptoms.
+    danger_signs.responsive: Yes, the patient is awake and responding normally.
+    history.conditions: The patient has hypertension.
+    M.anticoagulant: No, the patient doesn't take a blood thinner.
+    complaint.fever: No, the patient does not have fever.
+    complaint.category: Her speech became slurred and her right arm became weak, but she is back to normal now.
+    complaint.text: Her speech became slurred and her right arm became weak, but she is back to normal now.
+    complaint.onset: At 10 this morning her words became slurred and her right arm went weak for about 20 minutes.
+    patient.age: The patient is 81 years old.
+    patient.sex: The patient is female.
+    danger_signs.chest_pain_now: No, the patient is not having chest pain right now.
+    danger_signs.breathing_difficulty: No, the patient is not having trouble breathing right now.
+    danger_signs.heavy_bleeding: No, the patient is not bleeding heavily right now.
+    infection.rash: I do not know whether the patient has a rash.
+    infection.travel_14d: I do not know whether the patient travelled in the last 14 days.
+    infection.contacts: I do not know of any sick contacts.
+    ams.changed_from_baseline: I do not know whether the patient is acting differently from usual.
+    complaint.pain_rating: The pain score was not provided.
+    M.medications: She takes a daily blood-pressure tablet; I do not know its name.
+    A.allergies: The patient has no known allergies.
+    history.immunocompromised: I do not know whether the patient has a weakened immune system.
+    identity.name: I have not given the patient’s name.
+    identity.dob: I do not know the exact date of birth.
+    L.last_intake: I do not know when the patient last ate or drank.
+- id: I29-03-possible-ectopic
+  # ESI v5 p.12: "A possible ectopic pregnancy, hemodynamically stable"
+  expect_floor: "at least ESI-2"
+  expect_rules: [B-06.possible-ectopic-stable]
+  voice: >
+    You are a 29-year-old woman with sharp pain low on the right side of your abdomen.
+    Your period is about six weeks late and a home pregnancy test was positive. You
+    have had a little spotting but no heavy bleeding, fainting, or trouble breathing.
+    You are awake and speaking normally. A clinic told you an ectopic pregnancy needs
+    to be ruled out. You take no regular medicine, have no known allergies, and have
+    no fever. You speak English as a second language and use short phrases. If asked,
+    say the pain began this afternoon and is getting worse.
+  truth:
+    complaint.category: abdominal_pain
+    complaint.possible_ectopic_pregnancy: true
+    history.pregnant: true
+    complaint.vaginal_bleeding: true
+    complaint.heavy_vaginal_bleeding: false
+    danger_signs.responsive: true
+    complaint.fever: false
+    complaint.text: I have sharp pain low on the right side of my abdomen and some spotting.
+    complaint.onset: If asked, say the pain began this afternoon and is getting worse.
+    patient.age: 29
+    patient.sex: female
+  source: Invented scenario; ESI v5, printed page 12
+  say:
+    complaint.category: I have sharp pain low on the right side of my abdomen and some spotting.
+    complaint.possible_ectopic_pregnancy: Yes, the patient has possible pregnancy with pain or bleeding.
+    history.pregnant: Yes, the patient has pregnancy.
+    complaint.vaginal_bleeding: Yes, the patient has vaginal bleeding.
+    complaint.heavy_vaginal_bleeding: No, the patient does not have heavy vaginal bleeding.
+    danger_signs.responsive: Yes, the patient is awake and responding normally.
+    complaint.fever: No, the patient does not have fever.
+    complaint.text: I have sharp pain low on the right side of my abdomen and some spotting.
+    complaint.onset: It began this afternoon and is getting worse.
+    patient.age: The patient is 29 years old.
+    patient.sex: The patient is female.
+    danger_signs.chest_pain_now: No, the patient is not having chest pain right now.
+    danger_signs.breathing_difficulty: No, the patient is not having trouble breathing right now.
+    danger_signs.heavy_bleeding: No, the patient is not bleeding heavily right now.
+    infection.rash: I do not know whether the patient has a rash.
+    infection.travel_14d: I do not know whether the patient travelled in the last 14 days.
+    infection.contacts: I do not know of any sick contacts.
+    ams.changed_from_baseline: I do not know whether the patient is acting differently from usual.
+    complaint.pain_rating: The pain score was not provided.
+    M.medications: I take no regular medicines.
+    A.allergies: The patient has no known allergies.
+    history.conditions: I do not know the patient’s medical conditions.
+    history.immunocompromised: I do not know whether the patient has a weakened immune system.
+    identity.name: I have not given the patient’s name.
+    identity.dob: I do not know the exact date of birth.
+    L.last_intake: I do not know when the patient last ate or drank.
+- id: I29-04-fever-during-chemotherapy
+  # ESI v5 p.12: "A patient on chemotherapy, and therefore immunocompromised, with a fever"
+  expect_floor: "at least ESI-2"
+  expect_rules: [B-07.immunocompromised-fever]
+  voice: >
+    You are the adult son of a 63-year-old woman receiving chemotherapy for breast
+    cancer. Her last treatment was eight days ago. She has been shivering since this
+    afternoon and your home thermometer read 38.5 degrees Celsius. She is tired but
+    awake and answers you. She takes chemotherapy tablets and a stomach-protection
+    medicine; you do not know their names. No known allergies, no blood thinner, and
+    no recent travel. You are worried and speak quickly. If asked about her history,
+    say she is being treated for cancer.
+  truth:
+    complaint.category: fever
+    complaint.fever: true
+    history.immunocompromised: true
+    danger_signs.responsive: true
+    M.anticoagulant: absent
+    complaint.text: She has been shivering and feels hot while receiving chemotherapy.
+    complaint.onset: Her last treatment was eight days ago.
+    patient.age: 63
+    patient.sex: female
+  source: Invented scenario; ESI v5, printed page 12
+  say:
+    complaint.category: She has been shivering and feels hot while receiving chemotherapy.
+    complaint.fever: Yes, the patient has fever.
+    history.immunocompromised: Yes, the patient has a weakened immune system.
+    danger_signs.responsive: Yes, the patient is awake and responding normally.
+    M.anticoagulant: No, the patient doesn't take a blood thinner.
+    complaint.text: She has been shivering and feels hot while receiving chemotherapy.
+    complaint.onset: She has been shivering since this afternoon and your home thermometer read 38.5 degrees Celsius.
+    patient.age: The patient is 63 years old.
+    patient.sex: The patient is female.
+    danger_signs.chest_pain_now: No, the patient is not having chest pain right now.
+    danger_signs.breathing_difficulty: No, the patient is not having trouble breathing right now.
+    danger_signs.heavy_bleeding: No, the patient is not bleeding heavily right now.
+    infection.rash: I do not know whether the patient has a rash.
+    infection.travel_14d: I do not know whether the patient travelled in the last 14 days.
+    infection.contacts: I do not know of any sick contacts.
+    ams.changed_from_baseline: I do not know whether the patient is acting differently from usual.
+    complaint.pain_rating: The pain score was not provided.
+    M.medications: She takes chemotherapy tablets and a stomach-protection medicine.
+    A.allergies: The patient has no known allergies.
+    history.conditions: I do not know the patient’s medical conditions.
+    identity.name: I have not given the patient’s name.
+    identity.dob: I do not know the exact date of birth.
+    L.last_intake: I do not know when the patient last ate or drank.
+- id: I29-07-healthcare-needlestick
+  # ESI v5 p.12: "A needle stick in a health care worker (time sensitive to postexposure prophylaxis treatment)"
+  expect_floor: "at least ESI-2"
+  expect_rules: [B-10.needle-stick-hcw]
+  voice: >
+    You are a 32-year-old nurse. About 25 minutes ago, after drawing blood from a
+    patient, you accidentally stuck your left index finger with the used hollow-bore
+    needle. There is a small puncture and a little blood. You washed it immediately.
+    You are awake, feel well, and have no fever, pain elsewhere, or breathing
+    difficulty. You take no regular medicines, have no known allergies, and are not
+    on a blood thinner. You are calm but want to know what to do next.
+  truth:
+    complaint.needle_stick_healthcare_worker: true
+    complaint.category: injury
+    danger_signs.responsive: true
+    complaint.fever: false
+    M.anticoagulant: absent
+    complaint.text: I accidentally stuck my finger with a used needle at work.
+    complaint.onset: About 25 minutes ago, after drawing blood from a patient, you accidentally stuck your left
+      index finger with the used hollow-bore needle.
+    patient.age: 32
+    patient.sex: other
+  source: Invented scenario; ESI v5, printed page 12
+  say:
+    complaint.needle_stick_healthcare_worker: Yes, the patient has a used-needle injury at work.
+    complaint.category: I accidentally stuck my finger with a used needle at work.
+    danger_signs.responsive: Yes, the patient is awake and responding normally.
+    complaint.fever: No, the patient does not have fever.
+    M.anticoagulant: No, the patient doesn't take a blood thinner.
+    complaint.text: I accidentally stuck my finger with a used needle at work.
+    complaint.onset: About 25 minutes ago, after drawing blood from a patient, you accidentally stuck your left
+      index finger with the used hollow-bore needle.
+    patient.age: The patient is 32 years old.
+    patient.sex: The patient’s sex has not been specified as male or female.
+    danger_signs.chest_pain_now: No, the patient is not having chest pain right now.
+    danger_signs.breathing_difficulty: No, the patient is not having trouble breathing right now.
+    danger_signs.heavy_bleeding: No, the patient is not bleeding heavily right now.
+    infection.rash: I do not know whether the patient has a rash.
+    infection.travel_14d: I do not know whether the patient travelled in the last 14 days.
+    infection.contacts: I do not know of any sick contacts.
+    ams.changed_from_baseline: I do not know whether the patient is acting differently from usual.
+    complaint.pain_rating: The pain score was not provided.
+    M.medications: I take no regular medicines.
+    A.allergies: The patient has no known allergies.
+    history.conditions: I do not know the patient’s medical conditions.
+    history.immunocompromised: I do not know whether the patient has a weakened immune system.
+    identity.name: I have not given the patient’s name.
+    identity.dob: I do not know the exact date of birth.
+    L.last_intake: I do not know when the patient last ate or drank.
+- id: I29-08-sexual-assault
+  # ESI v5 p.12: "Sexual assault survivor"
+  expect_floor: "at least ESI-2"
+  expect_rules: [B-11.sexual-assault]
+  voice: >
+    You are a 20-year-old patient who came with a trusted friend after a sexual
+    assault earlier tonight. You do not want to describe what happened in detail at
+    the front desk. You are awake, speaking, and physically stable; you have no heavy
+    bleeding, severe pain, or trouble breathing. You take no regular medicines, have
+    no known allergies, and are not taking a blood thinner. You are frightened and
+    ask to speak somewhere private. If asked whether you are here after an assault,
+    quietly say yes.
+  truth:
+    complaint.sexual_assault: true
+    danger_signs.responsive: true
+    complaint.heavy_vaginal_bleeding: false
+    M.anticoagulant: absent
+    complaint.category: other
+    complaint.text: I came in with a trusted friend after a sexual assault.
+    complaint.onset: You are a 20-year-old patient who came with a trusted friend after a sexual assault earlier
+      tonight.
+    patient.age: 20
+    patient.sex: other
+  source: Invented scenario; ESI v5, printed page 12
+  say:
+    complaint.sexual_assault: Yes, the patient has a sexual assault.
+    danger_signs.responsive: Yes, the patient is awake and responding normally.
+    complaint.heavy_vaginal_bleeding: No, the patient does not have heavy vaginal bleeding.
+    M.anticoagulant: No, the patient doesn't take a blood thinner.
+    complaint.category: I came in with a trusted friend after a sexual assault.
+    complaint.text: I came in with a trusted friend after a sexual assault.
+    complaint.onset: It began in detail at the front desk.
+    patient.age: The patient is 20 years old.
+    patient.sex: The patient’s sex has not been specified as male or female.
+    danger_signs.chest_pain_now: No, the patient is not having chest pain right now.
+    danger_signs.breathing_difficulty: No, the patient is not having trouble breathing right now.
+    danger_signs.heavy_bleeding: No, the patient is not bleeding heavily right now.
+    complaint.fever: I do not know whether the patient has a fever.
+    infection.rash: I do not know whether the patient has a rash.
+    infection.travel_14d: I do not know whether the patient travelled in the last 14 days.
+    infection.contacts: I do not know of any sick contacts.
+    ams.changed_from_baseline: I do not know whether the patient is acting differently from usual.
+    complaint.pain_rating: The pain score was not provided.
+    M.medications: I take no regular medicines.
+    A.allergies: The patient has no known allergies.
+    history.conditions: I do not know the patient’s medical conditions.
+    history.immunocompromised: I do not know whether the patient has a weakened immune system.
+    identity.name: I have not given the patient’s name.
+    identity.dob: I do not know the exact date of birth.
+    L.last_intake: I do not know when the patient last ate or drank.
+- id: I29-09-child-increasing-work-of-breathing
+  # ESI v5 p.12: "Increasing respiratory effort"
+  expect_floor: "at least ESI-2"
+  expect_rules: [B-12.increasing-respiratory-effort]
+  voice: >
+    You are the father of a 6-year-old boy whose breathing has become harder over
+    the
+    last hour. His ribs pull in when he breathes and he has to pause while speaking.
+    He is awake and responds to you. He has asthma and uses a blue inhaler, but it
+    has
+    not helped much today. No fever, no known allergies, and no blood thinner. You
+    answer in a rush and may first say only that he has a cough; describe the increased
+    effort if asked how his breathing has changed.
+  truth:
+    complaint.increasing_respiratory_effort: true
+    complaint.category: breathing
+    patient.age: 6
+    danger_signs.responsive: true
+    history.conditions: [asthma]
+    complaint.fever: false
+    complaint.text: My son is having a harder time breathing and has to pause while speaking.
+    complaint.onset: He has asthma and uses a blue inhaler, but it has not helped much today.
+    patient.sex: male
+  source: Invented scenario; ESI v5, printed page 12
+  say:
+    complaint.increasing_respiratory_effort: Yes, the patient has increasing difficulty breathing.
+    complaint.category: My son is having a harder time breathing and has to pause while speaking.
+    patient.age: The patient is 6 years old.
+    danger_signs.responsive: Yes, the patient is awake and responding normally.
+    history.conditions: The patient has asthma.
+    complaint.fever: No, the patient does not have fever.
+    complaint.text: My son is having a harder time breathing and has to pause while speaking.
+    complaint.onset: You are the father of a 6-year-old boy whose breathing has become harder over the last hour.
+    patient.sex: The patient is male.
+    danger_signs.chest_pain_now: No, the patient is not having chest pain right now.
+    danger_signs.breathing_difficulty: Yes, the patient is having trouble breathing right now.
+    danger_signs.heavy_bleeding: No, the patient is not bleeding heavily right now.
+    infection.rash: I do not know whether the patient has a rash.
+    infection.travel_14d: I do not know whether the patient travelled in the last 14 days.
+    infection.contacts: I do not know of any sick contacts.
+    ams.changed_from_baseline: I do not know whether the patient is acting differently from usual.
+    complaint.pain_rating: The pain score was not provided.
+    M.medications: He uses a blue asthma inhaler.
+    A.allergies: The patient has no known allergies.
+    history.immunocompromised: I do not know whether the patient has a weakened immune system.
+    identity.name: I have not given the patient’s name.
+    identity.dob: I do not know the exact date of birth.
+    L.last_intake: I do not know when the patient last ate or drank.
+- id: I29-11-stridor
+  # ESI v5 p.13: "Patients who are unable to manage their own secretions and/or exhibit respiratory stridor are extremely high-risk patients and should be assigned an ESI level of 2"
+  expect_floor: "at least ESI-2"
+  expect_rules: [B-14.stridor-or-secretions]
+  voice: >
+    You are the mother of a 4-year-old child who suddenly developed a harsh,
+    high-pitched noise when breathing in. The sound is present even while sitting
+    still. The child is awake and looking at you, but is drooling and cannot swallow
+    saliva normally. There was no choking event that you saw. The child has no known
+    allergies or regular medicines and no fever. You are upset and speak in short
+    phrases. If asked, describe the noise as loudest on breathing in.
+  truth:
+    complaint.respiratory_distress_signs: true
+    patient.age: 4
+    danger_signs.responsive: true
+    complaint.fever: false
+    complaint.category: breathing
+    complaint.text: My child has a harsh, high-pitched noise when breathing in and is drooling.
+    complaint.onset: You are the mother of a 4-year-old child who suddenly developed a harsh, high-pitched noise
+      when breathing in.
+    patient.sex: other
+  source: Invented scenario; ESI v5, printed page 13
+  say:
+    complaint.respiratory_distress_signs: Yes, the patient has breathing distress signs.
+    patient.age: The patient is 4 years old.
+    danger_signs.responsive: Yes, the patient is awake and responding normally.
+    complaint.fever: No, the patient does not have fever.
+    complaint.category: My child has a harsh, high-pitched noise when breathing in and is drooling.
+    complaint.text: My child has a harsh, high-pitched noise when breathing in and is drooling.
+    complaint.onset: You are the mother of a 4-year-old child who suddenly developed a harsh, high-pitched noise
+      when breathing in.
+    patient.sex: The patient’s sex has not been specified as male or female.
+    danger_signs.chest_pain_now: No, the patient is not having chest pain right now.
+    danger_signs.breathing_difficulty: Yes, the patient is having trouble breathing right now.
+    danger_signs.heavy_bleeding: No, the patient is not bleeding heavily right now.
+    infection.rash: I do not know whether the patient has a rash.
+    infection.travel_14d: I do not know whether the patient travelled in the last 14 days.
+    infection.contacts: I do not know of any sick contacts.
+    ams.changed_from_baseline: I do not know whether the patient is acting differently from usual.
+    complaint.pain_rating: The pain score was not provided.
+    M.medications: The child takes no regular medicines.
+    A.allergies: The patient has no known allergies.
+    history.conditions: I do not know the patient’s medical conditions.
+    history.immunocompromised: I do not know whether the patient has a weakened immune system.
+    identity.name: I have not given the patient’s name.
+    identity.dob: I do not know the exact date of birth.
+    L.last_intake: I do not know when the patient last ate or drank.
+- id: I29-15-infant-fever
+  # ESI v5 p.6: "1-28 days of age: Assign at least ESI 2 if T > 38° C"
+  expect_floor: "at least ESI-2"
+  expect_rules: [B-56.infant-under-28-days-fever]
+  voice: >
+    You are the parent of a 19-day-old baby. The baby feels hot and has a temperature
+    of 38.3 degrees Celsius measured at home. The baby is sleepier than usual but
+    wakes when you pick them up and is breathing normally. Feeding has been less
+    frequent today. The baby takes no medicines and has no known allergies. You are
+    anxious and may not know the exact birth weight. If asked about the temperature,
+    say how and when you measured it.
+  truth:
+    patient.age_days: 19
+    patient.age: 0
+    complaint.category: fever
+    complaint.fever: true
+    ams.changed_from_baseline: true
+    danger_signs.responsive: true
+    complaint.text: My 19-day-old baby feels hot and is sleepier than usual.
+    complaint.onset: Feeding has been less frequent today.
+    patient.sex: other
+  source: Invented scenario; ESI v5, printed page 6
+  say:
+    patient.age_days: The baby is 19 days old.
+    patient.age: The baby is 19 days old.
+    complaint.category: My 19-day-old baby feels hot and is sleepier than usual.
+    complaint.fever: Yes, the patient has fever.
+    ams.changed_from_baseline: Yes, the patient has a change from usual alertness or behaviour.
+    danger_signs.responsive: Yes, the patient is awake and responding normally.
+    complaint.text: My 19-day-old baby feels hot and is sleepier than usual.
+    complaint.onset: Feeding has been less frequent today.
+    patient.sex: The patient’s sex has not been specified as male or female.
+    danger_signs.chest_pain_now: No, the patient is not having chest pain right now.
+    danger_signs.breathing_difficulty: No, the patient is not having trouble breathing right now.
+    danger_signs.heavy_bleeding: No, the patient is not bleeding heavily right now.
+    infection.rash: I do not know whether the patient has a rash.
+    infection.travel_14d: I do not know whether the patient travelled in the last 14 days.
+    infection.contacts: I do not know of any sick contacts.
+    complaint.pain_rating: The pain score was not provided.
+    M.medications: I do not know what medicines the patient takes.
+    A.allergies: The patient has no known allergies.
+    history.conditions: I do not know the patient’s medical conditions.
+    history.immunocompromised: I do not know whether the patient has a weakened immune system.
+    identity.name: I have not given the patient’s name.
+    identity.dob: I do not know the exact date of birth.
+    L.last_intake: I do not know when the patient last ate or drank.
+- id: I29-17-sudden-maximal-abdominal-pain
+  # ESI v5 p.14: "refractory to analgesia, constant, and /or maximal on onset"
+  expect_floor: "at least ESI-2"
+  expect_rules: [B-20.abdo-pain-refractory-constant-maximal]
+  voice: >
+    You are a 52-year-old man with sudden, severe abdominal pain that reached its
+    worst within seconds. It has stayed constant for the last hour and is now 9/10.
+    You took your usual pain medicine without relief. You are awake and speaking but
+    cannot get comfortable. No injury, fever, vomiting, blood thinner, or known
+    allergies. Your partner drove you in. You are distressed and answer in short
+    sentences.
+  truth:
+    complaint.category: abdominal_pain
+    complaint.pain_rating: 9
+    complaint.pain_refractory_constant_or_maximal_onset: true
+    danger_signs.responsive: true
+    complaint.vomiting: false
+    complaint.fever: false
+    M.anticoagulant: absent
+    complaint.text: I have sudden, constant, severe abdominal pain that did not improve with my usual pain medicine.
+    complaint.onset: I don't know exactly when it started.
+    patient.age: 52
+    patient.sex: male
+  source: Invented scenario; ESI v5, printed page 14
+  say:
+    complaint.category: I have sudden, constant, severe abdominal pain that did not improve with my usual pain medicine.
+    complaint.pain_rating: The value is 9.
+    complaint.pain_refractory_constant_or_maximal_onset: Yes, the patient has constant or sudden severe pain that
+      did not improve with medicine.
+    danger_signs.responsive: Yes, the patient is awake and responding normally.
+    complaint.vomiting: No, the patient does not have vomiting.
+    complaint.fever: No, the patient does not have fever.
+    M.anticoagulant: No, the patient doesn't take a blood thinner.
+    complaint.text: I have sudden, constant, severe abdominal pain that did not improve with my usual pain medicine.
+    complaint.onset: I don't know exactly when it started.
+    patient.age: The patient is 52 years old.
+    patient.sex: The patient is male.
+    danger_signs.chest_pain_now: No, the patient is not having chest pain right now.
+    danger_signs.breathing_difficulty: No, the patient is not having trouble breathing right now.
+    danger_signs.heavy_bleeding: No, the patient is not bleeding heavily right now.
+    infection.rash: I do not know whether the patient has a rash.
+    infection.travel_14d: I do not know whether the patient travelled in the last 14 days.
+    infection.contacts: I do not know of any sick contacts.
+    ams.changed_from_baseline: I do not know whether the patient is acting differently from usual.
+    M.medications: I tried my usual pain medicine.
+    A.allergies: The patient has no known allergies.
+    history.conditions: I do not know the patient’s medical conditions.
+    history.immunocompromised: I do not know whether the patient has a weakened immune system.
+    identity.name: I have not given the patient’s name.
+    identity.dob: I do not know the exact date of birth.
+    L.last_intake: I do not know when the patient last ate or drank.
+- id: I29-18-abdominal-pain-and-bleeding
+  # ESI v5 p.14: "Pregnant patients with chest pain and/or shortness of breath, abdominal pain, or headache (Sperling et al., 2015) should be triaged as ESI 2"; also "Abdominal pain with vaginal bleeding can suggest ectopic pregnancy or other emergent pregnancy complications"
+  expect_floor: "at least ESI-2"
+  expect_rules: [B-21.abdo-pain-vaginal-bleeding, B-38.pregnant-chest-pain-breathlessness-abdo-pain-or-headache]
+  voice: >
+    You are a 33-year-old woman who is about six weeks pregnant. You have lower
+    abdominal pain and vaginal bleeding that began this morning. The pain is 5/10;
+    you feel worried but have not fainted and are speaking normally. You take no
+    regular medicines, have no known allergies, and have no fever. You came with your
+    partner. If asked about bleeding, say it is more than spotting but not soaking
+    a
+    pad each hour.
+  truth:
+    complaint.category: abdominal_pain
+    complaint.vaginal_bleeding: true
+    history.pregnant: true
+    complaint.pain_rating: 5
+    danger_signs.responsive: true
+    complaint.fever: false
+    complaint.text: I am about six weeks pregnant and have lower abdominal pain with vaginal bleeding.
+    complaint.onset: You have lower abdominal pain and vaginal bleeding that began this morning.
+    patient.age: 33
+    patient.sex: female
+  source: Invented scenario; ESI v5, printed page 14
+  say:
+    complaint.category: I am about six weeks pregnant and have lower abdominal pain with vaginal bleeding.
+    complaint.vaginal_bleeding: Yes, the patient has vaginal bleeding.
+    history.pregnant: Yes, the patient has pregnancy.
+    complaint.pain_rating: The value is 5.
+    danger_signs.responsive: Yes, the patient is awake and responding normally.
+    complaint.fever: No, the patient does not have fever.
+    complaint.text: I am about six weeks pregnant and have lower abdominal pain with vaginal bleeding.
+    complaint.onset: It began this morning.
+    patient.age: The patient is 33 years old.
+    patient.sex: The patient is female.
+    danger_signs.chest_pain_now: No, the patient is not having chest pain right now.
+    danger_signs.breathing_difficulty: No, the patient is not having trouble breathing right now.
+    danger_signs.heavy_bleeding: No, the patient is not bleeding heavily right now.
+    infection.rash: I do not know whether the patient has a rash.
+    infection.travel_14d: I do not know whether the patient travelled in the last 14 days.
+    infection.contacts: I do not know of any sick contacts.
+    ams.changed_from_baseline: I do not know whether the patient is acting differently from usual.
+    M.medications: I do not know what medicines the patient takes.
+    A.allergies: The patient has no known allergies.
+    history.conditions: I do not know the patient’s medical conditions.
+    history.immunocompromised: I do not know whether the patient has a weakened immune system.
+    identity.name: I have not given the patient’s name.
+    identity.dob: I do not know the exact date of birth.
+    L.last_intake: I do not know when the patient last ate or drank.
+- id: I29-26-leg-pain-after-travel
+  reference_esi: 3
+  expect_floor:
+  expect_rules: []
+  voice: >
+    You are a 52-year-old woman with an ache in your left calf. It started yesterday
+    after a long car trip where you sat for most of two days. The leg is a little
+    sore, but you can walk and you are not short of breath or having chest pain. You
+    have no fever, no recent injury, and no history of blood clots that you know of.
+    You take no blood thinner and have no known allergies. You answer calmly and
+    mention the long drive if asked when the pain started.
+  truth:
+    patient.age: 52
+    complaint.category: limb_pain_or_swelling
+    complaint.pain_rating: 3
+    complaint.shortness_of_breath: false
+    M.anticoagulant: absent
+    complaint.fever: false
+    danger_signs.responsive: true
+    complaint.text: My left calf has been aching since a long car trip.
+    complaint.onset: It started yesterday after a long car trip where you sat for most of two days.
+    patient.sex: female
+  source: "ESI v4 Chapter 9, case 24"
+  say:
+    patient.age: The patient is 52 years old.
+    complaint.category: My left calf has been aching since a long car trip.
+    complaint.pain_rating: The value is 3.
+    complaint.shortness_of_breath: No, the patient does not have shortness of breath.
+    M.anticoagulant: No, the patient doesn't take a blood thinner.
+    complaint.fever: No, the patient does not have fever.
+    danger_signs.responsive: Yes, the patient is awake and responding normally.
+    complaint.text: My left calf has been aching since a long car trip.
+    complaint.onset: It began yesterday after a long car trip where you sat for most of two days.
+    patient.sex: The patient is female.
+    danger_signs.chest_pain_now: No, the patient is not having chest pain right now.
+    danger_signs.breathing_difficulty: No, the patient is not having trouble breathing right now.
+    danger_signs.heavy_bleeding: No, the patient is not bleeding heavily right now.
+    infection.rash: I do not know whether the patient has a rash.
+    infection.travel_14d: I do not know whether the patient travelled in the last 14 days.
+    infection.contacts: I do not know of any sick contacts.
+    ams.changed_from_baseline: I do not know whether the patient is acting differently from usual.
+    M.medications: I do not know what medicines the patient takes.
+    A.allergies: The patient has no known allergies.
+    history.conditions: I do not know the patient’s medical conditions.
+    history.immunocompromised: I do not know whether the patient has a weakened immune system.
+    identity.name: I have not given the patient’s name.
+    identity.dob: I do not know the exact date of birth.
+    L.last_intake: I do not know when the patient last ate or drank.
+- id: I29-27-open-leg-fracture-circulation-intact
+  reference_esi: 3
+  expect_floor:
+  expect_rules: []
+  voice: >
+    You are a 32-year-old woman who fell from a stepladder and broke your lower leg.
+    There is a small open wound over the fracture, but your foot is warm and its
+    color looks normal. You can wiggle your toes and feel them when touched. The pain
+    is 6/10. You are awake and speaking normally. You take no blood thinner, have
+    no
+    fever, and have no known allergies. Your brother brought you in. You are upset
+    about the injury but answer questions clearly.
+  truth:
+    patient.age: 32
+    complaint.category: injury
+    E.mechanism: fall
+    complaint.extremity_neurovascular_compromise: false
+    complaint.compartment_syndrome_symptoms: false
+    complaint.pain_rating: 6
+    danger_signs.responsive: true
+    M.anticoagulant: absent
+    complaint.fever: false
+    complaint.text: I fell from a stepladder and broke my lower leg; there is a small open wound.
+    complaint.onset: I don't know exactly when it started.
+    patient.sex: female
+  source: "ESI v4 Chapter 9, case 29"
+  say:
+    patient.age: The patient is 32 years old.
+    complaint.category: I fell from a stepladder and broke my lower leg; there is a small open wound.
+    E.mechanism: The patient fell.
+    complaint.extremity_neurovascular_compromise: No, the patient does not have numbness, pallor, or difficulty
+      moving the injured limb.
+    complaint.compartment_syndrome_symptoms: No, the patient does not have increasing tightness and pain in the
+      limb.
+    complaint.pain_rating: The value is 6.
+    danger_signs.responsive: Yes, the patient is awake and responding normally.
+    M.anticoagulant: No, the patient doesn't take a blood thinner.
+    complaint.fever: No, the patient does not have fever.
+    complaint.text: I fell from a stepladder and broke my lower leg; there is a small open wound.
+    complaint.onset: I don't know exactly when it started.
+    patient.sex: The patient is female.
+    danger_signs.chest_pain_now: No, the patient is not having chest pain right now.
+    danger_signs.breathing_difficulty: No, the patient is not having trouble breathing right now.
+    danger_signs.heavy_bleeding: No, the patient is not bleeding heavily right now.
+    infection.rash: I do not know whether the patient has a rash.
+    infection.travel_14d: I do not know whether the patient travelled in the last 14 days.
+    infection.contacts: I do not know of any sick contacts.
+    ams.changed_from_baseline: I do not know whether the patient is acting differently from usual.
+    M.medications: I do not know what medicines the patient takes.
+    A.allergies: The patient has no known allergies.
+    history.conditions: I do not know the patient’s medical conditions.
+    history.immunocompromised: I do not know whether the patient has a weakened immune system.
+    identity.name: I have not given the patient’s name.
+    identity.dob: I do not know the exact date of birth.
+    L.last_intake: I do not know when the patient last ate or drank.
+- id: I29-28-infant-projectile-vomiting
+  reference_esi: 3
+  expect_floor:
+  expect_rules: []
+  voice: >
+    You are the parent of a 3-week-old baby who has vomited forcefully after feeds
+    several times today. The baby is alert, looks pink, and is breathing comfortably.
+    There has been no fever; the temperature at home was 37.1 degrees Celsius. The
+    baby has wet diapers and is still interested in feeding. You have not given any
+    medicine. You are worried because the vomiting shoots out rather than dribbling.
+    If asked, explain how often it has happened and when the baby last fed.
+  truth:
+    patient.age: 0
+    patient.age_days: 21
+    complaint.category: vomiting_or_diarrhoea
+    complaint.vomiting: true
+    complaint.fever: false
+    ams.changed_from_baseline: true
+    danger_signs.responsive: true
+    complaint.text: My three-week-old baby has forcefully vomited after several feeds today.
+    complaint.onset: You are the parent of a 3-week-old baby who has vomited forcefully after feeds several times
+      today.
+    patient.sex: other
+  source: "ESI v4 Chapter 9, case 47"
+  say:
+    patient.age: The baby is three weeks old.
+    patient.age_days: The baby is 21 days old.
+    complaint.category: My three-week-old baby has forcefully vomited after several feeds today.
+    complaint.vomiting: Yes, the patient has vomiting.
+    complaint.fever: No, the patient does not have fever.
+    ams.changed_from_baseline: Yes, the patient has a change from usual alertness or behaviour.
+    danger_signs.responsive: Yes, the patient is awake and responding normally.
+    complaint.text: My three-week-old baby has forcefully vomited after several feeds today.
+    complaint.onset: It began and when the baby last fed.
+    patient.sex: The patient’s sex has not been specified as male or female.
+    danger_signs.chest_pain_now: No, the patient is not having chest pain right now.
+    danger_signs.breathing_difficulty: No, the patient is not having trouble breathing right now.
+    danger_signs.heavy_bleeding: No, the patient is not bleeding heavily right now.
+    infection.rash: I do not know whether the patient has a rash.
+    infection.travel_14d: I do not know whether the patient travelled in the last 14 days.
+    infection.contacts: I do not know of any sick contacts.
+    complaint.pain_rating: The pain score was not provided.
+    M.medications: I do not know what medicines the patient takes.
+    A.allergies: The patient has no known allergies.
+    history.conditions: I do not know the patient’s medical conditions.
+    history.immunocompromised: I do not know whether the patient has a weakened immune system.
+    identity.name: I have not given the patient’s name.
+    identity.dob: I do not know the exact date of birth.
+    L.last_intake: I do not know when the patient last ate or drank.
+- id: I29-29-vomiting-and-diarrhea
+  reference_esi: 3
+  expect_floor:
+  expect_rules: []
+  voice: >
+    You are a 33-year-old woman with vomiting and diarrhea since this morning. Your
+    abdomen cramps off and on, about 5/10, but you have no severe or constant pain.
+    You have kept down a few sips of water and have not fainted. No blood in the
+    vomit or stool, no fever, and no recent travel. You take no regular medicine and
+    have no known allergies. You are tired but can answer questions normally.
+  truth:
+    patient.age: 33
+    complaint.category: vomiting_or_diarrhoea
+    complaint.vomiting: true
+    complaint.pain_rating: 5
+    complaint.fever: false
+    danger_signs.responsive: true
+    complaint.text: I have been vomiting and having diarrhea, with cramps that come and go.
+    complaint.onset: You are a 33-year-old woman with vomiting and diarrhea since this morning.
+    patient.sex: female
+  source: "ESI v4 Chapter 9, case 19"
+  say:
+    patient.age: The patient is 33 years old.
+    complaint.category: I have been vomiting and having diarrhea, with cramps that come and go.
+    complaint.vomiting: Yes, the patient has vomiting.
+    complaint.pain_rating: The value is 5.
+    complaint.fever: No, the patient does not have fever.
+    danger_signs.responsive: Yes, the patient is awake and responding normally.
+    complaint.text: I have been vomiting and having diarrhea, with cramps that come and go.
+    complaint.onset: You are a 33-year-old woman with vomiting and diarrhea since this morning.
+    patient.sex: The patient is female.
+    danger_signs.chest_pain_now: No, the patient is not having chest pain right now.
+    danger_signs.breathing_difficulty: No, the patient is not having trouble breathing right now.
+    danger_signs.heavy_bleeding: No, the patient is not bleeding heavily right now.
+    infection.rash: I do not know whether the patient has a rash.
+    infection.travel_14d: I do not know whether the patient travelled in the last 14 days.
+    infection.contacts: I do not know of any sick contacts.
+    ams.changed_from_baseline: I do not know whether the patient is acting differently from usual.
+    M.medications: I do not know what medicines the patient takes.
+    A.allergies: The patient has no known allergies.
+    history.conditions: I do not know the patient’s medical conditions.
+    history.immunocompromised: I do not know whether the patient has a weakened immune system.
+    identity.name: I have not given the patient’s name.
+    identity.dob: I do not know the exact date of birth.
+    L.last_intake: I do not know when the patient last ate or drank.
+- id: I29-30-migraine-with-vomiting
+  reference_esi: 3
+  expect_floor:
+  expect_rules: []
+  voice: >
+    You are a 48-year-old man with a history of kidney stones. You had pain in your
+    side earlier today and took a pain pill you already had at home. It has eased
+    to
+    3/10 and you are comfortable sitting still. You have no fever, vomiting, blood
+    in your urine, or trouble breathing. You are alert and speaking normally. You
+    take no blood thinner and have no known allergies.
+  truth:
+    patient.age: 48
+    complaint.category: abdominal_pain
+    complaint.pain_rating: 3
+    complaint.pain_cause_class: renal_colic
+    complaint.vomiting: false
+    complaint.fever: false
+    danger_signs.responsive: true
+    M.anticoagulant: absent
+    complaint.text: I have pain in my side like the kidney stones I have had before.
+    complaint.onset: You had pain in your side earlier today and took a pain pill you already had at home.
+    patient.sex: male
+  source: "ESI v4 Chapter 10, Set A, case 5"
+  say:
+    patient.age: The patient is 48 years old.
+    complaint.category: I have pain in my side like the kidney stones I have had before.
+    complaint.pain_rating: The value is 3.
+    complaint.pain_cause_class: A doctor has said this is kidney-stone pain.
+    complaint.vomiting: No, the patient does not have vomiting.
+    complaint.fever: No, the patient does not have fever.
+    danger_signs.responsive: Yes, the patient is awake and responding normally.
+    M.anticoagulant: No, the patient doesn't take a blood thinner.
+    complaint.text: I have pain in my side like the kidney stones I have had before.
+    complaint.onset: You had pain in your side earlier today and took a pain pill you already had at home.
+    patient.sex: The patient is male.
+    danger_signs.chest_pain_now: No, the patient is not having chest pain right now.
+    danger_signs.breathing_difficulty: No, the patient is not having trouble breathing right now.
+    danger_signs.heavy_bleeding: No, the patient is not bleeding heavily right now.
+    infection.rash: I do not know whether the patient has a rash.
+    infection.travel_14d: I do not know whether the patient travelled in the last 14 days.
+    infection.contacts: I do not know of any sick contacts.
+    ams.changed_from_baseline: I do not know whether the patient is acting differently from usual.
+    M.medications: I took a pain pill for the kidney-stone pain.
+    A.allergies: The patient has no known allergies.
+    history.conditions: I do not know the patient’s medical conditions.
+    history.immunocompromised: I do not know whether the patient has a weakened immune system.
+    identity.name: I have not given the patient’s name.
+    identity.dob: I do not know the exact date of birth.
+    L.last_intake: I do not know when the patient last ate or drank.
+- id: I29-31-child-abdominal-pain
+  reference_esi: 3
+  expect_floor:
+  expect_rules: []
+  voice: >
+    You are the parent of a 10-year-old boy who has been constipated for about a
+    week. Today he says his whole stomach hurts, about 7/10, but he is awake and
+    talking with you. He has not vomited and has no fever. His belly is not swollen
+    and he has not had a recent injury. He takes no daily medicines and has no known
+    allergies. You are concerned because he has not passed stool, but he is not
+    getting worse while you speak to the nurse.
+  truth:
+    patient.age: 10
+    complaint.category: abdominal_pain
+    complaint.pain_rating: 7
+    complaint.vomiting: false
+    complaint.fever: false
+    complaint.pain_refractory_constant_or_maximal_onset: false
+    danger_signs.responsive: true
+    complaint.text: My son has been constipated and says his whole stomach hurts.
+    complaint.onset: Today he says his whole stomach hurts, about 7/10, but he is awake and talking with you.
+    patient.sex: male
+  source: "ESI v4 Chapter 10, Set B, case 24"
+  say:
+    patient.age: The patient is 10 years old.
+    complaint.category: My son has been constipated and says his whole stomach hurts.
+    complaint.pain_rating: The value is 7.
+    complaint.vomiting: No, the patient does not have vomiting.
+    complaint.fever: No, the patient does not have fever.
+    complaint.pain_refractory_constant_or_maximal_onset: No, the patient does not have constant or sudden severe
+      pain that did not improve with medicine.
+    danger_signs.responsive: Yes, the patient is awake and responding normally.
+    complaint.text: My son has been constipated and says his whole stomach hurts.
+    complaint.onset: Today he says his whole stomach hurts, about 7/10, but he is awake and talking with you.
+    patient.sex: The patient is male.
+    danger_signs.chest_pain_now: No, the patient is not having chest pain right now.
+    danger_signs.breathing_difficulty: No, the patient is not having trouble breathing right now.
+    danger_signs.heavy_bleeding: No, the patient is not bleeding heavily right now.
+    infection.rash: I do not know whether the patient has a rash.
+    infection.travel_14d: I do not know whether the patient travelled in the last 14 days.
+    infection.contacts: I do not know of any sick contacts.
+    ams.changed_from_baseline: I do not know whether the patient is acting differently from usual.
+    M.medications: I do not know what medicines the patient takes.
+    A.allergies: The patient has no known allergies.
+    history.conditions: I do not know the patient’s medical conditions.
+    history.immunocompromised: I do not know whether the patient has a weakened immune system.
+    identity.name: I have not given the patient’s name.
+    identity.dob: I do not know the exact date of birth.
+    L.last_intake: I do not know when the patient last ate or drank.
+- id: I29-32-positional-vertigo
+  reference_esi: 3
+  expect_floor:
+  expect_rules: []
+  voice: >
+    You are a 42-year-old man who feels the room spin when you turn your head or get
+    out of bed. You vomited once when the dizziness was strongest. It eases when you
+    lie still. You have no chest pain, shortness of breath, weakness, trouble
+    speaking, severe headache, or fever. You are alert, can walk with a little help,
+    and have no known allergies. You are not taking a blood thinner.
+  truth:
+    patient.age: 42
+    complaint.category: dizziness
+    complaint.vomiting: true
+    complaint.stroke_signs: false
+    complaint.headache_thunderclap: false
+    complaint.fever: false
+    danger_signs.responsive: true
+    M.anticoagulant: absent
+    complaint.text: The room spins when I turn my head or get out of bed, and I vomited once.
+    complaint.onset: I don't know exactly when it started.
+    patient.sex: male
+  source: "ESI v4 Chapter 9, case 56"
+  say:
+    patient.age: The patient is 42 years old.
+    complaint.category: The room spins when I turn my head or get out of bed, and I vomited once.
+    complaint.vomiting: Yes, the patient has vomiting.
+    complaint.stroke_signs: No, the patient does not have stroke-like symptoms.
+    complaint.headache_thunderclap: No, the patient does not have headache thunderclap.
+    complaint.fever: No, the patient does not have fever.
+    danger_signs.responsive: Yes, the patient is awake and responding normally.
+    M.anticoagulant: No, the patient doesn't take a blood thinner.
+    complaint.text: The room spins when I turn my head or get out of bed, and I vomited once.
+    complaint.onset: I don't know exactly when it started.
+    patient.sex: The patient is male.
+    danger_signs.chest_pain_now: No, the patient is not having chest pain right now.
+    danger_signs.breathing_difficulty: No, the patient is not having trouble breathing right now.
+    danger_signs.heavy_bleeding: No, the patient is not bleeding heavily right now.
+    infection.rash: I do not know whether the patient has a rash.
+    infection.travel_14d: I do not know whether the patient travelled in the last 14 days.
+    infection.contacts: I do not know of any sick contacts.
+    ams.changed_from_baseline: I do not know whether the patient is acting differently from usual.
+    complaint.pain_rating: The pain score was not provided.
+    M.medications: I do not know what medicines the patient takes.
+    A.allergies: The patient has no known allergies.
+    history.conditions: I do not know the patient’s medical conditions.
+    history.immunocompromised: I do not know whether the patient has a weakened immune system.
+    identity.name: I have not given the patient’s name.
+    identity.dob: I do not know the exact date of birth.
+    L.last_intake: I do not know when the patient last ate or drank.
+- id: I29-33-fever-and-cough
+  reference_esi: 3
+  expect_floor:
+  expect_rules: []
+  voice: >
+    You are a 67-year-old woman with a fever and a cough producing yellow mucus for
+    three days. You feel tired but are not short of breath and can speak in full
+    sentences. You have no chest pain, confusion, or fainting. You take medicine for
+    blood pressure but no immune-suppressing medicine and have never had a transplant.
+    You have no known allergies. Your daughter brought you in because the cough has
+    not improved.
+  truth:
+    patient.age: 67
+    complaint.category: fever
+    complaint.fever: true
+    complaint.infection_signs: true
+    complaint.increasing_respiratory_effort: false
+    complaint.shortness_of_breath: false
+    ams.changed_from_baseline: true
+    history.immunocompromised: false
+    history.transplant_recipient_or_listed: false
+    danger_signs.responsive: true
+    complaint.text: I have had a fever and a cough with yellow mucus.
+    complaint.onset: I don't know exactly when it started.
+    patient.sex: female
+  source: "ESI v4 Chapter 9, case 21"
+  say:
+    patient.age: The patient is 67 years old.
+    complaint.category: I have had a fever and a cough with yellow mucus.
+    complaint.fever: Yes, the patient has fever.
+    complaint.infection_signs: Yes, the patient has signs of infection.
+    complaint.increasing_respiratory_effort: No, the patient does not have increasing difficulty breathing.
+    complaint.shortness_of_breath: No, the patient does not have shortness of breath.
+    ams.changed_from_baseline: Yes, the patient has a change from usual alertness or behaviour.
+    history.immunocompromised: No, the patient does not have a weakened immune system.
+    history.transplant_recipient_or_listed: No, the patient does not have a past or planned organ transplant.
+    danger_signs.responsive: Yes, the patient is awake and responding normally.
+    complaint.text: I have had a fever and a cough with yellow mucus.
+    complaint.onset: I don't know exactly when it started.
+    patient.sex: The patient is female.
+    danger_signs.chest_pain_now: No, the patient is not having chest pain right now.
+    danger_signs.breathing_difficulty: No, the patient is not having trouble breathing right now.
+    danger_signs.heavy_bleeding: No, the patient is not bleeding heavily right now.
+    infection.rash: I do not know whether the patient has a rash.
+    infection.travel_14d: I do not know whether the patient travelled in the last 14 days.
+    infection.contacts: I do not know of any sick contacts.
+    complaint.pain_rating: The pain score was not provided.
+    M.medications: She takes medicine for blood pressure.
+    A.allergies: The patient has no known allergies.
+    history.conditions: I do not know the patient’s medical conditions.
+    identity.name: I have not given the patient’s name.
+    identity.dob: I do not know the exact date of birth.
+    L.last_intake: I do not know when the patient last ate or drank.
+- id: I29-34-bicycle-fall-and-laceration
+  reference_esi: 3
+  expect_floor:
+  expect_rules: []
+  voice: >
+    You are a 19-year-old man who fell off your bicycle at low speed. You have a
+    shallow cut on your forearm and soreness near your collarbone. You wore a helmet
+    and did not hit your head or lose consciousness. Your arm feels warm and normal;
+    you can move your fingers and have no numbness. You are alert and breathing
+    normally. You take no blood thinner, have no fever, and have no known allergies.
+  truth:
+    patient.age: 19
+    complaint.category: injury
+    complaint.pain_rating: 5
+    E.mechanism: fall
+    E.head_strike: false
+    complaint.extremity_neurovascular_compromise: false
+    complaint.compartment_syndrome_symptoms: false
+    M.anticoagulant: absent
+    complaint.fever: false
+    danger_signs.responsive: true
+    complaint.text: I fell off my bicycle and have a cut on my forearm and soreness near my collarbone.
+    complaint.onset: I don't know exactly when it started.
+    patient.sex: male
+  source: "ESI v4 Chapter 10, Set B, case 1"
+  say:
+    patient.age: The patient is 19 years old.
+    complaint.category: I fell off my bicycle and have a cut on my forearm and soreness near my collarbone.
+    complaint.pain_rating: The value is 5.
+    E.mechanism: The patient fell.
+    E.head_strike: No, the patient does not have a head impact.
+    complaint.extremity_neurovascular_compromise: No, the patient does not have numbness, pallor, or difficulty
+      moving the injured limb.
+    complaint.compartment_syndrome_symptoms: No, the patient does not have increasing tightness and pain in the
+      limb.
+    M.anticoagulant: No, the patient doesn't take a blood thinner.
+    complaint.fever: No, the patient does not have fever.
+    danger_signs.responsive: Yes, the patient is awake and responding normally.
+    complaint.text: I fell off my bicycle and have a cut on my forearm and soreness near my collarbone.
+    complaint.onset: I don't know exactly when it started.
+    patient.sex: The patient is male.
+    danger_signs.chest_pain_now: No, the patient is not having chest pain right now.
+    danger_signs.breathing_difficulty: No, the patient is not having trouble breathing right now.
+    danger_signs.heavy_bleeding: No, the patient is not bleeding heavily right now.
+    infection.rash: I do not know whether the patient has a rash.
+    infection.travel_14d: I do not know whether the patient travelled in the last 14 days.
+    infection.contacts: I do not know of any sick contacts.
+    ams.changed_from_baseline: I do not know whether the patient is acting differently from usual.
+    M.medications: I do not know what medicines the patient takes.
+    A.allergies: The patient has no known allergies.
+    history.conditions: I do not know the patient’s medical conditions.
+    history.immunocompromised: I do not know whether the patient has a weakened immune system.
+    identity.name: I have not given the patient’s name.
+    identity.dob: I do not know the exact date of birth.
+    L.last_intake: I do not know when the patient last ate or drank.
+- id: I29-35-minor-wrist-injury
+  reference_esi: 4
+  expect_floor:
+  expect_rules: []
+  voice: >
+    You are a 58-year-old woman who slipped on ice and hurt your wrist. It is sore,
+    about 5/10, and a little swollen, but it is not visibly deformed. Your fingers
+    are warm, normal in color, and move and feel normally. You did not hit your head
+    or faint. You take no blood thinner and have no known allergies. You are relaxed
+    and came with a friend.
+  truth:
+    patient.age: 58
+    complaint.category: injury
+    E.mechanism: fall
+    complaint.pain_rating: 5
+    complaint.extremity_neurovascular_compromise: false
+    complaint.compartment_syndrome_symptoms: false
+    danger_signs.responsive: true
+    M.anticoagulant: absent
+    complaint.fever: false
+    complaint.text: I slipped on ice and hurt my wrist; it is sore and a little swollen.
+    complaint.onset: I don't know exactly when it started.
+    patient.sex: female
+  source: "ESI v4 Chapter 9, case 10"
+  say:
+    patient.age: The patient is 58 years old.
+    complaint.category: I slipped on ice and hurt my wrist; it is sore and a little swollen.
+    E.mechanism: The patient fell.
+    complaint.pain_rating: The value is 5.
+    complaint.extremity_neurovascular_compromise: No, the patient does not have numbness, pallor, or difficulty
+      moving the injured limb.
+    complaint.compartment_syndrome_symptoms: No, the patient does not have increasing tightness and pain in the
+      limb.
+    danger_signs.responsive: Yes, the patient is awake and responding normally.
+    M.anticoagulant: No, the patient doesn't take a blood thinner.
+    complaint.fever: No, the patient does not have fever.
+    complaint.text: I slipped on ice and hurt my wrist; it is sore and a little swollen.
+    complaint.onset: I don't know exactly when it started.
+    patient.sex: The patient is female.
+    danger_signs.chest_pain_now: No, the patient is not having chest pain right now.
+    danger_signs.breathing_difficulty: No, the patient is not having trouble breathing right now.
+    danger_signs.heavy_bleeding: No, the patient is not bleeding heavily right now.
+    infection.rash: I do not know whether the patient has a rash.
+    infection.travel_14d: I do not know whether the patient travelled in the last 14 days.
+    infection.contacts: I do not know of any sick contacts.
+    ams.changed_from_baseline: I do not know whether the patient is acting differently from usual.
+    M.medications: I do not know what medicines the patient takes.
+    A.allergies: The patient has no known allergies.
+    history.conditions: I do not know the patient’s medical conditions.
+    history.immunocompromised: I do not know whether the patient has a weakened immune system.
+    identity.name: I have not given the patient’s name.
+    identity.dob: I do not know the exact date of birth.
+    L.last_intake: I do not know when the patient last ate or drank.
+- id: I29-36-healthy-adult-back-pain
+  reference_esi: 4
+  expect_floor:
+  expect_rules: []
+  voice: >
+    You are a healthy 25-year-old man with a sore lower back after lifting a box
+    yesterday. The ache is 4/10 and does not travel down your legs. You have no
+    weakness, numbness, loss of bladder control, fever, or recent injury beyond the
+    lifting. You are walking normally and feel otherwise well. You take no regular
+    medicine and have no known allergies. You came to have it checked and are
+    comfortable answering questions.
+  truth:
+    patient.age: 25
+    complaint.category: back_pain
+    complaint.pain_rating: 4
+    complaint.fever: false
+    danger_signs.responsive: true
+    complaint.text: My lower back has been aching since I lifted a box.
+    complaint.onset: You are a healthy 25-year-old man with a sore lower back after lifting a box yesterday.
+    patient.sex: male
+  source: "ESI v4 Appendix A, Chapter 4 post-test, case 4"
+  say:
+    patient.age: The patient is 25 years old.
+    complaint.category: My lower back has been aching since I lifted a box.
+    complaint.pain_rating: The value is 4.
+    complaint.fever: No, the patient does not have fever.
+    danger_signs.responsive: Yes, the patient is awake and responding normally.
+    complaint.text: My lower back has been aching since I lifted a box.
+    complaint.onset: You are a healthy 25-year-old man with a sore lower back after lifting a box yesterday.
+    patient.sex: The patient is male.
+    danger_signs.chest_pain_now: No, the patient is not having chest pain right now.
+    danger_signs.breathing_difficulty: No, the patient is not having trouble breathing right now.
+    danger_signs.heavy_bleeding: No, the patient is not bleeding heavily right now.
+    infection.rash: I do not know whether the patient has a rash.
+    infection.travel_14d: I do not know whether the patient travelled in the last 14 days.
+    infection.contacts: I do not know of any sick contacts.
+    ams.changed_from_baseline: I do not know whether the patient is acting differently from usual.
+    M.medications: I do not know what medicines the patient takes.
+    A.allergies: The patient has no known allergies.
+    history.conditions: I do not know the patient’s medical conditions.
+    history.immunocompromised: I do not know whether the patient has a weakened immune system.
+    identity.name: I have not given the patient’s name.
+    identity.dob: I do not know the exact date of birth.
+    L.last_intake: I do not know when the patient last ate or drank.
+- id: I29-37-ankle-injury-on-golf-course
+  reference_esi: 4
+  expect_floor:
+  expect_rules: []
+  voice: >
+    You are a healthy 60-year-old man who twisted your ankle while playing golf. It
+    is moderately swollen and tender on the outside, but you can feel and move your
+    toes and the foot is warm and its usual color. You did not fall from a height
+    or
+    hit your head. You are awake and breathing normally. You take no blood thinner,
+    have no fever, and have no known allergies.
+  truth:
+    patient.age: 60
+    complaint.category: injury
+    E.mechanism: none
+    complaint.extremity_neurovascular_compromise: false
+    complaint.compartment_syndrome_symptoms: false
+    complaint.pain_rating: 5
+    danger_signs.responsive: true
+    M.anticoagulant: absent
+    complaint.fever: false
+    complaint.text: I twisted my ankle while playing golf; it is swollen and tender on the outside.
+    complaint.onset: I don't know exactly when it started.
+    patient.sex: male
+  source: "ESI v4 Appendix A, Chapter 4 post-test, case 10"
+  say:
+    patient.age: The patient is 60 years old.
+    complaint.category: I twisted my ankle while playing golf; it is swollen and tender on the outside.
+    E.mechanism: There was no injury.
+    complaint.extremity_neurovascular_compromise: No, the patient does not have numbness, pallor, or difficulty
+      moving the injured limb.
+    complaint.compartment_syndrome_symptoms: No, the patient does not have increasing tightness and pain in the
+      limb.
+    complaint.pain_rating: The value is 5.
+    danger_signs.responsive: Yes, the patient is awake and responding normally.
+    M.anticoagulant: No, the patient doesn't take a blood thinner.
+    complaint.fever: No, the patient does not have fever.
+    complaint.text: I twisted my ankle while playing golf; it is swollen and tender on the outside.
+    complaint.onset: I don't know exactly when it started.
+    patient.sex: The patient is male.
+    danger_signs.chest_pain_now: No, the patient is not having chest pain right now.
+    danger_signs.breathing_difficulty: No, the patient is not having trouble breathing right now.
+    danger_signs.heavy_bleeding: No, the patient is not bleeding heavily right now.
+    infection.rash: I do not know whether the patient has a rash.
+    infection.travel_14d: I do not know whether the patient travelled in the last 14 days.
+    infection.contacts: I do not know of any sick contacts.
+    ams.changed_from_baseline: I do not know whether the patient is acting differently from usual.
+    M.medications: I do not know what medicines the patient takes.
+    A.allergies: The patient has no known allergies.
+    history.conditions: I do not know the patient’s medical conditions.
+    history.immunocompromised: I do not know whether the patient has a weakened immune system.
+    identity.name: I have not given the patient’s name.
+    identity.dob: I do not know the exact date of birth.
+    L.last_intake: I do not know when the patient last ate or drank.
+- id: I29-38-child-knee-laceration
+  reference_esi: 4
+  expect_floor:
+  expect_rules: []
+  voice: >
+    You are the parent of a 6-year-old who fell at the playground and cut a knee.
+    The cut is about 3 centimetres long, and the bleeding stopped after you held a
+    clean cloth on it. Your child is alert, walking, and breathing normally. There
+    is no head injury, numbness, or trouble moving the leg. No fever, regular
+    medicines, or known allergies. Your child is upset by the cut but settles when
+    you stay nearby.
+  truth:
+    patient.age: 6
+    complaint.category: wound
+    E.mechanism: fall
+    complaint.extremity_neurovascular_compromise: false
+    danger_signs.responsive: true
+    complaint.fever: false
+    M.anticoagulant: absent
+    complaint.text: My child fell at the playground and cut a knee; the bleeding stopped with pressure.
+    complaint.onset: I don't know exactly when it started.
+    patient.sex: other
+  source: "ESI v4 Chapter 9, case 9"
+  say:
+    patient.age: The patient is 6 years old.
+    complaint.category: My child fell at the playground and cut a knee; the bleeding stopped with pressure.
+    E.mechanism: The patient fell.
+    complaint.extremity_neurovascular_compromise: No, the patient does not have numbness, pallor, or difficulty
+      moving the injured limb.
+    danger_signs.responsive: Yes, the patient is awake and responding normally.
+    complaint.fever: No, the patient does not have fever.
+    M.anticoagulant: No, the patient doesn't take a blood thinner.
+    complaint.text: My child fell at the playground and cut a knee; the bleeding stopped with pressure.
+    complaint.onset: I don't know exactly when it started.
+    patient.sex: The patient’s sex has not been specified as male or female.
+    danger_signs.chest_pain_now: No, the patient is not having chest pain right now.
+    danger_signs.breathing_difficulty: No, the patient is not having trouble breathing right now.
+    danger_signs.heavy_bleeding: No, the patient is not bleeding heavily right now.
+    infection.rash: I do not know whether the patient has a rash.
+    infection.travel_14d: I do not know whether the patient travelled in the last 14 days.
+    infection.contacts: I do not know of any sick contacts.
+    ams.changed_from_baseline: I do not know whether the patient is acting differently from usual.
+    complaint.pain_rating: The pain score was not provided.
+    M.medications: I do not know what medicines the patient takes.
+    A.allergies: The patient has no known allergies.
+    history.conditions: I do not know the patient’s medical conditions.
+    history.immunocompromised: I do not know whether the patient has a weakened immune system.
+    identity.name: I have not given the patient’s name.
+    identity.dob: I do not know the exact date of birth.
+    L.last_intake: I do not know when the patient last ate or drank.
+- id: I29-39-uncomplicated-urinary-symptoms
+  reference_esi: 4
+  expect_floor:
+  expect_rules: []
+  voice: >
+    You are a 52-year-old woman who has had burning when urinating and needs to go
+    more often since yesterday. You have no fever, chills, back or flank pain, or
+    lower abdominal pain. You are alert and feel well otherwise. You take no blood
+    thinner, have no known allergies, and have not had a recent urinary infection.
+    You are comfortable describing the symptoms.
+  truth:
+    patient.age: 52
+    complaint.category: urinary_problem
+    complaint.uti_symptoms: true
+    complaint.fever: false
+    complaint.back_pain: none
+    complaint.severe_flank_pain: false
+    complaint.chills_or_rigors: false
+    danger_signs.responsive: true
+    M.anticoagulant: absent
+    complaint.text: It burns when I urinate and I need to go more often.
+    complaint.onset: You are a 52-year-old woman who has had burning when urinating and needs to go more often since
+      yesterday.
+    patient.sex: female
+  source: "ESI v4 Chapter 9, case 13"
+  say:
+    patient.age: The patient is 52 years old.
+    complaint.category: It burns when I urinate and I need to go more often.
+    complaint.uti_symptoms: Yes, the patient has pain or burning when urinating.
+    complaint.fever: No, the patient does not have fever.
+    complaint.back_pain: There is no back pain.
+    complaint.severe_flank_pain: No, the patient does not have severe flank pain.
+    complaint.chills_or_rigors: No, the patient does not have shaking chills.
+    danger_signs.responsive: Yes, the patient is awake and responding normally.
+    M.anticoagulant: No, the patient doesn't take a blood thinner.
+    complaint.text: It burns when I urinate and I need to go more often.
+    complaint.onset: You are a 52-year-old woman who has had burning when urinating and needs to go more often since
+      yesterday.
+    patient.sex: The patient is female.
+    danger_signs.chest_pain_now: No, the patient is not having chest pain right now.
+    danger_signs.breathing_difficulty: No, the patient is not having trouble breathing right now.
+    danger_signs.heavy_bleeding: No, the patient is not bleeding heavily right now.
+    infection.rash: I do not know whether the patient has a rash.
+    infection.travel_14d: I do not know whether the patient travelled in the last 14 days.
+    infection.contacts: I do not know of any sick contacts.
+    ams.changed_from_baseline: I do not know whether the patient is acting differently from usual.
+    complaint.pain_rating: The pain score was not provided.
+    M.medications: I do not know what medicines the patient takes.
+    A.allergies: The patient has no known allergies.
+    history.conditions: I do not know the patient’s medical conditions.
+    history.immunocompromised: I do not know whether the patient has a weakened immune system.
+    identity.name: I have not given the patient’s name.
+    identity.dob: I do not know the exact date of birth.
+    L.last_intake: I do not know when the patient last ate or drank.
+- id: I29-40-small-finger-cut
+  reference_esi: 4
+  expect_floor:
+  expect_rules: []
+  voice: >
+    You are a 28-year-old man who cut your finger on a kitchen knife. The cut is
+    about 2 centimetres long and the bleeding stopped with pressure. You can bend
+    and straighten the finger, it feels normal, and it is warm and its usual color.
+    You are awake and otherwise feel well. You take no blood thinner, have no fever,
+    and have no known allergies.
+  truth:
+    patient.age: 28
+    complaint.category: wound
+    complaint.extremity_neurovascular_compromise: false
+    complaint.compartment_syndrome_symptoms: false
+    danger_signs.responsive: true
+    M.anticoagulant: absent
+    complaint.fever: false
+    complaint.text: I cut my finger on a kitchen knife; the bleeding stopped with pressure.
+    complaint.onset: I don't know exactly when it started.
+    patient.sex: male
+  source: "ESI v4 Chapter 9, case 21"
+  say:
+    patient.age: The patient is 28 years old.
+    complaint.category: I cut my finger on a kitchen knife; the bleeding stopped with pressure.
+    complaint.extremity_neurovascular_compromise: No, the patient does not have numbness, pallor, or difficulty
+      moving the injured limb.
+    complaint.compartment_syndrome_symptoms: No, the patient does not have increasing tightness and pain in the
+      limb.
+    danger_signs.responsive: Yes, the patient is awake and responding normally.
+    M.anticoagulant: No, the patient doesn't take a blood thinner.
+    complaint.fever: No, the patient does not have fever.
+    complaint.text: I cut my finger on a kitchen knife; the bleeding stopped with pressure.
+    complaint.onset: I don't know exactly when it started.
+    patient.sex: The patient is male.
+    danger_signs.chest_pain_now: No, the patient is not having chest pain right now.
+    danger_signs.breathing_difficulty: No, the patient is not having trouble breathing right now.
+    danger_signs.heavy_bleeding: No, the patient is not bleeding heavily right now.
+    infection.rash: I do not know whether the patient has a rash.
+    infection.travel_14d: I do not know whether the patient travelled in the last 14 days.
+    infection.contacts: I do not know of any sick contacts.
+    ams.changed_from_baseline: I do not know whether the patient is acting differently from usual.
+    complaint.pain_rating: The pain score was not provided.
+    M.medications: I do not know what medicines the patient takes.
+    A.allergies: The patient has no known allergies.
+    history.conditions: I do not know the patient’s medical conditions.
+    history.immunocompromised: I do not know whether the patient has a weakened immune system.
+    identity.name: I have not given the patient’s name.
+    identity.dob: I do not know the exact date of birth.
+    L.last_intake: I do not know when the patient last ate or drank.
+- id: I29-41-eye-foreign-body-sensation
+  reference_esi: 4
+  expect_floor:
+  expect_rules: []
+  voice: >
+    You are a 42-year-old man with a gritty feeling in your right eye after working
+    in a dusty room. The eye is red and watery, and the discomfort is 4/10. You can
+    see normally and did not have an object strike or pierce the eye. You have no
+    severe headache, vomiting, or fever. You are alert, have no known allergies, and
+    take no blood thinner. You are mildly annoyed but not distressed.
+  truth:
+    patient.age: 42
+    complaint.category: eye_problem
+    complaint.pain_rating: 4
+    complaint.vomiting: false
+    complaint.fever: false
+    danger_signs.responsive: true
+    complaint.text: My right eye feels gritty, red, and watery after I was in a dusty room.
+    complaint.onset: I don't know exactly when it started.
+    patient.sex: male
+  source: "ESI v4 Chapter 9, case 46"
+  say:
+    patient.age: The patient is 42 years old.
+    complaint.category: My right eye feels gritty, red, and watery after I was in a dusty room.
+    complaint.pain_rating: The value is 4.
+    complaint.vomiting: No, the patient does not have vomiting.
+    complaint.fever: No, the patient does not have fever.
+    danger_signs.responsive: Yes, the patient is awake and responding normally.
+    complaint.text: My right eye feels gritty, red, and watery after I was in a dusty room.
+    complaint.onset: I don't know exactly when it started.
+    patient.sex: The patient is male.
+    danger_signs.chest_pain_now: No, the patient is not having chest pain right now.
+    danger_signs.breathing_difficulty: No, the patient is not having trouble breathing right now.
+    danger_signs.heavy_bleeding: No, the patient is not bleeding heavily right now.
+    infection.rash: I do not know whether the patient has a rash.
+    infection.travel_14d: I do not know whether the patient travelled in the last 14 days.
+    infection.contacts: I do not know of any sick contacts.
+    ams.changed_from_baseline: I do not know whether the patient is acting differently from usual.
+    M.medications: I do not know what medicines the patient takes.
+    A.allergies: The patient has no known allergies.
+    history.conditions: I do not know the patient’s medical conditions.
+    history.immunocompromised: I do not know whether the patient has a weakened immune system.
+    identity.name: I have not given the patient’s name.
+    identity.dob: I do not know the exact date of birth.
+    L.last_intake: I do not know when the patient last ate or drank.
+- id: I29-42-manageable-ankle-sprain
+  reference_esi: 4
+  expect_floor:
+  expect_rules: []
+  voice: >
+    You are a 43-year-old woman who twisted your ankle stepping off a curb. The pain
+    is 8/10 when you stand, but you can sit comfortably and it is manageable while
+    waiting. The ankle is swollen, but your foot is warm and normal in color and you
+    can move your toes. You did not fall from a height or hit your head. You have
+    no
+    fever, take no blood thinner, and have no known allergies.
+  truth:
+    patient.age: 43
+    complaint.category: injury
+    E.mechanism: fall
+    complaint.pain_rating: 8
+    complaint.extremity_neurovascular_compromise: false
+    complaint.compartment_syndrome_symptoms: false
+    danger_signs.responsive: true
+    M.anticoagulant: absent
+    complaint.fever: false
+    complaint.text: I twisted my ankle stepping off a curb; it is swollen and hurts when I stand.
+    complaint.onset: I don't know exactly when it started.
+    patient.sex: female
+  source: "ESI v4 Chapter 10, Set B, case 10"
+  say:
+    patient.age: The patient is 43 years old.
+    complaint.category: I twisted my ankle stepping off a curb; it is swollen and hurts when I stand.
+    E.mechanism: The patient fell.
+    complaint.pain_rating: The value is 8.
+    complaint.extremity_neurovascular_compromise: No, the patient does not have numbness, pallor, or difficulty
+      moving the injured limb.
+    complaint.compartment_syndrome_symptoms: No, the patient does not have increasing tightness and pain in the
+      limb.
+    danger_signs.responsive: Yes, the patient is awake and responding normally.
+    M.anticoagulant: No, the patient doesn't take a blood thinner.
+    complaint.fever: No, the patient does not have fever.
+    complaint.text: I twisted my ankle stepping off a curb; it is swollen and hurts when I stand.
+    complaint.onset: I don't know exactly when it started.
+    patient.sex: The patient is female.
+    danger_signs.chest_pain_now: No, the patient is not having chest pain right now.
+    danger_signs.breathing_difficulty: No, the patient is not having trouble breathing right now.
+    danger_signs.heavy_bleeding: No, the patient is not bleeding heavily right now.
+    infection.rash: I do not know whether the patient has a rash.
+    infection.travel_14d: I do not know whether the patient travelled in the last 14 days.
+    infection.contacts: I do not know of any sick contacts.
+    ams.changed_from_baseline: I do not know whether the patient is acting differently from usual.
+    M.medications: I do not know what medicines the patient takes.
+    A.allergies: The patient has no known allergies.
+    history.conditions: I do not know the patient’s medical conditions.
+    history.immunocompromised: I do not know whether the patient has a weakened immune system.
+    identity.name: I have not given the patient’s name.
+    identity.dob: I do not know the exact date of birth.
+    L.last_intake: I do not know when the patient last ate or drank.
+- id: I29-43-work-note-request
+  reference_esi: 5
+  expect_floor:
+  expect_rules: []
+  voice: >
+    You are a healthy 22-year-old who feels well and has no symptoms. You came to
+    ask for a note for your employer because you missed work yesterday. You have no
+    pain, fever, injury, or breathing problem. You take no regular medicine and have
+    no known allergies. You are polite and understand that this is an administrative
+    request rather than an illness.
+  truth:
+    patient.age: 22
+    complaint.category: request
+    complaint.pain_rating: 0
+    complaint.fever: false
+    danger_signs.responsive: true
+    M.anticoagulant: absent
+    complaint.text: I feel well and came to ask for a note for my employer.
+    complaint.onset: You came to ask for a note for your employer because you missed work yesterday.
+    patient.sex: other
+  source: "ESI v4 Appendix A, Chapter 2 post-test, case 3"
+  say:
+    patient.age: The patient is 22 years old.
+    complaint.category: I feel well and came to ask for a note for my employer.
+    complaint.pain_rating: The value is 0.
+    complaint.fever: No, the patient does not have fever.
+    danger_signs.responsive: Yes, the patient is awake and responding normally.
+    M.anticoagulant: No, the patient doesn't take a blood thinner.
+    complaint.text: I feel well and came to ask for a note for my employer.
+    complaint.onset: You came to ask for a note for your employer because you missed work yesterday.
+    patient.sex: The patient’s sex has not been specified as male or female.
+    danger_signs.chest_pain_now: No, the patient is not having chest pain right now.
+    danger_signs.breathing_difficulty: No, the patient is not having trouble breathing right now.
+    danger_signs.heavy_bleeding: No, the patient is not bleeding heavily right now.
+    infection.rash: I do not know whether the patient has a rash.
+    infection.travel_14d: I do not know whether the patient travelled in the last 14 days.
+    infection.contacts: I do not know of any sick contacts.
+    ams.changed_from_baseline: I do not know whether the patient is acting differently from usual.
+    M.medications: I do not know what medicines the patient takes.
+    A.allergies: The patient has no known allergies.
+    history.conditions: I do not know the patient’s medical conditions.
+    history.immunocompromised: I do not know whether the patient has a weakened immune system.
+    identity.name: I have not given the patient’s name.
+    identity.dob: I do not know the exact date of birth.
+    L.last_intake: I do not know when the patient last ate or drank.
+- id: I29-44-mild-child-earache
+  reference_esi: 5
+  expect_floor:
+  expect_rules: []
+  voice: >
+    You are the parent of a 12-year-old with a mild earache that began this
+    afternoon. Your child is active, eating and drinking, and has no fever, vomiting,
+    dizziness, or trouble hearing. There has been no injury or object placed in the
+    ear. The child takes no regular medicine and has no known allergies. You came
+    in
+    because the clinic was closed and your child wanted the ear checked.
+  truth:
+    patient.age: 12
+    complaint.category: ear_problem
+    complaint.pain_rating: 2
+    complaint.fever: false
+    complaint.vomiting: false
+    danger_signs.responsive: true
+    complaint.text: My child has a mild earache.
+    complaint.onset: You are the parent of a 12-year-old with a mild earache that began this afternoon.
+    patient.sex: other
+  source: "ESI v4 Appendix A, Chapter 2 post-test, case 4"
+  say:
+    patient.age: The patient is 12 years old.
+    complaint.category: My child has a mild earache.
+    complaint.pain_rating: The value is 2.
+    complaint.fever: No, the patient does not have fever.
+    complaint.vomiting: No, the patient does not have vomiting.
+    danger_signs.responsive: Yes, the patient is awake and responding normally.
+    complaint.text: My child has a mild earache.
+    complaint.onset: It began this afternoon.
+    patient.sex: The patient’s sex has not been specified as male or female.
+    danger_signs.chest_pain_now: No, the patient is not having chest pain right now.
+    danger_signs.breathing_difficulty: No, the patient is not having trouble breathing right now.
+    danger_signs.heavy_bleeding: No, the patient is not bleeding heavily right now.
+    infection.rash: I do not know whether the patient has a rash.
+    infection.travel_14d: I do not know whether the patient travelled in the last 14 days.
+    infection.contacts: I do not know of any sick contacts.
+    ams.changed_from_baseline: I do not know whether the patient is acting differently from usual.
+    M.medications: I do not know what medicines the patient takes.
+    A.allergies: The patient has no known allergies.
+    history.conditions: I do not know the patient’s medical conditions.
+    history.immunocompromised: I do not know whether the patient has a weakened immune system.
+    identity.name: I have not given the patient’s name.
+    identity.dob: I do not know the exact date of birth.
+    L.last_intake: I do not know when the patient last ate or drank.
+- id: I29-45-toothache-no-swelling
+  reference_esi: 5
+  expect_floor:
+  expect_rules: []
+  voice: >
+    You are a 38-year-old man with a toothache that has bothered you for two days.
+    The pain feels like a 9/10, but there is no swelling of your face or gums and
+    you can swallow and breathe normally. You have no fever and feel well otherwise.
+    You take no blood thinner and have no known allergies. You are frustrated because
+    you could not get a dental appointment. If asked about pain, give the rating
+    honestly without adding other symptoms.
+  truth:
+    patient.age: 38
+    complaint.category: dental
+    complaint.pain_rating: 9
+    complaint.fever: false
+    danger_signs.responsive: true
+    M.anticoagulant: absent
+    complaint.text: I have had a toothache for two days, without facial or gum swelling.
+    complaint.onset: I don't know exactly when it started.
+    patient.sex: male
+  source: "ESI v4 Chapter 9, case 18"
+  say:
+    patient.age: The patient is 38 years old.
+    complaint.category: I have had a toothache for two days, without facial or gum swelling.
+    complaint.pain_rating: The value is 9.
+    complaint.fever: No, the patient does not have fever.
+    danger_signs.responsive: Yes, the patient is awake and responding normally.
+    M.anticoagulant: No, the patient doesn't take a blood thinner.
+    complaint.text: I have had a toothache for two days, without facial or gum swelling.
+    complaint.onset: I don't know exactly when it started.
+    patient.sex: The patient is male.
+    danger_signs.chest_pain_now: No, the patient is not having chest pain right now.
+    danger_signs.breathing_difficulty: No, the patient is not having trouble breathing right now.
+    danger_signs.heavy_bleeding: No, the patient is not bleeding heavily right now.
+    infection.rash: I do not know whether the patient has a rash.
+    infection.travel_14d: I do not know whether the patient travelled in the last 14 days.
+    infection.contacts: I do not know of any sick contacts.
+    ams.changed_from_baseline: I do not know whether the patient is acting differently from usual.
+    M.medications: I do not know what medicines the patient takes.
+    A.allergies: The patient has no known allergies.
+    history.conditions: I do not know the patient’s medical conditions.
+    history.immunocompromised: I do not know whether the patient has a weakened immune system.
+    identity.name: I have not given the patient’s name.
+    identity.dob: I do not know the exact date of birth.
+    L.last_intake: I do not know when the patient last ate or drank.
+- id: I29-46-groin-rash
+  reference_esi: 5
+  expect_floor:
+  expect_rules: []
+  voice: >
+    You are a healthy 20-year-old man with an itchy rash in the groin area that
+    appeared a few days ago. It is uncomfortable but not painful. You have no fever,
+    swelling, trouble urinating, or other symptoms. You take no regular medicine
+    and have no known allergies. You are embarrassed and answer quietly, but you
+    respond to questions.
+  truth:
+    patient.age: 20
+    complaint.category: skin_problem
+    complaint.pain_rating: 0
+    complaint.fever: false
+    danger_signs.responsive: true
+    M.anticoagulant: absent
+    complaint.text: I have an itchy rash in my groin area.
+    complaint.onset: You are a healthy 20-year-old man with an itchy rash in the groin area that appeared a few
+      days ago.
+    patient.sex: male
+  source: "ESI v4 Chapter 9, case 26"
+  say:
+    patient.age: The patient is 20 years old.
+    complaint.category: I have an itchy rash in my groin area.
+    complaint.pain_rating: The value is 0.
+    complaint.fever: No, the patient does not have fever.
+    danger_signs.responsive: Yes, the patient is awake and responding normally.
+    M.anticoagulant: No, the patient doesn't take a blood thinner.
+    complaint.text: I have an itchy rash in my groin area.
+    complaint.onset: You are a healthy 20-year-old man with an itchy rash in the groin area that appeared a few
+      days ago.
+    patient.sex: The patient is male.
+    danger_signs.chest_pain_now: No, the patient is not having chest pain right now.
+    danger_signs.breathing_difficulty: No, the patient is not having trouble breathing right now.
+    danger_signs.heavy_bleeding: No, the patient is not bleeding heavily right now.
+    infection.rash: I do not know whether the patient has a rash.
+    infection.travel_14d: I do not know whether the patient travelled in the last 14 days.
+    infection.contacts: I do not know of any sick contacts.
+    ams.changed_from_baseline: I do not know whether the patient is acting differently from usual.
+    M.medications: I do not know what medicines the patient takes.
+    A.allergies: The patient has no known allergies.
+    history.conditions: I do not know the patient’s medical conditions.
+    history.immunocompromised: I do not know whether the patient has a weakened immune system.
+    identity.name: I have not given the patient’s name.
+    identity.dob: I do not know the exact date of birth.
+    L.last_intake: I do not know when the patient last ate or drank.
+- id: I29-47-swimmers-ear
+  reference_esi: 5
+  expect_floor:
+  expect_rules: []
+  voice: >
+    You are the parent of a 10-year-old with a mildly sore outer ear after swimming.
+    It hurts a little when touched, but your child is playing normally and has no
+    fever, dizziness, vomiting, or hearing loss. There was no injury or foreign
+    object. Your child takes no regular medicine and has no known allergies. You
+    came in because the ear has stayed sore since yesterday.
+  truth:
+    patient.age: 10
+    complaint.category: ear_problem
+    complaint.pain_rating: 2
+    complaint.fever: false
+    complaint.vomiting: false
+    danger_signs.responsive: true
+    complaint.text: My child has a mildly sore outer ear after swimming.
+    complaint.onset: You came in because the ear has stayed sore since yesterday.
+    patient.sex: other
+  source: "ESI v4 Chapter 9, case 34"
+  say:
+    patient.age: The patient is 10 years old.
+    complaint.category: My child has a mildly sore outer ear after swimming.
+    complaint.pain_rating: The value is 2.
+    complaint.fever: No, the patient does not have fever.
+    complaint.vomiting: No, the patient does not have vomiting.
+    danger_signs.responsive: Yes, the patient is awake and responding normally.
+    complaint.text: My child has a mildly sore outer ear after swimming.
+    complaint.onset: You came in because the ear has stayed sore since yesterday.
+    patient.sex: The patient’s sex has not been specified as male or female.
+    danger_signs.chest_pain_now: No, the patient is not having chest pain right now.
+    danger_signs.breathing_difficulty: No, the patient is not having trouble breathing right now.
+    danger_signs.heavy_bleeding: No, the patient is not bleeding heavily right now.
+    infection.rash: I do not know whether the patient has a rash.
+    infection.travel_14d: I do not know whether the patient travelled in the last 14 days.
+    infection.contacts: I do not know of any sick contacts.
+    ams.changed_from_baseline: I do not know whether the patient is acting differently from usual.
+    M.medications: I do not know what medicines the patient takes.
+    A.allergies: The patient has no known allergies.
+    history.conditions: I do not know the patient’s medical conditions.
+    history.immunocompromised: I do not know whether the patient has a weakened immune system.
+    identity.name: I have not given the patient’s name.
+    identity.dob: I do not know the exact date of birth.
+    L.last_intake: I do not know when the patient last ate or drank.
+- id: I29-48-emergency-contraception-request
+  reference_esi: 5
+  expect_floor:
+  expect_rules: []
+  voice: >
+    You are an 18-year-old woman asking about emergency contraception after
+    unprotected sex yesterday. You have no abdominal pain, vaginal bleeding, fever,
+    or other symptoms. You are awake and feel physically well. You take no regular
+    medicine, have no known allergies, and are not pregnant as far as you know. You
+    are nervous and would prefer to speak privately.
+  truth:
+    patient.age: 18
+    complaint.category: request
+    complaint.pain_rating: 0
+    complaint.vaginal_bleeding: false
+    complaint.fever: false
+    danger_signs.responsive: true
+    M.anticoagulant: absent
+    complaint.text: I am asking about emergency contraception after unprotected sex.
+    complaint.onset: You are an 18-year-old woman asking about emergency contraception after unprotected sex yesterday.
+    patient.sex: female
+  source: "ESI v4 Chapter 9, case 54"
+  say:
+    patient.age: The patient is 18 years old.
+    complaint.category: I am asking about emergency contraception after unprotected sex.
+    complaint.pain_rating: The value is 0.
+    complaint.vaginal_bleeding: No, the patient does not have vaginal bleeding.
+    complaint.fever: No, the patient does not have fever.
+    danger_signs.responsive: Yes, the patient is awake and responding normally.
+    M.anticoagulant: No, the patient doesn't take a blood thinner.
+    complaint.text: I am asking about emergency contraception after unprotected sex.
+    complaint.onset: You are an 18-year-old woman asking about emergency contraception after unprotected sex yesterday.
+    patient.sex: The patient is female.
+    danger_signs.chest_pain_now: No, the patient is not having chest pain right now.
+    danger_signs.breathing_difficulty: No, the patient is not having trouble breathing right now.
+    danger_signs.heavy_bleeding: No, the patient is not bleeding heavily right now.
+    infection.rash: I do not know whether the patient has a rash.
+    infection.travel_14d: I do not know whether the patient travelled in the last 14 days.
+    infection.contacts: I do not know of any sick contacts.
+    ams.changed_from_baseline: I do not know whether the patient is acting differently from usual.
+    M.medications: I do not know what medicines the patient takes.
+    A.allergies: The patient has no known allergies.
+    history.conditions: I do not know the patient’s medical conditions.
+    history.immunocompromised: I do not know whether the patient has a weakened immune system.
+    identity.name: I have not given the patient’s name.
+    identity.dob: I do not know the exact date of birth.
+    L.last_intake: I do not know when the patient last ate or drank.
+- id: I29-49-camp-physical
+  reference_esi: 5
+  expect_floor:
+  expect_rules: []
+  voice: >
+    You are the parent of a healthy 9-year-old who needs a physical form completed
+    before going to camp. Your child has no symptoms, pain, fever, injury, or
+    breathing problem and is active as usual. The child takes no regular medicine
+    and has no known allergies. You brought the form and are not seeking care for
+    an
+    illness.
+  truth:
+    patient.age: 9
+    complaint.category: request
+    complaint.pain_rating: 0
+    complaint.fever: false
+    danger_signs.responsive: true
+    complaint.text: My child feels well and needs a physical form completed for camp.
+    complaint.onset: I don't know exactly when it started.
+    patient.sex: other
+  source: "ESI v4 Chapter 9, case 63"
+  say:
+    patient.age: The patient is 9 years old.
+    complaint.category: My child feels well and needs a physical form completed for camp.
+    complaint.pain_rating: The value is 0.
+    complaint.fever: No, the patient does not have fever.
+    danger_signs.responsive: Yes, the patient is awake and responding normally.
+    complaint.text: My child feels well and needs a physical form completed for camp.
+    complaint.onset: I don't know exactly when it started.
+    patient.sex: The patient’s sex has not been specified as male or female.
+    danger_signs.chest_pain_now: No, the patient is not having chest pain right now.
+    danger_signs.breathing_difficulty: No, the patient is not having trouble breathing right now.
+    danger_signs.heavy_bleeding: No, the patient is not bleeding heavily right now.
+    infection.rash: I do not know whether the patient has a rash.
+    infection.travel_14d: I do not know whether the patient travelled in the last 14 days.
+    infection.contacts: I do not know of any sick contacts.
+    ams.changed_from_baseline: I do not know whether the patient is acting differently from usual.
+    M.medications: I do not know what medicines the patient takes.
+    A.allergies: The patient has no known allergies.
+    history.conditions: I do not know the patient’s medical conditions.
+    history.immunocompromised: I do not know whether the patient has a weakened immune system.
+    identity.name: I have not given the patient’s name.
+    identity.dob: I do not know the exact date of birth.
+    L.last_intake: I do not know when the patient last ate or drank.
+- id: I29-50-rusty-nail-tetanus-request
+  reference_esi: 5
+  expect_floor:
+  expect_rules: []
+  voice: >
+    You are a healthy 29-year-old woman who stepped on a small rusty nail yesterday.
+    The puncture is tiny, has stopped bleeding, and is only mildly sore. You can
+    walk, and the foot is warm with normal color and sensation. You have no fever,
+    swelling, or spreading redness. You came to ask whether you need a tetanus shot.
+    You have no known allergies and take no blood thinner.
+  truth:
+    patient.age: 29
+    complaint.category: request
+    complaint.pain_rating: 2
+    complaint.fever: false
+    complaint.extremity_neurovascular_compromise: false
+    danger_signs.responsive: true
+    M.anticoagulant: absent
+    complaint.text: I stepped on a rusty nail and came to ask whether I need a tetanus shot.
+    complaint.onset: You are a healthy 29-year-old woman who stepped on a small rusty nail yesterday.
+    patient.sex: female
+  source: "ESI v4 Chapter 9, case 94"
+  say:
+    patient.age: The patient is 29 years old.
+    complaint.category: I stepped on a rusty nail and came to ask whether I need a tetanus shot.
+    complaint.pain_rating: The value is 2.
+    complaint.fever: No, the patient does not have fever.
+    complaint.extremity_neurovascular_compromise: No, the patient does not have numbness, pallor, or difficulty
+      moving the injured limb.
+    danger_signs.responsive: Yes, the patient is awake and responding normally.
+    M.anticoagulant: No, the patient doesn't take a blood thinner.
+    complaint.text: I stepped on a rusty nail and came to ask whether I need a tetanus shot.
+    complaint.onset: You are a healthy 29-year-old woman who stepped on a small rusty nail yesterday.
+    patient.sex: The patient is female.
+    danger_signs.chest_pain_now: No, the patient is not having chest pain right now.
+    danger_signs.breathing_difficulty: No, the patient is not having trouble breathing right now.
+    danger_signs.heavy_bleeding: No, the patient is not bleeding heavily right now.
+    infection.rash: I do not know whether the patient has a rash.
+    infection.travel_14d: I do not know whether the patient travelled in the last 14 days.
+    infection.contacts: I do not know of any sick contacts.
+    ams.changed_from_baseline: I do not know whether the patient is acting differently from usual.
+    M.medications: I do not know what medicines the patient takes.
+    A.allergies: The patient has no known allergies.
+    history.conditions: I do not know the patient’s medical conditions.
+    history.immunocompromised: I do not know whether the patient has a weakened immune system.
+    identity.name: I have not given the patient’s name.
+    identity.dob: I do not know the exact date of birth.
+    L.last_intake: I do not know when the patient last ate or drank.

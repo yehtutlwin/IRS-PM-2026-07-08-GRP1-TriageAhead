@@ -1,0 +1,596 @@
+{
+ "sid": "LOTUS-4515",
+ "facts": {
+  "danger_signs.responsive": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-10-14 23:51"
+  },
+  "danger_signs.chest_pain_now": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-10-14 23:51"
+  },
+  "danger_signs.breathing_difficulty": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-10-14 23:52"
+  },
+  "danger_signs.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-10-14 23:52"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "fever",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "persona",
+      "turn": 2,
+      "ts": "2026-10-14 23:52"
+     },
+     "text": {
+      "value": "very tired and has been shivering from the fever",
+      "status": "reported",
+      "who": "persona",
+      "turn": 13,
+      "ts": "2026-10-14 23:53"
+     },
+     "onset": {
+      "value": "this afternoon",
+      "status": "reported",
+      "who": "persona",
+      "turn": 3,
+      "ts": "2026-10-14 23:52"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 2
+  },
+  "complaint.category": {
+   "value": [
+    "fever"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 13,
+   "ts": "2026-10-14 23:53"
+  },
+  "complaint.text": {
+   "value": "very tired and has been shivering from the fever",
+   "status": "reported",
+   "who": "persona",
+   "turn": 13,
+   "ts": "2026-10-14 23:53"
+  },
+  "E.mechanism": {
+   "value": "none",
+   "status": "reported",
+   "who": "derived",
+   "turn": 2,
+   "ts": "2026-10-14 23:52"
+  },
+  "patient.age": {
+   "value": 51,
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-10-14 23:52"
+  },
+  "patient.sex": {
+   "value": "female",
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-10-14 23:52"
+  },
+  "complaint.onset": {
+   "value": "this afternoon",
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-10-14 23:52"
+  },
+  "patient.age_group": {
+   "value": "adult",
+   "status": "reported",
+   "who": "derived",
+   "turn": 3,
+   "ts": "2026-10-14 23:52"
+  },
+  "history.pregnant": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 4,
+   "ts": "2026-10-14 23:52"
+  },
+  "history.postpartum": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 4,
+   "ts": "2026-10-14 23:52"
+  },
+  "complaint.fever": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-10-14 23:52"
+  },
+  "infection.rash": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-10-14 23:52"
+  },
+  "infection.contacts": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 6,
+   "ts": "2026-10-14 23:52"
+  },
+  "infection.travel_14d": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 7,
+   "ts": "2026-10-14 23:52"
+  },
+  "complaint.uti_symptoms": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 8,
+   "ts": "2026-10-14 23:52"
+  },
+  "vitals.temp_c": {
+   "value": 38.6,
+   "status": "reported",
+   "who": "persona",
+   "turn": 9,
+   "ts": "2026-10-14 23:52"
+  },
+  "ams.changed_from_baseline": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 10,
+   "ts": "2026-10-14 23:53"
+  },
+  "complaint.chills_or_rigors": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 14,
+   "ts": "2026-10-14 23:53"
+  },
+  "complaint.infection_signs": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 14,
+   "ts": "2026-10-14 23:53"
+  },
+  "complaint.vomiting": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 15,
+   "ts": "2026-10-14 23:53"
+  },
+  "M.medications": {
+   "value": [
+    "chemo tablets",
+    "omeprazole"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 16,
+   "ts": "2026-10-14 23:53"
+  },
+  "A.allergies": {
+   "value": [],
+   "status": "reported",
+   "who": "persona",
+   "turn": 16,
+   "ts": "2026-10-14 23:53"
+  },
+  "history.conditions": {
+   "value": [
+    "breast cancer"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 17,
+   "ts": "2026-10-14 23:53"
+  },
+  "history.immunocompromised": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 17,
+   "ts": "2026-10-14 23:53"
+  },
+  "history.transplant_recipient_or_listed": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 18,
+   "ts": "2026-10-14 23:53"
+  },
+  "identity.name": {
+   "value": "[Name Not Provided]",
+   "status": "reported",
+   "who": "persona",
+   "turn": 18,
+   "ts": "2026-10-14 23:53"
+  },
+  "identity.dob": {
+   "value": "30 Jun 1975",
+   "status": "reported",
+   "who": "persona",
+   "turn": 18,
+   "ts": "2026-10-14 23:53"
+  },
+  "L.last_intake": {
+   "value": "tea at 4pm",
+   "status": "reported",
+   "who": "persona",
+   "turn": 19,
+   "ts": "2026-10-14 23:54"
+  },
+  "L.last_intake_abs": {
+   "value": "~2026-10-14 16:00 (from 'tea at 4pm' said 23:54)",
+   "status": "reported",
+   "who": "derived",
+   "turn": 19,
+   "ts": "2026-10-14 23:54"
+  }
+ },
+ "attempts": {
+  "danger_signs.responsive": 1,
+  "danger_signs.chest_pain_now": 1,
+  "danger_signs.breathing_difficulty": 1,
+  "danger_signs.heavy_bleeding": 1,
+  "complaint.category": 1,
+  "complaint.text": 1,
+  "complaint.onset": 1,
+  "patient.age": 1,
+  "patient.sex": 1,
+  "history.pregnant": 1,
+  "history.postpartum": 1,
+  "complaint.fever": 1,
+  "infection.rash": 1,
+  "infection.travel_14d": 2,
+  "infection.contacts": 1,
+  "complaint.uti_symptoms": 1,
+  "vitals.temp_c": 1,
+  "ams.changed_from_baseline": 2,
+  "complaint.pain_rating": 3,
+  "complaint.infection_signs": 1,
+  "complaint.chills_or_rigors": 1,
+  "complaint.vomiting": 1,
+  "M.medications": 1,
+  "A.allergies": 1,
+  "history.conditions": 1,
+  "history.immunocompromised": 1,
+  "history.transplant_recipient_or_listed": 1,
+  "identity.name": 1,
+  "identity.dob": 1,
+  "L.last_intake": 1
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "I'm here to help get the information ready for the team. Is the patient awake and responding to you, and are they currently having any chest pain, trouble breathing, or heavy bleeding?",
+   "ts": "2026-10-14 23:51:52",
+   "kind": "question",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "caregiver",
+   "text": "She is awake and talking to me. No, she isn't having any chest pain, trouble breathing, or heavy bleeding.",
+   "ts": "2026-10-14 23:51:53",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "bot",
+   "text": "I'm glad she's awake and talking. Just to be sure, is she having any trouble breathing or heavy bleeding right now, and can you tell me what the main problem is that brings her in?",
+   "ts": "2026-10-14 23:51:59",
+   "kind": "question",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category+complaint.text"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, she isn't having trouble breathing or bleeding. The main problem is that she's had a fever of 38.6 since this afternoon and is shivering and very tired.",
+   "ts": "2026-10-14 23:52:01",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category+complaint.text"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear she's feeling so tired. To help the team, could you tell me how old she is, if she is male or female, and exactly what time the fever started?",
+   "ts": "2026-10-14 23:52:09",
+   "kind": "question",
+   "slot": "dyn:complaint.onset+patient.age+patient.sex"
+  },
+  {
+   "role": "caregiver",
+   "text": "She is a 51-year-old female. The fever started this afternoon.",
+   "ts": "2026-10-14 23:52:11",
+   "kind": "answer",
+   "slot": "dyn:complaint.onset+patient.age+patient.sex"
+  },
+  {
+   "role": "bot",
+   "text": "I understand she's been feeling very unwell. To help the medical team, is she currently pregnant or has she given birth in the last few weeks?",
+   "ts": "2026-10-14 23:52:17",
+   "kind": "question",
+   "slot": "dyn:history.pregnant+history.postpartum"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, she is not pregnant and hasn't given birth recently.",
+   "ts": "2026-10-14 23:52:19",
+   "kind": "answer",
+   "slot": "dyn:history.pregnant+history.postpartum"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry she's feeling so poorly. You mentioned a fever; do you have a specific temperature reading, and has she developed any new rashes?",
+   "ts": "2026-10-14 23:52:24",
+   "kind": "question",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "She had a fever of 38.6 on our home thermometer. She hasn't developed any rashes.",
+   "ts": "2026-10-14 23:52:26",
+   "kind": "answer",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you for that information. Has she traveled outside the country in the last two weeks, or has she been in contact with anyone who has been sick?",
+   "ts": "2026-10-14 23:52:32",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, she hasn't had any contact with anyone sick and hasn't traveled.",
+   "ts": "2026-10-14 23:52:33",
+   "kind": "answer",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. To make sure we have all the details, has she been on any trips outside of the country in the last 14 days?",
+   "ts": "2026-10-14 23:52:39",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, she hasn't had any travel.",
+   "ts": "2026-10-14 23:52:40",
+   "kind": "answer",
+   "slot": "dyn:infection.travel_14d"
+  },
+  {
+   "role": "bot",
+   "text": "I've noted that. Does she have any pain or burning when she goes to the bathroom, or have you noticed her needing to go more often?",
+   "ts": "2026-10-14 23:52:45",
+   "kind": "question",
+   "slot": "dyn:complaint.uti_symptoms"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-14 23:52:47",
+   "kind": "answer",
+   "slot": "dyn:complaint.uti_symptoms"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. If you have a thermometer handy, what was her temperature? Also, have you noticed her acting confused or more sleepy than usual?",
+   "ts": "2026-10-14 23:52:52",
+   "kind": "question",
+   "slot": "dyn:vitals.temp_c+ams.changed_from_baseline"
+  },
+  {
+   "role": "caregiver",
+   "text": "It was 38.6 on our home thermometer. She is awake and talking, but she's very tired.",
+   "ts": "2026-10-14 23:52:53",
+   "kind": "answer",
+   "slot": "dyn:vitals.temp_c+ams.changed_from_baseline"
+  },
+  {
+   "role": "bot",
+   "text": "I understand she's very tired. Compared to her usual self, does she seem more confused or just extra sleepy?",
+   "ts": "2026-10-14 23:52:59",
+   "kind": "question",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "caregiver",
+   "text": "She seems more tired and is very exhausted. I'm not sure if she's confused.",
+   "ts": "2026-10-14 23:53:00",
+   "kind": "answer",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear she's so exhausted. On a scale from 0 to 10, where 10 is the worst pain imaginable, how bad is her pain right now?",
+   "ts": "2026-10-14 23:53:05",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "I'm not sure how to rate her pain on a scale. She is just very tired and has been shivering from the fever.",
+   "ts": "2026-10-14 23:53:07",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "I understand she's feeling very exhausted. To help the team, could you tell me how much pain she is in right now?",
+   "ts": "2026-10-14 23:53:12",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-14 23:53:13",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "I understand it's hard to put a number on it. Is she experiencing any physical pain at all right now?",
+   "ts": "2026-10-14 23:53:18",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "I'm not sure, she's just very tired and has been shivering from the fever.",
+   "ts": "2026-10-14 23:53:19",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear she's feeling so tired and shivering. Besides the fever, has she had any shaking chills or any visible signs of infection, like a red or swollen wound?",
+   "ts": "2026-10-14 23:53:25",
+   "kind": "question",
+   "slot": "dyn:complaint.infection_signs+complaint.chills_or_rigors"
+  },
+  {
+   "role": "caregiver",
+   "text": "She's been shivering and has a fever of 38.6. I don't see any red or swollen wounds.",
+   "ts": "2026-10-14 23:53:26",
+   "kind": "answer",
+   "slot": "dyn:complaint.infection_signs+complaint.chills_or_rigors"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry she's feeling so worn out. Has she been vomiting at all?",
+   "ts": "2026-10-14 23:53:32",
+   "kind": "question",
+   "slot": "dyn:complaint.vomiting"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, she hasn't been vomiting.",
+   "ts": "2026-10-14 23:53:33",
+   "kind": "answer",
+   "slot": "dyn:complaint.vomiting"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear she's feeling so poorly. Does she take any regular medications, and does she have any known allergies, especially to medicine?",
+   "ts": "2026-10-14 23:53:39",
+   "kind": "question",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "caregiver",
+   "text": "She takes chemo tablets and omeprazole. She has no known allergies.",
+   "ts": "2026-10-14 23:53:40",
+   "kind": "answer",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "bot",
+   "text": "I've noted her medications. Does she have any other ongoing medical conditions, or has a doctor ever told you that her immune system is weakened?",
+   "ts": "2026-10-14 23:53:46",
+   "kind": "question",
+   "slot": "dyn:history.conditions+history.immunocompromised"
+  },
+  {
+   "role": "caregiver",
+   "text": "She is currently undergoing chemotherapy for breast cancer.",
+   "ts": "2026-10-14 23:53:47",
+   "kind": "answer",
+   "slot": "dyn:history.conditions+history.immunocompromised"
+  },
+  {
+   "role": "system",
+   "text": "floor: at least ESI-2  rules: ['B-07.immunocompromised-fever']",
+   "ts": "2026-10-14 23:53:50",
+   "kind": "floor"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you for sharing that. Has she ever had an organ transplant or is she currently on a transplant list? Also, could you please tell me her full name and date of birth?",
+   "ts": "2026-10-14 23:53:53",
+   "kind": "question",
+   "slot": "dyn:history.transplant_recipient_or_listed+identity.name+identity.dob"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, she hasn't had a transplant. Her name is [Name Not Provided] and her date of birth is 30 Jun 1975.",
+   "ts": "2026-10-14 23:53:55",
+   "kind": "answer",
+   "slot": "dyn:history.transplant_recipient_or_listed+identity.name+identity.dob"
+  },
+  {
+   "role": "bot",
+   "text": "That's enough for the hospital team to prepare. Show the code LOTUS-4515 at the counter when you arrive. I'll ask a few more things while you're on the way; tell me straight away if anything changes.",
+   "ts": "2026-10-14 23:53:59",
+   "kind": "ack"
+  },
+  {
+   "role": "bot",
+   "text": "I have that information. To help the team prepare, could you tell me when she last had anything to eat or drink?",
+   "ts": "2026-10-14 23:54:01",
+   "kind": "question",
+   "slot": "dyn:L.last_intake"
+  },
+  {
+   "role": "caregiver",
+   "text": "She last had some tea at 4pm.",
+   "ts": "2026-10-14 23:54:02",
+   "kind": "answer",
+   "slot": "dyn:L.last_intake"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you - that's everything. Show the code LOTUS-4515 at the counter when you arrive.",
+   "ts": "2026-10-14 23:54:05",
+   "kind": "ack"
+  }
+ ],
+ "stage": "rest",
+ "floor": "at least ESI-2",
+ "phase": "enroute",
+ "opened": [],
+ "created": "2026-10-14 23:51",
+ "pending_slot": "dyn:L.last_intake",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {},
+ "qr_ready": true,
+ "qr_turn": 18,
+ "said_done": true
+}

@@ -1,0 +1,4230 @@
+entries:
+- decision_point: C
+  effect: resource_band
+  id: gemini-001
+  interpretation: verbatim
+  kind: usage
+  page: 1
+  span: prediction of resources necessary to move the patient to a final disposition (admission, discharge, or transfer) is used to further differentiate patient
+    acuity.
+  verb: is used to further differentiate
+- decision_point: none
+  effect: none
+  id: gemini-002
+  interpretation: verbatim
+  kind: negative
+  note: States a negative rule differentiating ESI from other triage scales.
+  page: 1
+  span: The ESI does not define expected time intervals to physician evaluation.
+  verb: does not define
+- decision_point: none
+  effect: none
+  id: gemini-003
+  interpretation: verbatim
+  kind: definition
+  page: 2
+  span: The five groups reflect clinically meaningful differences in physiological and psychological stability based on the assessment of vital signs and projected
+    resource needs.
+  verb: reflect
+- decision_point: none
+  effect: none
+  id: gemini-004
+  interpretation: verbatim
+  kind: usage
+  page: 5
+  span: The decision points must be performed in order, but higher acuity patients will only require one or two decision points to assign an acuity level.
+  verb: must be performed in order
+- decision_point: A
+  effect: none
+  id: gemini-005
+  interpretation: verbatim
+  kind: usage
+  page: 5
+  span: The first decision the triage nurse makes is regarding stability.
+  verb: makes
+- decision_point: C
+  effect: none
+  id: gemini-006
+  interpretation: verbatim
+  kind: usage
+  page: 5
+  span: If a patient does not meet high risk instability criteria (ESI level 1 or 2), the triage nurse then evaluates expected resource needs
+  verb: evaluates
+- decision_point: A
+  effect: assign_level_1
+  id: gemini-007
+  interpretation: verbatim
+  kind: rule
+  page: 5
+  span: Decision point A is the only one needed for ESI level-1 patients, who are defined as in need of immediate lifesaving intervention.
+  verb: are defined as
+  when:
+    all:
+    - fact: needs_immediate_lifesaving_intervention
+      is: true
+  who_can_supply: observed
+- decision_point: B
+  effect: assign_level_2
+  id: gemini-008
+  interpretation: verbatim
+  kind: rule
+  note: Text groups likely to deteriorate and require more immediate care with and/or.
+  page: 5
+  span: whether the patient is likely to deteriorate and/or require more immediate care based on symptom presentation and patient risk factors. These patients are
+    assigned an ESI level of 2.
+  verb: are assigned
+  when:
+    any:
+    - fact: is_likely_to_deteriorate
+      is: true
+    - fact: requires_more_immediate_care
+      is: true
+  who_can_supply: observed
+- decision_point: none
+  effect: none
+  id: gemini-009
+  interpretation: verbatim
+  kind: usage
+  note: Refers to decision points A and B.
+  page: 5
+  span: Both of these decisions may require a full set of vital signs and a focused assessment prior to reaching such a determination.
+  verb: may require
+- decision_point: C
+  effect: none
+  id: gemini-010
+  interpretation: verbatim
+  kind: usage
+  page: 5
+  span: Decision point C is used only after level 1 and 2 are excluded and patients are determined to be physiologically stable with low risk for deterioration.
+  verb: is used only after
+- decision_point: C
+  effect: resource_band
+  id: gemini-011
+  interpretation: verbatim
+  kind: rule
+  page: 5
+  span: ESI levels 3, 4, and 5 are based on how many resources the nurse anticipates will be used to reach a disposition decision.
+  verb: are based on
+  when:
+    any:
+    - fact: anticipated_resources_none
+      is: true
+    - fact: anticipated_resources_one
+      is: true
+    - fact: anticipated_resources_many
+      is: true
+  who_can_supply: observed
+- decision_point: D
+  effect: reassess_uptriage
+  id: gemini-012
+  interpretation: verbatim
+  kind: rule
+  page: 5
+  span: Decision point D incorporates vital signs to identify more subtle high-risk presentations or an immediate need for lifesaving interventions and to reassess
+    the acuity decision, potentially resulting in assignment of a higher acuity level
+  verb: potentially resulting in assignment of
+  when:
+    any:
+    - fact: has_subtle_high_risk_presentation
+      is: true
+    - fact: needs_immediate_lifesaving_intervention
+      is: true
+  who_can_supply: vitals
+- decision_point: A
+  effect: none
+  id: gemini-013
+  interpretation: verbatim
+  kind: context
+  page: 5
+  span: A. Is this patient unstable and in need of immediate lifesaving intervention?
+  verb: Is this
+- decision_point: B
+  effect: none
+  id: gemini-014
+  interpretation: verbatim
+  kind: context
+  page: 5
+  span: B. Is this a high-risk situation?
+  verb: Is this
+- decision_point: C
+  effect: none
+  id: gemini-015
+  interpretation: verbatim
+  kind: context
+  page: 5
+  span: C. How many resources will this patient need?
+  verb: will this patient need
+- decision_point: D
+  effect: none
+  id: gemini-016
+  interpretation: verbatim
+  kind: context
+  page: 5
+  span: D. Do the patient’s vital signs warrant a reassessment of the acuity level?
+  verb: warrant
+- decision_point: A
+  effect: assign_level_1
+  id: gemini-017
+  interpretation: verbatim
+  kind: rule
+  note: Derived from Figure 2-1 conceptual algorithm diagram.
+  page: 5
+  span: Requires lifesaving intervention? ... Yes [arrows to] 1
+  verb: ->
+  when:
+    all:
+    - fact: needs_immediate_lifesaving_intervention
+      is: true
+  who_can_supply: observed
+- decision_point: B
+  effect: assign_level_2
+  id: gemini-018
+  interpretation: verbatim
+  kind: rule
+  note: Derived from Figure 2-1 conceptual algorithm diagram.
+  page: 5
+  span: High risk-confused/distress? ... Yes [arrows to] 2
+  verb: ->
+  when:
+    any:
+    - fact: is_high_risk_situation
+      is: true
+    - fact: is_confused
+      is: true
+    - fact: is_in_distress
+      is: true
+  who_can_supply: observed
+- decision_point: C
+  effect: resource_band
+  id: gemini-019
+  interpretation: verbatim
+  kind: rule
+  note: Derived from Figure 2-1 conceptual algorithm diagram linking None to 5, One to 4, Many to 3.
+  page: 5
+  span: How many resources? None One Many ... 5, 4, 3
+  verb: ->
+  when:
+    any:
+    - fact: anticipated_resources_none
+      is: true
+    - fact: anticipated_resources_one
+      is: true
+    - fact: anticipated_resources_many
+      is: true
+  who_can_supply: observed
+- decision_point: D
+  effect: reassess_uptriage
+  id: gemini-020
+  interpretation: verbatim
+  kind: rule
+  note: Derived from Figure 2-1 conceptual algorithm diagram.
+  page: 5
+  span: High-risk vital signs? ... Yes [arrows to] Reassess acuity decision
+  verb: ->
+  when:
+    all:
+    - fact: has_high_risk_vital_signs
+      is: true
+  who_can_supply: vitals
+- also_on:
+  - 29
+  decision_point: A
+  effect: assign_level_1
+  id: gemini-021
+  interpretation: verbatim
+  kind: rule
+  page: 6
+  span: Requires immediate lifesaving intervention?
+  verb: '1'
+  when:
+    all:
+    - fact: requires_immediate_lifesaving_intervention
+      is: true
+  who_can_supply: observed
+- also_on:
+  - 30
+  decision_point: A
+  effect: assign_level_1
+  id: gemini-022
+  interpretation: verbatim
+  kind: definition
+  note: Defines what counts as a lifesaving intervention.
+  page: 6
+  span: 'Immediate life-saving intervention required: Airway or respiratory support, emergency medications, hemodynamic interventions such as fluid resuscitation
+    or blood products'
+  verb: required
+- also_on:
+  - 30
+  decision_point: A
+  effect: assign_level_1
+  id: gemini-023
+  interpretation: verbatim
+  kind: rule
+  page: 6
+  span: 'Clinical presentations requiring lifesaving interventions include the following: intubated'
+  verb: requiring
+  when:
+    all:
+    - fact: is_intubated
+      is: true
+  who_can_supply: observed
+- also_on:
+  - 30
+  decision_point: A
+  effect: assign_level_1
+  id: gemini-024
+  interpretation: verbatim
+  kind: rule
+  page: 6
+  span: 'Clinical presentations requiring lifesaving interventions include the following: ... unresponsive'
+  verb: requiring
+  when:
+    all:
+    - fact: is_unresponsive
+      is: true
+  who_can_supply: observed
+- also_on:
+  - 30
+  decision_point: A
+  effect: assign_level_1
+  id: gemini-025
+  interpretation: verbatim
+  kind: rule
+  page: 6
+  span: 'Clinical presentations requiring lifesaving interventions include the following: ... pulselessness'
+  verb: requiring
+  when:
+    all:
+    - fact: has_pulselessness
+      is: true
+  who_can_supply: observed
+- also_on:
+  - 30
+  decision_point: A
+  effect: assign_level_1
+  id: gemini-026
+  interpretation: verbatim
+  kind: rule
+  page: 6
+  span: 'Clinical presentations requiring lifesaving interventions include the following: ... apneic'
+  verb: requiring
+  when:
+    all:
+    - fact: is_apneic
+      is: true
+  who_can_supply: observed
+- also_on:
+  - 30
+  decision_point: A
+  effect: assign_level_1
+  id: gemini-027
+  interpretation: interpreted
+  kind: rule
+  note: '''severe'' is vague, requires clinical interpretation'
+  page: 6
+  span: 'Clinical presentations requiring lifesaving interventions include the following: ... severe respiratory distress'
+  verb: requiring
+  when:
+    all:
+    - fact: has_severe_respiratory_distress
+      is: true
+  who_can_supply: observed
+- also_on:
+  - 30
+  decision_point: A
+  effect: assign_level_1
+  id: gemini-028
+  interpretation: interpreted
+  kind: rule
+  note: '''profound'' is vague, requires clinical interpretation'
+  page: 6
+  span: 'Clinical presentations requiring lifesaving interventions include the following: ... profound hypotension'
+  verb: requiring
+  when:
+    all:
+    - fact: has_profound_hypotension
+      is: true
+  who_can_supply: vitals
+- also_on:
+  - 30
+  decision_point: A
+  effect: assign_level_1
+  id: gemini-029
+  interpretation: interpreted
+  kind: rule
+  note: '''profound'' is vague, requires clinical interpretation'
+  page: 6
+  span: 'Clinical presentations requiring lifesaving interventions include the following: ... profound hypoglycemia'
+  verb: requiring
+  when:
+    all:
+    - fact: has_profound_hypoglycemia
+      is: true
+  who_can_supply: vitals
+- also_on:
+  - 30
+  decision_point: A
+  effect: assign_level_1
+  id: gemini-030
+  interpretation: verbatim
+  kind: definition
+  note: Defines unresponsiveness for A-04
+  page: 6
+  span: 'Unresponsiveness is defined as a patient who either: 1. Is nonverbal and not following commands (acutely)'
+  verb: is defined as
+- also_on:
+  - 30
+  decision_point: A
+  effect: assign_level_1
+  id: gemini-031
+  interpretation: verbatim
+  kind: definition
+  note: Defines unresponsiveness for A-04
+  page: 6
+  span: 2. Requires noxious stimulus (P or U on AVPU scale)
+  verb: Requires
+- also_on:
+  - 29
+  decision_point: B
+  effect: assign_level_2
+  id: gemini-032
+  interpretation: verbatim
+  kind: rule
+  page: 6
+  span: High-risk situation? or Confused/lethargic/disoriented? or Severe pain/distress?
+  verb: '2'
+  when:
+    any:
+    - fact: is_high_risk_situation
+      is: true
+    - fact: is_confused_lethargic_disoriented
+      is: true
+    - fact: has_severe_pain_or_distress
+      is: true
+  who_can_supply: observed
+- also_on:
+  - 30
+  decision_point: B
+  effect: assign_level_2
+  id: gemini-033
+  interpretation: verbatim
+  kind: definition
+  page: 6
+  span: 'High-risk situation: May become unstable, have high risk for deterioration, or exhibit newly altered mental status.'
+  verb: 'High-risk situation:'
+- also_on:
+  - 30
+  decision_point: B
+  effect: none
+  id: gemini-034
+  interpretation: verbatim
+  kind: definition
+  page: 6
+  span: Severe pain or distress is determined by patient report, corroborated with clinical observation.
+  verb: is determined by
+- also_on:
+  - 29
+  decision_point: C
+  effect: resource_band
+  id: gemini-035
+  interpretation: verbatim
+  kind: rule
+  page: 6
+  span: How many different resources are needed? None
+  verb: '5'
+  when:
+    all:
+    - fact: resources_needed
+      is: 0
+  who_can_supply: observed
+- also_on:
+  - 29
+  decision_point: C
+  effect: resource_band
+  id: gemini-036
+  interpretation: verbatim
+  kind: rule
+  page: 6
+  span: How many different resources are needed? One
+  verb: '4'
+  when:
+    all:
+    - fact: resources_needed
+      is: 1
+  who_can_supply: observed
+- also_on:
+  - 29
+  decision_point: C
+  effect: resource_band
+  id: gemini-037
+  interpretation: interpreted
+  kind: rule
+  note: '''Many'' is understood as 2 or more from standard ESI definitions.'
+  page: 6
+  span: How many different resources are needed? Many
+  verb: '3'
+  when:
+    all:
+    - fact: resources_needed
+      gte: 2
+  who_can_supply: observed
+- also_on:
+  - 30
+  decision_point: C
+  effect: none
+  id: gemini-038
+  interpretation: verbatim
+  kind: usage
+  page: 6
+  span: Count the number of different types of resources, not the individual tests or radiographs.
+  verb: Count
+- also_on:
+  - 30
+  decision_point: C
+  effect: none
+  id: gemini-039
+  interpretation: verbatim
+  kind: example
+  page: 6
+  span: complete blood count, electrolytes, and coagulant studies equal one resource because they are all laboratory tests
+  verb: equal
+- also_on:
+  - 30
+  decision_point: C
+  effect: none
+  id: gemini-040
+  interpretation: verbatim
+  kind: example
+  page: 6
+  span: complete blood count plus chest radiograph equals two resources because one is a laboratory test and one is imaging
+  verb: equals
+- also_on:
+  - 30
+  decision_point: C
+  effect: none
+  id: gemini-041
+  interpretation: verbatim
+  kind: definition
+  page: 6
+  span: ESI Resources\n• Labs (blood, urine)
+  verb: ESI Resources
+- also_on:
+  - 30
+  decision_point: C
+  effect: none
+  id: gemini-042
+  interpretation: verbatim
+  kind: definition
+  page: 6
+  span: ESI Resources\n• Electrocardiogram, radiographs
+  verb: ESI Resources
+- also_on:
+  - 30
+  decision_point: C
+  effect: none
+  id: gemini-043
+  interpretation: verbatim
+  kind: definition
+  page: 6
+  span: ESI Resources\n• Computed tomography, magnetic resonance imaging, ultrasound, angiography
+  verb: ESI Resources
+- also_on:
+  - 30
+  decision_point: C
+  effect: none
+  id: gemini-044
+  interpretation: verbatim
+  kind: definition
+  page: 6
+  span: ESI Resources\n• Intravenous fluids (hydration)
+  verb: ESI Resources
+- also_on:
+  - 30
+  decision_point: C
+  effect: none
+  id: gemini-045
+  interpretation: verbatim
+  kind: definition
+  page: 6
+  span: ESI Resources\n• Intravenous, intramuscular, or nebulized medications
+  verb: ESI Resources
+- also_on:
+  - 30
+  decision_point: C
+  effect: none
+  id: gemini-046
+  interpretation: verbatim
+  kind: definition
+  page: 6
+  span: ESI Resources\n• Specialty consultation
+  verb: ESI Resources
+- also_on:
+  - 30
+  decision_point: C
+  effect: none
+  id: gemini-047
+  interpretation: verbatim
+  kind: definition
+  page: 6
+  span: Simple procedure = 1 (laceration repair, urinary catheter)
+  verb: Simple procedure = 1
+- also_on:
+  - 30
+  decision_point: C
+  effect: none
+  id: gemini-048
+  interpretation: verbatim
+  kind: definition
+  page: 6
+  span: Complex procedure = 2 (procedural sedation)
+  verb: Complex procedure = 2
+- also_on:
+  - 30
+  decision_point: C
+  effect: none
+  id: gemini-049
+  interpretation: verbatim
+  kind: definition
+  page: 6
+  span: Not ESI Resources\n• History and physicaI exam (Including pelvic)
+  verb: Not ESI Resources
+- also_on:
+  - 30
+  decision_point: C
+  effect: none
+  id: gemini-050
+  interpretation: verbatim
+  kind: definition
+  page: 6
+  span: Not ESI Resources\n• Point-of-care testing
+  verb: Not ESI Resources
+- also_on:
+  - 30
+  decision_point: C
+  effect: none
+  id: gemini-051
+  interpretation: verbatim
+  kind: definition
+  page: 6
+  span: Not ESI Resources\n• Saline or heparin lock
+  verb: Not ESI Resources
+- also_on:
+  - 30
+  decision_point: C
+  effect: none
+  id: gemini-052
+  interpretation: verbatim
+  kind: definition
+  page: 6
+  span: Not ESI Resources\n• Oral medications
+  verb: Not ESI Resources
+- also_on:
+  - 30
+  decision_point: C
+  effect: none
+  id: gemini-053
+  interpretation: verbatim
+  kind: definition
+  page: 6
+  span: Not ESI Resources\n• Tetanus immunization
+  verb: Not ESI Resources
+- also_on:
+  - 30
+  decision_point: C
+  effect: none
+  id: gemini-054
+  interpretation: verbatim
+  kind: definition
+  page: 6
+  span: Not ESI Resources\n• Prescription refills
+  verb: Not ESI Resources
+- also_on:
+  - 30
+  decision_point: C
+  effect: none
+  id: gemini-055
+  interpretation: verbatim
+  kind: definition
+  page: 6
+  span: Not ESI Resources\n• Phone call to primary care physician
+  verb: Not ESI Resources
+- also_on:
+  - 30
+  decision_point: C
+  effect: none
+  id: gemini-056
+  interpretation: verbatim
+  kind: definition
+  page: 6
+  span: Not ESI Resources\n• Simple wound care (dressings, recheck)
+  verb: Not ESI Resources
+- also_on:
+  - 30
+  decision_point: C
+  effect: none
+  id: gemini-057
+  interpretation: verbatim
+  kind: definition
+  page: 6
+  span: Not ESI Resources\n• Crutches, splints, slings
+  verb: Not ESI Resources
+- also_on:
+  - 29
+  decision_point: D
+  effect: reassess_uptriage
+  id: gemini-058
+  interpretation: verbatim
+  kind: rule
+  page: 6
+  span: High-risk vital signs?
+  verb: Reassess acuity decision
+  when:
+    all:
+    - fact: has_high_risk_vital_signs
+      is: true
+  who_can_supply: vitals
+- also_on:
+  - 29
+  decision_point: D
+  effect: reassess_uptriage
+  id: gemini-059
+  interpretation: verbatim
+  kind: rule
+  page: 6
+  span: < 1 mo ... > 190
+  verb: High-risk vital signs
+  when:
+    all:
+    - fact: age_months
+      lt: 1
+    - fact: heart_rate
+      gt: 190
+  who_can_supply: vitals
+- also_on:
+  - 29
+  decision_point: D
+  effect: reassess_uptriage
+  id: gemini-060
+  interpretation: verbatim
+  kind: rule
+  page: 6
+  span: < 1 mo ... > 60
+  verb: High-risk vital signs
+  when:
+    all:
+    - fact: age_months
+      lt: 1
+    - fact: respiratory_rate
+      gt: 60
+  who_can_supply: vitals
+- also_on:
+  - 29
+  decision_point: D
+  effect: reassess_uptriage
+  id: gemini-061
+  interpretation: verbatim
+  kind: rule
+  page: 6
+  span: 1–12 mo ... > 180
+  verb: High-risk vital signs
+  when:
+    all:
+    - fact: age_months
+      gte: 1
+    - fact: age_months
+      lte: 12
+    - fact: heart_rate
+      gt: 180
+  who_can_supply: vitals
+- also_on:
+  - 29
+  decision_point: D
+  effect: reassess_uptriage
+  id: gemini-062
+  interpretation: verbatim
+  kind: rule
+  page: 6
+  span: 1–12 mo ... > 55
+  verb: High-risk vital signs
+  when:
+    all:
+    - fact: age_months
+      gte: 1
+    - fact: age_months
+      lte: 12
+    - fact: respiratory_rate
+      gt: 55
+  who_can_supply: vitals
+- also_on:
+  - 29
+  decision_point: D
+  effect: reassess_uptriage
+  id: gemini-063
+  interpretation: verbatim
+  kind: rule
+  page: 6
+  span: 1–3 y ... > 140
+  verb: High-risk vital signs
+  when:
+    all:
+    - fact: age_years
+      gte: 1
+    - fact: age_years
+      lte: 3
+    - fact: heart_rate
+      gt: 140
+  who_can_supply: vitals
+- also_on:
+  - 29
+  decision_point: D
+  effect: reassess_uptriage
+  id: gemini-064
+  interpretation: verbatim
+  kind: rule
+  page: 6
+  span: 1–3 y ... > 40
+  verb: High-risk vital signs
+  when:
+    all:
+    - fact: age_years
+      gte: 1
+    - fact: age_years
+      lte: 3
+    - fact: respiratory_rate
+      gt: 40
+  who_can_supply: vitals
+- also_on:
+  - 29
+  decision_point: D
+  effect: reassess_uptriage
+  id: gemini-065
+  interpretation: verbatim
+  kind: rule
+  page: 6
+  span: 3–5 y ... > 120
+  verb: High-risk vital signs
+  when:
+    all:
+    - fact: age_years
+      gte: 3
+    - fact: age_years
+      lte: 5
+    - fact: heart_rate
+      gt: 120
+  who_can_supply: vitals
+- also_on:
+  - 29
+  decision_point: D
+  effect: reassess_uptriage
+  id: gemini-066
+  interpretation: verbatim
+  kind: rule
+  page: 6
+  span: 3–5 y ... > 35
+  verb: High-risk vital signs
+  when:
+    all:
+    - fact: age_years
+      gte: 3
+    - fact: age_years
+      lte: 5
+    - fact: respiratory_rate
+      gt: 35
+  who_can_supply: vitals
+- also_on:
+  - 29
+  decision_point: D
+  effect: reassess_uptriage
+  id: gemini-067
+  interpretation: verbatim
+  kind: rule
+  page: 6
+  span: 5–12 y ... > 120
+  verb: High-risk vital signs
+  when:
+    all:
+    - fact: age_years
+      gte: 5
+    - fact: age_years
+      lte: 12
+    - fact: heart_rate
+      gt: 120
+  who_can_supply: vitals
+- also_on:
+  - 29
+  decision_point: D
+  effect: reassess_uptriage
+  id: gemini-068
+  interpretation: verbatim
+  kind: rule
+  page: 6
+  span: 5–12 y ... > 30
+  verb: High-risk vital signs
+  when:
+    all:
+    - fact: age_years
+      gte: 5
+    - fact: age_years
+      lte: 12
+    - fact: respiratory_rate
+      gt: 30
+  who_can_supply: vitals
+- also_on:
+  - 29
+  decision_point: D
+  effect: reassess_uptriage
+  id: gemini-069
+  interpretation: verbatim
+  kind: rule
+  page: 6
+  span: 12–18 y ... > 100
+  verb: High-risk vital signs
+  when:
+    all:
+    - fact: age_years
+      gte: 12
+    - fact: age_years
+      lte: 18
+    - fact: heart_rate
+      gt: 100
+  who_can_supply: vitals
+- also_on:
+  - 29
+  decision_point: D
+  effect: reassess_uptriage
+  id: gemini-070
+  interpretation: verbatim
+  kind: rule
+  page: 6
+  span: 12–18 y ... > 20
+  verb: High-risk vital signs
+  when:
+    all:
+    - fact: age_years
+      gte: 12
+    - fact: age_years
+      lte: 18
+    - fact: respiratory_rate
+      gt: 20
+  who_can_supply: vitals
+- also_on:
+  - 29
+  decision_point: D
+  effect: reassess_uptriage
+  id: gemini-071
+  interpretation: verbatim
+  kind: rule
+  page: 6
+  span: '> 18 y ... > 100'
+  verb: High-risk vital signs
+  when:
+    all:
+    - fact: age_years
+      gt: 18
+    - fact: heart_rate
+      gt: 100
+  who_can_supply: vitals
+- also_on:
+  - 29
+  decision_point: D
+  effect: reassess_uptriage
+  id: gemini-072
+  interpretation: verbatim
+  kind: rule
+  page: 6
+  span: '> 18 y ... > 20'
+  verb: High-risk vital signs
+  when:
+    all:
+    - fact: age_years
+      gt: 18
+    - fact: respiratory_rate
+      gt: 20
+  who_can_supply: vitals
+- also_on:
+  - 29
+  decision_point: D
+  effect: reassess_uptriage
+  id: gemini-073
+  interpretation: verbatim
+  kind: rule
+  page: 6
+  span: SpO2 < 92%
+  verb: High-risk vital signs
+  when:
+    all:
+    - fact: spo2_percent
+      lt: 92
+  who_can_supply: vitals
+- also_on:
+  - 30
+  decision_point: D
+  effect: reassess_uptriage
+  id: gemini-074
+  interpretation: verbatim
+  kind: rule
+  page: 6
+  span: Reassess to determine whether the patient warrants a higher acuity level if a patient has one or more vital signs outside the normal parameters
+  verb: warrants
+  when:
+    all:
+    - fact: has_vital_signs_outside_normal_parameters
+      is: true
+  who_can_supply: vitals
+- also_on:
+  - 30
+  decision_point: D
+  effect: assign_level_2
+  id: gemini-075
+  interpretation: verbatim
+  kind: rule
+  page: 6
+  span: '1-28 days of age: Assign at least ESI 2 if T > 38° C (100.4 ° F)'
+  verb: Assign at least ESI 2
+  when:
+    all:
+    - fact: age_days
+      gte: 1
+    - fact: age_days
+      lte: 28
+    - fact: temperature_celsius
+      gt: 38
+  who_can_supply: vitals
+- also_on:
+  - 30
+  decision_point: D
+  effect: consider_level_2
+  id: gemini-076
+  interpretation: verbatim
+  kind: rule
+  page: 6
+  span: '1-3 months: Consider assigning ESI 2 if T > 38 ° C (100.4 ° F)'
+  verb: Consider assigning ESI 2
+  when:
+    all:
+    - fact: age_months
+      gte: 1
+    - fact: age_months
+      lte: 3
+    - fact: temperature_celsius
+      gt: 38
+  who_can_supply: vitals
+- also_on:
+  - 30
+  decision_point: D
+  effect: consider_level_2
+  id: gemini-077
+  interpretation: verbatim
+  kind: rule
+  note: Text says 'Consider assigning ESI 2 or 3'
+  page: 6
+  span: '3 months and older: Consider assigning ESI 2 or 3 if: 1. T > 39°C (102.2°F)'
+  verb: Consider assigning ESI 2 or 3
+  when:
+    all:
+    - fact: age_months
+      gte: 3
+    - fact: temperature_celsius
+      gt: 39
+  who_can_supply: vitals
+- also_on:
+  - 30
+  decision_point: D
+  effect: consider_level_2
+  id: gemini-078
+  interpretation: verbatim
+  kind: rule
+  note: Text says 'Consider assigning ESI 2 or 3'
+  page: 6
+  span: '3 months and older: Consider assigning ESI 2 or 3 if: 1. ... or < 36°C (96.8°F)'
+  verb: Consider assigning ESI 2 or 3
+  when:
+    all:
+    - fact: age_months
+      gte: 3
+    - fact: temperature_celsius
+      lt: 36
+  who_can_supply: vitals
+- also_on:
+  - 30
+  decision_point: D
+  effect: consider_level_2
+  id: gemini-079
+  interpretation: interpreted
+  kind: rule
+  note: Text says 'Consider assigning ESI 2 or 3'. Implied context of having fever since it falls under 'Pediatric Fever Considerations'.
+  page: 6
+  span: '3 months and older: Consider assigning ESI 2 or 3 if: ... 2. Incomplete immunizations'
+  verb: Consider assigning ESI 2 or 3
+  when:
+    all:
+    - fact: age_months
+      gte: 3
+    - fact: has_fever
+      is: true
+    - fact: has_incomplete_immunizations
+      is: true
+  who_can_supply: reported_directly
+- also_on:
+  - 30
+  decision_point: D
+  effect: consider_level_2
+  id: gemini-080
+  interpretation: interpreted
+  kind: rule
+  note: Text says 'Consider assigning ESI 2 or 3'. Implied context of having fever since it falls under 'Pediatric Fever Considerations'.
+  page: 6
+  span: '3 months and older: Consider assigning ESI 2 or 3 if: ... 3. No obvious source of fever'
+  verb: Consider assigning ESI 2 or 3
+  when:
+    all:
+    - fact: age_months
+      gte: 3
+    - fact: has_fever
+      is: true
+    - fact: has_no_obvious_source_of_fever
+      is: true
+  who_can_supply: observed
+- decision_point: none
+  effect: none
+  id: gemini-081
+  interpretation: verbatim
+  kind: usage
+  page: 7
+  span: it was not developed to be a means of updating or communicating a change in patient condition after the provider has seen the patient.
+  verb: was not developed to be
+- decision_point: none
+  effect: none
+  id: gemini-082
+  interpretation: verbatim
+  kind: usage
+  page: 7
+  span: Prior to a provider evaluation, a patient change in condition can be reflected in an amended ESI level.
+  verb: can be reflected
+- decision_point: none
+  effect: none
+  id: gemini-083
+  interpretation: verbatim
+  kind: usage
+  page: 7
+  span: The ESI level assigned by the nurse should reflect the patient’s current risk, not the environmental conditions of the ED.
+  verb: should reflect
+- decision_point: none
+  effect: none
+  id: gemini-084
+  interpretation: verbatim
+  kind: usage
+  page: 7
+  span: Nor should the ESI level be used to manipulate metrics such as door-to-ECG or door-to-CT times.
+  verb: Nor should the ESI level be used
+- decision_point: B
+  effect: assign_level_2
+  id: gemini-085
+  interpretation: verbatim
+  kind: rule
+  page: 11
+  span: If the situation is high-risk or the patient is at elevated risk for physical or psychological deterioration, the patient is triaged as ESI level 2.
+  verb: is triaged as
+  when:
+    any:
+    - fact: is_high_risk_situation
+      is: true
+    - fact: is_at_elevated_risk_for_deterioration
+      is: true
+  who_can_supply: observed
+- decision_point: B
+  effect: none
+  id: gemini-086
+  interpretation: verbatim
+  kind: definition
+  page: 11
+  span: A high-risk patient is one whose condition could easily deteriorate or who presents with symptoms suggestive of a condition requiring time-sensitive treatment.
+  verb: is
+- decision_point: B
+  effect: none
+  id: gemini-087
+  interpretation: verbatim
+  kind: context
+  page: 11
+  span: Consider vital signs in the context of medications before assigning an ESI level.
+  verb: Consider
+- decision_point: B
+  effect: assign_level_2
+  id: gemini-088
+  interpretation: effect_inferred
+  kind: rule
+  note: Listed under 'Examples of high-risk situations include the following:'. Page 11 explicitly states high-risk situations are triaged as ESI level 2.
+  page: 12
+  span: Active chest pain, suspicious for acute coronary syndrome but does not require an immediate lifesaving intervention.
+  verb: include
+  when:
+    all:
+    - fact: has_active_chest_pain_suspicious_for_acs
+      is: true
+    - fact: requires_immediate_lifesaving_intervention
+      is: false
+  who_can_supply: observed
+- decision_point: B
+  effect: assign_level_2
+  id: gemini-089
+  interpretation: effect_inferred
+  kind: rule
+  note: Listed as an example of a high-risk situation, which warrants ESI level 2.
+  page: 12
+  span: Signs of a stroke but does not meet level-1 criteria.
+  verb: include
+  when:
+    all:
+    - fact: has_signs_of_stroke
+      is: true
+    - fact: meets_level_1_criteria
+      is: false
+  who_can_supply: observed
+- decision_point: B
+  effect: assign_level_2
+  id: gemini-090
+  interpretation: effect_inferred
+  kind: rule
+  note: Listed as an example of a high-risk situation, which warrants ESI level 2.
+  page: 12
+  span: A possible ectopic pregnancy, hemodynamically stable.
+  verb: include
+  when:
+    all:
+    - fact: has_possible_ectopic_pregnancy
+      is: true
+    - fact: is_hemodynamically_stable
+      is: true
+  who_can_supply: observed
+- decision_point: B
+  effect: assign_level_2
+  id: gemini-091
+  interpretation: effect_inferred
+  kind: rule
+  note: Listed as an example of a high-risk situation, which warrants ESI level 2.
+  page: 12
+  span: A patient on chemotherapy, and therefore immunocompromised, with a fever.
+  verb: include
+  when:
+    all:
+    - fact: is_on_chemotherapy
+      is: true
+    - fact: has_fever
+      is: true
+  who_can_supply: observed
+- decision_point: B
+  effect: assign_level_2
+  id: gemini-092
+  interpretation: effect_inferred
+  kind: rule
+  note: Listed as an example of a high-risk situation, which warrants ESI level 2.
+  page: 12
+  span: Transplant recipient presenting with a fever or other indication of infection.
+  verb: include
+  when:
+    all:
+    - fact: is_transplant_recipient
+      is: true
+    - any:
+      - fact: has_fever
+        is: true
+      - fact: has_indication_of_infection
+        is: true
+  who_can_supply: reported_directly
+- decision_point: B
+  effect: assign_level_2
+  id: gemini-093
+  interpretation: effect_inferred
+  kind: rule
+  note: Listed as an example of a high-risk situation, which warrants ESI level 2.
+  page: 12
+  span: Actively suicidal or homicidal patient
+  verb: include
+  when:
+    any:
+    - fact: is_actively_suicidal
+      is: true
+    - fact: is_homicidal
+      is: true
+  who_can_supply: reported_directly
+- decision_point: B
+  effect: assign_level_2
+  id: gemini-094
+  interpretation: effect_inferred
+  kind: rule
+  note: Listed as an example of a high-risk situation, which warrants ESI level 2.
+  page: 12
+  span: A needle stick in a health care worker (time sensitive to postexposure prophylaxis treatment)
+  verb: include
+  when:
+    fact: is_healthcare_worker_with_needle_stick
+    is: true
+  who_can_supply: reported_directly
+- decision_point: B
+  effect: assign_level_2
+  id: gemini-095
+  interpretation: effect_inferred
+  kind: rule
+  note: Listed as an example of a high-risk situation, which warrants ESI level 2.
+  page: 12
+  span: Sexual assault survivor
+  verb: include
+  when:
+    fact: is_sexual_assault_survivor
+    is: true
+  who_can_supply: reported_directly
+- decision_point: B
+  effect: assign_level_2
+  id: gemini-096
+  interpretation: effect_inferred
+  kind: rule
+  note: Listed as an example of a high-risk situation, which warrants ESI level 2.
+  page: 12
+  span: Increasing respiratory effort
+  verb: include
+  when:
+    fact: has_increasing_respiratory_effort
+    is: true
+  who_can_supply: observed
+- decision_point: B
+  effect: assign_level_2
+  id: gemini-097
+  interpretation: effect_inferred
+  kind: rule
+  note: Listed as an example of a high-risk situation, which warrants ESI level 2.
+  page: 12
+  span: Postpartum hemorrhage
+  verb: include
+  when:
+    fact: has_postpartum_hemorrhage
+    is: true
+  who_can_supply: observed
+- decision_point: B
+  effect: none
+  id: gemini-098
+  interpretation: verbatim
+  kind: definition
+  page: 12
+  span: the presence of confusion, lethargy, or disorientation refers to a new onset or an altered mental status
+  verb: refers to
+- decision_point: B
+  effect: assign_level_2
+  id: gemini-099
+  interpretation: verbatim
+  kind: rule
+  page: 12
+  span: If the patient’s history is unknown, and the patient presents as confused, lethargic, or disoriented, the nurse should assume this condition is new and assign
+  verb: assume this condition is new and assign
+  when:
+    all:
+    - fact: has_unknown_history
+      is: true
+    - any:
+      - fact: is_confused
+        is: true
+      - fact: is_lethargic
+        is: true
+      - fact: is_disoriented
+        is: true
+  who_can_supply: observed
+- decision_point: B
+  effect: consider_level_2
+  id: gemini-100
+  interpretation: verbatim
+  kind: rule
+  page: 12
+  span: All patients who have a pain rating of 7/10 or greater should be considered for meeting ESI level-2 criteria.
+  verb: should be considered for meeting
+  when:
+    fact: pain_rating
+    gte: 7
+  who_can_supply: reported_directly
+- decision_point: B
+  effect: none
+  id: gemini-101
+  interpretation: verbatim
+  kind: negative
+  page: 12
+  span: not all patients with a pain score greater than 7 should be triaged as ESI level 2
+  verb: not all ... should be triaged as
+- decision_point: B
+  effect: resource_band
+  id: gemini-102
+  interpretation: verbatim
+  kind: rule
+  page: 12
+  span: If the pain is a result of an orthopedic injury, for example, assuming no neurovascular compromise
+  verb: can wait to be seen, and the resources ... should be determined
+  when:
+    all:
+    - fact: has_orthopedic_injury
+      is: true
+    - fact: has_neurovascular_compromise
+      is: false
+  who_can_supply: observed
+- decision_point: B
+  effect: assign_level_2
+  id: gemini-103
+  interpretation: verbatim
+  kind: rule
+  page: 12
+  span: Patients experiencing severe pain or distress as a result of a systemic disruption, for example, renal colic, cancer, or sickle cell crisis, should be triaged
+  verb: should be triaged as
+  when:
+    any:
+    - fact: has_severe_pain_from_systemic_disruption
+      is: true
+    - fact: has_severe_distress_from_systemic_disruption
+      is: true
+  who_can_supply: observed
+- decision_point: B
+  effect: none
+  id: gemini-104
+  interpretation: verbatim
+  kind: context
+  page: 12
+  span: In consideration of assigning an ESI level 2, the nurse must assess for severe distress, which can be physiological or psychological.
+  verb: must assess for
+- decision_point: B
+  effect: assign_level_2
+  id: gemini-105
+  interpretation: effect_inferred
+  kind: rule
+  note: Listed as an example of severe psychological distress. The preceding text states the nurse must assess for severe distress in consideration of assigning ESI
+    level 2.
+  page: 12
+  span: Distraught after experiencing a sexual assault
+  verb: include
+  when:
+    fact: is_distraught_after_sexual_assault
+    is: true
+  who_can_supply: observed
+- decision_point: B
+  effect: assign_level_2
+  id: gemini-106
+  interpretation: effect_inferred
+  kind: rule
+  note: Listed as an example of severe psychological distress. The preceding text states the nurse must assess for severe distress in consideration of assigning ESI
+    level 2.
+  page: 12
+  span: Behavioral outbursts at triage
+  verb: include
+  when:
+    fact: has_behavioral_outbursts
+    is: true
+  who_can_supply: observed
+- decision_point: B
+  effect: assign_level_2
+  id: gemini-107
+  interpretation: effect_inferred
+  kind: rule
+  note: Listed as an example of severe psychological distress. The preceding text states the nurse must assess for severe distress in consideration of assigning ESI
+    level 2.
+  page: 12
+  span: Combativeness
+  verb: include
+  when:
+    fact: is_combative
+    is: true
+  who_can_supply: observed
+- decision_point: B
+  effect: assign_level_2
+  id: gemini-108
+  interpretation: effect_inferred
+  kind: rule
+  note: Listed as an example of severe psychological distress. The preceding text states the nurse must assess for severe distress in consideration of assigning ESI
+    level 2.
+  page: 12
+  span: Survivor of sexual violence
+  verb: include
+  when:
+    fact: is_survivor_of_sexual_violence
+    is: true
+  who_can_supply: reported_directly
+- decision_point: B
+  effect: assign_level_2
+  id: gemini-109
+  interpretation: effect_inferred
+  kind: rule
+  note: Listed as an example of severe psychological distress. The preceding text states the nurse must assess for severe distress in consideration of assigning ESI
+    level 2.
+  page: 12
+  span: Survivor of domestic violence
+  verb: include
+  when:
+    fact: is_survivor_of_domestic_violence
+    is: true
+  who_can_supply: reported_directly
+- decision_point: B
+  effect: assign_level_2
+  id: gemini-110
+  interpretation: effect_inferred
+  kind: rule
+  note: Listed as an example of severe psychological distress. The preceding text states the nurse must assess for severe distress in consideration of assigning ESI
+    level 2.
+  page: 12
+  span: Acute grief reaction
+  verb: include
+  when:
+    fact: has_acute_grief_reaction
+    is: true
+  who_can_supply: observed
+- decision_point: B
+  effect: assign_level_2
+  id: gemini-111
+  interpretation: effect_inferred
+  kind: rule
+  note: Listed as an example of severe psychological distress. The preceding text states the nurse must assess for severe distress in consideration of assigning ESI
+    level 2.
+  page: 12
+  span: Suicidal ideation, plan, or attempt
+  verb: include
+  when:
+    fact: has_suicidal_ideation_plan_or_attempt
+    is: true
+  who_can_supply: reported_directly
+- decision_point: B
+  effect: assign_level_2
+  id: gemini-112
+  interpretation: effect_inferred
+  kind: rule
+  note: Listed as an example of severe psychological distress. The preceding text states the nurse must assess for severe distress in consideration of assigning ESI
+    level 2.
+  page: 12
+  span: Prenatal loss
+  verb: include
+  when:
+    fact: has_prenatal_loss
+    is: true
+  who_can_supply: reported_directly
+- decision_point: B
+  effect: none
+  id: gemini-113
+  interpretation: verbatim
+  kind: context
+  page: 12
+  span: The following sections provides a nonexhaustive list of examples of other presenting symptoms and red flags that would warrant an ESI level-2 designation.
+  verb: would warrant
+- decision_point: B
+  effect: assign_level_2
+  id: gemini-114
+  interpretation: effect_inferred
+  kind: rule
+  note: The section introduction states these examples would warrant an ESI level-2 designation.
+  page: 12
+  span: Most concerning is the “thunderclap headache” (a severe, rapid-onset headache), which is often associated with subarachnoid hemorrhage (Edlow, 2018) and warrants
+    immediate evaluation.
+  verb: warrants immediate evaluation
+  when:
+    fact: has_thunderclap_headache
+    is: true
+  who_can_supply: reported_directly
+- decision_point: B
+  effect: assign_level_2
+  id: gemini-115
+  interpretation: effect_inferred
+  kind: rule
+  note: The category referred to is ESI level-2 designations, as stated in the section introduction.
+  page: 12
+  span: Any headache accompanied by neck pain or nuchal rigidity falls into this category.
+  verb: falls into this category
+  when:
+    all:
+    - fact: has_headache
+      is: true
+    - any:
+      - fact: has_neck_pain
+        is: true
+      - fact: has_nuchal_rigidity
+        is: true
+  who_can_supply: observed
+- decision_point: B
+  effect: assign_level_2
+  id: gemini-116
+  interpretation: verbatim
+  kind: rule
+  page: 12
+  span: Other presentations of concern that warrant an ESI 2 designation include headache plus fever, vomiting, lower back pain, altered mental status, and/or signs
+    and symptoms
+  verb: warrant an ESI 2 designation include
+  when:
+    all:
+    - fact: has_headache
+      is: true
+    - any:
+      - fact: has_fever
+        is: true
+      - fact: has_vomiting
+        is: true
+      - fact: has_lower_back_pain
+        is: true
+      - fact: has_altered_mental_status
+        is: true
+      - fact: has_signs_of_stroke
+        is: true
+  who_can_supply: observed
+- decision_point: B
+  effect: assign_level_2
+  id: gemini-117
+  interpretation: verbatim
+  kind: rule
+  page: 12
+  span: Patients presenting post-ictal are triaged as ESI level 2 (altered mental status).
+  verb: are triaged as
+  when:
+    fact: is_post_ictal
+    is: true
+  who_can_supply: observed
+- decision_point: B
+  effect: resource_band
+  id: gemini-118
+  interpretation: verbatim
+  kind: rule
+  page: 12
+  span: Patients with a known seizure history who are alert and oriented after having a seizure prior to ED presentation can be triaged according to their physiological
+    presentation
+  verb: can be triaged according to ... expected resource needs
+  when:
+    all:
+    - fact: has_known_seizure_history
+      is: true
+    - fact: is_alert_and_oriented
+      is: true
+    - fact: had_seizure_prior_to_ed
+      is: true
+  who_can_supply: observed
+- decision_point: none
+  effect: none
+  id: gemini-119
+  interpretation: verbatim
+  kind: rule
+  note: Does not automatically warrant level 1 or 2, allowing triage based on physiological assessment and resources.
+  page: 13
+  span: Pediatric patients presenting as alert and appropriate after a febrile seizure can be triaged based on their physiological assessment and anticipated resource
+    needs.
+  verb: can be triaged based on their physiological assessment and anticipated resource needs
+  when:
+    all:
+    - fact: is_pediatric
+      is: true
+    - fact: has_recent_febrile_seizure
+      is: true
+    - fact: is_alert
+      is: true
+    - fact: is_appropriate
+      is: true
+  who_can_supply: observed
+- decision_point: B
+  effect: assign_level_2
+  id: gemini-120
+  interpretation: interpreted
+  kind: rule
+  note: High risk indicates level 2.
+  page: 13
+  span: A subtle change in a pediatric patient’s mental status can be suggestive of a change in hemodynamics and should be immediately investigated as high risk.
+  verb: should be immediately investigated as high risk
+  when:
+    all:
+    - fact: is_pediatric
+      is: true
+    - fact: has_subtle_change_in_mental_status
+      is: true
+  who_can_supply: observed
+- decision_point: none
+  effect: none
+  id: gemini-121
+  interpretation: verbatim
+  kind: context
+  page: 13
+  span: The elements of the score that predict urgency include the presence of altered vision... and “floaters and flashers,” with more symptoms in constellation
+    predicting a more emergent problem and serve as a good guideline
+  verb: serve as a good guideline
+- decision_point: B
+  effect: none
+  id: gemini-122
+  interpretation: verbatim
+  kind: negative
+  page: 13
+  span: The most frequent diagnoses in the pediatric population are conjunctivitis, corneal erosion, and allergic conjunctivitis... few of these merit an ESI level-2
+    designation.
+  verb: few of these merit an ESI level-2 designation
+  when:
+    all:
+    - fact: is_pediatric
+      is: true
+    - any:
+      - fact: has_conjunctivitis
+        is: true
+      - fact: has_corneal_erosion
+        is: true
+      - fact: has_allergic_conjunctivitis
+        is: true
+  who_can_supply: observed
+- decision_point: B
+  effect: assign_level_2
+  id: gemini-123
+  interpretation: verbatim
+  kind: rule
+  page: 13
+  span: Patients who are unable to manage their own secretions and/or exhibit respiratory stridor are extremely high-risk patients and should be assigned an ESI level
+    of 2.
+  verb: should be assigned an ESI level of 2
+  when:
+    any:
+    - fact: is_unable_to_manage_own_secretions
+      is: true
+    - fact: exhibits_respiratory_stridor
+      is: true
+  who_can_supply: observed
+- decision_point: B
+  effect: assign_level_2
+  id: gemini-124
+  interpretation: verbatim
+  kind: rule
+  page: 13
+  span: Several etiologies of epistaxis represent high-risk situations. Examples include brisk bleeding secondary to posterior nosebleed or when experienced by a
+    patient with known thrombocytopenia, clotting dyscrasias, and use of warfarin or other anti-coagulants... In these situations, patients are assigned an ESI level
+    of 2.
+  verb: are assigned an ESI level of 2
+  when:
+    all:
+    - fact: has_epistaxis
+      is: true
+    - any:
+      - fact: has_posterior_nosebleed_with_brisk_bleeding
+        is: true
+      - fact: has_known_thrombocytopenia
+        is: true
+      - fact: has_clotting_dyscrasias
+        is: true
+      - fact: uses_warfarin
+        is: true
+      - fact: uses_other_anti_coagulants
+        is: true
+  who_can_supply: reported_directly
+- decision_point: B
+  effect: assign_level_2
+  id: gemini-125
+  interpretation: interpreted
+  kind: rule
+  note: Described as high risk and extremely time sensitive, which points to an ESI level 2 assignment, especially in children less than 6 years of age and involving
+    batteries greater than 20 mm in diameter.
+  page: 13
+  span: Esophageal button battery ingestion has a high risk of complication... This presentation is extremely time sensitive.
+  verb: has a high risk of complication
+  when:
+    all:
+    - fact: has_esophageal_button_battery_ingestion
+      is: true
+  who_can_supply: reported_directly
+- decision_point: B
+  effect: none
+  id: gemini-126
+  interpretation: verbatim
+  kind: definition
+  page: 13
+  span: The high-risk patient is one who is currently ventilating and oxygenating adequately but is in respiratory distress and has the potential to rapidly deteriorate.
+  verb: is one who
+- decision_point: B
+  effect: none
+  id: gemini-127
+  interpretation: verbatim
+  kind: definition
+  note: Lists examples that may indicate distress. Not each is sufficient alone to classify as severe or level 2.
+  page: 13
+  span: Signs of distress can include tachypnea, tachycardia, tripoding, speaking in short, 2-to-3-word sentences; audible stridor; wheezing; or congestion.
+  verb: can include
+- decision_point: B
+  effect: consider_level_2
+  id: gemini-128
+  interpretation: verbatim
+  kind: rule
+  page: 13
+  span: Patients with mild to moderate distress should be further evaluated for respiratory rate and pulse oximetry to determine whether they should be categorized
+    as ESI level 2.
+  verb: should be further evaluated... to determine whether they should be categorized as ESI level 2
+  when:
+    all:
+    - fact: has_mild_to_moderate_respiratory_distress
+      is: true
+  who_can_supply: observed
+- decision_point: A
+  effect: assign_level_1
+  id: gemini-129
+  interpretation: verbatim
+  kind: rule
+  page: 13
+  span: Patients in severe respiratory distress who require immediate lifesaving intervention, such as intubation, meet level-1 criteria.
+  verb: meet level-1 criteria
+  when:
+    all:
+    - fact: has_severe_respiratory_distress
+      is: true
+    - fact: requires_immediate_lifesaving_intervention
+      is: true
+  who_can_supply: observed
+- decision_point: B
+  effect: none
+  id: gemini-130
+  interpretation: verbatim
+  kind: definition
+  page: 13
+  span: Grunting, belly breathing, and retractions suggest respiratory distress. In the pediatric patient, the arc of decline can be precipitous.
+  verb: suggest
+- decision_point: A
+  effect: assign_level_1
+  id: gemini-131
+  interpretation: verbatim
+  kind: rule
+  note: Uses 'immediate interventions' which matches the lifesaving interventions criteria.
+  page: 13
+  span: Patients with chest pain who are physiologically unstable and require immediate interventions such as intubation or hemodynamic support should be triaged
+    as ESI level 1.
+  verb: should be triaged as ESI level 1
+  when:
+    all:
+    - fact: has_chest_pain
+      is: true
+    - fact: is_physiologically_unstable
+      is: true
+    - fact: requires_immediate_lifesaving_intervention
+      is: true
+  who_can_supply: observed
+- decision_point: B
+  effect: assign_level_2
+  id: gemini-132
+  interpretation: verbatim
+  kind: rule
+  page: 13
+  span: An ECG within 10 minutes for patients with concerns of chest pain may also be helpful in determining acuity. If the ECG is abnormal, patients would be assigned
+    level 2.
+  verb: would be assigned level 2
+  when:
+    all:
+    - fact: has_chest_pain
+      is: true
+    - fact: has_abnormal_ecg
+      is: true
+  who_can_supply: vitals
+- decision_point: none
+  effect: none
+  id: gemini-133
+  interpretation: verbatim
+  kind: context
+  page: 13
+  span: A recent Covid-19 infection increases cardiac risk (Boukhris et al., 2020) regardless of age, sex, or menopausal status.
+  verb: increases cardiac risk
+- decision_point: none
+  effect: none
+  id: gemini-134
+  interpretation: verbatim
+  kind: context
+  page: 13
+  span: Patients with cardiac events may present with fatigue, nausea, vomiting, and/or weakness, rather than the more “classic” chest pain.
+  verb: may present with
+- decision_point: none
+  effect: none
+  id: gemini-135
+  interpretation: verbatim
+  kind: context
+  page: 13
+  span: There are gender and sex differences in assessment and identification... that the triage nurse should be aware of, paying close attention to female patients.
+  verb: should be aware of
+- decision_point: A
+  effect: assign_level_1
+  id: gemini-136
+  interpretation: verbatim
+  kind: rule
+  note: Extracted as separate rule for 'unresponsiveness' from a list of independently sufficient criteria.
+  page: 9
+  span: Signs of instability requiring immediate, lifesaving intervention include unresponsiveness... When these signs are present, the patient is assigned an ESI
+    level of 1.
+  verb: is assigned
+  when:
+    all:
+    - fact: is_unresponsive
+      is: true
+  who_can_supply: observed
+- decision_point: A
+  effect: assign_level_1
+  id: gemini-137
+  interpretation: verbatim
+  kind: rule
+  page: 9
+  span: Signs of instability requiring immediate, lifesaving intervention include... active seizure... When these signs are present, the patient is assigned an ESI
+    level of 1.
+  verb: is assigned
+  when:
+    all:
+    - fact: has_active_seizure
+      is: true
+  who_can_supply: observed
+- decision_point: A
+  effect: assign_level_1
+  id: gemini-138
+  interpretation: verbatim
+  kind: rule
+  page: 9
+  span: Signs of instability requiring immediate, lifesaving intervention include... occluded airway... When these signs are present, the patient is assigned an ESI
+    level of 1.
+  verb: is assigned
+  when:
+    all:
+    - fact: has_occluded_airway
+      is: true
+  who_can_supply: observed
+- decision_point: A
+  effect: assign_level_1
+  id: gemini-139
+  interpretation: verbatim
+  kind: rule
+  page: 9
+  span: Signs of instability requiring immediate, lifesaving intervention include... ineffective gas exchange... When these signs are present, the patient is assigned
+    an ESI level of 1.
+  verb: is assigned
+  when:
+    all:
+    - fact: has_ineffective_gas_exchange
+      is: true
+  who_can_supply: observed
+- decision_point: A
+  effect: assign_level_1
+  id: gemini-140
+  interpretation: verbatim
+  kind: rule
+  page: 9
+  span: Signs of instability requiring immediate, lifesaving intervention include... ineffective/decreased perfusion... When these signs are present, the patient
+    is assigned an ESI level of 1.
+  verb: is assigned
+  when:
+    all:
+    - fact: has_ineffective_decreased_perfusion
+      is: true
+  who_can_supply: observed
+- decision_point: A
+  effect: assign_level_1
+  id: gemini-141
+  interpretation: verbatim
+  kind: rule
+  page: 9
+  span: 'Examples of ESI level-1 criteria include the following: • Ineffective airway clearance'
+  verb: include
+  when:
+    all:
+    - fact: has_ineffective_airway_clearance
+      is: true
+  who_can_supply: observed
+- decision_point: A
+  effect: assign_level_1
+  id: gemini-142
+  interpretation: verbatim
+  kind: rule
+  page: 9
+  span: 'Examples of ESI level-1 criteria include the following: ... • Ineffective respiratory pattern'
+  verb: include
+  when:
+    all:
+    - fact: has_ineffective_respiratory_pattern
+      is: true
+  who_can_supply: observed
+- decision_point: A
+  effect: assign_level_1
+  id: gemini-143
+  interpretation: verbatim
+  kind: rule
+  page: 9
+  span: 'Examples of ESI level-1 criteria include the following: ... • Impaired gas exchange'
+  verb: include
+  when:
+    all:
+    - fact: has_impaired_gas_exchange
+      is: true
+  who_can_supply: observed
+- decision_point: A
+  effect: assign_level_1
+  id: gemini-144
+  interpretation: verbatim
+  kind: rule
+  page: 9
+  span: 'Examples of ESI level-1 criteria include the following: ... • Ineffective tissue perfusion'
+  verb: include
+  when:
+    all:
+    - fact: has_ineffective_tissue_perfusion
+      is: true
+  who_can_supply: observed
+- decision_point: A
+  effect: assign_level_1
+  id: gemini-145
+  interpretation: verbatim
+  kind: rule
+  page: 9
+  span: 'Examples of ESI level-1 criteria include the following: ... • Obtunded/unresponsive patient'
+  verb: include
+  when:
+    all:
+    - fact: is_obtunded_or_unresponsive
+      is: true
+  who_can_supply: observed
+- decision_point: A
+  effect: assign_level_1
+  id: gemini-146
+  interpretation: verbatim
+  kind: rule
+  page: 9
+  span: 'Examples of ESI level-1 criteria include the following: ... • SpO2 < 90% that is not the patient’s norm, with other signs of respiratory compromise'
+  verb: include
+  when:
+    all:
+    - fact: spo2_percent
+      lt: 90
+    - fact: is_normal_spo2_for_patient
+      is: false
+    - fact: has_other_signs_respiratory_compromise
+      is: true
+  who_can_supply: vitals
+- decision_point: A
+  effect: assign_level_1
+  id: gemini-147
+  interpretation: verbatim
+  kind: rule
+  page: 9
+  span: 'Examples of ESI level-1 criteria include the following: ... • Anaphylaxis'
+  verb: include
+  when:
+    all:
+    - fact: has_anaphylaxis
+      is: true
+  who_can_supply: observed
+- decision_point: A
+  effect: assign_level_1
+  id: gemini-148
+  interpretation: verbatim
+  kind: rule
+  page: 9
+  span: 'Examples of ESI level-1 criteria include the following: ... • Hypotension with signs of hypoperfusion'
+  verb: include
+  when:
+    all:
+    - fact: has_hypotension
+      is: true
+    - fact: has_signs_of_hypoperfusion
+      is: true
+  who_can_supply: vitals
+- decision_point: A
+  effect: assign_level_1
+  id: gemini-149
+  interpretation: verbatim
+  kind: rule
+  page: 9
+  span: 'Examples of ESI level-1 criteria include the following: ... • Hypoglycemia'
+  verb: include
+  when:
+    all:
+    - fact: has_hypoglycemia
+      is: true
+  who_can_supply: vitals
+- decision_point: A
+  effect: assign_level_1
+  id: gemini-150
+  interpretation: verbatim
+  kind: rule
+  page: 9
+  span: 'Examples of ESI level-1 criteria include the following: ... • Severe bradycardia or tachycardia'
+  verb: include
+  when:
+    all:
+    - fact: has_severe_bradycardia_or_tachycardia
+      is: true
+  who_can_supply: vitals
+- decision_point: A
+  effect: assign_level_1
+  id: gemini-151
+  interpretation: verbatim
+  kind: rule
+  page: 9
+  span: 'Examples of ESI level-1 criteria include the following: ... • Flaccid infant'
+  verb: include
+  when:
+    all:
+    - fact: is_flaccid_infant
+      is: true
+  who_can_supply: observed
+- decision_point: A
+  effect: assign_level_1
+  id: gemini-152
+  interpretation: verbatim
+  kind: rule
+  page: 9
+  span: 'Examples of ESI level-1 criteria include the following: ... • Cardiac and/or pulmonary arrest (or appears to be imminent)'
+  verb: include
+  when:
+    all:
+    - fact: has_cardiac_or_pulmonary_arrest_or_imminent
+      is: true
+  who_can_supply: observed
+- decision_point: A
+  effect: assign_level_1
+  id: gemini-153
+  interpretation: verbatim
+  kind: rule
+  page: 9
+  span: 'Examples of ESI level-1 criteria include the following: ... • Penetrating trauma of head, neck, abdomen, chest requiring a lifesaving intervention'
+  verb: include
+  when:
+    all:
+    - fact: has_penetrating_trauma_head_neck_abdomen_chest
+      is: true
+    - fact: requires_lifesaving_intervention
+      is: true
+  who_can_supply: observed
+- decision_point: A
+  effect: none
+  id: gemini-154
+  interpretation: verbatim
+  kind: definition
+  page: 9
+  span: Table 3-1 provides a list of lifesaving interventions. ... Airway/breathing Assisted ventilation Intubation Surgical airway Emergent non-invasive positive
+    pressure ventilation
+  verb: provides
+- decision_point: A
+  effect: none
+  id: gemini-155
+  interpretation: verbatim
+  kind: definition
+  page: 9
+  span: Table 3-1 provides a list of lifesaving interventions. ... Electrical Therapy Defibrillation Emergent cardioversion External pacing
+  verb: provides
+- decision_point: A
+  effect: none
+  id: gemini-156
+  interpretation: verbatim
+  kind: definition
+  page: 9
+  span: Table 3-1 provides a list of lifesaving interventions. ... Procedures Chest needle decompression Pericardiocentesis Open thoracotomy
+  verb: provides
+- decision_point: A
+  effect: none
+  id: gemini-157
+  interpretation: verbatim
+  kind: definition
+  page: 9
+  span: Table 3-1 provides a list of lifesaving interventions. ... Hemodynamics Significant intravenous fluid resuscitation Blood administration Control of external
+    hemorrhage
+  verb: provides
+- decision_point: A
+  effect: none
+  id: gemini-158
+  interpretation: verbatim
+  kind: definition
+  page: 9
+  span: Table 3-1 provides a list of lifesaving interventions. ... Medications Adenosine Atropine Dextrose Dopamine Epinephrine (including IM for anaphylaxis) Naloxone
+  verb: provides
+- decision_point: A
+  effect: none
+  id: gemini-159
+  interpretation: verbatim
+  kind: definition
+  page: 9
+  span: Note that diagnostics are not interventions. For example, a CT scan for a stroke or use of the catheterization lab... are diagnostics but not interventions.
+  verb: are not interventions
+- decision_point: A
+  effect: none
+  id: gemini-160
+  interpretation: verbatim
+  kind: usage
+  page: 10
+  span: The triage nurse should not consider the method of arrival as a barrier to assigning the appropriate ESI level.
+  verb: should not consider
+- decision_point: A
+  effect: none
+  id: gemini-161
+  interpretation: verbatim
+  kind: usage
+  page: 10
+  span: The likelihood of discharge does not have an impact on assigning ESI 1.
+  verb: does not have an impact
+- decision_point: A
+  effect: none
+  id: gemini-162
+  interpretation: verbatim
+  kind: context
+  page: 10
+  span: The patient who meets criteria for an ESI level-1 designation shows signs of deterioration; intervention must be rapid and appropriate.
+  verb: must be
+- decision_point: none
+  effect: none
+  id: gemini-163
+  kind: context
+  page: 14
+  span: assessment of current pain rating, location, onset, accompanying symptoms and current vital signs are important elements in determining the presence or absence
+    of a high-risk situation.
+  verb: are important elements in determining
+- decision_point: B
+  effect: consider_level_2
+  id: gemini-164
+  interpretation: verbatim
+  kind: rule
+  note: The text lists questions to ask in the context of abdominal pain; it does not explicitly state that answering 'yes' alone is sufficient to meet high-risk
+    criteria.
+  page: 14
+  span: questions can help the triage nurse determine whether or not the patient meets high-risk criteria. Such questions include the following:\n• Is the patient
+    pregnant or postpartum?
+  verb: can help the triage nurse determine whether
+  when:
+    all:
+    - fact: has_abdominal_pain
+      is: true
+    - any:
+      - fact: is_pregnant
+        is: true
+      - fact: is_postpartum
+        is: true
+  who_can_supply: reported_directly
+- decision_point: B
+  effect: consider_level_2
+  id: gemini-165
+  interpretation: verbatim
+  kind: rule
+  note: A list of assessment questions for abdominal pain. The text does not explicitly state this alone is sufficient, although sepsis is generally high-risk.
+  page: 14
+  span: • Does the patient show signs of sepsis?
+  verb: can help the triage nurse determine whether
+  when:
+    all:
+    - fact: has_abdominal_pain
+      is: true
+    - fact: has_signs_of_sepsis
+      is: true
+  who_can_supply: observed
+- decision_point: B
+  effect: consider_level_2
+  id: gemini-166
+  interpretation: verbatim
+  kind: rule
+  note: A list of assessment questions for abdominal pain.
+  page: 14
+  span: • Does the patient show signs of hypoperfusion?
+  verb: can help the triage nurse determine whether
+  when:
+    all:
+    - fact: has_abdominal_pain
+      is: true
+    - fact: has_signs_of_hypoperfusion
+      is: true
+  who_can_supply: observed
+- decision_point: B
+  effect: consider_level_2
+  id: gemini-167
+  interpretation: verbatim
+  kind: rule
+  note: A list of assessment questions for abdominal pain.
+  page: 14
+  span: • Was there blunt or penetrating trauma to the abdomen?
+  verb: can help the triage nurse determine whether
+  when:
+    all:
+    - fact: has_abdominal_pain
+      is: true
+    - any:
+      - fact: has_blunt_abdominal_trauma
+        is: true
+      - fact: has_penetrating_abdominal_trauma
+        is: true
+  who_can_supply: reported_directly
+- decision_point: B
+  effect: consider_level_2
+  id: gemini-168
+  interpretation: verbatim
+  kind: rule
+  note: A list of assessment questions for abdominal pain.
+  page: 14
+  span: • Is the patient’s pain refractory to analgesia, constant, and /or maximal on onset?
+  verb: can help the triage nurse determine whether
+  when:
+    all:
+    - fact: has_abdominal_pain
+      is: true
+    - any:
+      - fact: is_pain_refractory_to_analgesia
+        is: true
+      - fact: is_pain_constant
+        is: true
+      - fact: is_pain_maximal_on_onset
+        is: true
+  who_can_supply: reported_directly
+- decision_point: none
+  effect: none
+  id: gemini-169
+  kind: usage
+  page: 14
+  span: Differentiation between ESI 2 and ESI 3 in the context of abdominal pain may depend on vital signs, patient age, and previous history.
+  verb: may depend on
+- decision_point: none
+  effect: none
+  id: gemini-170
+  kind: context
+  page: 14
+  span: 'Pediatric considerations: In younger children, pneumonia can present as abdominal pain.'
+  verb: can present as
+- decision_point: B
+  effect: assign_level_2
+  id: gemini-171
+  interpretation: interpreted
+  kind: rule
+  note: The text states these are 'time sensitive presentations, with high morbidity'. Time sensitive implies a high-risk situation, which designates ESI level 2.
+    Located under Pediatric considerations.
+  page: 14
+  span: Button battery or earth magnet ingestion are time sensitive presentations, with high morbidity
+  verb: are time sensitive presentations
+  when:
+    all:
+    - fact: is_pediatric
+      is: true
+    - any:
+      - fact: has_ingested_button_battery
+        is: true
+      - fact: has_ingested_earth_magnet
+        is: true
+  who_can_supply: reported_directly
+- decision_point: none
+  effect: none
+  id: gemini-172
+  kind: context
+  page: 14
+  span: 'Geriatric considerations: Elderly patients with abdominal pain are likely to need hospitalization'
+  verb: are likely to need
+- decision_point: B
+  effect: consider_level_2
+  id: gemini-173
+  interpretation: interpreted
+  kind: rule
+  note: Text says it can suggest emergent complications like ectopic pregnancy. Ectopic pregnancy is considered a high-risk situation (ESI 2), so the nurse should
+    consider level 2.
+  page: 14
+  span: Abdominal pain with vaginal bleeding can suggest ectopic pregnancy or other emergent pregnancy complications.
+  verb: can suggest
+  when:
+    all:
+    - fact: has_abdominal_pain
+      is: true
+    - fact: has_vaginal_bleeding
+      is: true
+  who_can_supply: reported_directly
+- decision_point: none
+  effect: none
+  id: gemini-174
+  kind: context
+  page: 14
+  span: Pregnancy or postpartum status are important data elements that can influence understanding of patient risk
+  verb: can influence understanding
+- decision_point: none
+  effect: none
+  id: gemini-175
+  kind: context
+  page: 14
+  span: Assessing for current or recent COVID-19 infection is important to assessing risk.
+  verb: is important to assessing
+- decision_point: none
+  effect: none
+  id: gemini-176
+  kind: context
+  page: 14
+  span: Critical determinants of acuity include blood pressure; bleeding; and abdominal, head, or chest pain.
+  verb: include
+- decision_point: B
+  effect: assign_level_2
+  id: gemini-177
+  interpretation: verbatim
+  kind: rule
+  page: 14
+  span: The pregnant or postpartum patient with a SBP of < 90 or > 150 should be designated an ESI 2 even in the absence of other symptoms
+  verb: should be designated an ESI 2
+  when:
+    all:
+    - any:
+      - fact: is_pregnant
+        is: true
+      - fact: is_postpartum
+        is: true
+    - any:
+      - fact: systolic_blood_pressure_mmhg
+        lt: 90
+      - fact: systolic_blood_pressure_mmhg
+        gt: 150
+  who_can_supply: vitals
+- decision_point: B
+  effect: assign_level_2
+  id: gemini-178
+  interpretation: verbatim
+  kind: rule
+  page: 14
+  span: Pregnant patients with chest pain and/or shortness of breath, abdominal pain, or headache should be triaged as ESI 2
+  verb: should be triaged as ESI 2
+  when:
+    all:
+    - fact: is_pregnant
+      is: true
+    - any:
+      - fact: has_chest_pain
+        is: true
+      - fact: has_shortness_of_breath
+        is: true
+      - fact: has_abdominal_pain
+        is: true
+      - fact: has_headache
+        is: true
+  who_can_supply: reported_directly
+- decision_point: B
+  effect: assign_level_2
+  id: gemini-179
+  interpretation: verbatim
+  kind: rule
+  note: Suspicion of infection requires clinical observation.
+  page: 14
+  span: Pregnant patients who present with heavy vaginal bleeding and abnormal vitals with suspicion of infection should be categorized at ESI level 2.
+  verb: should be categorized at ESI level 2
+  when:
+    all:
+    - fact: is_pregnant
+      is: true
+    - fact: has_heavy_vaginal_bleeding
+      is: true
+    - fact: has_abnormal_vitals
+      is: true
+    - fact: has_suspicion_of_infection
+      is: true
+  who_can_supply: observed
+- decision_point: B
+  effect: none
+  id: gemini-180
+  kind: definition
+  page: 14
+  span: (Heavy vaginal bleeding generally means soaking through a pad an hour, plum-sized clots, bright red bleeding that does not slow down
+  verb: means
+- decision_point: B
+  effect: assign_level_2
+  id: gemini-181
+  interpretation: verbatim
+  kind: rule
+  page: 14
+  span: Postpartum patients presenting with heavy vaginal bleeding should also be assigned ESI level 2 and seen by a provider immediately
+  verb: should also be assigned ESI level 2
+  when:
+    all:
+    - fact: is_postpartum
+      is: true
+    - fact: has_heavy_vaginal_bleeding
+      is: true
+  who_can_supply: reported_directly
+- decision_point: A
+  effect: assign_level_1
+  id: gemini-182
+  interpretation: verbatim
+  kind: rule
+  page: 14
+  span: Any pregnancy-capable patient, whether pregnant or postpartum, who presents with significant hemodynamic instability and who needs immediate lifesaving interventions
+    should be triaged as ESI level 1.
+  verb: should be triaged as ESI level 1
+  when:
+    all:
+    - any:
+      - fact: is_pregnancy_capable
+        is: true
+      - fact: is_pregnant
+        is: true
+      - fact: is_postpartum
+        is: true
+    - fact: has_significant_hemodynamic_instability
+      is: true
+    - fact: needs_immediate_lifesaving_intervention
+      is: true
+  who_can_supply: observed
+- decision_point: B
+  effect: assign_level_2
+  id: gemini-183
+  interpretation: verbatim
+  kind: rule
+  page: 15
+  span: Mechanisms of injury that warrant an ESI 2 designation include falls of 20 feet (6 meters) or more
+  verb: warrant an ESI 2 designation include
+  when:
+    all:
+    - fact: fall_height_meters
+      gte: 6
+  who_can_supply: reported_directly
+- decision_point: B
+  effect: assign_level_2
+  id: gemini-184
+  interpretation: verbatim
+  kind: rule
+  page: 15
+  span: designation include falls of 20 feet (6 meters) or more, ejection from a vehicle
+  verb: warrant an ESI 2 designation include
+  when:
+    all:
+    - fact: ejected_from_vehicle
+      is: true
+  who_can_supply: reported_directly
+- decision_point: B
+  effect: assign_level_2
+  id: gemini-185
+  interpretation: verbatim
+  kind: rule
+  page: 15
+  span: ejection from a vehicle, or removal from a vehicle with mechanical extrication tools
+  verb: warrant an ESI 2 designation include
+  when:
+    all:
+    - fact: mechanical_extrication_from_vehicle
+      is: true
+  who_can_supply: reported_directly
+- decision_point: B
+  effect: assign_level_2
+  id: gemini-186
+  interpretation: verbatim
+  kind: rule
+  page: 15
+  span: removal from a vehicle with mechanical extrication tools, and sexual assault.
+  verb: warrant an ESI 2 designation include
+  when:
+    all:
+    - fact: sexual_assault
+      is: true
+  who_can_supply: reported_directly
+- decision_point: B
+  effect: consider_level_2
+  id: gemini-187
+  interpretation: verbatim
+  kind: rule
+  note: The verb 'may include' softens this rule.
+  page: 15
+  span: Injuries that warrant an ESI level of 2 may include penetrating trauma of the head, neck, chest, and abdomen without signs of hemodynamic instability.
+  verb: may include
+  when:
+    all:
+    - fact: penetrating_trauma_head
+      is: true
+    - fact: hemodynamic_instability
+      is: false
+  who_can_supply: observed
+- decision_point: B
+  effect: consider_level_2
+  id: gemini-188
+  interpretation: verbatim
+  kind: rule
+  note: The verb 'may include' softens this rule.
+  page: 15
+  span: Injuries that warrant an ESI level of 2 may include penetrating trauma of the head, neck, chest, and abdomen without signs of hemodynamic instability.
+  verb: may include
+  when:
+    all:
+    - fact: penetrating_trauma_neck
+      is: true
+    - fact: hemodynamic_instability
+      is: false
+  who_can_supply: observed
+- decision_point: B
+  effect: consider_level_2
+  id: gemini-189
+  interpretation: verbatim
+  kind: rule
+  note: The verb 'may include' softens this rule.
+  page: 15
+  span: Injuries that warrant an ESI level of 2 may include penetrating trauma of the head, neck, chest, and abdomen without signs of hemodynamic instability.
+  verb: may include
+  when:
+    all:
+    - fact: penetrating_trauma_chest
+      is: true
+    - fact: hemodynamic_instability
+      is: false
+  who_can_supply: observed
+- decision_point: B
+  effect: consider_level_2
+  id: gemini-190
+  interpretation: verbatim
+  kind: rule
+  note: The verb 'may include' softens this rule.
+  page: 15
+  span: Injuries that warrant an ESI level of 2 may include penetrating trauma of the head, neck, chest, and abdomen without signs of hemodynamic instability.
+  verb: may include
+  when:
+    all:
+    - fact: penetrating_trauma_abdomen
+      is: true
+    - fact: hemodynamic_instability
+      is: false
+  who_can_supply: observed
+- decision_point: none
+  effect: none
+  id: gemini-191
+  interpretation: verbatim
+  kind: context
+  page: 15
+  span: Occult hypoperfusion with normal vital signs is associated with age greater than 55, and so a careful assessment should be made in the older patient
+  verb: should be made
+- decision_point: B
+  effect: assign_level_2
+  id: gemini-192
+  interpretation: interpreted
+  kind: rule
+  note: Categorized as 'high-risk orthopedic injuries', equating to an ESI 2 assignment under Decision Point B.
+  page: 15
+  span: Patients with high-risk orthopedic injuries include those presenting with any extremity injury with compromised neurovascular function, symptoms of compartment
+    syndrome, or partial or complete amputations.
+  verb: include
+  when:
+    all:
+    - fact: extremity_injury_compromised_neurovascular
+      is: true
+  who_can_supply: observed
+- decision_point: B
+  effect: assign_level_2
+  id: gemini-193
+  interpretation: interpreted
+  kind: rule
+  note: Categorized as 'high-risk orthopedic injuries', equating to an ESI 2 assignment under Decision Point B.
+  page: 15
+  span: Patients with high-risk orthopedic injuries include those presenting with any extremity injury with compromised neurovascular function, symptoms of compartment
+    syndrome, or partial or complete amputations.
+  verb: include
+  when:
+    all:
+    - fact: compartment_syndrome_symptoms
+      is: true
+  who_can_supply: observed
+- decision_point: B
+  effect: assign_level_2
+  id: gemini-194
+  interpretation: interpreted
+  kind: rule
+  note: Categorized as 'high-risk orthopedic injuries', equating to an ESI 2 assignment under Decision Point B.
+  page: 15
+  span: Patients with high-risk orthopedic injuries include those presenting with any extremity injury with compromised neurovascular function, symptoms of compartment
+    syndrome, or partial or complete amputations.
+  verb: include
+  when:
+    all:
+    - fact: partial_amputation
+      is: true
+  who_can_supply: observed
+- decision_point: B
+  effect: assign_level_2
+  id: gemini-195
+  interpretation: interpreted
+  kind: rule
+  note: Categorized as 'high-risk orthopedic injuries', equating to an ESI 2 assignment under Decision Point B.
+  page: 15
+  span: Patients with high-risk orthopedic injuries include those presenting with any extremity injury with compromised neurovascular function, symptoms of compartment
+    syndrome, or partial or complete amputations.
+  verb: include
+  when:
+    all:
+    - fact: complete_amputation
+      is: true
+  who_can_supply: observed
+- decision_point: none
+  effect: none
+  id: gemini-196
+  interpretation: verbatim
+  kind: rule
+  note: Lists injuries for careful evaluation without assigning a specific level.
+  page: 15
+  span: Patients with possible fractures of the pelvis, femur, or dislocations should be carefully evaluated and vital signs considered.
+  verb: should be carefully evaluated and vital signs considered
+  when:
+    all:
+    - fact: possible_pelvis_fracture
+      is: true
+  who_can_supply: observed
+- decision_point: none
+  effect: none
+  id: gemini-197
+  interpretation: verbatim
+  kind: rule
+  note: Lists injuries for careful evaluation without assigning a specific level.
+  page: 15
+  span: Patients with possible fractures of the pelvis, femur, or dislocations should be carefully evaluated and vital signs considered.
+  verb: should be carefully evaluated and vital signs considered
+  when:
+    all:
+    - fact: possible_femur_fracture
+      is: true
+  who_can_supply: observed
+- decision_point: none
+  effect: none
+  id: gemini-198
+  interpretation: verbatim
+  kind: rule
+  note: Lists injuries for careful evaluation without assigning a specific level.
+  page: 15
+  span: Patients with possible fractures of the pelvis, femur, or dislocations should be carefully evaluated and vital signs considered.
+  verb: should be carefully evaluated and vital signs considered
+  when:
+    all:
+    - fact: dislocation
+      is: true
+  who_can_supply: observed
+- decision_point: B
+  effect: assign_level_2
+  id: gemini-199
+  interpretation: interpreted
+  kind: rule
+  note: Categorizes toxic ingestion as a 'high-risk presentation', triggering a level 2 assignment under Decision Point B.
+  page: 15
+  span: Toxic ingestion is a high-risk presentation which needs to be rapidly evaluated.
+  verb: is a high-risk presentation
+  when:
+    all:
+    - fact: toxic_ingestion
+      is: true
+  who_can_supply: reported_directly
+- decision_point: none
+  effect: none
+  id: gemini-200
+  interpretation: verbatim
+  kind: rule
+  note: Directs to evaluate as a possible toxic ingestion, which itself is a high-risk presentation, but does not explicitly name a level here.
+  page: 15
+  span: alterations in mental status, difficulty breathing, changes in breathing pattern, or changes in heart rate and/or rhythm without an obvious cause should be
+    evaluated
+  verb: should be evaluated as
+  when:
+    all:
+    - fact: altered_mental_status
+      is: true
+    - fact: has_obvious_cause
+      is: false
+  who_can_supply: observed
+- decision_point: none
+  effect: none
+  id: gemini-201
+  interpretation: verbatim
+  kind: rule
+  note: Directs to evaluate as a possible toxic ingestion, which itself is a high-risk presentation, but does not explicitly name a level here.
+  page: 15
+  span: alterations in mental status, difficulty breathing, changes in breathing pattern, or changes in heart rate and/or rhythm without an obvious cause should be
+    evaluated
+  verb: should be evaluated as
+  when:
+    all:
+    - fact: difficulty_breathing
+      is: true
+    - fact: has_obvious_cause
+      is: false
+  who_can_supply: reported_directly
+- decision_point: none
+  effect: none
+  id: gemini-202
+  interpretation: verbatim
+  kind: rule
+  note: Directs to evaluate as a possible toxic ingestion, which itself is a high-risk presentation, but does not explicitly name a level here.
+  page: 15
+  span: alterations in mental status, difficulty breathing, changes in breathing pattern, or changes in heart rate and/or rhythm without an obvious cause should be
+    evaluated
+  verb: should be evaluated as
+  when:
+    all:
+    - fact: changed_breathing_pattern
+      is: true
+    - fact: has_obvious_cause
+      is: false
+  who_can_supply: observed
+- decision_point: none
+  effect: none
+  id: gemini-203
+  interpretation: verbatim
+  kind: rule
+  note: Directs to evaluate as a possible toxic ingestion, which itself is a high-risk presentation, but does not explicitly name a level here.
+  page: 15
+  span: alterations in mental status, difficulty breathing, changes in breathing pattern, or changes in heart rate and/or rhythm without an obvious cause should be
+    evaluated
+  verb: should be evaluated as
+  when:
+    all:
+    - fact: changed_heart_rate
+      is: true
+    - fact: has_obvious_cause
+      is: false
+  who_can_supply: vitals
+- decision_point: none
+  effect: none
+  id: gemini-204
+  interpretation: verbatim
+  kind: rule
+  note: Directs to evaluate as a possible toxic ingestion, which itself is a high-risk presentation, but does not explicitly name a level here.
+  page: 15
+  span: alterations in mental status, difficulty breathing, changes in breathing pattern, or changes in heart rate and/or rhythm without an obvious cause should be
+    evaluated
+  verb: should be evaluated as
+  when:
+    all:
+    - fact: changed_heart_rhythm
+      is: true
+    - fact: has_obvious_cause
+      is: false
+  who_can_supply: vitals
+- decision_point: B
+  effect: assign_level_2
+  id: gemini-205
+  interpretation: interpreted
+  kind: rule
+  note: Context from the preceding sentence explicitly refers to 'Solid organ transplant recipients' being the patients with immunocompromised status here.
+  page: 15
+  span: Patients presenting with a fever or other indication of infection or rejection should be designated ESI level 2 due to their immunocompromised status.
+  verb: should be designated ESI level 2
+  when:
+    all:
+    - fact: is_transplant_recipient
+      is: true
+    - fact: has_fever
+      is: true
+  who_can_supply: vitals
+- decision_point: B
+  effect: assign_level_2
+  id: gemini-206
+  interpretation: interpreted
+  kind: rule
+  note: Context from the preceding sentence explicitly refers to 'Solid organ transplant recipients' being the patients with immunocompromised status here.
+  page: 15
+  span: Patients presenting with a fever or other indication of infection or rejection should be designated ESI level 2 due to their immunocompromised status.
+  verb: should be designated ESI level 2
+  when:
+    all:
+    - fact: is_transplant_recipient
+      is: true
+    - fact: indication_of_infection
+      is: true
+  who_can_supply: observed
+- decision_point: B
+  effect: assign_level_2
+  id: gemini-207
+  interpretation: interpreted
+  kind: rule
+  note: Context from the preceding sentence explicitly refers to 'Solid organ transplant recipients' being the patients with immunocompromised status here.
+  page: 15
+  span: Patients presenting with a fever or other indication of infection or rejection should be designated ESI level 2 due to their immunocompromised status.
+  verb: should be designated ESI level 2
+  when:
+    all:
+    - fact: is_transplant_recipient
+      is: true
+    - fact: indication_of_rejection
+      is: true
+  who_can_supply: observed
+- decision_point: B
+  effect: consider_level_2
+  id: gemini-208
+  interpretation: interpreted
+  kind: rule
+  note: Stated as 'usually considered high-risk'. High-risk points to ESI 2 under Decision Point B, but 'usually' makes it a consideration.
+  page: 15
+  span: Patients who are on a transplant list are also usually considered high-risk.
+  verb: are also usually considered
+  when:
+    all:
+    - fact: on_transplant_list
+      is: true
+  who_can_supply: reported_directly
+- decision_point: B
+  effect: assign_level_2
+  id: gemini-209
+  interpretation: interpreted
+  kind: rule
+  note: Being at 'high risk' corresponds to assigning ESI level 2 under Decision Point B.
+  page: 15
+  span: Patients who present with specific mental health concerns are at high risk if they are a danger either to themselves, others, or the environment.
+  verb: are at high risk if
+  when:
+    all:
+    - fact: mental_health_concern
+      is: true
+    - fact: danger_to_self
+      is: true
+  who_can_supply: observed
+- decision_point: B
+  effect: assign_level_2
+  id: gemini-210
+  interpretation: interpreted
+  kind: rule
+  note: Being at 'high risk' corresponds to assigning ESI level 2 under Decision Point B.
+  page: 15
+  span: Patients who present with specific mental health concerns are at high risk if they are a danger either to themselves, others, or the environment.
+  verb: are at high risk if
+  when:
+    all:
+    - fact: mental_health_concern
+      is: true
+    - fact: danger_to_others
+      is: true
+  who_can_supply: observed
+- decision_point: B
+  effect: assign_level_2
+  id: gemini-211
+  interpretation: interpreted
+  kind: rule
+  note: Being at 'high risk' corresponds to assigning ESI level 2 under Decision Point B.
+  page: 15
+  span: Patients who present with specific mental health concerns are at high risk if they are a danger either to themselves, others, or the environment.
+  verb: are at high risk if
+  when:
+    all:
+    - fact: mental_health_concern
+      is: true
+    - fact: danger_to_environment
+      is: true
+  who_can_supply: observed
+- decision_point: B
+  effect: assign_level_2
+  id: gemini-212
+  interpretation: verbatim
+  kind: rule
+  page: 15
+  span: Patients who are suicidal, homicidal, psychotic, or violent should be assigned an ESI level of 2
+  verb: should be assigned an ESI level of 2
+  when:
+    all:
+    - fact: suicidal
+      is: true
+  who_can_supply: observed
+- decision_point: B
+  effect: assign_level_2
+  id: gemini-213
+  interpretation: verbatim
+  kind: rule
+  page: 15
+  span: Patients who are suicidal, homicidal, psychotic, or violent should be assigned an ESI level of 2
+  verb: should be assigned an ESI level of 2
+  when:
+    all:
+    - fact: homicidal
+      is: true
+  who_can_supply: observed
+- decision_point: B
+  effect: assign_level_2
+  id: gemini-214
+  interpretation: verbatim
+  kind: rule
+  page: 15
+  span: Patients who are suicidal, homicidal, psychotic, or violent should be assigned an ESI level of 2
+  verb: should be assigned an ESI level of 2
+  when:
+    all:
+    - fact: psychotic
+      is: true
+  who_can_supply: observed
+- decision_point: B
+  effect: assign_level_2
+  id: gemini-215
+  interpretation: verbatim
+  kind: rule
+  page: 15
+  span: Patients who are suicidal, homicidal, psychotic, or violent should be assigned an ESI level of 2
+  verb: should be assigned an ESI level of 2
+  when:
+    all:
+    - fact: violent
+      is: true
+  who_can_supply: observed
+- decision_point: none
+  effect: none
+  id: gemini-216
+  interpretation: verbatim
+  kind: usage
+  page: 15
+  span: ESI level-2 patients remain a high priority, and placement and treatment should be initiated rapidly.
+  verb: should be initiated rapidly
+- decision_point: B
+  effect: none
+  id: gemini-217
+  interpretation: verbatim
+  kind: definition
+  page: 15
+  span: ESI level-2 patients have the potential to be very ill and at high risk for decompensation.
+  verb: have the potential to be
+- decision_point: none
+  effect: none
+  id: gemini-218
+  interpretation: verbatim
+  kind: usage
+  page: 15
+  span: the triage nurse determines that the charge nurse or staff in the patient care area should be immediately alerted that they have an ESI level-2 patient.
+  verb: should be immediately alerted
+- also_on:
+  - 6
+  - 30
+  decision_point: C
+  effect: assign_level_3
+  id: gemini-219
+  interpretation: verbatim
+  kind: rule
+  note: Also represented in Figure 5-1 as 'Many -> 3' and in the full algorithm diagrams.
+  page: 19
+  span: Patients who require two or more resources are assigned level 3
+  verb: are assigned
+  when:
+    all:
+    - fact: resources_needed
+      gte: 2
+  who_can_supply: observed
+- also_on:
+  - 6
+  - 30
+  decision_point: C
+  effect: assign_level_4
+  id: gemini-220
+  interpretation: verbatim
+  kind: rule
+  note: Also represented in Figure 5-1 as 'One -> 4' and in the full algorithm diagrams.
+  page: 19
+  span: those who require one resource are assigned level 4
+  verb: are assigned
+  when:
+    all:
+    - fact: resources_needed
+      is: 1
+  who_can_supply: observed
+- also_on:
+  - 6
+  - 30
+  decision_point: C
+  effect: assign_level_5
+  id: gemini-221
+  interpretation: verbatim
+  kind: rule
+  note: Also represented in Figure 5-1 as 'None -> 5' and in the full algorithm diagrams.
+  page: 19
+  span: and those who require no resources are assigned level 5.
+  verb: are assigned
+  when:
+    all:
+    - fact: resources_needed
+      is: 0
+  who_can_supply: observed
+- decision_point: C
+  effect: none
+  id: gemini-222
+  interpretation: verbatim
+  kind: definition
+  page: 19
+  span: Resource prediction requires the nurse to determine how many resources are likely to be used in order for the provider to reach a disposition decision
+  verb: requires
+- decision_point: C
+  effect: none
+  id: gemini-223
+  interpretation: verbatim
+  kind: context
+  page: 19
+  span: Consideration of resources is included in the triage level assignment for ESI levels 3, 4, and 5, while ESI level 1 and 2 decisions are based only on patient
+    acuity.
+  verb: is included
+- decision_point: C
+  effect: none
+  id: gemini-224
+  interpretation: verbatim
+  kind: usage
+  page: 19
+  span: Resource determination is independent of type of hospital (teaching versus nonteaching) and location of the hospital (urban versus rural).
+  verb: is independent
+- decision_point: C
+  effect: none
+  id: gemini-225
+  interpretation: verbatim
+  kind: usage
+  page: 19
+  span: A patient presenting for care should require the same general resources in one ED as in any other ED.
+  verb: should require
+- decision_point: C
+  effect: none
+  id: gemini-226
+  interpretation: verbatim
+  kind: definition
+  page: 19
+  span: the ED nurse should count the number of different types of resources needed to determine the patient’s disposition, not the number of individual tests.
+  verb: should count
+- decision_point: C
+  effect: none
+  id: gemini-227
+  interpretation: verbatim
+  kind: usage
+  page: 19
+  span: A complete blood count and electrolyte panel comprise one resource (lab test).
+  verb: comprise
+- decision_point: C
+  effect: none
+  id: gemini-228
+  interpretation: verbatim
+  kind: usage
+  page: 19
+  span: A complete blood count and chest radiograph are two resources (lab test, radiograph).
+  verb: are
+- decision_point: C
+  effect: none
+  id: gemini-229
+  interpretation: verbatim
+  kind: usage
+  page: 19
+  span: A complete blood count and a urinalysis are both lab tests and together count as only one resource.
+  verb: count as
+- decision_point: C
+  effect: none
+  id: gemini-230
+  interpretation: verbatim
+  kind: usage
+  page: 19
+  span: A chest radiograph and abdominal radiograph are one resource (radiograph).
+  verb: are
+- decision_point: C
+  effect: none
+  id: gemini-231
+  interpretation: verbatim
+  kind: usage
+  page: 19
+  span: Cervical-spine films and a computed tomography scan of the head are two resources (radiograph and computed tomography scan).
+  verb: are
+- also_on:
+  - 6
+  - 30
+  decision_point: C
+  effect: none
+  id: gemini-232
+  interpretation: verbatim
+  kind: definition
+  page: 20
+  span: Labs (blood, urine) Electrocardiogram, radiographs Computed tomography, magnetic resonance imaging, ultrasound, angiography Intravenous fluids (hydration)
+    Intravenous, intramuscular, or nebulized medications Specialty consultation
+  verb: Resources
+- also_on:
+  - 6
+  - 30
+  decision_point: C
+  effect: none
+  id: gemini-233
+  interpretation: verbatim
+  kind: definition
+  page: 20
+  span: Simple procedure = 1 (laceration repair, urinary catheter) Complex procedure = 2 (procedural sedation)
+  verb: '='
+- also_on:
+  - 6
+  - 30
+  decision_point: C
+  effect: none
+  id: gemini-234
+  interpretation: verbatim
+  kind: definition
+  note: 'Includes also: Simple wound care (dressings, recheck), Crutches, splints, slings.'
+  page: 20
+  span: History and physical exam (including pelvic) Point-of-care testing Saline or heparin lock Oral medications Tetanus immunization Prescription refills Phone
+    call to primary care physician...
+  verb: Not Resources
+- decision_point: C
+  effect: assign_level_5
+  id: gemini-235
+  interpretation: verbatim
+  kind: example
+  page: 20
+  span: 'Healthy 3-year-old patient with right ear pain... Needs an exam and prescription... Resources: None... ESI Level 5'
+  verb: '5'
+- decision_point: C
+  effect: assign_level_5
+  id: gemini-236
+  interpretation: verbatim
+  kind: example
+  page: 20
+  span: 'A 42-year-old patient who lost their rescue inhaler... Patient is asymptomatic and vital signs WNL. Needs an exam and prescription... Resources: None...
+    ESI Level 5'
+  verb: '5'
+- decision_point: C
+  effect: assign_level_4
+  id: gemini-237
+  interpretation: verbatim
+  kind: example
+  page: 20
+  span: 'Healthy 19-year-old patient with a sore throat. Vital signs WNL Needs an exam, culture(s)*, prescriptions... Resources: One *... ESI Level 4'
+  verb: '4'
+- decision_point: C
+  effect: assign_level_4
+  id: gemini-238
+  interpretation: verbatim
+  kind: example
+  page: 20
+  span: 'Healthy 29-year-old assigned female at birth with dysuria... Needs an exam, urine, urine culture, maybe urine pregnancy, and prescriptions... Resources:
+    One **... ESI Level 4'
+  verb: '4'
+- decision_point: C
+  effect: assign_level_3
+  id: gemini-239
+  interpretation: verbatim
+  kind: example
+  page: 20
+  span: A 22-year-old assigned male at birth with right lower quadrant abdominal pain... Needs an exam, lab studies, Intravenous fluid, abdominal computed tomography
+    scan... ESI Level 3
+  verb: '3'
+- decision_point: C
+  effect: assign_level_3
+  id: gemini-240
+  interpretation: verbatim
+  kind: example
+  page: 20
+  span: 'A 45-year-old patient with left lower leg pain and swelling... Needs exam, lab, lower extremity non-invasive vascular studies... Resources: Two or more...
+    ESI Level 3'
+  verb: '3'
+- decision_point: C
+  effect: none
+  id: gemini-241
+  interpretation: verbatim
+  kind: usage
+  page: 20
+  span: Follow the institution’s policy on what constitutes a resource.
+  verb: Follow
+- decision_point: C
+  effect: assign_level_5
+  id: gemini-242
+  interpretation: verbatim
+  kind: rule
+  note: When institution policy dictates not routinely performing a test, treating it based only on history and physical exam equals zero resources.
+  page: 20
+  span: If that is the case the patient would be an ESI level 5.
+  verb: would be
+  when:
+    all:
+    - fact: resources_needed
+      is: 0
+  who_can_supply: observed
+- decision_point: C
+  effect: none
+  id: gemini-243
+  interpretation: verbatim
+  kind: usage
+  page: 20
+  span: '** All three tests count as one resource (labs)'
+  verb: count as
+- also_on:
+  - 6
+  - 29
+  decision_point: D
+  effect: reassess_uptriage
+  id: gemini-244
+  interpretation: verbatim
+  kind: rule
+  page: 23
+  span: SpO2 < 92% ... High-risk vital signs? Yes Reassess acuity decision
+  verb: Reassess acuity decision
+  when:
+    all:
+    - fact: spo2_percent
+      lt: 92
+  who_can_supply: vitals
+- also_on:
+  - 6
+  - 29
+  decision_point: D
+  effect: reassess_uptriage
+  id: gemini-245
+  interpretation: verbatim
+  kind: rule
+  page: 23
+  span: < 1 mo ... > 190 ... > 60 ... High-risk vital signs? Yes Reassess acuity decision
+  verb: Reassess acuity decision
+  when:
+    all:
+    - fact: age_months
+      lt: 1
+    - any:
+      - fact: heart_rate
+        gt: 190
+      - fact: respiratory_rate
+        gt: 60
+  who_can_supply: vitals
+- also_on:
+  - 6
+  - 29
+  decision_point: D
+  effect: reassess_uptriage
+  id: gemini-246
+  interpretation: verbatim
+  kind: rule
+  page: 23
+  span: 1–12 mo ... > 180 ... > 55 ... High-risk vital signs? Yes Reassess acuity decision
+  verb: Reassess acuity decision
+  when:
+    all:
+    - fact: age_months
+      gte: 1
+    - fact: age_months
+      lte: 12
+    - any:
+      - fact: heart_rate
+        gt: 180
+      - fact: respiratory_rate
+        gt: 55
+  who_can_supply: vitals
+- also_on:
+  - 6
+  - 29
+  decision_point: D
+  effect: reassess_uptriage
+  id: gemini-247
+  interpretation: verbatim
+  kind: rule
+  page: 23
+  span: 1–3 y ... > 140 ... > 40 ... High-risk vital signs? Yes Reassess acuity decision
+  verb: Reassess acuity decision
+  when:
+    all:
+    - fact: age_years
+      gte: 1
+    - fact: age_years
+      lte: 3
+    - any:
+      - fact: heart_rate
+        gt: 140
+      - fact: respiratory_rate
+        gt: 40
+  who_can_supply: vitals
+- also_on:
+  - 6
+  - 29
+  decision_point: D
+  effect: reassess_uptriage
+  id: gemini-248
+  interpretation: verbatim
+  kind: rule
+  page: 23
+  span: 3–5 y ... > 120 ... > 35 ... High-risk vital signs? Yes Reassess acuity decision
+  verb: Reassess acuity decision
+  when:
+    all:
+    - fact: age_years
+      gte: 3
+    - fact: age_years
+      lte: 5
+    - any:
+      - fact: heart_rate
+        gt: 120
+      - fact: respiratory_rate
+        gt: 35
+  who_can_supply: vitals
+- also_on:
+  - 6
+  - 29
+  decision_point: D
+  effect: reassess_uptriage
+  id: gemini-249
+  interpretation: verbatim
+  kind: rule
+  page: 23
+  span: 5–12 y ... > 120 ... > 30 ... High-risk vital signs? Yes Reassess acuity decision
+  verb: Reassess acuity decision
+  when:
+    all:
+    - fact: age_years
+      gte: 5
+    - fact: age_years
+      lte: 12
+    - any:
+      - fact: heart_rate
+        gt: 120
+      - fact: respiratory_rate
+        gt: 30
+  who_can_supply: vitals
+- also_on:
+  - 6
+  - 29
+  decision_point: D
+  effect: reassess_uptriage
+  id: gemini-250
+  interpretation: verbatim
+  kind: rule
+  page: 23
+  span: 12–18 y ... > 100 ... > 20 ... High-risk vital signs? Yes Reassess acuity decision
+  verb: Reassess acuity decision
+  when:
+    all:
+    - fact: age_years
+      gte: 12
+    - fact: age_years
+      lte: 18
+    - any:
+      - fact: heart_rate
+        gt: 100
+      - fact: respiratory_rate
+        gt: 20
+  who_can_supply: vitals
+- also_on:
+  - 6
+  - 29
+  decision_point: D
+  effect: reassess_uptriage
+  id: gemini-251
+  interpretation: verbatim
+  kind: rule
+  page: 23
+  span: '> 18 y ... > 100 ... > 20 ... High-risk vital signs? Yes Reassess acuity decision'
+  verb: Reassess acuity decision
+  when:
+    all:
+    - fact: age_years
+      gt: 18
+    - any:
+      - fact: heart_rate
+        gt: 100
+      - fact: respiratory_rate
+        gt: 20
+  who_can_supply: vitals
+- decision_point: D
+  effect: assign_level_1
+  id: gemini-252
+  interpretation: verbatim
+  kind: example
+  note: Example where extremely abnormal vital signs result in ESI 1 despite good appearance.
+  page: 23
+  span: An awake, alert elderly patient who presents with dizziness... heart rate of 32 beats/minute or 180 beats/minute... should be assigned ESI level 1
+  verb: should be assigned
+  when:
+    all:
+    - fact: is_elderly
+      is: true
+    - fact: is_awake
+      is: true
+    - fact: is_alert
+      is: true
+    - fact: has_dizziness
+      is: true
+    - any:
+      - fact: heart_rate
+        is: 32
+      - fact: heart_rate
+        is: 180
+  who_can_supply: vitals
+- also_on:
+  - 6
+  - 29
+  decision_point: D
+  effect: assign_level_2
+  id: gemini-253
+  interpretation: verbatim
+  kind: rule
+  page: 23
+  span: An infant less than 28 days old with a fever is considered high risk and is assigned to at least ESI level 2.
+  verb: is assigned to at least
+  when:
+    all:
+    - fact: age_days
+      lt: 28
+    - fact: has_fever
+      is: true
+  who_can_supply: vitals
+- decision_point: D
+  effect: consider_isolation
+  id: gemini-254
+  interpretation: verbatim
+  kind: rule
+  page: 23
+  span: The patient presenting with a fever, non-petechial rash, and incomplete immunizations should prompt the triage nurse to consider isolation.
+  verb: should prompt the triage nurse to consider
+  when:
+    all:
+    - fact: has_fever
+      is: true
+    - fact: has_non_petechial_rash
+      is: true
+    - fact: is_immunization_incomplete
+      is: true
+  who_can_supply: vitals
+- decision_point: D
+  effect: resource_band
+  id: gemini-255
+  interpretation: verbatim
+  kind: rule
+  page: 23
+  span: If the patient has an identifiable source for the fever and his or her immunizations are up-to-date, then a rating of 4 or 5 may be appropriate.
+  verb: may be appropriate
+  when:
+    all:
+    - fact: has_fever
+      is: true
+    - fact: has_identifiable_fever_source
+      is: true
+    - fact: is_immunization_up_to_date
+      is: true
+  who_can_supply: observed
+- decision_point: D
+  effect: none
+  id: gemini-256
+  interpretation: verbatim
+  kind: example
+  note: Example of no uptriage, resulting in ESI 5 (requiring no resources per earlier chapters).
+  page: 23
+  span: For example, a 10-month-old who is up-to-date on immunizations, who presents with fever and pulling on his ear, could be assigned to ESI level 5.
+  verb: could be assigned
+  when:
+    all:
+    - fact: age_months
+      is: 10
+    - fact: is_immunization_up_to_date
+      is: true
+    - fact: has_fever
+      is: true
+    - fact: has_ear_pulling
+      is: true
+  who_can_supply: observed
+- decision_point: D
+  effect: none
+  id: gemini-257
+  kind: context
+  page: 23
+  span: To reach this point in the algorithm, the nurse has already determined that the patient does not meet ESI level-1 or level-2 criteria.
+  verb: has already determined
+- decision_point: D
+  effect: none
+  id: gemini-258
+  kind: usage
+  note: Clarifies that bypassing point D is appropriate if levels 1 or 2 are apparent and care would be delayed.
+  page: 23
+  span: Patients who are immediately recognized and categorized as an ESI level 1 or 2 do not need vitals taken if it is going to delay initiation
+  verb: do not need
+- decision_point: D
+  effect: none
+  id: gemini-259
+  kind: definition
+  page: 23
+  span: Vital signs explicitly included in the ESI algorithm include heart rate, respiratory rate, and oxygen saturation
+  verb: include
+- decision_point: D
+  effect: none
+  id: gemini-260
+  kind: context
+  note: Contextual advice to consider medications that blunt physiological response.
+  page: 23
+  span: Patients may present with medication-mediated "normal" vital signs, yet still be quite ill.
+  verb: may present
+- decision_point: D
+  effect: none
+  id: gemini-261
+  kind: usage
+  page: 23
+  span: A full set of vital signs should be attempted in triage.
+  verb: should be attempted
+- decision_point: D
+  effect: none
+  id: gemini-262
+  interpretation: verbatim
+  kind: definition
+  note: Provides normal vital sign ranges. Values outside these are considered out of normal parameters.
+  page: 24
+  span: Table 6-1 lists the normal vital sign ranges for each pediatric age group.
+  verb: lists the normal vital sign ranges
+- decision_point: D
+  effect: assign_level_2
+  id: gemini-263
+  interpretation: verbatim
+  kind: rule
+  page: 24
+  span: Temperature greater than 38°C (100.4°F) in an infant younger than 90 days old is a red flag and the patient should be considered high risk and assigned at
+    least ESI level 2.
+  verb: assigned at least ESI level 2
+  when:
+    all:
+    - fact: age_days
+      lt: 90
+    - fact: temperature_celsius
+      gt: 38
+  who_can_supply: vitals
+- decision_point: D
+  effect: consider_level_2
+  id: gemini-264
+  interpretation: interpreted
+  kind: rule
+  note: Sepsis is a high-risk condition, implying a consideration for ESI level 2.
+  page: 24
+  span: A temperature less than 36°C (96.8°F) in a child of any age is hypothermic and concerning for sepsis
+  verb: concerning for sepsis
+  when:
+    all:
+    - fact: is_child
+      is: true
+    - fact: temperature_celsius
+      lt: 36
+  who_can_supply: vitals
+- decision_point: D
+  effect: consider_level_2
+  id: gemini-265
+  interpretation: interpreted
+  kind: rule
+  note: The table lists these as 'Red Flags' without explicitly assigning a level, but red flags in triage indicate high risk, which maps to level 2.
+  page: 24
+  span: < 90 days > 38°C (100.4°F) or < 36°C (96.8°F) > 3 months old > 38.5 °C (101.3°F) or < 36°C (96.8°F)
+  verb: Red Flags
+  when:
+    any:
+    - all:
+      - fact: age_days
+        lt: 90
+      - any:
+        - fact: temperature_celsius
+          gt: 38
+        - fact: temperature_celsius
+          lt: 36
+    - all:
+      - fact: age_months
+        gt: 3
+      - any:
+        - fact: temperature_celsius
+          gt: 38.5
+        - fact: temperature_celsius
+          lt: 36
+  who_can_supply: vitals
+- decision_point: D
+  effect: assign_level_2
+  id: gemini-266
+  interpretation: verbatim
+  kind: example
+  note: Example of a 28-year-old with abdominal pain uptriaged due to HR 120, RR 22, BP 92/50.
+  page: 24
+  span: meets the criteria for being uptriaged from level 3 to level 2 based on her vital signs.
+  verb: meets the criteria for being uptriaged
+- decision_point: D
+  effect: assign_level_2
+  id: gemini-267
+  interpretation: verbatim
+  kind: example
+  note: Example of a 15-month-old with HR 158 and RR 42 uptriaged to level 2.
+  page: 24
+  span: Based on vital sign assessment, the nurse should triage them to an ESI level 2.
+  verb: should triage them to
+- decision_point: D
+  effect: assign_level_2
+  id: gemini-268
+  interpretation: verbatim
+  kind: example
+  note: Example of a 57-year-old with HR 100, RR 26, SpO2 90% uptriaged to level 2.
+  page: 25
+  span: After assessing vital signs, the nurse should uptriage the patient to an ESI level 2.
+  verb: should uptriage
+- decision_point: D
+  effect: none
+  id: gemini-269
+  interpretation: verbatim
+  kind: example
+  note: Example of a 34-year-old with HR 102 but other vitals normal, assigned ESI level 3 (no uptriage to 2).
+  page: 25
+  span: the decision should be to assign the patient to ESI level 3.
+  verb: should be to assign
+- decision_point: D
+  effect: assign_level_2
+  id: gemini-270
+  interpretation: verbatim
+  kind: example
+  note: Example of a 72-year-old with COPD and an infected bite, uptriaged to level 2 despite vitals being potentially expected for COPD.
+  page: 25
+  span: critical to consider that as a cause of her elevated heart rate and respiratory rate and uptriage the patient to an ESI 2.
+  verb: uptriage the patient to
+- decision_point: D
+  effect: reassess_uptriage
+  id: gemini-271
+  interpretation: verbatim
+  kind: rule
+  page: 25
+  span: it is recommended that the triage nurse reassess the patient and uptriage the patient from level 3 to level 2 if the vital signs remain out of range.
+  verb: recommended that the triage nurse reassess ... and uptriage
+  when:
+    all:
+    - fact: high_risk_vital_signs_exceeded
+      is: true
+    - fact: vital_signs_remain_out_of_range
+      is: true
+  who_can_supply: vitals
+- decision_point: none
+  effect: none
+  id: gemini-272
+  interpretation: verbatim
+  kind: usage
+  page: 27
+  span: ESI level should not be changed, unless the patient condition changes before they are placed from the waiting area.
+  verb: should not be changed
+- decision_point: none
+  effect: none
+  id: gemini-273
+  interpretation: verbatim
+  kind: usage
+  page: 27
+  span: The only change that should be made is to increase acuity
+  verb: should be made
+- decision_point: none
+  effect: none
+  id: gemini-274
+  interpretation: verbatim
+  kind: usage
+  page: 27
+  span: it is not appropriate to change the ESI once a patient has been seen by a physician or advanced practice provider.
+  verb: is not appropriate to change
+- decision_point: none
+  effect: none
+  id: gemini-275
+  interpretation: verbatim
+  kind: usage
+  page: 27
+  span: Physicians, physician assistants, and advanced practice RNs... can assess patients at the initial encounter and assign an ESI level.
+  verb: can assess... and assign
+- decision_point: none
+  effect: none
+  id: gemini-276
+  interpretation: verbatim
+  kind: usage
+  page: 27
+  span: It is not appropriate for a physician or advanced practice provider to assign a second ESI after the patient has been triaged by a nurse.
+  verb: is not appropriate... to assign
+- decision_point: none
+  effect: none
+  id: gemini-277
+  interpretation: verbatim
+  kind: usage
+  page: 27
+  span: Unless the patient is in extremis, an assessment including a full set of vital signs should be made before assigning an ESI level.
+  verb: should be made
+- decision_point: none
+  effect: none
+  id: gemini-278
+  interpretation: verbatim
+  kind: usage
+  page: 27
+  span: ESI levels are ordinal data, not interval data, and so cannot be meaningfully averaged.
+  verb: cannot be meaningfully averaged
+- also_on:
+  - 30
+  decision_point: A
+  effect: assign_level_1
+  id: gemini-279
+  interpretation: verbatim
+  kind: rule
+  note: Flowchart arrow leading to level 1.
+  page: 29
+  span: Requires immediate lifesaving intervention?
+  verb: Requires
+  when:
+    all:
+    - fact: requires_immediate_lifesaving_intervention
+      is: true
+  who_can_supply: observed
+- also_on:
+  - 30
+  decision_point: B
+  effect: assign_level_2
+  id: gemini-280
+  interpretation: verbatim
+  kind: rule
+  note: Flowchart arrow leading to level 2. Severe pain/distress and confusion can be reported directly or as everyday signs.
+  page: 29
+  span: High-risk situation? or Confused/lethargic/disoriented? or Severe pain/distress?
+  verb: High-risk situation? or
+  when:
+    any:
+    - fact: is_high_risk_situation
+      is: true
+    - fact: is_confused
+      is: true
+    - fact: is_lethargic
+      is: true
+    - fact: is_disoriented
+      is: true
+    - fact: has_severe_pain
+      is: true
+    - fact: has_severe_distress
+      is: true
+  who_can_supply: observed
+- also_on:
+  - 30
+  decision_point: C
+  effect: resource_band
+  id: gemini-281
+  interpretation: verbatim
+  kind: rule
+  note: Assigns level 5.
+  page: 29
+  span: How many different resources are needed? None
+  verb: None
+  when:
+    all:
+    - fact: expected_resources
+      is: 0
+  who_can_supply: observed
+- also_on:
+  - 30
+  decision_point: C
+  effect: resource_band
+  id: gemini-282
+  interpretation: verbatim
+  kind: rule
+  note: Assigns level 4.
+  page: 29
+  span: How many different resources are needed? One
+  verb: One
+  when:
+    all:
+    - fact: expected_resources
+      is: 1
+  who_can_supply: observed
+- also_on:
+  - 30
+  decision_point: C
+  effect: resource_band
+  id: gemini-283
+  interpretation: verbatim
+  kind: rule
+  note: Assigns level 3. 'Many' implies 2 or more.
+  page: 29
+  span: How many different resources are needed? Many
+  verb: Many
+  when:
+    all:
+    - fact: expected_resources
+      gte: 2
+  who_can_supply: observed
+- decision_point: D
+  effect: reassess_uptriage
+  id: gemini-284
+  interpretation: verbatim
+  kind: rule
+  page: 29
+  span: < 1 mo > 190 > 60 SpO2 < 92%
+  verb: High-risk vital signs?
+  when:
+    all:
+    - fact: age_months
+      lt: 1
+    - any:
+      - fact: heart_rate
+        gt: 190
+      - fact: respiratory_rate
+        gt: 60
+      - fact: spo2_percent
+        lt: 92
+  who_can_supply: vitals
+- decision_point: D
+  effect: reassess_uptriage
+  id: gemini-285
+  interpretation: verbatim
+  kind: rule
+  page: 29
+  span: 1–12 mo > 180 > 55 SpO2 < 92%
+  verb: High-risk vital signs?
+  when:
+    all:
+    - fact: age_months
+      gte: 1
+    - fact: age_months
+      lte: 12
+    - any:
+      - fact: heart_rate
+        gt: 180
+      - fact: respiratory_rate
+        gt: 55
+      - fact: spo2_percent
+        lt: 92
+  who_can_supply: vitals
+- decision_point: D
+  effect: reassess_uptriage
+  id: gemini-286
+  interpretation: verbatim
+  kind: rule
+  page: 29
+  span: 1–3 y > 140 > 40 SpO2 < 92%
+  verb: High-risk vital signs?
+  when:
+    all:
+    - fact: age_years
+      gt: 1
+    - fact: age_years
+      lte: 3
+    - any:
+      - fact: heart_rate
+        gt: 140
+      - fact: respiratory_rate
+        gt: 40
+      - fact: spo2_percent
+        lt: 92
+  who_can_supply: vitals
+- decision_point: D
+  effect: reassess_uptriage
+  id: gemini-287
+  interpretation: verbatim
+  kind: rule
+  page: 29
+  span: 3–5 y > 120 > 35 SpO2 < 92%
+  verb: High-risk vital signs?
+  when:
+    all:
+    - fact: age_years
+      gt: 3
+    - fact: age_years
+      lte: 5
+    - any:
+      - fact: heart_rate
+        gt: 120
+      - fact: respiratory_rate
+        gt: 35
+      - fact: spo2_percent
+        lt: 92
+  who_can_supply: vitals
+- decision_point: D
+  effect: reassess_uptriage
+  id: gemini-288
+  interpretation: verbatim
+  kind: rule
+  page: 29
+  span: 5–12 y > 120 > 30 SpO2 < 92%
+  verb: High-risk vital signs?
+  when:
+    all:
+    - fact: age_years
+      gt: 5
+    - fact: age_years
+      lte: 12
+    - any:
+      - fact: heart_rate
+        gt: 120
+      - fact: respiratory_rate
+        gt: 30
+      - fact: spo2_percent
+        lt: 92
+  who_can_supply: vitals
+- decision_point: D
+  effect: reassess_uptriage
+  id: gemini-289
+  interpretation: verbatim
+  kind: rule
+  page: 29
+  span: 12–18 y > 100 > 20 SpO2 < 92%
+  verb: High-risk vital signs?
+  when:
+    all:
+    - fact: age_years
+      gt: 12
+    - fact: age_years
+      lte: 18
+    - any:
+      - fact: heart_rate
+        gt: 100
+      - fact: respiratory_rate
+        gt: 20
+      - fact: spo2_percent
+        lt: 92
+  who_can_supply: vitals
+- decision_point: D
+  effect: reassess_uptriage
+  id: gemini-290
+  interpretation: verbatim
+  kind: rule
+  page: 29
+  span: '> 18 y > 100 > 20 SpO2 < 92%'
+  verb: High-risk vital signs?
+  when:
+    all:
+    - fact: age_years
+      gt: 18
+    - any:
+      - fact: heart_rate
+        gt: 100
+      - fact: respiratory_rate
+        gt: 20
+      - fact: spo2_percent
+        lt: 92
+  who_can_supply: vitals
+- decision_point: A
+  effect: none
+  id: gemini-291
+  interpretation: verbatim
+  kind: definition
+  page: 30
+  span: Airway or respiratory support, emergency medications, hemodynamic interventions such as fluid resuscitation or blood products
+  verb: 'immediate life-saving intervention required:'
+- decision_point: A
+  effect: assign_level_1
+  id: gemini-292
+  interpretation: effect_inferred
+  kind: rule
+  note: Listed as presentations requiring lifesaving interventions, meaning they assign level 1.
+  page: 30
+  span: intubated, unresponsive, pulselessness, apneic, severe respiratory distress, profound hypotension or hypoglycemia.
+  verb: Clinical presentations requiring lifesaving interventions include
+  when:
+    any:
+    - fact: is_intubated
+      is: true
+    - fact: is_unresponsive
+      is: true
+    - fact: is_pulseless
+      is: true
+    - fact: is_apneic
+      is: true
+    - fact: has_severe_respiratory_distress
+      is: true
+    - fact: has_profound_hypotension
+      is: true
+    - fact: has_profound_hypoglycemia
+      is: true
+  who_can_supply: observed
+- decision_point: A
+  effect: assign_level_1
+  id: gemini-293
+  interpretation: effect_inferred
+  kind: rule
+  note: Unresponsiveness requires lifesaving interventions, assigning level 1.
+  page: 30
+  span: Is nonverbal and not following commands (acutely)
+  verb: Unresponsiveness is defined as
+  when:
+    all:
+    - fact: is_nonverbal_acutely
+      is: true
+    - fact: is_not_following_commands_acutely
+      is: true
+  who_can_supply: observed
+- decision_point: A
+  effect: assign_level_1
+  id: gemini-294
+  interpretation: effect_inferred
+  kind: rule
+  note: Unresponsiveness requires lifesaving interventions, assigning level 1.
+  page: 30
+  span: Requires noxious stimulus (P or U on AVPU scale)
+  verb: Unresponsiveness is defined as
+  when:
+    all:
+    - fact: requires_noxious_stimulus
+      is: true
+  who_can_supply: observed
+- decision_point: B
+  effect: none
+  id: gemini-295
+  interpretation: verbatim
+  kind: definition
+  page: 30
+  span: May become unstable, have high risk for deterioration, or exhibit newly altered mental status.
+  verb: 'High-risk situation:'
+- decision_point: B
+  effect: none
+  id: gemini-296
+  interpretation: verbatim
+  kind: usage
+  page: 30
+  span: Severe pain or distress is determined by patient report, corroborated with clinical observation.
+  verb: is determined by
+- decision_point: C
+  effect: none
+  id: gemini-297
+  interpretation: verbatim
+  kind: usage
+  page: 30
+  span: Count the number of different types of resources, not the individual tests or radiographs.
+  verb: Count
+- decision_point: C
+  effect: none
+  id: gemini-298
+  interpretation: verbatim
+  kind: definition
+  page: 30
+  span: Labs (blood, urine)
+  verb: ESI Resources
+- decision_point: C
+  effect: none
+  id: gemini-299
+  interpretation: verbatim
+  kind: definition
+  page: 30
+  span: Electrocardiogram, radiographs
+  verb: ESI Resources
+- decision_point: C
+  effect: none
+  id: gemini-300
+  interpretation: verbatim
+  kind: definition
+  page: 30
+  span: Computed tomography, magnetic resonance imaging, ultrasound, angiography
+  verb: ESI Resources
+- decision_point: C
+  effect: none
+  id: gemini-301
+  interpretation: verbatim
+  kind: definition
+  page: 30
+  span: Intravenous fluids (hydration)
+  verb: ESI Resources
+- decision_point: C
+  effect: none
+  id: gemini-302
+  interpretation: verbatim
+  kind: definition
+  page: 30
+  span: Intravenous, intramuscular, or nebulized medications
+  verb: ESI Resources
+- decision_point: C
+  effect: none
+  id: gemini-303
+  interpretation: verbatim
+  kind: definition
+  page: 30
+  span: Specialty consultation
+  verb: ESI Resources
+- decision_point: C
+  effect: none
+  id: gemini-304
+  interpretation: verbatim
+  kind: definition
+  page: 30
+  span: Simple procedure = 1 (laceration repair, urinary catheter)
+  verb: ESI Resources
+- decision_point: C
+  effect: none
+  id: gemini-305
+  interpretation: verbatim
+  kind: definition
+  page: 30
+  span: Complex procedure = 2 (procedural sedation)
+  verb: ESI Resources
+- decision_point: C
+  effect: none
+  id: gemini-306
+  interpretation: verbatim
+  kind: definition
+  page: 30
+  span: History and physicaI exam (Including pelvic)
+  verb: Not ESI Resources
+- decision_point: C
+  effect: none
+  id: gemini-307
+  interpretation: verbatim
+  kind: definition
+  page: 30
+  span: Point-of-care testing
+  verb: Not ESI Resources
+- decision_point: C
+  effect: none
+  id: gemini-308
+  interpretation: verbatim
+  kind: definition
+  page: 30
+  span: Saline or heparin lock
+  verb: Not ESI Resources
+- decision_point: C
+  effect: none
+  id: gemini-309
+  interpretation: verbatim
+  kind: definition
+  page: 30
+  span: Oral medications
+  verb: Not ESI Resources
+- decision_point: C
+  effect: none
+  id: gemini-310
+  interpretation: verbatim
+  kind: definition
+  page: 30
+  span: Tetanus immunization
+  verb: Not ESI Resources
+- decision_point: C
+  effect: none
+  id: gemini-311
+  interpretation: verbatim
+  kind: definition
+  page: 30
+  span: Prescription refills
+  verb: Not ESI Resources
+- decision_point: C
+  effect: none
+  id: gemini-312
+  interpretation: verbatim
+  kind: definition
+  page: 30
+  span: Phone call to primary care physician
+  verb: Not ESI Resources
+- decision_point: C
+  effect: none
+  id: gemini-313
+  interpretation: verbatim
+  kind: definition
+  page: 30
+  span: Simple wound care (dressings, recheck)
+  verb: Not ESI Resources
+- decision_point: C
+  effect: none
+  id: gemini-314
+  interpretation: verbatim
+  kind: definition
+  page: 30
+  span: Crutches, splints, slings
+  verb: Not ESI Resources
+- decision_point: D
+  effect: reassess_uptriage
+  id: gemini-315
+  interpretation: verbatim
+  kind: rule
+  page: 30
+  span: Reassess to determine whether the patient warrants a higher acuity level if a patient has one or more vital signs outside the normal parameters
+  verb: Reassess to determine whether
+  when:
+    all:
+    - fact: has_vital_signs_outside_normal_parameters
+      is: true
+  who_can_supply: vitals
+- decision_point: D
+  effect: assign_level_2
+  id: gemini-316
+  interpretation: verbatim
+  kind: rule
+  page: 30
+  span: '1-28 days of age: Assign at least ESI 2 if T > 38° C (100.4 ° F)'
+  verb: Assign at least ESI 2 if
+  when:
+    all:
+    - fact: age_days
+      gte: 1
+    - fact: age_days
+      lte: 28
+    - fact: temperature_celsius
+      gt: 38
+  who_can_supply: vitals
+- decision_point: D
+  effect: consider_level_2
+  id: gemini-317
+  interpretation: verbatim
+  kind: rule
+  page: 30
+  span: '1-3 months: Consider assigning ESI 2 if T > 38 ° C (100.4 ° F)'
+  verb: Consider assigning ESI 2 if
+  when:
+    all:
+    - fact: age_months
+      gte: 1
+    - fact: age_months
+      lte: 3
+    - fact: temperature_celsius
+      gt: 38
+  who_can_supply: vitals
+- decision_point: D
+  effect: consider_level_2
+  id: gemini-318
+  interpretation: verbatim
+  kind: rule
+  page: 30
+  span: '3 months and older: Consider assigning ESI 2 or 3 if: 1. T > 39°C (102.2°F) or < 36°C (96.8°F), OR 2. Incomplete immunizations, or 3. No obvious source of
+    fever'
+  verb: 'Consider assigning ESI 2 or 3 if:'
+  when:
+    all:
+    - fact: age_months
+      gte: 3
+    - any:
+      - fact: temperature_celsius
+        gt: 39
+      - fact: temperature_celsius
+        lt: 36
+      - fact: has_incomplete_immunizations
+        is: true
+      - fact: has_no_obvious_source_of_fever
+        is: true
+  who_can_supply: vitals
+facts: []

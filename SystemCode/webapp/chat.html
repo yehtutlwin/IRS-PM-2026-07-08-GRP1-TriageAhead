@@ -1,0 +1,101 @@
+<!doctype html><html><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Intake chat __SID__</title><style>
+body { font-family: system-ui, sans-serif; margin:0; background:#f4f6f9; color:#1a2b45; }
+.wrap { max-width: 640px; margin:0 auto; padding: 10px 12px 90px; }
+header { position: sticky; top:0; background:#f4f6f9; padding:8px 0; border-bottom:1px solid #dbe2ec; }
+.ticket { font-weight:700; letter-spacing:1px; }
+.msg { margin:8px 0; display:flex; }
+.msg .b { padding:10px 14px; border-radius:14px; max-width:85%; line-height:1.45; }
+.bot .b { background:#fff; box-shadow:0 1px 3px rgba(0,0,0,.08); }
+.you { justify-content:flex-end; } .you .b { background:#dff2e1; }
+.advice .b { background:#fff4f2; border:2px solid #b3261e; font-weight:600; }
+.sys { text-align:center; color:#5a6a82; font-size:13px; margin:10px 0; }
+.ts { font-size:11px; color:#5a6a82; margin-top:4px; text-align:right; }
+form { position:fixed; bottom:0; left:0; right:0; background:#fff; border-top:1px solid #dbe2ec; }
+.bar { max-width:640px; margin:0 auto; display:flex; gap:8px; padding:10px 12px; }
+input[type=text] { flex:1; font-size:16px; padding:12px; border:1px solid #c6d0de; border-radius:8px; }
+button { background:#3e8e4f; color:#fff; border:0; border-radius:8px; padding:0 16px; font-size:16px; }
+.qr { text-align:center; } .qr img { width:180px; } .qr a { color:inherit; word-break:break-all; }
+header { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+#showcode { display:none; margin-left:auto; background:#3e8e4f; color:#fff; border:0; border-radius:8px; padding:8px 12px; font-size:14px; font-weight:600; }
+#arrived { display:none; position:fixed; right:12px; bottom:70px; z-index:15; background:#1a4a7a; color:#fff; border:0; border-radius:999px; padding:10px 14px; font-size:14px; font-weight:600; box-shadow:0 3px 10px rgba(0,0,0,.25); }
+#codepanel { display:none; position:fixed; inset:0; background:rgba(26,43,69,.55); z-index:20; align-items:center; justify-content:center; padding:16px; }
+#codepanel .card { background:#fff; border-radius:14px; padding:18px 18px 14px; max-width:360px; width:100%; text-align:center; box-shadow:0 8px 30px rgba(0,0,0,.25); }
+#codepanel img { width:min(260px, 70vw); height:auto; } #codepanel .code { font-weight:700; letter-spacing:2px; font-size:22px; margin:6px 0; }
+#codepanel a { color:inherit; word-break:break-all; font-size:13px; } #codepanel .close { margin-top:12px; background:#e9eef5; color:#1a2b45; }
+.muted { color:#5a6a82; font-size:13px; }
+</style></head><body><div class="wrap">
+<header>Ticket <span class="ticket">__SID__</span>
+ <span class="muted" id="phase"></span>
+ <button type="button" id="showcode" onclick="openPanel()">Show code for the counter</button></header>
+<div id="codepanel" onclick="if(event.target===this) closePanel()"><div class="card">
+ <div class="muted">Show this at the counter</div><div class="code">__SID__</div>
+ <img src="/qr/__SID__.svg" alt="QR code for the hospital team"><br>
+ <span class="muted">The team scans the code or opens</span><br><a id="panellink" target="_blank"></a><br>
+ <button type="button" class="close" onclick="closePanel()">Back to the chat</button></div></div>
+<button type="button" id="arrived" onclick="arrived()">We've arrived at the hospital</button>
+<div id="log"></div>
+<div class="sys" id="busy" style="display:none"></div>
+<form onsubmit="return send(event)"><div class="bar">
+  <input type="text" id="t" autocomplete="off" placeholder="Type your answer">
+  <button>Send</button>
+</div></form>
+<script>
+const SID='__SID__', CHECKIN=__CHECKIN__*1000; let lastBot=Date.now(), done=false, waiting=false;
+const log=document.getElementById('log');
+function now(){ return new Date().toTimeString().slice(0,5); }
+function add(kind, text, ts){ const d=document.createElement('div'); d.className='msg '+kind;
+  d.innerHTML='<div class="b"></div>'; d.firstChild.textContent=text;
+  const t=document.createElement('div'); t.className='ts'; t.textContent=ts||now(); d.firstChild.appendChild(t);
+  log.appendChild(d); window.scrollTo(0, document.body.scrollHeight); }
+function addReplies(rs){ for (const r of rs) add(/call 995|alert|worse/i.test(r)&&/995|counter/.test(r)?'bot advice':'bot', r); lastBot=Date.now(); }
+async function state(){ const j=await (await fetch('/api/state/'+SID)).json();
+  log.innerHTML='';
+  if (j.started){ const d=document.createElement('div'); d.className='sys'; d.textContent='Session started '+j.started; log.appendChild(d); }
+  for (const m of j.messages){ add(m.role==='bot' ? (m.kind==='advice'?'bot advice':'bot') : 'you', m.text, m.ts); }
+  done=j.done; waiting=(j.phase==='waiting');
+  document.getElementById('phase').textContent = waiting?'- in the waiting room; I will check in now and then':'';
+  document.getElementById('arrived').style.display = (done && !waiting)?'block':'none';   // only once the report is ready (QR shown)
+  if (done) showQR(j.report_url);
+}
+function pinQR(url){ const a=document.getElementById('panellink'); a.href=url; a.textContent=url;
+  document.getElementById('showcode').style.display='inline-block'; }   // the button stays in the fixed header at all times
+async function arrived(){ const b=document.getElementById('arrived'); b.disabled=true;
+  const j=await (await fetch('/api/arrived/'+SID,{method:'POST',headers:{'Content-Type':'application/json'},body:'{}'})).json();
+  if (j.message) add('bot', j.message); waiting=true; b.style.display='none';
+  document.getElementById('phase').textContent='- in the waiting room; I will check in now and then'; lastBot=Date.now(); }
+function openPanel(){ document.getElementById('codepanel').style.display='flex'; }
+function closePanel(){ document.getElementById('codepanel').style.display='none'; }
+function showQR(url){ pinQR(url); if(!waiting) document.getElementById('arrived').style.display='block'; if(document.getElementById('qr')) return;
+  const d=document.createElement('div'); d.className='sys qr'; d.id='qr';
+  d.innerHTML='Show this at the counter:<br><img src="/qr/'+SID+'.svg" alt="QR code for the hospital team"><br><a id="qrlink" target="_blank"></a><br><span class="muted">The hospital team opens your answers by scanning this code, or by opening the link.</span>';
+  const a=d.querySelector('#qrlink'); a.href=url; a.textContent=url;
+  log.appendChild(d); }
+let inflight=false;
+async function send(e){ e.preventDefault(); if(inflight) return false; const t=document.getElementById('t'); const v=t.value.trim();
+  if(!v) return false; if(v.length>2000){ add('bot','That message is very long - could you tell me the most important part in a sentence or two?'); return false; }
+  t.value=''; add('you', v); inflight=true; busy(true);
+  let j={};
+  try { j=await (await fetch('/api/answer/'+SID,{method:'POST',headers:{'Content-Type':'application/json'}, body:JSON.stringify({text:v})})).json(); }
+  catch(e){ j={error:'the connection to the server was lost ('+e+')'}; }
+  inflight=false; busy(false);
+  if (j.replies) addReplies(j.replies);
+  if (j.error && !j.replies){   // the server could not process the answer (usually the language model: quota, overload, no key): say so, never go quiet
+    add('bot advice', 'Sorry, your last answer could not be processed: '+j.error+'. Please send it again in a moment; if this keeps happening, tell the counter staff when you arrive.'); }
+  if (j.done && !document.getElementById('qr')){ done=true; const s=await (await fetch('/api/state/'+SID)).json(); showQR(s.report_url); }
+  return false; }
+let busySince=0, busyTimer=null;
+async function busyTick(){ const el=document.getElementById('busy'); const s=Math.round((Date.now()-busySince)/1000);
+  let what='Working on your answer'; try { const j=await (await fetch('/api/state/'+SID)).json(); if (j.status) what=j.status.charAt(0).toUpperCase()+j.status.slice(1); } catch(e){}
+  el.textContent = s<4 ? '...' : (what+' ('+s+' s)' + (s>=20 ? ' - still trying; the hospital system is slow right now, your answer is saved' : '')); }
+function busy(b){ const el=document.getElementById('busy'); el.style.display=b?'block':'none';
+  if(b){ busySince=Date.now(); el.textContent='...'; busyTimer=setInterval(busyTick, 2000); } else if(busyTimer){ clearInterval(busyTimer); busyTimer=null; }
+  document.querySelector('form button').disabled=b; document.getElementById('t').disabled=b; if(!b) document.getElementById('t').focus(); }
+setInterval(async ()=>{ if(!waiting) { const s=await (await fetch('/api/state/'+SID)).json();
+    waiting=(s.phase==='waiting'); if(waiting) state(); return; }
+  if (Date.now()-lastBot > CHECKIN){ lastBot=Date.now();
+    const j=await (await fetch('/api/checkin/'+SID,{method:'POST',headers:{'Content-Type':'application/json'},body:'{}'})).json();
+    if (j.question) add('bot', j.question); } }, 20000);
+state();
+</script></div></body></html>

@@ -1,0 +1,258 @@
+# rules/triggers.yaml - triggers: the authored condition under which a question is asked.
+# Knowledge base and extraction design v2 (issues #55, #75, #56). Created 13 Oct 2026 from the applies_when entries that
+# had sat on the fields in rules/fields.yaml since 10 Oct 2026.
+#
+# WHAT A TRIGGER IS. A rule that reads two facts gives the interview a trigger for free: once the first fact is known, the
+# second is worth asking for (rules/derive.py writes those as rule gates in the derived agenda; nothing here). A rule that
+# reads one fact, or a fact whose everyday signs are collected one by one, has no such trigger, and asked of everyone it
+# would be an irrelevant question in most interviews. A trigger says when such a question becomes plausible enough to ask:
+# which complaint, mechanism, age, sex or earlier answer opens it. An authored trigger also replaces the derived one where
+# the derived one is too narrow or too wide (vaginal bleeding is asked of any patient who could be pregnant, not only after
+# abdominal pain is known).
+#
+# PROCESS: authored, by plausibility, with no source: no document says which complaint makes a question worth asking. Each
+# entry carries its reason (`why`), and each is reviewed on the review site like a rule; a reviewer may widen, narrow or
+# strike one. The reachability check (experiments/reachability.py, issue #77) reports the facts of the practice cases that
+# no trigger ever opens, which is the evidence for widening one. A field with no trigger and no rule gate is asked of
+# everyone (ask_policy always) or only written when volunteered (volunteered_only), as rules/fields.yaml says.
+#
+# FORM. `field` is the question (a field of rules/fields.yaml with ask_policy when_applicable); `trigger` uses the same
+# condition language as the rules; `why` is the reason. rules/derive.py copies the trigger into rules/derived/agenda.yaml,
+# which the engine reads at run time; rules/validate.py checks that every field here exists and is asked when applicable,
+# that every when_applicable field has a trigger or a rule gate, and that no trigger is left on a field.
+# A condition on `other` means the complaint could not be placed in a category, so the question is kept open.
+
+- field: patient.age_months
+  trigger: {field: patient.age, lt: 3}
+  why: "The infant and child rules read the age in months only under three years; asking an adult's age in months is pointless."
+
+- field: patient.age_days
+  trigger: {field: patient.age, lt: 1}
+  why: "Two rules read the age in days only under 90 days; asked only for a baby under one year (age in years 0)."
+
+- field: patient.immunizations_incomplete
+  terms: [pediatric]
+  trigger: {all: [{field: patient.age, lt: 18}, {field: complaint.fever, equals: true}]}
+  why: "Read by the child-fever rule alone; relevant only for a child with a fever."
+
+- field: complaint.pain_cause_class
+  trigger: {all: [{field: complaint.pain_rating, gte: 7}, {field: complaint.category, in: [abdominal_pain, back_pain, chest_pain, urinary_problem, other]}]}
+  why: "The handbook names kidney stones, cancer and sickle cell disease as causes of severe pain needing urgent relief; asked only when the pain is rated 7 or more and the complaint is one where such a cause is plausible (abdominal, back, chest, urinary or unclassified)."
+
+- field: complaint.possible_ectopic_pregnancy
+  terms: [could_be_pregnant]
+  trigger: {all: [{not: {field: patient.sex, equals: male}}, {field: patient.age, gte: 10}, {field: patient.age, lt: 60}, {field: complaint.category, equals: abdominal_pain}]}
+  why: "Asked only of a patient who could be pregnant (not male, aged 10 to 59) with abdominal pain, the setting the handbook's sentence describes."
+
+- field: complaint.fever_no_obvious_source
+  terms: [pediatric]
+  trigger: {all: [{field: patient.age, lt: 18}, {field: complaint.fever, equals: true}]}
+  why: "Read by the child-fever rule alone; relevant only for a child with a fever."
+
+- field: complaint.infection_signs
+  trigger: {any: [{field: complaint.fever, equals: true}, {field: complaint.category, in: [wound, burn, skin_problem]}, {field: history.transplant_recipient_or_listed, equals: true}, {any: [{field: history.pregnant, equals: true}, {field: history.postpartum, equals: true}]}]}
+  why: "Signs of infection other than fever matter where the rules read them: with a fever, with a wound, burn or skin problem, for a transplant patient, or in pregnancy or after childbirth."
+
+- field: complaint.danger_to_self_or_others
+  trigger: {field: complaint.category, in: [neuro_symptoms, mental_health, poisoning_or_overdose, other]}
+  why: "A question that must not come out of the blue: opened only when the complaint is mental health, poisoning or overdose, neurological, or unclassified. A volunteered statement is written at any time."
+
+- field: complaint.increasing_respiratory_effort
+  trigger: {any: [{field: complaint.category, in: [breathing, allergic_reaction]}, {field: danger_signs.breathing_difficulty, equals: true}]}
+  why: "A breathing question: asked when the complaint is breathing or an allergic reaction, or the danger-sign screen reported trouble breathing."
+
+- field: complaint.respiratory_distress_signs
+  trigger: {any: [{field: complaint.category, in: [breathing, allergic_reaction]}, {field: danger_signs.breathing_difficulty, equals: true}]}
+  why: "A breathing question: asked when the complaint is breathing or an allergic reaction, or the danger-sign screen reported trouble breathing."
+
+- field: complaint.shortness_of_breath
+  trigger: {any: [{field: complaint.category, in: [breathing, chest_pain, allergic_reaction]}, {field: danger_signs.breathing_difficulty, equals: true}, {any: [{field: history.pregnant, equals: true}, {field: history.postpartum, equals: true}]}]}
+  why: "Asked when the complaint is breathing, chest pain or an allergic reaction, when trouble breathing was reported, or when the patient is pregnant or recently gave birth (the pregnancy rule reads it)."
+
+- field: complaint.postpartum_hemorrhage
+  trigger: {all: [{field: history.postpartum, equals: true}, {field: complaint.vaginal_bleeding, equals: true}]}
+  why: "Asked directly only after childbirth when vaginal bleeding is reported; the bridge BR-13 also derives it from heavy bleeding."
+
+- field: complaint.vaginal_bleeding
+  trigger: {all: [{not: {field: patient.sex, equals: male}}, {any: [{field: complaint.category, in: [abdominal_pain, vaginal_bleeding, pregnancy_related]}, {any: [{field: history.pregnant, equals: true}, {field: history.postpartum, equals: true}]}]}]}
+  why: "Not asked of a male patient; asked when the complaint is abdominal pain, vaginal bleeding or pregnancy-related, or the patient is pregnant or recently gave birth: the settings of the rules that read it."
+
+- field: complaint.heavy_vaginal_bleeding
+  trigger: {field: complaint.vaginal_bleeding, equals: true}
+  why: "The heaviness question follows a yes to vaginal bleeding."
+
+- field: complaint.button_battery_or_magnet_ingestion
+  terms: [pediatric]
+  trigger: {all: [{field: patient.age, lt: 18}, {field: complaint.category, in: [poisoning_or_overdose, other, sore_throat, breathing, abdominal_pain, vomiting_or_diarrhoea]}]}
+  why: "The handbook's sentence is about children; asked of a child whose complaint could be a swallowed object: poisoning, sore throat, breathing, abdominal pain, vomiting, or unclassified."
+
+- field: complaint.known_toxic_ingestion
+  trigger: {field: complaint.category, in: [poisoning_or_overdose, mental_health, other, neuro_symptoms, dizziness, abdominal_pain, vomiting_or_diarrhoea]}
+  why: "Asked when the complaint is one an ingestion produces: poisoning or overdose, mental health, neurological, dizziness, abdominal pain, vomiting, or unclassified."
+
+- field: complaint.unilateral_lower_quadrant_pain
+  trigger: {field: complaint.category, equals: abdominal_pain}
+  why: "A detail of abdominal pain; asked only when the complaint is abdominal pain."
+
+- field: complaint.testicular_or_scrotal_pain
+  trigger: {all: [{not: {field: patient.sex, equals: female}}, {field: complaint.category, in: [abdominal_pain, limb_pain_or_swelling, other]}]}
+  why: "Not asked of a female patient; asked when the complaint is abdominal pain, limb pain or unclassified, where testicular pain may be the real problem."
+
+- field: complaint.severe_flank_pain
+  trigger: {field: complaint.category, in: [abdominal_pain, back_pain, urinary_problem, other]}
+  why: "Asked when the complaint is abdominal, back, urinary or unclassified, where flank pain belongs."
+
+- field: complaint.uti_symptoms
+  trigger: {any: [{field: complaint.category, in: [abdominal_pain, fever, urinary_problem, back_pain, other]}, {field: complaint.fever, equals: true}]}
+  why: "Asked when the complaint is abdominal, fever, urinary, back pain or unclassified, or a fever is reported: the presentations of a urine infection."
+
+- field: complaint.back_pain
+  trigger: {any: [{field: complaint.uti_symptoms, equals: true}, {field: complaint.category, in: [headache, back_pain, urinary_problem]}]}
+  why: "Asked with urine symptoms (a kidney infection), or when the complaint is headache (the headache rule reads lower back pain), back pain or urinary."
+
+- field: complaint.chills_or_rigors
+  trigger: {any: [{field: complaint.uti_symptoms, equals: true}, {field: complaint.fever, equals: true}]}
+  why: "Asked with urine symptoms or a fever, where the rule reads it."
+
+- field: complaint.compartment_syndrome_symptoms
+  trigger: {any: [{field: E.mechanism, in: [fall, road_accident, assault, penetrating_trauma]}, {field: limb.cast_too_tight, equals: true}]}
+  why: "Asked after an injury mechanism, or when a cast feels too tight."
+
+- field: complaint.possible_pelvis_femur_fracture_or_dislocation
+  trigger: {any: [{field: E.mechanism, in: [fall, road_accident, assault, penetrating_trauma]}, {field: complaint.category, in: [wound, burn]}]}
+  why: "Asked after an injury mechanism, or with a wound or burn."
+
+- field: complaint.post_ictal_after_seizure
+  trigger: {field: complaint.category, in: [neuro_symptoms, dizziness, mental_health, other]}
+  why: "Asked when the complaint is neurological, dizziness, mental health or unclassified, where a recent seizure is plausible."
+
+- field: complaint.vomiting
+  trigger: {any: [{field: complaint.category, in: [headache, abdominal_pain, fever, vomiting_or_diarrhoea, poisoning_or_overdose]}, {field: complaint.uti_symptoms, equals: true}]}
+  why: "Asked when the complaint is headache (the headache rule reads it), abdominal pain, fever, vomiting or poisoning, or with urine symptoms."
+
+- field: E.body_region
+  trigger: {field: E.mechanism, equals: penetrating_trauma}
+  why: "Where a penetrating injury is matters only for a penetrating injury."
+
+- field: E.fall_height_meters
+  trigger: {field: E.mechanism, equals: fall}
+  why: "Only after a fall."
+
+- field: E.vehicle_ejection
+  trigger: {field: E.mechanism, equals: road_accident}
+  why: "Only after a road accident."
+
+- field: E.mechanical_extrication
+  trigger: {field: E.mechanism, equals: road_accident}
+  why: "Only after a road accident."
+
+- field: E.abdominal_trauma
+  trigger: {any: [{field: E.mechanism, in: [fall, road_accident, assault, penetrating_trauma]}, {field: complaint.category, equals: abdominal_pain}]}
+  why: "Asked after an injury mechanism, or when the complaint is abdominal pain (the rule reads abdominal pain with trauma)."
+
+- field: E.head_strike
+  trigger: {any: [{field: E.mechanism, in: [fall, road_accident, assault, penetrating_trauma]}, {field: complaint.category, equals: head_injury}]}
+  why: "Asked after an injury mechanism or a head-injury complaint."
+
+- field: E.loc
+  trigger: {any: [{field: E.mechanism, in: [fall, road_accident, assault, penetrating_trauma]}, {field: complaint.category, equals: head_injury}]}
+  why: "Asked after an injury mechanism or a head-injury complaint."
+
+- field: M.anticoagulant
+  trigger: {any: [{field: complaint.category, equals: nosebleed}, {field: E.mechanism, in: [fall, road_accident, assault, penetrating_trauma]}, {field: danger_signs.heavy_bleeding, equals: true}]}
+  why: "Asked directly when it decides a rule: a nosebleed, an injury, or heavy bleeding. Otherwise it is derived from the medicine list."
+
+- field: history.pregnant
+  terms: [could_be_pregnant]
+  trigger: {all: [{not: {field: patient.sex, equals: male}}, {field: patient.age, gte: 10}, {field: patient.age, lt: 60}]}
+  why: "Asked of a patient who could be pregnant: not male, aged 10 to 59 (decision #76)."
+
+- field: history.postpartum
+  terms: [could_be_pregnant]
+  trigger: {all: [{not: {field: patient.sex, equals: male}}, {field: patient.age, gte: 10}, {field: patient.age, lt: 60}, {not: {field: history.pregnant, equals: true}}]}
+  why: "Asked of a patient who could have given birth recently: not male, aged 10 to 59, and not already known to be pregnant."
+
+- field: history.transplant_recipient_or_listed
+  trigger: {field: complaint.fever, equals: true}
+  why: "The transplant rule reads it together with a fever; asked when a fever is reported. Otherwise read from the conditions list."
+
+- field: complaint.transplant_rejection_signs
+  trigger: {field: history.transplant_recipient_or_listed, equals: true}
+  why: "Only for a transplant patient."
+
+- field: history.thrombocytopenia_or_clotting_disorder
+  trigger: {any: [{field: complaint.category, equals: nosebleed}, {field: E.mechanism, in: [fall, road_accident, assault, penetrating_trauma]}, {field: danger_signs.heavy_bleeding, equals: true}]}
+  why: "Read by the nosebleed rule; asked for a nosebleed, an injury or heavy bleeding, where a bleeding disorder changes the picture."
+
+- field: history.baseline_mental_status
+  trigger: {field: ams.changed_from_baseline, equals: true}
+  why: "Asked only when a change from the usual state was reported, to learn whether the usual state is known at all."
+
+- field: stroke.face_droop
+  trigger: {field: complaint.category, in: [neuro_symptoms, dizziness, headache, head_injury, other]}
+  why: "The stroke signs are asked when the complaint is neurological, dizziness, headache, head injury or unclassified, where a stroke is plausible; a volunteered sign is written at any time."
+
+- field: stroke.arm_weakness
+  trigger: {field: complaint.category, in: [neuro_symptoms, dizziness, headache, head_injury, other]}
+  why: "The stroke signs are asked when the complaint is neurological, dizziness, headache, head injury or unclassified, where a stroke is plausible; a volunteered sign is written at any time."
+
+- field: stroke.speech_change
+  trigger: {field: complaint.category, in: [neuro_symptoms, dizziness, headache, head_injury, other]}
+  why: "The stroke signs are asked when the complaint is neurological, dizziness, headache, head injury or unclassified, where a stroke is plausible; a volunteered sign is written at any time."
+
+- field: stroke.vision_change
+  trigger: {field: complaint.category, in: [neuro_symptoms, dizziness, headache, head_injury, eye_problem]}
+  why: "A stroke sign and an eye finding: asked for the neurological complaints like the other stroke signs, and for an eye problem."
+
+- field: stroke.balance_loss
+  trigger: {field: complaint.category, in: [neuro_symptoms, dizziness, headache, head_injury, other]}
+  why: "The stroke signs are asked when the complaint is neurological, dizziness, headache, head injury or unclassified, where a stroke is plausible; a volunteered sign is written at any time."
+
+- field: eye.double_vision_pupil_or_bulge
+  trigger: {field: complaint.category, equals: eye_problem}
+  why: "The eye findings are asked only for an eye problem."
+
+- field: eye.red
+  trigger: {field: complaint.category, equals: eye_problem}
+  why: "The eye findings are asked only for an eye problem."
+
+- field: eye.intolerable_pain
+  trigger: {field: complaint.category, equals: eye_problem}
+  why: "The eye findings are asked only for an eye problem."
+
+- field: eye.injury
+  trigger: {field: complaint.category, equals: eye_problem}
+  why: "The eye findings are asked only for an eye problem."
+
+- field: eye.floaters_or_flashes
+  trigger: {field: complaint.category, equals: eye_problem}
+  why: "The eye findings are asked only for an eye problem."
+
+- field: limb.numb_tingling
+  trigger: {any: [{field: E.mechanism, in: [fall, road_accident, assault, penetrating_trauma]}, {field: complaint.category, in: [wound, burn, limb_pain_or_swelling]}]}
+  why: "The limb warning signs are asked after an injury mechanism, with a wound or burn, or with limb pain or swelling (a cast too tight is a limb complaint whose mechanism the family may not know; #114, persona run of 18 Oct 2026)."
+
+- field: limb.cold_pale_blue
+  trigger: {any: [{field: E.mechanism, in: [fall, road_accident, assault, penetrating_trauma]}, {field: complaint.category, in: [wound, burn, limb_pain_or_swelling]}]}
+  why: "The limb warning signs are asked after an injury mechanism, with a wound or burn, or with limb pain or swelling (a cast too tight is a limb complaint whose mechanism the family may not know; #114, persona run of 18 Oct 2026)."
+
+- field: limb.cannot_move_digits
+  trigger: {any: [{field: E.mechanism, in: [fall, road_accident, assault, penetrating_trauma]}, {field: complaint.category, in: [wound, burn, limb_pain_or_swelling]}]}
+  why: "The limb warning signs are asked after an injury mechanism, with a wound or burn, or with limb pain or swelling (a cast too tight is a limb complaint whose mechanism the family may not know; #114, persona run of 18 Oct 2026)."
+
+- field: limb.cast_too_tight
+  trigger: {any: [{field: E.mechanism, in: [fall, road_accident, assault, penetrating_trauma]}, {field: complaint.category, in: [wound, burn, limb_pain_or_swelling]}]}
+  why: "The limb warning signs are asked after an injury mechanism, with a wound or burn, or with limb pain or swelling (a cast too tight is a limb complaint whose mechanism the family may not know; #114, persona run of 18 Oct 2026)."
+
+- field: obs.confusion_lethargy_disorientation
+  trigger: {any: [{field: ams.changed_from_baseline, equals: true}, {field: complaint.category, in: [neuro_symptoms, headache]}]}
+  why: "Asked when a change from the usual state was reported, or the complaint is neurological or headache (the headache rule reads it)."
+
+- field: obs.grunting_belly_breathing_or_retractions
+  terms: [pediatric]
+  trigger: {all: [{field: patient.age, lt: 18}, {any: [{field: complaint.category, in: [breathing, allergic_reaction]}, {field: danger_signs.breathing_difficulty, equals: true}]}]}
+  why: "A child's breathing signs: asked for a child when the complaint is breathing or an allergic reaction, or trouble breathing was reported."
+
+- field: vitals.temp_c
+  trigger: {field: complaint.fever, equals: true}
+  why: "A measured temperature is asked for when a fever is reported; the child fever rules read the number."

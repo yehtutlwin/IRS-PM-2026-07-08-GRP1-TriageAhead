@@ -1,0 +1,55 @@
+{"t": "19:59:56", "kind": "engine", "note": "session BAOBAB-6346 started (web)"}
+{"t": "19:59:59", "kind": "question", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "Is the patient awake and responding to you normally? Also, is he or she experiencing any chest pain, trouble breathing, or heavy bleeding right now?", "fields": ["danger_signs.responsive", "danger_signs.chest_pain_now"], "offered": ["danger_signs.responsive", "danger_signs.chest_pain_now", "danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text"]}
+{"t": "19:59:59", "kind": "answer", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "Yes, she answers when I talk to her. No chest pain."}
+{"t": "20:00:04", "kind": "extract", "writes": [["danger_signs.responsive", true], ["danger_signs.chest_pain_now", false]]}
+{"t": "20:00:07", "kind": "question", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding", "text": "I'm glad she's responding to you. Is she having any trouble breathing or is there any heavy bleeding?", "fields": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding"], "offered": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text", "complaint.onset", "E.mechanism"]}
+{"t": "20:00:07", "kind": "answer", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding", "text": "No, her breathing is fine. No."}
+{"t": "20:00:11", "kind": "extract", "writes": [["danger_signs.breathing_difficulty", false]]}
+{"t": "20:00:14", "kind": "question", "slot": "dyn:danger_signs.heavy_bleeding", "text": "I understand. Just to be certain, is she bleeding heavily anywhere right now?", "fields": ["danger_signs.heavy_bleeding"], "offered": ["danger_signs.heavy_bleeding"]}
+{"t": "20:00:14", "kind": "answer", "slot": "dyn:danger_signs.heavy_bleeding", "text": "No."}
+{"t": "20:00:18", "kind": "extract", "writes": [["danger_signs.heavy_bleeding", false]]}
+{"t": "20:00:21", "kind": "question", "slot": "dyn:complaint.category+complaint.text", "text": "I'm glad to hear that. What is the main problem that brings her in today, and can you describe what's happening in your own words?", "fields": ["complaint.category", "complaint.text"], "offered": ["complaint.category", "complaint.text", "complaint.onset", "E.mechanism", "patient.age", "patient.sex"]}
+{"t": "20:00:21", "kind": "answer", "slot": "dyn:complaint.category+complaint.text", "text": "My mother is just not acting herself. She's sleeping more than usual and she says it hurts to pee."}
+{"t": "20:00:36", "kind": "extract", "writes": [["complaint.category", "urinary_problem"], ["complaint.text", "not acting herself. She's sleeping more than usual and she says it hurts to pee."], ["patient.sex", "female"]]}
+{"t": "20:00:36", "kind": "extract", "writes": [["E.mechanism", "none"]], "via": "derived-non-injury"}
+{"t": "20:00:39", "kind": "question", "slot": "dyn:complaint.onset+patient.age", "text": "I understand. When did these symptoms start and how old is your mother?", "fields": ["complaint.onset", "patient.age"], "offered": ["complaint.onset", "patient.age", "complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts"]}
+{"t": "20:00:39", "kind": "answer", "slot": "dyn:complaint.onset+patient.age", "text": "Over the last day or so. She's 72."}
+{"t": "20:00:43", "kind": "extract", "writes": [["complaint.onset", "Over the last day or so"], ["patient.age", 72]]}
+{"t": "20:00:46", "kind": "question", "slot": "dyn:complaint.fever+infection.rash", "text": "I'm sorry to hear she's not feeling like herself. Does she have a fever or any new rashes on her skin?", "fields": ["complaint.fever", "infection.rash"], "offered": ["complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts", "complaint.uti_symptoms", "ams.changed_from_baseline"]}
+{"t": "20:00:46", "kind": "answer", "slot": "dyn:complaint.fever+infection.rash", "text": "I haven't taken her temperature."}
+{"t": "20:00:50", "kind": "extract", "writes": []}
+{"t": "20:00:50", "kind": "extract", "writes": [["complaint.fever", null], ["infection.rash", null]], "via": "dont-know"}
+{"t": "20:00:53", "kind": "question", "slot": "dyn:infection.travel_14d+infection.contacts", "text": "Has she traveled outside the country or been in contact with anyone who has been sick in the last two weeks?", "fields": ["infection.travel_14d", "infection.contacts"], "offered": ["infection.travel_14d", "infection.contacts", "complaint.uti_symptoms", "ams.changed_from_baseline", "complaint.pain_rating", "complaint.back_pain"]}
+{"t": "20:00:53", "kind": "answer", "slot": "dyn:infection.travel_14d+infection.contacts", "text": "I don't know."}
+{"t": "20:00:56", "kind": "extract", "writes": []}
+{"t": "20:00:56", "kind": "extract", "writes": [["infection.travel_14d", null], ["infection.contacts", null]], "via": "dont-know"}
+{"t": "20:01:00", "kind": "question", "slot": "dyn:complaint.uti_symptoms+ams.changed_from_baseline", "text": "I understand. Besides the pain when she urinates, is she also having trouble staying awake or acting confused?", "fields": ["complaint.uti_symptoms", "ams.changed_from_baseline"], "offered": ["complaint.uti_symptoms", "ams.changed_from_baseline", "complaint.pain_rating", "complaint.back_pain", "complaint.severe_flank_pain", "M.medications"]}
+{"t": "20:01:00", "kind": "answer", "slot": "dyn:complaint.uti_symptoms+ams.changed_from_baseline", "text": "Yes, she says it hurts to pee. Yes, she's mixed up about the time and where she is. That's not like her."}
+{"t": "20:01:05", "kind": "extract", "writes": [["complaint.uti_symptoms", true], ["ams.changed_from_baseline", true]]}
+{"t": "20:01:05", "kind": "floor", "floor": "at least ESI-2", "fired": ["B-01.new-altered-mental-status", "B-43.uti-elderly-or-urosepsis-signs"], "sources": ["ESI v5 p.12 (New Onset Confusion, Lethargy, or Disorientation)", "ESI v5 p.14 (Genitourinary)"]}
+{"t": "20:01:08", "kind": "question", "slot": "dyn:M.medications+A.allergies", "text": "I'm sorry to hear she's feeling confused. Does she have any known allergies to medicine, and what medications does she take regularly?", "fields": ["M.medications", "A.allergies"], "offered": ["M.medications", "A.allergies", "history.conditions", "identity.name", "identity.dob"]}
+{"t": "20:01:08", "kind": "answer", "slot": "dyn:M.medications+A.allergies", "text": "I don't know."}
+{"t": "20:01:12", "kind": "extract", "writes": []}
+{"t": "20:01:12", "kind": "extract", "writes": [["M.medications", null], ["A.allergies", null]], "via": "dont-know"}
+{"t": "20:01:14", "kind": "question", "slot": "dyn:history.conditions", "text": "I understand. To help the team prepare, does she have any ongoing medical conditions?", "fields": ["history.conditions"], "offered": ["history.conditions", "identity.name", "identity.dob"]}
+{"t": "20:01:15", "kind": "answer", "slot": "dyn:history.conditions", "text": "I don't know."}
+{"t": "20:01:18", "kind": "extract", "writes": []}
+{"t": "20:01:18", "kind": "extract", "writes": [["history.conditions", null]], "via": "dont-know"}
+{"t": "20:01:20", "kind": "question", "slot": "dyn:identity.name+identity.dob", "text": "I understand. Could you please tell me her full name and date of birth?", "fields": ["identity.name", "identity.dob"], "offered": ["identity.name", "identity.dob"]}
+{"t": "20:01:20", "kind": "answer", "slot": "dyn:identity.name+identity.dob", "text": "Chua Siew Lan. 8 March 1954."}
+{"t": "20:01:25", "kind": "extract", "writes": [["identity.name", "Chua Siew Lan"], ["identity.dob", "8 March 1954"]]}
+{"t": "20:01:25", "kind": "engine", "note": "floor settled - report ready; remaining questions continue"}
+{"t": "20:01:28", "kind": "question", "slot": "dyn:complaint.pain_rating", "text": "On a scale from 0 to 10, where 10 is the worst pain imaginable, how bad is her pain right now?", "fields": ["complaint.pain_rating"], "offered": ["complaint.pain_rating", "L.last_intake"]}
+{"t": "20:01:28", "kind": "answer", "slot": "dyn:complaint.pain_rating", "text": "I don't know."}
+{"t": "20:01:31", "kind": "extract", "writes": []}
+{"t": "20:01:34", "kind": "question", "slot": "dyn:complaint.pain_rating", "text": "I understand. Could you describe the level of discomfort she is feeling right now?", "fields": ["complaint.pain_rating"], "offered": ["complaint.pain_rating"]}
+{"t": "20:01:34", "kind": "answer", "slot": "dyn:complaint.pain_rating", "text": "I don't know."}
+{"t": "20:01:36", "kind": "extract", "writes": []}
+{"t": "20:01:39", "kind": "question", "slot": "dyn:complaint.pain_rating", "text": "I understand. Is she experiencing any physical pain or discomfort at all right now?", "fields": ["complaint.pain_rating"], "offered": ["complaint.pain_rating"]}
+{"t": "20:01:39", "kind": "answer", "slot": "dyn:complaint.pain_rating", "text": "I don't know."}
+{"t": "20:01:42", "kind": "extract", "writes": []}
+{"t": "20:01:45", "kind": "question", "slot": "dyn:L.last_intake", "text": "I understand. When was the last time she had anything to eat or drink?", "fields": ["L.last_intake"], "offered": ["L.last_intake"]}
+{"t": "20:01:45", "kind": "answer", "slot": "dyn:L.last_intake", "text": "I don't know."}
+{"t": "20:01:48", "kind": "extract", "writes": []}
+{"t": "20:01:49", "kind": "extract", "writes": [["L.last_intake", null]], "via": "dont-know"}
+{"t": "20:01:49", "kind": "engine", "note": "interview complete - no open fields"}

@@ -1,0 +1,748 @@
+# rules/terms.yaml - fuzzy terms: a word the handbook or the interview uses without a number or a list, and the number, band
+# or list the system assigns to it. Knowledge base and extraction design v2. Created 13 Oct 2026 (asked for by Ye Htut Lwin).
+#
+# WHY A FILE. Where the handbook gives the number itself (pain 7 of 10, a fall of 6 metres, 38 degrees, 28 and 90 days, age 55
+# for trauma, oxygen under 92 percent) the rule quotes it and nothing is fuzzy. Where it does not, the system still has to
+# draw a line (how old is an infant; what counts as a blood thinner; how recent is recent travel), and until today those lines
+# sat in five places (field glosses, triggers, bridge notes, rule notes, engine code), none reviewable as such. Each term is
+# now one entry here: the phrase, the definition, the numbers or lists the programs read, the source or the reason, and
+# everything that points at it. A reviewer who changes a number here changes the behaviour; the validator keeps the pointers
+# and the numbers in rules and triggers in step with it.
+#
+# TWO KINDS OF ENTRY (14 Oct 2026). `fuzzy`: a word with a number, band or list assigned to it. `option`: one allowed value
+# of a choice field (its `field` and `value`), with the definition the fact-extraction step is given for it; every value of
+# every choice field in rules/fields.yaml has exactly one entry here, and the validator checks it. An entry can be both (the
+# age bands are the options of patient.age_group). Options are scoped to their field: "other" means one thing for the
+# complaint and another for the body region.
+#
+# PROCESS: operationalized where the handbook supplies the shape and we supply the line (quoted); authored where nothing in
+# a document says it (reason given). `numbers` is what programs read (prototype/engine.py: the age bands and the blood-thinner
+# names); `definition` is for people and for the fact-extraction glosses that repeat it. For a fuzzy term `used_by` is the list of fields,
+# triggers, rules and engine derivations that carry `terms: [<id>]`; an option is used by its field and needs no pointer; rules/validate.py checks it is complete and that the
+# numbers written in those rules and triggers equal the numbers here.
+
+- id: infant
+  kind: fuzzy
+  field: patient.age_group
+  value: infant
+  term: infant
+  definition: "A child under one year old."
+  numbers: { age_years_min: 0, age_years_max: 1 }
+  provenance: operationalized
+  source: "ESI v5 p.24 (Table 6-1, Normal Vital Signs for Pediatric Patients by Age Groups); p.9 (Flaccid infant)"
+  span: "Infant, 1–12 months"
+  why: "The handbook's table separates 'term neonate to <1 month' from 'infant, 1-12 months'; for the flaccid-infant rule A-13 (p.9, no age given) a floppy newborn must count, so the two are taken together as under one year."
+  used_by: [field:patient.age_group, engine:age_group]
+
+- id: child
+  kind: fuzzy
+  field: patient.age_group
+  value: child
+  term: child
+  definition: "One to seventeen years old: the handbook's toddler, preschooler, school-age and adolescent groups."
+  numbers: { age_years_min: 1, age_years_max: 18 }
+  provenance: operationalized
+  source: "ESI v5 p.24 (Table 6-1)"
+  span: "Adolescent, 12–18 years"
+  why: "The band between infant and adult in the handbook's own table; read only through patient.age_group, which no rule reads for this value."
+  used_by: [field:patient.age_group, engine:age_group]
+
+- id: adult
+  kind: fuzzy
+  field: patient.age_group
+  value: adult
+  term: adult
+  definition: "Eighteen to sixty-four years old."
+  numbers: { age_years_min: 18, age_years_max: 65 }
+  provenance: operationalized
+  source: "ESI v5 p.23 (Fig 6-1, row '> 18 y')"
+  span: "> 18 y"
+  why: "The handbook's adult vital-sign row starts at 18; the upper end is where the elderly term begins."
+  used_by: [field:patient.age_group, engine:age_group]
+
+- id: older_adult
+  kind: fuzzy
+  field: patient.age_group
+  value: older_adult
+  term: older adult
+  definition: "Sixty-five and over, the same line as the elderly term."
+  numbers: { age_years_min: 65 }
+  provenance: authored
+  why: "The handbook defines no band for older adults in the age table; the line follows the elderly term so that one age means one thing. The trauma rule B-27 uses the handbook's own 55 and is not a fuzzy term."
+  used_by: [field:patient.age_group, engine:age_group]
+
+- id: elderly
+  kind: fuzzy
+  term: elderly, geriatric
+  definition: "Sixty-five years and over."
+  numbers: { age_years_min: 65 }
+  provenance: authored
+  source: "ESI v5 p.14 (Genitourinary: 'who is elderly (Liang, 2017)'); p.23 (vital signs in the geriatric patient)"
+  span: "who is elderly (Liang, 2017)"
+  why: "The handbook says elderly and geriatric without an age. Sixty-five is the usual administrative line and the one the cited paper uses for its population; a reviewer may move it."
+  used_by: [rule:B-43.uti-elderly-or-urosepsis-signs, rule:B-52.geriatric-vitals-medication-context-consider]
+
+- id: pediatric
+  kind: fuzzy
+  term: pediatric patient, child (in the rules)
+  definition: "Under eighteen years old."
+  numbers: { age_years_max: 18 }
+  provenance: operationalized
+  source: "ESI v5 p.23 (Fig 6-1: the pediatric rows end at '12–18 y', the adult row is '> 18 y')"
+  span: "12–18 y"
+  why: "Where the handbook says pediatric without an age, the line is where its own vital-sign table stops: eighteen."
+  used_by: [rule:B-29.pediatric-subtle-ams, rule:B-53.pediatric-respiratory-distress-signs-consider, rule:B-59.child-over-3-months-fever-consider, rule:B-60.child-hypothermia-under-36-consider, rule:B-61.child-over-3-months-temperature-red-flag-consider, trigger:patient.immunizations_incomplete, trigger:complaint.fever_no_obvious_source, trigger:complaint.button_battery_or_magnet_ingestion, trigger:obs.grunting_belly_breathing_or_retractions]
+
+- id: could_be_pregnant
+  kind: fuzzy
+  term: a patient who could be pregnant
+  definition: "Not stated to be male, and aged ten to fifty-nine."
+  numbers: { age_years_min: 10, age_years_max: 60 }
+  provenance: authored
+  why: "Decides who is asked about pregnancy, recent childbirth and an ectopic pregnancy (decision #76). The bounds are wide on purpose: asking one unnecessary question costs less than missing a pregnancy. No document gives them."
+  used_by: [trigger:history.pregnant, trigger:history.postpartum, trigger:complaint.possible_ectopic_pregnancy]
+
+- id: recently_gave_birth
+  kind: fuzzy
+  term: postpartum, recently gave birth
+  definition: "Gave birth within the last six weeks."
+  numbers: { weeks: 6 }
+  provenance: authored
+  why: "The handbook says postpartum without a limit; six weeks is the usual clinical span of the postpartum period. The field is written from what the caregiver says, so the number guides the fact-extraction gloss, not a comparison."
+  used_by: [field:history.postpartum]
+
+- id: recent_travel
+  kind: fuzzy
+  term: recent travel
+  definition: "Travelled outside the country within the last fourteen days."
+  numbers: { days: 14 }
+  provenance: authored
+  why: "An isolation screen needs a window; fourteen days covers the incubation of the infections the screen is for. The hospital screening form the question is quoted from asks about three weeks; a reviewer may align the two."
+  used_by: [field:infection.travel_14d]
+
+- id: recent_contact
+  kind: fuzzy
+  term: recent contact with an infectious illness
+  definition: "Contact with someone who has an infectious illness within the last fourteen days."
+  numbers: { days: 14 }
+  provenance: authored
+  why: "Same window as recent travel, for the same reason; the screening form asks about three weeks."
+  used_by: [field:infection.contacts]
+
+- id: recent_covid
+  kind: fuzzy
+  term: recent COVID-19 infection
+  definition: "COVID-19 within the last few weeks; no number assigned."
+  provenance: authored
+  why: "The handbook gives no limit and the rule is a context note for the nurse, so no comparison is made; a reviewer may set a number."
+  used_by: [field:history.recent_covid_infection]
+
+- id: fever_felt
+  kind: fuzzy
+  term: fever (without a thermometer)
+  definition: "A fever is a measured temperature of 38 degrees Celsius or more, or the patient feeling hot to the caregiver without a thermometer; a felt fever is written with lower certainty."
+  numbers: { temp_c: 38 }
+  provenance: operationalized
+  source: "ESI v5 p.24 (fever thresholds for infants and children, 38.0°C)"
+  span: "38.0"
+  why: "Before arrival most caregivers have no thermometer; a felt fever must still open the fever questions. The measured value, when there is one, goes to vitals.temp_c and the handbook's thresholds apply there."
+  used_by: [field:complaint.fever]
+
+- id: eye_constellation
+  kind: fuzzy
+  term: a constellation of eye findings
+  definition: "Two or more of the six eye findings the handbook lists."
+  numbers: { min_count: 2 }
+  provenance: operationalized
+  source: "ESI v5 p.13 (Ocular Concerns)"
+  span: "with more symptoms in constellation predicting a more emergent problem"
+  why: "The handbook says more findings together mean more urgency and gives no count; two is the smallest number that is 'together'. Under clinician review (issue #66)."
+  used_by: [field:complaint.atso_elements_count, rule:B-28.ocular-high-risk-constellation]
+
+- id: blood_thinner
+  kind: fuzzy
+  term: a blood thinner
+  definition: "An anticoagulant (warfarin and the newer oral anticoagulants, heparins) or an antiplatelet other than aspirin on its own (clopidogrel, prasugrel, ticagrelor), known by these names, or described as a medicine that thins the blood."
+  numbers:
+    names: [warfarin, marevan, coumadin, xarelto, rivaroxaban, eliquis, apixaban, pradaxa, dabigatran, heparin, clexane, enoxaparin, clopidogrel, plavix, prasugrel, ticagrelor, brilinta]
+    phrase_pattern: "thin(s|ner)?\\s+.*blood|blood\\s*thinn"
+  provenance: operationalized
+  source: "ESI v5 p.13 (Ear, Nose, and Throat Concerns: 'use of warfarin or other anti-coagulants'); NICE NG232 Head injury (2023), recommendation 1.5.9 and the committee's discussion (PDF pages 21, 57 to 60), the source of the supplemented rule B-30"
+  span: "warfarin or other anti-coagulants"
+  why: "The handbook names warfarin and says 'other anti-coagulants'; the NICE head-injury guideline, which the blood-thinner rule B-30 rests on, includes 'antiplatelets other than aspirin monotherapy' (naming clopidogrel, prasugrel and ticagrelor) and says the risk with aspirin alone is low. The names are the medicines of those two classes in common use. A name anywhere in the medicine list confirms the fact, a description makes it probable, and B-30 needs confirmed. A reviewer may add or remove names."
+  used_by: [field:M.anticoagulant, engine:anticoagulant]
+
+- id: beta_blocker
+  kind: fuzzy
+  term: a beta-blocker
+  definition: "A medicine whose name ends in -olol: atenolol, bisoprolol, metoprolol, propranolol, carvedilol, and others."
+  numbers: { names: [atenolol, bisoprolol, metoprolol, propranolol, carvedilol, nebivolol, labetalol, sotalol] }
+  provenance: authored
+  why: "The handbook says beta blockers (p.23) and names none. The list guides the fact-extraction gloss; the engine does no matching for it."
+  used_by: [field:M.beta_blocker]
+
+- id: immune_weakening_medicine
+  kind: fuzzy
+  term: a medicine that weakens the immune system
+  definition: "Long-term steroid tablets, transplant anti-rejection medicines, chemotherapy, biologic injections for arthritis or bowel disease."
+  numbers: { names: [prednisolone, prednisone, dexamethasone, tacrolimus, ciclosporin, mycophenolate, azathioprine, methotrexate, adalimumab, infliximab, etanercept, rituximab] }
+  provenance: operationalized
+  source: "ESI v5 p.23 (vital signs must be contextualized)"
+  span: "Medications that blunt a robust immune response, such as corticosteroids, must also be noted"
+  why: "The handbook names corticosteroids and says 'such as'; the rest of the list is ours."
+  used_by: [field:M.immunosuppressant_or_steroid]
+
+- id: weakened_immune_system
+  kind: fuzzy
+  term: immunocompromised
+  definition: "Defences against infection weakened by an illness or a treatment: chemotherapy or other cancer treatment, an organ transplant, HIV, long-term steroids, no spleen, or a doctor has said so."
+  provenance: operationalized
+  source: "ESI v5 p.12 (high-risk situations)"
+  span: "A patient on chemotherapy, and therefore immunocompromised, with a fever"
+  why: "The handbook names chemotherapy as one cause; the others are the usual clinical list, added so a caregiver's words ('she had a transplant') reach the rule."
+  used_by: [field:history.immunocompromised]
+
+# ---------------------------------------------------------------- options of the choice fields (one entry per allowed value)
+
+- id: patient.sex:female
+  kind: option
+  field: patient.sex
+  value: female
+  term: "female"
+  definition: "female"
+  provenance: authored
+  why: "The patient's sex as the caregiver states it (decision #76: collected to decide whether the pregnancy and ovary questions apply)."
+
+- id: patient.sex:male
+  kind: option
+  field: patient.sex
+  value: male
+  term: "male"
+  definition: "male"
+  provenance: authored
+  why: "The patient's sex as the caregiver states it (decision #76)."
+
+- id: patient.sex:other
+  kind: option
+  field: patient.sex
+  value: other
+  term: "other"
+  definition: "neither, not known, or the caregiver prefers not to say"
+  provenance: authored
+  why: "Neither, not known, or the caregiver prefers not to say; the pregnancy questions then still apply (decision #76)."
+
+- id: complaint.category:chest_pain
+  kind: option
+  field: complaint.category
+  value: chest_pain
+  term: "chest pain"
+  definition: "pain, pressure or tightness in the chest"
+  provenance: operationalized
+  source: "ESI v5 p.12 (high-risk situations)"
+  span: "Active chest pain, suspicious for acute coronary syndrome"
+  why: "The handbook has no list of presenting complaints; this list is ours, one entry per kind of problem the rules or the nurse's history distinguish. Chest pain is the handbook's first high-risk example."
+
+- id: complaint.category:abdominal_pain
+  kind: option
+  field: complaint.category
+  value: abdominal_pain
+  term: "abdominal pain"
+  definition: "pain anywhere in the belly"
+  provenance: operationalized
+  source: "ESI v5 p.14 (Abdominal pain)"
+  span: "Abdominal pain can be caused by a vascular, genitourinary, infectious, or cardiac issue"
+  why: "The handbook has no list of presenting complaints; this list is ours, one entry per kind of problem the rules or the nurse's history distinguish. The handbook has a section on abdominal pain with its own questions."
+
+- id: complaint.category:injury
+  kind: option
+  field: complaint.category
+  value: injury
+  term: "injury"
+  definition: "an injury of any kind as the main problem (a fall, a crash, a blow); how it happened is E.mechanism. Specific injury kinds have their own value: wound, burn, head_injury, limb_pain_or_swelling"
+  provenance: authored
+  why: "The handbook has no list of presenting complaints; this list is ours, one entry per kind of problem the rules or the nurse's history distinguish. An injury of any kind as the main problem; how it happened is E.mechanism, and the specific kinds (wound, burn, head injury, limb) have their own entries so that their questions can be triggered."
+
+- id: complaint.category:breathing
+  kind: option
+  field: complaint.category
+  value: breathing
+  term: "breathing"
+  definition: "trouble breathing or shortness of breath as the main problem"
+  provenance: operationalized
+  source: "ESI v5 p.13 (Respiratory Concerns)"
+  span: "Signs of distress can include tachypnea, tachycardia, tripoding, speaking in short, 2-to-3-word sentences; audible stridor; wheezing; or congestion"
+  why: "The handbook has no list of presenting complaints; this list is ours, one entry per kind of problem the rules or the nurse's history distinguish. The handbook's respiratory section."
+
+- id: complaint.category:fever
+  kind: option
+  field: complaint.category
+  value: fever
+  term: "fever"
+  definition: "fever as the main problem"
+  provenance: operationalized
+  source: "ESI v5 p.12 (high-risk situations)"
+  span: "A patient on chemotherapy, and therefore immunocompromised, with a fever"
+  why: "The handbook has no list of presenting complaints; this list is ours, one entry per kind of problem the rules or the nurse's history distinguish. Fever as the main problem; the handbook reads it with immune status, transplant and age."
+
+- id: complaint.category:sore_throat
+  kind: option
+  field: complaint.category
+  value: sore_throat
+  term: "sore throat"
+  definition: "sore throat or difficulty swallowing"
+  provenance: operationalized
+  source: "ESI v5 p.13 (Ear, Nose, and Throat Concerns)"
+  span: "Patients who are unable to manage their own secretions and/or exhibit respiratory stridor are extremely high-risk patients"
+  why: "The handbook has no list of presenting complaints; this list is ours, one entry per kind of problem the rules or the nurse's history distinguish. Sore throat or difficulty swallowing; the handbook's ear, nose and throat section is where the airway warning lives."
+
+- id: complaint.category:dizziness
+  kind: option
+  field: complaint.category
+  value: dizziness
+  term: "dizziness"
+  definition: "dizziness, faintness or fainting"
+  provenance: authored
+  why: "The handbook has no list of presenting complaints; this list is ours, one entry per kind of problem the rules or the nurse's history distinguish. Dizziness, faintness or fainting; opens the stroke signs because dizziness can be one."
+
+- id: complaint.category:nosebleed
+  kind: option
+  field: complaint.category
+  value: nosebleed
+  term: "nosebleed"
+  definition: "a nosebleed"
+  provenance: operationalized
+  source: "ESI v5 p.13 (epistaxis)"
+  span: "brisk bleeding secondary to posterior nosebleed"
+  why: "The handbook has no list of presenting complaints; this list is ours, one entry per kind of problem the rules or the nurse's history distinguish. A nosebleed; the handbook's epistaxis sentence."
+
+- id: complaint.category:eye_problem
+  kind: option
+  field: complaint.category
+  value: eye_problem
+  term: "eye problem"
+  definition: "any eye complaint: pain, injury, loss of vision, redness"
+  provenance: operationalized
+  source: "ESI v5 p.13 (Ocular Concerns)"
+  span: "Ocular emergencies represent a small but significant number of cases presenting to the ED"
+  why: "The handbook has no list of presenting complaints; this list is ours, one entry per kind of problem the rules or the nurse's history distinguish. Any eye complaint; opens the six eye findings."
+
+- id: complaint.category:headache
+  kind: option
+  field: complaint.category
+  value: headache
+  term: "headache"
+  definition: "headache as the main problem"
+  provenance: operationalized
+  source: "ESI v5 p.12"
+  span: "headache plus fever, vomiting, lower back pain, altered mental status, and/or signs and symptoms of stroke"
+  why: "The handbook has no list of presenting complaints; this list is ours, one entry per kind of problem the rules or the nurse's history distinguish. Headache as the main problem; the handbook lists its red flags."
+
+- id: complaint.category:neuro_symptoms
+  kind: option
+  field: complaint.category
+  value: neuro_symptoms
+  term: "neuro symptoms"
+  definition: "weakness, numbness, speech or vision change, confusion, seizure"
+  provenance: operationalized
+  source: "ESI v5 p.12 (high-risk situations)"
+  span: "Signs of a stroke but does not meet level-1 criteria"
+  why: "The handbook has no list of presenting complaints; this list is ours, one entry per kind of problem the rules or the nurse's history distinguish. Weakness, numbness, speech or vision change, confusion, seizure; opens the stroke signs and the mental-status questions."
+
+- id: complaint.category:wound
+  kind: option
+  field: complaint.category
+  value: wound
+  term: "wound"
+  definition: "a cut, laceration, bite or other open wound as the main problem"
+  provenance: authored
+  why: "The handbook has no list of presenting complaints; this list is ours, one entry per kind of problem the rules or the nurse's history distinguish. A cut, laceration, bite or other open wound as the main problem; opens the limb warning signs and the infection signs."
+
+- id: complaint.category:burn
+  kind: option
+  field: complaint.category
+  value: burn
+  term: "burn"
+  definition: "a burn or scald"
+  provenance: authored
+  why: "The handbook has no list of presenting complaints; this list is ours, one entry per kind of problem the rules or the nurse's history distinguish. A burn or scald; opens the limb warning signs and the infection signs."
+
+- id: complaint.category:head_injury
+  kind: option
+  field: complaint.category
+  value: head_injury
+  term: "head injury"
+  definition: "a blow to the head as the main problem, with or without a fall"
+  provenance: authored
+  why: "The handbook has no list of presenting complaints; this list is ours, one entry per kind of problem the rules or the nurse's history distinguish. A blow to the head as the main problem, with or without a fall; opens head strike, loss of consciousness and the stroke signs. The fifth edition has no head-injury criterion (issue #10)."
+
+- id: complaint.category:limb_pain_or_swelling
+  kind: option
+  field: complaint.category
+  value: limb_pain_or_swelling
+  term: "limb pain or swelling"
+  definition: "pain, swelling or deformity of an arm or leg, with or without an injury"
+  provenance: operationalized
+  source: "ESI v5 p.15 (orthopedic injuries)"
+  span: "any extremity injury with compromised neurovascular function, symptoms of compartment syndrome, or partial or complete amputations"
+  why: "The handbook has no list of presenting complaints; this list is ours, one entry per kind of problem the rules or the nurse's history distinguish. Pain, swelling or deformity of an arm or leg, with or without an injury."
+
+- id: complaint.category:back_pain
+  kind: option
+  field: complaint.category
+  value: back_pain
+  term: "back pain"
+  definition: "back pain as the main problem"
+  provenance: authored
+  why: "The handbook has no list of presenting complaints; this list is ours, one entry per kind of problem the rules or the nurse's history distinguish. Back pain as the main problem; the handbook reads lower back pain with headache and with urine symptoms."
+
+- id: complaint.category:skin_problem
+  kind: option
+  field: complaint.category
+  value: skin_problem
+  term: "skin problem"
+  definition: "a rash, skin infection, abscess or other skin complaint"
+  provenance: authored
+  why: "The handbook has no list of presenting complaints; this list is ours, one entry per kind of problem the rules or the nurse's history distinguish. A rash, skin infection, abscess or other skin complaint; opens the infection signs."
+
+- id: complaint.category:ear_problem
+  kind: option
+  field: complaint.category
+  value: ear_problem
+  term: "ear problem"
+  definition: "earache, discharge or hearing loss"
+  provenance: authored
+  why: "The handbook has no list of presenting complaints; this list is ours, one entry per kind of problem the rules or the nurse's history distinguish. Earache, discharge or hearing loss; a common presentation in the handbook's practice cases, no rule of its own."
+
+- id: complaint.category:dental
+  kind: option
+  field: complaint.category
+  value: dental
+  term: "dental"
+  definition: "toothache or a dental injury"
+  provenance: authored
+  why: "The handbook has no list of presenting complaints; this list is ours, one entry per kind of problem the rules or the nurse's history distinguish. Toothache or a dental injury; in the practice cases, no rule of its own."
+
+- id: complaint.category:vomiting_or_diarrhoea
+  kind: option
+  field: complaint.category
+  value: vomiting_or_diarrhoea
+  term: "vomiting or diarrhoea"
+  definition: "vomiting or diarrhoea as the main problem"
+  provenance: authored
+  why: "The handbook has no list of presenting complaints; this list is ours, one entry per kind of problem the rules or the nurse's history distinguish. Vomiting or diarrhoea as the main problem; opens the ingestion questions."
+
+- id: complaint.category:urinary_problem
+  kind: option
+  field: complaint.category
+  value: urinary_problem
+  term: "urinary problem"
+  definition: "pain or difficulty passing urine, blood in urine, or a suspected urine infection"
+  provenance: operationalized
+  source: "ESI v5 p.14 (Genitourinary)"
+  span: "The patient with symptoms of a UTI who is elderly (Liang, 2017) or who also complains of back pain, chills, and rigors may have urosepsis"
+  why: "The handbook has no list of presenting complaints; this list is ours, one entry per kind of problem the rules or the nurse's history distinguish. Pain or difficulty passing urine, blood in urine, or a suspected urine infection."
+
+- id: complaint.category:vaginal_bleeding
+  kind: option
+  field: complaint.category
+  value: vaginal_bleeding
+  term: "vaginal bleeding"
+  definition: "vaginal bleeding as the main problem, pregnant or not"
+  provenance: operationalized
+  source: "ESI v5 p.14 (Obstetric and gynecologic concerns)"
+  span: "Postpartum patients presenting with heavy vaginal bleeding should also be assigned ESI level 2"
+  why: "The handbook has no list of presenting complaints; this list is ours, one entry per kind of problem the rules or the nurse's history distinguish. Vaginal bleeding as the main problem, pregnant or not."
+
+- id: complaint.category:pregnancy_related
+  kind: option
+  field: complaint.category
+  value: pregnancy_related
+  term: "pregnancy related"
+  definition: "a problem in pregnancy or after childbirth that is not bleeding or pain (contractions, reduced movements, high blood pressure)"
+  provenance: operationalized
+  source: "ESI v5 p.14 (Obstetric and gynecologic concerns)"
+  span: "Pregnant patients with chest pain and/or shortness of breath, abdominal pain, or headache"
+  why: "The handbook has no list of presenting complaints; this list is ours, one entry per kind of problem the rules or the nurse's history distinguish. A problem in pregnancy or after childbirth that is not bleeding or pain (contractions, reduced movements, high blood pressure)."
+
+- id: complaint.category:allergic_reaction
+  kind: option
+  field: complaint.category
+  value: allergic_reaction
+  term: "allergic reaction"
+  definition: "hives, swelling or wheeze after a known trigger, short of anaphylaxis"
+  provenance: operationalized
+  source: "ESI v5 p.9 (lifesaving interventions)"
+  span: "Anaphylaxis"
+  why: "The handbook has no list of presenting complaints; this list is ours, one entry per kind of problem the rules or the nurse's history distinguish. Hives, swelling or wheeze after a known trigger, short of anaphylaxis, which is the nurse's level-1 finding; opens the breathing questions."
+
+- id: complaint.category:mental_health
+  kind: option
+  field: complaint.category
+  value: mental_health
+  term: "mental health"
+  definition: "distress, self-harm, psychosis, agitation or intoxication as the main problem"
+  provenance: operationalized
+  source: "ESI v5 p.15 (Mental and Behavioral Health)"
+  span: "Patients who are suicidal, homicidal, psychotic, or violent should be assigned an ESI level of 2"
+  why: "The handbook has no list of presenting complaints; this list is ours, one entry per kind of problem the rules or the nurse's history distinguish. Distress, self-harm, psychosis, agitation or intoxication as the main problem."
+
+- id: complaint.category:poisoning_or_overdose
+  kind: option
+  field: complaint.category
+  value: poisoning_or_overdose
+  term: "poisoning or overdose"
+  definition: "a swallowed, inhaled or injected substance that may be harmful, including a medicine overdose"
+  provenance: operationalized
+  source: "ESI v5 p.15 (Ingestions)"
+  span: "Toxic ingestion is a high-risk presentation which needs to be rapidly evaluated"
+  why: "The handbook has no list of presenting complaints; this list is ours, one entry per kind of problem the rules or the nurse's history distinguish. A swallowed, inhaled or injected substance that may be harmful, including a medicine overdose."
+
+- id: complaint.category:request
+  kind: option
+  field: complaint.category
+  value: request
+  term: "request"
+  definition: "a request rather than a new complaint: a repeat prescription, a tetanus shot, a letter, emergency contraception"
+  provenance: authored
+  why: "The handbook has no list of presenting complaints; this list is ours, one entry per kind of problem the rules or the nurse's history distinguish. A request rather than a new complaint (a repeat prescription, a tetanus shot, a letter, emergency contraception); several practice cases are of this kind and no rule reads it."
+
+- id: complaint.category:other
+  kind: option
+  field: complaint.category
+  value: other
+  term: "other"
+  definition: "anything else, described in complaint.text"
+  provenance: authored
+  why: "The handbook has no list of presenting complaints; this list is ours, one entry per kind of problem the rules or the nurse's history distinguish. Anything else, described in complaint.text; the triggers keep the questions that could apply to an unplaced complaint open."
+
+- id: complaint.pain_cause_class:renal_colic
+  kind: option
+  field: complaint.pain_cause_class
+  value: renal_colic
+  term: "renal colic"
+  definition: "kidney-stone pain"
+  provenance: verbatim
+  source: "ESI v5 p.12 (Severe Pain or Distress)"
+  span: "renal colic, cancer, or sickle cell crisis"
+  why: "Kidney-stone pain; one of the three causes of severe pain the handbook names as a systemic disruption."
+
+- id: complaint.pain_cause_class:cancer
+  kind: option
+  field: complaint.pain_cause_class
+  value: cancer
+  term: "cancer"
+  definition: "pain from a known cancer"
+  provenance: verbatim
+  source: "ESI v5 p.12 (Severe Pain or Distress)"
+  span: "renal colic, cancer, or sickle cell crisis"
+  why: "Pain from a known cancer; one of the handbook's three named causes."
+
+- id: complaint.pain_cause_class:sickle_cell_crisis
+  kind: option
+  field: complaint.pain_cause_class
+  value: sickle_cell_crisis
+  term: "sickle cell crisis"
+  definition: "a pain crisis in sickle cell disease"
+  provenance: verbatim
+  source: "ESI v5 p.12 (Severe Pain or Distress)"
+  span: "renal colic, cancer, or sickle cell crisis"
+  why: "A pain crisis in sickle cell disease; one of the handbook's three named causes."
+
+- id: complaint.back_pain:none
+  kind: option
+  field: complaint.back_pain
+  value: none
+  term: "none"
+  definition: "no back pain"
+  provenance: authored
+  why: "No back pain; written when the caregiver denies it."
+
+- id: complaint.back_pain:lower
+  kind: option
+  field: complaint.back_pain
+  value: lower
+  term: "lower"
+  definition: "pain in the lower back, below the ribs"
+  provenance: operationalized
+  source: "ESI v5 p.12"
+  span: "headache plus fever, vomiting, lower back pain, altered mental status"
+  why: "Pain in the lower back, below the ribs; the part of the back the headache rule reads."
+
+- id: complaint.back_pain:upper_or_middle
+  kind: option
+  field: complaint.back_pain
+  value: upper_or_middle
+  term: "upper or middle"
+  definition: "pain higher up the back"
+  provenance: authored
+  why: "Pain higher up the back; recorded so that lower back pain is not confused with it. No rule reads it."
+
+- id: E.mechanism:fall
+  kind: option
+  field: E.mechanism
+  value: fall
+  term: "fall"
+  definition: "a fall, slip or trip, from any height"
+  provenance: operationalized
+  source: "ESI v5 p.15 (Trauma, mechanisms)"
+  span: "falls of 20 feet (6 meters) or more"
+  why: "A fall, slip or trip, from any height; the height is E.fall_height_meters. Also the mechanism the blood-thinner rule B-30 and the older-patient note B-27 read."
+
+- id: E.mechanism:road_accident
+  kind: option
+  field: E.mechanism
+  value: road_accident
+  term: "road accident"
+  definition: "a crash involving a vehicle, motorcycle, bicycle or a pedestrian"
+  provenance: operationalized
+  source: "ESI v5 p.15 (Trauma, mechanisms)"
+  span: "ejection from a vehicle, or removal from a vehicle with mechanical extrication tools"
+  why: "A crash involving a vehicle, motorcycle, bicycle or a pedestrian; opens the ejection and extrication questions."
+
+- id: E.mechanism:assault
+  kind: option
+  field: E.mechanism
+  value: assault
+  term: "assault"
+  definition: "hit, kicked or attacked by someone"
+  provenance: authored
+  why: "Hit, kicked or attacked by someone; a blunt injury mechanism the trauma rules read like a fall. The handbook names no assault mechanism; the list is ours."
+
+- id: E.mechanism:penetrating_trauma
+  kind: option
+  field: E.mechanism
+  value: penetrating_trauma
+  term: "penetrating trauma"
+  definition: "stabbed, shot or impaled"
+  provenance: operationalized
+  source: "ESI v5 p.9 (lifesaving interventions)"
+  span: "Penetrating trauma of head, neck, abdomen, chest requiring a lifesaving intervention"
+  why: "Stabbed, shot or impaled; opens the body-region question."
+
+- id: E.mechanism:none
+  kind: option
+  field: E.mechanism
+  value: none
+  term: "none"
+  definition: "no injury"
+  provenance: authored
+  why: "No injury; written when the caregiver says there was none, so the injury questions close."
+
+- id: E.body_region:head
+  kind: option
+  field: E.body_region
+  value: head
+  term: "head"
+  definition: "head or face"
+  provenance: verbatim
+  source: "ESI v5 p.9 (lifesaving interventions)"
+  span: "Penetrating trauma of head, neck, abdomen, chest"
+  why: "Head or face; one of the four regions the handbook names for penetrating trauma."
+
+- id: E.body_region:neck
+  kind: option
+  field: E.body_region
+  value: neck
+  term: "neck"
+  definition: "neck"
+  provenance: verbatim
+  source: "ESI v5 p.9 (lifesaving interventions)"
+  span: "Penetrating trauma of head, neck, abdomen, chest"
+  why: "Neck; one of the handbook's four regions."
+
+- id: E.body_region:chest
+  kind: option
+  field: E.body_region
+  value: chest
+  term: "chest"
+  definition: "chest, including the upper back"
+  provenance: verbatim
+  source: "ESI v5 p.9 (lifesaving interventions)"
+  span: "Penetrating trauma of head, neck, abdomen, chest"
+  why: "Chest, including the upper back; one of the handbook's four regions."
+
+- id: E.body_region:abdomen
+  kind: option
+  field: E.body_region
+  value: abdomen
+  term: "abdomen"
+  definition: "belly, flank or pelvis"
+  provenance: verbatim
+  source: "ESI v5 p.9 (lifesaving interventions)"
+  span: "Penetrating trauma of head, neck, abdomen, chest"
+  why: "Belly, flank or pelvis; one of the handbook's four regions."
+
+- id: E.body_region:other
+  kind: option
+  field: E.body_region
+  value: other
+  term: "other"
+  definition: "an arm, a leg, a hand, a foot, or the buttocks"
+  provenance: authored
+  why: "An arm, a leg, a hand, a foot, or the buttocks: the regions the handbook does not name for penetrating trauma, so the level-1 and level-2 penetrating rules do not fire on them."
+
+- id: history.baseline_mental_status:known
+  kind: option
+  field: history.baseline_mental_status
+  value: known
+  term: "known"
+  definition: "the caregiver knows how the patient usually is"
+  provenance: operationalized
+  source: "ESI v5 p.12 (New Onset Confusion, Lethargy, or Disorientation)"
+  span: "If the patient's history is unknown, and the patient presents as confused, lethargic, or disoriented, the nurse should assume this condition is new"
+  why: "The caregiver knows how the patient usually is, so a change can be recognised."
+
+- id: history.baseline_mental_status:unknown
+  kind: option
+  field: history.baseline_mental_status
+  value: unknown
+  term: "unknown"
+  definition: "nobody present knows the patient's usual state"
+  provenance: operationalized
+  source: "ESI v5 p.12 (New Onset Confusion, Lethargy, or Disorientation)"
+  span: "If the patient's history is unknown, and the patient presents as confused, lethargic, or disoriented, the nurse should assume this condition is new"
+  why: "Nobody present knows the patient's usual state; the handbook then treats confusion as new."
+
+- id: obs.avpu:A
+  kind: option
+  field: obs.avpu
+  value: A
+  term: "A"
+  definition: "alert"
+  provenance: verbatim
+  source: "ESI v5 p.6 (definition of unresponsiveness)"
+  span: "Requires noxious stimulus (P or U on AVPU scale)"
+  why: "Alert; the first letter of the AVPU scale the handbook uses."
+
+- id: obs.avpu:V
+  kind: option
+  field: obs.avpu
+  value: V
+  term: "V"
+  definition: "responds to voice"
+  provenance: verbatim
+  source: "ESI v5 p.6 (definition of unresponsiveness)"
+  span: "Requires noxious stimulus (P or U on AVPU scale)"
+  why: "Responds to voice."
+
+- id: obs.avpu:P
+  kind: option
+  field: obs.avpu
+  value: P
+  term: "P"
+  definition: "responds only to a painful stimulus"
+  provenance: verbatim
+  source: "ESI v5 p.6 (definition of unresponsiveness)"
+  span: "Requires noxious stimulus (P or U on AVPU scale)"
+  why: "Responds only to a painful stimulus; with U, the handbook's unresponsive patient."
+
+- id: obs.avpu:U
+  kind: option
+  field: obs.avpu
+  value: U
+  term: "U"
+  definition: "unresponsive"
+  provenance: verbatim
+  source: "ESI v5 p.6 (definition of unresponsiveness)"
+  span: "Requires noxious stimulus (P or U on AVPU scale)"
+  why: "Unresponsive."

@@ -1,0 +1,52 @@
+arm B, form handbook, persona P20-cancer-pain, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  What is the main reason the patient is seeking care today?
+A1  My pain medications are not working anymore. I have metastatic ovarian cancer and my oncologist told me to come in.
+
+Q2  Is the patient currently experiencing any severe distress, such as difficulty breathing, chest pain, or a sudden change in mental status?
+A2  My pain medications are not working anymore. I have metastatic ovarian cancer and my oncologist told me to come in.
+
+Q3  Are you currently experiencing any difficulty breathing, chest pain, or feeling confused or disoriented?
+A3  No.
+
+Q4  Are you experiencing any severe pain or distress right now?
+A4  My pain medications are not working anymore. It's a 9 out of 10.
+
+Q5  Are you currently experiencing any other symptoms, such as a fever, cough, or any other new physical changes?
+A5  I don't know.
+
+Q6  Are you currently experiencing any other symptoms, such as a fever, cough, or any other new physical changes?
+A6  I don't know.
+
+Q7  Are you currently experiencing any other symptoms, such as a fever, cough, or any other new physical changes?
+A7  I don't know.
+
+Q8  Are you currently experiencing any other symptoms, such as a fever, cough, or any other new physical changes?
+A8  I don't know.
+
+Q9  Are you currently experiencing any other symptoms, such as a fever, cough, or any other new physical changes?
+A9  I don't know.
+
+Q10  Are you currently experiencing any other symptoms, such as a fever, cough, or any other new physical changes?
+A10  I don't know.
+
+Q11  Are you currently experiencing any other symptoms, such as a fever, cough, or any other new physical changes?
+A11  I don't know.
+
+Q12  Are you currently experiencing any other symptoms, such as a fever, cough, or any other new physical changes?
+A12  I don't know.
+
+Q13  Are you currently experiencing any other symptoms, such as a fever, cough, or any other new physical changes?
+A13  I don't know.
+
+Q14  Are you currently experiencing any other symptoms, such as a fever, cough, or any other new physical changes?
+A14  I don't know.
+
+Q15  Are you currently experiencing any other symptoms, such as a fever, cough, or any other new physical changes?
+A15  I don't know.
+
+Q16  Are you currently experiencing any other symptoms, such as a fever, cough, or any other new physical changes?
+A16  I don't know.
+
+DECISION {"decision": "unparsed", "reason": "turn limit reached without a decision"}
+OUTCOME no decision in 16 questions | expected at least ESI-2 | pass False | label missing fact | max prompt tokens 30189

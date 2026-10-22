@@ -1,0 +1,49 @@
+arm B, form rules, persona P15-suicidal-thoughts, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  Is the patient awake and responding normally?
+A1  Yes, she's awake and talking.
+
+Q2  Is the patient having any chest pain right now?
+A2  I don't know.
+
+Q3  Is the patient having any trouble breathing right now?
+A3  I don't know.
+
+Q4  Is the patient bleeding heavily right now?
+A4  I don't know.
+
+Q5  How old is the patient?
+A5  She's 31.
+
+Q6  What is the main reason she is coming to the emergency department?
+A6  My sister told me today she's been thinking about killing herself.
+
+Q7  Is the patient currently at risk of harming herself or others?
+A7  Yes, she said she wants to kill herself.
+
+Q8  Is the patient currently in a state of severe distress or out of control?
+A8  I don't know.
+
+Q9  Is the patient currently in a state of severe distress or out of control?
+A9  I don't know.
+
+Q10  Is the patient currently in a state of severe distress or out of control?
+A10  I don't know.
+
+Q11  Is the patient currently in a state of severe distress or out of control?
+A11  I don't know.
+
+Q12  Is the patient currently in a state of severe distress or out of control?
+A12  I don't know.
+
+Q13  Is the patient currently in a state of severe distress or out of control?
+A13  I don't know.
+
+Q14  Is the patient currently in a state of severe distress or out of control?
+A14  I don't know.
+
+Q15  Is the patient currently in a state of severe distress or out of control?
+A15  I don't know.
+
+DECISION {"done": true, "decision": "at least ESI-2", "reason": "The patient is a mental health risk who is actively suicidal, which is a high-risk situation.", "citation": "ESI v5 p.15 (Mental and Behavioral Health); Rule B-09."}
+OUTCOME level 2 or floor | expected at least ESI-2 | pass True | label None | max prompt tokens 44028

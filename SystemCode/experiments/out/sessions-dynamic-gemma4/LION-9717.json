@@ -1,0 +1,517 @@
+{
+ "sid": "LION-9717",
+ "facts": {
+  "red_flags.responsive": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-09-26 03:35"
+  },
+  "red_flags.chest_pain_now": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-09-26 03:35"
+  },
+  "red_flags.breathing_difficulty": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-09-26 03:35"
+  },
+  "red_flags.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-09-26 03:35"
+  },
+  "E.mechanism": {
+   "value": "fall",
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-09-26 03:35"
+  },
+  "E.fall_height_meters": {
+   "value": 1.2,
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-09-26 03:35"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "injury_fall",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "persona",
+      "turn": 2,
+      "ts": "2026-09-26 03:35"
+     }
+    },
+    {
+     "category": "other",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "persona",
+      "turn": 2,
+      "ts": "2026-09-26 03:35"
+     },
+     "text": {
+      "value": "pain in right hip",
+      "status": "reported",
+      "who": "persona",
+      "turn": 2,
+      "ts": "2026-09-26 03:35"
+     },
+     "onset": {
+      "value": "1 hour ago",
+      "status": "reported",
+      "who": "persona",
+      "turn": 2,
+      "ts": "2026-09-26 03:35"
+     },
+     "pain_rating": {
+      "value": 7,
+      "status": "reported",
+      "who": "persona",
+      "turn": 2,
+      "ts": "2026-09-26 03:35"
+     },
+     "onset_abs": {
+      "value": "~2026-09-26 02:35",
+      "status": "reported",
+      "who": "derived",
+      "turn": 2,
+      "ts": "2026-09-26 03:35"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 2
+  },
+  "complaint.category": {
+   "value": [
+    "injury_fall",
+    "other"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-09-26 03:35"
+  },
+  "complaint.text": {
+   "value": "pain in right hip",
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-09-26 03:35"
+  },
+  "complaint.onset": {
+   "value": "1 hour ago",
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-09-26 03:35"
+  },
+  "complaint.pain_rating": {
+   "value": 7,
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-09-26 03:35"
+  },
+  "complaint.pain_latest": {
+   "value": 7,
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-09-26 03:35"
+  },
+  "complaint.onset_abs": {
+   "value": "~2026-09-26 02:35 (from '1 hour ago' said 03:35)",
+   "status": "reported",
+   "who": "derived",
+   "turn": 2,
+   "ts": "2026-09-26 03:35"
+  },
+  "stroke.face_droop": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-09-26 03:35"
+  },
+  "stroke.arm_weakness": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-09-26 03:35"
+  },
+  "stroke.speech_change": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-09-26 03:35"
+  },
+  "limb.numb_tingling": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 4,
+   "ts": "2026-09-26 03:35"
+  },
+  "limb.cold_pale_blue": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 4,
+   "ts": "2026-09-26 03:35"
+  },
+  "limb.cannot_move_digits": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 4,
+   "ts": "2026-09-26 03:35"
+  },
+  "E.head_strike": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-09-26 03:35"
+  },
+  "E.loc": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-09-26 03:35"
+  },
+  "M.medications": {
+   "value": [
+    "warfarin",
+    "blood pressure pill"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 6,
+   "ts": "2026-09-26 03:35"
+  },
+  "confirm.M.anticoagulant": {
+   "value": "warfarin",
+   "status": "reported",
+   "who": "persona",
+   "turn": 6,
+   "ts": "2026-09-26 03:35"
+  },
+  "A.allergies": {
+   "value": [
+    "penicillin"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 6,
+   "ts": "2026-09-26 03:35"
+  },
+  "history.conditions": {
+   "value": [
+    "irregular heartbeat",
+    "high blood pressure"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 7,
+   "ts": "2026-09-26 03:36"
+  },
+  "infection.rash": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 6,
+   "ts": "2026-09-26 03:35"
+  },
+  "M.anticoagulant": {
+   "value": true,
+   "status": "confirmed",
+   "who": "caregiver",
+   "turn": 6,
+   "ts": "2026-09-26 03:35"
+  },
+  "history.pregnant_or_postpartum": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 7,
+   "ts": "2026-09-26 03:36"
+  },
+  "infection.fever": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 9,
+   "ts": "2026-09-26 03:36"
+  },
+  "infection.contacts": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 9,
+   "ts": "2026-09-26 03:36"
+  },
+  "infection.travel_14d": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 9,
+   "ts": "2026-09-26 03:36"
+  },
+  "L.last_intake": {
+   "value": "porridge for lunch at 1pm",
+   "status": "reported",
+   "who": "persona",
+   "turn": 10,
+   "ts": "2026-09-26 03:36"
+  },
+  "identity.name": {
+   "value": "Tan Ah Kow",
+   "status": "reported",
+   "who": "persona",
+   "turn": 10,
+   "ts": "2026-09-26 03:36"
+  },
+  "identity.dob": {
+   "value": "02 Jan 1939",
+   "status": "reported",
+   "who": "persona",
+   "turn": 10,
+   "ts": "2026-09-26 03:36"
+  },
+  "L.last_intake_abs": {
+   "value": "~2026-09-26 13:00 (from 'porridge for lunch at 1pm' said 03:36)",
+   "status": "reported",
+   "who": "derived",
+   "turn": 10,
+   "ts": "2026-09-26 03:36"
+  },
+  "patient.age": {
+   "value": 87,
+   "status": "reported",
+   "who": "derived",
+   "turn": 10,
+   "ts": "2026-09-26 03:36"
+  }
+ },
+ "attempts": {
+  "red_flags.responsive": 1,
+  "red_flags.chest_pain_now": 1,
+  "red_flags.breathing_difficulty": 1,
+  "red_flags.heavy_bleeding": 1,
+  "complaint.category": 1,
+  "complaint.text": 1,
+  "complaint.onset": 1,
+  "complaint.pain_rating": 1,
+  "stroke.face_droop": 1,
+  "stroke.arm_weakness": 1,
+  "stroke.speech_change": 1,
+  "limb.numb_tingling": 1,
+  "limb.cold_pale_blue": 1,
+  "limb.cannot_move_digits": 1,
+  "E.head_strike": 1,
+  "E.loc": 1,
+  "M.medications": 1,
+  "A.allergies": 1,
+  "history.conditions": 1,
+  "history.immunocompromised": 3,
+  "history.pregnant_or_postpartum": 1,
+  "infection.fever": 1,
+  "infection.travel_14d": 2,
+  "infection.contacts": 2,
+  "L.last_intake": 1,
+  "identity.name": 1,
+  "identity.dob": 1
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "I'm here to help get you information to the hospital team. Is the patient awake and responding normally, and are they experiencing any severe chest pain, trouble breathing, or heavy bleeding right now?",
+   "ts": "2026-09-26 03:35:22",
+   "kind": "question",
+   "slot": "dyn:red_flags.responsive+red_flags.chest_pain_now+red_flags.breathing_difficulty+red_flags.heavy_bleeding"
+  },
+  {
+   "role": "caregiver",
+   "text": "He is awake and talking. No, he isn't having chest pain, trouble breathing, or heavy bleeding.",
+   "ts": "2026-09-26 03:35:23",
+   "kind": "answer",
+   "slot": "dyn:red_flags.responsive+red_flags.chest_pain_now+red_flags.breathing_difficulty+red_flags.heavy_bleeding"
+  },
+  {
+   "role": "bot",
+   "text": "I'm glad to hear he is awake and talking. Could you tell me what happened, when it started, and how severe the pain is on a scale of 0 to 10?",
+   "ts": "2026-09-26 03:35:28",
+   "kind": "question",
+   "slot": "dyn:complaint.category+complaint.text+complaint.onset+complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "He fell down 4 steps at home an hour ago and landed on his right hip. He can't stand and says his pain is a 7/10.",
+   "ts": "2026-09-26 03:35:30",
+   "kind": "answer",
+   "slot": "dyn:complaint.category+complaint.text+complaint.onset+complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear about his fall and the pain he's in. At any point today, did you notice any drooping on one side of his face, weakness in his arms, or any slurred or strange speech?",
+   "ts": "2026-09-26 03:35:36",
+   "kind": "question",
+   "slot": "dyn:stroke.face_droop+stroke.arm_weakness+stroke.speech_change"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I haven't noticed any of those things. He is awake and talking.",
+   "ts": "2026-09-26 03:35:37",
+   "kind": "answer",
+   "slot": "dyn:stroke.face_droop+stroke.arm_weakness+stroke.speech_change"
+  },
+  {
+   "role": "bot",
+   "text": "I'm glad he's able to speak with you. Regarding his right hip, are his toes or feet numb, cold, or turning blue, and is he still able to move them?",
+   "ts": "2026-09-26 03:35:42",
+   "kind": "question",
+   "slot": "dyn:limb.numb_tingling+limb.cold_pale_blue+limb.cannot_move_digits"
+  },
+  {
+   "role": "caregiver",
+   "text": "I'm not sure if his toes or feet are numb or discolored, but I don't know if he can move them.",
+   "ts": "2026-09-26 03:35:44",
+   "kind": "answer",
+   "slot": "dyn:limb.numb_tingling+limb.cold_pale_blue+limb.cannot_move_digits"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Did he hit his head or lose consciousness at any point during the fall, and about how far did he fall?",
+   "ts": "2026-09-26 03:35:47",
+   "kind": "question",
+   "slot": "dyn:E.head_strike+E.loc"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, he didn't hit his head or lose consciousness. He fell down 4 steps.",
+   "ts": "2026-09-26 03:35:49",
+   "kind": "answer",
+   "slot": "dyn:E.head_strike+E.loc"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you for that information. Does he take any regular medications, and does he have any allergies or other medical conditions like heart problems or diabetes?",
+   "ts": "2026-09-26 03:35:53",
+   "kind": "question",
+   "slot": "dyn:M.medications+A.allergies+history.conditions+history.immunocompromised"
+  },
+  {
+   "role": "caregiver",
+   "text": "He takes a blood thinner called warfarin and a blood pressure pill. He has high blood pressure, an irregular heartbeat, and an allergy to penicillin which gives him a rash.",
+   "ts": "2026-09-26 03:35:55",
+   "kind": "answer",
+   "slot": "dyn:M.medications+A.allergies+history.conditions+history.immunocompromised"
+  },
+  {
+   "role": "system",
+   "text": "floor: at least ESI-2  rules: ['B-30.anticoagulated-trauma']",
+   "ts": "2026-09-26 03:35:58",
+   "kind": "floor"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you for sharing those details. Is he currently pregnant or postpartum, and are there any other conditions that might affect his immune system?",
+   "ts": "2026-09-26 03:36:00",
+   "kind": "question",
+   "slot": "dyn:history.immunocompromised+history.pregnant_or_postpartum"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, he is not pregnant. He has an irregular heartbeat and high blood pressure.",
+   "ts": "2026-09-26 03:36:01",
+   "kind": "answer",
+   "slot": "dyn:history.immunocompromised+history.pregnant_or_postpartum"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you for that. Has he had a fever, traveled outside the country in the last two weeks, or been in contact with anyone who is sick?",
+   "ts": "2026-09-26 03:36:05",
+   "kind": "question",
+   "slot": "dyn:history.immunocompromised+infection.fever+infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, he hasn't had a fever, hasn't traveled, and hasn't been in contact with anyone sick.",
+   "ts": "2026-09-26 03:36:07",
+   "kind": "answer",
+   "slot": "dyn:history.immunocompromised+infection.fever+infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "bot",
+   "text": "I've noted that he hasn't had a fever or been in contact with anyone sick. To be sure, has he traveled outside the country in the last two weeks?",
+   "ts": "2026-09-26 03:36:11",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, he hasn't traveled outside the country.",
+   "ts": "2026-09-26 03:36:12",
+   "kind": "answer",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you for confirming that. To help the team prepare, could you tell me when he last had something to eat or drink, as well as his full name and date of birth?",
+   "ts": "2026-09-26 03:36:16",
+   "kind": "question",
+   "slot": "dyn:L.last_intake+identity.name+identity.dob"
+  },
+  {
+   "role": "caregiver",
+   "text": "He had porridge for lunch at 1pm. His name is Tan Ah Kow and his date of birth is 02 Jan 1939.",
+   "ts": "2026-09-26 03:36:18",
+   "kind": "answer",
+   "slot": "dyn:L.last_intake+identity.name+identity.dob"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you - that's everything for now. Show the code LION-9717 at the counter when you arrive.",
+   "ts": "2026-09-26 03:36:20",
+   "kind": "ack"
+  }
+ ],
+ "active_ids": [
+  "E.trauma_detail",
+  "stroke.screen",
+  "limb.screen"
+ ],
+ "floor": "at least ESI-2",
+ "phase": "enroute",
+ "opened": [],
+ "created": "2026-09-26 03:35",
+ "pending_slot": "dyn:L.last_intake+identity.name+identity.dob",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {},
+ "considered": [
+  "B-02.severe-pain-consider",
+  "B-27.geriatric-trauma-caution",
+  "B-52.geriatric-vitals-medication-context-consider"
+ ],
+ "said_done": true
+}

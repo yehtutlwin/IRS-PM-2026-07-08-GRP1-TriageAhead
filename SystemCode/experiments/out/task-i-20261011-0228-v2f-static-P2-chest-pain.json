@@ -1,0 +1,33 @@
+{
+ "persona_backend": "ollama",
+ "persona_model": "gemma4:12b",
+ "interview": {
+  "interview_mode": "static",
+  "backend": "ollama",
+  "model": "gemma4:12b",
+  "dyn_max_fields": 4
+ },
+ "tag": "v2f-static-P2-chest-pain",
+ "results": [
+  {
+   "questions": 20,
+   "reasks": 2,
+   "floor": "at least ESI-2",
+   "floor_ok": true,
+   "rules_ok": true,
+   "fired": [
+    "B-01.new-altered-mental-status",
+    "B-04.chest-pain-acs-suspect",
+    "B-12.increasing-respiratory-effort"
+   ],
+   "hits": 6,
+   "total": 6,
+   "misses": [],
+   "danger_miss": false,
+   "persona": "P2-chest-pain",
+   "run": 1,
+   "session": "ORCHID-9812",
+   "turns": 24
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{"t": "03:43:22", "kind": "engine", "note": "session MERLION-1744 started (web)"}
+{"t": "03:43:54", "kind": "question", "slot": "red_flags.screen", "text": "Are you currently experiencing severe chest pain, trouble breathing, or heavy bleeding?"}
+{"t": "03:43:55", "kind": "answer", "slot": "red_flags.screen", "text": "No, he is not having chest pain, trouble breathing, or heavy bleeding. He is awake and talking with no head strike or blackout."}
+{"t": "03:43:56", "kind": "extract", "writes": [["red_flags.responsive", true], ["red_flags.chest_pain_now", false], ["red_flags.breathing_difficulty", false], ["red_flags.heavy_bleeding", false]]}
+{"t": "03:43:57", "kind": "question", "slot": "complaint.main", "text": "Can you tell us what happened, when it started, and how bad the pain is on a scale of 0 to 10?"}
+{"t": "03:43:58", "kind": "answer", "slot": "complaint.main", "text": "My father fell down four steps at home about an hour ago and landed on his right hip. His pain is currently 7 out of 10."}
+{"t": "03:44:00", "kind": "extract", "writes": [["E.mechanism", "fall"], ["E.head_strike", false], ["E.loc", false], ["E.fall_height_meters", 1.2], ["complaint.category", "injury_fall"], ["complaint.text", "fell down four steps at home and landed on his right hip"], ["complaint.onset", "about an hour ago"], ["complaint.pain_rating", 7, "injury_fall"]]}
+{"t": "03:44:00", "kind": "engine", "consider": ["B-02.severe-pain-consider"]}
+{"t": "03:44:01", "kind": "question", "slot": "limb.screen", "text": "Are his fingers or toes numb, cold, pale, blue, or unable to move, and does the cast feel too tight?"}
+{"t": "03:44:02", "kind": "answer", "slot": "limb.screen", "text": "I don't know about his fingers or toes or the cast because he wasn't wearing one. He is awake and talking right now."}
+{"t": "03:44:03", "kind": "extract", "writes": [["limb.numb_tingling", false, "other"], ["limb.cold_pale_blue", false, "other"], ["limb.cannot_move_digits", false, "other"], ["limb.cast_too_tight", false, "other"]]}
+{"t": "03:44:04", "kind": "question", "slot": "M.medications", "text": "Do you know if he takes any regular medications?"}
+{"t": "03:44:05", "kind": "answer", "slot": "M.medications", "text": "Yes, he takes a small pill to thin his blood called warfarin and another blood pressure pill I cannot name. He also has conditions including irregular heartbeat and high blood pressure."}
+{"t": "03:44:06", "kind": "extract", "writes": [["M.medications", ["warfarin", "blood pressure pill I cannot name"]], ["confirm.M.anticoagulant", "warfarin"], ["history.conditions", ["irregular heartbeat", "high blood pressure"]]]}
+{"t": "03:44:06", "kind": "floor", "floor": "at least ESI-2", "fired": ["B-30.anticoagulated-trauma"], "sources": [["CDC Field Triage Guidelines (MMWR 2012), Step Four special considerations: anticoagulation / bleeding disorders (sources/CDC-Field-Triage-2011-MMWR.pdf)", "NICE NG232 (2023), rec 1.5.9: CT for head injury with current anticoagulant treatment (sources/NICE-NG232-main-guideline.pdf)"]]}
+{"t": "03:44:07", "kind": "question", "slot": "allergies_and_history", "text": "Do you have any allergies to medicines, are you pregnant or recently postpartum, or do you have any conditions affecting your immune system?"}
+{"t": "03:44:08", "kind": "answer", "slot": "allergies_and_history", "text": "I am allergic to penicillin because it causes a rash. I am not pregnant and do not have any conditions affecting my immune system."}
+{"t": "03:44:09", "kind": "extract", "writes": [["A.allergies", ["penicillin"]], ["history.pregnant_or_postpartum", false], ["history.immunocompromised", false]]}
+{"t": "03:44:10", "kind": "question", "slot": "infection.screen", "text": "Do you have any fever, rash, overseas travel in the last two weeks, or contact with anyone who is infectious?"}
+{"t": "03:44:11", "kind": "answer", "slot": "infection.screen", "text": "No, there is no fever, rash, recent overseas travel, or contact with anyone who is infectious."}
+{"t": "03:44:12", "kind": "extract", "writes": [["infection.fever", false], ["infection.rash", false], ["infection.travel_14d", false], ["infection.contacts", false]]}
+{"t": "03:44:13", "kind": "question", "slot": "wrapup", "text": "Could you please tell me when you last ate or drank, along with your name and date of birth for our hospital records?"}
+{"t": "03:44:14", "kind": "answer", "slot": "wrapup", "text": "My father last had porridge at 1pm. His name is Mr. Tan Ah Kow and his date of birth is January 2, 1939."}
+{"t": "03:44:16", "kind": "extract", "writes": [["L.last_intake", "porridge at 1pm"], ["identity.name", "Mr. Tan Ah Kow"], ["identity.dob", "January 2, 1939"]]}
+{"t": "03:44:16", "kind": "engine", "consider": ["B-27.geriatric-trauma-caution", "B-52.geriatric-vitals-medication-context-consider"]}
+{"t": "03:44:16", "kind": "engine", "note": "interview complete - no open slots"}

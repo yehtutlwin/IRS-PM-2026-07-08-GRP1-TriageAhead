@@ -1,0 +1,506 @@
+{
+ "sid": "BAOBAB-4829",
+ "facts": {
+  "danger_signs.responsive": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-10-15 00:43"
+  },
+  "danger_signs.breathing_difficulty": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-10-15 00:43"
+  },
+  "danger_signs.chest_pain_now": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-10-15 00:43"
+  },
+  "danger_signs.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-10-15 00:43"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "limb_pain_or_swelling",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "persona",
+      "turn": 2,
+      "ts": "2026-10-15 00:43"
+     },
+     "text": {
+      "value": "big toe that's killing me",
+      "status": "reported",
+      "who": "persona",
+      "turn": 14,
+      "ts": "2026-10-15 00:45"
+     },
+     "onset": {
+      "value": "in the middle of the night, really sudden",
+      "status": "reported",
+      "who": "persona",
+      "turn": 3,
+      "ts": "2026-10-15 00:43"
+     },
+     "pain_rating": {
+      "value": 8,
+      "status": "reported",
+      "who": "persona",
+      "turn": 8,
+      "ts": "2026-10-15 00:44"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 2
+  },
+  "complaint.category": {
+   "value": [
+    "limb_pain_or_swelling"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 14,
+   "ts": "2026-10-15 00:45"
+  },
+  "complaint.text": {
+   "value": "big toe that's killing me",
+   "status": "reported",
+   "who": "persona",
+   "turn": 14,
+   "ts": "2026-10-15 00:45"
+  },
+  "complaint.onset": {
+   "value": "in the middle of the night, really sudden",
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-10-15 00:43"
+  },
+  "E.mechanism": {
+   "value": "none",
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-10-15 00:43"
+  },
+  "patient.age": {
+   "value": 52,
+   "status": "reported",
+   "who": "persona",
+   "turn": 4,
+   "ts": "2026-10-15 00:43"
+  },
+  "patient.sex": {
+   "value": "male",
+   "status": "reported",
+   "who": "persona",
+   "turn": 4,
+   "ts": "2026-10-15 00:43"
+  },
+  "patient.age_group": {
+   "value": "adult",
+   "status": "reported",
+   "who": "derived",
+   "turn": 4,
+   "ts": "2026-10-15 00:43"
+  },
+  "complaint.fever": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-10-15 00:43"
+  },
+  "infection.rash": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-10-15 00:43"
+  },
+  "infection.travel_14d": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 6,
+   "ts": "2026-10-15 00:44"
+  },
+  "infection.contacts": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 6,
+   "ts": "2026-10-15 00:44"
+  },
+  "ams.changed_from_baseline": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 7,
+   "ts": "2026-10-15 00:44"
+  },
+  "complaint.pain_rating": {
+   "value": 8,
+   "status": "reported",
+   "who": "persona",
+   "turn": 14,
+   "ts": "2026-10-15 00:45"
+  },
+  "complaint.pain_latest": {
+   "value": 8,
+   "status": "reported",
+   "who": "persona",
+   "turn": 8,
+   "ts": "2026-10-15 00:44"
+  },
+  "M.medications": {
+   "value": [
+    "amlodipine"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 10,
+   "ts": "2026-10-15 00:44"
+  },
+  "A.allergies": {
+   "value": [],
+   "status": "reported",
+   "who": "persona",
+   "turn": 9,
+   "ts": "2026-10-15 00:44"
+  },
+  "history.conditions": {
+   "value": [
+    "blood pressure"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 10,
+   "ts": "2026-10-15 00:44"
+  },
+  "M.beta_blocker": {
+   "value": false,
+   "status": "probable",
+   "who": "persona",
+   "turn": 10,
+   "ts": "2026-10-15 00:44"
+  },
+  "history.immunocompromised": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 10,
+   "ts": "2026-10-15 00:44"
+  },
+  "M.immunosuppressant_or_steroid": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 10,
+   "ts": "2026-10-15 00:44"
+  },
+  "identity.dob": {
+   "value": "18 February 1974",
+   "status": "reported",
+   "who": "persona",
+   "turn": 11,
+   "ts": "2026-10-15 00:44"
+  },
+  "complaint.testicular_or_scrotal_pain": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 14,
+   "ts": "2026-10-15 00:45"
+  },
+  "L.last_intake": {
+   "value": "Dinner at 9pm last night, a big seafood meal with several beers; nothing since",
+   "status": "reported",
+   "who": "persona",
+   "turn": 15,
+   "ts": "2026-10-15 00:45"
+  },
+  "L.last_intake_abs": {
+   "value": "~2026-10-14 night (from 'Dinner at 9pm last night, a big seafood meal with several beers; nothing since' said 00:45)",
+   "status": "reported",
+   "who": "derived",
+   "turn": 15,
+   "ts": "2026-10-15 00:45"
+  }
+ },
+ "attempts": {
+  "danger_signs.responsive": 1,
+  "danger_signs.breathing_difficulty": 1,
+  "danger_signs.chest_pain_now": 1,
+  "danger_signs.heavy_bleeding": 1,
+  "complaint.onset": 1,
+  "E.mechanism": 1,
+  "patient.age": 1,
+  "patient.sex": 1,
+  "complaint.fever": 1,
+  "infection.rash": 1,
+  "infection.travel_14d": 1,
+  "infection.contacts": 1,
+  "ams.changed_from_baseline": 1,
+  "complaint.pain_rating": 1,
+  "M.medications": 1,
+  "A.allergies": 1,
+  "history.immunocompromised": 1,
+  "identity.name": 3,
+  "identity.dob": 1,
+  "complaint.testicular_or_scrotal_pain": 1,
+  "L.last_intake": 1
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "Is the patient awake and responding to you normally, and are they having any trouble breathing right now?",
+   "ts": "2026-10-15 00:43:23",
+   "kind": "question",
+   "slot": "dyn:danger_signs.responsive+danger_signs.breathing_difficulty"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, I'm awake and talking normally, just tired and in a lot of pain. No, I'm not having any trouble breathing.",
+   "ts": "2026-10-15 00:43:25",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.responsive+danger_signs.breathing_difficulty"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you for letting me know. Do you have any chest pain right now, and are you bleeding heavily anywhere?",
+   "ts": "2026-10-15 00:43:30",
+   "kind": "question",
+   "slot": "dyn:danger_signs.chest_pain_now+danger_signs.heavy_bleeding"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, no chest pain and I'm not bleeding anywhere. It's just my right big toe that's killing me.",
+   "ts": "2026-10-15 00:43:32",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.chest_pain_now+danger_signs.heavy_bleeding"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry your toe is hurting so much. When did the pain start, and did anything happen to it, like a knock, a fall or something dropped on it?",
+   "ts": "2026-10-15 00:43:39",
+   "kind": "question",
+   "slot": "dyn:complaint.onset+E.mechanism"
+  },
+  {
+   "role": "caregiver",
+   "text": "It woke me up in the middle of the night, really sudden. Nothing happened to it, no fall or knock or anything like that.",
+   "ts": "2026-10-15 00:43:40",
+   "kind": "answer",
+   "slot": "dyn:complaint.onset+E.mechanism"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you, that's really helpful to know. Could you tell me how old you are, and whether you're male or female?",
+   "ts": "2026-10-15 00:43:46",
+   "kind": "question",
+   "slot": "dyn:patient.age+patient.sex"
+  },
+  {
+   "role": "caregiver",
+   "text": "I'm 52, male.",
+   "ts": "2026-10-15 00:43:47",
+   "kind": "answer",
+   "slot": "dyn:patient.age+patient.sex"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you. Do you have a fever (and if you've taken your temperature, what was it), and have you noticed any new rash anywhere on your body?",
+   "ts": "2026-10-15 00:43:52",
+   "kind": "question",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "No fever or chills that I can tell, though I haven't taken my temperature. And no rash anywhere, it's just the toe that's red and swollen.",
+   "ts": "2026-10-15 00:43:54",
+   "kind": "answer",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "bot",
+   "text": "Thanks for letting me know. In the last two weeks, have you travelled overseas, or been around anyone who's had an infectious illness?",
+   "ts": "2026-10-15 00:44:02",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know about that, sorry. I'm just in a lot of pain with my toe right now.",
+   "ts": "2026-10-15 00:44:04",
+   "kind": "answer",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "bot",
+   "text": "That's okay, and I'm sorry your toe is hurting so much. Compared with how you usually are, do you feel more confused, more sleepy than normal, or just not like yourself?",
+   "ts": "2026-10-15 00:44:14",
+   "kind": "question",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I'm not confused. I'm just tired and irritable from the pain and from not sleeping, but I'm thinking clearly.",
+   "ts": "2026-10-15 00:44:16",
+   "kind": "answer",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "bot",
+   "text": "Thanks, that's good to know you're thinking clearly. On a scale from 0 to 10, where 10 is the worst pain you can imagine, how bad is the pain in your toe right now?",
+   "ts": "2026-10-15 00:44:25",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "It's an 8 out of 10 right now. Even the bedsheet touching it hurts.",
+   "ts": "2026-10-15 00:44:26",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you for telling me, an 8 with even the bedsheet hurting sounds really hard. What medicines do you take regularly (you can also send a photo of the boxes), and do you have any allergies, especially to medicines?",
+   "ts": "2026-10-15 00:44:34",
+   "kind": "question",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "caregiver",
+   "text": "Just amlodipine for my blood pressure. No allergies that I know of, and I'm not on allopurinol or any blood thinners.",
+   "ts": "2026-10-15 00:44:35",
+   "kind": "answer",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you, that's helpful to know about the amlodipine and no allergies. Are you being treated for cancer, have you had an organ transplant, do you have HIV, or do you take steroids or any other medicine that weakens your body's defences against infection, or has a doctor ever told you your immune system is weak?",
+   "ts": "2026-10-15 00:44:44",
+   "kind": "question",
+   "slot": "dyn:history.immunocompromised"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, none of that. I'm only on amlodipine for my blood pressure, and no doctor has ever told me my immune system is weak.",
+   "ts": "2026-10-15 00:44:46",
+   "kind": "answer",
+   "slot": "dyn:history.immunocompromised"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you for letting me know. Could you tell me your full name and your date of birth?",
+   "ts": "2026-10-15 00:44:54",
+   "kind": "question",
+   "slot": "dyn:identity.name+identity.dob"
+  },
+  {
+   "role": "caregiver",
+   "text": "My date of birth is 18 February 1974. I'm sorry, I can't give you my name right now.",
+   "ts": "2026-10-15 00:44:57",
+   "kind": "answer",
+   "slot": "dyn:identity.name+identity.dob"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you for giving your date of birth. When you're able to, what name should the hospital team put down for you?",
+   "ts": "2026-10-15 00:45:02",
+   "kind": "question",
+   "slot": "dyn:identity.name"
+  },
+  {
+   "role": "caregiver",
+   "text": "Sorry, I don't have a name to give you right now. My foot hurts too much to think straight.",
+   "ts": "2026-10-15 00:45:05",
+   "kind": "answer",
+   "slot": "dyn:identity.name"
+  },
+  {
+   "role": "bot",
+   "text": "I hear your foot is hurting a lot. What do people usually call you, so the team knows who you are when you arrive?",
+   "ts": "2026-10-15 00:45:11",
+   "kind": "question",
+   "slot": "dyn:identity.name"
+  },
+  {
+   "role": "caregiver",
+   "text": "Sorry, I don't have an answer for that one. My foot is killing me.",
+   "ts": "2026-10-15 00:45:14",
+   "kind": "answer",
+   "slot": "dyn:identity.name"
+  },
+  {
+   "role": "bot",
+   "text": "That's enough for the hospital team to prepare. Show the code BAOBAB-4829 at the counter when you arrive. I'll ask a few more things while you're on the way; tell me straight away if anything changes.",
+   "ts": "2026-10-15 00:45:18",
+   "kind": "ack"
+  },
+  {
+   "role": "bot",
+   "text": "I know your foot is hurting a lot. Do you have any pain in your testicles or scrotum?",
+   "ts": "2026-10-15 00:45:20",
+   "kind": "question",
+   "slot": "dyn:complaint.testicular_or_scrotal_pain"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, there's no pain down there. It's just my big toe that's killing me.",
+   "ts": "2026-10-15 00:45:21",
+   "kind": "answer",
+   "slot": "dyn:complaint.testicular_or_scrotal_pain"
+  },
+  {
+   "role": "bot",
+   "text": "Thanks for letting me know it's your big toe. When did you last eat or drink anything, and what was it?",
+   "ts": "2026-10-15 00:45:28",
+   "kind": "question",
+   "slot": "dyn:L.last_intake"
+  },
+  {
+   "role": "caregiver",
+   "text": "Dinner at 9pm last night was the last time I ate, a big seafood meal, and I had several beers with it. I haven't had anything since.",
+   "ts": "2026-10-15 00:45:29",
+   "kind": "answer",
+   "slot": "dyn:L.last_intake"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you - that's everything. Show the code BAOBAB-4829 at the counter when you arrive.",
+   "ts": "2026-10-15 00:45:31",
+   "kind": "ack"
+  }
+ ],
+ "stage": "rest",
+ "floor": null,
+ "phase": "enroute",
+ "opened": [],
+ "created": "2026-10-15 00:43",
+ "pending_slot": "dyn:L.last_intake",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {},
+ "considered": [
+  "B-02.severe-pain-consider"
+ ],
+ "qr_ready": true,
+ "qr_turn": 13,
+ "said_done": true
+}

@@ -1,0 +1,27 @@
+session EAGLE-1162   started 2026-10-15 20:19   (generated from messages)
+
+20:19:38  BOT  Is the patient awake and responding to you normally, and does the patient have any chest pain right now?   [slot dyn:danger_signs.responsive+danger_signs.chest_pain_now]
+20:19:39  THEM Yes, she is awake and talking clearly now. She has no pain right now.   [slot dyn:danger_signs.responsive+danger_signs.chest_pain_now]
+20:19:51  BOT  Thank you. Is she having any trouble breathing right now, and is she bleeding heavily anywhere?   [slot dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding]
+20:19:52  THEM No, she is not having any trouble breathing and she is not bleeding.   [slot dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding]
+20:19:59  BOT  Got it. In your own words, what is the main problem that brings her in today, and when did it start?   [slot dyn:complaint.category+complaint.text+complaint.onset]
+20:20:00  THEM Her speech became slurred and her left arm went weak this morning around 9am. It lasted about 45 minutes and then passed completely.   [slot dyn:complaint.category+complaint.text+complaint.onset]
+20:20:09  SYS  floor: at least ESI-2  rules: ['B-05.stroke-signs'] (floor)
+20:20:16  BOT  Understood, that's clear. How old is she, and what is her full name?   [slot dyn:patient.age+identity.name]
+20:20:17  THEM Her name is Mrs. Lim and she was born on March 15, 1938.   [slot dyn:patient.age+identity.name]
+20:20:26  BOT  Thank you. What medicines does she take regularly (a photo of the boxes works too), and is she allergic to any medicines?   [slot dyn:M.medications+A.allergies]
+20:20:27  THEM She takes one aspirin daily and has no known allergies.   [slot dyn:M.medications+A.allergies]
+20:20:32  BOT  Got it. Does she have any ongoing health problems, such as high blood pressure, diabetes, heart trouble or a past stroke?   [slot dyn:history.conditions]
+20:20:33  THEM She had a stroke two years ago.   [slot dyn:history.conditions]
+20:20:37  BOT  That's enough for the hospital team to prepare. Show the code EAGLE-1162 at the counter when you arrive. I'll ask a few more things while you're on the way; tell me straight away if anything changes. (ack)
+20:20:40  BOT  While you're on your way, does she have any new rash, and has she travelled overseas in the last two weeks?   [slot dyn:infection.rash+infection.travel_14d]
+20:20:42  THEM No, she has no rash and hasn't traveled overseas in the last two weeks.   [slot dyn:infection.rash+infection.travel_14d]
+20:20:50  BOT  Thank you. In the last two weeks, has she been around anyone who was sick with something catching, like flu, COVID or a stomach bug?   [slot dyn:infection.contacts]
+20:20:51  THEM No, she hasn't been around anyone who was sick.   [slot dyn:infection.contacts]
+20:20:58  BOT  Got it. Has she had any sudden loss of sight or change in her vision, like blurring, double vision or not being able to see on one side?   [slot dyn:stroke.vision_change]
+20:20:59  THEM I don't know.   [slot dyn:stroke.vision_change]
+20:21:09  BOT  That's okay. On a scale from 0 to 10, where 10 is the worst pain imaginable, how bad is her pain right now?   [slot dyn:complaint.pain_rating]
+20:21:10  THEM She has no pain right now, so it's a 0/10.   [slot dyn:complaint.pain_rating]
+20:21:21  BOT  Thank you. When did she last eat or drink anything, and what was it?   [slot dyn:L.last_intake]
+20:21:22  THEM She last ate breakfast at 8am.   [slot dyn:L.last_intake]
+20:21:28  BOT  Thank you - that's everything. Show the code EAGLE-1162 at the counter when you arrive. (ack)

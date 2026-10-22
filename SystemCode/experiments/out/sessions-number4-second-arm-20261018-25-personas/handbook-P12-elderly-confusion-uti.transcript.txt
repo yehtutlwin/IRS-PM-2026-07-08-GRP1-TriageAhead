@@ -1,0 +1,52 @@
+arm B, form handbook, persona P12-elderly-confusion-uti, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  What is the main reason the patient is seeking care today?
+A1  She is not acting like herself. She is sleeping more than usual and says it hurts to pee.
+
+Q2  Is she currently having any trouble breathing or is she unresponsive?
+A2  No, her breathing is fine. She answers when I talk to her.
+
+Q3  Is she experiencing any severe pain or distress, or is she currently confused, lethargic, or disoriented?
+A3  She is not in distress, but she is not acting like herself. She is sleeping more than usual and is mixed up about the time and where she is.
+
+Q4  How old is the patient?
+A4  She's 72.
+
+Q5  Does she have any other medical conditions, such as heart or lung problems, or is she currently on any medications?
+A5  I don't know.
+
+Q6  Does she have any other medical conditions, such as heart or lung problems, or is she currently on any medications?
+A6  I don't know.
+
+Q7  Does she have any other medical conditions, such as heart or lung problems, or is she currently on any medications?
+A7  I don't know.
+
+Q8  Does she have any other medical conditions, such as heart or lung problems, or is she currently on any medications?
+A8  I don't know.
+
+Q9  Does she have any other medical conditions, such as heart or lung problems, or is she currently on any medications?
+A9  I don't know.
+
+Q10  What are the patient's current vital signs (heart rate, respiratory rate, blood pressure, and oxygen saturation)?
+A10  I don't know.
+
+Q11  Is the patient's confusion or 'not acting like herself' a new change from her normal baseline?
+A11  Yes, that's not like her. Normally she's sharp and independent.
+
+Q12  Does she have any other medical conditions, such as heart or lung problems, or is she currently on any medications?
+A12  I don't know.
+
+Q13  Is the patient's pain when urinating severe (a rating of 7/10 or higher)?
+A13  She says it hurts to pee.
+
+Q14  Is the patient's pain when urinating severe (a rating of 7/10 or higher)?
+A14  She says it hurts to pee.
+
+Q15  Can you describe her current heart rate, respiratory rate, and oxygen level if you have them?
+A15  I don't know.
+
+Q16  Is the patient's pain when urinating severe (a rating of 7/10 or higher)?
+A16  She says it hurts to pee.
+
+DECISION {"decision": "unparsed", "reason": "turn limit reached without a decision"}
+OUTCOME no decision in 16 questions | expected at least ESI-2 | pass False | label missing fact | max prompt tokens 30200

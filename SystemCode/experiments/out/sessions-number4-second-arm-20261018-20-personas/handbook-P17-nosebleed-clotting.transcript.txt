@@ -1,0 +1,52 @@
+arm B, form handbook, persona P17-nosebleed-clotting, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  What is the main reason the patient is seeking care today?
+A1  His nose has been bleeding and it won't stop.
+
+Q2  Is the bleeding severe enough that he is having trouble breathing or is he showing signs of shock (like feeling very faint or having a very fast heart rate)?
+A2  I don't know.
+
+Q3  Is the patient currently having any trouble breathing or is he feeling very faint or dizzy?
+A3  I don't know.
+
+Q4  Is the patient currently conscious and able to follow simple commands?
+A4  Yes, he's awake and talking.
+
+Q5  Is the nosebleed coming from a head, neck, or chest injury, or is it a very large amount of blood that is hard to control?
+A5  His nose has been bleeding and it won't stop.
+
+Q6  Is the nosebleed a result of a recent injury to the head, neck, or face?
+A6  I don't know.
+
+Q7  Is the patient currently experiencing a lot of pain or distress because of the nosebleed?
+A7  I don't know.
+
+Q8  Is the patient's nosebleed a result of a head, neck, or chest injury?
+A8  I don't know.
+
+Q9  Is the nosebleed a brisk, heavy bleed that is difficult to control?
+A9  His nose has been bleeding and it won't stop.
+
+Q10  Is the patient's nosebleed a result of a head, neck, or chest injury?
+A10  I don't know.
+
+Q11  Is the patient's nosebleed a result of a head, neck, or chest injury?
+A11  I don't know.
+
+Q12  Is the patient's nosebleed a result of a head, neck, or chest injury?
+A12  I don't know.
+
+Q13  Is the nosebleed a result of a head, neck, or chest injury?
+A13  I don't know.
+
+Q14  Is the patient's nosebleed a brisk, heavy bleed that is difficult to control?
+A14  His nose has been bleeding and it won't stop.
+
+Q15  Is the patient's nosebleed a result of a head, neck, or chest injury?
+A15  I don't know.
+
+Q16  Is the patient's nosebleed a result of a head, neck, or chest injury?
+A16  I don't know.
+
+DECISION {"decision": "unparsed", "reason": "turn limit reached without a decision"}
+OUTCOME no decision in 16 questions | expected at least ESI-2 | pass False | label missing fact | max prompt tokens 30148

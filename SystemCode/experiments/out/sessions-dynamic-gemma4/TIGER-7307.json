@@ -1,0 +1,403 @@
+{
+ "sid": "TIGER-7307",
+ "facts": {
+  "red_flags.responsive": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-09-26 03:42"
+  },
+  "red_flags.chest_pain_now": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-09-26 03:42"
+  },
+  "red_flags.breathing_difficulty": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-09-26 03:42"
+  },
+  "red_flags.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-09-26 03:42"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "abdominal_pain",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "persona",
+      "turn": 3,
+      "ts": "2026-09-26 03:42"
+     },
+     "text": {
+      "value": "swelling",
+      "status": "reported",
+      "who": "persona",
+      "turn": 3,
+      "ts": "2026-09-26 03:42"
+     },
+     "onset": {
+      "value": "two days",
+      "status": "reported",
+      "who": "persona",
+      "turn": 3,
+      "ts": "2026-09-26 03:42"
+     },
+     "pain_rating": {
+      "value": 3,
+      "status": "reported",
+      "who": "persona",
+      "turn": 3,
+      "ts": "2026-09-26 03:42"
+     }
+    },
+    {
+     "category": "eye_problem",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "persona",
+      "turn": 3,
+      "ts": "2026-09-26 03:42"
+     },
+     "text": {
+      "value": "yellowing",
+      "status": "reported",
+      "who": "persona",
+      "turn": 3,
+      "ts": "2026-09-26 03:42"
+     },
+     "onset": {
+      "value": "two days",
+      "status": "reported",
+      "who": "persona",
+      "turn": 3,
+      "ts": "2026-09-26 03:42"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 3
+  },
+  "complaint.category": {
+   "value": [
+    "abdominal_pain",
+    "eye_problem"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-09-26 03:42"
+  },
+  "complaint.text": {
+   "value": "yellowing",
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-09-26 03:42"
+  },
+  "complaint.onset": {
+   "value": "two days",
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-09-26 03:42"
+  },
+  "complaint.pain_rating": {
+   "value": 3,
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-09-26 03:42"
+  },
+  "complaint.pain_latest": {
+   "value": 3,
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-09-26 03:42"
+  },
+  "E.mechanism": {
+   "value": "none",
+   "status": "reported",
+   "who": "derived",
+   "turn": 3,
+   "ts": "2026-09-26 03:42"
+  },
+  "M.medications": {
+   "value": [
+    "lactulose",
+    "spironolactone",
+    "furosemide"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 4,
+   "ts": "2026-09-26 03:42"
+  },
+  "A.allergies": {
+   "value": [],
+   "status": "reported",
+   "who": "persona",
+   "turn": 4,
+   "ts": "2026-09-26 03:42"
+  },
+  "history.conditions": {
+   "value": [
+    "cirrhosis",
+    "chronic hepatitis B"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 4,
+   "ts": "2026-09-26 03:42"
+  },
+  "history.immunocompromised": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 5,
+   "ts": "2026-09-26 03:42"
+  },
+  "history.pregnant_or_postpartum": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 5,
+   "ts": "2026-09-26 03:42"
+  },
+  "infection.fever": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 6,
+   "ts": "2026-09-26 03:43"
+  },
+  "infection.rash": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 7,
+   "ts": "2026-09-26 03:43"
+  },
+  "infection.travel_14d": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 7,
+   "ts": "2026-09-26 03:43"
+  },
+  "infection.contacts": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 7,
+   "ts": "2026-09-26 03:43"
+  },
+  "L.last_intake": {
+   "value": "small bowl of rice at noon",
+   "status": "reported",
+   "who": "persona",
+   "turn": 8,
+   "ts": "2026-09-26 03:43"
+  },
+  "identity.dob": {
+   "value": "07 Jul 1968",
+   "status": "reported",
+   "who": "persona",
+   "turn": 8,
+   "ts": "2026-09-26 03:43"
+  },
+  "patient.age": {
+   "value": 58,
+   "status": "reported",
+   "who": "derived",
+   "turn": 8,
+   "ts": "2026-09-26 03:43"
+  },
+  "identity.name": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 9,
+   "ts": "2026-09-26 03:43"
+  }
+ },
+ "attempts": {
+  "red_flags.responsive": 1,
+  "red_flags.chest_pain_now": 2,
+  "red_flags.breathing_difficulty": 2,
+  "red_flags.heavy_bleeding": 2,
+  "complaint.category": 1,
+  "complaint.text": 1,
+  "complaint.onset": 1,
+  "complaint.pain_rating": 1,
+  "M.medications": 1,
+  "A.allergies": 1,
+  "history.conditions": 1,
+  "history.immunocompromised": 2,
+  "history.pregnant_or_postpartum": 1,
+  "infection.fever": 1,
+  "infection.rash": 2,
+  "infection.travel_14d": 2,
+  "infection.contacts": 2,
+  "L.last_intake": 1,
+  "identity.name": 2,
+  "identity.dob": 1
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "I'm here to help get you started. Is the patient awake and responding normally, and are they currently experiencing any chest pain, trouble breathing, or heavy bleeding?",
+   "ts": "2026-09-26 03:42:28",
+   "kind": "question",
+   "slot": "dyn:red_flags.responsive+red_flags.chest_pain_now+red_flags.breathing_difficulty+red_flags.heavy_bleeding"
+  },
+  {
+   "role": "caregiver",
+   "text": "He is awake and breathing normally, but he answers slowly. There is no heavy bleeding or trouble breathing.",
+   "ts": "2026-09-26 03:42:29",
+   "kind": "answer",
+   "slot": "dyn:red_flags.responsive+red_flags.chest_pain_now+red_flags.breathing_difficulty+red_flags.heavy_bleeding"
+  },
+  {
+   "role": "bot",
+   "text": "I'm glad to hear he is awake and breathing. To make sure we have the full picture, is he currently experiencing any chest pain, trouble breathing, or heavy bleeding?",
+   "ts": "2026-09-26 03:42:33",
+   "kind": "question",
+   "slot": "dyn:red_flags.chest_pain_now+red_flags.breathing_difficulty+red_flags.heavy_bleeding"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, he is not having any chest pain, trouble breathing, or heavy bleeding.",
+   "ts": "2026-09-26 03:42:34",
+   "kind": "answer",
+   "slot": "dyn:red_flags.chest_pain_now+red_flags.breathing_difficulty+red_flags.heavy_bleeding"
+  },
+  {
+   "role": "bot",
+   "text": "I'm glad he's stable. Could you tell me what happened, when it started, and how severe the pain is on a scale of 0 to 10?",
+   "ts": "2026-09-26 03:42:39",
+   "kind": "question",
+   "slot": "dyn:complaint.category+complaint.text+complaint.onset+complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "His abdomen has been swelling and his eyes have been yellowing for two days. He reports his abdominal discomfort is a 3/10.",
+   "ts": "2026-09-26 03:42:40",
+   "kind": "answer",
+   "slot": "dyn:complaint.category+complaint.text+complaint.onset+complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear about the swelling and yellowing. To help the team prepare, does he take any regular medications, and does he have any known allergies or other medical conditions like heart problems or diabetes?",
+   "ts": "2026-09-26 03:42:47",
+   "kind": "question",
+   "slot": "dyn:M.medications+A.allergies+history.conditions+history.immunocompromised"
+  },
+  {
+   "role": "caregiver",
+   "text": "He takes lactulose, spironolactone, and furosemide. He has cirrhosis from chronic hepatitis B and has no known allergies.",
+   "ts": "2026-09-26 03:42:48",
+   "kind": "answer",
+   "slot": "dyn:M.medications+A.allergies+history.conditions+history.immunocompromised"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you for sharing those details. Is he immunocompromised, or is there any chance of pregnancy if the patient is female?",
+   "ts": "2026-09-26 03:42:53",
+   "kind": "question",
+   "slot": "dyn:history.immunocompromised+history.pregnant_or_postpartum"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-09-26 03:42:54",
+   "kind": "answer",
+   "slot": "dyn:history.immunocompromised+history.pregnant_or_postpartum"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. To help the team further, has he had any fever, a rash, traveled outside the country in the last two weeks, or been in contact with anyone who is sick?",
+   "ts": "2026-09-26 03:42:58",
+   "kind": "question",
+   "slot": "dyn:infection.fever+infection.rash+infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "caregiver",
+   "text": "He has no fever. I don't know about a rash, travel, or contact with anyone sick.",
+   "ts": "2026-09-26 03:42:59",
+   "kind": "answer",
+   "slot": "dyn:infection.fever+infection.rash+infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you for confirming there is no fever. Could you tell me if he has developed any rashes, traveled outside the country in the last two weeks, or been in contact with anyone who is sick?",
+   "ts": "2026-09-26 03:43:03",
+   "kind": "question",
+   "slot": "dyn:infection.rash+infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-09-26 03:43:04",
+   "kind": "answer",
+   "slot": "dyn:infection.rash+infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. To help the team, could you tell me when he last had anything to eat or drink, and provide his full name and date of birth?",
+   "ts": "2026-09-26 03:43:08",
+   "kind": "question",
+   "slot": "dyn:L.last_intake+identity.name+identity.dob"
+  },
+  {
+   "role": "caregiver",
+   "text": "He last ate a small bowl of rice at noon. His name is not provided, but his date of birth is 07 Jul 1968.",
+   "ts": "2026-09-26 03:43:09",
+   "kind": "answer",
+   "slot": "dyn:L.last_intake+identity.name+identity.dob"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you for providing his birth date. Could you please tell me his full name so I can update the hospital records?",
+   "ts": "2026-09-26 03:43:13",
+   "kind": "question",
+   "slot": "dyn:identity.name"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-09-26 03:43:15",
+   "kind": "answer",
+   "slot": "dyn:identity.name"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you - that's everything for now. Show the code TIGER-7307 at the counter when you arrive.",
+   "ts": "2026-09-26 03:43:16",
+   "kind": "ack"
+  }
+ ],
+ "active_ids": [],
+ "floor": null,
+ "phase": "enroute",
+ "opened": [],
+ "created": "2026-09-26 03:42",
+ "pending_slot": "dyn:identity.name",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {},
+ "said_done": true
+}

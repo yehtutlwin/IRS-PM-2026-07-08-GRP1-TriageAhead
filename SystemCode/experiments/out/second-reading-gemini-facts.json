@@ -1,0 +1,8306 @@
+{
+ "ch9-3": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 19
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.text",
+    "value": "single self-inflicted gunshot wound to the head"
+   },
+   {
+    "field": "complaint.danger_to_self_or_others",
+    "value": true
+   },
+   {
+    "field": "E.mechanism",
+    "value": "penetrating_trauma"
+   },
+   {
+    "field": "E.body_region",
+    "value": "head"
+   },
+   {
+    "field": "obs.avpu",
+    "status": "observed",
+    "value": "U"
+   },
+   {
+    "field": "obs.intubated",
+    "status": "observed",
+    "value": true
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-7": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 4
+   },
+   {
+    "field": "complaint.text",
+    "value": "pulled out of the family pool, breathing spontaneously"
+   },
+   {
+    "field": "obs.avpu",
+    "status": "observed",
+    "value": "U"
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 126
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 28
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 80
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 96
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-30": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 16
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.text",
+    "value": "downhill skiing and hit a tree, lost control"
+   },
+   {
+    "field": "E.head_strike",
+    "value": true
+   },
+   {
+    "field": "obs.intubated",
+    "status": "observed",
+    "value": true
+   },
+   {
+    "field": "obs.avpu",
+    "status": "observed",
+    "value": "U"
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-42": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 26
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "complaint.category",
+    "value": "headache"
+   },
+   {
+    "field": "complaint.text",
+    "value": "sudden onset of a severe headache that began after she moved her bowels, moaning, does not respond to voice"
+   },
+   {
+    "field": "complaint.onset",
+    "value": "sudden onset"
+   },
+   {
+    "field": "complaint.vomiting",
+    "value": true
+   },
+   {
+    "field": "history.pregnant",
+    "value": true
+   },
+   {
+    "field": "M.medications",
+    "value": [
+     "prenatal vitamins"
+    ]
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-51": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 58
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.text",
+    "value": "collapsed while shoveling snow, hypothermic cardiac arrest protocol initiated"
+   },
+   {
+    "field": "obs.cardiac_or_pulmonary_arrest",
+    "status": "observed",
+    "value": true
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-43": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 40
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "complaint.category",
+    "value": "neuro_symptoms"
+   },
+   {
+    "field": "complaint.text",
+    "value": "thinks having a stroke, anxious, can't close left eye"
+   },
+   {
+    "field": "complaint.onset",
+    "value": "this morning"
+   },
+   {
+    "field": "complaint.stroke_signs",
+    "value": true
+   },
+   {
+    "field": "stroke.face_droop",
+    "value": true
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-44": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 88
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "complaint.category",
+    "value": "neuro_symptoms"
+   },
+   {
+    "field": "complaint.text",
+    "value": "episode of slurred speech and weakness of her left arm that lasted about 45 minutes"
+   },
+   {
+    "field": "complaint.onset",
+    "value": "This morning"
+   },
+   {
+    "field": "history.conditions",
+    "value": [
+     "previous stroke"
+    ]
+   },
+   {
+    "field": "M.medications",
+    "value": [
+     "aspirin"
+    ]
+   },
+   {
+    "field": "M.anticoagulant",
+    "value": true
+   },
+   {
+    "field": "obs.avpu",
+    "status": "observed",
+    "value": "A"
+   },
+   {
+    "field": "stroke.arm_weakness",
+    "value": true
+   },
+   {
+    "field": "stroke.speech_change",
+    "value": true
+   },
+   {
+    "field": "complaint.stroke_signs",
+    "value": true
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-50": {
+  "facts": [
+   {
+    "field": "complaint.category",
+    "value": "limb_pain_or_swelling"
+   },
+   {
+    "field": "complaint.text",
+    "value": "fractured wrist, hand is really swollen, cast is cutting into fingers, unbearable pain, circulation, sensation, and movement are decreased"
+   },
+   {
+    "field": "limb.cast_too_tight",
+    "value": true
+   },
+   {
+    "field": "complaint.extremity_neurovascular_compromise",
+    "status": "observed",
+    "value": true
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-76": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 23
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.category",
+    "value": "mental_health"
+   },
+   {
+    "field": "complaint.text",
+    "value": "standing in the middle of traffic on the local highway screaming about the end of the world. claims that he had been sent from Mars as the savior of the world"
+   },
+   {
+    "field": "complaint.psychotic_or_violent",
+    "value": true
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-84": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 75
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.category",
+    "value": "wound"
+   },
+   {
+    "field": "complaint.text",
+    "value": "self-inflicted 6-centimeter laceration to his neck. bleeding is currently controlled. his wife of 56 years died last week"
+   },
+   {
+    "field": "complaint.danger_to_self_or_others",
+    "value": true
+   },
+   {
+    "field": "complaint.severe_psychological_distress",
+    "value": true
+   },
+   {
+    "field": "M.medications",
+    "value": [
+     "baby ASA"
+    ]
+   },
+   {
+    "field": "M.anticoagulant",
+    "value": true
+   },
+   {
+    "field": "A.allergies",
+    "value": [
+     "No known drug allergies"
+    ]
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 136
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 74
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 18
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 98
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-93": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 17
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.category",
+    "value": "mental_health"
+   },
+   {
+    "field": "complaint.text",
+    "value": "out of control: verbally and physically acting out and threatening to kill the family"
+   },
+   {
+    "field": "complaint.danger_to_self_or_others",
+    "value": true
+   },
+   {
+    "field": "complaint.severe_psychological_distress",
+    "value": true
+   },
+   {
+    "field": "complaint.psychotic_or_violent",
+    "value": true
+   },
+   {
+    "field": "history.conditions",
+    "value": [
+     "none"
+    ]
+   },
+   {
+    "field": "M.medications",
+    "value": [
+     "none"
+    ]
+   },
+   {
+    "field": "A.allergies",
+    "value": [
+     "none"
+    ]
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-25": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 87
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.category",
+    "value": "head_injury"
+   },
+   {
+    "field": "complaint.text",
+    "value": "fell and hit his head"
+   },
+   {
+    "field": "E.mechanism",
+    "value": "fall"
+   },
+   {
+    "field": "E.head_strike",
+    "value": true
+   },
+   {
+    "field": "E.loc",
+    "value": false
+   },
+   {
+    "field": "red_flags.responsive",
+    "status": "observed",
+    "value": true
+   },
+   {
+    "field": "history.conditions",
+    "value": [
+     "atrial fibrillation"
+    ]
+   },
+   {
+    "field": "M.medications",
+    "value": [
+     "multiple medications",
+     "warfarin"
+    ]
+   },
+   {
+    "field": "M.anticoagulant",
+    "value": true
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-18": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 38
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.category",
+    "value": "dental"
+   },
+   {
+    "field": "complaint.text",
+    "value": "awful toothache right lower jaw, no obvious swelling is noted"
+   },
+   {
+    "field": "complaint.pain_rating",
+    "value": 9
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-77": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 38
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.category",
+    "value": "dental"
+   },
+   {
+    "field": "complaint.text",
+    "value": "tooth is killing me. no obvious facial swelling is noted"
+   },
+   {
+    "field": "complaint.onset",
+    "value": "yesterday"
+   },
+   {
+    "field": "complaint.pain_rating",
+    "value": 10
+   },
+   {
+    "field": "A.allergies",
+    "value": [
+     "penicillin"
+    ]
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 37.7
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-83": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 27
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "patient.has_ovaries",
+    "value": true
+   },
+   {
+    "field": "complaint.category",
+    "value": "headache"
+   },
+   {
+    "field": "complaint.text",
+    "value": "migraine"
+   },
+   {
+    "field": "complaint.onset",
+    "value": "2 days"
+   },
+   {
+    "field": "complaint.pain_rating",
+    "value": 20
+   },
+   {
+    "field": "complaint.vomiting",
+    "value": true
+   },
+   {
+    "field": "history.conditions",
+    "value": [
+     "migraines"
+    ]
+   },
+   {
+    "field": "M.medications",
+    "value": [
+     "Fioricet"
+    ]
+   },
+   {
+    "field": "A.allergies",
+    "value": [
+     "no allergies"
+    ]
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-89": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 42
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.category",
+    "value": "injury"
+   },
+   {
+    "field": "complaint.text",
+    "value": "having incredible sex, and I heard a crack. my penis was flaccid, and I noticed some bruising"
+   },
+   {
+    "field": "complaint.pain_rating",
+    "value": 20
+   },
+   {
+    "field": "M.medications",
+    "value": [
+     "none"
+    ]
+   },
+   {
+    "field": "A.allergies",
+    "value": [
+     "No known drug allergies"
+    ]
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-91": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 20
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.category",
+    "value": "injury"
+   },
+   {
+    "field": "complaint.text",
+    "value": "tackled while playing football, obvious dislocation of left shoulder"
+   },
+   {
+    "field": "complaint.pain_rating",
+    "value": 10
+   },
+   {
+    "field": "complaint.extremity_neurovascular_compromise",
+    "status": "observed",
+    "value": false
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-10": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 58
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "E.mechanism",
+    "value": "fall"
+   },
+   {
+    "field": "complaint.category",
+    "value": "injury"
+   },
+   {
+    "field": "complaint.text",
+    "value": "slipped on the ice, hurt wrist, no obvious deformity"
+   },
+   {
+    "field": "history.conditions",
+    "value": [
+     "migraines"
+    ]
+   },
+   {
+    "field": "complaint.pain_rating",
+    "value": 5
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-36": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 68
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "E.mechanism",
+    "value": "fall"
+   },
+   {
+    "field": "E.head_strike",
+    "value": false
+   },
+   {
+    "field": "complaint.category",
+    "value": "injury"
+   },
+   {
+    "field": "complaint.text",
+    "value": "slipped on the ice, right arm in a sling, obvious deformity noted"
+   },
+   {
+    "field": "complaint.extremity_neurovascular_compromise",
+    "status": "observed",
+    "value": false
+   },
+   {
+    "field": "history.conditions",
+    "value": [
+     "arthritis"
+    ]
+   },
+   {
+    "field": "M.medications",
+    "value": [
+     "ibuprofen"
+    ]
+   },
+   {
+    "field": "A.allergies",
+    "value": []
+   },
+   {
+    "field": "complaint.pain_rating",
+    "value": 6
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-1": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 27
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "complaint.category",
+    "value": "eye_problem"
+   },
+   {
+    "field": "complaint.text",
+    "value": "scratched cornea taking contacts out, right eye is red and tearing, light bothers eyes"
+   },
+   {
+    "field": "complaint.pain_rating",
+    "value": 6
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-4": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 56
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.category",
+    "value": "request"
+   },
+   {
+    "field": "complaint.text",
+    "value": "ran out of blood pressure medicine, needs a prescription"
+   },
+   {
+    "field": "history.conditions",
+    "value": [
+     "HTN"
+    ]
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 128
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 76
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 16
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 36.1
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-5": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 41
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "E.mechanism",
+    "value": "road_accident"
+   },
+   {
+    "field": "complaint.category",
+    "value": "injury"
+   },
+   {
+    "field": "complaint.text",
+    "value": "involved in a bicycle accident, fell off bike and landed on right arm, pain in wrist area, 2-centimeter laceration on left elbow"
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-9": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 6
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "E.mechanism",
+    "value": "fall"
+   },
+   {
+    "field": "complaint.category",
+    "value": "wound"
+   },
+   {
+    "field": "complaint.text",
+    "value": "fell while running across the playground, 3-centimeter laceration over his right knee"
+   },
+   {
+    "field": "M.medications",
+    "value": []
+   },
+   {
+    "field": "A.allergies",
+    "value": []
+   },
+   {
+    "field": "patient.immunizations_incomplete",
+    "value": false
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-12": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 60
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "E.mechanism",
+    "value": "none"
+   },
+   {
+    "field": "complaint.category",
+    "value": "limb_pain_or_swelling"
+   },
+   {
+    "field": "complaint.text",
+    "value": "right foot hurts, great toe and foot skin is red, warm, swollen, and tender to touch"
+   },
+   {
+    "field": "complaint.infection_signs",
+    "status": "observed",
+    "value": true
+   },
+   {
+    "field": "history.conditions",
+    "value": [
+     "type 2 diabetes",
+     "psoriasis"
+    ]
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 37.4
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 18
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 82
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 146
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 99
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-13": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 52
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "complaint.category",
+    "value": "urinary_problem"
+   },
+   {
+    "field": "complaint.uti_symptoms",
+    "value": true
+   },
+   {
+    "field": "complaint.text",
+    "value": "possible urinary tract infection (UTI), dysuria and frequency"
+   },
+   {
+    "field": "A.allergies",
+    "value": []
+   },
+   {
+    "field": "M.medications",
+    "value": [
+     "vitamins"
+    ]
+   },
+   {
+    "field": "history.conditions",
+    "value": []
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 36.3
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 78
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 14
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 142
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-19": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 33
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "complaint.category",
+    "value": "vomiting_or_diarrhoea"
+   },
+   {
+    "field": "complaint.text",
+    "value": "food poisoning, vomiting all night, diarrhea, abdominal cramping"
+   },
+   {
+    "field": "complaint.onset",
+    "value": "all night"
+   },
+   {
+    "field": "complaint.vomiting",
+    "value": true
+   },
+   {
+    "field": "complaint.pain_rating",
+    "value": 5
+   },
+   {
+    "field": "complaint.fever",
+    "value": false
+   },
+   {
+    "field": "complaint.chills_or_rigors",
+    "value": false
+   },
+   {
+    "field": "history.conditions",
+    "value": []
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 36
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 96
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 16
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 116
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-20": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 37
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "complaint.category",
+    "value": "headache"
+   },
+   {
+    "field": "complaint.text",
+    "value": "migraine, just keep vomiting, wants to lie down"
+   },
+   {
+    "field": "complaint.onset",
+    "value": "early this morning"
+   },
+   {
+    "field": "complaint.vomiting",
+    "value": true
+   },
+   {
+    "field": "complaint.pain_rating",
+    "value": 6
+   },
+   {
+    "field": "history.conditions",
+    "value": [
+     "migraines"
+    ]
+   },
+   {
+    "field": "A.allergies",
+    "value": []
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 36.7
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 102
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 20
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 118
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 98
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-21": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 28
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.category",
+    "value": "wound"
+   },
+   {
+    "field": "complaint.text",
+    "value": "cut my finger trying to slice a bagel, 2-centimeter laceration on the left first finger, bleeding is controlled, last tetanus immunization was 10 years ago"
+   },
+   {
+    "field": "history.conditions",
+    "value": []
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-24": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 52
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "complaint.category",
+    "value": "limb_pain_or_swelling"
+   },
+   {
+    "field": "complaint.text",
+    "value": "aching pain in left leg, sitting in a car for the last 2 days"
+   },
+   {
+    "field": "history.conditions",
+    "value": [
+     "obese"
+    ]
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 36.7
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 86
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 16
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 148
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-26": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 20
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.category",
+    "value": "skin_problem"
+   },
+   {
+    "field": "infection.rash",
+    "value": true
+   },
+   {
+    "field": "complaint.text",
+    "value": "rash in groin area, thinks it's jock rot"
+   },
+   {
+    "field": "M.medications",
+    "value": [
+     "over the counter spray"
+    ]
+   },
+   {
+    "field": "A.allergies",
+    "value": []
+   },
+   {
+    "field": "history.conditions",
+    "value": []
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 36.7
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 58
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 16
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 112
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-29": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 32
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "complaint.category",
+    "value": "injury"
+   },
+   {
+    "field": "complaint.text",
+    "value": "obvious open fracture of right lower leg, +2 pedal pulse"
+   },
+   {
+    "field": "E.mechanism",
+    "value": "fall"
+   },
+   {
+    "field": "limb.cold_pale_blue",
+    "status": "observed",
+    "value": false
+   },
+   {
+    "field": "limb.cannot_move_digits",
+    "status": "observed",
+    "value": false
+   },
+   {
+    "field": "history.conditions",
+    "value": []
+   },
+   {
+    "field": "M.medications",
+    "value": []
+   },
+   {
+    "field": "A.allergies",
+    "value": []
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-34": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 10
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.category",
+    "value": "ear_problem"
+   },
+   {
+    "field": "complaint.text",
+    "value": "swimmer's ear, painful, itchy ears"
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 36.1
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 88
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 18
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 100
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-40": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 25
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "complaint.category",
+    "value": "urinary_problem"
+   },
+   {
+    "field": "complaint.text",
+    "value": "It hurts so much when I urinate"
+   },
+   {
+    "field": "complaint.uti_symptoms",
+    "value": true
+   },
+   {
+    "field": "complaint.fever",
+    "value": false
+   },
+   {
+    "field": "complaint.chills_or_rigors",
+    "value": false
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 36.8
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 66
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 14
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 114
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-46": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 42
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.category",
+    "value": "eye_problem"
+   },
+   {
+    "field": "complaint.text",
+    "value": "something in his right eye. He was cutting tree limbs and thinks something went into his eye."
+   },
+   {
+    "field": "complaint.text",
+    "status": "observed",
+    "value": "right eye is reddened and tearing"
+   },
+   {
+    "field": "complaint.pain_rating",
+    "value": 4
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-47": {
+  "facts": [
+   {
+    "field": "patient.age_days",
+    "value": 21
+   },
+   {
+    "field": "complaint.category",
+    "value": "vomiting_or_diarrhoea"
+   },
+   {
+    "field": "complaint.text",
+    "value": "pediatrician told us to bring the baby to the emergency department to see a surgeon and have some tests. Every time I feed him, he vomits and it just comes flying out. None of my other kids did this."
+   },
+   {
+    "field": "complaint.vomiting",
+    "value": true
+   },
+   {
+    "field": "vitals.abnormal_for_patient",
+    "status": "observed",
+    "value": false
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-54": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 18
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "complaint.category",
+    "value": "request"
+   },
+   {
+    "field": "complaint.text",
+    "value": "had unprotected sex last night, wants a pill to prevent pregnancy"
+   },
+   {
+    "field": "complaint.onset",
+    "value": "last night"
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 36.1
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 78
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 16
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 118
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-56": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 42
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.category",
+    "value": "dizziness"
+   },
+   {
+    "field": "complaint.text",
+    "value": "dizziness and nausea every time he tries to move. I feel okay when I lie perfectly still, but if I start to sit up, turn over, or move my head, the room starts to spin and I have to throw up."
+   },
+   {
+    "field": "complaint.vomiting",
+    "value": true
+   },
+   {
+    "field": "complaint.pain_rating",
+    "value": 0
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 36.2
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 16
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 90
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 130
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 99
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-63": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 9
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.category",
+    "value": "request"
+   },
+   {
+    "field": "complaint.text",
+    "value": "needs a physical for camp"
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-94": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 29
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "complaint.category",
+    "value": "wound"
+   },
+   {
+    "field": "complaint.text",
+    "value": "stepped on a rusty nail this morning, needs a tetanus shot"
+   },
+   {
+    "field": "complaint.onset",
+    "value": "this morning"
+   },
+   {
+    "field": "E.mechanism",
+    "value": "penetrating_trauma"
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-95": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 63
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.category",
+    "value": "other"
+   },
+   {
+    "field": "complaint.text",
+    "value": "feeding tube fell out again"
+   },
+   {
+    "field": "complaint.text",
+    "status": "observed",
+    "value": "cachectic"
+   },
+   {
+    "field": "history.baseline_mental_status",
+    "value": "known"
+   },
+   {
+    "field": "obs.avpu",
+    "status": "observed",
+    "value": "U"
+   },
+   {
+    "field": "history.conditions",
+    "value": [
+     "massive stroke"
+    ]
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-97": {
+  "facts": [
+   {
+    "field": "patient.age_months",
+    "value": 18
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.category",
+    "value": "vomiting_or_diarrhoea"
+   },
+   {
+    "field": "complaint.text",
+    "value": "vomiting"
+   },
+   {
+    "field": "complaint.vomiting",
+    "value": true
+   },
+   {
+    "field": "complaint.fever",
+    "status": "observed",
+    "value": false
+   },
+   {
+    "field": "red_flags.responsive",
+    "status": "observed",
+    "value": true
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-98": {
+  "facts": [
+   {
+    "field": "patient.age_months",
+    "value": 19
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.category",
+    "value": "wound"
+   },
+   {
+    "field": "complaint.text",
+    "value": "cut his lip on the corner of the coffee table. 2-centimeter lip laceration that extends through the vermilion border."
+   },
+   {
+    "field": "E.mechanism",
+    "value": "fall"
+   },
+   {
+    "field": "vitals.abnormal_for_patient",
+    "status": "observed",
+    "value": false
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "A-1": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 34
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.category",
+    "value": "vomiting_or_diarrhoea"
+   },
+   {
+    "field": "complaint.text",
+    "value": "frequent watery stools and abdominal cramping. lips are dry and cracked."
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 36.7
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 22
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 112
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 120
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 100
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "A-2": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 9
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.category",
+    "value": "limb_pain_or_swelling"
+   },
+   {
+    "field": "complaint.text",
+    "value": "fell about 5 feet, landing on his arm. The arm is obviously deformed."
+   },
+   {
+    "field": "E.mechanism",
+    "value": "fall"
+   },
+   {
+    "field": "E.fall_height_meters",
+    "value": 1.5
+   },
+   {
+    "field": "complaint.pain_rating",
+    "value": 5
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 36.7
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 26
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 90
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 99
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "A-4": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 47
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "history.conditions",
+    "value": [
+     "metastatic ovarian cancer"
+    ]
+   },
+   {
+    "field": "complaint.category",
+    "value": "other"
+   },
+   {
+    "field": "complaint.text",
+    "value": "pain medications are not working anymore, couldn't sleep because the pain was so bad"
+   },
+   {
+    "field": "complaint.pain_rating",
+    "value": 9
+   },
+   {
+    "field": "complaint.pain_cause_class",
+    "value": "cancer"
+   },
+   {
+    "field": "vitals.abnormal_for_patient",
+    "status": "observed",
+    "value": false
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "A-5": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 48
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "history.conditions",
+    "value": [
+     "kidney stones"
+    ]
+   },
+   {
+    "field": "complaint.category",
+    "value": "back_pain"
+   },
+   {
+    "field": "complaint.back_pain",
+    "value": "lower"
+   },
+   {
+    "field": "complaint.text",
+    "value": "right costovertebral angle pain that radiates around to the front and into his groin, nauseous, thinks he has another kidney stone"
+   },
+   {
+    "field": "complaint.vomiting",
+    "value": false
+   },
+   {
+    "field": "complaint.pain_rating",
+    "value": 3
+   },
+   {
+    "field": "complaint.pain_cause_class",
+    "value": "renal_colic"
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 36.7
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 16
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 80
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 136
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 100
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "A-7": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 3
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "complaint.category",
+    "value": "limb_pain_or_swelling"
+   },
+   {
+    "field": "complaint.text",
+    "value": "grandfather pulled her by the wrist up and over a big puddle, crying and refusing to move her left arm"
+   },
+   {
+    "field": "vitals.abnormal_for_patient",
+    "status": "observed",
+    "value": false
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "A-8": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 46
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "history.conditions",
+    "value": [
+     "asthma"
+    ]
+   },
+   {
+    "field": "complaint.category",
+    "value": "breathing"
+   },
+   {
+    "field": "complaint.text",
+    "value": "significant respiratory distress, began wheezing earlier in the day and had been using her inhaler with no relief. On her last admission for asthma, she was intubated."
+   },
+   {
+    "field": "complaint.respiratory_distress_signs",
+    "status": "observed",
+    "value": true
+   },
+   {
+    "field": "red_flags.breathing_difficulty",
+    "status": "observed",
+    "value": true
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 44
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 93
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 98
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 154
+   },
+   {
+    "field": "red_flags.responsive",
+    "status": "observed",
+    "value": true
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "A-9": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 56
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "history.conditions",
+    "value": [
+     "late-stage non-Hodgkin\u2019s lymphoma"
+    ]
+   },
+   {
+    "field": "complaint.text",
+    "value": "facial and bilateral arm swelling and increasing shortness of breath. The patient also reports that his symptoms are worse if he lies down."
+   },
+   {
+    "field": "complaint.category",
+    "value": "breathing"
+   },
+   {
+    "field": "complaint.category",
+    "value": "limb_pain_or_swelling"
+   },
+   {
+    "field": "complaint.shortness_of_breath",
+    "value": true
+   },
+   {
+    "field": "complaint.increasing_respiratory_effort",
+    "value": true
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 146
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 122
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 38
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 98
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "A-10": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 28
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "E.mechanism",
+    "value": "penetrating_trauma"
+   },
+   {
+    "field": "E.body_region",
+    "value": "neck"
+   },
+   {
+    "field": "complaint.text",
+    "value": "stabbed in the left side of his neck during an altercation. You notice a large hematoma around the wound, and the patient is moaning he can\u2019t breathe."
+   },
+   {
+    "field": "complaint.category",
+    "value": "wound"
+   },
+   {
+    "field": "complaint.shortness_of_breath",
+    "value": true
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 110
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 36
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 89
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "A-11": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 11
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.text",
+    "value": "cough and runny nose for a week. The child is running around the waiting room and asking his mother for a snack."
+   },
+   {
+    "field": "complaint.onset",
+    "value": "for a week"
+   },
+   {
+    "field": "complaint.category",
+    "value": "breathing"
+   },
+   {
+    "field": "red_flags.responsive",
+    "value": true
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "A-13": {
+  "facts": [
+   {
+    "field": "patient.age_months",
+    "value": 19
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.text",
+    "value": "He has had diarrhea for 2 days, and he just started throwing up this morning. This has been going around the family, and he seems to have it the worst. He has been drinking before today, but now he doesn\u2019t want anything to drink. toddler is awake and alert but quiet in the mother\u2019s arms, and you notice his lips are dry and cracked."
+   },
+   {
+    "field": "complaint.category",
+    "value": "vomiting_or_diarrhoea"
+   },
+   {
+    "field": "complaint.onset",
+    "value": "for 2 days"
+   },
+   {
+    "field": "complaint.vomiting",
+    "value": true
+   },
+   {
+    "field": "infection.contacts",
+    "value": true
+   },
+   {
+    "field": "red_flags.responsive",
+    "value": true
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 37.2
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 30
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 130
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 100
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "A-14": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 87
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "E.mechanism",
+    "value": "fall"
+   },
+   {
+    "field": "complaint.text",
+    "value": "slipped on the ice and injured his right hip. His right leg is shortened and externally rotated. The patient\u2019s only complaint is hip pain."
+   },
+   {
+    "field": "complaint.category",
+    "value": "injury"
+   },
+   {
+    "field": "complaint.pain_rating",
+    "value": 5
+   },
+   {
+    "field": "complaint.possible_pelvis_femur_fracture_or_dislocation",
+    "status": "observed",
+    "value": true
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "A-15": {
+  "facts": [
+   {
+    "field": "patient.age_months",
+    "value": 3
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.text",
+    "value": "My baby is having a hard time drinking his bottle. The baby is alert and looking around. You notice a large amount of dried mucus around both nares."
+   },
+   {
+    "field": "complaint.category",
+    "value": "other"
+   },
+   {
+    "field": "red_flags.responsive",
+    "value": true
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 36.7
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 40
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 132
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 99
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "A-16": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 72
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "complaint.text",
+    "value": "increasingly confused over the last 24 hours."
+   },
+   {
+    "field": "complaint.onset",
+    "value": "over the last 24 hours"
+   },
+   {
+    "field": "complaint.category",
+    "value": "neuro_symptoms"
+   },
+   {
+    "field": "history.baseline_mental_status",
+    "value": "known"
+   },
+   {
+    "field": "ams.changed_from_baseline",
+    "value": true
+   },
+   {
+    "field": "obs.confusion_lethargy_disorientation",
+    "value": true
+   },
+   {
+    "field": "obs.new_confusion_lethargy_disorientation",
+    "value": true
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 37.6
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 86
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 28
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 136
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 94
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "A-17": {
+  "facts": [
+   {
+    "field": "identity.name",
+    "value": "Melissa"
+   },
+   {
+    "field": "patient.age",
+    "value": 4
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "history.conditions",
+    "value": [
+     "ventriculo-peritoneal shunt"
+    ]
+   },
+   {
+    "field": "complaint.text",
+    "value": "concerned that the shunt may be blocked because Melissa is not acting right. The child is sleepy but responds to verbal stimuli. head hurts and she is going to throw up."
+   },
+   {
+    "field": "complaint.category",
+    "value": "neuro_symptoms"
+   },
+   {
+    "field": "complaint.category",
+    "value": "headache"
+   },
+   {
+    "field": "obs.subtle_mental_status_change",
+    "value": true
+   },
+   {
+    "field": "obs.avpu",
+    "status": "observed",
+    "value": "V"
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 37
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 22
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 120
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 99
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 94
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "A-18": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 62
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "history.conditions",
+    "value": [
+     "myocardial infarction"
+    ]
+   },
+   {
+    "field": "complaint.category",
+    "value": "chest_pain"
+   },
+   {
+    "field": "complaint.onset",
+    "value": "an hour ago"
+   },
+   {
+    "field": "complaint.text",
+    "value": "chest pressure"
+   },
+   {
+    "field": "complaint.acs_suspicion",
+    "status": "observed",
+    "value": true
+   },
+   {
+    "field": "vitals.ecg_abnormal",
+    "status": "observed",
+    "value": true
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 106
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 28
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 72
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 95
+   },
+   {
+    "field": "obs.hypoperfusion_signs",
+    "status": "observed",
+    "value": true
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "A-19": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 64
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "history.conditions",
+    "value": [
+     "knee replacement"
+    ]
+   },
+   {
+    "field": "complaint.category",
+    "value": "limb_pain_or_swelling"
+   },
+   {
+    "field": "complaint.text",
+    "value": "knee is red, swollen and tender to touch"
+   },
+   {
+    "field": "complaint.pain_rating",
+    "value": 6
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 37.2
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 20
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 74
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 164
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 97
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "A-20": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 29
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.category",
+    "value": "other"
+   },
+   {
+    "field": "complaint.onset",
+    "value": "for the last 12 hours"
+   },
+   {
+    "field": "complaint.text",
+    "value": "thing stuck in rectum"
+   },
+   {
+    "field": "complaint.pain_rating",
+    "value": 4
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "A-21": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 67
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "complaint.category",
+    "value": "fever"
+   },
+   {
+    "field": "complaint.fever",
+    "value": true
+   },
+   {
+    "field": "complaint.onset",
+    "value": "for 3 days"
+   },
+   {
+    "field": "complaint.text",
+    "value": "coughing up thick green phlegm, concerned that she has pneumonia"
+   },
+   {
+    "field": "history.conditions",
+    "value": [
+     "HTN"
+    ]
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 38.9
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 28
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 86
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 140
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 94
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "A-22": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 14
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.category",
+    "value": "injury"
+   },
+   {
+    "field": "complaint.text",
+    "value": "left upper-quadrant pain and left thigh pain, snowboarding accident"
+   },
+   {
+    "field": "complaint.possible_pelvis_femur_fracture_or_dislocation",
+    "status": "observed",
+    "value": true
+   },
+   {
+    "field": "red_flags.responsive",
+    "status": "observed",
+    "value": true
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 112
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 86
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 14
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 98
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "A-23": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 48
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "history.conditions",
+    "value": [
+     "ovarian cysts"
+    ]
+   },
+   {
+    "field": "complaint.category",
+    "value": "other"
+   },
+   {
+    "field": "complaint.onset",
+    "value": "this morning"
+   },
+   {
+    "field": "complaint.text",
+    "value": "worried about rabies after finding a bat flying in bedroom"
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "A-24": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 74
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.category",
+    "value": "abdominal_pain"
+   },
+   {
+    "field": "complaint.text",
+    "value": "severe mid-abdominal pain"
+   },
+   {
+    "field": "M.medications",
+    "value": [
+     "high blood pressure medication"
+    ]
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 140
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 28
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 72
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 94
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "A-25": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 29
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "complaint.category",
+    "value": "eye_problem"
+   },
+   {
+    "field": "complaint.onset",
+    "value": "this morning"
+   },
+   {
+    "field": "complaint.text",
+    "value": "eyes are all red and crusty"
+   },
+   {
+    "field": "infection.contacts",
+    "value": true
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "B-1": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 19
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.category",
+    "value": "injury"
+   },
+   {
+    "field": "complaint.text",
+    "value": "involved in a bicycle accident. He lost control of his bike when he hit a pothole. He has a 2-centimeter laceration on his arm and pain over his left clavicle."
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 36.3
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 18
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 62
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 122
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 100
+   },
+   {
+    "field": "complaint.pain_rating",
+    "value": 6
+   },
+   {
+    "field": "E.mechanism",
+    "value": "road_accident"
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "B-2": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 18
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "complaint.category",
+    "value": "other"
+   },
+   {
+    "field": "complaint.text",
+    "value": "she was sexually assaulted last night at an off- campus party."
+   },
+   {
+    "field": "complaint.onset",
+    "value": "last night"
+   },
+   {
+    "field": "complaint.sexual_assault",
+    "value": true
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "B-4": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 54
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "history.conditions",
+    "value": [
+     "diabetic"
+    ]
+   },
+   {
+    "field": "complaint.category",
+    "value": "skin_problem"
+   },
+   {
+    "field": "complaint.text",
+    "value": "have my boil checked. He lanced it yesterday and packed some stuff in it. He said he just want to make sure it is healing OK"
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 36.7
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 16
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 64
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 142
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 98
+   },
+   {
+    "field": "complaint.pain_rating",
+    "value": 2
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "B-5": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 16
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.category",
+    "value": "injury"
+   },
+   {
+    "field": "complaint.text",
+    "value": "collapsed on the ice after being hit in the anterior chest by the puck. The coaching staff began CPR almost immediately, and he was defibrillated three times with a return of spontaneous circulation."
+   },
+   {
+    "field": "obs.intubated",
+    "status": "observed",
+    "value": true
+   },
+   {
+    "field": "obs.cardiac_or_pulmonary_arrest",
+    "status": "observed",
+    "value": true
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "B-7": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 55
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "complaint.category",
+    "value": "ear_problem"
+   },
+   {
+    "field": "complaint.text",
+    "value": "A bug flew into my right ear while I was gardening. I tried to get it out by using a Q-tip. I just don\u2019t know what else to do, but this buzzing noise is driving me crazy"
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "B-9": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 56
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "history.conditions",
+    "value": [
+     "HTN",
+     "high cholesterol"
+    ]
+   },
+   {
+    "field": "complaint.category",
+    "value": "eye_problem"
+   },
+   {
+    "field": "complaint.text",
+    "value": "I was having breakfast with my wife, and all of a sudden I couldn\u2019t see out of my right eye. It lasted about 5 minutes. I\u2019m just scared because I\u2019ve never had anything like this happen before"
+   },
+   {
+    "field": "complaint.onset",
+    "value": "all of a sudden"
+   },
+   {
+    "field": "complaint.stroke_signs",
+    "value": true
+   },
+   {
+    "field": "stroke.vision_change",
+    "value": true
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "B-10": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 43
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "history.conditions",
+    "value": [
+     "colitis"
+    ]
+   },
+   {
+    "field": "complaint.category",
+    "value": "injury"
+   },
+   {
+    "field": "complaint.text",
+    "value": "twisted my ankle as I stepped off the curb. I don\u2019t think it\u2019s broken, but it hurts so much"
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 36.7
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 72
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 18
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 134
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 100
+   },
+   {
+    "field": "complaint.pain_rating",
+    "value": 8
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "B-11": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 16
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "complaint.category",
+    "value": "poisoning_or_overdose"
+   },
+   {
+    "field": "complaint.text",
+    "value": "took more than 30 acetaminophen tablets about 30 minutes before admission. The tearful girl tells you that her boyfriend broke up with her this morning."
+   },
+   {
+    "field": "complaint.onset",
+    "value": "about 30 minutes before admission"
+   },
+   {
+    "field": "complaint.known_toxic_ingestion",
+    "value": true
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "B-12": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 26
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "complaint.text",
+    "value": "My colitis is acting up. It started with an increased number of stools, and now I am cramping a lot. My gastroenterologist told me to come to the emergency department to be evaluated."
+   },
+   {
+    "field": "history.conditions",
+    "value": [
+     "colitis"
+    ]
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 36.1
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 18
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 68
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 112
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 100
+   },
+   {
+    "field": "complaint.pain_rating",
+    "value": 6
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "B-13": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 15
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.text",
+    "value": "I was so disappointed about not making the varsity soccer team that I punched a wall. His hand is swollen and tender to touch."
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 36.1
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 16
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 58
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 106
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 100
+   },
+   {
+    "field": "complaint.pain_rating",
+    "value": 5
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "B-14": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 46
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "history.conditions",
+    "value": [
+     "sickle cell disease"
+    ]
+   },
+   {
+    "field": "complaint.text",
+    "value": "presents to the emergency department because of a crisis. She has pain in her lower legs that began 8 hours ago, and the pain medication she is taking is not working."
+   },
+   {
+    "field": "complaint.onset",
+    "value": "8 hours ago"
+   },
+   {
+    "field": "complaint.pain_rating",
+    "value": 8
+   },
+   {
+    "field": "complaint.pain_cause_class",
+    "value": "sickle_cell_crisis"
+   },
+   {
+    "field": "M.medications",
+    "value": [
+     "folate",
+     "vicodin"
+    ]
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "B-15": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 54
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "M.anticoagulant",
+    "value": true
+   },
+   {
+    "field": "history.conditions",
+    "value": [
+     "clots in his legs"
+    ]
+   },
+   {
+    "field": "complaint.text",
+    "value": "pain and swelling in his lower leg. It started out just being sore, but now I can hardly walk on it."
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "B-16": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 65
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "complaint.text",
+    "value": "brought in for replacement of her PEG tube. Her condition is unchanged, and she is a do not resuscitate/do not intubate."
+   },
+   {
+    "field": "history.conditions",
+    "value": [
+     "massive stroke 3 years ago",
+     "aphasic"
+    ]
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "B-17": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 26
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "complaint.text",
+    "value": "can't get an appointment with her therapist. She went home for the holidays, and the visit brought back many issues from her childhood. She is unable to sleep and has been drinking more than usual."
+   },
+   {
+    "field": "complaint.danger_to_self_or_others",
+    "value": true
+   },
+   {
+    "field": "history.conditions",
+    "value": [
+     "previous suicide attempts"
+    ]
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "B-20": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 21
+   },
+   {
+    "field": "complaint.text",
+    "value": "single gunshot wound to the left chest"
+   },
+   {
+    "field": "E.mechanism",
+    "value": "penetrating_trauma"
+   },
+   {
+    "field": "E.body_region",
+    "value": "chest"
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 78
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 148
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 36
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 96
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "B-21": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 51
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.text",
+    "value": "redness and swelling of his right hand. He reports being scratched by his cat yesterday."
+   },
+   {
+    "field": "complaint.onset",
+    "value": "yesterday"
+   },
+   {
+    "field": "history.conditions",
+    "value": [
+     "gastroesophageal reflux disease"
+    ]
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 121
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 118
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 18
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 38.8
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 98
+   },
+   {
+    "field": "complaint.pain_rating",
+    "value": 5
+   },
+   {
+    "field": "complaint.fever",
+    "value": true
+   },
+   {
+    "field": "complaint.infection_signs",
+    "value": true
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "B-22": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 52
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "complaint.category",
+    "value": "poisoning_or_overdose"
+   },
+   {
+    "field": "complaint.text",
+    "value": "overdose. The patient took eight 75 mg tabs of wellbutrin because her husband left her for another woman, and now she wants to die."
+   },
+   {
+    "field": "complaint.onset",
+    "value": "2 hours ago"
+   },
+   {
+    "field": "complaint.known_toxic_ingestion",
+    "value": true
+   },
+   {
+    "field": "complaint.danger_to_self_or_others",
+    "value": true
+   },
+   {
+    "field": "complaint.severe_psychological_distress",
+    "value": true
+   },
+   {
+    "field": "obs.avpu",
+    "status": "observed",
+    "value": "A"
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "B-24": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 10
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.category",
+    "value": "abdominal_pain"
+   },
+   {
+    "field": "complaint.text",
+    "value": "has not moved his bowels for a week. generalized abdominal pain, nausea, and lack of appetite."
+   },
+   {
+    "field": "complaint.pain_rating",
+    "value": 7
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 107
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 75
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 20
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 37
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 99
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "B-25": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 22
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "complaint.category",
+    "value": "breathing"
+   },
+   {
+    "field": "complaint.text",
+    "value": "wheezing. sitting upright on the ambulance stretcher leaning forward with an albuterol nebulizer underway. diaphoretic, working hard at breathing and unable to answer your questions. EMS tells you that they think she is tiring out."
+   },
+   {
+    "field": "complaint.onset",
+    "value": "earlier this morning"
+   },
+   {
+    "field": "complaint.respiratory_distress_signs",
+    "value": true
+   },
+   {
+    "field": "complaint.increasing_respiratory_effort",
+    "value": true
+   },
+   {
+    "field": "history.conditions",
+    "value": [
+     "asthma"
+    ]
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 48
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 94
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-2": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 18
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "complaint.category",
+    "value": "poisoning_or_overdose"
+   },
+   {
+    "field": "complaint.text",
+    "value": "suspected medication overdose. lethargic and \u201cnot acting right\u201d. multiple superficial lacerations to both wrists."
+   },
+   {
+    "field": "complaint.known_toxic_ingestion",
+    "value": true
+   },
+   {
+    "field": "ams.changed_from_baseline",
+    "value": true
+   },
+   {
+    "field": "obs.confusion_lethargy_disorientation",
+    "value": true
+   },
+   {
+    "field": "complaint.danger_to_self_or_others",
+    "value": true
+   },
+   {
+    "field": "history.conditions",
+    "value": [
+     "depression"
+    ]
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 10
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 86
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-6": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 32
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "complaint.category",
+    "value": "breathing"
+   },
+   {
+    "field": "complaint.text",
+    "value": "shortness of breath. smoker."
+   },
+   {
+    "field": "complaint.onset",
+    "value": "several hours"
+   },
+   {
+    "field": "complaint.shortness_of_breath",
+    "value": true
+   },
+   {
+    "field": "M.medications",
+    "value": [
+     "vitamins",
+     "birth control pills"
+    ]
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 32
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 96
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 126
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 93
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 37
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-8": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 7
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.category",
+    "value": "abdominal_pain"
+   },
+   {
+    "field": "complaint.text",
+    "value": "stomach ache. He refused to walk downstairs and is not interested in eating or playing."
+   },
+   {
+    "field": "complaint.onset",
+    "value": "woke up"
+   },
+   {
+    "field": "complaint.pain_rating",
+    "value": 6
+   },
+   {
+    "field": "complaint.vomiting",
+    "value": true
+   },
+   {
+    "field": "obs.subtle_mental_status_change",
+    "value": true
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 38
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 22
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 88
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 84
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 100
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-11": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 4
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "complaint.category",
+    "value": "head_injury"
+   },
+   {
+    "field": "complaint.text",
+    "value": "fall off the jungle gym at a preschool. A fall of 4 feet. crying and asking for her mother. left arm is splinted."
+   },
+   {
+    "field": "E.mechanism",
+    "value": "fall"
+   },
+   {
+    "field": "E.head_strike",
+    "value": true
+   },
+   {
+    "field": "E.loc",
+    "value": true
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 162
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 38
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-14": {
+  "facts": [
+   {
+    "field": "patient.age_days",
+    "value": 14
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.category",
+    "value": "fever"
+   },
+   {
+    "field": "complaint.text",
+    "value": "Uncomplicated, vaginal delivery. The baby is acting appropriately."
+   },
+   {
+    "field": "complaint.fever",
+    "value": true
+   },
+   {
+    "field": "red_flags.responsive",
+    "value": true
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 38.3
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 154
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 42
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 100
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-15": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 34
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "history.postpartum",
+    "value": true
+   },
+   {
+    "field": "complaint.text",
+    "value": "My right breast is so sore, my nipples are cracked, and now I have a fever. Do you think I will have to stop nursing my baby?"
+   },
+   {
+    "field": "complaint.fever",
+    "value": true
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 39.3
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 90
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 18
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 108
+   },
+   {
+    "field": "complaint.pain_rating",
+    "value": 5
+   },
+   {
+    "field": "M.medications",
+    "value": [
+     "multivitamins"
+    ]
+   },
+   {
+    "field": "A.allergies",
+    "value": [
+     "penicillin"
+    ]
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-16": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 16
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "E.mechanism",
+    "value": "road_accident"
+   },
+   {
+    "field": "complaint.text",
+    "value": "moaning but moving all extremities"
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 74
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 132
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 36
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 99
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 37
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-17": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 45
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "history.conditions",
+    "value": [
+     "asthma"
+    ]
+   },
+   {
+    "field": "complaint.text",
+    "value": "cold for week. She started wheezing a few days ago and then developed a cough and a fever of 103."
+   },
+   {
+    "field": "complaint.fever",
+    "value": true
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 38.7
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 92
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 24
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 148
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 97
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-22": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 26
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "complaint.text",
+    "value": "The smoke was so bad; I just couldn\u2019t breathe. hoarse and complaining of a sore throat and a cough."
+   },
+   {
+    "field": "complaint.category",
+    "value": "breathing"
+   },
+   {
+    "field": "complaint.category",
+    "value": "sore_throat"
+   },
+   {
+    "field": "complaint.respiratory_distress_signs",
+    "status": "observed",
+    "value": true
+   },
+   {
+    "field": "history.conditions",
+    "value": [
+     "asthma"
+    ]
+   },
+   {
+    "field": "M.medications",
+    "value": [
+     "inhalers"
+    ]
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 36.7
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 40
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 114
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 108
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-23": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 27
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "history.pregnant",
+    "value": true
+   },
+   {
+    "field": "complaint.text",
+    "value": "every time I try to eat something, I throw up. Lips are dry and cracked."
+   },
+   {
+    "field": "complaint.vomiting",
+    "value": true
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 36.1
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 18
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 104
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 104
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 99
+   },
+   {
+    "field": "complaint.pain_rating",
+    "value": 0
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-27": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 17
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "E.mechanism",
+    "value": "road_accident"
+   },
+   {
+    "field": "complaint.category",
+    "value": "abdominal_pain"
+   },
+   {
+    "field": "complaint.category",
+    "value": "injury"
+   },
+   {
+    "field": "complaint.text",
+    "value": "complaining of abdominal pain. He has multiple lacerations on his left arm."
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 102
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 86
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 28
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 96
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-28": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 27
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.category",
+    "value": "request"
+   },
+   {
+    "field": "complaint.category",
+    "value": "back_pain"
+   },
+   {
+    "field": "complaint.text",
+    "value": "I just need another prescription for pain medication. I was here 10 days ago and ran out. I hurt my back at work, and it\u2019s still bothering me."
+   },
+   {
+    "field": "complaint.onset",
+    "value": "10 days ago"
+   },
+   {
+    "field": "complaint.pain_rating",
+    "value": 10
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-31": {
+  "facts": [
+   {
+    "field": "patient.age_group",
+    "value": "adult"
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.category",
+    "value": "injury"
+   },
+   {
+    "field": "complaint.text",
+    "value": "left hand wrapped in a bloody cloth. I was using my table saw, and my hand slipped. I think I lost of couple of fingertips."
+   },
+   {
+    "field": "complaint.amputation_partial_or_complete",
+    "value": true
+   },
+   {
+    "field": "complaint.pain_rating",
+    "value": 6
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-32": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 27
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "complaint.category",
+    "value": "abdominal_pain"
+   },
+   {
+    "field": "complaint.text",
+    "value": "low abdominal pain, spotting, last menstrual period was 7 weeks ago"
+   },
+   {
+    "field": "complaint.pain_rating",
+    "value": 6
+   },
+   {
+    "field": "complaint.onset",
+    "value": "about 4 days"
+   },
+   {
+    "field": "complaint.vaginal_bleeding",
+    "value": true
+   },
+   {
+    "field": "complaint.vomiting",
+    "value": false
+   },
+   {
+    "field": "complaint.uti_symptoms",
+    "value": false
+   },
+   {
+    "field": "history.conditions",
+    "value": [
+     "previous ectopic pregnancy"
+    ]
+   },
+   {
+    "field": "complaint.possible_ectopic_pregnancy",
+    "value": true
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 36.7
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 66
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 14
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 106
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-33": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 47
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "complaint.category",
+    "value": "limb_pain_or_swelling"
+   },
+   {
+    "field": "complaint.text",
+    "value": "right leg is swollen, calf hurts"
+   },
+   {
+    "field": "complaint.pain_rating",
+    "value": 6
+   },
+   {
+    "field": "complaint.shortness_of_breath",
+    "value": false
+   },
+   {
+    "field": "history.conditions",
+    "value": [
+     "type 2 diabetes",
+     "HTN",
+     "morbid obesity"
+    ]
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 36.7
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 24
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 78
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 158
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 98
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-35": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 54
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "complaint.category",
+    "value": "other"
+   },
+   {
+    "field": "complaint.text",
+    "value": "did not go to dialysis yesterday because she was feeling too weak"
+   },
+   {
+    "field": "complaint.onset",
+    "value": "yesterday"
+   },
+   {
+    "field": "history.conditions",
+    "value": [
+     "chronic renal failure"
+    ]
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-37": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 21
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "complaint.category",
+    "value": "other"
+   },
+   {
+    "field": "complaint.text",
+    "value": "I just don't feel right, rapid heart rate, funny pressure feeling in my chest, skin is cool and diaphoretic"
+   },
+   {
+    "field": "complaint.shortness_of_breath",
+    "value": true
+   },
+   {
+    "field": "obs.hypoperfusion_signs",
+    "status": "observed",
+    "value": true
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 178
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 32
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 82
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-38": {
+  "facts": [
+   {
+    "field": "patient.age_days",
+    "value": 4
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "complaint.category",
+    "value": "other"
+   },
+   {
+    "field": "complaint.text",
+    "value": "noticed a little blood on diaper, nursing well"
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-39": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 36
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.category",
+    "value": "eye_problem"
+   },
+   {
+    "field": "complaint.text",
+    "value": "got some sawdust in left eye, it hurts and won't stop tearing"
+   },
+   {
+    "field": "complaint.atso_elements_count",
+    "value": 1
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-41": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 19
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.category",
+    "value": "breathing"
+   },
+   {
+    "field": "complaint.text",
+    "value": "had a coughing fit, now feel short of breath"
+   },
+   {
+    "field": "complaint.onset",
+    "value": "now"
+   },
+   {
+    "field": "complaint.shortness_of_breath",
+    "value": true
+   },
+   {
+    "field": "complaint.pain_rating",
+    "value": 0
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 36.7
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 102
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 36
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 128
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 92
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-45": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 26
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "complaint.category",
+    "value": "vaginal_bleeding"
+   },
+   {
+    "field": "complaint.text",
+    "value": "bleeding like I have my period, crampy pain"
+   },
+   {
+    "field": "complaint.vaginal_bleeding",
+    "value": true
+   },
+   {
+    "field": "history.pregnant",
+    "value": true
+   },
+   {
+    "field": "complaint.possible_ectopic_pregnancy",
+    "value": true
+   },
+   {
+    "field": "complaint.pain_rating",
+    "value": 1
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 110
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 72
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 18
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 99
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 37
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-48": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 34
+   },
+   {
+    "field": "history.postpartum",
+    "value": true
+   },
+   {
+    "field": "complaint.text",
+    "value": "suddenly started bleeding and passing clots the size of oranges. pale. Can I lie down before I pass out?"
+   },
+   {
+    "field": "complaint.vaginal_bleeding",
+    "value": true
+   },
+   {
+    "field": "complaint.heavy_vaginal_bleeding",
+    "value": true
+   },
+   {
+    "field": "ob.heavy_bleeding",
+    "value": true
+   },
+   {
+    "field": "complaint.postpartum_hemorrhage",
+    "value": true
+   },
+   {
+    "field": "red_flags.heavy_bleeding",
+    "value": true
+   },
+   {
+    "field": "complaint.category",
+    "value": "vaginal_bleeding"
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 86
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 132
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 22
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 98
+   },
+   {
+    "field": "obs.hypoperfusion_signs",
+    "status": "observed",
+    "value": true
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-49": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 39
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "history.conditions",
+    "value": [
+     "asthma"
+    ]
+   },
+   {
+    "field": "complaint.text",
+    "value": "I have had a cold for a few days, and today I started wheezing. When this happens, I just need one of those breathing treatments"
+   },
+   {
+    "field": "complaint.onset",
+    "value": "today"
+   },
+   {
+    "field": "complaint.category",
+    "value": "breathing"
+   },
+   {
+    "field": "M.medications",
+    "value": [
+     "none"
+    ]
+   },
+   {
+    "field": "A.allergies",
+    "value": [
+     "none"
+    ]
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 36.7
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 22
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 88
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 130
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 99
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-52": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 33
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "history.conditions",
+    "value": [
+     "gastric bypass",
+     "obese"
+    ]
+   },
+   {
+    "field": "complaint.text",
+    "value": "gastric bypass 3 weeks ago and have been doing fine, but today I started vomiting and having this belly pain"
+   },
+   {
+    "field": "complaint.onset",
+    "value": "today"
+   },
+   {
+    "field": "complaint.pain_rating",
+    "value": 6
+   },
+   {
+    "field": "complaint.vomiting",
+    "value": true
+   },
+   {
+    "field": "complaint.category",
+    "value": "vomiting_or_diarrhoea"
+   },
+   {
+    "field": "complaint.category",
+    "value": "abdominal_pain"
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 126
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 76
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 14
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 36.7
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-53": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 23
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "history.conditions",
+    "value": [
+     "obese"
+    ]
+   },
+   {
+    "field": "history.postpartum",
+    "value": true
+   },
+   {
+    "field": "complaint.text",
+    "value": "exhausted. climb the stairs, and I am so short of breath when I get to the top that I have to sit down, and now my ankles are swollen"
+   },
+   {
+    "field": "complaint.shortness_of_breath",
+    "value": true
+   },
+   {
+    "field": "complaint.category",
+    "value": "breathing"
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-55": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 76
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "history.conditions",
+    "value": [
+     "chronic obstructive pulmonary disease"
+    ]
+   },
+   {
+    "field": "M.medications",
+    "value": [
+     "several metered-dose inhalers"
+    ]
+   },
+   {
+    "field": "complaint.text",
+    "value": "requests to see a doctor because his toenails are hard. unable to cut his own toenails"
+   },
+   {
+    "field": "complaint.infection_signs",
+    "value": false
+   },
+   {
+    "field": "complaint.category",
+    "value": "request"
+   },
+   {
+    "field": "vitals.abnormal_for_patient",
+    "status": "observed",
+    "value": false
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-57": {
+  "facts": [
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "E.mechanism",
+    "value": "road_accident"
+   },
+   {
+    "field": "complaint.text",
+    "value": "right thigh pain. laceration on her left hand and an abrasion on her left knee"
+   },
+   {
+    "field": "complaint.category",
+    "value": "limb_pain_or_swelling"
+   },
+   {
+    "field": "history.conditions",
+    "value": [
+     "none"
+    ]
+   },
+   {
+    "field": "M.medications",
+    "value": [
+     "none"
+    ]
+   },
+   {
+    "field": "A.allergies",
+    "value": [
+     "none"
+    ]
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 110
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 72
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 16
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-58": {
+  "facts": [
+   {
+    "field": "history.conditions",
+    "value": [
+     "significant cardiac history",
+     "internal defibrillator"
+    ]
+   },
+   {
+    "field": "M.medications",
+    "value": [
+     "multiple medications",
+     "amiodarone"
+    ]
+   },
+   {
+    "field": "complaint.text",
+    "value": "internal defibrillator gave me a shock this morning when I was eating breakfast. Really scared me!"
+   },
+   {
+    "field": "complaint.onset",
+    "value": "this morning"
+   },
+   {
+    "field": "complaint.category",
+    "value": "other"
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 36.9
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 20
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 90
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 120
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-59": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 52
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "history.conditions",
+    "value": [
+     "obese"
+    ]
+   },
+   {
+    "field": "complaint.text",
+    "value": "pressure in my chest. I was shoveling that wet snow, and I may have overdone it. nauseous"
+   },
+   {
+    "field": "complaint.onset",
+    "value": "about an hour ago"
+   },
+   {
+    "field": "complaint.pain_rating",
+    "value": 10
+   },
+   {
+    "field": "complaint.shortness_of_breath",
+    "value": true
+   },
+   {
+    "field": "red_flags.chest_pain_now",
+    "value": true
+   },
+   {
+    "field": "complaint.category",
+    "value": "chest_pain"
+   },
+   {
+    "field": "obs.hypoperfusion_signs",
+    "status": "observed",
+    "value": true
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 86
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 52
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-60": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 42
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "complaint.category",
+    "value": "breathing"
+   },
+   {
+    "field": "complaint.text",
+    "value": "metastatic breast cancer, bring her in today to have more fluid drained off her lungs. The fluid buildup is making it harder for her to breathe. cachectic"
+   },
+   {
+    "field": "history.conditions",
+    "value": [
+     "metastatic breast cancer"
+    ]
+   },
+   {
+    "field": "M.medications",
+    "value": [
+     "multiple medications"
+    ]
+   },
+   {
+    "field": "complaint.shortness_of_breath",
+    "value": true
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 37
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 34
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 95
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 92
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 114
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-61": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 58
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.category",
+    "value": "abdominal_pain"
+   },
+   {
+    "field": "complaint.text",
+    "value": "left lower-quadrant abdominal pain. He denies nausea, vomiting, or diarrhea. No change in appetite."
+   },
+   {
+    "field": "complaint.onset",
+    "value": "for 3 days"
+   },
+   {
+    "field": "history.conditions",
+    "value": [
+     "HTN"
+    ]
+   },
+   {
+    "field": "complaint.unilateral_lower_quadrant_pain",
+    "value": true
+   },
+   {
+    "field": "complaint.vomiting",
+    "value": false
+   },
+   {
+    "field": "complaint.pain_rating",
+    "value": 5
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 37.8
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 18
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 80
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 140
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 98
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-62": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 2
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.category",
+    "value": "ear_problem"
+   },
+   {
+    "field": "complaint.text",
+    "value": "another ear infection, He's pulling on his right ear. trying to grab your stethoscope. normal appetite and urine output"
+   },
+   {
+    "field": "history.conditions",
+    "value": [
+     "frequent ear infections"
+    ]
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 37.9
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-64": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 18
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "complaint.category",
+    "value": "pregnancy_related"
+   },
+   {
+    "field": "complaint.text",
+    "value": "had sex, and we used a condom but it broke. I just don't want to get pregnant. teary. Vital signs are within normal limits."
+   },
+   {
+    "field": "complaint.onset",
+    "value": "Last night"
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-65": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 19
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "complaint.category",
+    "value": "fever"
+   },
+   {
+    "field": "complaint.category",
+    "value": "sore_throat"
+   },
+   {
+    "field": "complaint.text",
+    "value": "fever and a sore throat. I have finals this week, and I am scared this is strep. sitting at triage drinking bottled water. no allergies to medications."
+   },
+   {
+    "field": "complaint.fever",
+    "value": true
+   },
+   {
+    "field": "M.medications",
+    "value": [
+     "birth control pills"
+    ]
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 38.1
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 88
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 18
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 112
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-66": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 84
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.category",
+    "value": "dizziness"
+   },
+   {
+    "field": "complaint.text",
+    "value": "passed out in the bathroom. third-degree heart block with a rate in the 20s and a blood pressure in the 60s. externally pacing him at a rate of 60 with an MA in the 50s. now alert, oriented, and asking to see his wife."
+   },
+   {
+    "field": "E.loc",
+    "value": true
+   },
+   {
+    "field": "red_flags.responsive",
+    "status": "observed",
+    "value": true
+   },
+   {
+    "field": "obs.avpu",
+    "status": "observed",
+    "value": "A"
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-67": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 16
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.category",
+    "value": "head_injury"
+   },
+   {
+    "field": "complaint.text",
+    "value": "wearing a swimsuit. dove into a pool, and his face struck the bottom. abrasion on his forehead and nose. tingling in both hands."
+   },
+   {
+    "field": "E.head_strike",
+    "value": true
+   },
+   {
+    "field": "limb.numb_tingling",
+    "value": true
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-68": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 25
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "complaint.category",
+    "value": "abdominal_pain"
+   },
+   {
+    "field": "complaint.category",
+    "value": "fever"
+   },
+   {
+    "field": "complaint.category",
+    "value": "vaginal_bleeding"
+   },
+   {
+    "field": "complaint.text",
+    "value": "moderate lower abdominal pain with a fever and chills. therapeutic abortion at a local clinic. minimal vaginal bleeding"
+   },
+   {
+    "field": "complaint.onset",
+    "value": "Two days ago"
+   },
+   {
+    "field": "complaint.fever",
+    "value": true
+   },
+   {
+    "field": "complaint.chills_or_rigors",
+    "value": true
+   },
+   {
+    "field": "complaint.vaginal_bleeding",
+    "value": true
+   },
+   {
+    "field": "complaint.heavy_vaginal_bleeding",
+    "value": false
+   },
+   {
+    "field": "ob.heavy_bleeding",
+    "value": false
+   },
+   {
+    "field": "complaint.pain_rating",
+    "value": 5
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 38.2
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 20
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 92
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 118
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 99
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-69": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 17
+   },
+   {
+    "field": "complaint.category",
+    "value": "injury"
+   },
+   {
+    "field": "complaint.text",
+    "value": "single gunshot wound to the left chest"
+   },
+   {
+    "field": "E.mechanism",
+    "value": "penetrating_trauma"
+   },
+   {
+    "field": "E.body_region",
+    "value": "chest"
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 78
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 130
+   },
+   {
+    "field": "obs.avpu",
+    "status": "observed",
+    "value": "A"
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-70": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 34
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "patient.has_ovaries",
+    "value": true
+   },
+   {
+    "field": "complaint.category",
+    "value": "eye_problem"
+   },
+   {
+    "field": "complaint.text",
+    "value": "hit in the eye with a baseball. redness and swelling in the periorbital area. no obvious signs of trauma to the globe."
+   },
+   {
+    "field": "E.loc",
+    "value": false
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-71": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 76
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.category",
+    "value": "abdominal_pain"
+   },
+   {
+    "field": "complaint.text",
+    "value": "severe abdominal pain, feels like someone is ripping me apart. sitting in a wheelchair moaning in pain."
+   },
+   {
+    "field": "complaint.onset",
+    "value": "about 30 minutes prior to admission"
+   },
+   {
+    "field": "complaint.pain_rating",
+    "value": 20
+   },
+   {
+    "field": "history.conditions",
+    "value": [
+     "HTN"
+    ]
+   },
+   {
+    "field": "M.medications",
+    "value": [
+     "diuretic"
+    ]
+   },
+   {
+    "field": "obs.hypoperfusion_signs",
+    "status": "observed",
+    "value": true
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 122
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 88
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 24
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 94
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-72": {
+  "facts": [
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "patient.has_ovaries",
+    "value": true
+   },
+   {
+    "field": "complaint.category",
+    "value": "abdominal_pain"
+   },
+   {
+    "field": "complaint.text",
+    "value": "6 weeks post laparoscopic gastric bypass. abdominal pain with nausea and vomiting of pureed food. decrease in fluid intake, unable to take supplements because of vomiting."
+   },
+   {
+    "field": "complaint.onset",
+    "value": "Two days ago"
+   },
+   {
+    "field": "complaint.vomiting",
+    "value": true
+   },
+   {
+    "field": "complaint.pain_rating",
+    "value": 4
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 36.6
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 20
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 90
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 110
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 99
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-73": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 26
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "patient.has_ovaries",
+    "value": true
+   },
+   {
+    "field": "complaint.category",
+    "value": "mental_health"
+   },
+   {
+    "field": "complaint.text",
+    "value": "needs to go into detox again. clean for 18 months but started using heroin again 2 weeks ago when boyfriend broke up with her. called several detox centers with no luck finding a bed. calm and cooperative."
+   },
+   {
+    "field": "complaint.onset",
+    "value": "2 weeks ago"
+   },
+   {
+    "field": "complaint.danger_to_self_or_others",
+    "value": false
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-74": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 19
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "patient.has_ovaries",
+    "value": true
+   },
+   {
+    "field": "complaint.category",
+    "value": "sore_throat"
+   },
+   {
+    "field": "complaint.text",
+    "value": "throat is on fire, can barely swallow, voice is different, big swelling on one side of throat."
+   },
+   {
+    "field": "complaint.onset",
+    "value": "a couple of days ago"
+   },
+   {
+    "field": "complaint.fever",
+    "value": true
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 38.7
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 24
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 92
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 122
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 100
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-75": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 76
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "patient.has_ovaries",
+    "value": true
+   },
+   {
+    "field": "complaint.category",
+    "value": "wound"
+   },
+   {
+    "field": "complaint.text",
+    "value": "open area on the palm of her hand that is red, tender, and swollen."
+   },
+   {
+    "field": "complaint.infection_signs",
+    "value": true
+   },
+   {
+    "field": "complaint.fever",
+    "value": false
+   },
+   {
+    "field": "history.conditions",
+    "value": [
+     "arthritis",
+     "chronic renal failure",
+     "diabetes"
+    ]
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 72
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 16
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 102
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-78": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 34
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "patient.has_ovaries",
+    "value": true
+   },
+   {
+    "field": "complaint.category",
+    "value": "other"
+   },
+   {
+    "field": "complaint.text",
+    "value": "pain and tenderness in right breast, new reddened area. feeling run down. on antibiotics for 5 days for mastitis."
+   },
+   {
+    "field": "history.postpartum",
+    "value": true
+   },
+   {
+    "field": "complaint.fever",
+    "value": true
+   },
+   {
+    "field": "complaint.chills_or_rigors",
+    "value": true
+   },
+   {
+    "field": "complaint.pain_rating",
+    "value": 6
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 39
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 20
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 990
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 122
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 98
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-79": {
+  "facts": [
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.category",
+    "value": "injury"
+   },
+   {
+    "field": "complaint.text",
+    "value": "has been shot. two wounds on left leg. heard three shots."
+   },
+   {
+    "field": "E.mechanism",
+    "value": "penetrating_trauma"
+   },
+   {
+    "field": "E.body_region",
+    "value": "other"
+   },
+   {
+    "field": "red_flags.responsive",
+    "status": "observed",
+    "value": true
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 36.8
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 78
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 16
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 118
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-80": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 82
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "complaint.category",
+    "value": "abdominal_pain"
+   },
+   {
+    "field": "complaint.text",
+    "value": "excruciating generalized abdominal pain and vomiting. moaning in pain."
+   },
+   {
+    "field": "complaint.onset",
+    "value": "a few hours ago"
+   },
+   {
+    "field": "complaint.pain_rating",
+    "value": 10
+   },
+   {
+    "field": "complaint.vomiting",
+    "value": true
+   },
+   {
+    "field": "history.conditions",
+    "value": [
+     "heart attack"
+    ]
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 36.7
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 28
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 102
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 146
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 98
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-81": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 37
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.category",
+    "value": "wound"
+   },
+   {
+    "field": "complaint.text",
+    "value": "3-centimeter laceration to his right thumb. The thumb is wrapped in a clean rag. needs a tetanus shot."
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 142
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 16
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 37
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-82": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 4
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.category",
+    "value": "ear_problem"
+   },
+   {
+    "field": "complaint.text",
+    "value": "right earache. acetaminophen didn't help."
+   },
+   {
+    "field": "complaint.onset",
+    "value": "about 3 hours ago"
+   },
+   {
+    "field": "complaint.fever",
+    "value": false
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-85": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 72
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "complaint.category",
+    "value": "urinary_problem"
+   },
+   {
+    "field": "complaint.text",
+    "value": "sleeping more than usual and complains that it hurts to pee. just not acting herself."
+   },
+   {
+    "field": "ams.changed_from_baseline",
+    "value": true
+   },
+   {
+    "field": "complaint.uti_symptoms",
+    "value": true
+   },
+   {
+    "field": "obs.confusion_lethargy_disorientation",
+    "status": "observed",
+    "value": true
+   },
+   {
+    "field": "obs.avpu",
+    "status": "observed",
+    "value": "V"
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 38.2
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 98
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 22
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 122
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-86": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 57
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "complaint.category",
+    "value": "urinary_problem"
+   },
+   {
+    "field": "complaint.text",
+    "value": "Foley catheter came out. bedridden."
+   },
+   {
+    "field": "complaint.onset",
+    "value": "this morning"
+   },
+   {
+    "field": "history.conditions",
+    "value": [
+     "multiple sclerosis"
+    ]
+   },
+   {
+    "field": "M.medications",
+    "value": [
+     "antibiotics for a UTI"
+    ]
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-87": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 19
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "complaint.category",
+    "value": "wound"
+   },
+   {
+    "field": "complaint.text",
+    "value": "belly button pierced a month ago and now it hurts so bad."
+   },
+   {
+    "field": "complaint.onset",
+    "value": "a month ago"
+   },
+   {
+    "field": "complaint.pain_rating",
+    "value": 8
+   },
+   {
+    "field": "complaint.infection_signs",
+    "status": "observed",
+    "value": true
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 37.8
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 74
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 18
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 102
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 100
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-88": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 73
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.category",
+    "value": "head_injury"
+   },
+   {
+    "field": "complaint.text",
+    "value": "disheveled, drinking a bottle of vodka with blood oozing from a 4-centimeter forehead laceration. Glasgow Coma Scale score of 14."
+   },
+   {
+    "field": "red_flags.responsive",
+    "status": "observed",
+    "value": true
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-90": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 26
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "patient.has_ovaries",
+    "value": true
+   },
+   {
+    "field": "complaint.category",
+    "value": "skin_problem"
+   },
+   {
+    "field": "complaint.text",
+    "value": "infection in cuticle, pus, small paronychia on right second finger"
+   },
+   {
+    "field": "complaint.onset",
+    "value": "2 days ago"
+   },
+   {
+    "field": "complaint.infection_signs",
+    "value": true
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 37.1
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 14
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 62
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 108
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-92": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 72
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "patient.has_ovaries",
+    "value": true
+   },
+   {
+    "field": "history.conditions",
+    "value": [
+     "chronic obstructive pulmonary disease"
+    ]
+   },
+   {
+    "field": "complaint.category",
+    "value": "breathing"
+   },
+   {
+    "field": "complaint.text",
+    "value": "hard time breathing, increased work of breathing"
+   },
+   {
+    "field": "complaint.onset",
+    "value": "yesterday"
+   },
+   {
+    "field": "complaint.fever",
+    "value": true
+   },
+   {
+    "field": "complaint.shortness_of_breath",
+    "value": true
+   },
+   {
+    "field": "complaint.respiratory_distress_signs",
+    "status": "observed",
+    "value": true
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 79
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-96": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 28
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.category",
+    "value": "allergic_reaction"
+   },
+   {
+    "field": "complaint.text",
+    "value": "mistakenly ate a dip that contained shrimp, throat started to close, used EpiPen"
+   },
+   {
+    "field": "complaint.onset",
+    "value": "immediately"
+   },
+   {
+    "field": "A.allergies",
+    "value": [
+     "shellfish"
+    ]
+   },
+   {
+    "field": "infection.rash",
+    "status": "observed",
+    "value": false
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 136
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 108
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 20
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 97
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 36.1
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-99": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 44
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "patient.has_ovaries",
+    "value": true
+   },
+   {
+    "field": "history.conditions",
+    "value": [
+     "diabetes"
+    ]
+   },
+   {
+    "field": "complaint.category",
+    "value": "vomiting_or_diarrhoea"
+   },
+   {
+    "field": "complaint.text",
+    "value": "retching continuously, vomiting yellow stuff"
+   },
+   {
+    "field": "complaint.onset",
+    "value": "5 hours ago"
+   },
+   {
+    "field": "complaint.vomiting",
+    "value": true
+   },
+   {
+    "field": "L.last_intake",
+    "value": "hasn't eaten"
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 148
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 126
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 24
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "ch9-100": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 76
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "history.conditions",
+    "value": [
+     "atrial fibrillation"
+    ]
+   },
+   {
+    "field": "M.medications",
+    "value": [
+     "little blue pill to thin his blood"
+    ]
+   },
+   {
+    "field": "M.anticoagulant",
+    "value": true
+   },
+   {
+    "field": "complaint.category",
+    "value": "other"
+   },
+   {
+    "field": "complaint.text",
+    "value": "found on the bathroom floor, toilet bowl filled with maroon-colored stool"
+   },
+   {
+    "field": "E.mechanism",
+    "value": "fall"
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 70
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 128
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 40
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "A-3": {
+  "facts": [
+   {
+    "field": "patient.age_days",
+    "value": 14
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "patient.has_ovaries",
+    "value": true
+   },
+   {
+    "field": "complaint.category",
+    "value": "other"
+   },
+   {
+    "field": "complaint.text",
+    "value": "not acting right, not interested in eating, listless, skin is mottled"
+   },
+   {
+    "field": "obs.subtle_mental_status_change",
+    "status": "observed",
+    "value": true
+   },
+   {
+    "field": "obs.hypoperfusion_signs",
+    "status": "observed",
+    "value": true
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "A-6": {
+  "facts": [
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.category",
+    "value": "skin_problem"
+   },
+   {
+    "field": "complaint.text",
+    "value": "rash on face and chest with pinpoint purplish spots (petechiae), cold for a couple of days, cough"
+   },
+   {
+    "field": "complaint.onset",
+    "value": "today"
+   },
+   {
+    "field": "infection.rash",
+    "value": true
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "A-12": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 8
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.category",
+    "value": "urinary_problem"
+   },
+   {
+    "field": "complaint.text",
+    "value": "losing weight, acting cranky, can't seem to get enough to drink"
+   },
+   {
+    "field": "complaint.onset",
+    "value": "last night"
+   },
+   {
+    "field": "complaint.uti_symptoms",
+    "value": true
+   },
+   {
+    "field": "red_flags.responsive",
+    "status": "observed",
+    "value": true
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 37
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 30
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 98
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 92
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 98
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "B-3": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 19
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.category",
+    "value": "skin_problem"
+   },
+   {
+    "field": "complaint.text",
+    "value": "skin rash in my crotch. It looks like jock rot. Probably got it from not washing my gym clothes"
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "B-6": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 43
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "complaint.category",
+    "value": "breathing"
+   },
+   {
+    "field": "complaint.text",
+    "value": "wheezing for a few days, and today I woke up with a fever. My rescue inhaler doesn't seem to be helping"
+   },
+   {
+    "field": "complaint.onset",
+    "value": "a few days"
+   },
+   {
+    "field": "history.conditions",
+    "value": [
+     "asthma"
+    ]
+   },
+   {
+    "field": "complaint.fever",
+    "value": true
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 38.6
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 26
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 90
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 138
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 95
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "B-8": {
+  "facts": [
+   {
+    "field": "complaint.category",
+    "value": "wound"
+   },
+   {
+    "field": "complaint.text",
+    "value": "stepped on a rusty nail, and it went right through my shoe into my foot. I washed it really well. I read on the Internet that I need a tetanus shot."
+   },
+   {
+    "field": "complaint.onset",
+    "value": "This morning"
+   },
+   {
+    "field": "E.mechanism",
+    "value": "penetrating_trauma"
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "B-18": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 58
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.category",
+    "value": "request"
+   },
+   {
+    "field": "complaint.text",
+    "value": "forgot to pack my blood pressure medication. I haven't taken it for 2 days. Do you think one of the doctors will write me a prescription?"
+   },
+   {
+    "field": "complaint.onset",
+    "value": "2 days"
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 154
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 64
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 18
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 36.7
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 99
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "B-19": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 42
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "complaint.category",
+    "value": "injury"
+   },
+   {
+    "field": "complaint.text",
+    "value": "fell running for the bus. Nothing hurts, I just have road burn on both my knees, and I think I need a tetanus booster."
+   },
+   {
+    "field": "E.mechanism",
+    "value": "fall"
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "B-23": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 48
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.category",
+    "value": "poisoning_or_overdose"
+   },
+   {
+    "field": "complaint.text",
+    "value": "restless and has tremors. The patient usually drinks a case of beer a day and has not had a drink since 7 p.m."
+   },
+   {
+    "field": "complaint.pain_rating",
+    "value": 0
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 172
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 122
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 18
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 37
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 97
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "appA-ch2-q1": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 62
+   },
+   {
+    "field": "complaint.category",
+    "value": "other"
+   },
+   {
+    "field": "complaint.text",
+    "value": "CPR in progress"
+   },
+   {
+    "field": "obs.cardiac_or_pulmonary_arrest",
+    "status": "observed",
+    "value": true
+   },
+   {
+    "field": "obs.requires_lifesaving_intervention",
+    "status": "observed",
+    "value": true
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "appA-ch2-q2": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 53
+   },
+   {
+    "field": "complaint.category",
+    "value": "burn"
+   },
+   {
+    "field": "complaint.text",
+    "value": "30% body surface area burn"
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "appA-ch2-q3": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 22
+   },
+   {
+    "field": "complaint.category",
+    "value": "request"
+   },
+   {
+    "field": "complaint.text",
+    "value": "needs a work note"
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "appA-ch2-q4": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 12
+   },
+   {
+    "field": "complaint.category",
+    "value": "ear_problem"
+   },
+   {
+    "field": "complaint.text",
+    "value": "earache"
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "appA-ch2-q5": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 45
+   },
+   {
+    "field": "complaint.category",
+    "value": "injury"
+   },
+   {
+    "field": "complaint.text",
+    "value": "involved in high speed motor vehicle collision"
+   },
+   {
+    "field": "E.mechanism",
+    "value": "road_accident"
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 120
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 72
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 18
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "appA-ch2-q6": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 14
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "obs.avpu",
+    "status": "observed",
+    "value": "U"
+   },
+   {
+    "field": "complaint.category",
+    "value": "poisoning_or_overdose"
+   },
+   {
+    "field": "complaint.text",
+    "value": "he and his friends had been \u201cdoing shots.\u201d"
+   },
+   {
+    "field": "complaint.known_toxic_ingestion",
+    "value": true
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "appA-ch3-q1": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 40
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.category",
+    "value": "chest_pain"
+   },
+   {
+    "field": "complaint.text",
+    "value": "vague, midsternal chest discomfort. Currently complains of mild nausea, but feels pretty good."
+   },
+   {
+    "field": "complaint.onset",
+    "value": "occurring intermittently for one month"
+   },
+   {
+    "field": "red_flags.chest_pain_now",
+    "value": false
+   },
+   {
+    "field": "history.conditions",
+    "value": [
+     "Smoker"
+    ]
+   },
+   {
+    "field": "obs.avpu",
+    "status": "observed",
+    "value": "A"
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "appA-ch3-q2": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 22
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "patient.has_ovaries",
+    "value": true
+   },
+   {
+    "field": "complaint.category",
+    "value": "sore_throat"
+   },
+   {
+    "field": "complaint.text",
+    "value": "feeling very sick, severe sore throat, and feeling \u201cfeverish.\u201d"
+   },
+   {
+    "field": "complaint.onset",
+    "value": "sudden onset"
+   },
+   {
+    "field": "complaint.fever",
+    "status": "observed",
+    "value": true
+   },
+   {
+    "field": "complaint.shortness_of_breath",
+    "status": "observed",
+    "value": true
+   },
+   {
+    "field": "obs.cannot_manage_secretions",
+    "status": "observed",
+    "value": true
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "appA-ch3-q3": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 68
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.category",
+    "value": "neuro_symptoms"
+   },
+   {
+    "field": "complaint.text",
+    "value": "left arm weakness, slurred speech, and difficulty walking."
+   },
+   {
+    "field": "complaint.onset",
+    "value": "2 hours prior to arrival"
+   },
+   {
+    "field": "history.conditions",
+    "value": [
+     "Atrial fibrillation"
+    ]
+   },
+   {
+    "field": "M.medications",
+    "value": [
+     "Lanoxin"
+    ]
+   },
+   {
+    "field": "complaint.stroke_signs",
+    "value": true
+   },
+   {
+    "field": "stroke.arm_weakness",
+    "status": "observed",
+    "value": true
+   },
+   {
+    "field": "stroke.speech_change",
+    "status": "observed",
+    "value": true
+   },
+   {
+    "field": "stroke.face_droop",
+    "status": "observed",
+    "value": true
+   },
+   {
+    "field": "stroke.balance_loss",
+    "value": true
+   },
+   {
+    "field": "complaint.shortness_of_breath",
+    "status": "observed",
+    "value": true
+   },
+   {
+    "field": "obs.avpu",
+    "status": "observed",
+    "value": "A"
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "appA-ch3-q4": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 60
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.category",
+    "value": "eye_problem"
+   },
+   {
+    "field": "complaint.text",
+    "value": "sudden loss of vision in the left eye. Patient denies pain or discomfort."
+   },
+   {
+    "field": "complaint.onset",
+    "value": "that morning"
+   },
+   {
+    "field": "stroke.vision_change",
+    "value": true
+   },
+   {
+    "field": "complaint.stroke_signs",
+    "value": true
+   },
+   {
+    "field": "history.conditions",
+    "value": [
+     "CAD",
+     "HTN"
+    ]
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "appA-ch3-q5": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 22
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "complaint.category",
+    "value": "abdominal_pain"
+   },
+   {
+    "field": "complaint.pain_rating",
+    "value": 10
+   },
+   {
+    "field": "complaint.onset",
+    "value": "two days"
+   },
+   {
+    "field": "complaint.vomiting",
+    "value": false
+   },
+   {
+    "field": "complaint.uti_symptoms",
+    "value": false
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 84
+   },
+   {
+    "field": "complaint.text",
+    "value": "10/10 abdominal pain for two days. Denies nausea, vomiting, diarrhea, or urinary frequency. eating ice cream."
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "appA-ch3-q6": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 70
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "complaint.category",
+    "value": "limb_pain_or_swelling"
+   },
+   {
+    "field": "E.mechanism",
+    "value": "fall"
+   },
+   {
+    "field": "complaint.onset",
+    "value": "yesterday"
+   },
+   {
+    "field": "limb.cast_too_tight",
+    "value": true
+   },
+   {
+    "field": "history.conditions",
+    "value": [
+     "Alzheimer's disease"
+    ]
+   },
+   {
+    "field": "history.baseline_mental_status",
+    "value": "known"
+   },
+   {
+    "field": "ams.changed_from_baseline",
+    "value": false
+   },
+   {
+    "field": "obs.confusion_lethargy_disorientation",
+    "status": "observed",
+    "value": true
+   },
+   {
+    "field": "limb.cold_pale_blue",
+    "status": "observed",
+    "value": true
+   },
+   {
+    "field": "complaint.extremity_neurovascular_compromise",
+    "status": "observed",
+    "value": true
+   },
+   {
+    "field": "complaint.text",
+    "value": "right arm in a cast. fell yesterday and fractured her arm. complaining of pain. cast too tight. very restless at home and thinks her mother is in pain. confused and mumbling; face flushed. unable to provide verbal description of her complaints. right upper extremity is in a short arm cast; digits appear tense, swollen and ecchymotic. Nail beds are pale; capillary refill delayed. not wearing a sling."
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "appA-ch3-q7": {
+  "facts": [
+   {
+    "field": "patient.age_months",
+    "value": 8
+   },
+   {
+    "field": "complaint.category",
+    "value": "fever"
+   },
+   {
+    "field": "complaint.fever",
+    "value": true
+   },
+   {
+    "field": "complaint.vomiting",
+    "value": true
+   },
+   {
+    "field": "complaint.onset",
+    "value": "this morning"
+   },
+   {
+    "field": "M.medications",
+    "value": [
+     "acetaminophen"
+    ]
+   },
+   {
+    "field": "obs.confusion_lethargy_disorientation",
+    "status": "observed",
+    "value": true
+   },
+   {
+    "field": "complaint.respiratory_distress_signs",
+    "status": "observed",
+    "value": false
+   },
+   {
+    "field": "complaint.text",
+    "value": "fever, cough, and vomiting. vomited twice this morning; no diarrhea. not been eating well lately. hot. gave acetaminophen two hours prior to arrival. wrapped in a blanket, eyes open, appears listless, skin hot and moist, sunken fontanel. Respirations are regular and not labored."
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "appA-ch3-q8": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 34
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.category",
+    "value": "abdominal_pain"
+   },
+   {
+    "field": "complaint.pain_rating",
+    "value": 5
+   },
+   {
+    "field": "complaint.onset",
+    "value": "all day"
+   },
+   {
+    "field": "complaint.unilateral_lower_quadrant_pain",
+    "value": true
+   },
+   {
+    "field": "complaint.vomiting",
+    "value": true
+   },
+   {
+    "field": "complaint.text",
+    "value": "right lower quadrant pain. associated with loss of appetite, nausea and vomiting. appears in moderate discomfort, skin warm and dry, guarding abdomen."
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "appA-ch3-q9": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 28
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.category",
+    "value": "head_injury"
+   },
+   {
+    "field": "complaint.onset",
+    "value": "one hour prior to arrival"
+   },
+   {
+    "field": "E.mechanism",
+    "value": "assault"
+   },
+   {
+    "field": "E.head_strike",
+    "value": true
+   },
+   {
+    "field": "E.loc",
+    "value": true
+   },
+   {
+    "field": "complaint.neck_pain",
+    "value": true
+   },
+   {
+    "field": "complaint.vomiting",
+    "value": true
+   },
+   {
+    "field": "red_flags.responsive",
+    "status": "observed",
+    "value": true
+   },
+   {
+    "field": "complaint.text",
+    "value": "scalp laceration. struck in the head with a baseball bat. passed out for a couple of minutes. headache, neck pain, mild nausea, and emesis x 1. pale, but is otherwise alert and oriented to person, place, and time. 5-cm laceration to the scalp near his left ear with bleeding controlled."
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "appA-ch3-q10": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 28
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.category",
+    "value": "eye_problem"
+   },
+   {
+    "field": "complaint.text",
+    "value": "tearing and irritation to the right eye. construction worker and was drilling concrete. feels like there is something in my eye. irrigated the eye several times but it doesn't feel any better. appears in no severe distress; continually rubbing his eye. Right eye appears red, irritated, with excessive tearing."
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "appA-ch3-q11": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 40
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.category",
+    "value": "injury"
+   },
+   {
+    "field": "complaint.onset",
+    "value": "immediate"
+   },
+   {
+    "field": "complaint.pain_rating",
+    "value": 6
+   },
+   {
+    "field": "E.mechanism",
+    "value": "fall"
+   },
+   {
+    "field": "E.loc",
+    "value": false
+   },
+   {
+    "field": "complaint.neck_pain",
+    "value": false
+   },
+   {
+    "field": "complaint.text",
+    "value": "unable to ambulate due to foot and back pain. fell approximately 10 feet off of a ladder. landed on both feet and had immediate foot and back pain. No other signs of trauma noted. pale, slightly diaphoretic, and in mild distress. sitting upright in a wheelchair."
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "appA-ch3-q12": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 12
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "complaint.category",
+    "value": "vomiting_or_diarrhoea"
+   },
+   {
+    "field": "complaint.onset",
+    "value": "three days"
+   },
+   {
+    "field": "complaint.vomiting",
+    "value": true
+   },
+   {
+    "field": "complaint.fever",
+    "value": false
+   },
+   {
+    "field": "obs.confusion_lethargy_disorientation",
+    "status": "observed",
+    "value": true
+   },
+   {
+    "field": "complaint.text",
+    "value": "weak and vomiting for three days. feels thirsty all the time and her head hurts. Vomited once today. Denies fever, abdominal pain, or diarrhea. awake, lethargic, and slumped in the chair. Color is pale, skin warm and dry."
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "appA-ch3-q13": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 40
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.category",
+    "value": "breathing"
+   },
+   {
+    "field": "complaint.category",
+    "value": "chest_pain"
+   },
+   {
+    "field": "complaint.onset",
+    "value": "over the past two days"
+   },
+   {
+    "field": "complaint.shortness_of_breath",
+    "value": true
+   },
+   {
+    "field": "red_flags.chest_pain_now",
+    "value": true
+   },
+   {
+    "field": "history.conditions",
+    "value": [
+     "colon cancer"
+    ]
+   },
+   {
+    "field": "complaint.text",
+    "value": "gradual increase in shortness of breath over the past two days associated with chest pain"
+   },
+   {
+    "field": "complaint.text",
+    "status": "observed",
+    "value": "moderate respiratory distress, skin warm and dry"
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "appA-ch3-q14": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 60
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.category",
+    "value": "abdominal_pain"
+   },
+   {
+    "field": "complaint.onset",
+    "value": "for one month"
+   },
+   {
+    "field": "complaint.text",
+    "value": "dark stools for one month with vague abdominal pain"
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 140
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 80
+   },
+   {
+    "field": "obs.hypoperfusion_signs",
+    "status": "observed",
+    "value": true
+   },
+   {
+    "field": "complaint.text",
+    "status": "observed",
+    "value": "skin is pale and diaphoretic"
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "appA-ch3-q15": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 25
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "patient.has_ovaries",
+    "value": true
+   },
+   {
+    "field": "complaint.category",
+    "value": "vaginal_bleeding"
+   },
+   {
+    "field": "complaint.category",
+    "value": "abdominal_pain"
+   },
+   {
+    "field": "complaint.onset",
+    "value": "sudden onset"
+   },
+   {
+    "field": "complaint.vaginal_bleeding",
+    "value": true
+   },
+   {
+    "field": "complaint.pain_rating",
+    "value": 9
+   },
+   {
+    "field": "history.pregnant",
+    "value": true
+   },
+   {
+    "field": "complaint.text",
+    "value": "sudden onset of significant vaginal bleeding, with 9/10 abdominal pain"
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 92
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 130
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "appA-ch4-q4": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 25
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.category",
+    "value": "back_pain"
+   },
+   {
+    "field": "complaint.text",
+    "value": "back pain"
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "appA-ch4-q7": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 30
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "patient.has_ovaries",
+    "value": true
+   },
+   {
+    "field": "complaint.category",
+    "value": "vaginal_bleeding"
+   },
+   {
+    "field": "complaint.category",
+    "value": "abdominal_pain"
+   },
+   {
+    "field": "complaint.vaginal_bleeding",
+    "value": true
+   },
+   {
+    "field": "complaint.possible_ectopic_pregnancy",
+    "value": true
+   },
+   {
+    "field": "obs.hypoperfusion_signs",
+    "status": "observed",
+    "value": true
+   },
+   {
+    "field": "complaint.text",
+    "value": "sexually active, vaginal bleeding and cramping, doesn't use birth control, dizzy and pale"
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "appA-ch4-q8": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 40
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.category",
+    "value": "dental"
+   },
+   {
+    "field": "complaint.onset",
+    "value": "for two days"
+   },
+   {
+    "field": "complaint.fever",
+    "value": false
+   },
+   {
+    "field": "complaint.text",
+    "value": "toothache"
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "appA-ch4-q9": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 22
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "patient.has_ovaries",
+    "value": true
+   },
+   {
+    "field": "complaint.category",
+    "value": "injury"
+   },
+   {
+    "field": "E.mechanism",
+    "value": "road_accident"
+   },
+   {
+    "field": "E.vehicle_ejection",
+    "value": true
+   },
+   {
+    "field": "complaint.text",
+    "value": "high-speed rollover motor vehicle collision and thrown from the vehicle"
+   },
+   {
+    "field": "obs.intubated",
+    "status": "observed",
+    "value": true
+   },
+   {
+    "field": "obs.avpu",
+    "status": "observed",
+    "value": "U"
+   },
+   {
+    "field": "vitals.hypotension",
+    "status": "observed",
+    "value": true
+   },
+   {
+    "field": "red_flags.responsive",
+    "status": "observed",
+    "value": false
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "appA-ch4-q10": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 60
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.category",
+    "value": "limb_pain_or_swelling"
+   },
+   {
+    "field": "complaint.text",
+    "value": "everted his ankle on the golf course"
+   },
+   {
+    "field": "complaint.text",
+    "status": "observed",
+    "value": "moderate swelling and pain upon palpation of the lateral malleolus"
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "appA-ch5-q1": {
+  "facts": [
+   {
+    "field": "patient.age_days",
+    "value": 21
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 38.2
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 160
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 48
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 96
+   },
+   {
+    "field": "complaint.fever",
+    "value": true
+   },
+   {
+    "field": "obs.subtle_mental_status_change",
+    "value": true
+   },
+   {
+    "field": "complaint.text",
+    "value": "Poor feeding. Less active than usual. Sleeping most of the day."
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "appA-ch5-q2": {
+  "facts": [
+   {
+    "field": "patient.age_months",
+    "value": 22
+   },
+   {
+    "field": "complaint.category",
+    "value": "fever"
+   },
+   {
+    "field": "patient.immunizations_incomplete",
+    "value": false
+   },
+   {
+    "field": "history.conditions",
+    "value": [
+     "frequent ear infections"
+    ]
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 39
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 128
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 28
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 97
+   },
+   {
+    "field": "complaint.fever",
+    "value": true
+   },
+   {
+    "field": "obs.avpu",
+    "status": "observed",
+    "value": "A"
+   },
+   {
+    "field": "complaint.text",
+    "value": "Awoke screaming. Pulling at ears. Runny nose this week. Alert, tired, flushed, falling asleep now. Calm in mom's arms, cries with exam."
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "appA-ch5-q3": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 6
+   },
+   {
+    "field": "complaint.category",
+    "value": "breathing"
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 40.2
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 140
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 30
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 91
+   },
+   {
+    "field": "complaint.fever",
+    "value": true
+   },
+   {
+    "field": "complaint.chills_or_rigors",
+    "value": true
+   },
+   {
+    "field": "complaint.shortness_of_breath",
+    "value": true
+   },
+   {
+    "field": "complaint.onset",
+    "value": "for two days"
+   },
+   {
+    "field": "complaint.text",
+    "value": "Cough with fever. Chills. Short of breath with exertion. Green phlegm. Sleeping a lot."
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "appA-ch5-q4": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 94
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.category",
+    "value": "abdominal_pain"
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 37.2
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 100
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 130
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 93
+   },
+   {
+    "field": "complaint.vomiting",
+    "value": true
+   },
+   {
+    "field": "complaint.text",
+    "value": "Vomiting. Epigastric pain. Looks sick."
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "appA-ch5-q5": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 61
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "complaint.category",
+    "value": "breathing"
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 37.3
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 112
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 28
+   },
+   {
+    "field": "vitals.sbp",
+    "status": "observed",
+    "value": 157
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 91
+   },
+   {
+    "field": "M.immunosuppressant_or_steroid",
+    "value": true
+   },
+   {
+    "field": "history.conditions",
+    "value": [
+     "asthma"
+    ]
+   },
+   {
+    "field": "complaint.text",
+    "value": "Referred with asthma. Asthma exacerbation with dry cough. Steroid dependent. Multiple hospitalizations. Never intubated. Peak expiratory flow rate = 200."
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "appA-ch5-q6": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 9
+   },
+   {
+    "field": "patient.sex",
+    "value": "male"
+   },
+   {
+    "field": "complaint.category",
+    "value": "head_injury"
+   },
+   {
+    "field": "E.loc",
+    "value": true
+   },
+   {
+    "field": "E.head_strike",
+    "value": true
+   },
+   {
+    "field": "red_flags.responsive",
+    "value": true
+   },
+   {
+    "field": "complaint.text",
+    "value": "Head trauma. Collided with another player at lacrosse game. Loss of consciousness for about 5 minutes, witnessed by coach. Now awake with headache and nausea."
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "appA-ch6-q1": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 14
+   },
+   {
+    "field": "complaint.category",
+    "value": "skin_problem"
+   },
+   {
+    "field": "infection.rash",
+    "value": true
+   },
+   {
+    "field": "complaint.text",
+    "value": "Rash on feet, was exposed to poison ivy 3 days ago. Ambulatory, with stable vital signs."
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "appA-ch6-q2": {
+  "facts": [
+   {
+    "field": "patient.age_months",
+    "value": 3
+   },
+   {
+    "field": "complaint.category",
+    "value": "skin_problem"
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 60
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 196
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 90
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 39
+   },
+   {
+    "field": "complaint.fever",
+    "value": true
+   },
+   {
+    "field": "infection.rash",
+    "value": true
+   },
+   {
+    "field": "complaint.text",
+    "value": "Petechial and purpuric lesions all over."
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "appA-ch6-q3": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 5
+   },
+   {
+    "field": "patient.sex",
+    "value": "female"
+   },
+   {
+    "field": "patient.has_ovaries",
+    "value": true
+   },
+   {
+    "field": "complaint.category",
+    "value": "skin_problem"
+   },
+   {
+    "field": "complaint.text",
+    "value": "rash on neck and face, with swelling and moist lesions around the eyes and cheeks. Respirations non- labored. Was treated by her pediatrician yesterday for poison ivy on the neck, but the rash is worse and spreading today. Mom states child not eating or drinking well today and was up most of the night crying with itching and pain."
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 20
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 100
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 99
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 37
+   },
+   {
+    "field": "infection.rash",
+    "value": true
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "appA-ch6-q4": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 10
+   },
+   {
+    "field": "complaint.category",
+    "value": "allergic_reaction"
+   },
+   {
+    "field": "complaint.onset",
+    "value": "after eating a cookie at school"
+   },
+   {
+    "field": "complaint.text",
+    "value": "facial swelling after eating a cookie at school. Fine red rash all over. Wheezing heard upon auscultation."
+   },
+   {
+    "field": "A.allergies",
+    "value": [
+     "peanut allergies"
+    ]
+   },
+   {
+    "field": "vitals.respiratory_rate",
+    "status": "observed",
+    "value": 16
+   },
+   {
+    "field": "vitals.heart_rate",
+    "status": "observed",
+    "value": 76
+   },
+   {
+    "field": "vitals.spo2",
+    "status": "observed",
+    "value": 97
+   },
+   {
+    "field": "vitals.temp_c",
+    "status": "observed",
+    "value": 36.7
+   },
+   {
+    "field": "infection.rash",
+    "value": true
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ },
+ "appA-ch6-q5": {
+  "facts": [
+   {
+    "field": "patient.age",
+    "value": 8
+   },
+   {
+    "field": "complaint.category",
+    "value": "fever"
+   },
+   {
+    "field": "complaint.category",
+    "value": "sore_throat"
+   },
+   {
+    "field": "complaint.fever",
+    "value": true
+   },
+   {
+    "field": "complaint.text",
+    "value": "fever of 38.7\u00b0C at home. fine red sandpaper rash across chest. Sibling at home had a positive strep culture at the pediatrician a few days ago. Respirations are non-labored. Vital signs are stable."
+   },
+   {
+    "field": "infection.contacts",
+    "value": true
+   },
+   {
+    "field": "infection.rash",
+    "value": true
+   }
+  ],
+  "model": "gemini-3.1-pro-high"
+ }
+}

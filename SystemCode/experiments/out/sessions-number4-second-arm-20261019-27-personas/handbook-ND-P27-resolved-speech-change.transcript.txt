@@ -1,0 +1,52 @@
+arm B, form handbook, persona ND-P27-resolved-speech-change, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  What is the main reason the patient is seeking care today?
+A1  Her speech suddenly became slurred for about ten minutes. It sounds normal now.
+
+Q2  Is the patient currently experiencing any other symptoms, such as a severe headache, facial drooping, or weakness in her arms or legs?
+A2  No.
+
+Q3  Is the patient currently experiencing any other symptoms, such as a severe headache, facial drooping, or weakness in her arms or legs?
+A3  No.
+
+Q4  Is the patient currently experiencing any other symptoms, such as a severe headache, facial drooping, or weakness in her arms or legs?
+A4  No.
+
+Q5  How old is the patient?
+A5  She is sixty-six.
+
+Q6  Is the patient currently experiencing any other symptoms, such as a severe headache, facial drooping, or weakness in her arms or legs?
+A6  No.
+
+Q7  Is the patient currently experiencing any other symptoms, such as a severe headache, facial drooping, or weakness in her arms or legs?
+A7  No.
+
+Q8  Is the patient currently experiencing any other symptoms, such as a severe headache, facial drooping, or weakness in her arms or legs?
+A8  No.
+
+Q9  Is the patient currently experiencing any other symptoms, such as a severe headache, facial drooping, or weakness in her arms or legs?
+A9  No.
+
+Q10  Is the patient currently experiencing any other symptoms, such as a severe headache, facial drooping, or weakness in her arms or legs?
+A10  No.
+
+Q11  Is the patient currently experiencing any other symptoms, such as a severe headache, facial drooping, or weakness in her arms or legs?
+A11  No.
+
+Q12  Is the patient currently experiencing any other symptoms, such as a severe headache, facial drooping, or weakness in her arms or legs?
+A12  No.
+
+Q13  Can you tell me the patient's current heart rate, blood pressure, and oxygen level?
+A13  I don't know.
+
+Q14  Is the patient currently experiencing any other symptoms, such as a severe headache, facial drooping, or weakness in her arms or legs?
+A14  No.
+
+Q15  Is the patient currently experiencing any other symptoms, such as a severe headache, facial drooping, or weakness in her arms or legs?
+A15  No.
+
+Q16  Is the patient currently experiencing any other symptoms, such as a severe headache, facial drooping, or weakness in her arms or legs?
+A16  No.
+
+DECISION {"decision": "unparsed", "reason": "turn limit reached without a decision"}
+OUTCOME no decision in 16 questions | expected at least ESI-2 | pass False | label missing fact | max prompt tokens 30150

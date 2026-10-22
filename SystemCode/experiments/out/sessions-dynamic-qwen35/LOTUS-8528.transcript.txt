@@ -1,0 +1,18 @@
+session LOTUS-8528   started 2026-09-26 03:49   (generated from messages)
+
+03:49:41  BOT  Is the person awake and responding normally right now? Are they having severe chest pain, trouble breathing, or heavy bleeding?   [slot dyn:red_flags.responsive+red_flags.chest_pain_now+red_flags.breathing_difficulty+red_flags.heavy_bleeding]
+03:49:42  THEM Yes, she is awake and talking. She does not have chest pain, trouble breathing, or heavy bleeding.   [slot dyn:red_flags.responsive+red_flags.chest_pain_now+red_flags.breathing_difficulty+red_flags.heavy_bleeding]
+03:49:44  BOT  Great, thank you for confirming that. What happened to her and when did it start?   [slot dyn:complaint.category]
+03:49:45  THEM She has had a fever starting this afternoon and is currently shivering and very tired. She is awake and talking while I drive her in now.   [slot dyn:complaint.category]
+03:49:48  BOT  She sounds very tired from the fever; on a scale of 0 to 10, how bad is her pain or discomfort right now?   [slot dyn:complaint.pain_rating]
+03:49:49  THEM I don't know her exact pain score as she hasn't told me yet. She is awake and talking but feels very tired from the fever.   [slot dyn:complaint.pain_rating]
+03:49:52  BOT  She sounds very tired from the fever; on a scale of 0 to 10, how bad is her pain or discomfort right now? Also, does she take any regular medications, have any allergies, or do you know of other medical conditions like heart problems or diabetes?   [slot dyn:complaint.pain_rating+M.medications+A.allergies+history.conditions]
+03:49:53  THEM She's not in pain, just very tired from the fever. Her only regular meds are the chemo tablets and omeprazole; she has no allergies or other known conditions like heart problems or diabetes.   [slot dyn:complaint.pain_rating+M.medications+A.allergies+history.conditions]
+03:49:56  BOT  She sounds very tired from the fever; does she have any allergies to medicines, or conditions like heart problems, diabetes, pregnancy, or anything affecting her immune system?   [slot dyn:history.immunocompromised+history.pregnant_or_postpartum]
+03:49:57  THEM No, she has no known allergies. Her only relevant condition is breast cancer for which she is currently on chemotherapy.   [slot dyn:history.immunocompromised+history.pregnant_or_postpartum]
+03:49:58  SYS  floor: at least ESI-2  rules: ['B-07.immunocompromised-fever'] (floor)
+03:50:00  BOT  Has she developed any rash recently, traveled overseas in the last two weeks, been around anyone sick, or is there a chance she might be pregnant?   [slot dyn:infection.rash+infection.travel_14d+infection.contacts+history.pregnant_or_postpartum]
+03:50:00  THEM No, she has no rash, hasn't traveled, and has no known sick contacts. She is not pregnant.   [slot dyn:infection.rash+infection.travel_14d+infection.contacts+history.pregnant_or_postpartum]
+03:50:03  BOT  She sounds very tired from the fever; could you tell us her name and date of birth for our records, and when did she last eat or drink?   [slot dyn:L.last_intake+identity.name+identity.dob]
+03:50:04  THEM Her name is not in this description, but her date of birth is June 30, 1975. She last drank some tea at 4pm; I don't know when she last ate.   [slot dyn:L.last_intake+identity.name+identity.dob]
+03:50:06  BOT  Thank you - that's everything for now. Show the code LOTUS-8528 at the counter when you arrive. (ack)

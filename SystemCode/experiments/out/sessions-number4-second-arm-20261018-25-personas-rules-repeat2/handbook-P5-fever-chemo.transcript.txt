@@ -1,0 +1,34 @@
+arm B, form handbook, persona P5-fever-chemo, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  What is the main reason the patient is seeking care today?
+A1  She has had a fever since this afternoon, 38.6 on our thermometer, and is shivering and very tired. She is also on chemotherapy for breast cancer.
+
+Q2  How old is the patient?
+A2  She's 51.
+
+Q3  Is the patient currently experiencing any severe distress, such as difficulty breathing, severe pain, or a change in mental status (like confusion or lethargy)?
+A3  No, she has no trouble breathing, no pain, and she is tired but herself.
+
+Q4  Is the patient's fever related to a known infection or a new, concerning medical issue?
+A4  I don't know.
+
+Q5  Does the patient have any other symptoms, such as a cough, chest pain, or a known recent infection?
+A5  No chest pain, no trouble breathing, and no cough or anything else, just the fever.
+
+Q6  Does the patient have any other symptoms, such as a cough, chest pain, or a known recent infection?
+A6  No chest pain, no trouble breathing, and no cough or anything else, just the fever.
+
+Q7  Does the patient have any other symptoms, such as a cough, chest pain, or a known recent infection?
+A7  No chest pain, no trouble breathing, and no cough or anything else, just the fever.
+
+Q8  What are the patient's current vital signs, specifically her heart rate, respiratory rate, and blood pressure?
+A8  I don't know.
+
+Q9  Is the patient's heart rate, respiratory rate, or blood pressure currently abnormal or concerning to you?
+A9  I don't know.
+
+Q10  Is the patient's fever a new development in the context of her chemotherapy?
+A10  She's had a fever since this afternoon. She is on chemotherapy for breast cancer, with her last cycle 8 days ago.
+
+DECISION {"done": true, "decision": "level 2", "reason": "The patient is a transplant/cancer patient (chemotherapy) presenting with a fever, which is a high-risk situation requiring rapid evaluation.", "citation": "page 15, 'Transplant' section (referring to immunocompromised status) and page 12, 'High-risk situation' definition."}
+OUTCOME level 2 or floor | expected at least ESI-2 | pass True | label None | max prompt tokens 30052

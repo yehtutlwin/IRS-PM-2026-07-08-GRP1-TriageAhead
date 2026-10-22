@@ -1,0 +1,21 @@
+session VANDA-4476   started 2026-09-26 03:46   (generated from messages)
+
+03:46:39  BOT  Can you please tell me if the patient is awake and responding normally, and whether they have any severe chest pain, trouble breathing, or heavy bleeding right now?   [slot red_flags.screen]
+03:46:40  THEM He is not responding normally; he is only speaking confused words. He has no chest pain, trouble breathing, or heavy bleeding.   [slot red_flags.screen]
+03:46:41  SYS  floor: at least ESI-2  rules: ['B-01.new-altered-mental-status'] (floor)
+03:46:41  BOT  Based on what you just told me, please call 995 NOW if you are not already with paramedics. I have put this at the top of the hospital report. (advice)
+03:46:42  BOT  Could you please tell me what happened, when it started, and how bad the pain is on a scale of 0 to 10?   [slot complaint.main]
+03:46:44  THEM He collapsed while doing heavy outdoor work after about four hours with very little water. He has no head injury, but he is currently confused, very hot (40.4°C), and weak enough to only respond with confused words; I do not know the pain level or his medical history.   [slot complaint.main]
+03:46:46  BOT  Since you haven't answered yet, could you please tell me when the confusion started and rate his pain from 0 to 10?   [slot complaint.main]
+03:46:47  THEM The confusion started after he complained of headache, nausea, and dizziness before falling. He is not in pain; he is confused and responding only with confused words.   [slot complaint.main]
+03:46:50  BOT  Did you notice their face drooping on one side, an arm going weak or numb, or slurred or strange speech at any point today?   [slot stroke.screen]
+03:46:51  THEM No, I did not notice facial drooping, arm weakness, or slurred speech. He only became confused and fell after complaining of headache, nausea, and dizziness while working in the sun.   [slot stroke.screen]
+03:46:53  BOT  Could you please tell me if he takes any regular medications?   [slot M.medications]
+03:46:54  THEM I do not know his medications. He has no known medical history or allergies.   [slot M.medications]
+03:46:56  BOT  Could you please tell me if he is currently pregnant, recently gave birth, or has a weakened immune system?   [slot allergies_and_history]
+03:46:57  THEM I do not know his medical history, allergies, or medications. He is male and there is no indication he is pregnant or recently gave birth.   [slot allergies_and_history]
+03:46:59  BOT  Could you please tell me if he has had a rash, traveled overseas in the last two weeks, or come into contact with anyone who is infectious?   [slot infection.screen]
+03:47:00  THEM I don't know about rashes, travel history, or contact with infectious individuals. We do not know his medical history or allergies.   [slot infection.screen]
+03:47:02  BOT  Could you please tell me when he last ate or drank, as well as his name and date of birth for the hospital's records?   [slot wrapup]
+03:47:03  THEM He had breakfast at 7am and has been drinking very little water over the past four hours. I do not know his name or date of birth.   [slot wrapup]
+03:47:05  BOT  Thank you - that's everything for now. Show the code VANDA-4476 at the counter when you arrive. (ack)

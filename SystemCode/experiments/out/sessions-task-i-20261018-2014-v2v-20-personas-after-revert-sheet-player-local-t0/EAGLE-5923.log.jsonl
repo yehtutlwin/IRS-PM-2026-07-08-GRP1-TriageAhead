@@ -1,0 +1,55 @@
+{"t": "20:03:39", "kind": "engine", "note": "session EAGLE-5923 started (web)"}
+{"t": "20:03:41", "kind": "question", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "Is the patient awake and responding to you normally? Also, is he or she experiencing any chest pain, trouble breathing, or heavy bleeding right now?", "fields": ["danger_signs.responsive", "danger_signs.chest_pain_now"], "offered": ["danger_signs.responsive", "danger_signs.chest_pain_now", "danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text"]}
+{"t": "20:03:41", "kind": "answer", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "Yes, he's awake and talking. No."}
+{"t": "20:03:46", "kind": "extract", "writes": [["danger_signs.responsive", true], ["danger_signs.chest_pain_now", false]]}
+{"t": "20:03:49", "kind": "question", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category", "text": "I'm glad he's awake. Is he having any trouble breathing or is there any heavy bleeding? Also, what is the main reason you are bringing him in today?", "fields": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category"], "offered": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text", "complaint.onset", "E.mechanism"]}
+{"t": "20:03:49", "kind": "answer", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category", "text": "No. No, it's just a cut on his knee. He fell running across the playground and cut his right knee. It's about 3 centimetres long."}
+{"t": "20:03:56", "kind": "extract", "writes": [["danger_signs.breathing_difficulty", false, "denial of something the answer does not address"], ["danger_signs.heavy_bleeding", false, "denial of something the answer does not address"]], "via": "guard-dropped"}
+{"t": "20:03:56", "kind": "extract", "writes": [["complaint.category", "injury"], ["complaint.text", "cut on his knee. He fell running across the playground and cut his right knee. It's about 3 centimetres long."]]}
+{"t": "20:03:58", "kind": "question", "slot": "dyn:danger_signs.breathing_difficulty", "text": "Is he having any difficulty breathing at the moment?", "fields": ["danger_signs.breathing_difficulty"], "offered": ["danger_signs.breathing_difficulty"]}
+{"t": "20:03:58", "kind": "answer", "slot": "dyn:danger_signs.breathing_difficulty", "text": "No."}
+{"t": "20:04:02", "kind": "extract", "writes": [["danger_signs.breathing_difficulty", false]]}
+{"t": "20:04:05", "kind": "question", "slot": "dyn:danger_signs.heavy_bleeding", "text": "Is the wound bleeding heavily at the moment?", "fields": ["danger_signs.heavy_bleeding"], "offered": ["danger_signs.heavy_bleeding"]}
+{"t": "20:04:05", "kind": "answer", "slot": "dyn:danger_signs.heavy_bleeding", "text": "No, it's just a cut on his knee."}
+{"t": "20:04:15", "kind": "extract", "writes": [["danger_signs.heavy_bleeding", false]]}
+{"t": "20:04:18", "kind": "question", "slot": "dyn:complaint.onset+patient.age", "text": "I understand. About how old is he, and when did the fall happen?", "fields": ["complaint.onset", "patient.age"], "offered": ["complaint.onset", "E.mechanism", "patient.age", "patient.sex", "complaint.fever", "infection.rash"]}
+{"t": "20:04:18", "kind": "answer", "slot": "dyn:complaint.onset+patient.age", "text": "Just now, at the playground. He's 6."}
+{"t": "20:04:22", "kind": "extract", "writes": [["complaint.onset", "Just now"], ["patient.age", 6]]}
+{"t": "20:04:25", "kind": "question", "slot": "dyn:E.mechanism+patient.sex", "text": "I see. Can you tell me more about how he fell and is he a boy or a girl?", "fields": ["E.mechanism", "patient.sex"], "offered": ["E.mechanism", "patient.sex", "complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts"]}
+{"t": "20:04:25", "kind": "answer", "slot": "dyn:E.mechanism+patient.sex", "text": "He fell while running. He's a boy."}
+{"t": "20:04:29", "kind": "extract", "writes": [["E.mechanism", "fall"], ["patient.sex", "male"]]}
+{"t": "20:04:32", "kind": "question", "slot": "dyn:complaint.fever+infection.rash", "text": "I've noted the details of the fall. Does he have a fever or any new rashes on his body?", "fields": ["complaint.fever", "infection.rash"], "offered": ["complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts", "ams.changed_from_baseline", "complaint.pain_rating"]}
+{"t": "20:04:32", "kind": "answer", "slot": "dyn:complaint.fever+infection.rash", "text": "I don't know."}
+{"t": "20:04:35", "kind": "extract", "writes": []}
+{"t": "20:04:35", "kind": "extract", "writes": [["complaint.fever", null], ["infection.rash", null]], "via": "dont-know"}
+{"t": "20:04:38", "kind": "question", "slot": "dyn:infection.travel_14d+infection.contacts", "text": "I understand. Has he traveled outside the country or been around anyone who was sick in the last two weeks?", "fields": ["infection.travel_14d", "infection.contacts"], "offered": ["infection.travel_14d", "infection.contacts", "ams.changed_from_baseline", "complaint.pain_rating", "M.anticoagulant", "complaint.compartment_syndrome_symptoms"]}
+{"t": "20:04:38", "kind": "answer", "slot": "dyn:infection.travel_14d+infection.contacts", "text": "I don't know."}
+{"t": "20:04:42", "kind": "extract", "writes": []}
+{"t": "20:04:42", "kind": "extract", "writes": [["infection.travel_14d", null], ["infection.contacts", null]], "via": "dont-know"}
+{"t": "20:04:45", "kind": "question", "slot": "dyn:ams.changed_from_baseline", "text": "Is he acting differently than usual, such as being more confused or unusually sleepy?", "fields": ["ams.changed_from_baseline"], "offered": ["ams.changed_from_baseline", "complaint.pain_rating", "M.anticoagulant", "complaint.compartment_syndrome_symptoms", "E.fall_height_meters", "M.medications"]}
+{"t": "20:04:45", "kind": "answer", "slot": "dyn:ams.changed_from_baseline", "text": "I don't know."}
+{"t": "20:04:49", "kind": "extract", "writes": []}
+{"t": "20:04:49", "kind": "extract", "writes": [["ams.changed_from_baseline", null]], "via": "dont-know"}
+{"t": "20:04:52", "kind": "question", "slot": "dyn:complaint.pain_rating", "text": "On a scale from 0 to 10, where 10 is the worst pain imaginable, how bad is his pain right now?", "fields": ["complaint.pain_rating"], "offered": ["complaint.pain_rating", "M.anticoagulant", "complaint.compartment_syndrome_symptoms", "E.fall_height_meters", "M.medications", "A.allergies"]}
+{"t": "20:04:52", "kind": "answer", "slot": "dyn:complaint.pain_rating", "text": "I don't know."}
+{"t": "20:04:56", "kind": "extract", "writes": []}
+{"t": "20:04:58", "kind": "question", "slot": "dyn:complaint.pain_rating", "text": "I understand. Can you describe how much pain he seems to be in right now?", "fields": ["complaint.pain_rating"], "offered": ["complaint.pain_rating"]}
+{"t": "20:04:58", "kind": "answer", "slot": "dyn:complaint.pain_rating", "text": "I don't know."}
+{"t": "20:05:01", "kind": "extract", "writes": []}
+{"t": "20:05:04", "kind": "question", "slot": "dyn:complaint.pain_rating", "text": "I understand it's hard to tell. If you had to guess, how much distress or discomfort does he seem to be in on a scale of 1 to 10?", "fields": ["complaint.pain_rating"], "offered": ["complaint.pain_rating"]}
+{"t": "20:05:04", "kind": "answer", "slot": "dyn:complaint.pain_rating", "text": "I don't know."}
+{"t": "20:05:06", "kind": "extract", "writes": []}
+{"t": "20:05:09", "kind": "question", "slot": "dyn:M.anticoagulant", "text": "I understand. Does he take any medicine to prevent blood clots, such as warfarin or apixaban?", "fields": ["M.anticoagulant"], "offered": ["M.anticoagulant", "complaint.compartment_syndrome_symptoms", "E.fall_height_meters", "M.medications", "A.allergies", "history.conditions"]}
+{"t": "20:05:09", "kind": "answer", "slot": "dyn:M.anticoagulant", "text": "No."}
+{"t": "20:05:13", "kind": "extract", "writes": [["M.anticoagulant", false]]}
+{"t": "20:05:17", "kind": "question", "slot": "dyn:complaint.compartment_syndrome_symptoms+E.fall_height_meters", "text": "How high did he fall from? Also, does the pain in his limb feel like it's getting worse or does the limb feel very tight or hard?", "fields": ["complaint.compartment_syndrome_symptoms", "E.fall_height_meters"], "offered": ["complaint.compartment_syndrome_symptoms", "E.fall_height_meters", "M.medications", "A.allergies", "history.conditions", "history.immunocompromised"]}
+{"t": "20:05:17", "kind": "answer", "slot": "dyn:complaint.compartment_syndrome_symptoms+E.fall_height_meters", "text": "I don't know."}
+{"t": "20:05:21", "kind": "extract", "writes": []}
+{"t": "20:05:21", "kind": "extract", "writes": [["complaint.compartment_syndrome_symptoms", null], ["E.fall_height_meters", null]], "via": "dont-know"}
+{"t": "20:05:24", "kind": "question", "slot": "dyn:M.medications+A.allergies", "text": "I understand. What medications does he take regularly, and does he have any allergies to medicines?", "fields": ["M.medications", "A.allergies"], "offered": ["M.medications", "A.allergies", "history.conditions", "history.immunocompromised", "history.thrombocytopenia_or_clotting_disorder", "limb.numb_tingling"]}
+{"t": "20:05:24", "kind": "answer", "slot": "dyn:M.medications+A.allergies", "text": "No medicines. No allergies."}
+{"t": "20:05:28", "kind": "extract", "writes": [["M.medications", []], ["A.allergies", []]]}
+{"t": "20:05:31", "kind": "question", "slot": "dyn:history.conditions", "text": "Does he have any other ongoing medical conditions?", "fields": ["history.conditions"], "offered": ["history.conditions", "history.immunocompromised", "history.thrombocytopenia_or_clotting_disorder", "limb.numb_tingling", "limb.cold_pale_blue", "limb.cannot_move_digits"]}
+{"t": "20:05:31", "kind": "answer", "slot": "dyn:history.conditions", "text": "He's healthy."}
+{"t": "20:05:34", "kind": "extract", "writes": []}
+{"t": "20:05:36", "kind": "question", "slot": "dyn:history.conditions", "text": "I understand. Does he have any other health conditions or chronic illnesses?", "fields": ["history.conditions"], "offered": ["history.conditions"]}

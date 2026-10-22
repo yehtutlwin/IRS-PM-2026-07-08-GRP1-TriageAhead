@@ -1,0 +1,18 @@
+session VANDA-9856   started 2026-09-26 03:44   (generated from messages)
+
+03:44:41  BOT  Are you awake, responding normally, and free of severe chest pain, trouble breathing, or heavy bleeding right now?   [slot red_flags.screen]
+03:44:42  THEM Yes, I am awake and responding. I have no chest pain, trouble breathing, or heavy bleeding.   [slot red_flags.screen]
+03:44:44  BOT  Can you tell me what happened, when it started, and how bad the pain is on a scale from 0 to 10?   [slot complaint.main]
+03:44:45  THEM I've had constant lower abdominal pain since this morning that's getting worse. It hurts about an 8 out of 10 right now.   [slot complaint.main]
+03:44:47  BOT  Could you please tell me if you take any regular medications?   [slot M.medications]
+03:44:48  THEM No, I only take pregnancy vitamins. That is all my medication.   [slot M.medications]
+03:44:49  SYS  floor: at least ESI-2  rules: ['B-17.abdo-pain-pregnant-or-postpartum', 'B-38.pregnant-chest-pain-breathlessness-abdo-pain-or-headache'] (floor)
+03:44:50  BOT  Do you have any allergies to medicines, or any other medical conditions such as heart problems, diabetes, pregnancy, or issues affecting your immune system?   [slot allergies_and_history]
+03:44:51  THEM No allergies. My only condition is being 28 weeks pregnant.   [slot allergies_and_history]
+03:44:53  BOT  Just to confirm for our medical records, are you currently considered immunocompromised?   [slot allergies_and_history]
+03:44:54  THEM No, I have no other conditions besides my pregnancy and no allergies. I don't know if that makes me immunocompromised.   [slot allergies_and_history]
+03:44:56  BOT  Do you have any fever, rash, recent overseas travel within the last two weeks, or contact with anyone who is currently infectious?   [slot infection.screen]
+03:44:57  THEM No fever or rash. No travel or contact with anyone infectious.   [slot infection.screen]
+03:44:59  BOT  Could you please tell us when you last ate or drank, and provide your name and date of birth for the hospital's records?   [slot wrapup]
+03:45:00  THEM I had dinner last night; my name is not provided but my date of birth is September 3, 1986.   [slot wrapup]
+03:45:01  BOT  Thank you - that's everything for now. Show the code VANDA-9856 at the counter when you arrive. (ack)

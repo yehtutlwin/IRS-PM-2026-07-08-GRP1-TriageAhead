@@ -1,0 +1,34 @@
+arm B, form rules, persona P6-acute-gout, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  Is the patient awake and responding normally?
+A1  Yes, I'm awake and can answer you.
+
+Q2  Is the patient experiencing chest pain right now?
+A2  No chest pain.
+
+Q3  Is the patient having any trouble breathing right now?
+A3  No.
+
+Q4  Is the patient bleeding heavily right now?
+A4  No.
+
+Q5  Is the patient experiencing any other symptoms, such as a severe headache, a sudden change in mental state, or a high-risk injury?
+A5  No. I'm thinking clearly, just tired from the pain.
+
+Q6  How would you describe the pain the patient is experiencing?
+A6  It is a sudden severe pain in the joint at the base of my right big toe. It is an 8 out of 10.
+
+Q7  Is the pain in the joint at the base of the big toe a result of a recent injury, such as a fall or a twist?
+A7  No fall or injury, it just came on.
+
+Q8  Is the pain in the joint at the base of the big toe a result of a recent injury, such as a fall or a twist?
+A8  No fall or injury, it just came on.
+
+Q9  Is the pain in the joint at the base of your big toe a result of a recent injury, such as a fall or a twist?
+A9  No fall or injury, it just came on.
+
+Q10  Is the pain in your toe so severe that it feels like a medical emergency, or is it just very painful?
+A10  It is an 8 out of 10. It is bad, but it is not getting worse by the minute.
+
+DECISION {"done": true, "decision": "no floor", "reason": "The patient is stable and does not meet any high-risk criteria (Decision Point B), so the triage level depends on the number of resources required (Decision Point C).", "citation": "ESI v5 p.5"}
+OUTCOME no floor | expected None | pass True | label None | max prompt tokens 43983

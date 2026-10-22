@@ -1,0 +1,1511 @@
+# rules/derived/agenda.yaml - DERIVED DETERMINISTICALLY by rules/derive.py. DO NOT EDIT: regenerate.
+# What the interview may ask, in order. One entry per field a caregiver can answer (a rule tagged reported reads it,
+# it feeds such a rule through a bridge, or the field file gives it a purpose). Replaces the control part of the v1
+# question file and the v1 agenda-rules file. The program (prototype/engine.py, open_fields) reads this at run time.
+# priority: 0 danger screen (danger_signs) · 1 gate, three or more other fields wait on it · 2 feeds a rule that assigns a
+#   level · 3 feeds only consider flags or context notes · 4 history and identity, no rule reads it.
+# position: the order within and across priorities (more wanting rules first, then field-file order).
+# ask_policy: always = asked of every patient · when_applicable = asked when its trigger holds (authored, in rules/triggers.yaml
+#   file) or, with rule_gates only, when one of those rules is still possible and another of its facts is already known ·
+#   volunteered_only = never asked unprompted; the extraction step may still write it. policy_default: true means the
+#   field file set no policy and the default applied.
+# confirm_for: a rule needs this fact confirmed; a confirmation question is due while its status is probable.
+counts:
+  in_agenda: 104
+  asked_of_everyone: 23
+  asked_when_applicable: 65
+  volunteered_only: 16
+  gated_by_a_rule_only: 8
+  with_an_authored_trigger: 57
+  confirmations: 1
+fields:
+  danger_signs.responsive:
+    priority: 0
+    ask_policy: always
+    wanted_by:
+    - B-01.new-altered-mental-status
+    effects:
+    - assign_2
+    ask: Is the patient awake and responding to you normally?
+    position: 1
+  danger_signs.chest_pain_now:
+    priority: 0
+    ask_policy: always
+    wanted_by: []
+    effects: []
+    ask: Does the patient have chest pain right now?
+    position: 2
+  danger_signs.breathing_difficulty:
+    priority: 0
+    ask_policy: always
+    wanted_by:
+    - B-38.pregnant-chest-pain-breathlessness-abdo-pain-or-headache
+    effects:
+    - assign_2
+    ask: Is the patient having trouble breathing right now?
+    position: 3
+  danger_signs.heavy_bleeding:
+    priority: 0
+    ask_policy: always
+    wanted_by: []
+    effects: []
+    ask: Is the patient bleeding heavily right now?
+    position: 4
+  complaint.category:
+    priority: 1
+    ask_policy: always
+    wanted_by:
+    - A-17.chest-pain-unstable-lifesaving
+    - B-04.chest-pain-acs-suspect
+    - B-15.high-risk-epistaxis
+    - B-17.abdo-pain-pregnant-or-postpartum
+    - B-18.abdo-pain-sepsis-or-hypoperfusion
+    - B-19.abdo-pain-trauma
+    - B-20.abdo-pain-refractory-constant-maximal
+    - B-21.abdo-pain-vaginal-bleeding
+    - B-28.ocular-high-risk-constellation
+    - B-32.thunderclap-headache
+    - B-33.headache-with-neck-pain-or-nuchal-rigidity
+    - B-34.headache-red-flags
+    - B-36.abnormal-ecg-chest-pain
+    - B-38.pregnant-chest-pain-breathlessness-abdo-pain-or-headache
+    - B-55.recent-covid-cardiac-risk-consider
+    effects:
+    - assign_1
+    - assign_2
+    - consider
+    - context_note
+    ask: What is the main problem that brings the patient in today?
+    position: 5
+  complaint.text:
+    priority: 1
+    ask_policy: always
+    wanted_by: []
+    effects: []
+    ask: Can you describe what is wrong, in your own words?
+    asked_with: complaint.category
+    position: 6
+  complaint.onset:
+    priority: 1
+    ask_policy: always
+    wanted_by: []
+    effects: []
+    ask: When did it start?
+    asked_with: complaint.category
+    position: 7
+  E.mechanism:
+    priority: 1
+    ask_policy: always
+    wanted_by:
+    - A-14.penetrating-trauma-unstable
+    - B-23.penetrating-trauma-stable
+    - B-27.geriatric-trauma-caution
+    - B-30.anticoagulated-trauma
+    effects:
+    - assign_1
+    - assign_2
+    - consider
+    - context_note
+    ask: How did the injury happen?
+    asked_with: complaint.category
+    position: 8
+  patient.age:
+    priority: 1
+    ask_policy: always
+    wanted_by:
+    - B-27.geriatric-trauma-caution
+    - B-29.pediatric-subtle-ams
+    - B-43.uti-elderly-or-urosepsis-signs
+    - B-52.geriatric-vitals-medication-context-consider
+    - B-53.pediatric-respiratory-distress-signs-consider
+    - B-59.child-over-3-months-fever-consider
+    - B-60.child-hypothermia-under-36-consider
+    - B-61.child-over-3-months-temperature-red-flag-consider
+    - D-01.adult-danger-zone
+    effects:
+    - assign_2
+    - consider
+    - context_note
+    - reassess
+    ask: How old is the patient?
+    position: 9
+  patient.age_months:
+    priority: 1
+    ask_policy: when_applicable
+    wanted_by:
+    - B-58.infant-1-to-3-months-fever-consider
+    - B-59.child-over-3-months-fever-consider
+    - B-61.child-over-3-months-temperature-red-flag-consider
+    - D-02.pediatric-danger-zone-under-1-month
+    - D-06.pediatric-danger-zone-1-to-12-months
+    - D-07.pediatric-danger-zone-1-to-3-years
+    - D-08.pediatric-danger-zone-3-to-5-years
+    - D-09.pediatric-danger-zone-5-to-12-years
+    - D-10.pediatric-danger-zone-12-to-18-years
+    effects:
+    - consider
+    - reassess
+    ask: 'For a baby or toddler: how many months old?'
+    trigger:
+      field: patient.age
+      lt: 3
+    asked_with: patient.age
+    position: 10
+  patient.age_days:
+    priority: 1
+    ask_policy: when_applicable
+    wanted_by:
+    - B-56.infant-under-28-days-fever
+    - B-57.infant-under-90-days-temperature-over-38
+    effects:
+    - assign_2
+    ask: 'For a newborn: how many days or weeks old?'
+    trigger:
+      field: patient.age
+      lt: 1
+    asked_with: patient.age
+    position: 11
+  patient.sex:
+    priority: 1
+    ask_policy: always
+    wanted_by: []
+    effects: []
+    ask: Is the patient male or female?
+    asked_with: patient.age
+    position: 12
+  history.pregnant:
+    priority: 1
+    ask_policy: when_applicable
+    wanted_by:
+    - A-18.pregnancy-hemodynamic-instability-lifesaving
+    - B-17.abdo-pain-pregnant-or-postpartum
+    - B-37.pregnant-postpartum-sbp-out-of-range
+    - B-38.pregnant-chest-pain-breathlessness-abdo-pain-or-headache
+    - B-39.pregnant-heavy-bleeding-abnormal-vitals-infection
+    effects:
+    - assign_1
+    - assign_2
+    - consider
+    ask: Is the patient pregnant?
+    trigger:
+      all:
+      - not:
+          field: patient.sex
+          equals: male
+      - field: patient.age
+        gte: 10
+      - field: patient.age
+        lt: 60
+    position: 13
+  history.postpartum:
+    priority: 1
+    ask_policy: when_applicable
+    wanted_by:
+    - A-18.pregnancy-hemodynamic-instability-lifesaving
+    - B-17.abdo-pain-pregnant-or-postpartum
+    - B-37.pregnant-postpartum-sbp-out-of-range
+    - B-13.postpartum-hemorrhage
+    effects:
+    - assign_1
+    - assign_2
+    - consider
+    ask: Has the patient given birth in the last few weeks?
+    trigger:
+      all:
+      - not:
+          field: patient.sex
+          equals: male
+      - field: patient.age
+        gte: 10
+      - field: patient.age
+        lt: 60
+      - not:
+          field: history.pregnant
+          equals: true
+    asked_with: history.pregnant
+    position: 14
+  complaint.fever:
+    priority: 1
+    ask_policy: always
+    wanted_by:
+    - B-07.immunocompromised-fever
+    - B-08.transplant-fever-or-infection
+    - B-34.headache-red-flags
+    - B-56.infant-under-28-days-fever
+    effects:
+    - assign_2
+    ask: Does the patient have a fever? If you have measured it, what was the temperature?
+    position: 15
+  infection.rash:
+    priority: 1
+    ask_policy: always
+    wanted_by: []
+    effects: []
+    ask: Is there a new rash?
+    asked_with: complaint.fever
+    position: 16
+  infection.travel_14d:
+    priority: 1
+    ask_policy: always
+    wanted_by: []
+    effects: []
+    ask: Has the patient travelled overseas in the last two weeks?
+    asked_with: complaint.fever
+    position: 17
+  infection.contacts:
+    priority: 1
+    ask_policy: always
+    wanted_by: []
+    effects: []
+    ask: Has the patient been in contact with anyone who has an infectious illness in the last two weeks?
+    asked_with: complaint.fever
+    position: 18
+  complaint.uti_symptoms:
+    priority: 1
+    ask_policy: when_applicable
+    wanted_by:
+    - B-43.uti-elderly-or-urosepsis-signs
+    effects:
+    - assign_2
+    ask: Does it burn or hurt to pass urine, is the patient going much more often, or is the urine cloudy or smelly?
+    trigger:
+      any:
+      - field: complaint.category
+        in:
+        - abdominal_pain
+        - fever
+        - urinary_problem
+        - back_pain
+        - other
+      - field: complaint.fever
+        equals: true
+    position: 19
+  vitals.temp_c:
+    priority: 2
+    ask_policy: when_applicable
+    wanted_by:
+    - B-57.infant-under-90-days-temperature-over-38
+    - B-58.infant-1-to-3-months-fever-consider
+    - B-59.child-over-3-months-fever-consider
+    - B-60.child-hypothermia-under-36-consider
+    - B-61.child-over-3-months-temperature-red-flag-consider
+    effects:
+    - assign_2
+    - consider
+    ask: If you measured the temperature, what was it?
+    trigger:
+      field: complaint.fever
+      equals: true
+    position: 20
+  complaint.heavy_vaginal_bleeding:
+    priority: 2
+    ask_policy: when_applicable
+    wanted_by:
+    - B-39.pregnant-heavy-bleeding-abnormal-vitals-infection
+    - B-13.postpartum-hemorrhage
+    - B-21.abdo-pain-vaginal-bleeding
+    effects:
+    - assign_2
+    - consider
+    ask: 'How heavy is the bleeding: soaking a pad in an hour, clots the size of a plum, or bright red bleeding that is not slowing down?'
+    trigger:
+      field: complaint.vaginal_bleeding
+      equals: true
+    position: 21
+  stroke.vision_change:
+    priority: 2
+    ask_policy: when_applicable
+    wanted_by:
+    - B-28.ocular-high-risk-constellation
+    - B-05.stroke-signs
+    - B-34.headache-red-flags
+    effects:
+    - assign_2
+    - consider
+    ask: Has there been a sudden loss or change of vision?
+    trigger:
+      field: complaint.category
+      in:
+      - neuro_symptoms
+      - dizziness
+      - headache
+      - head_injury
+      - eye_problem
+    position: 22
+  ams.changed_from_baseline:
+    priority: 2
+    ask_policy: always
+    wanted_by:
+    - B-01.new-altered-mental-status
+    - B-34.headache-red-flags
+    - B-29.pediatric-subtle-ams
+    effects:
+    - assign_2
+    ask: Compared with how the patient usually is, are they more confused, not making sense, or unusually sleepy and hard to wake?
+    position: 23
+  obs.hemodynamically_unstable:
+    priority: 2
+    ask_policy: volunteered_only
+    wanted_by:
+    - A-17.chest-pain-unstable-lifesaving
+    - A-18.pregnancy-hemodynamic-instability-lifesaving
+    - B-23.penetrating-trauma-stable
+    effects:
+    - assign_1
+    - consider
+    ask: 'Blood pressure and circulation are unstable: low or falling blood pressure with signs of shock'
+    policy_default: true
+    position: 24
+  vitals.spo2:
+    priority: 2
+    ask_policy: volunteered_only
+    wanted_by:
+    - A-08.spo2-below-90-with-compromise
+    - D-01.adult-danger-zone
+    - D-11.spo2-below-92-any-age
+    effects:
+    - assign_1
+    - reassess
+    ask: If you have a finger oxygen meter, what does it read?
+    position: 25
+  complaint.pain_rating:
+    priority: 2
+    ask_policy: always
+    wanted_by:
+    - B-02.severe-pain-consider
+    - B-03.severe-pain-systemic-cause
+    effects:
+    - assign_2
+    - consider
+    ask: On a scale from 0 to 10, where 10 is the worst pain imaginable, how bad is the pain right now?
+    position: 26
+  complaint.stroke_signs:
+    priority: 2
+    ask_policy: volunteered_only
+    wanted_by:
+    - B-05.stroke-signs
+    - B-34.headache-red-flags
+    effects:
+    - assign_2
+    ask: Has there been any drooping of the face, weakness or numbness of an arm or leg, slurred or strange speech, or sudden loss of vision or
+      balance, even if it has passed?
+    position: 27
+  complaint.infection_signs:
+    priority: 2
+    ask_policy: when_applicable
+    wanted_by:
+    - B-08.transplant-fever-or-infection
+    - B-39.pregnant-heavy-bleeding-abnormal-vitals-infection
+    effects:
+    - assign_2
+    ask: Is there any sign of infection, such as a wound that is red, hot, swollen or oozing, or has a doctor said there is an infection?
+    trigger:
+      any:
+      - field: complaint.fever
+        equals: true
+      - field: complaint.category
+        in:
+        - wound
+        - burn
+        - skin_problem
+      - field: history.transplant_recipient_or_listed
+        equals: true
+      - any:
+        - field: history.pregnant
+          equals: true
+        - field: history.postpartum
+          equals: true
+    position: 28
+  complaint.back_pain:
+    priority: 2
+    ask_policy: when_applicable
+    wanted_by:
+    - B-34.headache-red-flags
+    - B-43.uti-elderly-or-urosepsis-signs
+    effects:
+    - assign_2
+    ask: Is there any back pain, and if so is it low down in the back or higher up?
+    trigger:
+      any:
+      - field: complaint.uti_symptoms
+        equals: true
+      - field: complaint.category
+        in:
+        - headache
+        - back_pain
+        - urinary_problem
+    position: 29
+  E.body_region:
+    priority: 2
+    ask_policy: when_applicable
+    wanted_by:
+    - A-14.penetrating-trauma-unstable
+    - B-23.penetrating-trauma-stable
+    effects:
+    - assign_1
+    - consider
+    ask: 'Where on the body is the wound: head, neck, chest, belly, or elsewhere?'
+    trigger:
+      field: E.mechanism
+      equals: penetrating_trauma
+    position: 30
+  M.anticoagulant:
+    priority: 2
+    ask_policy: when_applicable
+    wanted_by:
+    - B-15.high-risk-epistaxis
+    - B-30.anticoagulated-trauma
+    effects:
+    - assign_2
+    ask: Does the patient take a blood thinner, a medicine to prevent clots, such as warfarin, apixaban, rivaroxaban or clopidogrel?
+    trigger:
+      any:
+      - field: complaint.category
+        equals: nosebleed
+      - field: E.mechanism
+        in:
+        - fall
+        - road_accident
+        - assault
+        - penetrating_trauma
+      - field: danger_signs.heavy_bleeding
+        equals: true
+    confirm_for:
+    - B-30.anticoagulated-trauma
+    position: 31
+  stroke.face_droop:
+    priority: 2
+    ask_policy: when_applicable
+    wanted_by:
+    - B-05.stroke-signs
+    - B-34.headache-red-flags
+    effects:
+    - assign_2
+    ask: Is one side of the face drooping, or is the smile uneven?
+    trigger:
+      field: complaint.category
+      in:
+      - neuro_symptoms
+      - dizziness
+      - headache
+      - head_injury
+      - other
+    position: 32
+  stroke.arm_weakness:
+    priority: 2
+    ask_policy: when_applicable
+    wanted_by:
+    - B-05.stroke-signs
+    - B-34.headache-red-flags
+    effects:
+    - assign_2
+    ask: Is one arm or leg weak or numb, or does it drift down when raised?
+    trigger:
+      field: complaint.category
+      in:
+      - neuro_symptoms
+      - dizziness
+      - headache
+      - head_injury
+      - other
+    position: 33
+  stroke.speech_change:
+    priority: 2
+    ask_policy: when_applicable
+    wanted_by:
+    - B-05.stroke-signs
+    - B-34.headache-red-flags
+    effects:
+    - assign_2
+    ask: Is the speech slurred or strange, or is the patient not understanding you?
+    trigger:
+      field: complaint.category
+      in:
+      - neuro_symptoms
+      - dizziness
+      - headache
+      - head_injury
+      - other
+    position: 34
+  stroke.balance_loss:
+    priority: 2
+    ask_policy: when_applicable
+    wanted_by:
+    - B-05.stroke-signs
+    - B-34.headache-red-flags
+    effects:
+    - assign_2
+    ask: Has the patient suddenly lost balance or coordination?
+    trigger:
+      field: complaint.category
+      in:
+      - neuro_symptoms
+      - dizziness
+      - headache
+      - head_injury
+      - other
+    position: 35
+  obs.confusion_lethargy_disorientation:
+    priority: 2
+    ask_policy: when_applicable
+    wanted_by:
+    - B-01.new-altered-mental-status
+    - B-34.headache-red-flags
+    effects:
+    - assign_2
+    ask: Is the patient confused, unusually drowsy, or not making sense?
+    trigger:
+      any:
+      - field: ams.changed_from_baseline
+        equals: true
+      - field: complaint.category
+        in:
+        - neuro_symptoms
+        - headache
+    position: 36
+  complaint.pain_cause_class:
+    priority: 2
+    ask_policy: when_applicable
+    wanted_by:
+    - B-03.severe-pain-systemic-cause
+    effects:
+    - assign_2
+    ask: Does the patient have a known condition behind this pain, such as kidney stones, cancer, or sickle cell disease?
+    trigger:
+      all:
+      - field: complaint.pain_rating
+        gte: 7
+      - field: complaint.category
+        in:
+        - abdominal_pain
+        - back_pain
+        - chest_pain
+        - urinary_problem
+        - other
+    position: 37
+  complaint.acs_suspicion:
+    priority: 2
+    ask_policy: when_applicable
+    wanted_by:
+    - B-04.chest-pain-acs-suspect
+    effects:
+    - assign_2
+    ask: Does the chest pain feel like pressure or squeezing, does it spread to the arm, neck or jaw, and is there sweating or breathlessness
+      with it?
+    rule_gates:
+    - B-04.chest-pain-acs-suspect
+    position: 38
+  complaint.possible_ectopic_pregnancy:
+    priority: 2
+    ask_policy: when_applicable
+    wanted_by:
+    - B-06.possible-ectopic-stable
+    effects:
+    - assign_2
+    ask: Could the patient be in early pregnancy or have missed a period, and is there belly pain or any bleeding?
+    trigger:
+      all:
+      - not:
+          field: patient.sex
+          equals: male
+      - field: patient.age
+        gte: 10
+      - field: patient.age
+        lt: 60
+      - field: complaint.category
+        equals: abdominal_pain
+    position: 39
+  complaint.danger_to_self_or_others:
+    priority: 2
+    ask_policy: when_applicable
+    wanted_by:
+    - B-09.suicidal-or-homicidal
+    effects:
+    - assign_2
+    ask: Has the patient said or done anything that suggests they might hurt themselves or someone else?
+    trigger:
+      field: complaint.category
+      in:
+      - neuro_symptoms
+      - mental_health
+      - poisoning_or_overdose
+      - other
+    position: 40
+  complaint.needle_stick_healthcare_worker:
+    priority: 2
+    ask_policy: volunteered_only
+    wanted_by:
+    - B-10.needle-stick-hcw
+    effects:
+    - assign_2
+    ask: Is the patient a health-care worker who was pricked by a used needle or exposed to someone's blood?
+    position: 41
+  complaint.sexual_assault:
+    priority: 2
+    ask_policy: volunteered_only
+    wanted_by:
+    - B-11.sexual-assault
+    effects:
+    - assign_2
+    ask: Has the patient been sexually assaulted?
+    position: 42
+  complaint.increasing_respiratory_effort:
+    priority: 2
+    ask_policy: when_applicable
+    wanted_by:
+    - B-12.increasing-respiratory-effort
+    effects:
+    - assign_2
+    ask: Is the breathing getting harder than it was earlier?
+    trigger:
+      any:
+      - field: complaint.category
+        in:
+        - breathing
+        - allergic_reaction
+      - field: danger_signs.breathing_difficulty
+        equals: true
+    position: 43
+  complaint.shortness_of_breath:
+    priority: 2
+    ask_policy: when_applicable
+    wanted_by:
+    - B-38.pregnant-chest-pain-breathlessness-abdo-pain-or-headache
+    effects:
+    - assign_2
+    ask: Is the patient short of breath?
+    trigger:
+      any:
+      - field: complaint.category
+        in:
+        - breathing
+        - chest_pain
+        - allergic_reaction
+      - field: danger_signs.breathing_difficulty
+        equals: true
+      - any:
+        - field: history.pregnant
+          equals: true
+        - field: history.postpartum
+          equals: true
+    position: 44
+  complaint.postpartum_hemorrhage:
+    priority: 2
+    ask_policy: when_applicable
+    wanted_by:
+    - B-13.postpartum-hemorrhage
+    effects:
+    - assign_2
+    ask: 'Since giving birth, is the bleeding heavy: soaking a pad in an hour, or passing large clots?'
+    trigger:
+      all:
+      - field: history.postpartum
+        equals: true
+      - field: complaint.vaginal_bleeding
+        equals: true
+    position: 45
+  complaint.brisk_or_posterior_bleeding:
+    priority: 2
+    ask_policy: when_applicable
+    wanted_by:
+    - B-15.high-risk-epistaxis
+    effects:
+    - assign_2
+    ask: Is the nosebleed fast or impossible to stop by pinching the nose, or is blood running down the back of the throat?
+    rule_gates:
+    - B-15.high-risk-epistaxis
+    position: 46
+  complaint.button_battery_or_magnet_ingestion:
+    priority: 2
+    ask_policy: when_applicable
+    wanted_by:
+    - B-16.button-battery-or-magnet-ingestion
+    effects:
+    - assign_2
+    ask: Could the patient have swallowed a button battery or a small magnet?
+    trigger:
+      all:
+      - field: patient.age
+        lt: 18
+      - field: complaint.category
+        in:
+        - poisoning_or_overdose
+        - other
+        - sore_throat
+        - breathing
+        - abdominal_pain
+        - vomiting_or_diarrhoea
+    position: 47
+  complaint.known_toxic_ingestion:
+    priority: 2
+    ask_policy: when_applicable
+    wanted_by:
+    - B-26.suspected-toxic-ingestion
+    effects:
+    - assign_2
+    ask: Has the patient swallowed, taken or been given anything that could be poisonous, or more of a medicine than they should have?
+    trigger:
+      field: complaint.category
+      in:
+      - poisoning_or_overdose
+      - mental_health
+      - other
+      - neuro_symptoms
+      - dizziness
+      - abdominal_pain
+      - vomiting_or_diarrhoea
+    position: 48
+  complaint.severe_flank_pain:
+    priority: 2
+    ask_policy: when_applicable
+    wanted_by:
+    - B-49.severe-flank-pain
+    effects:
+    - assign_2
+    ask: Is there severe pain in the side of the back, between the ribs and the hip?
+    trigger:
+      field: complaint.category
+      in:
+      - abdominal_pain
+      - back_pain
+      - urinary_problem
+      - other
+    position: 49
+  complaint.chills_or_rigors:
+    priority: 2
+    ask_policy: when_applicable
+    wanted_by:
+    - B-43.uti-elderly-or-urosepsis-signs
+    effects:
+    - assign_2
+    ask: Has the patient had shivering or shaking chills?
+    trigger:
+      any:
+      - field: complaint.uti_symptoms
+        equals: true
+      - field: complaint.fever
+        equals: true
+    position: 50
+  complaint.extremity_neurovascular_compromise:
+    priority: 2
+    ask_policy: volunteered_only
+    wanted_by:
+    - B-24.extremity-neurovascular-compromise
+    effects:
+    - assign_2
+    ask: Below the injury, are the fingers or toes numb, tingling, cold, pale or blue, or unable to move?
+    position: 51
+  complaint.compartment_syndrome_symptoms:
+    priority: 2
+    ask_policy: when_applicable
+    wanted_by:
+    - B-46.compartment-syndrome-symptoms
+    effects:
+    - assign_2
+    ask: Is the pain in the injured limb getting worse and worse, out of all proportion to the injury, with the limb feeling tight or hard?
+    trigger:
+      any:
+      - field: E.mechanism
+        in:
+        - fall
+        - road_accident
+        - assault
+        - penetrating_trauma
+      - field: limb.cast_too_tight
+        equals: true
+    position: 52
+  complaint.amputation_partial_or_complete:
+    priority: 2
+    ask_policy: volunteered_only
+    wanted_by:
+    - B-47.partial-or-complete-amputation
+    effects:
+    - assign_2
+    ask: Has any part of the body been cut off, or is it hanging by the skin?
+    position: 53
+  complaint.post_ictal_after_seizure:
+    priority: 2
+    ask_policy: when_applicable
+    wanted_by:
+    - B-31.post-ictal
+    effects:
+    - assign_2
+    ask: Has the patient had a fit or seizure just now, and are they still drowsy or confused after it?
+    trigger:
+      field: complaint.category
+      in:
+      - neuro_symptoms
+      - dizziness
+      - mental_health
+      - other
+    position: 54
+  complaint.headache_thunderclap:
+    priority: 2
+    ask_policy: when_applicable
+    wanted_by:
+    - B-32.thunderclap-headache
+    effects:
+    - assign_2
+    ask: Did the headache come on suddenly and reach its worst within a minute or so, like a blow to the head?
+    rule_gates:
+    - B-32.thunderclap-headache
+    position: 55
+  complaint.neck_pain:
+    priority: 2
+    ask_policy: when_applicable
+    wanted_by:
+    - B-33.headache-with-neck-pain-or-nuchal-rigidity
+    effects:
+    - assign_2
+    ask: Is there neck pain or a stiff neck with the headache?
+    rule_gates:
+    - B-33.headache-with-neck-pain-or-nuchal-rigidity
+    position: 56
+  complaint.vomiting:
+    priority: 2
+    ask_policy: when_applicable
+    wanted_by:
+    - B-34.headache-red-flags
+    effects:
+    - assign_2
+    ask: Has the patient been vomiting?
+    trigger:
+      any:
+      - field: complaint.category
+        in:
+        - headache
+        - abdominal_pain
+        - fever
+        - vomiting_or_diarrhoea
+        - poisoning_or_overdose
+      - field: complaint.uti_symptoms
+        equals: true
+    position: 57
+  complaint.psychotic_or_violent:
+    priority: 2
+    ask_policy: volunteered_only
+    wanted_by:
+    - B-51.psychotic-or-violent
+    effects:
+    - assign_2
+    ask: Is the patient seeing or hearing things that are not there, saying things that make no sense, or being violent or threatening?
+    position: 58
+  E.fall_height_meters:
+    priority: 2
+    ask_policy: when_applicable
+    wanted_by:
+    - B-22.fall-from-6-metres-or-more
+    effects:
+    - assign_2
+    ask: Did the patient fall from standing, or from a height such as a ladder, a window or stairs? Roughly how high?
+    trigger:
+      field: E.mechanism
+      equals: fall
+    position: 59
+  E.vehicle_ejection:
+    priority: 2
+    ask_policy: when_applicable
+    wanted_by:
+    - B-44.vehicle-ejection
+    effects:
+    - assign_2
+    ask: In the crash, was the patient thrown out of the vehicle?
+    trigger:
+      field: E.mechanism
+      equals: road_accident
+    position: 60
+  E.mechanical_extrication:
+    priority: 2
+    ask_policy: when_applicable
+    wanted_by:
+    - B-45.mechanical-extrication
+    effects:
+    - assign_2
+    ask: Did rescuers have to cut the patient out of the vehicle?
+    trigger:
+      field: E.mechanism
+      equals: road_accident
+    position: 61
+  M.medications:
+    priority: 2
+    ask_policy: always
+    wanted_by: []
+    effects: []
+    ask: What medicines does the patient take regularly? You can also send a photo of the boxes.
+    position: 62
+  A.allergies:
+    priority: 2
+    ask_policy: always
+    wanted_by: []
+    effects: []
+    ask: Does the patient have any allergies, especially to medicines?
+    asked_with: M.medications
+    position: 63
+  history.conditions:
+    priority: 2
+    ask_policy: always
+    wanted_by: []
+    effects: []
+    ask: Does the patient have any ongoing medical conditions?
+    asked_with: M.medications
+    position: 64
+  history.immunocompromised:
+    priority: 2
+    ask_policy: always
+    wanted_by:
+    - B-07.immunocompromised-fever
+    effects:
+    - assign_2
+    ask: Is the patient being treated for cancer, have they had an organ transplant, do they have HIV, or do they take steroids or any medicine
+      that weakens their defences against infection? Or has a doctor said their immune system is weak?
+    asked_with: M.medications
+    position: 65
+  history.transplant_recipient_or_listed:
+    priority: 2
+    ask_policy: when_applicable
+    wanted_by:
+    - B-08.transplant-fever-or-infection
+    effects:
+    - assign_2
+    ask: Has the patient had an organ transplant, or are they waiting for one?
+    trigger:
+      field: complaint.fever
+      equals: true
+    position: 66
+  complaint.transplant_rejection_signs:
+    priority: 2
+    ask_policy: when_applicable
+    wanted_by:
+    - B-08.transplant-fever-or-infection
+    effects:
+    - assign_2
+    ask: Has anything changed that the transplant team told you to watch for, such as less urine, swelling or pain over the transplant, or feeling
+      unwell?
+    trigger:
+      field: history.transplant_recipient_or_listed
+      equals: true
+    position: 67
+  history.thrombocytopenia_or_clotting_disorder:
+    priority: 2
+    ask_policy: when_applicable
+    wanted_by:
+    - B-15.high-risk-epistaxis
+    effects:
+    - assign_2
+    ask: Has a doctor ever said the patient has a low platelet count or a bleeding or clotting disorder, such as haemophilia?
+    trigger:
+      any:
+      - field: complaint.category
+        equals: nosebleed
+      - field: E.mechanism
+        in:
+        - fall
+        - road_accident
+        - assault
+        - penetrating_trauma
+      - field: danger_signs.heavy_bleeding
+        equals: true
+    position: 68
+  history.baseline_mental_status:
+    priority: 2
+    ask_policy: when_applicable
+    wanted_by:
+    - B-01.new-altered-mental-status
+    effects:
+    - assign_2
+    ask: Do you know the patient well enough to say how alert and clear-headed they usually are?
+    trigger:
+      field: ams.changed_from_baseline
+      equals: true
+    position: 69
+  limb.numb_tingling:
+    priority: 2
+    ask_policy: when_applicable
+    wanted_by:
+    - B-24.extremity-neurovascular-compromise
+    effects:
+    - assign_2
+    ask: Are the fingers or toes below the injury numb or tingling?
+    trigger:
+      any:
+      - field: E.mechanism
+        in:
+        - fall
+        - road_accident
+        - assault
+        - penetrating_trauma
+      - field: complaint.category
+        in:
+        - wound
+        - burn
+        - limb_pain_or_swelling
+    position: 70
+  limb.cold_pale_blue:
+    priority: 2
+    ask_policy: when_applicable
+    wanted_by:
+    - B-24.extremity-neurovascular-compromise
+    effects:
+    - assign_2
+    ask: Are the fingers or toes below the injury cold, pale or blue?
+    trigger:
+      any:
+      - field: E.mechanism
+        in:
+        - fall
+        - road_accident
+        - assault
+        - penetrating_trauma
+      - field: complaint.category
+        in:
+        - wound
+        - burn
+        - limb_pain_or_swelling
+    position: 71
+  limb.cannot_move_digits:
+    priority: 2
+    ask_policy: when_applicable
+    wanted_by:
+    - B-24.extremity-neurovascular-compromise
+    effects:
+    - assign_2
+    ask: Can the patient move the fingers or toes below the injury?
+    trigger:
+      any:
+      - field: E.mechanism
+        in:
+        - fall
+        - road_accident
+        - assault
+        - penetrating_trauma
+      - field: complaint.category
+        in:
+        - wound
+        - burn
+        - limb_pain_or_swelling
+    position: 72
+  limb.cast_too_tight:
+    priority: 2
+    ask_policy: when_applicable
+    wanted_by:
+    - B-24.extremity-neurovascular-compromise
+    effects:
+    - assign_2
+    ask: If there is a cast or splint, does it feel too tight, with the pain or swelling getting worse?
+    trigger:
+      any:
+      - field: E.mechanism
+        in:
+        - fall
+        - road_accident
+        - assault
+        - penetrating_trauma
+      - field: complaint.category
+        in:
+        - wound
+        - burn
+        - limb_pain_or_swelling
+    position: 73
+  obs.new_confusion_lethargy_disorientation:
+    priority: 2
+    ask_policy: volunteered_only
+    wanted_by:
+    - B-01.new-altered-mental-status
+    effects:
+    - assign_2
+    ask: 'New confusion, drowsiness or disorientation: a change from how the patient usually is'
+    policy_default: true
+    position: 74
+  obs.subtle_mental_status_change:
+    priority: 2
+    ask_policy: volunteered_only
+    wanted_by:
+    - B-29.pediatric-subtle-ams
+    effects:
+    - assign_2
+    ask: 'A child who is ''not right'' to the people who know them: less alert, less playful, quieter, harder to rouse than usual, even if still
+      awake and answering'
+    policy_default: true
+    position: 75
+  obs.nuchal_rigidity:
+    priority: 2
+    ask_policy: when_applicable
+    wanted_by:
+    - B-33.headache-with-neck-pain-or-nuchal-rigidity
+    effects:
+    - assign_2
+    ask: Can the patient bend the head forward and touch the chin to the chest, or is the neck too stiff or painful to do it?
+    rule_gates:
+    - B-33.headache-with-neck-pain-or-nuchal-rigidity
+    position: 76
+  vitals.sbp:
+    priority: 2
+    ask_policy: volunteered_only
+    wanted_by:
+    - B-37.pregnant-postpartum-sbp-out-of-range
+    effects:
+    - assign_2
+    ask: If you have a blood pressure reading, what is the upper number?
+    position: 77
+  patient.has_ovaries:
+    priority: 3
+    ask_policy: when_applicable
+    wanted_by:
+    - B-42.unilateral-lower-quadrant-pain-torsion-or-ectopic-consider
+    effects:
+    - consider
+    ask: Has the patient had an operation to remove the ovaries or the womb?
+    rule_gates:
+    - B-42.unilateral-lower-quadrant-pain-torsion-or-ectopic-consider
+    position: 78
+  patient.immunizations_incomplete:
+    priority: 3
+    ask_policy: when_applicable
+    wanted_by:
+    - B-59.child-over-3-months-fever-consider
+    effects:
+    - consider
+    ask: Are the child's vaccinations up to date for their age?
+    trigger:
+      all:
+      - field: patient.age
+        lt: 18
+      - field: complaint.fever
+        equals: true
+    position: 79
+  complaint.fever_no_obvious_source:
+    priority: 3
+    ask_policy: when_applicable
+    wanted_by:
+    - B-59.child-over-3-months-fever-consider
+    effects:
+    - consider
+    ask: Apart from the fever, is there anything that explains it, such as a cold, a cough, an earache, a sore throat or a rash?
+    trigger:
+      all:
+      - field: patient.age
+        lt: 18
+      - field: complaint.fever
+        equals: true
+    position: 80
+  complaint.respiratory_distress_signs:
+    priority: 3
+    ask_policy: when_applicable
+    wanted_by:
+    - B-54.respiratory-distress-signs-consider
+    effects:
+    - consider
+    ask: Right now, is the patient breathing fast, able to say only a few words at a time, sitting forward to breathe, or wheezing so you can
+      hear it?
+    trigger:
+      any:
+      - field: complaint.category
+        in:
+        - breathing
+        - allergic_reaction
+      - field: danger_signs.breathing_difficulty
+        equals: true
+    position: 81
+  complaint.vaginal_bleeding:
+    priority: 3
+    ask_policy: when_applicable
+    wanted_by:
+    - B-21.abdo-pain-vaginal-bleeding
+    effects:
+    - consider
+    ask: Is there any vaginal bleeding that is not a normal period?
+    trigger:
+      all:
+      - not:
+          field: patient.sex
+          equals: male
+      - any:
+        - field: complaint.category
+          in:
+          - abdominal_pain
+          - vaginal_bleeding
+          - pregnancy_related
+        - any:
+          - field: history.pregnant
+            equals: true
+          - field: history.postpartum
+            equals: true
+    position: 82
+  complaint.pain_refractory_constant_or_maximal_onset:
+    priority: 3
+    ask_policy: when_applicable
+    wanted_by:
+    - B-20.abdo-pain-refractory-constant-maximal
+    effects:
+    - consider
+    ask: Is the belly pain there all the time without easing, has it not improved with painkillers, or was it at its very worst the moment it
+      started?
+    rule_gates:
+    - B-20.abdo-pain-refractory-constant-maximal
+    position: 83
+  complaint.unilateral_lower_quadrant_pain:
+    priority: 3
+    ask_policy: when_applicable
+    wanted_by:
+    - B-42.unilateral-lower-quadrant-pain-torsion-or-ectopic-consider
+    effects:
+    - consider
+    ask: Is the pain low down in the belly, on one side only?
+    trigger:
+      field: complaint.category
+      equals: abdominal_pain
+    position: 84
+  complaint.testicular_or_scrotal_pain:
+    priority: 3
+    ask_policy: when_applicable
+    wanted_by:
+    - B-41.testicular-or-scrotal-pain-torsion-consider
+    effects:
+    - consider
+    ask: Is there pain in the testicles or the scrotum?
+    trigger:
+      all:
+      - not:
+          field: patient.sex
+          equals: female
+      - field: complaint.category
+        in:
+        - abdominal_pain
+        - limb_pain_or_swelling
+        - other
+    position: 85
+  complaint.possible_pelvis_femur_fracture_or_dislocation:
+    priority: 3
+    ask_policy: when_applicable
+    wanted_by:
+    - B-25.pelvis-femur-fracture-consider
+    effects:
+    - consider
+    ask: Can the patient put weight on the leg? Does the leg look shorter or turned outwards, or the hip or thigh look out of shape?
+    trigger:
+      any:
+      - field: E.mechanism
+        in:
+        - fall
+        - road_accident
+        - assault
+        - penetrating_trauma
+      - field: complaint.category
+        in:
+        - wound
+        - burn
+    position: 86
+  complaint.atso_elements_count:
+    priority: 3
+    ask_policy: volunteered_only
+    wanted_by:
+    - B-28.ocular-high-risk-constellation
+    effects:
+    - consider
+    ask: 'How many of six eye findings are present: altered vision; double vision, unequal pupils or a bulging eye; a red eye; unbearable pain;
+      an eye injury; floaters or flashes. Counted from the eye fields; write only when the caregiver gives a number'
+    policy_default: true
+    position: 87
+  complaint.severe_psychological_distress:
+    priority: 3
+    ask_policy: volunteered_only
+    wanted_by:
+    - B-35.severe-psychological-distress-consider
+    effects:
+    - consider
+    ask: 'Is the patient extremely distressed: for example beside themselves after an assault or a loss, lashing out, or unable to be calmed?'
+    position: 88
+  E.abdominal_trauma:
+    priority: 3
+    ask_policy: when_applicable
+    wanted_by:
+    - B-19.abdo-pain-trauma
+    effects:
+    - consider
+    ask: Was there a blow or injury to the belly?
+    trigger:
+      any:
+      - field: E.mechanism
+        in:
+        - fall
+        - road_accident
+        - assault
+        - penetrating_trauma
+      - field: complaint.category
+        equals: abdominal_pain
+    position: 89
+  M.beta_blocker:
+    priority: 3
+    ask_policy: volunteered_only
+    wanted_by:
+    - D-04.context-beta-blockers-consider
+    effects:
+    - context_note
+    ask: Does the patient take a heart or blood-pressure medicine whose name ends in -olol, such as atenolol, bisoprolol or metoprolol?
+    position: 90
+  M.immunosuppressant_or_steroid:
+    priority: 3
+    ask_policy: volunteered_only
+    wanted_by:
+    - D-05.context-immunosuppression-consider
+    effects:
+    - context_note
+    ask: Does the patient take steroid tablets long term, transplant medicines, chemotherapy, or injections that suppress the immune system?
+    position: 91
+  history.on_transplant_list:
+    priority: 3
+    ask_policy: volunteered_only
+    wanted_by:
+    - B-50.transplant-list-consider
+    effects:
+    - consider
+    ask: Is the patient on a waiting list for an organ transplant?
+    position: 92
+  history.recent_covid_infection:
+    priority: 3
+    ask_policy: when_applicable
+    wanted_by:
+    - B-55.recent-covid-cardiac-risk-consider
+    effects:
+    - context_note
+    ask: Has the patient had COVID-19 recently?
+    rule_gates:
+    - B-55.recent-covid-cardiac-risk-consider
+    position: 93
+  eye.double_vision_pupil_or_bulge:
+    priority: 3
+    ask_policy: when_applicable
+    wanted_by:
+    - B-28.ocular-high-risk-constellation
+    effects:
+    - consider
+    ask: Is there sudden double vision, are the pupils different sizes, or does one eye bulge?
+    trigger:
+      field: complaint.category
+      equals: eye_problem
+    position: 94
+  eye.red:
+    priority: 3
+    ask_policy: when_applicable
+    wanted_by:
+    - B-28.ocular-high-risk-constellation
+    effects:
+    - consider
+    ask: Is the eye red?
+    trigger:
+      field: complaint.category
+      equals: eye_problem
+    position: 95
+  eye.intolerable_pain:
+    priority: 3
+    ask_policy: when_applicable
+    wanted_by:
+    - B-28.ocular-high-risk-constellation
+    effects:
+    - consider
+    ask: Is the eye pain unbearable?
+    trigger:
+      field: complaint.category
+      equals: eye_problem
+    position: 96
+  eye.injury:
+    priority: 3
+    ask_policy: when_applicable
+    wanted_by:
+    - B-28.ocular-high-risk-constellation
+    effects:
+    - consider
+    ask: Was the eye injured, or did something get into it?
+    trigger:
+      field: complaint.category
+      equals: eye_problem
+    position: 97
+  eye.floaters_or_flashes:
+    priority: 3
+    ask_policy: when_applicable
+    wanted_by:
+    - B-28.ocular-high-risk-constellation
+    effects:
+    - consider
+    ask: Are there new floating specks or flashes of light in the vision?
+    trigger:
+      field: complaint.category
+      equals: eye_problem
+    position: 98
+  obs.grunting_belly_breathing_or_retractions:
+    priority: 3
+    ask_policy: when_applicable
+    wanted_by:
+    - B-53.pediatric-respiratory-distress-signs-consider
+    effects:
+    - context_note
+    ask: When the child breathes, do they grunt with each breath, does the belly go in and out hard, or does the skin pull in between or below
+      the ribs?
+    trigger:
+      all:
+      - field: patient.age
+        lt: 18
+      - any:
+        - field: complaint.category
+          in:
+          - breathing
+          - allergic_reaction
+        - field: danger_signs.breathing_difficulty
+          equals: true
+    position: 99
+  identity.name:
+    priority: 4
+    ask_policy: always
+    wanted_by: []
+    effects: []
+    ask: What is the patient's full name?
+    position: 100
+  identity.dob:
+    priority: 4
+    ask_policy: always
+    wanted_by: []
+    effects: []
+    ask: What is the patient's date of birth?
+    asked_with: identity.name
+    position: 101
+  E.head_strike:
+    priority: 4
+    ask_policy: when_applicable
+    wanted_by: []
+    effects: []
+    ask: Did the patient hit their head?
+    trigger:
+      any:
+      - field: E.mechanism
+        in:
+        - fall
+        - road_accident
+        - assault
+        - penetrating_trauma
+      - field: complaint.category
+        equals: head_injury
+    position: 102
+  E.loc:
+    priority: 4
+    ask_policy: when_applicable
+    wanted_by: []
+    effects: []
+    ask: Did the patient pass out or black out, even for a moment, when it happened?
+    trigger:
+      any:
+      - field: E.mechanism
+        in:
+        - fall
+        - road_accident
+        - assault
+        - penetrating_trauma
+      - field: complaint.category
+        equals: head_injury
+    position: 103
+  L.last_intake:
+    priority: 4
+    ask_policy: always
+    wanted_by: []
+    effects: []
+    ask: When did the patient last eat or drink, and what was it?
+    position: 104

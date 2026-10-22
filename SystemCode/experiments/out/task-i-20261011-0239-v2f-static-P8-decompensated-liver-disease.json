@@ -1,0 +1,39 @@
+{
+ "persona_backend": "ollama",
+ "persona_model": "gemma4:12b",
+ "interview": {
+  "interview_mode": "static",
+  "backend": "ollama",
+  "model": "gemma4:12b",
+  "dyn_max_fields": 4
+ },
+ "tag": "v2f-static-P8-decompensated-liver-disease",
+ "results": [
+  {
+   "questions": 18,
+   "reasks": 1,
+   "floor": "at least ESI-2",
+   "floor_ok": true,
+   "rules_ok": false,
+   "fired": [
+    "B-01.new-altered-mental-status"
+   ],
+   "hits": 5,
+   "total": 12,
+   "misses": [
+    "red_flags.altered_mental_status: want=True got=None",
+    "complaint.hematemesis: want=False got=None",
+    "complaint.melena: want=False got=None",
+    "history.cirrhosis: want=True got=None",
+    "history.hepatitis_b: want=True got=None",
+    "signs.jaundice: want=True got=None",
+    "signs.ascites: want=True got=None"
+   ],
+   "danger_miss": false,
+   "persona": "P8-decompensated-liver-disease",
+   "run": 1,
+   "session": "PANDA-1398",
+   "turns": 18
+  }
+ ]
+}

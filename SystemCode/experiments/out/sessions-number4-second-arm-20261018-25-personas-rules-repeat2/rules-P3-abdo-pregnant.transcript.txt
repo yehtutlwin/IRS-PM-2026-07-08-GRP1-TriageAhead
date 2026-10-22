@@ -1,0 +1,49 @@
+arm B, form rules, persona P3-abdo-pregnant, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  Is the patient awake and responding normally?
+A1  Yes, I'm awake.
+
+Q2  Is the patient experiencing any chest pain right now?
+A2  No chest pain.
+
+Q3  Is the patient having any trouble breathing right now?
+A3  No trouble breathing, just the pain.
+
+Q4  Is the patient bleeding heavily right now?
+A4  No bleeding at all.
+
+Q5  Where is the pain located and what does it feel like?
+A5  It's low down in the belly and it's constant and getting worse. I can't say if it's on one side.
+
+Q6  Is the patient pregnant or have they recently given birth?
+A6  I am 28 weeks pregnant.
+
+Q7  Is the pain in the belly very severe, and does it feel like it's been constant or at its worst since it started?
+A7  It's an 8 out of 10 now. It's there all the time and getting worse.
+
+Q8  Is the pain in the belly accompanied by any vaginal bleeding?
+A8  No bleeding at all.
+
+Q9  Is the patient's blood pressure low or is it very high (over 150/100)?
+A9  I don't know.
+
+Q10  Does the patient have any other symptoms, such as a fever, or are they feeling dizzy or lightheaded?
+A10  No fever. No, I'm thinking clearly.
+
+Q11  Is the pain in the belly constant and was it at its worst the moment it started?
+A11  It's there all the time and getting worse.
+
+Q12  Is the pain in the belly a result of a recent injury, such as a fall or a hit to the stomach?
+A12  No injury.
+
+Q13  Is the pain in the belly a result of a recent injury, such as a fall or a hit to the stomach?
+A13  No injury.
+
+Q14  Is the pain in the belly a result of a recent injury, such as a fall or a hit to the stomach?
+A14  No injury.
+
+Q15  Is the pain in the belly a result of a recent injury, such as a fall or a hit to the stomach?
+A15  No injury.
+
+DECISION {"done": true, "decision": "at least ESI-2", "reason": "The patient is pregnant and experiencing severe abdominal pain (8/10) that is constant and at its worst on onset, which meets the criteria for a high-risk situation.", "citation": "ESI v5 p.14 (Obstetrical and Gynecological Concerns); p.12 (Severe Pain or Distress)"}
+OUTCOME level 2 or floor | expected at least ESI-2 | pass True | label None | max prompt tokens 44124

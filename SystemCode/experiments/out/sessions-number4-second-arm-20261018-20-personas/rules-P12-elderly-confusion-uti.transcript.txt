@@ -1,0 +1,52 @@
+arm B, form rules, persona P12-elderly-confusion-uti, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  Is the patient awake and responding normally?
+A1  She answers when I talk to her, but she is not acting like herself. She is sleeping more than usual and is mixed up about the time and where she is.
+
+Q2  Is she having any chest pain right now?
+A2  No chest pain.
+
+Q3  Is she having any trouble breathing right now?
+A3  No, her breathing is fine.
+
+Q4  Is she bleeding heavily right now?
+A4  No.
+
+Q5  Is the patient's confusion or mixed-up behavior a new change from her usual mental state?
+A5  Yes, she's mixed up about the time and where she is. That's not like her.
+
+Q6  Is the patient in severe pain or distress?
+A6  She says it hurts to pee.
+
+Q7  How old is the patient?
+A7  She's 72.
+
+Q8  Does she have any other symptoms, like a fever or a cough?
+A8  I haven't taken her temperature. I don't know.
+
+Q9  Is the patient's pain from urinating severe (a 7 out of 10 or higher)?
+A9  I don't know.
+
+Q10  Does she have any other symptoms, like a fever or a cough?
+A10  I haven't taken her temperature. I don't know.
+
+Q11  Does she have any other symptoms, like a fever or a cough?
+A11  I haven't taken her temperature. I don't know.
+
+Q12  Is the patient's pain from urinating severe (a 7 out of 10 or higher)?
+A12  I don't know.
+
+Q13  Does she have any other symptoms, like a fever or a cough?
+A13  I haven't taken her temperature. I don't know.
+
+Q14  Does she have any other symptoms, like a fever or a cough?
+A14  I haven't taken her temperature. I don't know.
+
+Q15  Does she have any other symptoms, like a fever, or a cough?
+A15  I haven't taken her temperature. I don't know.
+
+Q16  Does she have any other symptoms, like a fever, or a cough?
+A16  I haven't taken her temperature. I don't know.
+
+DECISION {"decision": "unparsed", "reason": "turn limit reached without a decision"}
+OUTCOME no decision in 16 questions | expected at least ESI-2 | pass False | label missing fact | max prompt tokens 44111

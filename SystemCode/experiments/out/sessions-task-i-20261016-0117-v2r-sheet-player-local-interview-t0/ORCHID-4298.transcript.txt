@@ -1,0 +1,33 @@
+session ORCHID-4298   started 2026-10-16 01:13   (generated from messages)
+
+01:13:09  BOT  Is the patient awake and responding to you normally? Also, is he or she experiencing any chest pain, trouble breathing, or heavy bleeding right now?   [slot dyn:danger_signs.responsive+danger_signs.chest_pain_now]
+01:13:09  THEM He's awake but slow to answer. No chest pain.   [slot dyn:danger_signs.responsive+danger_signs.chest_pain_now]
+01:13:17  BOT  I understand. Is he having any trouble breathing or is there any heavy bleeding? Also, what is the main reason you are bringing him in today?   [slot dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category]
+01:13:17  THEM Breathing normally. No. He has cirrhosis. Over two days his belly has got more swollen, his eyes more yellow, and he's sleepy and confused; today he can't say the date and his hands shake.   [slot dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category]
+01:13:36  BOT  I'm sorry to hear about his condition. When did these symptoms first start?   [slot dyn:complaint.onset]
+01:13:36  THEM Over the past two days.   [slot dyn:complaint.onset]
+01:13:51  BOT  I'm sorry to hear he's feeling this way. How old is he, and was there an injury or specific event that caused these symptoms?   [slot dyn:E.mechanism+patient.age+patient.sex]
+01:13:51  THEM No injury. 58. Male.   [slot dyn:E.mechanism+patient.age+patient.sex]
+01:13:59  BOT  I understand. Does he have a fever, and have you noticed any new rashes on his skin?   [slot dyn:complaint.fever+infection.rash]
+01:13:59  THEM No fever. No rash.   [slot dyn:complaint.fever+infection.rash]
+01:14:06  BOT  Has he traveled outside the country or been in contact with anyone who has a known infection in the last two weeks?   [slot dyn:infection.travel_14d+infection.contacts]
+01:14:06  THEM No.   [slot dyn:infection.travel_14d+infection.contacts]
+01:14:13  BOT  Is he having any pain or burning when he goes to the bathroom, or is his urine cloudy or smelly?   [slot dyn:complaint.uti_symptoms]
+01:14:13  THEM I don't know.   [slot dyn:complaint.uti_symptoms]
+01:14:19  BOT  Is he more confused or harder to wake up than usual?   [slot dyn:ams.changed_from_baseline]
+01:14:19  THEM Yes, much more confused and sleepy than usual.   [slot dyn:ams.changed_from_baseline]
+01:14:31  SYS  floor: at least ESI-2  rules: ['B-01.new-altered-mental-status'] (floor)
+01:14:34  BOT  I understand he is very sleepy. What medications does he take regularly, and does he have any allergies to medicines?   [slot dyn:M.medications+A.allergies]
+01:14:34  THEM Lactulose, spironolactone and furosemide; he missed several lactulose doses this week. None.   [slot dyn:M.medications+A.allergies]
+01:14:42  BOT  I've noted the medications. Does he have any allergies to any medications?   [slot dyn:A.allergies]
+01:14:42  THEM None.   [slot dyn:A.allergies]
+01:14:56  BOT  I have noted that he has no allergies. Could you please tell me his full name and date of birth?   [slot dyn:identity.name+identity.dob]
+01:14:56  THEM Rajan Kumar. 7 July 1968.   [slot dyn:identity.name+identity.dob]
+01:15:01  BOT  That's enough for the hospital team to prepare. Show the code ORCHID-4298 at the counter when you arrive. I'll ask a few more things while you're on the way; tell me straight away if anything changes. (ack)
+01:15:04  BOT  On a scale from 0 to 10, where 10 is the worst pain imaginable, how bad is his pain right now?   [slot dyn:complaint.pain_rating]
+01:15:04  THEM Mild belly discomfort, 3 out of 10.   [slot dyn:complaint.pain_rating]
+01:15:11  BOT  I've noted the abdominal discomfort. Is he also experiencing any pain in his testicles or scrotum?   [slot dyn:complaint.testicular_or_scrotal_pain]
+01:15:11  THEM I don't know.   [slot dyn:complaint.testicular_or_scrotal_pain]
+01:15:17  BOT  I understand. When was the last time he had anything to eat or drink, and what did he have?   [slot dyn:L.last_intake]
+01:15:17  THEM A small bowl of rice at noon.   [slot dyn:L.last_intake]
+01:15:29  BOT  Thank you - that's everything. Show the code ORCHID-4298 at the counter when you arrive. (ack)

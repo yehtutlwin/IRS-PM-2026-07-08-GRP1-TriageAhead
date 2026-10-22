@@ -1,0 +1,42 @@
+{"t": "03:27:50", "kind": "engine", "note": "session VANDA-4983 started (web)"}
+{"t": "03:27:52", "kind": "question", "slot": "red_flags.screen", "text": "Is the patient awake and responding normally, and are they experiencing any severe chest pain, trouble breathing, or heavy bleeding right now?"}
+{"t": "03:27:53", "kind": "answer", "slot": "red_flags.screen", "text": "Yes, he is awake and talking. No, he isn't having chest pain, trouble breathing, or heavy bleeding."}
+{"t": "03:27:56", "kind": "extract", "writes": [["red_flags.responsive", true], ["red_flags.chest_pain_now", false], ["red_flags.breathing_difficulty", false], ["red_flags.heavy_bleeding", false]]}
+{"t": "03:27:57", "kind": "question", "slot": "complaint.main", "text": "Can you tell me what happened, when it started, and how bad the pain is on a scale of 0 to 10?"}
+{"t": "03:27:59", "kind": "answer", "slot": "complaint.main", "text": "He fell down 4 steps at home an hour ago and landed on his right hip. He can't stand and his pain is a 7/10."}
+{"t": "03:28:02", "kind": "extract", "writes": [["complaint.category", "injury_fall", "hip_pain"], ["complaint.text", "landed on his right hip", "hip_pain"], ["complaint.onset", "an hour ago", "hip_pain"], ["complaint.pain_rating", 7, "hip_pain"], ["E.mechanism", "fall"], ["E.head_strike", false]]}
+{"t": "03:28:02", "kind": "engine", "consider": ["B-02.severe-pain-consider"]}
+{"t": "03:28:02", "kind": "extract", "writes": [["complaint.category", "hip_pain->other"]], "via": "normalised"}
+{"t": "03:28:04", "kind": "question", "slot": "stroke.screen", "text": "At any point today, did you notice his face drooping, his arm becoming weak or numb, or his speech sounding slurred or strange?"}
+{"t": "03:28:05", "kind": "answer", "slot": "stroke.screen", "text": "No, I didn't notice any of those things."}
+{"t": "03:28:07", "kind": "extract", "writes": [["stroke.face_droop", false], ["stroke.arm_weakness", false], ["stroke.speech_change", false]]}
+{"t": "03:28:08", "kind": "question", "slot": "limb.screen", "text": "Are his fingers or toes numb, cold, or turning blue, and can he still move them?"}
+{"t": "03:28:10", "kind": "answer", "slot": "limb.screen", "text": "I'm not sure, I haven't checked his fingers or toes yet."}
+{"t": "03:28:11", "kind": "extract", "writes": []}
+{"t": "03:28:11", "kind": "extract", "writes": [["limb.numb_tingling", null], ["limb.cold_pale_blue", null], ["limb.cannot_move_digits", null]], "via": "dont-know"}
+{"t": "03:28:13", "kind": "question", "slot": "E.trauma_detail", "text": "Roughly how far did he fall?"}
+{"t": "03:28:14", "kind": "answer", "slot": "E.trauma_detail", "text": "He fell down 4 steps."}
+{"t": "03:28:15", "kind": "extract", "writes": [["E.fall_height_meters", 1.2]]}
+{"t": "03:28:17", "kind": "question", "slot": "E.trauma_detail", "text": "Did he lose consciousness or hit his head at any point?"}
+{"t": "03:28:18", "kind": "answer", "slot": "E.trauma_detail", "text": "No, there was no head strike and no blackout."}
+{"t": "03:28:20", "kind": "extract", "writes": [["E.head_strike", false], ["E.loc", false]]}
+{"t": "03:28:21", "kind": "question", "slot": "M.medications", "text": "Does he take any regular medications?"}
+{"t": "03:28:22", "kind": "answer", "slot": "M.medications", "text": "Yes, he takes a blood pressure pill and a small pill to thin his blood."}
+{"t": "03:28:24", "kind": "extract", "writes": [["M.medications", ["blood pressure pill", "small pill to thin his blood"]]]}
+{"t": "03:28:25", "kind": "question", "slot": "confirm.M.anticoagulant", "text": "Could you please check the box and tell me the exact name of the blood thinner for the doctors?"}
+{"t": "03:28:26", "kind": "answer", "slot": "confirm.M.anticoagulant", "text": "It is warfarin."}
+{"t": "03:28:28", "kind": "extract", "writes": [["confirm.M.anticoagulant", "warfarin"]]}
+{"t": "03:28:28", "kind": "floor", "floor": "at least ESI-2", "fired": ["B-30.anticoagulated-trauma"], "sources": [["CDC Field Triage Guidelines (MMWR 2012), Step Four special considerations: anticoagulation / bleeding disorders (sources/CDC-Field-Triage-2011-MMWR.pdf)", "NICE NG232 (2023), rec 1.5.9: CT for head injury with current anticoagulant treatment (sources/NICE-NG232-main-guideline.pdf)"]]}
+{"t": "03:28:30", "kind": "question", "slot": "allergies_and_history", "text": "Does he have any allergies to medication or other medical conditions, such as heart problems, diabetes, or any issues affecting his immune system?"}
+{"t": "03:28:31", "kind": "answer", "slot": "allergies_and_history", "text": "He is allergic to penicillin, which gives him a rash. He also has high blood pressure and an irregular heartbeat."}
+{"t": "03:28:33", "kind": "extract", "writes": [["A.allergies", ["penicillin"]], ["history.conditions", ["high blood pressure", "irregular heartbeat"]]]}
+{"t": "03:28:34", "kind": "question", "slot": "allergies_and_history", "text": "Is he currently pregnant or postpartum, or does he have any conditions that affect his immune system?"}
+{"t": "03:28:35", "kind": "answer", "slot": "allergies_and_history", "text": "He has an irregular heartbeat and high blood pressure."}
+{"t": "03:28:37", "kind": "extract", "writes": [["history.conditions", ["irregular heartbeat", "high blood pressure"]]]}
+{"t": "03:28:39", "kind": "question", "slot": "allergies_and_history", "text": "Is he currently pregnant or postpartum, or does he have any conditions that affect his immune system?"}
+{"t": "03:28:43", "kind": "answer", "slot": "allergies_and_history", "text": "He has an irregular heartbeat and high blood pressure."}
+{"t": "03:28:45", "kind": "extract", "writes": [["history.conditions", ["irregular heartbeat", "high blood pressure"]]]}
+{"t": "03:28:47", "kind": "question", "slot": "infection.screen", "text": "Has he had a fever, any rashes, traveled overseas in the last two weeks, or been in contact with anyone who is sick?"}
+{"t": "03:28:48", "kind": "answer", "slot": "infection.screen", "text": "No fever, no rash, and no recent travel or contact with anyone sick."}
+{"t": "03:28:50", "kind": "extract", "writes": [["infection.fever", false], ["infection.rash", false], ["infection.travel_14d", false], ["infection.contacts", false]]}
+{"t": "03:28:52", "kind": "question", "slot": "wrapup", "text": "Could you please tell me when he last ate or drank, and provide his name and date of birth for the hospital's records?"}

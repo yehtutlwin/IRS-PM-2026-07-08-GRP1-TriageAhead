@@ -1,0 +1,52 @@
+arm B, form rules, persona P24-bug-in-ear, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  Is the patient awake and responding normally?
+A1  Yes, I'm awake, it's me.
+
+Q2  Is the patient experiencing chest pain right now?
+A2  No.
+
+Q3  Is the patient having any trouble breathing right now?
+A3  No.
+
+Q4  Is the patient bleeding heavily right now?
+A4  No.
+
+Q5  What is the main reason the patient is coming to the emergency department?
+A5  A bug flew into my right ear while I was gardening and I can't get it out.
+
+Q6  Is the patient experiencing any other symptoms, such as severe pain, dizziness, or a change in how they are feeling?
+A6  The buzzing noise is driving me crazy.
+
+Q7  How would you describe the pain or discomfort in the ear? For example, is it a sharp pain, a dull ache, or is it just the distressing noise?
+A7  The buzzing noise is driving me crazy.
+
+Q8  Is the buzzing noise causing you severe pain or distress?
+A8  The buzzing noise is driving me crazy.
+
+Q9  Is the buzzing noise causing you severe pain or distress?
+A9  The buzzing noise is driving me crazy.
+
+Q10  Is the buzzing noise causing you severe pain or distress?
+A10  The buzzing noise is driving me crazy.
+
+Q11  Is the buzzing noise causing you severe pain or distress?
+A11  The buzzing noise is driving me crazy.
+
+Q12  Is the buzzing noise causing you severe pain or distress?
+A12  The buzzing noise is driving me crazy.
+
+Q13  Is the buzzing noise causing you severe pain or distress?
+A13  The buzzing noise is driving me crazy.
+
+Q14  On a scale of 0 to 10, how would you rate the distress or pain caused by the buzzing noise?
+A14  I don't know.
+
+Q15  Is the buzzing noise causing you severe pain or distress?
+A15  The buzzing noise is driving me crazy.
+
+Q16  Is the buzzing noise causing you severe pain or distress?
+A16  The buzzing noise is driving me crazy.
+
+DECISION {"decision": "unparsed", "reason": "turn limit reached without a decision"}
+OUTCOME no decision in 16 questions | expected None | pass False | label model error (over-call) | max prompt tokens 44059

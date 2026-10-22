@@ -1,0 +1,52 @@
+arm B, form rules, persona CH-I29-08-sexual-assault, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  Is the patient awake and responding normally?
+A1  Yes, I am awake and responding normally.
+
+Q2  Is the patient experiencing chest pain right now?
+A2  No, I am not having chest pain right now.
+
+Q3  Is the patient having any trouble breathing right now?
+A3  No, the patient is not having trouble breathing right now.
+
+Q4  Is the patient bleeding heavily right now?
+A4  No, the patient is not bleeding heavily right now.
+
+Q5  What is the main reason for the visit?
+A5  I came in with a trusted friend after a sexual assault.
+
+Q6  Is the patient a survivor of a sexual assault?
+A6  Yes, I was assaulted.
+
+Q7  Are you currently experiencing any severe pain or distress?
+A7  The pain score was not provided.
+
+Q8  Are you currently experiencing severe physical or psychological distress?
+A8  I don't know.
+
+Q9  Are you currently experiencing severe physical or psychological distress?
+A9  I don't know.
+
+Q10  Are you currently experiencing severe physical or psychological distress?
+A10  I don't know.
+
+Q11  Can you tell me more about the situation? For example, are you feeling very distressed or upset right now?
+A11  I don't know.
+
+Q12  Are you feeling very distressed or upset right now?
+A12  I don't know.
+
+Q13  Are you feeling very distressed or upset right now?
+A13  I don't know.
+
+Q14  Are you feeling very distressed or upset right now?
+A14  I don't know.
+
+Q15  Are you feeling very distressed or upset right now?
+A15  I don't know.
+
+Q16  Are you feeling very distressed or upset right now?
+A16  I don't know.
+
+DECISION {"decision": "unparsed", "reason": "turn limit reached without a decision"}
+OUTCOME no decision in 16 questions | expected at least ESI-2 | pass False | label missing fact | max prompt tokens 44007

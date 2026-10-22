@@ -1,0 +1,485 @@
+{
+ "sid": "TIGER-9009",
+ "facts": {
+  "red_flags.responsive": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-09-26 03:46"
+  },
+  "red_flags.chest_pain_now": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-09-26 03:46"
+  },
+  "red_flags.breathing_difficulty": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-09-26 03:46"
+  },
+  "red_flags.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-09-26 03:46"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "other",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "persona",
+      "turn": 2,
+      "ts": "2026-09-26 03:46"
+     },
+     "text": {
+      "value": "sudden, severe pain in my right big toe joint that feels red, swollen, hot, and tender",
+      "status": "reported",
+      "who": "persona",
+      "turn": 2,
+      "ts": "2026-09-26 03:46"
+     },
+     "onset": {
+      "value": "woke up last night",
+      "status": "reported",
+      "who": "persona",
+      "turn": 2,
+      "ts": "2026-09-26 03:46"
+     },
+     "pain_rating": {
+      "value": 8,
+      "status": "reported",
+      "who": "persona",
+      "turn": 2,
+      "ts": "2026-09-26 03:46"
+     },
+     "onset_abs": {
+      "value": "~2026-09-25 night",
+      "status": "reported",
+      "who": "derived",
+      "turn": 2,
+      "ts": "2026-09-26 03:46"
+     }
+    },
+    {
+     "category": "injury_fall",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "persona",
+      "turn": 3,
+      "ts": "2026-09-26 03:46"
+     },
+     "text": {
+      "value": "sudden severe pain",
+      "status": "reported",
+      "who": "persona",
+      "turn": 5,
+      "ts": "2026-09-26 03:46"
+     },
+     "onset": {
+      "value": "woke up after eating seafood and drinking beers yesterday",
+      "status": "reported",
+      "who": "persona",
+      "turn": 5,
+      "ts": "2026-09-26 03:46"
+     },
+     "onset_abs": {
+      "value": "~2026-09-25 (time unknown)",
+      "status": "reported",
+      "who": "derived",
+      "turn": 5,
+      "ts": "2026-09-26 03:46"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 3
+  },
+  "complaint.text": {
+   "value": "sudden severe pain",
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-09-26 03:46"
+  },
+  "complaint.category": {
+   "value": [
+    "other",
+    "injury_fall"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-09-26 03:46"
+  },
+  "complaint.onset": {
+   "value": "woke up after eating seafood and drinking beers yesterday",
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-09-26 03:46"
+  },
+  "complaint.pain_rating": {
+   "value": 8,
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-09-26 03:46"
+  },
+  "complaint.pain_latest": {
+   "value": 8,
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-09-26 03:46"
+  },
+  "complaint.onset_abs": {
+   "value": "~2026-09-25 night (from 'woke up last night' said 03:46)",
+   "status": "reported",
+   "who": "derived",
+   "turn": 2,
+   "ts": "2026-09-26 03:46"
+  },
+  "stroke.face_droop": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-09-26 03:46"
+  },
+  "stroke.arm_weakness": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-09-26 03:46"
+  },
+  "stroke.speech_change": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-09-26 03:46"
+  },
+  "stroke.numb_tingling": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-09-26 03:46"
+  },
+  "limb.numb_tingling": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 4,
+   "ts": "2026-09-26 03:46"
+  },
+  "limb.cold_pale_blue": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 4,
+   "ts": "2026-09-26 03:46"
+  },
+  "limb.cannot_move_digits": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 4,
+   "ts": "2026-09-26 03:46"
+  },
+  "limb.cast_too_tight": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 4,
+   "ts": "2026-09-26 03:46"
+  },
+  "E.mechanism": {
+   "value": "none",
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-09-26 03:46"
+  },
+  "M.medications": {
+   "value": [
+    "amlodipine"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 7,
+   "ts": "2026-09-26 03:46"
+  },
+  "confirm.M.anticoagulant": {
+   "value": "none",
+   "status": "reported",
+   "who": "persona",
+   "turn": 6,
+   "ts": "2026-09-26 03:46"
+  },
+  "A.allergies": {
+   "value": [],
+   "status": "reported",
+   "who": "persona",
+   "turn": 7,
+   "ts": "2026-09-26 03:46"
+  },
+  "history.conditions": {
+   "value": [
+    "high blood pressure"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 7,
+   "ts": "2026-09-26 03:46"
+  },
+  "history.immunocompromised": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 7,
+   "ts": "2026-09-26 03:46"
+  },
+  "history.pregnant_or_postpartum": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 7,
+   "ts": "2026-09-26 03:46"
+  },
+  "infection.fever": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 8,
+   "ts": "2026-09-26 03:46"
+  },
+  "infection.rash": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 8,
+   "ts": "2026-09-26 03:46"
+  },
+  "infection.travel_14d": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 8,
+   "ts": "2026-09-26 03:46"
+  },
+  "infection.contacts": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 8,
+   "ts": "2026-09-26 03:46"
+  },
+  "L.last_intake": {
+   "value": "seafood dinner and several beers at 9pm yesterday",
+   "status": "reported",
+   "who": "persona",
+   "turn": 9,
+   "ts": "2026-09-26 03:46"
+  },
+  "identity.name": {
+   "value": "not provided",
+   "status": "reported",
+   "who": "persona",
+   "turn": 9,
+   "ts": "2026-09-26 03:46"
+  },
+  "identity.dob": {
+   "value": "February 18, 1974",
+   "status": "reported",
+   "who": "persona",
+   "turn": 9,
+   "ts": "2026-09-26 03:46"
+  },
+  "L.last_intake_abs": {
+   "value": "~2026-09-25 (time unknown) (from 'seafood dinner and several beers at 9pm yesterday' said 03:46)",
+   "status": "reported",
+   "who": "derived",
+   "turn": 9,
+   "ts": "2026-09-26 03:46"
+  },
+  "patient.age": {
+   "value": 52,
+   "status": "probable",
+   "who": "derived",
+   "turn": 9,
+   "ts": "2026-09-26 03:46"
+  }
+ },
+ "attempts": {
+  "red_flags.screen": 1,
+  "complaint.main": 2,
+  "stroke.screen": 1,
+  "limb.screen": 1,
+  "M.medications": 1,
+  "allergies_and_history": 1,
+  "infection.screen": 1,
+  "wrapup": 1
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "Can you please tell me if the patient is awake and responding normally, and whether they are experiencing any severe chest pain, trouble breathing, or heavy bleeding right now?",
+   "ts": "2026-09-26 03:46:09",
+   "kind": "question",
+   "slot": "red_flags.screen"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, I am awake and answering clearly, though I am tired and irritable from the pain. I do not have chest pain, trouble breathing, or heavy bleeding.",
+   "ts": "2026-09-26 03:46:10",
+   "kind": "answer",
+   "slot": "red_flags.screen"
+  },
+  {
+   "role": "bot",
+   "text": "Can you tell me what happened, when it started, and how bad the pain is on a scale of 0 to 10?",
+   "ts": "2026-09-26 03:46:12",
+   "kind": "question",
+   "slot": "complaint.main"
+  },
+  {
+   "role": "caregiver",
+   "text": "I woke up last night with sudden, severe pain in my right big toe joint that feels red, swollen, hot, and tender. The pain is an 8 out of 10.",
+   "ts": "2026-09-26 03:46:13",
+   "kind": "answer",
+   "slot": "complaint.main"
+  },
+  {
+   "role": "bot",
+   "text": "Did you notice any face drooping, arm weakness, numbness, or slurred speech at any point today?",
+   "ts": "2026-09-26 03:46:16",
+   "kind": "question",
+   "slot": "stroke.screen"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I have no facial drooping, arm weakness, numbness, or slurred speech. My symptoms are limited to the severe pain and swelling in my right big toe.",
+   "ts": "2026-09-26 03:46:17",
+   "kind": "answer",
+   "slot": "stroke.screen"
+  },
+  {
+   "role": "bot",
+   "text": "Are your fingers or toes numb, cold, pale, blue, or unable to move, and if you have a cast or splint, does it feel far too tight?",
+   "ts": "2026-09-26 03:46:20",
+   "kind": "question",
+   "slot": "limb.screen"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, my toe is red, swollen, hot, and extremely tender but not numb, cold, pale, blue, or immobile. I do not have a cast or splint.",
+   "ts": "2026-09-26 03:46:21",
+   "kind": "answer",
+   "slot": "limb.screen"
+  },
+  {
+   "role": "bot",
+   "text": "Since you haven't mentioned how you injured your toe yet, could you please tell me what happened to cause this pain?",
+   "ts": "2026-09-26 03:46:23",
+   "kind": "question",
+   "slot": "complaint.main"
+  },
+  {
+   "role": "caregiver",
+   "text": "There was no injury; I woke up with sudden severe pain after eating seafood and drinking beers yesterday.",
+   "ts": "2026-09-26 03:46:24",
+   "kind": "answer",
+   "slot": "complaint.main"
+  },
+  {
+   "role": "bot",
+   "text": "Could you please tell me if you take any regular medications?",
+   "ts": "2026-09-26 03:46:26",
+   "kind": "question",
+   "slot": "M.medications"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, I take amlodipine for high blood pressure. I do not take allopurinol or blood thinners.",
+   "ts": "2026-09-26 03:46:27",
+   "kind": "answer",
+   "slot": "M.medications"
+  },
+  {
+   "role": "bot",
+   "text": "Do you have any allergies to medicines or other medical conditions such as heart problems, diabetes, pregnancy, or issues affecting your immune system?",
+   "ts": "2026-09-26 03:46:29",
+   "kind": "question",
+   "slot": "allergies_and_history"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I have no known allergies. My only medical condition is high blood pressure, which I treat with amlodipine; I do not have heart problems, diabetes, or any immune system issues.",
+   "ts": "2026-09-26 03:46:30",
+   "kind": "answer",
+   "slot": "allergies_and_history"
+  },
+  {
+   "role": "bot",
+   "text": "Do you have any fever, rash, overseas travel in the last two weeks, or contact with anyone who is infectious?",
+   "ts": "2026-09-26 03:46:33",
+   "kind": "question",
+   "slot": "infection.screen"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I do not have a fever, rash, or breathing trouble. I have not traveled overseas recently nor had contact with anyone who is infectious.",
+   "ts": "2026-09-26 03:46:34",
+   "kind": "answer",
+   "slot": "infection.screen"
+  },
+  {
+   "role": "bot",
+   "text": "Could you please tell me when you last ate or drank, and provide your name and date of birth for our hospital records?",
+   "ts": "2026-09-26 03:46:36",
+   "kind": "question",
+   "slot": "wrapup"
+  },
+  {
+   "role": "caregiver",
+   "text": "I had a large seafood dinner and several beers at 9pm yesterday. My name is not provided in my description, but my date of birth is February 18, 1974.",
+   "ts": "2026-09-26 03:46:37",
+   "kind": "answer",
+   "slot": "wrapup"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you - that's everything for now. Show the code TIGER-9009 at the counter when you arrive.",
+   "ts": "2026-09-26 03:46:38",
+   "kind": "ack"
+  }
+ ],
+ "active_ids": [
+  "stroke.screen",
+  "limb.screen"
+ ],
+ "floor": null,
+ "phase": "enroute",
+ "opened": [],
+ "created": "2026-09-26 03:46",
+ "pending_slot": "wrapup",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {},
+ "considered": [
+  "B-02.severe-pain-consider"
+ ],
+ "said_done": true
+}

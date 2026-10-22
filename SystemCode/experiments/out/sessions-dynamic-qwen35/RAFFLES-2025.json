@@ -1,0 +1,403 @@
+{
+ "sid": "RAFFLES-2025",
+ "facts": {
+  "red_flags.responsive": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-09-26 03:51"
+  },
+  "red_flags.chest_pain_now": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-09-26 03:50"
+  },
+  "red_flags.breathing_difficulty": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-09-26 03:50"
+  },
+  "red_flags.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-09-26 03:50"
+  },
+  "ams.changed_from_baseline": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-09-26 03:50"
+  },
+  "obs.new_confusion_lethargy_disorientation": {
+   "value": true,
+   "status": "reported",
+   "who": "derived",
+   "turn": 1,
+   "ts": "2026-09-26 03:50"
+  },
+  "obs.subtle_mental_status_change": {
+   "value": true,
+   "status": "reported",
+   "who": "derived",
+   "turn": 1,
+   "ts": "2026-09-26 03:50"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "other",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "persona",
+      "turn": 2,
+      "ts": "2026-09-26 03:50"
+     },
+     "text": {
+      "value": "headache, nausea, dizziness, confusion, and vomiting",
+      "status": "reported",
+      "who": "persona",
+      "turn": 2,
+      "ts": "2026-09-26 03:50"
+     },
+     "onset": {
+      "value": "approximately four hours ago",
+      "status": "reported",
+      "who": "persona",
+      "turn": 2,
+      "ts": "2026-09-26 03:50"
+     },
+     "onset_abs": {
+      "value": "~2026-09-25 23:50",
+      "status": "reported",
+      "who": "derived",
+      "turn": 2,
+      "ts": "2026-09-26 03:50"
+     }
+    },
+    {
+     "category": "neuro_symptoms",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "persona",
+      "turn": 3,
+      "ts": "2026-09-26 03:50"
+     },
+     "pain_rating": {
+      "value": null,
+      "status": "reported",
+      "who": "persona",
+      "turn": 3,
+      "ts": "2026-09-26 03:50"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 3
+  },
+  "complaint.text": {
+   "value": "headache, nausea, dizziness, confusion, and vomiting",
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-09-26 03:50"
+  },
+  "complaint.category": {
+   "value": [
+    "other",
+    "neuro_symptoms"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-09-26 03:50"
+  },
+  "complaint.onset": {
+   "value": "approximately four hours ago",
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-09-26 03:50"
+  },
+  "E.mechanism": {
+   "value": "none",
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-09-26 03:50"
+  },
+  "L.last_intake": {
+   "value": "very little water intake",
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-09-26 03:50"
+  },
+  "complaint.onset_abs": {
+   "value": "~2026-09-25 23:50 (from 'approximately four hours ago' said 03:50)",
+   "status": "reported",
+   "who": "derived",
+   "turn": 2,
+   "ts": "2026-09-26 03:50"
+  },
+  "stroke.face_droop": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-09-26 03:50"
+  },
+  "stroke.arm_weakness": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-09-26 03:50"
+  },
+  "stroke.speech_change": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-09-26 03:50"
+  },
+  "M.medications": {
+   "value": [],
+   "status": "reported",
+   "who": "persona",
+   "turn": 4,
+   "ts": "2026-09-26 03:50"
+  },
+  "A.allergies": {
+   "value": [],
+   "status": "reported",
+   "who": "persona",
+   "turn": 4,
+   "ts": "2026-09-26 03:50"
+  },
+  "history.conditions": {
+   "value": [],
+   "status": "reported",
+   "who": "persona",
+   "turn": 4,
+   "ts": "2026-09-26 03:50"
+  },
+  "history.immunocompromised": {
+   "value": null,
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-09-26 03:51"
+  },
+  "history.pregnant_or_postpartum": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 6,
+   "ts": "2026-09-26 03:51"
+  },
+  "infection.fever": {
+   "value": null,
+   "status": "reported",
+   "who": "persona",
+   "turn": 6,
+   "ts": "2026-09-26 03:51"
+  },
+  "infection.rash": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 6,
+   "ts": "2026-09-26 03:51"
+  },
+  "infection.travel_14d": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 6,
+   "ts": "2026-09-26 03:51"
+  },
+  "infection.contacts": {
+   "value": null,
+   "status": "reported",
+   "who": "persona",
+   "turn": 6,
+   "ts": "2026-09-26 03:51"
+  },
+  "identity.name": {
+   "value": null,
+   "status": "reported",
+   "who": "persona",
+   "turn": 7,
+   "ts": "2026-09-26 03:51"
+  },
+  "identity.dob": {
+   "value": null,
+   "status": "reported",
+   "who": "persona",
+   "turn": 7,
+   "ts": "2026-09-26 03:51"
+  }
+ },
+ "attempts": {
+  "red_flags.responsive": 1,
+  "red_flags.chest_pain_now": 1,
+  "red_flags.breathing_difficulty": 1,
+  "red_flags.heavy_bleeding": 1,
+  "complaint.category": 1,
+  "stroke.face_droop": 1,
+  "stroke.arm_weakness": 1,
+  "stroke.speech_change": 1,
+  "complaint.pain_rating": 3,
+  "M.medications": 1,
+  "A.allergies": 1,
+  "history.conditions": 1,
+  "history.immunocompromised": 1,
+  "history.pregnant_or_postpartum": 1,
+  "infection.fever": 1,
+  "infection.rash": 1,
+  "infection.travel_14d": 1,
+  "identity.name": 1,
+  "identity.dob": 1
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "To make sure we can help you right away, are you awake and responding normally, or do you have severe chest pain, trouble breathing, or heavy bleeding at this moment?",
+   "ts": "2026-09-26 03:50:44",
+   "kind": "question",
+   "slot": "dyn:red_flags.responsive+red_flags.chest_pain_now+red_flags.breathing_difficulty+red_flags.heavy_bleeding"
+  },
+  {
+   "role": "caregiver",
+   "text": "He is not responding normally; he is confused, very weak, and speaking only in confused words. He has no chest pain, trouble breathing, or heavy bleeding at this moment.",
+   "ts": "2026-09-26 03:50:45",
+   "kind": "answer",
+   "slot": "dyn:red_flags.responsive+red_flags.chest_pain_now+red_flags.breathing_difficulty+red_flags.heavy_bleeding"
+  },
+  {
+   "role": "system",
+   "text": "floor: at least ESI-2  rules: ['B-01.new-altered-mental-status']",
+   "ts": "2026-09-26 03:50:47",
+   "kind": "floor"
+  },
+  {
+   "role": "bot",
+   "text": "Based on what you just told me, please call 995 NOW if you are not already with paramedics. I have put this at the top of the hospital report.",
+   "ts": "2026-09-26 03:50:47",
+   "kind": "advice"
+  },
+  {
+   "role": "bot",
+   "text": "Since he is not responding normally, can you tell the hospital team what happened to him and when it started?",
+   "ts": "2026-09-26 03:50:48",
+   "kind": "question",
+   "slot": "dyn:complaint.category"
+  },
+  {
+   "role": "caregiver",
+   "text": "He collapsed while doing heavy outdoor work in direct sun after working for about four hours with very little water intake. His symptoms of headache, nausea, dizziness, confusion, and vomiting began before he fell to the ground approximately four hours ago.",
+   "ts": "2026-09-26 03:50:49",
+   "kind": "answer",
+   "slot": "dyn:complaint.category"
+  },
+  {
+   "role": "bot",
+   "text": "Did you notice his face drooping, an arm going weak or numb, or slurred speech at any point today? Also, on a scale of 0 to 10, how bad is the pain from his headache?",
+   "ts": "2026-09-26 03:50:53",
+   "kind": "question",
+   "slot": "dyn:stroke.face_droop+stroke.arm_weakness+stroke.speech_change+complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "I did not see him droop, have weakness, or slur his speech before he collapsed. He does not know enough right now to rate his pain.",
+   "ts": "2026-09-26 03:50:54",
+   "kind": "answer",
+   "slot": "dyn:stroke.face_droop+stroke.arm_weakness+stroke.speech_change+complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "Since he cannot rate his pain right now, could you please tell us if he takes any regular medications or has any known allergies or medical conditions like heart problems or diabetes?",
+   "ts": "2026-09-26 03:50:57",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating+M.medications+A.allergies+history.conditions"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know his medications, allergies, or medical history. He is currently too confused to provide that information.",
+   "ts": "2026-09-26 03:50:57",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_rating+M.medications+A.allergies+history.conditions"
+  },
+  {
+   "role": "bot",
+   "text": "Since he is too confused to rate his pain right now, could you tell us if he has any known medical conditions like heart problems or diabetes?",
+   "ts": "2026-09-26 03:51:00",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating+history.immunocompromised"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know his medications, allergies, or medical history. We have not been told if he has any known medical conditions like heart problems or diabetes.",
+   "ts": "2026-09-26 03:51:01",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_rating+history.immunocompromised"
+  },
+  {
+   "role": "bot",
+   "text": "Could you please tell us if he is pregnant or postpartum, and if he has had any fever, rash, recent overseas travel, or contact with anyone infectious?",
+   "ts": "2026-09-26 03:51:04",
+   "kind": "question",
+   "slot": "dyn:history.pregnant_or_postpartum+infection.fever+infection.rash+infection.travel_14d"
+  },
+  {
+   "role": "caregiver",
+   "text": "He is not pregnant or postpartum as he is a man. He does not have a rash, has not traveled overseas, and I do not know if he has had contact with anyone infectious.",
+   "ts": "2026-09-26 03:51:05",
+   "kind": "answer",
+   "slot": "dyn:history.pregnant_or_postpartum+infection.fever+infection.rash+infection.travel_14d"
+  },
+  {
+   "role": "bot",
+   "text": "Could you please provide his name and date of birth for our records?",
+   "ts": "2026-09-26 03:51:08",
+   "kind": "question",
+   "slot": "dyn:identity.name+identity.dob"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know his name or date of birth; those details are unknown. We have moved him to the shade while waiting for the ambulance.",
+   "ts": "2026-09-26 03:51:08",
+   "kind": "answer",
+   "slot": "dyn:identity.name+identity.dob"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you - that's everything for now. Show the code RAFFLES-2025 at the counter when you arrive.",
+   "ts": "2026-09-26 03:51:10",
+   "kind": "ack"
+  }
+ ],
+ "active_ids": [
+  "stroke.screen"
+ ],
+ "floor": "at least ESI-2",
+ "phase": "enroute",
+ "opened": [],
+ "created": "2026-09-26 03:50",
+ "pending_slot": "dyn:identity.name+identity.dob",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {},
+ "advised995": true,
+ "said_done": true
+}

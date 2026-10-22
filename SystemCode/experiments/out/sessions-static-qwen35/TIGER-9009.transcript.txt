@@ -1,0 +1,21 @@
+session TIGER-9009   started 2026-09-26 03:46   (generated from messages)
+
+03:46:09  BOT  Can you please tell me if the patient is awake and responding normally, and whether they are experiencing any severe chest pain, trouble breathing, or heavy bleeding right now?   [slot red_flags.screen]
+03:46:10  THEM Yes, I am awake and answering clearly, though I am tired and irritable from the pain. I do not have chest pain, trouble breathing, or heavy bleeding.   [slot red_flags.screen]
+03:46:12  BOT  Can you tell me what happened, when it started, and how bad the pain is on a scale of 0 to 10?   [slot complaint.main]
+03:46:13  THEM I woke up last night with sudden, severe pain in my right big toe joint that feels red, swollen, hot, and tender. The pain is an 8 out of 10.   [slot complaint.main]
+03:46:16  BOT  Did you notice any face drooping, arm weakness, numbness, or slurred speech at any point today?   [slot stroke.screen]
+03:46:17  THEM No, I have no facial drooping, arm weakness, numbness, or slurred speech. My symptoms are limited to the severe pain and swelling in my right big toe.   [slot stroke.screen]
+03:46:20  BOT  Are your fingers or toes numb, cold, pale, blue, or unable to move, and if you have a cast or splint, does it feel far too tight?   [slot limb.screen]
+03:46:21  THEM No, my toe is red, swollen, hot, and extremely tender but not numb, cold, pale, blue, or immobile. I do not have a cast or splint.   [slot limb.screen]
+03:46:23  BOT  Since you haven't mentioned how you injured your toe yet, could you please tell me what happened to cause this pain?   [slot complaint.main]
+03:46:24  THEM There was no injury; I woke up with sudden severe pain after eating seafood and drinking beers yesterday.   [slot complaint.main]
+03:46:26  BOT  Could you please tell me if you take any regular medications?   [slot M.medications]
+03:46:27  THEM Yes, I take amlodipine for high blood pressure. I do not take allopurinol or blood thinners.   [slot M.medications]
+03:46:29  BOT  Do you have any allergies to medicines or other medical conditions such as heart problems, diabetes, pregnancy, or issues affecting your immune system?   [slot allergies_and_history]
+03:46:30  THEM No, I have no known allergies. My only medical condition is high blood pressure, which I treat with amlodipine; I do not have heart problems, diabetes, or any immune system issues.   [slot allergies_and_history]
+03:46:33  BOT  Do you have any fever, rash, overseas travel in the last two weeks, or contact with anyone who is infectious?   [slot infection.screen]
+03:46:34  THEM No, I do not have a fever, rash, or breathing trouble. I have not traveled overseas recently nor had contact with anyone who is infectious.   [slot infection.screen]
+03:46:36  BOT  Could you please tell me when you last ate or drank, and provide your name and date of birth for our hospital records?   [slot wrapup]
+03:46:37  THEM I had a large seafood dinner and several beers at 9pm yesterday. My name is not provided in my description, but my date of birth is February 18, 1974.   [slot wrapup]
+03:46:38  BOT  Thank you - that's everything for now. Show the code TIGER-9009 at the counter when you arrive. (ack)

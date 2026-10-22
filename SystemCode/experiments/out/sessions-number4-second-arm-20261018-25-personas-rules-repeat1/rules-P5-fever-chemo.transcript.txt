@@ -1,0 +1,40 @@
+arm B, form rules, persona P5-fever-chemo, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  Is the patient awake and responding normally?
+A1  Yes, she's awake and talking.
+
+Q2  Is the patient having any chest pain right now?
+A2  No chest pain.
+
+Q3  Is the patient having any trouble breathing right now?
+A3  No trouble breathing.
+
+Q4  Is the patient bleeding heavily right now?
+A4  No.
+
+Q5  What is the main reason the patient is coming to the emergency department?
+A5  She has had a fever since this afternoon, 38.6 on our thermometer, and is shivering and very tired.
+
+Q6  How old is the patient?
+A6  She's 51.
+
+Q7  Is the patient's fever accompanied by any other symptoms, such as a cough, a rash, or a wound that is red, hot, or swollen?
+A7  No cough or anything else, just the fever. There is no rash and no wound.
+
+Q8  Is the patient's fever related to a recent injury, such as a wound that is red, hot, or swollen, or a recent surgery?
+A8  No, there is no injury or wound.
+
+Q9  Is the patient's fever related to a recent surgery or a condition that makes her immune system weaker, such as cancer treatment or an organ transplant?
+A9  She is on chemotherapy for breast cancer.
+
+Q10  Is the patient's fever related to a recent infection, such as a wound that is red, hot, or swollen, or a recent surgery?
+A10  No, there is no wound or anything like that.
+
+Q11  Is the patient's fever related to a recent infection, such as a wound that is red, hot, or swollen, or a recent surgery?
+A11  No, there is no wound or anything like that.
+
+Q12  Is the patient's fever accompanied by any other symptoms, such as a cough, a rash, or a wound that is red, hot, or swollen?
+A12  No cough or anything else, just the fever. There is no rash and no wound.
+
+DECISION {"decision": "at least ESI-2", "reason": "The patient is an immunocompromised adult (on chemotherapy) presenting with a fever, which is a high-risk situation.", "citation": "ESI v5 p.12 (chemotherapy example); p.15 (Transplant); B-07.immunocompromised_fever"}
+OUTCOME level 2 or floor | expected at least ESI-2 | pass True | label None | max prompt tokens 44071

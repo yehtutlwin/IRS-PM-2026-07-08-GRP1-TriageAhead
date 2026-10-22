@@ -1,0 +1,72 @@
+{"t": "23:46:53", "kind": "engine", "note": "session BAOBAB-7786 started (web)"}
+{"t": "23:46:55", "kind": "question", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "I'm here to help get the information ready for the team. Is the person awake and responding normally, and are they currently having any chest pain, trouble breathing, or heavy bleeding?", "fields": ["danger_signs.responsive", "danger_signs.chest_pain_now"], "offered": ["danger_signs.responsive", "danger_signs.chest_pain_now", "danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text"]}
+{"t": "23:46:56", "kind": "answer", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "I'm awake and responding normally. I don't have any chest pain, breathing trouble, or bleeding."}
+{"t": "23:46:59", "kind": "extract", "writes": [["danger_signs.responsive", true], ["danger_signs.chest_pain_now", false]]}
+{"t": "23:47:02", "kind": "question", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category+complaint.text", "text": "I'm glad to hear you're feeling alert. To help the team prepare, could you tell me what the main problem is and a bit more about what's happening?", "fields": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text"], "offered": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text", "complaint.onset", "E.mechanism"]}
+{"t": "23:47:04", "kind": "answer", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category+complaint.text", "text": "I have a sore throat that's been bothering me for two days. It hurts to swallow, but it's only a mild pain."}
+{"t": "23:47:08", "kind": "extract", "writes": [["complaint.category", "sore_throat"], ["complaint.text", "sore throat, hurts to swallow, mild pain"], ["complaint.onset", "two days"]]}
+{"t": "23:47:08", "kind": "extract", "writes": [["E.mechanism", "none"]], "via": "derived-non-injury"}
+{"t": "23:47:10", "kind": "question", "slot": "dyn:danger_signs.breathing_difficulty", "text": "I'm sorry to hear about your throat pain. Are you having any trouble breathing right now?", "fields": ["danger_signs.breathing_difficulty"], "offered": ["danger_signs.breathing_difficulty"]}
+{"t": "23:47:12", "kind": "answer", "slot": "dyn:danger_signs.breathing_difficulty", "text": "No, I'm not having any trouble breathing."}
+{"t": "23:47:14", "kind": "extract", "writes": [["danger_signs.breathing_difficulty", false]]}
+{"t": "23:47:17", "kind": "question", "slot": "dyn:danger_signs.heavy_bleeding", "text": "I understand. Are you experiencing any heavy bleeding right now?", "fields": ["danger_signs.heavy_bleeding"], "offered": ["danger_signs.heavy_bleeding"]}
+{"t": "23:47:18", "kind": "answer", "slot": "dyn:danger_signs.heavy_bleeding", "text": "No, I'm not experiencing any bleeding."}
+{"t": "23:47:20", "kind": "extract", "writes": [["danger_signs.heavy_bleeding", false]]}
+{"t": "23:47:24", "kind": "question", "slot": "dyn:patient.age+patient.sex", "text": "I'm glad to hear you aren't having any trouble breathing. To help the team, could you tell me your age and if you are male or female?", "fields": ["patient.age", "patient.sex"], "offered": ["patient.age", "patient.sex", "complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts"]}
+{"t": "23:47:25", "kind": "answer", "slot": "dyn:patient.age+patient.sex", "text": "I'm 25 and I'm female."}
+{"t": "23:47:28", "kind": "extract", "writes": [["patient.age", 25], ["patient.sex", "female"]]}
+{"t": "23:47:30", "kind": "question", "slot": "dyn:history.pregnant+history.postpartum", "text": "Thank you for that information. To help the medical team, are you currently pregnant or have you given birth in the last few weeks?", "fields": ["history.pregnant", "history.postpartum"], "offered": ["history.pregnant", "history.postpartum", "complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts"]}
+{"t": "23:47:32", "kind": "answer", "slot": "dyn:history.pregnant+history.postpartum", "text": "No, I'm not pregnant and haven't given birth."}
+{"t": "23:47:35", "kind": "extract", "writes": [["history.pregnant", false], ["history.postpartum", false]]}
+{"t": "23:47:37", "kind": "question", "slot": "dyn:complaint.fever+infection.rash", "text": "I've noted that. Do you have a fever, and have you noticed any new rashes on your skin?", "fields": ["complaint.fever", "infection.rash"], "offered": ["complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts", "ams.changed_from_baseline", "complaint.pain_rating"]}
+{"t": "23:47:39", "kind": "answer", "slot": "dyn:complaint.fever+infection.rash", "text": "I had a slight temperature yesterday, but it's 37.1 today. No, I don't have any rashes."}
+{"t": "23:47:41", "kind": "extract", "writes": [["complaint.fever", true]]}
+{"t": "23:47:44", "kind": "question", "slot": "dyn:infection.rash", "text": "I've noted that you don't have a fever today. Just to be sure, have you noticed any new rashes appearing on your skin?", "fields": ["infection.rash"], "offered": ["infection.rash"]}
+{"t": "23:47:45", "kind": "answer", "slot": "dyn:infection.rash", "text": "No, I don't have any rashes."}
+{"t": "23:47:48", "kind": "extract", "writes": [["infection.rash", false]]}
+{"t": "23:47:50", "kind": "question", "slot": "dyn:infection.travel_14d+infection.contacts", "text": "I've noted that. Have you traveled outside the country in the last two weeks, or been in contact with anyone who has been sick?", "fields": ["infection.travel_14d", "infection.contacts"], "offered": ["infection.travel_14d", "infection.contacts", "complaint.uti_symptoms", "vitals.temp_c", "ams.changed_from_baseline", "complaint.pain_rating"]}
+{"t": "23:47:52", "kind": "answer", "slot": "dyn:infection.travel_14d+infection.contacts", "text": "No, I haven't traveled and don't know of any sick contacts."}
+{"t": "23:47:55", "kind": "extract", "writes": [["infection.travel_14d", false], ["infection.contacts", false]]}
+{"t": "23:47:58", "kind": "question", "slot": "dyn:complaint.uti_symptoms", "text": "I've noted that. Does it burn or hurt to pass urine, or have you noticed any changes like going more often or the urine looking cloudy?", "fields": ["complaint.uti_symptoms"], "offered": ["complaint.uti_symptoms", "vitals.temp_c", "ams.changed_from_baseline", "complaint.pain_rating", "complaint.infection_signs", "complaint.chills_or_rigors"]}
+{"t": "23:47:59", "kind": "answer", "slot": "dyn:complaint.uti_symptoms", "text": "No, I haven't noticed any issues with my urine."}
+{"t": "23:48:02", "kind": "extract", "writes": [["complaint.uti_symptoms", false]]}
+{"t": "23:48:04", "kind": "question", "slot": "dyn:vitals.temp_c+ams.changed_from_baseline", "text": "I've noted that. Have you taken her temperature, and have you noticed her acting confused or more sleepy than usual?", "fields": ["vitals.temp_c", "ams.changed_from_baseline"], "offered": ["vitals.temp_c", "ams.changed_from_baseline", "complaint.pain_rating", "complaint.infection_signs", "complaint.chills_or_rigors", "M.medications"]}
+{"t": "23:48:06", "kind": "answer", "slot": "dyn:vitals.temp_c+ams.changed_from_baseline", "text": "I checked it today and it was 37.1. No, I'm not acting confused or sleepy."}
+{"t": "23:48:09", "kind": "extract", "writes": [["vitals.temp_c", 37.1], ["ams.changed_from_baseline", false]]}
+{"t": "23:48:12", "kind": "question", "slot": "dyn:complaint.pain_rating+complaint.infection_signs", "text": "I've noted that. On a scale from 0 to 10, where 10 is the worst pain imaginable, how bad is the pain right now? Also, have you noticed any signs of infection, like a wound that is red, hot, or swollen?", "fields": ["complaint.pain_rating", "complaint.infection_signs"], "offered": ["complaint.pain_rating", "complaint.infection_signs", "complaint.chills_or_rigors", "M.medications", "A.allergies", "history.conditions"]}
+{"t": "23:48:14", "kind": "answer", "slot": "dyn:complaint.pain_rating+complaint.infection_signs", "text": "It's about a 3 out of 10. I don't have any rashes or other signs of infection."}
+{"t": "23:48:17", "kind": "extract", "writes": [["complaint.pain_rating", 3], ["complaint.infection_signs", false]]}
+{"t": "23:48:20", "kind": "question", "slot": "dyn:complaint.chills_or_rigors", "text": "I've noted the pain level. Has she had any shivering or shaking chills?", "fields": ["complaint.chills_or_rigors"], "offered": ["complaint.chills_or_rigors", "M.medications", "A.allergies", "history.conditions", "history.immunocompromised", "history.transplant_recipient_or_listed"]}
+{"t": "23:48:21", "kind": "answer", "slot": "dyn:complaint.chills_or_rigors", "text": "No, I haven't had any shivering or shaking chills."}
+{"t": "23:48:24", "kind": "extract", "writes": [["complaint.chills_or_rigors", false]]}
+{"t": "23:48:27", "kind": "question", "slot": "dyn:M.medications+A.allergies", "text": "I've noted that. Do you have any allergies, especially to medications, and what medicines do you take regularly?", "fields": ["M.medications", "A.allergies"], "offered": ["M.medications", "A.allergies", "history.conditions", "history.immunocompromised", "history.transplant_recipient_or_listed", "identity.name"]}
+{"t": "23:48:28", "kind": "answer", "slot": "dyn:M.medications+A.allergies", "text": "I don't have any allergies and I don't take any medications."}
+{"t": "23:48:31", "kind": "extract", "writes": [["A.allergies", []]]}
+{"t": "23:48:33", "kind": "question", "slot": "dyn:M.medications", "text": "I've noted that you have no allergies. To be sure, what medicines do you take on a regular basis?", "fields": ["M.medications"], "offered": ["M.medications"]}
+{"t": "23:48:34", "kind": "answer", "slot": "dyn:M.medications", "text": "I don't take any medications."}
+{"t": "23:48:37", "kind": "extract", "writes": [["M.medications", []]]}
+{"t": "23:48:40", "kind": "question", "slot": "dyn:history.conditions+history.immunocompromised", "text": "Thank you for confirming that. Do you have any ongoing medical conditions or do you take any medications that affect your immune system?", "fields": ["history.conditions", "history.immunocompromised"], "offered": ["history.conditions", "history.immunocompromised", "history.transplant_recipient_or_listed", "identity.name", "identity.dob"]}
+{"t": "23:48:41", "kind": "answer", "slot": "dyn:history.conditions+history.immunocompromised", "text": "I don't have any medical conditions and I'm not taking any medications."}
+{"t": "23:48:43", "kind": "extract", "writes": []}
+{"t": "23:48:46", "kind": "question", "slot": "dyn:history.conditions", "text": "I understand. To make sure we have everything, do you have any chronic health conditions or illnesses?", "fields": ["history.conditions"], "offered": ["history.conditions"]}
+{"t": "23:48:47", "kind": "answer", "slot": "dyn:history.conditions", "text": "No, I don't have any."}
+{"t": "23:48:49", "kind": "extract", "writes": [["history.conditions", []]]}
+{"t": "23:48:52", "kind": "question", "slot": "dyn:history.immunocompromised", "text": "I understand. Has a doctor ever told you that you have a weakened immune system or a condition that makes it harder for you to fight off infections?", "fields": ["history.immunocompromised"], "offered": ["history.immunocompromised"]}
+{"t": "23:48:53", "kind": "answer", "slot": "dyn:history.immunocompromised", "text": "No, I don't have any conditions."}
+{"t": "23:48:56", "kind": "extract", "writes": [["history.immunocompromised", false]], "via": "dropped-not-stated"}
+{"t": "23:48:56", "kind": "extract", "writes": []}
+{"t": "23:48:58", "kind": "question", "slot": "dyn:history.immunocompromised", "text": "I understand. To be clear, are you currently taking any medications like steroids or undergoing treatments that might weaken your immune system?", "fields": ["history.immunocompromised"], "offered": ["history.immunocompromised"]}
+{"t": "23:48:59", "kind": "answer", "slot": "dyn:history.immunocompromised", "text": "No, I'm not taking any medications or undergoing any treatments."}
+{"t": "23:49:02", "kind": "extract", "writes": [["history.immunocompromised", false]], "via": "dropped-not-stated"}
+{"t": "23:49:02", "kind": "extract", "writes": []}
+{"t": "23:49:05", "kind": "question", "slot": "dyn:history.transplant_recipient_or_listed+identity.name+identity.dob", "text": "Thank you for sharing that. To help the team prepare, could you please provide your full name, date of birth, and let us know if you have ever had an organ transplant or are currently on a transplant list?", "fields": ["history.transplant_recipient_or_listed", "identity.name", "identity.dob"], "offered": ["history.transplant_recipient_or_listed", "identity.name", "identity.dob"]}
+{"t": "23:49:07", "kind": "answer", "slot": "dyn:history.transplant_recipient_or_listed+identity.name+identity.dob", "text": "My name is not provided, but my date of birth is 21 Nov 2000. I have never had an organ transplant and am not on a list."}
+{"t": "23:49:11", "kind": "extract", "writes": [["identity.dob", "21 Nov 2000"], ["history.transplant_recipient_or_listed", false]]}
+{"t": "23:49:13", "kind": "question", "slot": "dyn:identity.name", "text": "Thank you for that information. Could you please tell me your full name?", "fields": ["identity.name"], "offered": ["identity.name"]}
+{"t": "23:49:14", "kind": "answer", "slot": "dyn:identity.name", "text": "I'm sorry to bother you with this, but my name is [Name]."}
+{"t": "23:49:17", "kind": "extract", "writes": [["identity.name", "[Name]"]]}
+{"t": "23:49:17", "kind": "engine", "note": "floor settled - report ready; remaining questions continue"}
+{"t": "23:49:20", "kind": "question", "slot": "dyn:L.last_intake", "text": "Thank you for providing your name. To help the team prepare, could you tell me when and what you last had to eat or drink?", "fields": ["L.last_intake"], "offered": ["L.last_intake"]}
+{"t": "23:49:21", "kind": "answer", "slot": "dyn:L.last_intake", "text": "I had some soup about an hour ago."}
+{"t": "23:49:24", "kind": "extract", "writes": [["L.last_intake", "soup about an hour ago"]]}
+{"t": "23:49:24", "kind": "engine", "note": "interview complete - no open fields"}

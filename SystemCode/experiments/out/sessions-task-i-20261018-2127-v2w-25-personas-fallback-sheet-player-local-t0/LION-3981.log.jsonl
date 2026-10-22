@@ -1,0 +1,57 @@
+{"t": "21:23:36", "kind": "engine", "note": "session LION-3981 started (web)"}
+{"t": "21:23:39", "kind": "question", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "Is the patient awake and responding to you normally? Also, are they currently experiencing any chest pain, trouble breathing, or heavy bleeding?", "fields": ["danger_signs.responsive", "danger_signs.chest_pain_now"], "offered": ["danger_signs.responsive", "danger_signs.chest_pain_now", "danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text"]}
+{"t": "21:23:39", "kind": "answer", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "Yes, I'm awake, it's me. No."}
+{"t": "21:23:43", "kind": "extract", "writes": [["danger_signs.responsive", true]]}
+{"t": "21:23:46", "kind": "question", "slot": "dyn:danger_signs.chest_pain_now", "text": "I understand. Is the patient experiencing any chest pain at this moment?", "fields": ["danger_signs.chest_pain_now"], "offered": ["danger_signs.chest_pain_now"]}
+{"t": "21:23:46", "kind": "answer", "slot": "dyn:danger_signs.chest_pain_now", "text": "No."}
+{"t": "21:23:49", "kind": "extract", "writes": [["danger_signs.chest_pain_now", false]]}
+{"t": "21:23:53", "kind": "question", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category", "text": "I'm glad you're able to speak with me. Are you or the patient having any trouble breathing or heavy bleeding right now? Also, what is the main reason for your visit today?", "fields": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category"], "offered": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text", "complaint.onset", "E.mechanism"]}
+{"t": "21:23:53", "kind": "answer", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category", "text": "No. I think I got sawdust in my left eye. I was using a chainsaw without goggles."}
+{"t": "21:23:57", "kind": "extract", "writes": [["danger_signs.breathing_difficulty", false, "denial of something the answer does not address"], ["danger_signs.heavy_bleeding", false, "denial of something the answer does not address"]], "via": "guard-dropped"}
+{"t": "21:23:57", "kind": "extract", "writes": [["complaint.category", "eye_problem"]]}
+{"t": "21:23:58", "kind": "extract", "writes": [["E.mechanism", "none"]], "via": "derived-non-injury"}
+{"t": "21:24:00", "kind": "question", "slot": "dyn:danger_signs.breathing_difficulty", "text": "I understand about the eye. Is the patient having any difficulty breathing right now?", "fields": ["danger_signs.breathing_difficulty"], "offered": ["danger_signs.breathing_difficulty"]}
+{"t": "21:24:00", "kind": "answer", "slot": "dyn:danger_signs.breathing_difficulty", "text": "No."}
+{"t": "21:24:04", "kind": "extract", "writes": [["danger_signs.breathing_difficulty", false]]}
+{"t": "21:24:06", "kind": "question", "slot": "dyn:danger_signs.heavy_bleeding", "text": "Is there any heavy bleeding occurring right now?", "fields": ["danger_signs.heavy_bleeding"], "offered": ["danger_signs.heavy_bleeding"]}
+{"t": "21:24:06", "kind": "answer", "slot": "dyn:danger_signs.heavy_bleeding", "text": "No."}
+{"t": "21:24:10", "kind": "extract", "writes": [["danger_signs.heavy_bleeding", false]]}
+{"t": "21:24:13", "kind": "question", "slot": "dyn:complaint.text+complaint.onset", "text": "I'm glad there's no breathing trouble or bleeding. Could you tell me more about the eye problem and when it first started?", "fields": ["complaint.text", "complaint.onset"], "offered": ["complaint.text", "complaint.onset", "patient.age", "patient.sex", "complaint.fever", "infection.rash"]}
+{"t": "21:24:13", "kind": "answer", "slot": "dyn:complaint.text+complaint.onset", "text": "I was using my chainsaw without safety goggles and I think I got some sawdust in my left eye. It hurts and it just won't stop tearing. About an hour ago."}
+{"t": "21:24:19", "kind": "extract", "writes": [["complaint.onset", "About an hour ago", "quote not in the answer"]], "via": "guard-dropped"}
+{"t": "21:24:19", "kind": "extract", "writes": [["complaint.text", "I was using my chainsaw without safety goggles and I think I got some sawdust in my left eye. It hurts and it just won't stop tearing."]]}
+{"t": "21:24:22", "kind": "question", "slot": "dyn:complaint.onset", "text": "I understand it started about an hour ago. Can you tell me exactly what time the pain began?", "fields": ["complaint.onset"], "offered": ["complaint.onset"]}
+{"t": "21:24:22", "kind": "answer", "slot": "dyn:complaint.onset", "text": "About an hour ago."}
+{"t": "21:24:26", "kind": "extract", "writes": [["complaint.onset", "about an hour ago"]]}
+{"t": "21:24:28", "kind": "question", "slot": "dyn:patient.age+patient.sex", "text": "I understand. Could you tell me the age and sex of the person who is hurt?", "fields": ["patient.age", "patient.sex"], "offered": ["patient.age", "patient.sex", "complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts"]}
+{"t": "21:24:28", "kind": "answer", "slot": "dyn:patient.age+patient.sex", "text": "I'm 36. I'm a man."}
+{"t": "21:24:33", "kind": "extract", "writes": [["patient.age", 36], ["patient.sex", "male"]]}
+{"t": "21:24:35", "kind": "question", "slot": "dyn:complaint.fever+infection.rash", "text": "I've noted that. Does he have a fever or any new rashes on his body?", "fields": ["complaint.fever", "infection.rash"], "offered": ["complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts", "stroke.vision_change", "ams.changed_from_baseline"]}
+{"t": "21:24:35", "kind": "answer", "slot": "dyn:complaint.fever+infection.rash", "text": "I don't know."}
+{"t": "21:24:39", "kind": "extract", "writes": []}
+{"t": "21:24:39", "kind": "extract", "writes": [["complaint.fever", null], ["infection.rash", null]], "via": "dont-know"}
+{"t": "21:24:42", "kind": "question", "slot": "dyn:infection.travel_14d+infection.contacts", "text": "Has he traveled outside the country or been in contact with anyone who has a contagious illness in the last two weeks?", "fields": ["infection.travel_14d", "infection.contacts"], "offered": ["infection.travel_14d", "infection.contacts", "stroke.vision_change", "ams.changed_from_baseline", "complaint.pain_rating", "M.medications"]}
+{"t": "21:24:42", "kind": "answer", "slot": "dyn:infection.travel_14d+infection.contacts", "text": "I don't know."}
+{"t": "21:24:45", "kind": "extract", "writes": []}
+{"t": "21:24:45", "kind": "extract", "writes": [["infection.travel_14d", null], ["infection.contacts", null]], "via": "dont-know"}
+{"t": "21:24:48", "kind": "question", "slot": "dyn:stroke.vision_change", "text": "Has he had any sudden changes or loss of vision?", "fields": ["stroke.vision_change"], "offered": ["stroke.vision_change", "ams.changed_from_baseline", "complaint.pain_rating", "M.medications", "A.allergies", "history.conditions"]}
+{"t": "21:24:48", "kind": "answer", "slot": "dyn:stroke.vision_change", "text": "No, I can see, it just hurts and waters."}
+{"t": "21:24:59", "kind": "extract", "writes": [["stroke.vision_change", false]]}
+{"t": "21:25:03", "kind": "question", "slot": "dyn:ams.changed_from_baseline+complaint.pain_rating", "text": "I'm sorry to hear about his eye. On a scale of 0 to 10, how bad is his pain right now, and has he seemed more confused or sleepy than usual today?", "fields": ["ams.changed_from_baseline", "complaint.pain_rating"], "offered": ["ams.changed_from_baseline", "complaint.pain_rating", "M.medications", "A.allergies", "history.conditions", "history.immunocompromised"]}
+{"t": "21:25:03", "kind": "answer", "slot": "dyn:ams.changed_from_baseline+complaint.pain_rating", "text": "I don't know."}
+{"t": "21:25:06", "kind": "extract", "writes": []}
+{"t": "21:25:06", "kind": "extract", "writes": [["ams.changed_from_baseline", null]], "via": "dont-know"}
+{"t": "21:25:10", "kind": "question", "slot": "dyn:complaint.pain_rating", "text": "I understand. To help the team, how would you rate his pain level on a scale of 0 to 10, where 10 is the worst possible?", "fields": ["complaint.pain_rating"], "offered": ["complaint.pain_rating"]}
+{"t": "21:25:10", "kind": "answer", "slot": "dyn:complaint.pain_rating", "text": "I don't know."}
+{"t": "21:25:13", "kind": "extract", "writes": []}
+{"t": "21:25:16", "kind": "question", "slot": "dyn:complaint.pain_rating", "text": "I understand it's hard to say. If you had to pick a number from 0 to 10, where 10 is the worst pain possible, how much is he hurting right now?", "fields": ["complaint.pain_rating"], "offered": ["complaint.pain_rating"]}
+{"t": "21:25:16", "kind": "answer", "slot": "dyn:complaint.pain_rating", "text": "I don't know."}
+{"t": "21:25:18", "kind": "extract", "writes": []}
+{"t": "21:25:22", "kind": "question", "slot": "dyn:M.medications+A.allergies", "text": "I understand. To help the team prepare, does he take any regular medications or have any known allergies?", "fields": ["M.medications", "A.allergies"], "offered": ["M.medications", "A.allergies", "history.conditions", "history.immunocompromised", "identity.name", "identity.dob"]}
+{"t": "21:25:22", "kind": "answer", "slot": "dyn:M.medications+A.allergies", "text": "I don't know."}
+{"t": "21:25:25", "kind": "extract", "writes": []}
+{"t": "21:25:25", "kind": "extract", "writes": [["M.medications", null], ["A.allergies", null]], "via": "dont-know"}
+{"t": "21:25:28", "kind": "question", "slot": "dyn:history.conditions", "text": "I understand. Does he have any ongoing medical conditions, like heart issues or diabetes?", "fields": ["history.conditions"], "offered": ["history.conditions", "history.immunocompromised", "identity.name", "identity.dob"]}
+{"t": "21:25:28", "kind": "answer", "slot": "dyn:history.conditions", "text": "No, I'm healthy."}
+{"t": "21:25:39", "kind": "extract", "writes": [["history.conditions", []]]}
+{"t": "21:25:42", "kind": "question", "slot": "dyn:history.immunocompromised", "text": "I understand. Has he ever been told he has a weakened immune system or is he undergoing any treatments like chemotherapy or steroid medications?", "fields": ["history.immunocompromised"], "offered": ["history.immunocompromised", "identity.name", "identity.dob"]}

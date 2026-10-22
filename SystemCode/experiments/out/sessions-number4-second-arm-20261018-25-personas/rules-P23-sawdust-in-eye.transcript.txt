@@ -1,0 +1,43 @@
+arm B, form rules, persona P23-sawdust-in-eye, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  Is the patient awake and responding normally?
+A1  Yes, I'm awake, it's me.
+
+Q2  Is the patient experiencing chest pain right now?
+A2  No.
+
+Q3  Is the patient having any trouble breathing right now?
+A3  No, nothing like that.
+
+Q4  Is the patient bleeding heavily right now?
+A4  No, nothing like that.
+
+Q5  What is the main reason the patient is coming to the emergency department?
+A5  I think I got sawdust in my left eye while I was using a chainsaw without goggles. It hurts and it just won't stop tearing.
+
+Q6  How many of the following eye symptoms are present: blurred vision, double vision, unequal pupils, a bulging eye, a red eye, extreme pain, an eye injury, or seeing floaters or flashes?
+A6  No, nothing like that.
+
+Q7  Is the eye that was injured red or painful?
+A7  It hurts and it just won't stop tearing.
+
+Q8  Is the eye that was injured red or painful?
+A8  It hurts and it just won't stop tearing.
+
+Q9  Is the eye that was injured red or painful?
+A9  It hurts and it just won't stop tearing.
+
+Q10  How many of the following eye symptoms are present: blurred vision, double vision, unequal pupils, a bulging eye, a red eye, extreme pain, an eye injury, or seeing floaters or flashes?
+A10  No, nothing like that.
+
+Q11  Is the eye that was injured red or painful?
+A11  It hurts and it just won't stop tearing.
+
+Q12  Is the eye that was injured red or painful?
+A12  It hurts and it just won't stop tearing.
+
+Q13  Is the eye that was injured red or painful?
+A13  It hurts and it just won't stop tearing.
+
+DECISION {"done": true, "decision": "no floor", "reason": "The patient is stable and does not meet any high-risk criteria; the triage will proceed to resource assessment.", "citation": "page 5"}
+OUTCOME no floor | expected None | pass True | label None | max prompt tokens 44039

@@ -1,0 +1,39 @@
+{
+ "persona_backend": "ollama",
+ "persona_model": "gemma4:12b",
+ "interview": {
+  "interview_mode": "static",
+  "backend": "ollama",
+  "model": "gemma4:12b",
+  "dyn_max_fields": 4
+ },
+ "tag": "v2f-static-P7-heat-stroke",
+ "results": [
+  {
+   "questions": 16,
+   "reasks": 0,
+   "floor": "at least ESI-2",
+   "floor_ok": false,
+   "rules_ok": false,
+   "fired": [
+    "B-01.new-altered-mental-status",
+    "B-05.stroke-signs",
+    "B-34.headache-red-flags"
+   ],
+   "hits": 3,
+   "total": 8,
+   "misses": [
+    "red_flags.altered_mental_status: want=True got=None",
+    "complaint.collapse: want=True got=None",
+    "complaint.fever: want=False got=True",
+    "environment.heat_exposure: want=True got=None",
+    "measurements.temperature_c: want=40.4 got=None"
+   ],
+   "danger_miss": false,
+   "persona": "P7-heat-stroke",
+   "run": 1,
+   "session": "MERLION-3377",
+   "turns": 24
+  }
+ ]
+}

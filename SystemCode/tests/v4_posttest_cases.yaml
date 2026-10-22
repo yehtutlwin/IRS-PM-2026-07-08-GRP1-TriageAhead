@@ -1,0 +1,736 @@
+# ESI v4 handbook, Appendix A post-test questions (AHRQ 2012, printed pp. A-1 to A-10; PDF pp. 98-107),
+# encoded as engine unit tests in the same format as tests/v4_cases.yaml. Added 29 Sep 2026.
+#
+# The appendix has 46 questions. Encoded here: 37. Not encoded (not patient cases):
+#   Chapter 4 items 1, 2, 3, 5, 6, 11 (true/false definitions of a resource) and the three
+#   chapter 7 implementation questions.
+# Chapter 4 items 4, 7, 8, 9, 10 ask "how many resources?" but carry a level in the answer, so
+# they are encoded against that level.
+#
+# STATUS: LLM-DRAFTED fact translations, UNVERIFIED by a non-encoder. Same expect classes as
+# tests/v4_cases.yaml (esi1 / floor2 / none; decision points A+B only, C and D pending).
+# Extra keys used here:
+#   set: appA, chapter, case  -> question number within that chapter's post-test
+#   skip: <reason>            -> not run: the book's level is decided at C or D
+#   xfail: <reason>           -> run, expected to FAIL against the current rulebook: either the v4 answer
+#                                rests on content the fifth edition dropped (v4-only), or it exposes a
+#                                gap or threshold choice in our encoding. Strict: if the engine starts
+#                                passing, the entry must be updated (that is a rule change to record).
+#   set2: true                -> touches a rule tagged CHANGED in rules/v4-v5-diff-log.md; the expectation
+#                                is re-derived under v5 and the reasoning is in `note`.
+# Fifth-edition checks done by text search of sources/ESI-Handbook-5th-Edition-3-2023.pdf on 29 Sep 2026:
+#   "burn" 0 occurrences; "loss of consciousness" 0; "head injury"/"head trauma" 0; trauma mechanisms are
+#   the numeric list on p.21 (falls >= 6 m, ejection, mechanical extrication, sexual assault).
+
+# ================= Chapter 2 post-test (p. A-1): assign a level =================
+
+- set: appA
+  chapter: 2
+  case: 1
+  v4_answer: 1
+  book_span: "A 62-year-old with CPR in progress."
+  synopsis: "62yo, CPR in progress"
+  expect: esi1
+  expect_rules: [A-02.arrest-or-imminent]
+  facts:
+    - {field: patient.age, value: 62}
+    - {field: obs.cardiac_or_pulmonary_arrest, value: true, status: observed}
+    - {field: complaint.text, value: "CPR in progress", from: second-reading}
+
+- set: appA
+  chapter: 2
+  case: 2
+  v4_answer: 2
+  edition_differs: true   # the book's answer rests on a criterion the fifth edition changed or dropped; see note/xfail
+  book_span: "A 53-year-old with 30% body surface area burn."
+  synopsis: "53yo with 30% body-surface-area burn"
+  xfail: "v4-only: the fifth edition never mentions burns (0 occurrences), and criteria.yaml has no burn rule. Clinician review: whether a major burn should be a supplemented high-risk rule."
+  expect: floor2
+  expect_rules: []
+  facts:
+    - {field: patient.age, value: 53}
+    - {field: complaint.category, value: burn}
+    - {field: complaint.text, value: "30% body surface area burn"}
+
+- set: appA
+  chapter: 2
+  case: 3
+  v4_answer: 5
+  book_span: "A 22-year-old who needs a work note."
+  synopsis: "22yo who needs a work note"
+  expect: none
+  facts:
+    - {field: patient.age, value: 22}
+    - {field: complaint.category, value: request}
+    - {field: complaint.text, value: "needs a work note", from: second-reading}
+
+- set: appA
+  chapter: 2
+  case: 4
+  v4_answer: 5
+  book_span: "A 12-year-old with an earache."
+  synopsis: "12yo with an earache"
+  expect: none
+  facts:
+    - {field: patient.age, value: 12}
+    - {field: patient.age_months, value: 144}
+    - {field: complaint.category, value: ear_problem}
+    - {field: complaint.text, value: "earache", from: second-reading}
+
+- set: appA
+  chapter: 2
+  case: 5
+  v4_answer: 2
+  edition_differs: true   # the book's answer rests on a criterion the fifth edition changed or dropped; see note/xfail
+  book_span: "A 45-year-old involved in high speed motor vehicle collision"
+  set2: true
+  synopsis: "45yo in a high-speed motor vehicle collision, BP 120/60 HR 72 RR 18"
+  note: "v4's answer rests on its qualitative mechanism rule (high-speed MVC). The fifth edition (p.21)
+         lists numeric mechanisms only: falls >= 6 m, ejection, mechanical extrication, sexual assault.
+         None is stated here, so under v5 no A/B rule fires; age 45 is below the geriatric consider.
+         Re-derived expectation: no floor. Flagged for clinician review with cases 27 and 57 of chapter 9."
+  expect: none
+  facts:
+    - {field: patient.age, value: 45}
+    - {field: complaint.category, value: injury}
+    - {field: E.mechanism, value: road_accident}
+    - {field: E.high_speed, value: true}
+    - {field: E.vehicle_ejection, value: false}
+    - {field: E.mechanical_extrication, value: false}
+    - {field: complaint.text, value: "involved in high speed motor vehicle collision", from: second-reading}
+
+- set: appA
+  chapter: 2
+  case: 6
+  v4_answer: 1
+  book_span: "An unresponsive 14-year-old. EMS tells you he and his"
+  synopsis: "Unresponsive 14yo; friends say they had been 'doing shots'"
+  expect: esi1
+  expect_rules: [A-01.unresponsive]
+  facts:
+    - {field: patient.age, value: 14}
+    - {field: patient.age_months, value: 168}
+    - {field: obs.avpu, value: U, status: observed}
+    - {field: complaint.known_toxic_ingestion, value: true}
+    - {field: patient.sex, value: "male", from: second-reading}
+    - {field: complaint.text, value: "he and his friends had been “doing shots.”", from: second-reading}
+
+# ============ Chapter 3 post-test (pp. A-2 to A-4): does the patient meet level 2? ============
+
+- set: appA
+  chapter: 3
+  case: 1
+  v4_answer: 2
+  book_span: "A 40-year-old male presents to triage with vague, midsternal"
+  synopsis: "40M, a month of intermittent midsternal discomfort, episode this morning now resolved, mild nausea, smoker, looks well"
+  note: "acs_suspicion is a judgement field (see B-04 notes). Set true on the vignette's features:
+         recurrent midsternal discomfort, an episode today, nausea, smoking. The book's rationale is the same."
+  expect: floor2
+  expect_rules: [B-04.chest-pain-acs-suspect]
+  facts:
+    - {field: patient.age, value: 40}
+    - {field: complaint.category, value: chest_pain}
+    - {field: complaint.acs_suspicion, value: true}
+    - {field: complaint.onset, value: "occurring intermittently for one month", from: second-reading}
+    - {field: patient.sex, value: "male", from: second-reading}
+    - {field: complaint.text, value: "vague, midsternal chest discomfort. Currently complains of mild nausea, but feels pretty good.", from: second-reading}
+
+- set: appA
+  chapter: 3
+  case: 2
+  v4_answer: 2
+  book_span: "A 22-year-old female on college break presents to the"
+  set2: true
+  synopsis: "22F sudden severe sore throat, feverish, dyspneic and drooling at triage, skin hot (epiglottitis)"
+  note: "B-14 is tagged CHANGED (direction) in the diff log: v4 could take drooling/stridor to level 1,
+         v5 p.13 says level 2. Both editions give at least 2, so the floor expectation is the same."
+  expect: floor2
+  expect_rules: [B-14.stridor-or-secretions]
+  facts:
+    - {field: patient.age, value: 22}
+    - {field: complaint.category, value: sore_throat}
+    - {field: complaint.fever, value: true}
+    - {field: complaint.shortness_of_breath, value: true}
+    - {field: obs.cannot_manage_secretions, value: true, status: observed}
+    - {field: complaint.onset, value: "sudden onset", from: second-reading}
+    - {field: patient.sex, value: "female", from: second-reading}
+    - {field: complaint.text, value: "feeling very sick, severe sore throat, and feeling “feverish.”", from: second-reading}
+
+- set: appA
+  chapter: 3
+  case: 3
+  v4_answer: 2
+  book_span: "A 68-year-old male brought in by his wife for"
+  synopsis: "68M sudden left arm weakness, slurred speech, facial droop, 2 h from onset, atrial fibrillation"
+  expect: floor2
+  expect_rules: [B-05.stroke-signs]
+  expect_notes: [B-52.geriatric-vitals-medication-context-consider]
+  facts:
+    - {field: patient.age, value: 68}
+    - {field: complaint.category, value: neuro_symptoms}
+    - {field: complaint.stroke_signs, value: true}
+    - {field: complaint.onset, value: "2 hours prior to arrival", from: second-reading}
+    - {field: patient.sex, value: "male", from: second-reading}
+    - {field: complaint.text, value: "left arm weakness, slurred speech, and difficulty walking.", from: second-reading}
+
+- set: appA
+  chapter: 3
+  case: 4
+  v4_answer: 2
+  book_span: "A 60-year-old male complains of sudden loss of vision"
+  synopsis: "60M sudden painless loss of vision in the left eye this morning, CAD and hypertension (central retinal artery occlusion)"
+  note: "Corrected 11 Oct 2026 after the second reading (#68): a sudden loss of vision is a stroke sign (the handbook's stroke signs include sudden loss of vision; the everyday-sign field stroke.vision_change feeds B-05), so the book's level 2 is reached through the stroke rule, not the eye rule. Until then the case was an expected failure blamed on the eye rule B-28."
+  expect: floor2
+  expect_rules: [B-05.stroke-signs]
+  facts:
+    - {field: patient.age, value: 60}
+    - {field: complaint.category, value: eye_problem}
+    - {field: complaint.text, value: "sudden painless loss of vision, left eye"}
+    - {field: stroke.vision_change, value: true}
+    - {field: patient.sex, value: male}
+    - {field: history.conditions, value: ["coronary artery disease", hypertension]}
+    - {field: complaint.onset, value: "that morning", from: second-reading}
+
+- set: appA
+  chapter: 3
+  case: 5
+  v4_answer: 3
+  book_span: "A 22-year-old female with 10/10 abdominal pain for two"
+  synopsis: "22F 10/10 abdominal pain for two days, no other symptoms, HR 84, eating ice cream"
+  expect: none
+  expect_consider: [B-02.severe-pain-consider]
+  facts:
+    - {field: patient.age, value: 22}
+    - {field: patient.has_ovaries, value: true}
+    - {field: complaint.category, value: abdominal_pain}
+    - {field: complaint.pain_rating, value: 10}
+    - {field: complaint.vomiting, value: false}
+    - {field: complaint.onset, value: "two days", from: second-reading}
+    - {field: patient.sex, value: "female", from: second-reading}
+    - {field: complaint.text, value: "10/10 abdominal pain for two days. Denies nausea, vomiting, diarrhea, or urinary frequency. eating ice cream.", from: second-reading}
+
+- set: appA
+  chapter: 3
+  case: 6
+  v4_answer: 2
+  book_span: "A 70-year-old female with her right arm in a"
+  synopsis: "70F, arm cast from yesterday's fall too tight: digits tense, swollen, pale nail beds, delayed capillary refill; confusion is her baseline (Alzheimer's)"
+  note: "Baseline confusion is stated by the daughter, so B-01 must not fire: baseline known, not new.
+         The fall was yesterday (mechanism recorded), age 70: B-27 and B-52 context notes expected."
+  expect: floor2
+  expect_rules: [B-24.extremity-neurovascular-compromise, B-46.compartment-syndrome-symptoms]
+  expect_notes: [B-27.geriatric-trauma-caution, B-52.geriatric-vitals-medication-context-consider]
+  facts:
+    - {field: patient.age, value: 70}
+    - {field: complaint.category, value: limb_pain_or_swelling}
+    - {field: E.mechanism, value: fall}
+    - {field: complaint.extremity_neurovascular_compromise, value: true}
+    - {field: complaint.compartment_syndrome_symptoms, value: true}
+    - {field: obs.confusion_lethargy_disorientation, value: true, status: observed}
+    - {field: obs.new_confusion_lethargy_disorientation, value: false}
+    - {field: history.baseline_mental_status, value: known}
+    - {field: complaint.onset, value: "yesterday", from: second-reading}
+    - {field: patient.sex, value: "female", from: second-reading}
+    - {field: complaint.text, value: "right arm in a cast. fell yesterday and fractured her arm. complaining of pain. cast too tight. very restless at home and thinks her mother is in pain. confused and mumbling; face flushed. unable to provide verbal description of her complaints. right upper extremity is in a short arm cast; digits appear tense, swollen and ecchymotic. Nail beds are pale; capillary refill delayed. not wearing a sling.", from: second-reading}
+
+- set: appA
+  chapter: 3
+  case: 7
+  v4_answer: 2
+  book_span: "An 8-month-old presents with fever, cough, and vomiting. The"
+  synopsis: "8-month-old, fever, cough, vomiting, listless, sunken fontanel, breathing unlaboured, no thermometer"
+  note: "The book: 'the temperature is not needed'; lethargy and a sunken fontanel make the baby high risk.
+         Encoded as the paediatric subtle mental-status change (B-29). No temperature, so the fever
+         rules that need vitals.temp_c are not evaluated."
+  expect: floor2
+  expect_rules: [B-29.pediatric-subtle-ams]
+  facts:
+    - {field: patient.age, value: 0}
+    - {field: patient.age_months, value: 8}
+    - {field: complaint.category, value: fever}
+    - {field: complaint.fever, value: true}
+    - {field: complaint.vomiting, value: true}
+    - {field: obs.subtle_mental_status_change, value: true, status: observed}
+    - {field: complaint.onset, value: "this morning", from: second-reading}
+    - {field: complaint.text, value: "fever, cough, and vomiting. vomited twice this morning; no diarrhea. not been eating well lately. hot. gave acetaminophen two hours prior to arrival. wrapped in a blanket, eyes open, appears listless, skin hot and moist, sunken fontanel. Respirations are regular and not labored.", from: second-reading}
+
+- set: appA
+  chapter: 3
+  case: 8
+  v4_answer: 3
+  book_span: "A 34-year-old male presents to triage with right lower"
+  synopsis: "34M right lower quadrant pain 5/10 all day, anorexia, nausea, vomiting, guarding; 'initially 3, 2 if vitals abnormal'"
+  expect: none
+  facts:
+    - {field: patient.age, value: 34}
+    - {field: patient.has_ovaries, value: false}
+    - {field: complaint.category, value: abdominal_pain}
+    - {field: complaint.pain_rating, value: 5}
+    - {field: complaint.unilateral_lower_quadrant_pain, value: true}
+    - {field: complaint.vomiting, value: true}
+    - {field: complaint.onset, value: "all day", from: second-reading}
+    - {field: patient.sex, value: "male", from: second-reading}
+    - {field: complaint.text, value: "right lower quadrant pain. associated with loss of appetite, nausea and vomiting. appears in moderate discomfort, skin warm and dry, guarding abdomen.", from: second-reading}
+
+- set: appA
+  chapter: 3
+  case: 9
+  v4_answer: 2
+  edition_differs: true   # the book's answer rests on a criterion the fifth edition changed or dropped; see note/xfail
+  book_span: "A 28-year-old male arrives with friends with a chief"
+  synopsis: "28M struck on the head with a baseball bat, passed out for a couple of minutes, headache, neck pain, vomited once, now alert (epidural haematoma)"
+  xfail: "v4-only: the fifth edition has no head-injury or loss-of-consciousness criterion (0 occurrences) and criteria.yaml has none. The interview does record E.loc. Clinician review: blunt head injury with loss of consciousness as a supplemented rule (the anticoagulant rule B-30 covers only anticoagulated patients)."
+  expect: floor2
+  expect_rules: []
+  facts:
+    - {field: patient.age, value: 28}
+    - {field: complaint.category, value: wound}
+    - {field: E.mechanism, value: assault}
+    - {field: E.body_region, value: head}
+    - {field: E.loc, value: true}
+    - {field: complaint.vomiting, value: true}
+    - {field: complaint.neck_pain, value: true}
+    - {field: complaint.onset, value: "one hour prior to arrival", from: second-reading}
+    - {field: patient.sex, value: "male", from: second-reading}
+    - {field: complaint.text, value: "scalp laceration. struck in the head with a baseball bat. passed out for a couple of minutes. headache, neck pain, mild nausea, and emesis x 1. pale, but is otherwise alert and oriented to person, place, and time. 5-cm laceration to the scalp near his left ear with bleeding controlled.", from: second-reading}
+
+- set: appA
+  chapter: 3
+  case: 10
+  v4_answer: 2
+  book_span: "A 28-year-old male presents with a chief complaint of"
+  synopsis: "28M construction worker, concrete dust in the right eye, irrigated without relief, eye red, tearing, keeps rubbing it (alkaline burn)"
+  xfail: "B-28 is a consider flag by our operationalisation (effect_override), so it never sets a floor; the book rates an alkaline eye exposure level 2. ATSO elements present: red eye and eye trauma (eye.red, eye.injury) -> count 2 by bridge BR-28, so the flag fires. The book's reason (alkaline chemistry) is not an ATSO element. Clinician review: chemical eye exposure as a floor."
+  expect: floor2
+  expect_rules: []
+  expect_consider: [B-28.ocular-high-risk-constellation]
+  facts:
+    - {field: patient.age, value: 28}
+    - {field: complaint.category, value: eye_problem}
+    - {field: eye.red, value: true}
+    - {field: eye.injury, value: true}
+    - {field: patient.sex, value: "male", from: second-reading}
+    - {field: complaint.text, value: "tearing and irritation to the right eye. construction worker and was drilling concrete. feels like there is something in my eye. irrigated the eye several times but it doesn't feel any better. appears in no severe distress; continually rubbing his eye. Right eye appears red, irritated, with excessive tearing.", from: second-reading}
+
+- set: appA
+  chapter: 3
+  case: 11
+  v4_answer: 2
+  edition_differs: true   # the book's answer rests on a criterion the fifth edition changed or dropped; see note/xfail
+  book_span: "A 40-year-old male is brought in by his son."
+  set2: true
+  synopsis: "40M fell about 10 feet (3 m) from a ladder onto both feet, foot and back pain 6/10, pale and slightly diaphoretic, no LOC"
+  note: "v4's answer rests on mechanism (lumbar and calcaneus fractures). The fifth edition's numeric threshold
+         is 6 m (p.21); 3 m does not reach it, and pale/diaphoretic without hypotension is not A-10.
+         Re-derived expectation under v5: no floor. Flagged for clinician review with chapter 2 case 5."
+  expect: none
+  facts:
+    - {field: patient.age, value: 40}
+    - {field: complaint.category, value: injury}
+    - {field: complaint.pain_rating, value: 6}
+    - {field: E.mechanism, value: fall}
+    - {field: E.fall_height_meters, value: 3}
+    - {field: E.loc, value: false}
+    - {field: obs.hypoperfusion_signs, value: true, status: observed, from: answer}
+    - {field: complaint.onset, value: "immediate", from: second-reading}
+    - {field: patient.sex, value: "male", from: second-reading}
+    - {field: complaint.text, value: "unable to ambulate due to foot and back pain. fell approximately 10 feet off of a ladder. landed on both feet and had immediate foot and back pain. No other signs of trauma noted. pale, slightly diaphoretic, and in mild distress. sitting upright in a wheelchair.", from: second-reading}
+
+- set: appA
+  chapter: 3
+  case: 12
+  v4_answer: 2
+  book_span: "A 12-year-old female is brought to triage by her"
+  synopsis: "12F weak and vomiting for three days, thirsty, headache, lethargic and slumped in the chair (probable DKA)"
+  expect: floor2
+  expect_rules: [B-01.new-altered-mental-status]
+  facts:
+    - {field: patient.age, value: 12}
+    - {field: patient.age_months, value: 144}
+    - {field: complaint.category, value: vomiting_or_diarrhoea}
+    - {field: complaint.vomiting, value: true}
+    - {field: obs.new_confusion_lethargy_disorientation, value: true, status: observed}
+    - {field: complaint.onset, value: "three days", from: second-reading}
+    - {field: patient.sex, value: "female", from: second-reading}
+    - {field: complaint.text, value: "weak and vomiting for three days. feels thirsty all the time and her head hurts. Vomited once today. Denies fever, abdominal pain, or diarrhea. awake, lethargic, and slumped in the chair. Color is pale, skin warm and dry.", from: second-reading}
+
+- set: appA
+  chapter: 3
+  case: 13
+  v4_answer: 2
+  book_span: "A 40-year-old male presents to triage with a gradual"
+  synopsis: "40M two days of increasing shortness of breath with chest pain, colon cancer, moderate respiratory distress"
+  expect: floor2
+  expect_rules: [B-12.increasing-respiratory-effort]
+  facts:
+    - {field: patient.age, value: 40}
+    - {field: complaint.category, value: breathing}
+    - {field: complaint.shortness_of_breath, value: true}
+    - {field: complaint.increasing_respiratory_effort, value: true}
+    - {field: complaint.respiratory_distress_signs, value: true}
+    - {field: complaint.onset, value: "over the past two days", from: second-reading}
+    - {field: patient.sex, value: "male", from: second-reading}
+    - {field: complaint.text, value: "moderate respiratory distress, skin warm and dry", from: second-reading}
+
+- set: appA
+  chapter: 3
+  case: 14
+  v4_answer: 1
+  book_span: "A 60-year-old male presents with complaint of dark stools"
+  synopsis: "60M a month of dark stools with vague abdominal pain, HR 140, BP 80 palpable, pale and diaphoretic"
+  expect: esi1
+  expect_rules: [A-10.hypotension-with-hypoperfusion]
+  facts:
+    - {field: patient.age, value: 60}
+    - {field: complaint.category, value: abdominal_pain}
+    - {field: vitals.heart_rate, value: 140, status: observed}
+    - {field: vitals.hypotension, value: true, status: observed, from: answer}
+    - {field: obs.hypoperfusion_signs, value: true, status: observed, from: answer}
+    - {field: complaint.onset, value: "for one month", from: second-reading}
+    - {field: patient.sex, value: "male", from: second-reading}
+    - {field: complaint.text, value: "skin is pale and diaphoretic", from: second-reading}
+
+- set: appA
+  chapter: 3
+  case: 15
+  v4_answer: 1
+  book_span: "EMS arrives with a 25-year-old female with the sudden"
+  synopsis: "25F 7 months pregnant, sudden significant vaginal bleeding, 9/10 abdominal pain, BP 92/palp, HR 130 (abruption)"
+  note: "Level 1 in the book because she needs an immediate caesarean. Encoded as pregnancy with haemodynamic
+         instability requiring a lifesaving intervention (A-18); several B rules fire as well."
+  expect: esi1
+  expect_rules: [A-18.pregnancy-hemodynamic-instability-lifesaving]
+  facts:
+    - {field: patient.age, value: 25}
+    - {field: history.pregnant, value: true}
+    - {field: complaint.category, value: abdominal_pain}
+    - {field: complaint.pain_rating, value: 9}
+    - {field: complaint.vaginal_bleeding, value: true}
+    - {field: complaint.heavy_vaginal_bleeding, value: true}
+    - {field: vitals.heart_rate, value: 130, status: observed}
+    - {field: obs.hemodynamically_unstable, value: true, status: observed, from: answer}
+    - {field: obs.requires_lifesaving_intervention, value: true, status: observed, from: answer}
+    - {field: complaint.onset, value: "sudden onset", from: second-reading}
+    - {field: patient.sex, value: "female", from: second-reading}
+    - {field: complaint.text, value: "sudden onset of significant vaginal bleeding, with 9/10 abdominal pain", from: second-reading}
+
+# ======== Chapter 4 post-test (p. A-5): resource questions that carry a level in the answer ========
+
+- set: appA
+  chapter: 4
+  case: 4
+  v4_answer: 4
+  book_span: "How many ESI resources will this patient need? A"
+  synopsis: "Healthy 25M back pain; x-ray, oral analgesia, prescription -> one resource"
+  expect: none
+  facts:
+    - {field: patient.age, value: 25}
+    - {field: complaint.category, value: back_pain}
+    - {field: patient.sex, value: "male", from: second-reading}
+    - {field: complaint.text, value: "back pain", from: second-reading}
+
+- set: appA
+  chapter: 4
+  case: 7
+  v4_answer: 3
+  edition_differs: true   # the book's answer rests on a criterion the fifth edition changed or dropped; see note/xfail
+  book_span: "A 30-year-old sexually active female patient with vaginal bleeding"
+  set2: true
+  synopsis: "30F sexually active, no contraception, vaginal bleeding and cramping, dizzy and pale; book: 'at least two resources, level 3'"
+  note: "The question is about resources and the v4 answer is 3. The fifth edition (p.12) lists 'a possible
+         ectopic pregnancy, hemodynamically stable' as level 2 (B-06), and the diff log tags the OB/GYN
+         framing CHANGED. Re-derived under v5: floor at least 2. possible_ectopic_pregnancy is a judgement
+         field, set on: sexually active, no contraception, bleeding with cramping, dizzy."
+  expect: floor2
+  expect_rules: [B-06.possible-ectopic-stable]
+  facts:
+    - {field: patient.age, value: 30}
+    - {field: patient.has_ovaries, value: true}
+    - {field: complaint.category, value: vaginal_bleeding}
+    - {field: complaint.vaginal_bleeding, value: true}
+    - {field: complaint.possible_ectopic_pregnancy, value: true}
+    - {field: patient.sex, value: "female", from: second-reading}
+    - {field: complaint.text, value: "sexually active, vaginal bleeding and cramping, doesn't use birth control, dizzy and pale", from: second-reading}
+
+- set: appA
+  chapter: 4
+  case: 8
+  v4_answer: 5
+  book_span: "How many ESI resources will this patient need? A"
+  synopsis: "Healthy 40M toothache for two days at 2 a.m., no fever"
+  expect: none
+  facts:
+    - {field: patient.age, value: 40}
+    - {field: complaint.category, value: dental}
+    - {field: complaint.fever, value: false}
+    - {field: complaint.onset, value: "for two days", from: second-reading}
+    - {field: patient.sex, value: "male", from: second-reading}
+    - {field: complaint.text, value: "toothache", from: second-reading}
+
+- set: appA
+  chapter: 4
+  case: 9
+  v4_answer: 1
+  book_span: "How many ESI resources will this patient need? A"
+  synopsis: "22F high-speed rollover, thrown from the vehicle, intubated, no response to pain, hypotensive; book: resources irrelevant, level 1"
+  expect: esi1
+  expect_rules: [A-15.intubated, A-01.unresponsive]
+  facts:
+    - {field: patient.age, value: 22}
+    - {field: E.mechanism, value: road_accident}
+    - {field: E.vehicle_ejection, value: true}
+    - {field: obs.intubated, value: true, status: observed}
+    - {field: obs.avpu, value: U, status: observed}
+    - {field: vitals.hypotension, value: true, status: observed, from: answer}
+    - {field: patient.sex, value: "female", from: second-reading}
+    - {field: complaint.text, value: "high-speed rollover motor vehicle collision and thrown from the vehicle", from: second-reading}
+
+- set: appA
+  chapter: 4
+  case: 10
+  v4_answer: 4
+  book_span: "How many ESI resources will this patient need? A"
+  synopsis: "Healthy 60M everted his ankle on the golf course, moderate swelling, tender lateral malleolus"
+  expect: none
+  facts:
+    - {field: patient.age, value: 60}
+    - {field: complaint.category, value: limb_pain_or_swelling}
+    - {field: E.mechanism, value: none}
+    - {field: patient.sex, value: "male", from: second-reading}
+    - {field: complaint.text, value: "moderate swelling and pain upon palpation of the lateral malleolus", from: second-reading}
+
+# ============ Chapter 5 post-test (p. A-8): vital-sign panels ============
+
+- set: appA
+  chapter: 5
+  case: 1
+  v4_answer: 2
+  book_span: "3-week-old male Vital signs: Temperature: 100.8\xB0 F (38.2\xB0 C)"
+  synopsis: "3-week-old, temp 38.2 C, HR 160, RR 48, SpO2 96%, poor feeding, less active, sleeping most of the day"
+  note: "Fever in an infant under 28 days is level 2 in both editions regardless of appearance (book's answer).
+         The vitals are below the under-1-month danger-zone thresholds. 'Less active, sleeping most of the day'
+         is also recorded as a subtle mental-status change."
+  expect: floor2
+  expect_rules: [B-56.infant-under-28-days-fever, B-57.infant-under-90-days-temperature-over-38]
+  facts:
+    - {field: patient.age, value: 0}
+    - {field: patient.age_months, value: 0}
+    - {field: patient.age_days, value: 21}
+    - {field: complaint.category, value: fever}
+    - {field: complaint.fever, value: true}
+    - {field: vitals.temp_c, value: 38.2, status: observed}
+    - {field: vitals.heart_rate, value: 160, status: observed}
+    - {field: vitals.respiratory_rate, value: 48, status: observed}
+    - {field: vitals.spo2, value: 96, status: observed}
+    - {field: obs.subtle_mental_status_change, value: true, status: observed}
+    - {field: patient.sex, value: "male", from: second-reading}
+    - {field: complaint.text, value: "Poor feeding. Less active than usual. Sleeping most of the day.", from: second-reading}
+
+- set: appA
+  chapter: 5
+  case: 2
+  v4_answer: 5
+  book_span: "22-month-old, fever, pulling ears, immunizations up to date, history"
+  synopsis: "22-month-old, fever 39.0 C, pulling at ears, immunised, frequent ear infections, HR 128, RR 28, SpO2 97%, alert"
+  note: "Temperature 39.0 C is not above the 39.0 threshold of B-59; it is above 38.5, so the B-61 temperature
+         red flag (consider) is expected. Danger-zone vitals for 1-3 years (HR > 140, RR > 40) not exceeded."
+  expect: none
+  expect_consider: [B-61.child-over-3-months-temperature-red-flag-consider]
+  facts:
+    - {field: patient.age, value: 1}
+    - {field: patient.age_months, value: 22}
+    - {field: patient.immunizations_incomplete, value: false}
+    - {field: complaint.category, value: ear_problem}
+    - {field: complaint.fever, value: true}
+    - {field: vitals.temp_c, value: 39.0, status: observed}
+    - {field: vitals.heart_rate, value: 128, status: observed}
+    - {field: vitals.respiratory_rate, value: 28, status: observed}
+    - {field: vitals.spo2, value: 97, status: observed}
+    - {field: complaint.text, value: "Awoke screaming. Pulling at ears. Runny nose this week. Alert, tired, flushed, falling asleep now. Calm in mom's arms, cries with exam.", from: second-reading}
+
+- set: appA
+  chapter: 5
+  case: 3
+  v4_answer: 2
+  book_span: "6-year-old with cough Vital signs: Temperature: 104.4\xB0 F (40.2\xB0"
+  skip: "Decided at decision point D: the book up-triages from 3 to 2 on danger-zone vitals (SpO2 91%, RR 30). The engine's D point is pending."
+  synopsis: "6yo cough and fever two days, temp 40.2 C, HR 140, RR 30, SpO2 91%, chills, green phlegm, sleeping a lot"
+  expect: floor2
+  expect_rules: []
+  facts:
+    - {field: patient.age, value: 6}
+    - {field: patient.age_months, value: 72}
+    - {field: complaint.category, value: breathing}
+    - {field: complaint.fever, value: true}
+    - {field: vitals.temp_c, value: 40.2, status: observed}
+    - {field: vitals.heart_rate, value: 140, status: observed}
+    - {field: vitals.respiratory_rate, value: 30, status: observed}
+    - {field: vitals.spo2, value: 91, status: observed}
+    - {field: complaint.onset, value: "for two days", from: second-reading}
+    - {field: complaint.text, value: "Cough with fever. Chills. Short of breath with exertion. Green phlegm. Sleeping a lot.", from: second-reading}
+
+- set: appA
+  chapter: 5
+  case: 4
+  v4_answer: 2
+  book_span: "94-year-old male, abdominal pain Vital signs: Temperature: 98.9\xB0 F"
+  synopsis: "94M epigastric pain, vomiting, 'looks sick', HR 100, BP 130/80, SpO2 93%; book: 3 by resources, 2 because ill-appearing and 94"
+  xfail: "Gap: the book's level 2 rests on general appearance ('looks sick', probable dehydration) in a 94-year-old; no rule encodes ill appearance short of hypoperfusion or sepsis signs. The geriatric consider flag (B-52) is all the rulebook offers. Clinician review."
+  expect: floor2
+  expect_rules: []
+  expect_notes: [B-52.geriatric-vitals-medication-context-consider]
+  facts:
+    - {field: patient.age, value: 94}
+    - {field: complaint.category, value: abdominal_pain}
+    - {field: complaint.vomiting, value: true}
+    - {field: obs.ill_appearing, value: true, status: observed}
+    - {field: vitals.temp_c, value: 37.2, status: observed}
+    - {field: vitals.heart_rate, value: 100, status: observed}
+    - {field: vitals.spo2, value: 93, status: observed}
+    - {field: patient.sex, value: "male", from: second-reading}
+    - {field: complaint.text, value: "Vomiting. Epigastric pain. Looks sick.", from: second-reading}
+
+- set: appA
+  chapter: 5
+  case: 5
+  v4_answer: 2
+  book_span: "61-year-old female, referred with asthma Vital signs: Temperature: 99."
+  skip: "Decided at decision point D: the book up-triages from 3 to 2 on danger-zone vitals (HR 112, RR 28, SpO2 91%). The engine's D point is pending. Steroid dependence is the D-05 context flag."
+  synopsis: "61F asthma exacerbation, steroid dependent, multiple admissions, HR 112, RR 28, SpO2 91%, PEFR 200"
+  expect: floor2
+  expect_rules: []
+  facts:
+    - {field: patient.age, value: 61}
+    - {field: complaint.category, value: breathing}
+    - {field: complaint.shortness_of_breath, value: true}
+    - {field: M.immunosuppressant_or_steroid, value: true}
+    - {field: vitals.heart_rate, value: 112, status: observed}
+    - {field: vitals.respiratory_rate, value: 28, status: observed}
+    - {field: vitals.spo2, value: 91, status: observed}
+    - {field: patient.sex, value: "female", from: second-reading}
+    - {field: complaint.text, value: "Referred with asthma. Asthma exacerbation with dry cough. Steroid dependent. Multiple hospitalizations. Never intubated. Peak expiratory flow rate = 200.", from: second-reading}
+
+- set: appA
+  chapter: 5
+  case: 6
+  v4_answer: 2
+  edition_differs: true   # the book's answer rests on a criterion the fifth edition changed or dropped; see note/xfail
+  book_span: "9-year-old male, head trauma Narrative: Collided with another player"
+  synopsis: "9yo collided with another player at lacrosse, loss of consciousness about 5 minutes witnessed by the coach, now awake with headache and nausea"
+  xfail: "v4-only: as chapter 3 case 9, no head-injury or loss-of-consciousness criterion in the fifth edition or in criteria.yaml. Clinician review."
+  expect: floor2
+  expect_rules: []
+  facts:
+    - {field: patient.age, value: 9}
+    - {field: patient.age_months, value: 108}
+    - {field: complaint.category, value: head_injury}
+    - {field: E.mechanism, value: other}
+    - {field: E.body_region, value: head}
+    - {field: E.loc, value: true}
+    - {field: patient.sex, value: "male", from: second-reading}
+    - {field: complaint.text, value: "Head trauma. Collided with another player at lacrosse game. Loss of consciousness for about 5 minutes, witnessed by coach. Now awake with headache and nausea.", from: second-reading}
+
+# ============ Chapter 6 post-test (pp. A-9 to A-10): paediatric rashes ============
+
+- set: appA
+  chapter: 6
+  case: 1
+  v4_answer: 5
+  book_span: "A 14-year-old with rash on feet, was exposed to"
+  synopsis: "14yo rash on the feet after poison ivy three days ago, walking, stable vitals"
+  expect: none
+  facts:
+    - {field: patient.age, value: 14}
+    - {field: patient.age_months, value: 168}
+    - {field: complaint.category, value: skin_problem}
+    - {field: complaint.rash, value: true}
+    - {field: complaint.text, value: "Rash on feet, was exposed to poison ivy 3 days ago. Ambulatory, with stable vital signs.", from: second-reading}
+
+- set: appA
+  chapter: 6
+  case: 2
+  v4_answer: 1
+  book_span: "A 3-month-old with petechial and purpuric lesions all over."
+  synopsis: "3-month-old, petechial and purpuric rash all over, RR 60, HR 196, SpO2 90%, temp 39 C rectal (meningococcaemia)"
+  note: "The book: abnormal appearance, work of breathing and circulation; needs immediate lifesaving
+         intervention. Translated into the level-1 observation fields A-19/A-20 (judgement translation, as
+         in chapter 9 cases that use obs.requires_lifesaving_intervention). SpO2 90 is not below 90, so
+         A-08 does not apply. The 1-12-month danger-zone vitals are exceeded, but D is pending. No rule
+         reads a petechial or purpuric rash on its own: noted for review."
+  expect: esi1
+  expect_rules: [A-19.ineffective-tissue-perfusion, A-20.ineffective-respiratory-pattern]
+  facts:
+    - {field: patient.age, value: 0}
+    - {field: patient.age_months, value: 3}
+    - {field: patient.age_days, value: 90}
+    - {field: complaint.category, value: skin_problem}
+    - {field: complaint.rash, value: true}
+    - {field: complaint.petechial_or_purpuric_rash, value: true}
+    - {field: complaint.fever, value: true}
+    - {field: vitals.temp_c, value: 39.0, status: observed}
+    - {field: vitals.heart_rate, value: 196, status: observed}
+    - {field: vitals.respiratory_rate, value: 60, status: observed}
+    - {field: vitals.spo2, value: 90, status: observed}
+    - {field: obs.ineffective_tissue_perfusion, value: true, status: observed, from: answer}
+    - {field: obs.ineffective_respiratory_pattern, value: true, status: observed, from: answer}
+    - {field: obs.requires_lifesaving_intervention, value: true, status: observed, from: answer}
+    - {field: complaint.text, value: "Petechial and purpuric lesions all over.", from: second-reading}
+
+- set: appA
+  chapter: 6
+  case: 3
+  v4_answer: 3
+  book_span: "A 5-year-old with rash on neck and face, with"
+  synopsis: "5yo poison ivy on face and neck, worse and spreading, swelling and moist lesions, not eating or drinking well, afebrile, stable vitals"
+  expect: none
+  facts:
+    - {field: patient.age, value: 5}
+    - {field: patient.age_months, value: 60}
+    - {field: complaint.category, value: skin_problem}
+    - {field: complaint.rash, value: true}
+    - {field: vitals.temp_c, value: 37.0, status: observed}
+    - {field: vitals.heart_rate, value: 100, status: observed}
+    - {field: vitals.respiratory_rate, value: 20, status: observed}
+    - {field: vitals.spo2, value: 99, status: observed}
+    - {field: patient.sex, value: "female", from: second-reading}
+    - {field: complaint.text, value: "rash on neck and face, with swelling and moist lesions around the eyes and cheeks. Respirations non- labored. Was treated by her pediatrician yesterday for poison ivy on the neck, but the rash is worse and spreading today. Mom states child not eating or drinking well today and was up most of the night crying with itching and pain.", from: second-reading}
+
+- set: appA
+  chapter: 6
+  case: 4
+  v4_answer: 2
+  book_span: "A 10-year-old patient presents with facial swelling after eating"
+  synopsis: "10yo facial swelling and fine red rash after a cookie at school, peanut allergy, wheeze on auscultation, RR 16, HR 76, SpO2 97%"
+  xfail: "Gap or judgement: the book rates a stable allergic reaction with wheeze and facial swelling as high risk (2). The fifth edition names only anaphylaxis (level 1, A-09); there is no allergic-reaction criterion short of it. Whether this presentation already counts as anaphylaxis is a clinical judgement. Clinician review; the respiratory-signs consider flag (B-54) is what the rulebook shows."
+  expect: floor2
+  expect_rules: []
+  expect_consider: [B-54.respiratory-distress-signs-consider]
+  facts:
+    - {field: patient.age, value: 10}
+    - {field: patient.age_months, value: 120}
+    - {field: complaint.category, value: allergic_reaction}
+    - {field: complaint.rash, value: true}
+    - {field: complaint.respiratory_distress_signs, value: true}
+    - {field: obs.anaphylaxis, value: false, status: observed}
+    - {field: vitals.respiratory_rate, value: 16, status: observed}
+    - {field: vitals.heart_rate, value: 76, status: observed}
+    - {field: vitals.spo2, value: 97, status: observed}
+    - {field: complaint.onset, value: "after eating a cookie at school", from: second-reading}
+    - {field: complaint.text, value: "facial swelling after eating a cookie at school. Fine red rash all over. Wheezing heard upon auscultation.", from: second-reading}
+
+- set: appA
+  chapter: 6
+  case: 5
+  v4_answer: 4
+  book_span: "An 8-year-old healthy child with a fever of 38.7\xB0C"
+  synopsis: "Healthy 8yo, fever 38.7 C at home, sore throat, sandpaper rash on the chest, sibling with positive strep culture, stable vitals"
+  expect: none
+  expect_consider: [B-61.child-over-3-months-temperature-red-flag-consider]
+  facts:
+    - {field: patient.age, value: 8}
+    - {field: patient.age_months, value: 96}
+    - {field: complaint.category, value: sore_throat}
+    - {field: complaint.fever, value: true}
+    - {field: complaint.rash, value: true}
+    - {field: vitals.temp_c, value: 38.7}
+    - {field: complaint.text, value: "fever of 38.7°C at home. fine red sandpaper rash across chest. Sibling at home had a positive strep culture at the pediatrician a few days ago. Respirations are non-labored. Vital signs are stable.", from: second-reading}

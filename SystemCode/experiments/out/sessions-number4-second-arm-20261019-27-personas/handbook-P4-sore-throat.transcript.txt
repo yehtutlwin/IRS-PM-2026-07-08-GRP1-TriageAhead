@@ -1,0 +1,28 @@
+arm B, form handbook, persona P4-sore-throat, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  What is the main reason the patient is seeking care today?
+A1  I have a sore throat that has lasted for two days and it hurts to swallow.
+
+Q2  Are you experiencing any difficulty breathing or any other severe symptoms like chest pain or severe distress?
+A2  No, I'm breathing normally and I'm fine.
+
+Q3  Are you currently experiencing any other symptoms, such as a fever, cough, or any other concerns?
+A3  I think I had a slight temperature yesterday, but none today, it was 37.1 when I checked. No breathing trouble.
+
+Q4  How old are you?
+A4  I am 25.
+
+Q5  How would you rate your pain on a scale of 0 to 10, where 10 is the worst pain imaginable?
+A5  About 3 out of 10, mild.
+
+Q6  How many different resources do you think will be needed to treat your sore throat (e.g., just a physical exam and a prescription, or will you need lab tests or imaging?)
+A6  I don't know.
+
+Q7  Are you currently experiencing any other symptoms, such as a cough, or any other concerns?
+A7  No.
+
+Q8  Are you currently experiencing any other symptoms, such as a cough, or any other concerns?
+A8  No.
+
+DECISION {"decision": "level 5", "reason": "The patient is stable, does not meet high-risk criteria, and is expected to require only one resource (a physical exam and a prescription) for a simple sore throat.", "citation": "page 20, Table 5-2"}
+OUTCOME level 5 | expected None | pass True | label None | max prompt tokens 29921

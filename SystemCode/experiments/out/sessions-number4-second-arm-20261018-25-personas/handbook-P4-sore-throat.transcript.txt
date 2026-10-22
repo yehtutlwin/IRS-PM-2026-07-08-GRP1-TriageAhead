@@ -1,0 +1,34 @@
+arm B, form handbook, persona P4-sore-throat, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  What is the main reason the patient is seeking care?
+A1  I have a sore throat that has lasted for two days and it hurts to swallow.
+
+Q2  Are you experiencing any difficulty breathing or any other severe symptoms like chest pain or severe distress?
+A2  No, I'm breathing normally and I'm fine.
+
+Q3  Are you currently experiencing any other symptoms, such as a fever, a cough, or any other physical concerns?
+A3  I think I had a slight temperature yesterday, but none today, it was 37.1 when I checked. I have a sore throat for two days, it hurts to swallow.
+
+Q4  How old are you?
+A4  I am 25.
+
+Q5  Are you experiencing any other symptoms like a cough, runny nose, or any other physical concerns?
+A5  A sore throat for two days, it hurts to swallow.
+
+Q6  How many different resources do you think will be needed to treat your sore throat (e.g., just a physical exam and a prescription, or will you need lab tests or imaging like an X-ray)?
+A6  I don't know.
+
+Q7  Are you currently experiencing any other symptoms like a cough, runny nose, or any other physical concerns?
+A7  A sore throat for two days, it hurts to swallow.
+
+Q8  Are you experiencing any other symptoms like a cough, runny nose, or any other physical concerns?
+A8  A sore throat for two days, it hurts to swallow.
+
+Q9  Are you experiencing any other symptoms like a cough, runny nose, or any other physical concerns?
+A9  A sore throat for two days, it hurts to swallow.
+
+Q10  Are you currently experiencing any other symptoms like a cough, runny nose, or any other physical concerns?
+A10  A sore throat for two days, it hurts to swallow.
+
+DECISION {"done": true, "decision": "level 5", "reason": "The patient is a stable adult with a minor complaint (sore throat) and no high-risk indicators or multi-resource needs.", "citation": "page 20, Table 5-2"}
+OUTCOME level 5 | expected None | pass True | label None | max prompt tokens 30034

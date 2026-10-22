@@ -1,0 +1,42 @@
+{
+ "persona_backend": "sheet",
+ "persona_model": "answer-sheet replay (no model)",
+ "interview": {
+  "interview_mode": "dynamic",
+  "backend": "ollama",
+  "model": "gemma4:12b",
+  "dyn_max_fields": 4,
+  "temperature": "0"
+ },
+ "tag": "wr-waiting-room-P1",
+ "cost_usd": {
+  "interview": 0,
+  "persona": 0
+ },
+ "results": [
+  {
+   "sorry": 1,
+   "you_event": 0,
+   "after_report_not_for_nurse": 0,
+   "report_ok": true,
+   "questions": 17,
+   "questions_to_report": 13,
+   "reasks": 0,
+   "floor": "at least ESI-2",
+   "floor_ok": true,
+   "rules_ok": true,
+   "fired": [
+    "B-30.anticoagulated-trauma"
+   ],
+   "hits": 9,
+   "total": 9,
+   "misses": [],
+   "danger_miss": false,
+   "persona": "P1-fall-anticoag",
+   "run": 1,
+   "session": "SAGA-7904",
+   "turns": 16,
+   "transcript": "sessions-task-i-20261019-1605-wr-waiting-room-P1/SAGA-7904.transcript.txt"
+  }
+ ]
+}

@@ -1,0 +1,399 @@
+{
+ "sid": "SAGA-9740",
+ "facts": {
+  "red_flags.responsive": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-09-26 03:30"
+  },
+  "red_flags.breathing_difficulty": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-09-26 03:30"
+  },
+  "red_flags.chest_pain_now": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-09-26 03:30"
+  },
+  "red_flags.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-09-26 03:30"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "sore_throat",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "persona",
+      "turn": 4,
+      "ts": "2026-09-26 03:30"
+     },
+     "text": {
+      "value": "sore throat that hurts to swallow",
+      "status": "reported",
+      "who": "persona",
+      "turn": 4,
+      "ts": "2026-09-26 03:30"
+     },
+     "onset": {
+      "value": "two days",
+      "status": "reported",
+      "who": "persona",
+      "turn": 4,
+      "ts": "2026-09-26 03:30"
+     },
+     "pain_rating": {
+      "value": 3,
+      "status": "reported",
+      "who": "persona",
+      "turn": 4,
+      "ts": "2026-09-26 03:30"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 4
+  },
+  "complaint.category": {
+   "value": [
+    "sore_throat"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 4,
+   "ts": "2026-09-26 03:30"
+  },
+  "complaint.text": {
+   "value": "sore throat that hurts to swallow",
+   "status": "reported",
+   "who": "persona",
+   "turn": 4,
+   "ts": "2026-09-26 03:30"
+  },
+  "complaint.onset": {
+   "value": "two days",
+   "status": "reported",
+   "who": "persona",
+   "turn": 4,
+   "ts": "2026-09-26 03:30"
+  },
+  "complaint.pain_rating": {
+   "value": 3,
+   "status": "reported",
+   "who": "persona",
+   "turn": 4,
+   "ts": "2026-09-26 03:30"
+  },
+  "complaint.pain_latest": {
+   "value": 3,
+   "status": "reported",
+   "who": "persona",
+   "turn": 4,
+   "ts": "2026-09-26 03:30"
+  },
+  "E.mechanism": {
+   "value": "none",
+   "status": "reported",
+   "who": "derived",
+   "turn": 4,
+   "ts": "2026-09-26 03:30"
+  },
+  "M.medications": {
+   "value": [],
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-09-26 03:30"
+  },
+  "A.allergies": {
+   "value": [],
+   "status": "reported",
+   "who": "persona",
+   "turn": 6,
+   "ts": "2026-09-26 03:30"
+  },
+  "history.immunocompromised": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 7,
+   "ts": "2026-09-26 03:30"
+  },
+  "history.pregnant_or_postpartum": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 7,
+   "ts": "2026-09-26 03:30"
+  },
+  "history.conditions": {
+   "value": [],
+   "status": "reported",
+   "who": "persona",
+   "turn": 8,
+   "ts": "2026-09-26 03:30"
+  },
+  "infection.fever": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 9,
+   "ts": "2026-09-26 03:30"
+  },
+  "infection.rash": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 9,
+   "ts": "2026-09-26 03:30"
+  },
+  "infection.travel_14d": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 9,
+   "ts": "2026-09-26 03:30"
+  },
+  "infection.contacts": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 9,
+   "ts": "2026-09-26 03:30"
+  },
+  "complaint.fever": {
+   "value": true,
+   "status": "reported",
+   "who": "derived",
+   "turn": 9,
+   "ts": "2026-09-26 03:30"
+  },
+  "L.last_intake": {
+   "value": "soup about an hour ago",
+   "status": "reported",
+   "who": "persona",
+   "turn": 10,
+   "ts": "2026-09-26 03:31"
+  },
+  "identity.dob": {
+   "value": "21 Nov 2000",
+   "status": "reported",
+   "who": "persona",
+   "turn": 10,
+   "ts": "2026-09-26 03:31"
+  },
+  "L.last_intake_abs": {
+   "value": "~2026-09-26 02:31 (from 'soup about an hour ago' said 03:31)",
+   "status": "reported",
+   "who": "derived",
+   "turn": 10,
+   "ts": "2026-09-26 03:31"
+  },
+  "patient.age": {
+   "value": 25,
+   "status": "reported",
+   "who": "derived",
+   "turn": 10,
+   "ts": "2026-09-26 03:31"
+  },
+  "identity.name": {
+   "value": "[Name]",
+   "status": "reported",
+   "who": "persona",
+   "turn": 11,
+   "ts": "2026-09-26 03:31"
+  }
+ },
+ "attempts": {
+  "red_flags.screen": 3,
+  "complaint.main": 1,
+  "M.medications": 1,
+  "allergies_and_history": 3,
+  "infection.screen": 1,
+  "wrapup": 2
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "Is the patient awake and responding normally, and are they experiencing any severe chest pain, trouble breathing, or heavy bleeding right now?",
+   "ts": "2026-09-26 03:30:19",
+   "kind": "question",
+   "slot": "red_flags.screen"
+  },
+  {
+   "role": "caregiver",
+   "text": "I'm awake and responding fine. No chest pain, breathing issues, or bleeding.",
+   "ts": "2026-09-26 03:30:20",
+   "kind": "answer",
+   "slot": "red_flags.screen"
+  },
+  {
+   "role": "bot",
+   "text": "Are they currently experiencing any chest pain, trouble breathing, or heavy bleeding?",
+   "ts": "2026-09-26 03:30:23",
+   "kind": "question",
+   "slot": "red_flags.screen"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I'm not having any trouble breathing or any other issues like that.",
+   "ts": "2026-09-26 03:30:24",
+   "kind": "answer",
+   "slot": "red_flags.screen"
+  },
+  {
+   "role": "bot",
+   "text": "Are you experiencing any chest pain or heavy bleeding at this moment?",
+   "ts": "2026-09-26 03:30:27",
+   "kind": "question",
+   "slot": "red_flags.screen"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I'm not experiencing any chest pain or heavy bleeding.",
+   "ts": "2026-09-26 03:30:27",
+   "kind": "answer",
+   "slot": "red_flags.screen"
+  },
+  {
+   "role": "bot",
+   "text": "Could you tell me what happened, when it started, and how you would rate the pain on a scale of 0 to 10?",
+   "ts": "2026-09-26 03:30:31",
+   "kind": "question",
+   "slot": "complaint.main"
+  },
+  {
+   "role": "caregiver",
+   "text": "I've had a sore throat for two days that hurts to swallow. It's a mild 3/10.",
+   "ts": "2026-09-26 03:30:32",
+   "kind": "answer",
+   "slot": "complaint.main"
+  },
+  {
+   "role": "bot",
+   "text": "Do you take any regular medications?",
+   "ts": "2026-09-26 03:30:37",
+   "kind": "question",
+   "slot": "M.medications"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I don't take any medications.",
+   "ts": "2026-09-26 03:30:37",
+   "kind": "answer",
+   "slot": "M.medications"
+  },
+  {
+   "role": "bot",
+   "text": "Do you have any allergies to medication or other medical conditions, such as heart problems, diabetes, or are you currently pregnant?",
+   "ts": "2026-09-26 03:30:40",
+   "kind": "question",
+   "slot": "allergies_and_history"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I have no allergies or medical conditions.",
+   "ts": "2026-09-26 03:30:41",
+   "kind": "answer",
+   "slot": "allergies_and_history"
+  },
+  {
+   "role": "bot",
+   "text": "Could you please tell me if you have any other medical conditions, such as being pregnant, postpartum, or having a weakened immune system?",
+   "ts": "2026-09-26 03:30:45",
+   "kind": "question",
+   "slot": "allergies_and_history"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I don't have any conditions.",
+   "ts": "2026-09-26 03:30:46",
+   "kind": "answer",
+   "slot": "allergies_and_history"
+  },
+  {
+   "role": "bot",
+   "text": "Just to confirm for the hospital team, do you have any other specific health conditions we should be aware of?",
+   "ts": "2026-09-26 03:30:49",
+   "kind": "question",
+   "slot": "allergies_and_history"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I don't have any medical conditions.",
+   "ts": "2026-09-26 03:30:50",
+   "kind": "answer",
+   "slot": "allergies_and_history"
+  },
+  {
+   "role": "bot",
+   "text": "Have you had a fever, a rash, traveled overseas in the last two weeks, or been in contact with anyone who is infectious?",
+   "ts": "2026-09-26 03:30:53",
+   "kind": "question",
+   "slot": "infection.screen"
+  },
+  {
+   "role": "caregiver",
+   "text": "I think I had a slight temperature yesterday, but I have no rash, haven't traveled, and don't know of any sick contacts.",
+   "ts": "2026-09-26 03:30:55",
+   "kind": "answer",
+   "slot": "infection.screen"
+  },
+  {
+   "role": "bot",
+   "text": "Could you please tell me when you last ate or drank, and provide your name and date of birth for the hospital's records?",
+   "ts": "2026-09-26 03:30:58",
+   "kind": "question",
+   "slot": "wrapup"
+  },
+  {
+   "role": "caregiver",
+   "text": "I had some soup about an hour ago. My name is not provided, but my date of birth is 21 Nov 2000.",
+   "ts": "2026-09-26 03:31:00",
+   "kind": "answer",
+   "slot": "wrapup"
+  },
+  {
+   "role": "bot",
+   "text": "Could you please tell me your name for the hospital's records?",
+   "ts": "2026-09-26 03:31:03",
+   "kind": "question",
+   "slot": "wrapup"
+  },
+  {
+   "role": "caregiver",
+   "text": "I'm sorry to be doing this, but my name is [Name].",
+   "ts": "2026-09-26 03:31:04",
+   "kind": "answer",
+   "slot": "wrapup"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you - that's everything for now. Show the code SAGA-9740 at the counter when you arrive.",
+   "ts": "2026-09-26 03:31:06",
+   "kind": "ack"
+  }
+ ],
+ "active_ids": [],
+ "floor": null,
+ "phase": "enroute",
+ "opened": [],
+ "created": "2026-09-26 03:30",
+ "pending_slot": "wrapup",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {},
+ "said_done": true
+}

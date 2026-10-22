@@ -1,0 +1,57 @@
+{"t": "14:32:42", "kind": "engine", "note": "session LION-9638 started (web)"}
+{"t": "14:32:44", "kind": "question", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "Is the patient awake and responding to you normally? Also, are they currently experiencing any chest pain, trouble breathing, or heavy bleeding?", "fields": ["danger_signs.responsive", "danger_signs.chest_pain_now"], "offered": ["danger_signs.responsive", "danger_signs.chest_pain_now", "danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text"]}
+{"t": "14:32:44", "kind": "answer", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "She's awake and she answers when I talk to her, but she's very sleepy. No."}
+{"t": "14:32:49", "kind": "extract", "writes": [["danger_signs.responsive", true], ["danger_signs.chest_pain_now", false]]}
+{"t": "14:32:53", "kind": "question", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category+complaint.text", "text": "I'm glad she's awake. Is she having any trouble breathing or is there any heavy bleeding? Also, could you tell me what the main problem is and what's happening?", "fields": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text"], "offered": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text", "complaint.onset", "E.mechanism"]}
+{"t": "14:32:53", "kind": "answer", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category+complaint.text", "text": "No, she's breathing normally. No. She's not acting right. She has a shunt in her head and I'm worried it's blocked. My daughter is not acting right. She has a shunt in her head that drains fluid and I'm worried it's blocked. She's sleepy, she says her head hurts and she's going to throw up."}
+{"t": "14:33:07", "kind": "extract", "writes": [["danger_signs.breathing_difficulty", false], ["danger_signs.heavy_bleeding", false], ["complaint.category", "neuro_symptoms"], ["complaint.text", "She's not acting right. She has a shunt in her head and I'm worried it's blocked. She's sleepy, she says her head hurts and she's going to throw up."]]}
+{"t": "14:33:07", "kind": "extract", "writes": [["E.mechanism", "none"]], "via": "derived-non-injury"}
+{"t": "14:33:10", "kind": "question", "slot": "dyn:complaint.onset+patient.age", "text": "I understand your concern about her shunt. When did these symptoms start, and how old is your daughter?", "fields": ["complaint.onset", "patient.age"], "offered": ["complaint.onset", "patient.age", "patient.sex", "complaint.fever", "infection.rash", "infection.travel_14d"]}
+{"t": "14:33:10", "kind": "answer", "slot": "dyn:complaint.onset+patient.age", "text": "Since this morning. She's 4."}
+{"t": "14:33:15", "kind": "extract", "writes": [["complaint.onset", "this morning"], ["patient.age", 4]]}
+{"t": "14:33:18", "kind": "question", "slot": "dyn:patient.sex+complaint.fever", "text": "I've noted she's 4 and started feeling this way this morning. Does she have a fever, and is she a girl or a boy?", "fields": ["patient.sex", "complaint.fever"], "offered": ["patient.sex", "complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts", "stroke.vision_change"]}
+{"t": "14:33:18", "kind": "answer", "slot": "dyn:patient.sex+complaint.fever", "text": "She's a girl, my daughter."}
+{"t": "14:33:22", "kind": "extract", "writes": [["patient.sex", "female"]]}
+{"t": "14:33:25", "kind": "question", "slot": "dyn:complaint.fever", "text": "I've noted she is your daughter. Does she have a fever, or have you taken her temperature?", "fields": ["complaint.fever"], "offered": ["complaint.fever"]}
+{"t": "14:33:25", "kind": "answer", "slot": "dyn:complaint.fever", "text": "I don't know."}
+{"t": "14:33:28", "kind": "extract", "writes": []}
+{"t": "14:33:28", "kind": "extract", "writes": [["complaint.fever", null]], "via": "dont-know"}
+{"t": "14:33:31", "kind": "question", "slot": "dyn:infection.rash+stroke.vision_change", "text": "I understand. Has she developed any new rashes, or has she had any sudden changes in her vision?", "fields": ["infection.rash", "stroke.vision_change"], "offered": ["infection.rash", "infection.travel_14d", "infection.contacts", "stroke.vision_change", "ams.changed_from_baseline", "complaint.pain_rating"]}
+{"t": "14:33:31", "kind": "answer", "slot": "dyn:infection.rash+stroke.vision_change", "text": "I don't know."}
+{"t": "14:33:34", "kind": "extract", "writes": []}
+{"t": "14:33:35", "kind": "extract", "writes": [["infection.rash", null], ["stroke.vision_change", null]], "via": "dont-know"}
+{"t": "14:33:38", "kind": "question", "slot": "dyn:infection.travel_14d+infection.contacts", "text": "I understand. Has she traveled outside the country or been around anyone who is sick in the last two weeks?", "fields": ["infection.travel_14d", "infection.contacts"], "offered": ["infection.travel_14d", "infection.contacts", "ams.changed_from_baseline", "complaint.pain_rating", "stroke.face_droop", "stroke.arm_weakness"]}
+{"t": "14:33:38", "kind": "answer", "slot": "dyn:infection.travel_14d+infection.contacts", "text": "I don't know."}
+{"t": "14:33:41", "kind": "extract", "writes": []}
+{"t": "14:33:41", "kind": "extract", "writes": [["infection.travel_14d", null], ["infection.contacts", null]], "via": "dont-know"}
+{"t": "14:33:44", "kind": "question", "slot": "dyn:ams.changed_from_baseline", "text": "Is she more confused or harder to wake up than usual?", "fields": ["ams.changed_from_baseline"], "offered": ["ams.changed_from_baseline", "complaint.pain_rating", "stroke.face_droop", "stroke.arm_weakness", "stroke.speech_change", "stroke.balance_loss"]}
+{"t": "14:33:44", "kind": "answer", "slot": "dyn:ams.changed_from_baseline", "text": "Yes, she's much sleepier than usual and not herself."}
+{"t": "14:33:56", "kind": "extract", "writes": [["ams.changed_from_baseline", true]]}
+{"t": "14:33:56", "kind": "floor", "floor": "at least ESI-2", "fired": ["B-01.new-altered-mental-status", "B-29.pediatric-subtle-ams"], "sources": ["ESI v5 p.12 (New Onset Confusion, Lethargy, or Disorientation)", "ESI v5 p.13 (pediatric neurological note)"]}
+{"t": "14:33:59", "kind": "question", "slot": "dyn:M.medications+A.allergies", "text": "I understand. Does she have any allergies to medicine, and what medications does she take regularly?", "fields": ["M.medications", "A.allergies"], "offered": ["M.medications", "A.allergies", "history.conditions", "identity.name", "identity.dob"]}
+{"t": "14:33:59", "kind": "answer", "slot": "dyn:M.medications+A.allergies", "text": "I don't know."}
+{"t": "14:34:02", "kind": "extract", "writes": []}
+{"t": "14:34:02", "kind": "extract", "writes": [["M.medications", null], ["A.allergies", null]], "via": "dont-know"}
+{"t": "14:34:05", "kind": "question", "slot": "dyn:history.conditions", "text": "I understand. Does she have any ongoing medical conditions?", "fields": ["history.conditions"], "offered": ["history.conditions", "identity.name", "identity.dob"]}
+{"t": "14:34:05", "kind": "answer", "slot": "dyn:history.conditions", "text": "She has a ventriculo-peritoneal shunt."}
+{"t": "14:34:17", "kind": "extract", "writes": [["history.conditions", ["ventriculo-peritoneal shunt"]]]}
+{"t": "14:34:20", "kind": "question", "slot": "dyn:identity.name+identity.dob", "text": "I've noted the shunt. Could you please tell me her full name and date of birth?", "fields": ["identity.name", "identity.dob"], "offered": ["identity.name", "identity.dob"]}
+{"t": "14:34:20", "kind": "answer", "slot": "dyn:identity.name+identity.dob", "text": "Melissa Tan. I don't remember the exact date right now, she's 4."}
+{"t": "14:34:24", "kind": "extract", "writes": [["identity.name", "Melissa Tan"], ["patient.age", 4]]}
+{"t": "14:34:27", "kind": "question", "slot": "dyn:identity.dob", "text": "I understand she is 4 years old. Could you tell me her date of birth?", "fields": ["identity.dob"], "offered": ["identity.dob"]}
+{"t": "14:34:27", "kind": "answer", "slot": "dyn:identity.dob", "text": "I don't remember the exact date right now, she's 4."}
+{"t": "14:34:30", "kind": "extract", "writes": []}
+{"t": "14:34:32", "kind": "question", "slot": "dyn:identity.dob", "text": "I understand. Could you please provide her birth date if you can find it?", "fields": ["identity.dob"], "offered": ["identity.dob"]}
+{"t": "14:34:32", "kind": "answer", "slot": "dyn:identity.dob", "text": "I don't remember the exact date right now, she's 4."}
+{"t": "14:34:35", "kind": "extract", "writes": [["patient.age", 4]]}
+{"t": "14:34:35", "kind": "engine", "note": "floor settled - report ready; remaining questions continue"}
+{"t": "14:34:38", "kind": "question", "slot": "dyn:complaint.pain_rating", "text": "On a scale of 0 to 10, where 10 is the worst pain imaginable, how would you rate her pain right now?", "fields": ["complaint.pain_rating"], "offered": ["complaint.pain_rating", "L.last_intake"]}
+{"t": "14:34:38", "kind": "answer", "slot": "dyn:complaint.pain_rating", "text": "I don't know."}
+{"t": "14:34:42", "kind": "extract", "writes": []}
+{"t": "14:34:44", "kind": "question", "slot": "dyn:complaint.pain_rating", "text": "I understand. Is she in any pain at all right now?", "fields": ["complaint.pain_rating"], "offered": ["complaint.pain_rating"]}
+{"t": "14:34:44", "kind": "answer", "slot": "dyn:complaint.pain_rating", "text": "I don't know."}
+{"t": "14:34:46", "kind": "extract", "writes": []}
+{"t": "14:34:49", "kind": "question", "slot": "dyn:complaint.pain_rating", "text": "I understand it's hard to tell. Is she experiencing any discomfort or pain at all right now?", "fields": ["complaint.pain_rating"], "offered": ["complaint.pain_rating"]}
+{"t": "14:34:49", "kind": "answer", "slot": "dyn:complaint.pain_rating", "text": "I don't know."}
+{"t": "14:34:51", "kind": "extract", "writes": []}
+{"t": "14:34:55", "kind": "question", "slot": "dyn:L.last_intake", "text": "I understand. When was the last time she had anything to eat or drink?", "fields": ["L.last_intake"], "offered": ["L.last_intake"]}

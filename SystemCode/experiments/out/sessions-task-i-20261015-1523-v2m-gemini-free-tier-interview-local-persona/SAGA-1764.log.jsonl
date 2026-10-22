@@ -1,0 +1,19 @@
+{"t": "15:45:38", "kind": "engine", "note": "session SAGA-1764 started (web)"}
+{"t": "15:46:00", "kind": "question", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now+complaint.category", "text": "Hello. Is the patient awake and responding to you normally, and do they have chest pain right now? Also, what is the main problem that brings them in today?", "fields": ["danger_signs.responsive", "danger_signs.chest_pain_now", "complaint.category"], "offered": ["danger_signs.responsive", "danger_signs.chest_pain_now", "danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text"]}
+{"t": "15:46:02", "kind": "answer", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now+complaint.category", "text": "I'm awake. No chest pain, but I have constant lower abdominal pain that's getting worse."}
+{"t": "15:46:20", "kind": "extract", "writes": [["danger_signs.responsive", true], ["danger_signs.chest_pain_now", false], ["complaint.category", "abdominal_pain"], ["complaint.text", "constant lower abdominal pain that's getting worse.", "abdominal_pain"]]}
+{"t": "15:46:20", "kind": "extract", "writes": [["E.mechanism", "none"]], "via": "derived-non-injury"}
+{"t": "15:46:42", "kind": "question", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.onset", "text": "Thanks for letting me know about the abdominal pain. Are you having trouble breathing or bleeding heavily right now? And when did the pain start?", "fields": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.onset"], "offered": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.onset", "patient.age", "patient.sex", "complaint.fever"]}
+{"t": "15:46:43", "kind": "answer", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.onset", "text": "No bleeding. It started this morning and is getting worse."}
+{"t": "15:47:05", "kind": "extract", "writes": [["danger_signs.heavy_bleeding", false], ["complaint.onset", "this morning", "abdominal_pain"], ["complaint.text", "getting worse", "abdominal_pain"]]}
+{"t": "15:47:27", "kind": "question", "slot": "dyn:danger_signs.breathing_difficulty", "text": "Okay, no bleeding. Are you finding it hard to breathe?", "fields": ["danger_signs.breathing_difficulty"], "offered": ["danger_signs.breathing_difficulty"]}
+{"t": "15:47:28", "kind": "answer", "slot": "dyn:danger_signs.breathing_difficulty", "text": "No, I'm not having trouble breathing."}
+{"t": "15:47:46", "kind": "extract", "writes": [["danger_signs.breathing_difficulty", false]]}
+{"t": "15:48:06", "kind": "question", "slot": "dyn:patient.age+patient.sex+complaint.fever", "text": "Okay, no trouble breathing. How old is the patient, and is the patient male or female? Also, does the patient have a fever?", "fields": ["patient.age", "patient.sex", "complaint.fever"], "offered": ["patient.age", "patient.sex", "complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts"]}
+{"t": "15:48:08", "kind": "answer", "slot": "dyn:patient.age+patient.sex+complaint.fever", "text": "I'm 40 and female. No fever."}
+{"t": "15:48:24", "kind": "extract", "writes": [["complaint.fever", false]]}
+{"t": "15:48:54", "kind": "question", "slot": "dyn:patient.age", "text": "Okay, you're 40 and female, and no fever. How old are you?", "fields": ["patient.age"], "offered": ["patient.age"]}
+{"t": "15:48:55", "kind": "answer", "slot": "dyn:patient.age", "text": "I'm 40."}
+{"t": "15:49:12", "kind": "extract", "writes": [["patient.age", 40]]}
+{"t": "15:49:43", "kind": "question", "slot": "dyn:patient.sex", "text": "Are you male or female?", "fields": ["patient.sex"], "offered": ["patient.sex"]}
+{"t": "15:49:44", "kind": "answer", "slot": "dyn:patient.sex", "text": "I'm female."}

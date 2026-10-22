@@ -1,0 +1,19 @@
+arm B, form rules, persona P11-asthma-worsening, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  Is the patient awake and responding normally?
+A1  Yes, she's awake and she can answer.
+
+Q2  Is she experiencing any chest pain right now?
+A2  No chest pain.
+
+Q3  Is she having any trouble breathing right now?
+A3  Yes, she's struggling, she's wheezing a lot, and she can't get her breath.
+
+Q4  Is she bleeding heavily right now?
+A4  No.
+
+Q5  Is the patient's breathing so difficult that she needs immediate medical help to open her airway or help her breathe? (This is for a life-threatening situation)
+A5  Yes, she's struggling, she's wheezing a lot, and she's working harder and harder to breathe.
+
+DECISION {"decision": "ESI-1 indicator", "reason": "The patient is in severe respiratory distress and requires immediate lifesaving intervention.", "citation": "ESI v5 p.6 (Fig 2-2 list of presentations requiring lifesaving interventions); p.9 (level-1 examples)"}
+OUTCOME level 1 | expected at least ESI-2 | pass True | label None | max prompt tokens 43776

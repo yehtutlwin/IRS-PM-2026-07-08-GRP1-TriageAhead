@@ -1,0 +1,52 @@
+arm B, form rules, persona P17-nosebleed-clotting, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  Is the patient awake and responding normally?
+A1  Yes, he's awake and talking.
+
+Q2  Is the patient experiencing chest pain right now?
+A2  I don't know.
+
+Q3  Is the patient having any trouble breathing right now?
+A3  I don't know.
+
+Q4  Is the patient bleeding heavily right now?
+A4  His nose is bleeding and it won't stop.
+
+Q5  Is the nosebleed fast, will not stop with pressure, or is it running down the back of the throat?
+A5  His nose has been bleeding and it won't stop.
+
+Q6  Is the nosebleed a result of a head injury or a facial injury?
+A6  I don't know.
+
+Q7  Is the patient's nosebleed a result of a head injury or a facial injury?
+A7  I don't know.
+
+Q8  Is the patient's nosebleed a result of a head injury or a facial injury?
+A8  I don't know.
+
+Q9  Is the patient's nosebleed a result of a head injury or a facial injury?
+A9  I don't know.
+
+Q10  Is the patient's nosebleed a result of a head injury or a facial injury?
+A10  I don't know.
+
+Q11  Is the patient's nosebleed a result of a head injury or a facial injury?
+A11  I don't know.
+
+Q12  Is the patient's nosebleed a result of a head injury or a facial injury?
+A12  I don't know.
+
+Q13  Is the patient's nosebleed a result of a head injury or a facial injury?
+A13  I don't know.
+
+Q14  Is the nosebleed fast, or is it running down the back of the throat?
+A14  I don't know.
+
+Q15  Is the patient's nosebleed fast, or is it running down the back of the throat?
+A15  I don't know.
+
+Q16  Is the nosebleed fast, or is it running down the back of the throat?
+A16  I don't know.
+
+DECISION {"decision": "unparsed", "reason": "turn limit reached without a decision"}
+OUTCOME no decision in 16 questions | expected at least ESI-2 | pass False | label missing fact | max prompt tokens 44075

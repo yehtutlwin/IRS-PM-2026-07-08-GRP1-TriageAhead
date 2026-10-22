@@ -1,0 +1,465 @@
+{
+ "sid": "RAFFLES-8618",
+ "facts": {
+  "danger_signs.responsive": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-19 11:57"
+  },
+  "danger_signs.chest_pain_now": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-19 11:57"
+  },
+  "danger_signs.breathing_difficulty": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-19 11:58"
+  },
+  "danger_signs.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-19 11:58"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "neuro_symptoms",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 4,
+      "ts": "2026-10-19 11:58"
+     },
+     "text": {
+      "value": "suddenly confused",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 4,
+      "ts": "2026-10-19 11:58"
+     },
+     "onset": {
+      "value": "This afternoon",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 5,
+      "ts": "2026-10-19 11:58"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 4
+  },
+  "complaint.category": {
+   "value": [
+    "neuro_symptoms"
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 5,
+   "ts": "2026-10-19 11:58"
+  },
+  "complaint.text": {
+   "value": "suddenly confused",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 4,
+   "ts": "2026-10-19 11:58"
+  },
+  "E.mechanism": {
+   "value": "none",
+   "status": "reported",
+   "who": "derived",
+   "turn": 4,
+   "ts": "2026-10-19 11:58"
+  },
+  "complaint.onset": {
+   "value": "This afternoon",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 5,
+   "ts": "2026-10-19 11:58"
+  },
+  "patient.age": {
+   "value": 79,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 5,
+   "ts": "2026-10-19 11:58"
+  },
+  "patient.age_group": {
+   "value": "older_adult",
+   "status": "reported",
+   "who": "derived",
+   "turn": 5,
+   "ts": "2026-10-19 11:58"
+  },
+  "patient.sex": {
+   "value": "male",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 6,
+   "ts": "2026-10-19 11:58"
+  },
+  "infection.rash": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 9,
+   "ts": "2026-10-19 11:58"
+  },
+  "stroke.vision_change": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 9,
+   "ts": "2026-10-19 11:58"
+  },
+  "infection.travel_14d": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 10,
+   "ts": "2026-10-19 11:58"
+  },
+  "infection.contacts": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 10,
+   "ts": "2026-10-19 11:58"
+  },
+  "ams.changed_from_baseline": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 11,
+   "ts": "2026-10-19 11:59"
+  },
+  "obs.new_confusion_lethargy_disorientation": {
+   "value": true,
+   "status": "reported",
+   "who": "derived",
+   "turn": 11,
+   "ts": "2026-10-19 11:59"
+  },
+  "obs.subtle_mental_status_change": {
+   "value": true,
+   "status": "reported",
+   "who": "derived",
+   "turn": 11,
+   "ts": "2026-10-19 11:59"
+  },
+  "obs.confusion_lethargy_disorientation": {
+   "value": true,
+   "status": "reported",
+   "who": "derived",
+   "turn": 11,
+   "ts": "2026-10-19 11:59"
+  },
+  "M.medications": {
+   "value": [
+    "Several daily tablets"
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 12,
+   "ts": "2026-10-19 11:59"
+  },
+  "history.conditions": {
+   "value": [
+    "high blood pressure"
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 15,
+   "ts": "2026-10-19 11:59"
+  },
+  "identity.name": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 16,
+   "ts": "2026-10-19 11:59"
+  }
+ },
+ "attempts": {
+  "danger_signs.responsive": 1,
+  "danger_signs.chest_pain_now": 2,
+  "danger_signs.breathing_difficulty": 1,
+  "danger_signs.heavy_bleeding": 1,
+  "complaint.category": 1,
+  "complaint.text": 1,
+  "complaint.onset": 1,
+  "patient.age": 1,
+  "patient.sex": 1,
+  "complaint.fever": 3,
+  "infection.rash": 1,
+  "stroke.vision_change": 1,
+  "infection.travel_14d": 1,
+  "infection.contacts": 1,
+  "ams.changed_from_baseline": 1,
+  "stroke.face_droop": 1,
+  "M.medications": 1,
+  "A.allergies": 3,
+  "history.conditions": 1,
+  "identity.name": 1,
+  "identity.dob": 1
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "Is the patient awake and responding normally? Also, is he or she experiencing any chest pain, trouble breathing, or heavy bleeding right now?",
+   "ts": "2026-10-19 11:57:45",
+   "kind": "question",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, the patient is awake and can respond. No",
+   "ts": "2026-10-19 11:57:45",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Is the patient experiencing any pain in their chest at this moment?",
+   "ts": "2026-10-19 11:57:52",
+   "kind": "question",
+   "slot": "dyn:danger_signs.chest_pain_now"
+  },
+  {
+   "role": "caregiver",
+   "text": "No",
+   "ts": "2026-10-19 11:57:52",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.chest_pain_now"
+  },
+  {
+   "role": "bot",
+   "text": "I'm glad to hear they are awake. Is the patient having any trouble breathing or any heavy bleeding right now?",
+   "ts": "2026-10-19 11:57:59",
+   "kind": "question",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding"
+  },
+  {
+   "role": "caregiver",
+   "text": "No breathing difficulty noticed No",
+   "ts": "2026-10-19 11:57:59",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding"
+  },
+  {
+   "role": "bot",
+   "text": "I've noted that. What is the main reason you are bringing the patient in today, and can you describe what is happening?",
+   "ts": "2026-10-19 11:58:06",
+   "kind": "question",
+   "slot": "dyn:complaint.category+complaint.text"
+  },
+  {
+   "role": "caregiver",
+   "text": "My husband is suddenly confused.",
+   "ts": "2026-10-19 11:58:06",
+   "kind": "answer",
+   "slot": "dyn:complaint.category+complaint.text"
+  },
+  {
+   "role": "bot",
+   "text": "I understand he is confused. When did this start, and how old is your husband?",
+   "ts": "2026-10-19 11:58:20",
+   "kind": "question",
+   "slot": "dyn:complaint.onset+patient.age"
+  },
+  {
+   "role": "caregiver",
+   "text": "This afternoon He is seventy-nine.",
+   "ts": "2026-10-19 11:58:20",
+   "kind": "answer",
+   "slot": "dyn:complaint.onset+patient.age"
+  },
+  {
+   "role": "bot",
+   "text": "I've noted that he is 79. Does he have a fever, and has he developed any new rashes?",
+   "ts": "2026-10-19 11:58:28",
+   "kind": "question",
+   "slot": "dyn:patient.sex+complaint.fever"
+  },
+  {
+   "role": "caregiver",
+   "text": "He is male. No temperature checked",
+   "ts": "2026-10-19 11:58:28",
+   "kind": "answer",
+   "slot": "dyn:patient.sex+complaint.fever"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Has he had a fever or a high temperature today?",
+   "ts": "2026-10-19 11:58:34",
+   "kind": "question",
+   "slot": "dyn:complaint.fever"
+  },
+  {
+   "role": "caregiver",
+   "text": "No temperature checked",
+   "ts": "2026-10-19 11:58:34",
+   "kind": "answer",
+   "slot": "dyn:complaint.fever"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Have you been able to check if he has a fever or a high temperature?",
+   "ts": "2026-10-19 11:58:40",
+   "kind": "question",
+   "slot": "dyn:complaint.fever"
+  },
+  {
+   "role": "caregiver",
+   "text": "No temperature checked",
+   "ts": "2026-10-19 11:58:40",
+   "kind": "answer",
+   "slot": "dyn:complaint.fever"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Has he developed any new rashes or had any sudden changes in his vision?",
+   "ts": "2026-10-19 11:58:46",
+   "kind": "question",
+   "slot": "dyn:infection.rash+stroke.vision_change"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-19 11:58:46",
+   "kind": "answer",
+   "slot": "dyn:infection.rash+stroke.vision_change"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Has he traveled outside the country or been in contact with anyone who is sick in the last two weeks?",
+   "ts": "2026-10-19 11:58:52",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-19 11:58:52",
+   "kind": "answer",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "bot",
+   "text": "Is he more confused or harder to wake than usual? Also, does he have any drooping on one side of his face, weakness in his limbs, or is his speech slurred?",
+   "ts": "2026-10-19 11:59:00",
+   "kind": "question",
+   "slot": "dyn:ams.changed_from_baseline+stroke.face_droop"
+  },
+  {
+   "role": "caregiver",
+   "text": "This afternoon he suddenly became confused and kept asking where he was.",
+   "ts": "2026-10-19 11:59:00",
+   "kind": "answer",
+   "slot": "dyn:ams.changed_from_baseline+stroke.face_droop"
+  },
+  {
+   "role": "system",
+   "text": "floor: at least ESI-2  rules: ['B-01.new-altered-mental-status']",
+   "ts": "2026-10-19 11:59:04",
+   "kind": "floor"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear about his confusion. What medications does he take regularly, and does he have any known allergies?",
+   "ts": "2026-10-19 11:59:07",
+   "kind": "question",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "caregiver",
+   "text": "Several daily tablets, names unknown Unknown",
+   "ts": "2026-10-19 11:59:07",
+   "kind": "answer",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "bot",
+   "text": "Does he have any known allergies, especially to medications?",
+   "ts": "2026-10-19 11:59:13",
+   "kind": "question",
+   "slot": "dyn:A.allergies"
+  },
+  {
+   "role": "caregiver",
+   "text": "Unknown",
+   "ts": "2026-10-19 11:59:13",
+   "kind": "answer",
+   "slot": "dyn:A.allergies"
+  },
+  {
+   "role": "bot",
+   "text": "I understand the names of his medications are unknown. Does he have any known allergies to medications?",
+   "ts": "2026-10-19 11:59:19",
+   "kind": "question",
+   "slot": "dyn:A.allergies"
+  },
+  {
+   "role": "caregiver",
+   "text": "Unknown",
+   "ts": "2026-10-19 11:59:19",
+   "kind": "answer",
+   "slot": "dyn:A.allergies"
+  },
+  {
+   "role": "bot",
+   "text": "Does he have any ongoing medical conditions, such as heart disease or diabetes?",
+   "ts": "2026-10-19 11:59:25",
+   "kind": "question",
+   "slot": "dyn:history.conditions"
+  },
+  {
+   "role": "caregiver",
+   "text": "High blood pressure",
+   "ts": "2026-10-19 11:59:25",
+   "kind": "answer",
+   "slot": "dyn:history.conditions"
+  },
+  {
+   "role": "bot",
+   "text": "Could you please tell me his full name?",
+   "ts": "2026-10-19 11:59:39",
+   "kind": "question",
+   "slot": "dyn:identity.name"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-19 11:59:39",
+   "kind": "answer",
+   "slot": "dyn:identity.name"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Could you please tell me his date of birth?",
+   "ts": "2026-10-19 11:59:45",
+   "kind": "question",
+   "slot": "dyn:identity.dob"
+  }
+ ],
+ "stage": "floor",
+ "floor": "at least ESI-2",
+ "phase": "enroute",
+ "created": "2026-10-19 11:57",
+ "pending_slot": "dyn:identity.dob",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {}
+}

@@ -1,0 +1,52 @@
+arm B, form rules, persona ND-P20-infant-fever, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  Is the patient awake and responding normally?
+A1  She wakes when I pick her up, but she is sleepier and feeding less than usual.
+
+Q2  Is she having any trouble breathing right now?
+A2  I don't know.
+
+Q3  Is she having any trouble breathing right now?
+A3  I don't know.
+
+Q4  Is she having any trouble breathing right now?
+A4  I don't know.
+
+Q5  Is she bleeding heavily right now?
+A5  No.
+
+Q6  How old is the baby?
+A6  My baby is six weeks old.
+
+Q7  Does the baby have a fever?
+A7  Yes, my six-week-old baby has a fever.
+
+Q8  What is the baby's temperature?
+A8  The thermometer showed 38.3 degrees Celsius.
+
+Q9  Is the baby's breathing fast, noisy, or is she making a grunting sound?
+A9  I don't know.
+
+Q10  Is the baby's breathing fast, noisy, or is she making a grunting sound?
+A10  I don't know.
+
+Q11  Is the baby's skin color normal, or is she pale, blue, or mottled?
+A11  I don't know.
+
+Q12  Is the baby's skin color normal, or is she pale, blue, or mottled?
+A12  I don't know.
+
+Q13  Is the baby's breathing fast, noisy, or is she making a grunting sound?
+A13  I don't know.
+
+Q14  Is the baby's skin color normal, or is she pale, blue, or mottled?
+A14  I don't know.
+
+Q15  Is the baby's heart rate fast or slow?
+A15  I don't know.
+
+Q16  Is the baby's heart rate fast or slow?
+A16  I don't know.
+
+DECISION {"decision": "unparsed", "reason": "turn limit reached without a decision"}
+OUTCOME no decision in 16 questions | expected at least ESI-2 | pass False | label missing fact | max prompt tokens 44035

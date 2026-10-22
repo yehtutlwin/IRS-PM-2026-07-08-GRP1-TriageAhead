@@ -1,0 +1,18 @@
+session DURIAN-6969   started 2026-09-26 03:45   (generated from messages)
+
+03:45:21  BOT  Are you currently experiencing severe chest pain, trouble breathing, or heavy bleeding?   [slot red_flags.screen]
+03:45:22  THEM No, I am not experiencing chest pain, trouble breathing, or heavy bleeding right now. My symptoms resolved completely after about 45 minutes and I feel normal again.   [slot red_flags.screen]
+03:45:24  BOT  You haven't answered whether you are awake and responding normally yet; could you please let me know?   [slot red_flags.screen]
+03:45:24  THEM Yes, I am awake and talking clearly now since the symptoms resolved after about 45 minutes.   [slot red_flags.screen]
+03:45:27  BOT  Could you please tell us what kind of pain it was, how it started, and rate it from 0 to 10?   [slot complaint.main]
+03:45:28  THEM There is no pain right now, so I would rate it a 0/10. The episode started this morning around 9am when her speech suddenly went slurred and her left arm became weak.   [slot complaint.main]
+03:45:30  SYS  floor: at least ESI-2  rules: ['B-05.stroke-signs'] (floor)
+03:45:30  BOT  Could you please tell us if she takes any regular medications?   [slot M.medications]
+03:45:31  THEM She takes one aspirin daily because of an old stroke two years ago. She does not take anything else.   [slot M.medications]
+03:45:33  BOT  Do you have any allergies to medicines or other medical conditions such as heart problems, diabetes, pregnancy, or issues affecting your immune system?   [slot allergies_and_history]
+03:45:34  THEM No, I do not have any allergies. My only other condition is the stroke I had two years ago.   [slot allergies_and_history]
+03:45:36  BOT  Do you have any fever, rash, recent overseas travel, or contact with someone who is infectious?   [slot infection.screen]
+03:45:37  THEM No, there is no fever, rash, recent travel, or infectious contact.   [slot infection.screen]
+03:45:40  BOT  Could you please tell me when you last ate or drank, along with your name and date of birth for the hospital's records?   [slot wrapup]
+03:45:40  THEM I had breakfast at 8am. My name is [Name] and my date of birth is March 15, 1938.   [slot wrapup]
+03:45:42  BOT  Thank you - that's everything for now. Show the code DURIAN-6969 at the counter when you arrive. (ack)

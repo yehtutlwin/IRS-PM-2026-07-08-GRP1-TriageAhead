@@ -1,0 +1,416 @@
+{
+ "sid": "KOPI-1931",
+ "facts": {
+  "danger_signs.responsive": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-19 02:00"
+  },
+  "danger_signs.chest_pain_now": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-19 02:00"
+  },
+  "danger_signs.breathing_difficulty": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-19 02:02"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "allergic_reaction",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 2,
+      "ts": "2026-10-19 02:02"
+     },
+     "text": {
+      "value": "sexual assault",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 2,
+      "ts": "2026-10-19 02:02"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2
+  },
+  "complaint.category": {
+   "value": [
+    "allergic_reaction"
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-19 02:02"
+  },
+  "complaint.text": {
+   "value": "sexual assault",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-19 02:02"
+  },
+  "complaint.sexual_assault": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-19 02:02"
+  },
+  "E.mechanism": {
+   "value": "none",
+   "status": "reported",
+   "who": "derived",
+   "turn": 2,
+   "ts": "2026-10-19 02:02"
+  },
+  "danger_signs.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-19 02:03"
+  },
+  "patient.age": {
+   "value": 20,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 4,
+   "ts": "2026-10-19 02:04"
+  },
+  "patient.sex": {
+   "value": "other",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 4,
+   "ts": "2026-10-19 02:04"
+  },
+  "patient.age_group": {
+   "value": "adult",
+   "status": "reported",
+   "who": "derived",
+   "turn": 4,
+   "ts": "2026-10-19 02:04"
+  },
+  "M.medications": {
+   "value": [],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 7,
+   "ts": "2026-10-19 02:07"
+  },
+  "A.allergies": {
+   "value": [],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 7,
+   "ts": "2026-10-19 02:07"
+  },
+  "history.conditions": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 9,
+   "ts": "2026-10-19 02:10"
+  },
+  "history.pregnant": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 14,
+   "ts": "2026-10-19 02:16"
+  },
+  "history.postpartum": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 14,
+   "ts": "2026-10-19 02:16"
+  }
+ },
+ "attempts": {
+  "danger_signs.responsive": 1,
+  "danger_signs.chest_pain_now": 1,
+  "danger_signs.breathing_difficulty": 1,
+  "danger_signs.heavy_bleeding": 2,
+  "complaint.category": 1,
+  "complaint.onset": 3,
+  "patient.age": 1,
+  "patient.sex": 1,
+  "M.medications": 1,
+  "A.allergies": 1,
+  "history.conditions": 2,
+  "identity.name": 3,
+  "identity.dob": 3,
+  "history.pregnant": 1,
+  "history.postpartum": 1,
+  "complaint.fever": 3,
+  "infection.rash": 1
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "Is the patient awake and responding to you normally? Also, is he or she experiencing any chest pain, trouble breathing, or heavy bleeding right now?",
+   "ts": "2026-10-19 02:00:23",
+   "kind": "question",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, the patient is awake and responding normally. No, the patient is not having chest pain right now.",
+   "ts": "2026-10-19 02:00:23",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "bot",
+   "text": "I'm glad to hear they are alert. Is the patient having any trouble breathing or heavy bleeding right now? Also, what is the main reason you are bringing them in?",
+   "ts": "2026-10-19 02:01:33",
+   "kind": "question",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, the patient is not having trouble breathing right now. No, the patient is not bleeding heavily right now. I came in with a trusted friend after a sexual assault.",
+   "ts": "2026-10-19 02:01:33",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category"
+  },
+  {
+   "role": "system",
+   "text": "floor: at least ESI-2  rules: ['B-11.sexual-assault']",
+   "ts": "2026-10-19 02:02:05",
+   "kind": "floor"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Just to confirm, is there any heavy bleeding occurring right now?",
+   "ts": "2026-10-19 02:02:53",
+   "kind": "question",
+   "slot": "dyn:danger_signs.heavy_bleeding"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, the patient is not bleeding heavily right now.",
+   "ts": "2026-10-19 02:02:53",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.heavy_bleeding"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear about what happened. To help the team prepare, how old is the patient, what is their sex, and when did the incident occur?",
+   "ts": "2026-10-19 02:04:03",
+   "kind": "question",
+   "slot": "dyn:complaint.onset+patient.age+patient.sex"
+  },
+  {
+   "role": "caregiver",
+   "text": "It began in detail at the front desk. The patient is 20 years old. The patient\u2019s sex has not been specified as male or female.",
+   "ts": "2026-10-19 02:04:03",
+   "kind": "answer",
+   "slot": "dyn:complaint.onset+patient.age+patient.sex"
+  },
+  {
+   "role": "bot",
+   "text": "Could you tell me about how long ago this started?",
+   "ts": "2026-10-19 02:05:14",
+   "kind": "question",
+   "slot": "dyn:complaint.onset"
+  },
+  {
+   "role": "caregiver",
+   "text": "It began in detail at the front desk.",
+   "ts": "2026-10-19 02:05:14",
+   "kind": "answer",
+   "slot": "dyn:complaint.onset"
+  },
+  {
+   "role": "bot",
+   "text": "Could you tell me approximately how long ago this started?",
+   "ts": "2026-10-19 02:06:26",
+   "kind": "question",
+   "slot": "dyn:complaint.onset"
+  },
+  {
+   "role": "caregiver",
+   "text": "It began in detail at the front desk.",
+   "ts": "2026-10-19 02:06:26",
+   "kind": "answer",
+   "slot": "dyn:complaint.onset"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Does the patient take any regular medications or have any known allergies, especially to medicine?",
+   "ts": "2026-10-19 02:07:34",
+   "kind": "question",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "caregiver",
+   "text": "I take no regular medicines. The patient has no known allergies.",
+   "ts": "2026-10-19 02:07:34",
+   "kind": "answer",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "bot",
+   "text": "I've noted that. Could you tell me the patient's full name, date of birth, and if they have any ongoing medical conditions?",
+   "ts": "2026-10-19 02:08:43",
+   "kind": "question",
+   "slot": "dyn:history.conditions+identity.name+identity.dob"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know the patient\u2019s medical conditions. I have not given the patient\u2019s name. I do not know the exact date of birth.",
+   "ts": "2026-10-19 02:08:43",
+   "kind": "answer",
+   "slot": "dyn:history.conditions+identity.name+identity.dob"
+  },
+  {
+   "role": "bot",
+   "text": "Does the patient have any other medical conditions or health problems?",
+   "ts": "2026-10-19 02:09:52",
+   "kind": "question",
+   "slot": "dyn:history.conditions"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know the patient\u2019s medical conditions.",
+   "ts": "2026-10-19 02:09:52",
+   "kind": "answer",
+   "slot": "dyn:history.conditions"
+  },
+  {
+   "role": "bot",
+   "text": "Could you please tell me the patient's full name?",
+   "ts": "2026-10-19 02:11:00",
+   "kind": "question",
+   "slot": "dyn:identity.name"
+  },
+  {
+   "role": "caregiver",
+   "text": "I have not given the patient\u2019s name.",
+   "ts": "2026-10-19 02:11:00",
+   "kind": "answer",
+   "slot": "dyn:identity.name"
+  },
+  {
+   "role": "bot",
+   "text": "Could you please tell me the name of the person you are with?",
+   "ts": "2026-10-19 02:12:08",
+   "kind": "question",
+   "slot": "dyn:identity.name"
+  },
+  {
+   "role": "caregiver",
+   "text": "I have not given the patient\u2019s name.",
+   "ts": "2026-10-19 02:12:08",
+   "kind": "answer",
+   "slot": "dyn:identity.name"
+  },
+  {
+   "role": "bot",
+   "text": "Could you please tell me the date of birth for the patient?",
+   "ts": "2026-10-19 02:13:16",
+   "kind": "question",
+   "slot": "dyn:identity.dob"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know the exact date of birth.",
+   "ts": "2026-10-19 02:13:16",
+   "kind": "answer",
+   "slot": "dyn:identity.dob"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Could you tell me the date of birth for the patient?",
+   "ts": "2026-10-19 02:14:26",
+   "kind": "question",
+   "slot": "dyn:identity.dob"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know the exact date of birth.",
+   "ts": "2026-10-19 02:14:26",
+   "kind": "answer",
+   "slot": "dyn:identity.dob"
+  },
+  {
+   "role": "bot",
+   "text": "That's enough for the hospital team to prepare. Show the code KOPI-1931 at the counter when you arrive. I'll ask a few more things while you're on the way; tell me straight away if anything changes.",
+   "ts": "2026-10-19 02:15:15",
+   "kind": "ack"
+  },
+  {
+   "role": "bot",
+   "text": "Is the patient pregnant or has she given birth in the last few weeks?",
+   "ts": "2026-10-19 02:15:34",
+   "kind": "question",
+   "slot": "dyn:history.pregnant+history.postpartum"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-19 02:15:34",
+   "kind": "answer",
+   "slot": "dyn:history.pregnant+history.postpartum"
+  },
+  {
+   "role": "bot",
+   "text": "Does the patient have a fever or any new rashes on their skin?",
+   "ts": "2026-10-19 02:16:42",
+   "kind": "question",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient has a fever. I do not know whether the patient has a rash.",
+   "ts": "2026-10-19 02:16:43",
+   "kind": "answer",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Does the patient have a fever, and if you've checked, what was the temperature?",
+   "ts": "2026-10-19 02:17:51",
+   "kind": "question",
+   "slot": "dyn:complaint.fever"
+  },
+  {
+   "role": "caregiver",
+   "text": "I do not know whether the patient has a fever.",
+   "ts": "2026-10-19 02:17:51",
+   "kind": "answer",
+   "slot": "dyn:complaint.fever"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Have you been able to check if the patient has a fever or if you have a temperature reading?",
+   "ts": "2026-10-19 02:18:59",
+   "kind": "question",
+   "slot": "dyn:complaint.fever"
+  }
+ ],
+ "stage": "rest",
+ "floor": "at least ESI-2",
+ "phase": "enroute",
+ "created": "2026-10-19 01:59",
+ "pending_slot": "dyn:complaint.fever",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {},
+ "qr_ready": true,
+ "qr_turn": 13
+}

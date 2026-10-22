@@ -1,0 +1,46 @@
+arm B, form handbook, persona P6-acute-gout, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  What is the main reason the patient is seeking care today?
+A1  Sudden severe pain in the joint at the base of my right big toe; it's red, swollen and hot.
+
+Q2  Are you experiencing any other symptoms, such as fever, chills, or feeling generally unwell?
+A2  No fever, no chills.
+
+Q3  Are you having any difficulty breathing or any chest pain?
+A3  No chest pain.
+
+Q4  Are you able to walk or put weight on your right foot?
+A4  I can walk, but with difficulty.
+
+Q5  On a scale of 0 to 10, how would you rate your pain?
+A5  8 out of 10.
+
+Q6  Is the pain in your toe a result of a recent injury, such as a cut, a puncture, or a crush, or did it start on its own?
+A6  No fall or injury, it just came on.
+
+Q7  Is the pain in your toe a result of a recent injury, such as a cut, a puncture, or a crush, or did it start on its own?
+A7  No fall or injury, it just came on.
+
+Q8  Are you experiencing any other symptoms, such as feeling dizzy, lightheaded, or having any confusion?
+A8  No, I'm thinking clearly, just tired from the pain.
+
+Q9  Is the pain in your toe a result of a recent injury, such as a cut, a puncture, or a crush, or did it start on its own?
+A9  No fall or injury, it just came on.
+
+Q10  Is the pain in your toe a result of a recent injury, such as a cut, a puncture, or a crush, or did it start on its own?
+A10  No fall or injury, it just came on.
+
+Q11  Are you currently experiencing any other symptoms, such as a fever, chills, or feeling generally unwell?
+A11  No fever, no chills.
+
+Q12  Is the pain in your toe a result of a recent injury, such as a cut, a puncture, or a crush, or did it start on its own?
+A12  No fall or injury, it just came on.
+
+Q13  Can you tell me your age and your current heart rate, respiratory rate, and oxygen saturation if you have a way to check?
+A13  I am 52. I don't know.
+
+Q14  Is the pain in your toe a result of a recent injury, such as a cut, a puncture, or a crush, or did it start on its own?
+A14  No fall or injury, it just came on.
+
+DECISION {"done": true, "decision": "level 4", "reason": "The patient is stable, not in a high-risk situation, and only requires one resource (a physical exam and potentially a simple procedure or medication) to reach a disposition.", "citation": "page 19, 20"}
+OUTCOME level 4 | expected None | pass True | label None | max prompt tokens 30217

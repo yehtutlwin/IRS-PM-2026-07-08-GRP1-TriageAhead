@@ -1,0 +1,31 @@
+{
+ "persona_backend": "ollama",
+ "persona_model": "gemma4:12b",
+ "interview": {
+  "interview_mode": "static",
+  "backend": "ollama",
+  "model": "gemma4:12b",
+  "dyn_max_fields": 4
+ },
+ "tag": "v2f-static-P4-sore-throat",
+ "results": [
+  {
+   "questions": 18,
+   "reasks": 3,
+   "floor": null,
+   "floor_ok": true,
+   "rules_ok": true,
+   "fired": [],
+   "hits": 4,
+   "total": 5,
+   "misses": [
+    "complaint.fever: want=False got=True"
+   ],
+   "danger_miss": false,
+   "persona": "P4-sore-throat",
+   "run": 1,
+   "session": "VANDA-8468",
+   "turns": 20
+  }
+ ]
+}

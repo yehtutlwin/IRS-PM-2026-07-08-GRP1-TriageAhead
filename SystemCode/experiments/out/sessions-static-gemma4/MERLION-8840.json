@@ -1,0 +1,356 @@
+{
+ "sid": "MERLION-8840",
+ "facts": {
+  "red_flags.responsive": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-09-26 03:34"
+  },
+  "red_flags.breathing_difficulty": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-09-26 03:34"
+  },
+  "red_flags.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-09-26 03:34"
+  },
+  "red_flags.chest_pain_now": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-09-26 03:34"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "abdominal_pain",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "persona",
+      "turn": 2,
+      "ts": "2026-09-26 03:34"
+     },
+     "text": {
+      "value": "mild abdominal discomfort",
+      "status": "reported",
+      "who": "persona",
+      "turn": 4,
+      "ts": "2026-09-26 03:34"
+     },
+     "pain_rating": {
+      "value": 3,
+      "status": "reported",
+      "who": "persona",
+      "turn": 4,
+      "ts": "2026-09-26 03:34"
+     }
+    },
+    {
+     "category": "other",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "persona",
+      "turn": 2,
+      "ts": "2026-09-26 03:34"
+     },
+     "text": {
+      "value": "mild abdominal discomfort",
+      "status": "reported",
+      "who": "persona",
+      "turn": 2,
+      "ts": "2026-09-26 03:34"
+     },
+     "pain_rating": {
+      "value": null,
+      "status": "reported",
+      "who": "persona",
+      "turn": 2,
+      "ts": "2026-09-26 03:34"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 5
+  },
+  "complaint.category": {
+   "value": [
+    "abdominal_pain",
+    "other"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-09-26 03:34"
+  },
+  "complaint.text": {
+   "value": "mild abdominal discomfort",
+   "status": "reported",
+   "who": "persona",
+   "turn": 4,
+   "ts": "2026-09-26 03:34"
+  },
+  "stroke.face_droop": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-09-26 03:34"
+  },
+  "stroke.arm_weakness": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-09-26 03:34"
+  },
+  "stroke.speech_change": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-09-26 03:34"
+  },
+  "complaint.pain_rating": {
+   "value": 3,
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-09-26 03:34"
+  },
+  "complaint.pain_latest": {
+   "value": 3,
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-09-26 03:34"
+  },
+  "M.medications": {
+   "value": [
+    "lactulose",
+    "spironolactone",
+    "furosemide"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 7,
+   "ts": "2026-09-26 03:34"
+  },
+  "A.allergies": {
+   "value": [],
+   "status": "reported",
+   "who": "persona",
+   "turn": 8,
+   "ts": "2026-09-26 03:34"
+  },
+  "history.conditions": {
+   "value": [
+    "cirrhosis",
+    "chronic hepatitis B"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 10,
+   "ts": "2026-09-26 03:35"
+  },
+  "infection.fever": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 11,
+   "ts": "2026-09-26 03:35"
+  }
+ },
+ "attempts": {
+  "red_flags.screen": 2,
+  "stroke.screen": 1,
+  "complaint.main": 3,
+  "M.medications": 1,
+  "allergies_and_history": 3,
+  "infection.screen": 2
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "Is the patient awake and responding normally, and are they experiencing any severe chest pain, trouble breathing, or heavy bleeding right now?",
+   "ts": "2026-09-26 03:34:23",
+   "kind": "question",
+   "slot": "red_flags.screen"
+  },
+  {
+   "role": "caregiver",
+   "text": "He is awake and breathing normally, but he answers slowly. There is no heavy bleeding or trouble breathing.",
+   "ts": "2026-09-26 03:34:24",
+   "kind": "answer",
+   "slot": "red_flags.screen"
+  },
+  {
+   "role": "bot",
+   "text": "Is he experiencing any chest pain right now?",
+   "ts": "2026-09-26 03:34:27",
+   "kind": "question",
+   "slot": "red_flags.screen"
+  },
+  {
+   "role": "caregiver",
+   "text": "He reports mild abdominal discomfort, but he is not experiencing chest pain.",
+   "ts": "2026-09-26 03:34:28",
+   "kind": "answer",
+   "slot": "red_flags.screen"
+  },
+  {
+   "role": "bot",
+   "text": "At any point today, did you notice his face drooping, an arm becoming weak or numb, or his speech becoming slurred or strange?",
+   "ts": "2026-09-26 03:34:33",
+   "kind": "question",
+   "slot": "stroke.screen"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I haven't noticed any of those symptoms.",
+   "ts": "2026-09-26 03:34:34",
+   "kind": "answer",
+   "slot": "stroke.screen"
+  },
+  {
+   "role": "bot",
+   "text": "When did the discomfort start, how did it begin, and how would you rate the pain from 0 to 10?",
+   "ts": "2026-09-26 03:34:37",
+   "kind": "question",
+   "slot": "complaint.main"
+  },
+  {
+   "role": "caregiver",
+   "text": "He reports mild abdominal discomfort, which I would rate as a 3/10. I don't know how it began.",
+   "ts": "2026-09-26 03:34:38",
+   "kind": "answer",
+   "slot": "complaint.main"
+  },
+  {
+   "role": "bot",
+   "text": "Could you tell me a bit more about how the discomfort first started?",
+   "ts": "2026-09-26 03:34:42",
+   "kind": "question",
+   "slot": "complaint.main"
+  },
+  {
+   "role": "caregiver",
+   "text": "I'm not sure when the discomfort specifically started. He reports it is currently a 3/10.",
+   "ts": "2026-09-26 03:34:43",
+   "kind": "answer",
+   "slot": "complaint.main"
+  },
+  {
+   "role": "bot",
+   "text": "Could you describe any specific event or situation that might have triggered the discomfort?",
+   "ts": "2026-09-26 03:34:46",
+   "kind": "question",
+   "slot": "complaint.main"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-09-26 03:34:47",
+   "kind": "answer",
+   "slot": "complaint.main"
+  },
+  {
+   "role": "bot",
+   "text": "Does he take any regular medications?",
+   "ts": "2026-09-26 03:34:49",
+   "kind": "question",
+   "slot": "M.medications"
+  },
+  {
+   "role": "caregiver",
+   "text": "He takes lactulose, spironolactone, and furosemide.",
+   "ts": "2026-09-26 03:34:50",
+   "kind": "answer",
+   "slot": "M.medications"
+  },
+  {
+   "role": "bot",
+   "text": "Does he have any allergies to medication or other medical conditions, such as heart problems or diabetes?",
+   "ts": "2026-09-26 03:34:53",
+   "kind": "question",
+   "slot": "allergies_and_history"
+  },
+  {
+   "role": "caregiver",
+   "text": "He has no known allergies. He has cirrhosis caused by chronic hepatitis B.",
+   "ts": "2026-09-26 03:34:54",
+   "kind": "answer",
+   "slot": "allergies_and_history"
+  },
+  {
+   "role": "bot",
+   "text": "Is the patient currently pregnant or postpartum, or do they have any conditions that affect their immune system?",
+   "ts": "2026-09-26 03:34:57",
+   "kind": "question",
+   "slot": "allergies_and_history"
+  },
+  {
+   "role": "caregiver",
+   "text": "He has cirrhosis caused by chronic hepatitis B.",
+   "ts": "2026-09-26 03:34:58",
+   "kind": "answer",
+   "slot": "allergies_and_history"
+  },
+  {
+   "role": "bot",
+   "text": "Is the patient currently pregnant, postpartum, or do they have any conditions that affect their immune system?",
+   "ts": "2026-09-26 03:35:01",
+   "kind": "question",
+   "slot": "allergies_and_history"
+  },
+  {
+   "role": "caregiver",
+   "text": "He has cirrhosis caused by chronic hepatitis B.",
+   "ts": "2026-09-26 03:35:06",
+   "kind": "answer",
+   "slot": "allergies_and_history"
+  },
+  {
+   "role": "bot",
+   "text": "Have you had a fever, a rash, traveled overseas in the last two weeks, or been in contact with anyone who is sick?",
+   "ts": "2026-09-26 03:35:09",
+   "kind": "question",
+   "slot": "infection.screen"
+  },
+  {
+   "role": "caregiver",
+   "text": "He has no fever. I don't know about a rash, travel, or contact with anyone sick.",
+   "ts": "2026-09-26 03:35:10",
+   "kind": "answer",
+   "slot": "infection.screen"
+  },
+  {
+   "role": "bot",
+   "text": "Could you tell me if he has had any rashes, traveled abroad in the last two weeks, or been near anyone who is sick?",
+   "ts": "2026-09-26 03:35:13",
+   "kind": "question",
+   "slot": "infection.screen"
+  }
+ ],
+ "active_ids": [
+  "stroke.screen"
+ ],
+ "floor": null,
+ "phase": "enroute",
+ "opened": [],
+ "created": "2026-09-26 03:34",
+ "pending_slot": "infection.screen",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {}
+}

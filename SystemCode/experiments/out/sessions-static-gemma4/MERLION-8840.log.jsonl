@@ -1,0 +1,37 @@
+{"t": "03:34:22", "kind": "engine", "note": "session MERLION-8840 started (web)"}
+{"t": "03:34:23", "kind": "question", "slot": "red_flags.screen", "text": "Is the patient awake and responding normally, and are they experiencing any severe chest pain, trouble breathing, or heavy bleeding right now?"}
+{"t": "03:34:24", "kind": "answer", "slot": "red_flags.screen", "text": "He is awake and breathing normally, but he answers slowly. There is no heavy bleeding or trouble breathing."}
+{"t": "03:34:26", "kind": "extract", "writes": [["red_flags.responsive", true], ["red_flags.breathing_difficulty", false], ["red_flags.heavy_bleeding", false]]}
+{"t": "03:34:27", "kind": "question", "slot": "red_flags.screen", "text": "Is he experiencing any chest pain right now?"}
+{"t": "03:34:28", "kind": "answer", "slot": "red_flags.screen", "text": "He reports mild abdominal discomfort, but he is not experiencing chest pain."}
+{"t": "03:34:31", "kind": "extract", "writes": [["red_flags.chest_pain_now", false], ["complaint.category", "abdominal_pain", "abdominal discomfort"], ["complaint.text", "mild abdominal discomfort", "abdominal discomfort"], ["complaint.pain_rating", null, "abdominal discomfort"]]}
+{"t": "03:34:31", "kind": "extract", "writes": [["complaint.category", "abdominal discomfort->other"]], "via": "normalised"}
+{"t": "03:34:33", "kind": "question", "slot": "stroke.screen", "text": "At any point today, did you notice his face drooping, an arm becoming weak or numb, or his speech becoming slurred or strange?"}
+{"t": "03:34:34", "kind": "answer", "slot": "stroke.screen", "text": "No, I haven't noticed any of those symptoms."}
+{"t": "03:34:35", "kind": "extract", "writes": [["stroke.face_droop", false], ["stroke.arm_weakness", false], ["stroke.speech_change", false]]}
+{"t": "03:34:37", "kind": "question", "slot": "complaint.main", "text": "When did the discomfort start, how did it begin, and how would you rate the pain from 0 to 10?"}
+{"t": "03:34:38", "kind": "answer", "slot": "complaint.main", "text": "He reports mild abdominal discomfort, which I would rate as a 3/10. I don't know how it began."}
+{"t": "03:34:40", "kind": "extract", "writes": [["complaint.text", "mild abdominal discomfort", "abdominal_pain"], ["complaint.pain_rating", 3, "abdominal_pain"]]}
+{"t": "03:34:42", "kind": "question", "slot": "complaint.main", "text": "Could you tell me a bit more about how the discomfort first started?"}
+{"t": "03:34:43", "kind": "answer", "slot": "complaint.main", "text": "I'm not sure when the discomfort specifically started. He reports it is currently a 3/10."}
+{"t": "03:34:44", "kind": "extract", "writes": [["complaint.pain_rating", 3, "discomfort"]]}
+{"t": "03:34:44", "kind": "extract", "writes": [["complaint.category", "discomfort->other"]], "via": "normalised"}
+{"t": "03:34:46", "kind": "question", "slot": "complaint.main", "text": "Could you describe any specific event or situation that might have triggered the discomfort?"}
+{"t": "03:34:47", "kind": "answer", "slot": "complaint.main", "text": "I don't know."}
+{"t": "03:34:48", "kind": "extract", "writes": []}
+{"t": "03:34:49", "kind": "question", "slot": "M.medications", "text": "Does he take any regular medications?"}
+{"t": "03:34:50", "kind": "answer", "slot": "M.medications", "text": "He takes lactulose, spironolactone, and furosemide."}
+{"t": "03:34:51", "kind": "extract", "writes": [["M.medications", ["lactulose", "spironolactone", "furosemide"]]]}
+{"t": "03:34:53", "kind": "question", "slot": "allergies_and_history", "text": "Does he have any allergies to medication or other medical conditions, such as heart problems or diabetes?"}
+{"t": "03:34:54", "kind": "answer", "slot": "allergies_and_history", "text": "He has no known allergies. He has cirrhosis caused by chronic hepatitis B."}
+{"t": "03:34:55", "kind": "extract", "writes": [["A.allergies", []], ["history.conditions", ["cirrhosis", "chronic hepatitis B"]]]}
+{"t": "03:34:57", "kind": "question", "slot": "allergies_and_history", "text": "Is the patient currently pregnant or postpartum, or do they have any conditions that affect their immune system?"}
+{"t": "03:34:58", "kind": "answer", "slot": "allergies_and_history", "text": "He has cirrhosis caused by chronic hepatitis B."}
+{"t": "03:34:59", "kind": "extract", "writes": [["history.conditions", ["cirrhosis", "chronic hepatitis B"]]]}
+{"t": "03:35:01", "kind": "question", "slot": "allergies_and_history", "text": "Is the patient currently pregnant, postpartum, or do they have any conditions that affect their immune system?"}
+{"t": "03:35:06", "kind": "answer", "slot": "allergies_and_history", "text": "He has cirrhosis caused by chronic hepatitis B."}
+{"t": "03:35:07", "kind": "extract", "writes": [["history.conditions", ["cirrhosis", "chronic hepatitis B"]]]}
+{"t": "03:35:09", "kind": "question", "slot": "infection.screen", "text": "Have you had a fever, a rash, traveled overseas in the last two weeks, or been in contact with anyone who is sick?"}
+{"t": "03:35:10", "kind": "answer", "slot": "infection.screen", "text": "He has no fever. I don't know about a rash, travel, or contact with anyone sick."}
+{"t": "03:35:11", "kind": "extract", "writes": [["infection.fever", false]]}
+{"t": "03:35:13", "kind": "question", "slot": "infection.screen", "text": "Could you tell me if he has had any rashes, traveled abroad in the last two weeks, or been near anyone who is sick?"}

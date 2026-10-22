@@ -1,0 +1,570 @@
+{
+ "sid": "PANDA-8265",
+ "facts": {
+  "danger_signs.responsive": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-10-14 23:44"
+  },
+  "danger_signs.chest_pain_now": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-10-14 23:44"
+  },
+  "danger_signs.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-10-14 23:44"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "abdominal_pain",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "persona",
+      "turn": 2,
+      "ts": "2026-10-14 23:44"
+     },
+     "text": {
+      "value": "The pain is in my lower abdomen.",
+      "status": "reported",
+      "who": "persona",
+      "turn": 21,
+      "ts": "2026-10-14 23:46"
+     },
+     "onset": {
+      "value": "this morning",
+      "status": "reported",
+      "who": "persona",
+      "turn": 4,
+      "ts": "2026-10-14 23:44"
+     },
+     "onset_abs": {
+      "value": "~2026-10-14 morning",
+      "status": "reported",
+      "who": "derived",
+      "turn": 4,
+      "ts": "2026-10-14 23:44"
+     },
+     "pain_rating": {
+      "value": 8,
+      "status": "reported",
+      "who": "persona",
+      "turn": 14,
+      "ts": "2026-10-14 23:46"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 2
+  },
+  "complaint.category": {
+   "value": [
+    "abdominal_pain"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 21,
+   "ts": "2026-10-14 23:46"
+  },
+  "complaint.text": {
+   "value": "The pain is in my lower abdomen.",
+   "status": "reported",
+   "who": "persona",
+   "turn": 21,
+   "ts": "2026-10-14 23:46"
+  },
+  "E.mechanism": {
+   "value": "none",
+   "status": "reported",
+   "who": "derived",
+   "turn": 2,
+   "ts": "2026-10-14 23:44"
+  },
+  "danger_signs.breathing_difficulty": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 3,
+   "ts": "2026-10-14 23:44"
+  },
+  "patient.age": {
+   "value": 40,
+   "status": "reported",
+   "who": "persona",
+   "turn": 4,
+   "ts": "2026-10-14 23:44"
+  },
+  "complaint.onset": {
+   "value": "this morning",
+   "status": "reported",
+   "who": "persona",
+   "turn": 4,
+   "ts": "2026-10-14 23:44"
+  },
+  "complaint.onset_abs": {
+   "value": "~2026-10-14 morning (from 'this morning' said 23:44)",
+   "status": "reported",
+   "who": "derived",
+   "turn": 4,
+   "ts": "2026-10-14 23:44"
+  },
+  "patient.age_group": {
+   "value": "adult",
+   "status": "reported",
+   "who": "derived",
+   "turn": 4,
+   "ts": "2026-10-14 23:44"
+  },
+  "patient.sex": {
+   "value": "female",
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-10-14 23:44"
+  },
+  "history.pregnant": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 6,
+   "ts": "2026-10-14 23:45"
+  },
+  "complaint.fever": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 7,
+   "ts": "2026-10-14 23:45"
+  },
+  "infection.rash": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 7,
+   "ts": "2026-10-14 23:45"
+  },
+  "complaint.uti_symptoms": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 13,
+   "ts": "2026-10-14 23:45"
+  },
+  "complaint.pain_rating": {
+   "value": 8,
+   "status": "reported",
+   "who": "persona",
+   "turn": 21,
+   "ts": "2026-10-14 23:46"
+  },
+  "complaint.pain_latest": {
+   "value": 8,
+   "status": "reported",
+   "who": "persona",
+   "turn": 14,
+   "ts": "2026-10-14 23:46"
+  },
+  "ams.changed_from_baseline": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 14,
+   "ts": "2026-10-14 23:46"
+  },
+  "complaint.infection_signs": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 16,
+   "ts": "2026-10-14 23:46"
+  },
+  "complaint.possible_ectopic_pregnancy": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 17,
+   "ts": "2026-10-14 23:46"
+  },
+  "history.conditions": {
+   "value": [
+    "pregnancy"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 19,
+   "ts": "2026-10-14 23:46"
+  },
+  "complaint.shortness_of_breath": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 20,
+   "ts": "2026-10-14 23:46"
+  },
+  "complaint.vomiting": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 20,
+   "ts": "2026-10-14 23:46"
+  }
+ },
+ "attempts": {
+  "danger_signs.responsive": 1,
+  "danger_signs.chest_pain_now": 1,
+  "danger_signs.breathing_difficulty": 2,
+  "danger_signs.heavy_bleeding": 1,
+  "complaint.category": 1,
+  "complaint.text": 1,
+  "complaint.onset": 1,
+  "patient.age": 1,
+  "patient.sex": 2,
+  "history.pregnant": 1,
+  "history.postpartum": 1,
+  "complaint.fever": 1,
+  "infection.rash": 1,
+  "infection.travel_14d": 3,
+  "infection.contacts": 3,
+  "complaint.uti_symptoms": 1,
+  "ams.changed_from_baseline": 1,
+  "complaint.pain_rating": 1,
+  "complaint.infection_signs": 2,
+  "complaint.pain_cause_class": 3,
+  "complaint.possible_ectopic_pregnancy": 1,
+  "complaint.shortness_of_breath": 1,
+  "complaint.vomiting": 1,
+  "complaint.known_toxic_ingestion": 2,
+  "complaint.severe_flank_pain": 1
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "I'm here to help get the right team ready. Is the person awake and responding to you, and are they currently having any chest pain, trouble breathing, or heavy bleeding?",
+   "ts": "2026-10-14 23:44:24",
+   "kind": "question",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "caregiver",
+   "text": "I'm awake. No chest pain, trouble breathing, or bleeding.",
+   "ts": "2026-10-14 23:44:25",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "bot",
+   "text": "I'm glad to hear they are awake. Just to be sure, are they having any trouble breathing or heavy bleeding right now, and could you tell me what the main problem is?",
+   "ts": "2026-10-14 23:44:31",
+   "kind": "question",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category+complaint.text"
+  },
+  {
+   "role": "caregiver",
+   "text": "No bleeding. The main problem is constant lower abdominal pain that's getting worse.",
+   "ts": "2026-10-14 23:44:32",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category+complaint.text"
+  },
+  {
+   "role": "bot",
+   "text": "I understand the pain is getting worse. Is the person having any trouble breathing right now?",
+   "ts": "2026-10-14 23:44:39",
+   "kind": "question",
+   "slot": "dyn:danger_signs.breathing_difficulty"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I'm not having trouble breathing.",
+   "ts": "2026-10-14 23:44:40",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.breathing_difficulty"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear about the pain. To help the team prepare, could you tell me how old the patient is, what their sex is, and when the pain first started?",
+   "ts": "2026-10-14 23:44:45",
+   "kind": "question",
+   "slot": "dyn:complaint.onset+patient.age+patient.sex"
+  },
+  {
+   "role": "caregiver",
+   "text": "I'm 40 years old and the pain started this morning.",
+   "ts": "2026-10-14 23:44:47",
+   "kind": "answer",
+   "slot": "dyn:complaint.onset+patient.age+patient.sex"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you for that information. To help the team, could you tell me if the patient is male or female?",
+   "ts": "2026-10-14 23:44:52",
+   "kind": "question",
+   "slot": "dyn:patient.sex"
+  },
+  {
+   "role": "caregiver",
+   "text": "I'm female.",
+   "ts": "2026-10-14 23:44:53",
+   "kind": "answer",
+   "slot": "dyn:patient.sex"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you. To help the medical team, could you tell me if you are currently pregnant or have given birth in the last few weeks?",
+   "ts": "2026-10-14 23:44:59",
+   "kind": "question",
+   "slot": "dyn:history.pregnant+history.postpartum"
+  },
+  {
+   "role": "caregiver",
+   "text": "I'm 28 weeks pregnant.",
+   "ts": "2026-10-14 23:45:00",
+   "kind": "answer",
+   "slot": "dyn:history.pregnant+history.postpartum"
+  },
+  {
+   "role": "system",
+   "text": "floor: at least ESI-2  rules: ['B-38.pregnant-chest-pain-breathlessness-abdo-pain-or-headache']",
+   "ts": "2026-10-14 23:45:03",
+   "kind": "floor"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear about the pain. Do you have a fever, and have you noticed any new rashes on your skin?",
+   "ts": "2026-10-14 23:45:05",
+   "kind": "question",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "No fever. No rashes.",
+   "ts": "2026-10-14 23:45:07",
+   "kind": "answer",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "bot",
+   "text": "I've noted that. Have you traveled outside the country or been in contact with anyone who has been sick in the last two weeks?",
+   "ts": "2026-10-14 23:45:12",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "caregiver",
+   "text": "No. No.",
+   "ts": "2026-10-14 23:45:14",
+   "kind": "answer",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you for that information. Have you traveled outside of the country in the last two weeks?",
+   "ts": "2026-10-14 23:45:19",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I haven't.",
+   "ts": "2026-10-14 23:45:20",
+   "kind": "answer",
+   "slot": "dyn:infection.travel_14d"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Just to be clear, have you traveled outside of the country in the last 14 days?",
+   "ts": "2026-10-14 23:45:25",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I haven't.",
+   "ts": "2026-10-14 23:45:28",
+   "kind": "answer",
+   "slot": "dyn:infection.travel_14d"
+  },
+  {
+   "role": "bot",
+   "text": "Have you been around anyone who has been sick with a contagious illness lately?",
+   "ts": "2026-10-14 23:45:33",
+   "kind": "question",
+   "slot": "dyn:infection.contacts"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I haven't.",
+   "ts": "2026-10-14 23:45:36",
+   "kind": "answer",
+   "slot": "dyn:infection.contacts"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Have you been near anyone who has been sick with a contagious illness lately?",
+   "ts": "2026-10-14 23:45:41",
+   "kind": "question",
+   "slot": "dyn:infection.contacts"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I haven't.",
+   "ts": "2026-10-14 23:45:44",
+   "kind": "answer",
+   "slot": "dyn:infection.contacts"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear about your abdominal pain. Are you having any issues like burning or pain when you pee, or is your urine cloudy or smelly?",
+   "ts": "2026-10-14 23:45:49",
+   "kind": "question",
+   "slot": "dyn:complaint.uti_symptoms"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-14 23:45:50",
+   "kind": "answer",
+   "slot": "dyn:complaint.uti_symptoms"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. To help the team prepare, on a scale of 0 to 10, how would you rate your pain right now? Also, have you noticed any changes in your mental state, like feeling more confused or sleepy than usual?",
+   "ts": "2026-10-14 23:45:56",
+   "kind": "question",
+   "slot": "dyn:ams.changed_from_baseline+complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "It's an 8 out of 10. No, I don't feel confused or sleepy.",
+   "ts": "2026-10-14 23:45:57",
+   "kind": "answer",
+   "slot": "dyn:ams.changed_from_baseline+complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "I've noted your pain level. Have you noticed any signs of infection, like a wound that is red, hot, swollen, or oozing?",
+   "ts": "2026-10-14 23:46:04",
+   "kind": "question",
+   "slot": "dyn:complaint.infection_signs"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I don't have any.",
+   "ts": "2026-10-14 23:46:05",
+   "kind": "answer",
+   "slot": "dyn:complaint.infection_signs"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. To make sure we have all the details, has a doctor ever told you that you have an infection?",
+   "ts": "2026-10-14 23:46:10",
+   "kind": "question",
+   "slot": "dyn:complaint.infection_signs"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I don't have any infections.",
+   "ts": "2026-10-14 23:46:12",
+   "kind": "answer",
+   "slot": "dyn:complaint.infection_signs"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear about your pain. Do you have a known medical condition causing this, or have you had any issues with your period or bleeding lately?",
+   "ts": "2026-10-14 23:46:18",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_cause_class+complaint.possible_ectopic_pregnancy"
+  },
+  {
+   "role": "caregiver",
+   "text": "No other conditions. No bleeding.",
+   "ts": "2026-10-14 23:46:19",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_cause_class+complaint.possible_ectopic_pregnancy"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear about your pain. Do you have any known medical conditions, like kidney stones or other chronic illnesses, that cause this?",
+   "ts": "2026-10-14 23:46:24",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_cause_class"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I have no other conditions besides my pregnancy.",
+   "ts": "2026-10-14 23:46:25",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_cause_class"
+  },
+  {
+   "role": "bot",
+   "text": "I understand you're experiencing pain. To help the team, is there a specific known condition, like kidney stones or a chronic illness, that causes this pain?",
+   "ts": "2026-10-14 23:46:31",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_cause_class"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I have no other conditions besides my pregnancy.",
+   "ts": "2026-10-14 23:46:33",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_cause_class"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Are you having any trouble breathing or have you been vomiting?",
+   "ts": "2026-10-14 23:46:38",
+   "kind": "question",
+   "slot": "dyn:complaint.shortness_of_breath+complaint.vomiting"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, no trouble breathing. No vomiting.",
+   "ts": "2026-10-14 23:46:39",
+   "kind": "answer",
+   "slot": "dyn:complaint.shortness_of_breath+complaint.vomiting"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear about the pain. Have you taken anything that could be poisonous or more medicine than you should have, and is the pain located in your side or back?",
+   "ts": "2026-10-14 23:46:45",
+   "kind": "question",
+   "slot": "dyn:complaint.known_toxic_ingestion+complaint.severe_flank_pain"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, just my pregnancy vitamins. The pain is in my lower abdomen.",
+   "ts": "2026-10-14 23:46:47",
+   "kind": "answer",
+   "slot": "dyn:complaint.known_toxic_ingestion+complaint.severe_flank_pain"
+  },
+  {
+   "role": "bot",
+   "text": "I understand the pain is in your lower abdomen. To make sure we have everything, have you taken any extra medicine or anything else that could be harmful?",
+   "ts": "2026-10-14 23:46:53",
+   "kind": "question",
+   "slot": "dyn:complaint.known_toxic_ingestion"
+  }
+ ],
+ "stage": "floor",
+ "floor": "at least ESI-2",
+ "phase": "enroute",
+ "opened": [],
+ "created": "2026-10-14 23:44",
+ "pending_slot": "dyn:complaint.known_toxic_ingestion",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {},
+ "considered": [
+  "B-17.abdo-pain-pregnant-or-postpartum",
+  "B-02.severe-pain-consider"
+ ]
+}

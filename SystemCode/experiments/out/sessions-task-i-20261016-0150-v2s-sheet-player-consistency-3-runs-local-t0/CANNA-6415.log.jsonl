@@ -1,0 +1,45 @@
+{"t": "01:44:42", "kind": "engine", "note": "session CANNA-6415 started (web)"}
+{"t": "01:44:45", "kind": "question", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "Is the patient awake and responding to you normally? Also, is he or she experiencing any chest pain, trouble breathing, or heavy bleeding right now?", "fields": ["danger_signs.responsive", "danger_signs.chest_pain_now"], "offered": ["danger_signs.responsive", "danger_signs.chest_pain_now", "danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text"]}
+{"t": "01:44:45", "kind": "answer", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "Yes, he's awake and talking normally. No chest pain."}
+{"t": "01:44:50", "kind": "extract", "writes": [["danger_signs.responsive", true], ["danger_signs.chest_pain_now", false]]}
+{"t": "01:44:53", "kind": "question", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category", "text": "I'm glad he's alert. Is he having any trouble breathing or is there any heavy bleeding? Also, what is the main reason you are bringing him in today?", "fields": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category"], "offered": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text", "complaint.onset", "E.mechanism"]}
+{"t": "01:44:53", "kind": "answer", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category", "text": "Yes, he's more short of breath than usual, but he can speak in full sentences. No. He's been more short of breath than usual since this morning. He has heart failure and COPD."}
+{"t": "01:45:08", "kind": "extract", "writes": [["danger_signs.breathing_difficulty", true], ["danger_signs.heavy_bleeding", false], ["complaint.category", "breathing"], ["complaint.text", "more short of breath than usual"], ["complaint.onset", "this morning"], ["history.conditions", "heart failure"], ["history.conditions", "COPD"]]}
+{"t": "01:45:08", "kind": "extract", "writes": [["E.mechanism", "none"]], "via": "derived-non-injury"}
+{"t": "01:45:11", "kind": "question", "slot": "dyn:patient.age+patient.sex", "text": "I understand. How old is he and can you tell me if he is male or female?", "fields": ["patient.age", "patient.sex"], "offered": ["patient.age", "patient.sex", "complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts"]}
+{"t": "01:45:11", "kind": "answer", "slot": "dyn:patient.age+patient.sex", "text": "72. Male."}
+{"t": "01:45:15", "kind": "extract", "writes": [["patient.age", 72], ["patient.sex", "male"]]}
+{"t": "01:45:18", "kind": "question", "slot": "dyn:complaint.fever+infection.rash", "text": "I see. Does he have a fever or any new rashes on his skin?", "fields": ["complaint.fever", "infection.rash"], "offered": ["complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts", "ams.changed_from_baseline", "complaint.pain_rating"]}
+{"t": "01:45:18", "kind": "answer", "slot": "dyn:complaint.fever+infection.rash", "text": "No fever. No rash."}
+{"t": "01:45:22", "kind": "extract", "writes": [["complaint.fever", false], ["infection.rash", false]]}
+{"t": "01:45:25", "kind": "question", "slot": "dyn:infection.travel_14d+infection.contacts", "text": "Has he traveled outside the country or been in contact with anyone who is sick in the last two weeks?", "fields": ["infection.travel_14d", "infection.contacts"], "offered": ["infection.travel_14d", "infection.contacts", "ams.changed_from_baseline", "complaint.pain_rating", "complaint.increasing_respiratory_effort", "M.medications"]}
+{"t": "01:45:25", "kind": "answer", "slot": "dyn:infection.travel_14d+infection.contacts", "text": "No."}
+{"t": "01:45:29", "kind": "extract", "writes": [["infection.travel_14d", false], ["infection.contacts", false]]}
+{"t": "01:45:32", "kind": "question", "slot": "dyn:ams.changed_from_baseline", "text": "Has he seemed more confused, out of it, or unusually sleepy today?", "fields": ["ams.changed_from_baseline"], "offered": ["ams.changed_from_baseline", "complaint.pain_rating", "complaint.increasing_respiratory_effort", "M.medications", "A.allergies", "history.immunocompromised"]}
+{"t": "01:45:32", "kind": "answer", "slot": "dyn:ams.changed_from_baseline", "text": "No, he's his usual self."}
+{"t": "01:45:36", "kind": "extract", "writes": [["ams.changed_from_baseline", false]]}
+{"t": "01:45:39", "kind": "question", "slot": "dyn:complaint.pain_rating+complaint.increasing_respiratory_effort", "text": "I'm glad he's feeling alert. On a scale of 0 to 10, how bad is his pain right now, and is his breathing getting harder?", "fields": ["complaint.pain_rating", "complaint.increasing_respiratory_effort"], "offered": ["complaint.pain_rating", "complaint.increasing_respiratory_effort", "M.medications", "A.allergies", "history.immunocompromised", "identity.name"]}
+{"t": "01:45:39", "kind": "answer", "slot": "dyn:complaint.pain_rating+complaint.increasing_respiratory_effort", "text": "He has no pain. It's been the same since this morning, not getting worse."}
+{"t": "01:45:43", "kind": "extract", "writes": [["complaint.pain_rating", 0]]}
+{"t": "01:45:45", "kind": "question", "slot": "dyn:complaint.increasing_respiratory_effort", "text": "Is his breathing becoming more difficult or labored than it was earlier today?", "fields": ["complaint.increasing_respiratory_effort"], "offered": ["complaint.increasing_respiratory_effort"]}
+{"t": "01:45:45", "kind": "answer", "slot": "dyn:complaint.increasing_respiratory_effort", "text": "It's been the same since this morning, not getting worse."}
+{"t": "01:45:49", "kind": "extract", "writes": [["complaint.increasing_respiratory_effort", false]]}
+{"t": "01:45:52", "kind": "question", "slot": "dyn:M.medications+A.allergies", "text": "I'm glad to hear his condition is stable. What medications does he take regularly, and does he have any allergies to medicines?", "fields": ["M.medications", "A.allergies"], "offered": ["M.medications", "A.allergies", "history.immunocompromised", "identity.name", "identity.dob"]}
+{"t": "01:45:52", "kind": "answer", "slot": "dyn:M.medications+A.allergies", "text": "A water pill, frusemide, and an inhaler. None."}
+{"t": "01:45:57", "kind": "extract", "writes": [["M.medications", ["water pill", "frusemide", "inhaler"]], ["A.allergies", []]]}
+{"t": "01:46:00", "kind": "question", "slot": "dyn:history.immunocompromised", "text": "Does he have any conditions that weaken his immune system, such as cancer, an organ transplant, or any medications that affect his immunity?", "fields": ["history.immunocompromised"], "offered": ["history.immunocompromised", "identity.name", "identity.dob"]}
+{"t": "01:46:00", "kind": "answer", "slot": "dyn:history.immunocompromised", "text": "No."}
+{"t": "01:46:10", "kind": "extract", "writes": [["history.immunocompromised", false]], "via": "dropped-not-stated"}
+{"t": "01:46:10", "kind": "extract", "writes": []}
+{"t": "01:46:10", "kind": "extract", "writes": [["history.immunocompromised", false]], "via": "blanket-no"}
+{"t": "01:46:13", "kind": "question", "slot": "dyn:identity.name+identity.dob", "text": "Thank you for that information. Could you please tell me the patient's full name and date of birth?", "fields": ["identity.name", "identity.dob"], "offered": ["identity.name", "identity.dob"]}
+{"t": "01:46:13", "kind": "answer", "slot": "dyn:identity.name+identity.dob", "text": "Lim Boon Keng. 3 March 1954."}
+{"t": "01:46:17", "kind": "extract", "writes": [["identity.name", "Lim Boon Keng"], ["identity.dob", "3 March 1954"]]}
+{"t": "01:46:17", "kind": "engine", "note": "floor settled - report ready; remaining questions continue"}
+{"t": "01:46:20", "kind": "question", "slot": "dyn:complaint.respiratory_distress_signs", "text": "Is the patient having any trouble breathing, such as breathing very fast, wheezing, or only being able to say a few words at a time?", "fields": ["complaint.respiratory_distress_signs"], "offered": ["complaint.respiratory_distress_signs", "L.last_intake"]}
+{"t": "01:46:20", "kind": "answer", "slot": "dyn:complaint.respiratory_distress_signs", "text": "No, he's not breathing fast, he can talk normally, no wheeze."}
+{"t": "01:46:24", "kind": "extract", "writes": [["complaint.respiratory_distress_signs", false]]}
+{"t": "01:46:27", "kind": "question", "slot": "dyn:L.last_intake", "text": "I'm glad to hear he's breathing okay. When was the last time he had anything to eat or drink?", "fields": ["L.last_intake"], "offered": ["L.last_intake"]}
+{"t": "01:46:27", "kind": "answer", "slot": "dyn:L.last_intake", "text": "Toast at 8am."}
+{"t": "01:46:37", "kind": "extract", "writes": [["L.last_intake", "Toast at 8am"]]}
+{"t": "01:46:37", "kind": "engine", "note": "interview complete - no open fields"}

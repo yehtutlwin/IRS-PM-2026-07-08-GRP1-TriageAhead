@@ -1,0 +1,13 @@
+session TIGER-7604   started 2026-10-15 14:00   (generated from messages)
+
+14:00:43  BOT  Is the patient awake and responding to you normally? Also, is he/she currently experiencing any chest pain, trouble breathing, or heavy bleeding?   [slot dyn:danger_signs.responsive+danger_signs.chest_pain_now]
+14:00:43  THEM yes awake, talking. no chest pain. breathing ok   [slot dyn:danger_signs.responsive+danger_signs.chest_pain_now]
+14:00:48  BOT  I understand they are breathing okay. Just to be certain, is the patient experiencing any chest pain at this moment?   [slot dyn:danger_signs.chest_pain_now]
+14:00:48  THEM no chest pain. breathing ok. porridge at 1pm   [slot dyn:danger_signs.chest_pain_now]
+14:00:55  BOT  I've noted the breathing is okay. Is the patient currently experiencing any heavy bleeding, and could you tell me the main reason you are bringing them in today?   [slot dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category]
+14:00:55  THEM breathing ok. no bleeding. fell down 4 steps at home abt an hour ago. landed on right hip, cant stand   [slot dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category]
+14:01:03  BOT  I've noted the fall. Could you tell me the patient's age and if they are male or female?   [slot dyn:patient.age+patient.sex]
+14:01:03  THEM 87, male   [slot dyn:patient.age+patient.sex]
+14:01:10  BOT  I've noted those details. Does he have a fever or any new rashes on his skin?   [slot dyn:complaint.fever+infection.rash]
+14:01:10  THEM no fever no rash   [slot dyn:complaint.fever+infection.rash]
+14:01:16  BOT  I see. Does he have any new rashes on his skin?   [slot dyn:infection.rash]

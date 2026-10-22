@@ -1,0 +1,669 @@
+{
+ "sid": "LOTUS-2564",
+ "facts": {
+  "danger_signs.responsive": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 18,
+   "ts": "2026-10-15 00:43"
+  },
+  "danger_signs.breathing_difficulty": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-10-15 00:39"
+  },
+  "patient.sex": {
+   "value": "female",
+   "status": "reported",
+   "who": "persona",
+   "turn": 19,
+   "ts": "2026-10-15 00:43"
+  },
+  "danger_signs.chest_pain_now": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 12,
+   "ts": "2026-10-15 00:41"
+  },
+  "danger_signs.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 2,
+   "ts": "2026-10-15 00:39"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "neuro_symptoms",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "persona",
+      "turn": 3,
+      "ts": "2026-10-15 00:40"
+     },
+     "text": {
+      "value": "now talking clearly",
+      "status": "reported",
+      "who": "persona",
+      "turn": 18,
+      "ts": "2026-10-15 00:43"
+     },
+     "onset": {
+      "value": "this morning",
+      "status": "reported",
+      "who": "persona",
+      "turn": 18,
+      "ts": "2026-10-15 00:43"
+     },
+     "onset_abs": {
+      "value": "~2026-10-15 morning",
+      "status": "reported",
+      "who": "derived",
+      "turn": 3,
+      "ts": "2026-10-15 00:40"
+     },
+     "pain_rating": {
+      "value": 0,
+      "status": "reported",
+      "who": "persona",
+      "turn": 12,
+      "ts": "2026-10-15 00:41"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 3
+  },
+  "complaint.category": {
+   "value": [
+    "neuro_symptoms"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 18,
+   "ts": "2026-10-15 00:43"
+  },
+  "complaint.text": {
+   "value": "now talking clearly",
+   "status": "reported",
+   "who": "persona",
+   "turn": 18,
+   "ts": "2026-10-15 00:43"
+  },
+  "complaint.onset": {
+   "value": "this morning",
+   "status": "reported",
+   "who": "persona",
+   "turn": 18,
+   "ts": "2026-10-15 00:43"
+  },
+  "complaint.stroke_signs": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 18,
+   "ts": "2026-10-15 00:43"
+  },
+  "complaint.onset_abs": {
+   "value": "~2026-10-15 morning (from 'this morning around 9am' said 00:40)",
+   "status": "reported",
+   "who": "derived",
+   "turn": 3,
+   "ts": "2026-10-15 00:40"
+  },
+  "E.mechanism": {
+   "value": "none",
+   "status": "reported",
+   "who": "derived",
+   "turn": 3,
+   "ts": "2026-10-15 00:40"
+  },
+  "patient.age": {
+   "value": 88,
+   "status": "reported",
+   "who": "persona",
+   "turn": 4,
+   "ts": "2026-10-15 00:40"
+  },
+  "identity.dob": {
+   "value": "15 March 1938",
+   "status": "reported",
+   "who": "persona",
+   "turn": 4,
+   "ts": "2026-10-15 00:40"
+  },
+  "patient.age_group": {
+   "value": "older_adult",
+   "status": "reported",
+   "who": "derived",
+   "turn": 4,
+   "ts": "2026-10-15 00:40"
+  },
+  "M.medications": {
+   "value": [
+    "aspirin"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 19,
+   "ts": "2026-10-15 00:43"
+  },
+  "A.allergies": {
+   "value": [],
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-10-15 00:40"
+  },
+  "M.beta_blocker": {
+   "value": false,
+   "status": "probable",
+   "who": "persona",
+   "turn": 19,
+   "ts": "2026-10-15 00:43"
+  },
+  "M.immunosuppressant_or_steroid": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 19,
+   "ts": "2026-10-15 00:43"
+  },
+  "history.conditions": {
+   "value": [
+    "stroke two years ago"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 19,
+   "ts": "2026-10-15 00:43"
+  },
+  "identity.name": {
+   "value": "Mrs. Lim",
+   "status": "reported",
+   "who": "persona",
+   "turn": 7,
+   "ts": "2026-10-15 00:40"
+  },
+  "complaint.fever": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 9,
+   "ts": "2026-10-15 00:41"
+  },
+  "infection.rash": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 9,
+   "ts": "2026-10-15 00:41"
+  },
+  "infection.travel_14d": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 9,
+   "ts": "2026-10-15 00:41"
+  },
+  "infection.contacts": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 9,
+   "ts": "2026-10-15 00:41"
+  },
+  "stroke.speech_change": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 10,
+   "ts": "2026-10-15 00:41"
+  },
+  "stroke.arm_weakness": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 10,
+   "ts": "2026-10-15 00:41"
+  },
+  "stroke.vision_change": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 10,
+   "ts": "2026-10-15 00:41"
+  },
+  "stroke.face_droop": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 10,
+   "ts": "2026-10-15 00:41"
+  },
+  "ams.changed_from_baseline": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 18,
+   "ts": "2026-10-15 00:43"
+  },
+  "obs.confusion_lethargy_disorientation": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 11,
+   "ts": "2026-10-15 00:41"
+  },
+  "obs.new_confusion_lethargy_disorientation": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 18,
+   "ts": "2026-10-15 00:43"
+  },
+  "complaint.pain_rating": {
+   "value": 0,
+   "status": "reported",
+   "who": "persona",
+   "turn": 18,
+   "ts": "2026-10-15 00:43"
+  },
+  "complaint.pain_latest": {
+   "value": 0,
+   "status": "reported",
+   "who": "persona",
+   "turn": 12,
+   "ts": "2026-10-15 00:41"
+  },
+  "stroke.balance_loss": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 13,
+   "ts": "2026-10-15 00:41"
+  },
+  "complaint.known_toxic_ingestion": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 17,
+   "ts": "2026-10-15 00:42"
+  },
+  "complaint.post_ictal_after_seizure": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 18,
+   "ts": "2026-10-15 00:43"
+  },
+  "history.immunocompromised": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 19,
+   "ts": "2026-10-15 00:43"
+  },
+  "L.last_intake": {
+   "value": "breakfast around 8am",
+   "status": "reported",
+   "who": "persona",
+   "turn": 20,
+   "ts": "2026-10-15 00:43"
+  },
+  "L.last_intake_abs": {
+   "value": "~2026-10-15 08:00 (from 'breakfast around 8am' said 00:43)",
+   "status": "reported",
+   "who": "derived",
+   "turn": 20,
+   "ts": "2026-10-15 00:43"
+  }
+ },
+ "attempts": {
+  "danger_signs.responsive": 1,
+  "danger_signs.breathing_difficulty": 1,
+  "danger_signs.chest_pain_now": 1,
+  "danger_signs.heavy_bleeding": 1,
+  "complaint.category": 1,
+  "complaint.text": 1,
+  "complaint.onset": 1,
+  "patient.age": 1,
+  "M.medications": 1,
+  "A.allergies": 1,
+  "history.conditions": 1,
+  "identity.name": 1,
+  "complaint.fever": 1,
+  "infection.rash": 1,
+  "infection.travel_14d": 1,
+  "infection.contacts": 1,
+  "stroke.vision_change": 1,
+  "stroke.face_droop": 1,
+  "ams.changed_from_baseline": 1,
+  "obs.confusion_lethargy_disorientation": 1,
+  "complaint.pain_rating": 1,
+  "stroke.balance_loss": 1,
+  "complaint.danger_to_self_or_others": 3,
+  "complaint.known_toxic_ingestion": 1,
+  "complaint.post_ictal_after_seizure": 1,
+  "history.immunocompromised": 1,
+  "L.last_intake": 1
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "Thank you for reaching out to us. To start, is the patient awake and responding to you normally, and are they having any trouble breathing right now?",
+   "ts": "2026-10-15 00:39:37",
+   "kind": "question",
+   "slot": "dyn:danger_signs.responsive+danger_signs.breathing_difficulty"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, she's awake and talking clearly, back to her normal self. She's not having any trouble breathing.",
+   "ts": "2026-10-15 00:39:39",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.responsive+danger_signs.breathing_difficulty"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you, that's helpful to know. Does she have any chest pain right now, or is she bleeding heavily anywhere?",
+   "ts": "2026-10-15 00:39:48",
+   "kind": "question",
+   "slot": "dyn:danger_signs.chest_pain_now+danger_signs.heavy_bleeding"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, she has no chest pain and she isn't bleeding anywhere. She has no pain at all right now, 0 out of 10.",
+   "ts": "2026-10-15 00:39:49",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.chest_pain_now+danger_signs.heavy_bleeding"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you, it's good to know she has no pain right now. In your own words, what is the main problem that brings her in today, and when did it start?",
+   "ts": "2026-10-15 00:39:57",
+   "kind": "question",
+   "slot": "dyn:complaint.category+complaint.text+complaint.onset"
+  },
+  {
+   "role": "caregiver",
+   "text": "This morning around 9am my mom's speech suddenly went slurred and her left arm went weak, she couldn't even lift her teacup. It lasted about 45 minutes and then passed completely, and she seems back to normal now, so I'm not sure if coming in was necessary.",
+   "ts": "2026-10-15 00:39:59",
+   "kind": "answer",
+   "slot": "dyn:complaint.category+complaint.text+complaint.onset"
+  },
+  {
+   "role": "system",
+   "text": "floor: at least ESI-2  rules: ['B-05.stroke-signs']",
+   "ts": "2026-10-15 00:40:05",
+   "kind": "floor"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you for describing that so clearly, it helps the team to know. How old is your mom?",
+   "ts": "2026-10-15 00:40:10",
+   "kind": "question",
+   "slot": "dyn:patient.age"
+  },
+  {
+   "role": "caregiver",
+   "text": "She's 88. Her birthday is 15 March 1938.",
+   "ts": "2026-10-15 00:40:12",
+   "kind": "answer",
+   "slot": "dyn:patient.age"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you. What medicines does your mom take regularly (you're welcome to send a photo of the boxes), and does she have any allergies, especially to medicines?",
+   "ts": "2026-10-15 00:40:20",
+   "kind": "question",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "caregiver",
+   "text": "She only takes one aspirin a day, nothing else. She doesn't have any allergies.",
+   "ts": "2026-10-15 00:40:21",
+   "kind": "answer",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you, that's helpful to know. Does your mom have any ongoing health conditions, such as high blood pressure, diabetes, or heart problems?",
+   "ts": "2026-10-15 00:40:29",
+   "kind": "question",
+   "slot": "dyn:history.conditions"
+  },
+  {
+   "role": "caregiver",
+   "text": "Just the stroke she had two years ago. As far as I know, there's nothing else, no blood pressure, diabetes or heart problems that I'm aware of.",
+   "ts": "2026-10-15 00:40:31",
+   "kind": "answer",
+   "slot": "dyn:history.conditions"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you for letting us know about her earlier stroke. What is your mom's full name?",
+   "ts": "2026-10-15 00:40:38",
+   "kind": "question",
+   "slot": "dyn:identity.name"
+  },
+  {
+   "role": "caregiver",
+   "text": "Her surname is Lim, Mrs. Lim. I don't have her full name to give you.",
+   "ts": "2026-10-15 00:40:43",
+   "kind": "answer",
+   "slot": "dyn:identity.name"
+  },
+  {
+   "role": "bot",
+   "text": "That's enough for the hospital team to prepare. Show the code LOTUS-2564 at the counter when you arrive. I'll ask a few more things while you're on the way; tell me straight away if anything changes.",
+   "ts": "2026-10-15 00:40:49",
+   "kind": "ack"
+  },
+  {
+   "role": "bot",
+   "text": "Does your mom have a fever, and if you've taken her temperature, what was it? Have you noticed any new rash on her skin?",
+   "ts": "2026-10-15 00:40:53",
+   "kind": "question",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "No fever that I've noticed, and no rash either. I haven't taken her temperature, though.",
+   "ts": "2026-10-15 00:40:54",
+   "kind": "answer",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you, that's noted. In the last two weeks, has your mom travelled overseas, or been around anyone who was sick with something catching?",
+   "ts": "2026-10-15 00:40:59",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, she hasn't travelled anywhere, and there's been no fever or rash. I haven't heard of her being around anyone sick, though I don't know about every contact she's had.",
+   "ts": "2026-10-15 00:41:00",
+   "kind": "answer",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you, that's noted. Has your mom had any sudden loss or change in her eyesight, and does one side of her face look droopy or her smile look uneven?",
+   "ts": "2026-10-15 00:41:10",
+   "kind": "question",
+   "slot": "dyn:stroke.vision_change+stroke.face_droop"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know about her eyesight or her face, I only noticed the slurred speech and her left arm being weak.",
+   "ts": "2026-10-15 00:41:13",
+   "kind": "answer",
+   "slot": "dyn:stroke.vision_change+stroke.face_droop"
+  },
+  {
+   "role": "bot",
+   "text": "That's okay, thank you for telling me what you did notice. Compared with how your mom usually is, does she seem more confused, unusually sleepy, or not making sense when she talks?",
+   "ts": "2026-10-15 00:41:23",
+   "kind": "question",
+   "slot": "dyn:ams.changed_from_baseline+obs.confusion_lethargy_disorientation"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, she seems like her normal self now. She's awake and talking clearly, and she isn't confused or sleepy.",
+   "ts": "2026-10-15 00:41:24",
+   "kind": "answer",
+   "slot": "dyn:ams.changed_from_baseline+obs.confusion_lethargy_disorientation"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you, I've noted that she seems like her normal self now. Is your mom in any pain right now, and if so, how bad is it on a scale from 0 to 10, where 10 is the worst pain imaginable?",
+   "ts": "2026-10-15 00:41:34",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, she's not in any pain right now, so it's a 0 out of 10.",
+   "ts": "2026-10-15 00:41:35",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you, I've noted that she has no pain right now. Has your mom suddenly had trouble keeping her balance, like being unsteady on her feet or clumsy with her movements?",
+   "ts": "2026-10-15 00:41:44",
+   "kind": "question",
+   "slot": "dyn:stroke.balance_loss"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know about her balance, I didn't notice anything. It was just her slurred speech and her left arm being weak that I saw.",
+   "ts": "2026-10-15 00:41:46",
+   "kind": "answer",
+   "slot": "dyn:stroke.balance_loss"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you, I've noted that you didn't notice any balance problems, just the slurred speech and weak left arm. Has your mom said or done anything that makes you worry she might hurt herself or someone else?",
+   "ts": "2026-10-15 00:41:56",
+   "kind": "question",
+   "slot": "dyn:complaint.danger_to_self_or_others"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, nothing like that. She's been calm and herself, and I'm just worried about the stroke symptoms.",
+   "ts": "2026-10-15 00:41:58",
+   "kind": "answer",
+   "slot": "dyn:complaint.danger_to_self_or_others"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you, I've noted that she's been calm and like herself. Just so I have it right for the team: has your mom shown no sign at all of wanting to harm herself or anyone else?",
+   "ts": "2026-10-15 00:42:07",
+   "kind": "question",
+   "slot": "dyn:complaint.danger_to_self_or_others"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, nothing like that that I know of. She's back to normal and talking clearly now.",
+   "ts": "2026-10-15 00:42:10",
+   "kind": "answer",
+   "slot": "dyn:complaint.danger_to_self_or_others"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you, I've noted that she's talking clearly again now. Just so the team has a clear answer, can you confirm she hasn't talked about or tried hurting herself or anyone else?",
+   "ts": "2026-10-15 00:42:22",
+   "kind": "question",
+   "slot": "dyn:complaint.danger_to_self_or_others"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, nothing like that that I know of. It was just the slurred speech and her weak left arm this morning.",
+   "ts": "2026-10-15 00:42:26",
+   "kind": "answer",
+   "slot": "dyn:complaint.danger_to_self_or_others"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you, I've noted the slurred speech and weak left arm this morning. Could your mom have swallowed or been given anything that might be poisonous, or taken more of a medicine than she should have?",
+   "ts": "2026-10-15 00:42:37",
+   "kind": "question",
+   "slot": "dyn:complaint.known_toxic_ingestion"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, nothing like that. She only takes one aspirin a day and I don't know of anything else she could have swallowed or taken extra of.",
+   "ts": "2026-10-15 00:42:38",
+   "kind": "answer",
+   "slot": "dyn:complaint.known_toxic_ingestion"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you, I've noted the daily aspirin and that she couldn't have taken anything else. Has your mom had a fit or seizure today, and if so, is she still drowsy or confused afterwards?",
+   "ts": "2026-10-15 00:42:51",
+   "kind": "question",
+   "slot": "dyn:complaint.post_ictal_after_seizure"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, I didn't see any fit or shaking, just the slurred speech and weak arm this morning. She's awake and talking clearly now, not drowsy or confused.",
+   "ts": "2026-10-15 00:42:54",
+   "kind": "answer",
+   "slot": "dyn:complaint.post_ictal_after_seizure"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you, I've noted there was no fit and that she's awake and talking clearly now. Is your mom being treated for cancer, has she had an organ transplant, does she have HIV, or does she take steroids or any other medicine that weakens her defences against infection, or has a doctor ever said her immune system is weak?",
+   "ts": "2026-10-15 00:43:04",
+   "kind": "question",
+   "slot": "dyn:history.immunocompromised"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, none of that. She had a stroke two years ago and just takes one aspirin a day, nothing else. I don't know of any doctor saying her immune system is weak.",
+   "ts": "2026-10-15 00:43:06",
+   "kind": "answer",
+   "slot": "dyn:history.immunocompromised"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you, I've noted she isn't on anything that weakens her immune system and just takes the daily aspirin. When did your mom last eat or drink anything, and what was it?",
+   "ts": "2026-10-15 00:43:15",
+   "kind": "question",
+   "slot": "dyn:L.last_intake"
+  },
+  {
+   "role": "caregiver",
+   "text": "She last ate breakfast around 8am. I'm not sure exactly what she had.",
+   "ts": "2026-10-15 00:43:18",
+   "kind": "answer",
+   "slot": "dyn:L.last_intake"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you - that's everything. Show the code LOTUS-2564 at the counter when you arrive.",
+   "ts": "2026-10-15 00:43:20",
+   "kind": "ack"
+  }
+ ],
+ "stage": "rest",
+ "floor": "at least ESI-2",
+ "phase": "enroute",
+ "opened": [],
+ "created": "2026-10-15 00:39",
+ "pending_slot": "dyn:L.last_intake",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {},
+ "qr_ready": true,
+ "qr_turn": 7,
+ "said_done": true
+}

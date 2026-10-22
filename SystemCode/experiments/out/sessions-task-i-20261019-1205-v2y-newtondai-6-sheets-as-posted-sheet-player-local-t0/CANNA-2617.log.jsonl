@@ -1,0 +1,57 @@
+{"t": "12:03:33", "kind": "engine", "note": "session CANNA-2617 started (web)"}
+{"t": "12:03:35", "kind": "question", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "Is the patient awake and responding to you? Also, is he or she experiencing any chest pain, trouble breathing, or heavy bleeding right now?", "fields": ["danger_signs.responsive", "danger_signs.chest_pain_now"], "offered": ["danger_signs.responsive", "danger_signs.chest_pain_now", "danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text"]}
+{"t": "12:03:35", "kind": "answer", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "Yes, the patient is awake and can respond. No chest pain"}
+{"t": "12:03:40", "kind": "extract", "writes": [["danger_signs.responsive", true], ["danger_signs.chest_pain_now", false]]}
+{"t": "12:03:43", "kind": "question", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding", "text": "I'm glad they are awake. Is the patient having any trouble breathing or any heavy bleeding right now?", "fields": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding"], "offered": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text", "complaint.onset", "E.mechanism"]}
+{"t": "12:03:43", "kind": "answer", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding", "text": "No breathing difficulty No bleeding"}
+{"t": "12:03:48", "kind": "extract", "writes": [["danger_signs.breathing_difficulty", false], ["danger_signs.heavy_bleeding", false]]}
+{"t": "12:03:51", "kind": "question", "slot": "dyn:complaint.category+complaint.text", "text": "I've noted that. What is the main problem that brings the patient in today, and can you describe what is happening in your own words?", "fields": ["complaint.category", "complaint.text"], "offered": ["complaint.category", "complaint.text", "complaint.onset", "E.mechanism", "patient.age", "patient.sex"]}
+{"t": "12:03:51", "kind": "answer", "slot": "dyn:complaint.category+complaint.text", "text": "I am thirty weeks pregnant and have had a severe headache and blurred vision since this morning. I am 30 weeks pregnant and have a severe headache with blurred vision."}
+{"t": "12:04:02", "kind": "extract", "writes": [["complaint.category", "pregnancy_related"], ["complaint.text", "I am thirty weeks pregnant and have had a severe headache and blurred vision since this morning."], ["complaint.onset", "this morning"]]}
+{"t": "12:04:02", "kind": "extract", "writes": [["E.mechanism", "none"]], "via": "derived-non-injury"}
+{"t": "12:04:06", "kind": "question", "slot": "dyn:patient.age+patient.sex", "text": "I've noted the symptoms. How old is the patient, and can you confirm if the patient is female?", "fields": ["patient.age", "patient.sex"], "offered": ["patient.age", "patient.sex", "complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts"]}
+{"t": "12:04:06", "kind": "answer", "slot": "dyn:patient.age+patient.sex", "text": "I am thirty-three. I am female."}
+{"t": "12:04:10", "kind": "extract", "writes": [["patient.age", 33], ["patient.sex", "female"]]}
+{"t": "12:04:13", "kind": "question", "slot": "dyn:history.pregnant", "text": "I've noted she is 33 and pregnant. Have you had any other symptoms like a fever or a new rash?", "fields": ["history.pregnant"], "offered": ["history.pregnant", "history.postpartum", "complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts"]}
+{"t": "12:04:13", "kind": "answer", "slot": "dyn:history.pregnant", "text": "Yes, I am thirty weeks pregnant."}
+{"t": "12:04:24", "kind": "extract", "writes": [["history.pregnant", true]]}
+{"t": "12:04:26", "kind": "question", "slot": "dyn:complaint.fever+infection.rash", "text": "I've noted that. Does she have a fever or any new rashes?", "fields": ["complaint.fever", "infection.rash"], "offered": ["complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts", "ams.changed_from_baseline", "complaint.pain_rating"]}
+{"t": "12:04:26", "kind": "answer", "slot": "dyn:complaint.fever+infection.rash", "text": "No"}
+{"t": "12:04:31", "kind": "extract", "writes": [["complaint.fever", false]]}
+{"t": "12:04:31", "kind": "extract", "writes": [["infection.rash", false]], "via": "blanket-no"}
+{"t": "12:04:34", "kind": "question", "slot": "dyn:infection.travel_14d+infection.contacts", "text": "I understand. Has she traveled abroad in the last two weeks or been in contact with anyone who has an infectious illness?", "fields": ["infection.travel_14d", "infection.contacts"], "offered": ["infection.travel_14d", "infection.contacts", "ams.changed_from_baseline", "complaint.pain_rating", "complaint.infection_signs", "complaint.shortness_of_breath"]}
+{"t": "12:04:34", "kind": "answer", "slot": "dyn:infection.travel_14d+infection.contacts", "text": "I don't know."}
+{"t": "12:04:37", "kind": "extract", "writes": []}
+{"t": "12:04:37", "kind": "extract", "writes": [["infection.travel_14d", null], ["infection.contacts", null]], "via": "dont-know"}
+{"t": "12:04:40", "kind": "question", "slot": "dyn:ams.changed_from_baseline", "text": "Is she acting confused, not making sense, or is she unusually sleepy and hard to wake?", "fields": ["ams.changed_from_baseline"], "offered": ["ams.changed_from_baseline", "complaint.pain_rating", "complaint.infection_signs", "complaint.shortness_of_breath", "M.medications", "A.allergies"]}
+{"t": "12:04:40", "kind": "answer", "slot": "dyn:ams.changed_from_baseline", "text": "I don't know."}
+{"t": "12:04:43", "kind": "extract", "writes": []}
+{"t": "12:04:43", "kind": "extract", "writes": [["ams.changed_from_baseline", null]], "via": "dont-know"}
+{"t": "12:04:47", "kind": "question", "slot": "dyn:complaint.pain_rating+complaint.infection_signs", "text": "I understand. On a scale of 0 to 10, where 10 is the worst pain imaginable, how bad is her pain right now? Also, have you noticed any signs of infection, like a wound that is red, hot, or swollen?", "fields": ["complaint.pain_rating", "complaint.infection_signs"], "offered": ["complaint.pain_rating", "complaint.infection_signs", "complaint.shortness_of_breath", "M.medications", "A.allergies", "history.conditions"]}
+{"t": "12:04:47", "kind": "answer", "slot": "dyn:complaint.pain_rating+complaint.infection_signs", "text": "I don't know."}
+{"t": "12:04:51", "kind": "extract", "writes": []}
+{"t": "12:04:51", "kind": "extract", "writes": [["complaint.infection_signs", null]], "via": "dont-know"}
+{"t": "12:04:54", "kind": "question", "slot": "dyn:complaint.pain_rating", "text": "I understand. To help the team, can you describe how severe her pain is on a scale of 0 to 10?", "fields": ["complaint.pain_rating"], "offered": ["complaint.pain_rating"]}
+{"t": "12:04:54", "kind": "answer", "slot": "dyn:complaint.pain_rating", "text": "I don't know."}
+{"t": "12:04:57", "kind": "extract", "writes": []}
+{"t": "12:05:00", "kind": "question", "slot": "dyn:complaint.pain_rating", "text": "I understand it's hard to say. If you had to estimate, how much is she struggling with the pain on a scale of 0 to 10?", "fields": ["complaint.pain_rating"], "offered": ["complaint.pain_rating"]}
+{"t": "12:05:00", "kind": "answer", "slot": "dyn:complaint.pain_rating", "text": "I don't know."}
+{"t": "12:05:02", "kind": "extract", "writes": []}
+{"t": "12:05:06", "kind": "question", "slot": "dyn:complaint.shortness_of_breath+M.medications+A.allergies", "text": "I understand. Is she having any trouble breathing? Also, does she take any regular medications or have any known allergies?", "fields": ["complaint.shortness_of_breath", "M.medications", "A.allergies"], "offered": ["complaint.shortness_of_breath", "M.medications", "A.allergies", "history.conditions", "history.immunocompromised", "identity.name"]}
+{"t": "12:05:06", "kind": "answer", "slot": "dyn:complaint.shortness_of_breath+M.medications+A.allergies", "text": "Prenatal vitamins No known allergies"}
+{"t": "12:05:10", "kind": "extract", "writes": [["A.allergies", []]]}
+{"t": "12:05:13", "kind": "question", "slot": "dyn:complaint.shortness_of_breath", "text": "Is she having any difficulty breathing or catching her breath?", "fields": ["complaint.shortness_of_breath"], "offered": ["complaint.shortness_of_breath"]}
+{"t": "12:05:13", "kind": "answer", "slot": "dyn:complaint.shortness_of_breath", "text": "I don't know."}
+{"t": "12:05:16", "kind": "extract", "writes": []}
+{"t": "12:05:16", "kind": "extract", "writes": [["complaint.shortness_of_breath", null]], "via": "dont-know"}
+{"t": "12:05:19", "kind": "question", "slot": "dyn:M.medications", "text": "Could you tell me the names of any medications she takes on a regular basis?", "fields": ["M.medications"], "offered": ["M.medications"]}
+{"t": "12:05:19", "kind": "answer", "slot": "dyn:M.medications", "text": "Prenatal vitamins"}
+{"t": "12:05:29", "kind": "extract", "writes": [["M.medications", ["Prenatal vitamins"]]]}
+{"t": "12:05:32", "kind": "question", "slot": "dyn:history.conditions", "text": "Does she have any other ongoing medical conditions?", "fields": ["history.conditions"], "offered": ["history.conditions", "history.immunocompromised", "identity.name", "identity.dob"]}
+{"t": "12:05:32", "kind": "answer", "slot": "dyn:history.conditions", "text": "Pregnant 30 weeks"}
+{"t": "12:05:42", "kind": "extract", "writes": [["history.conditions", ["pregnancy"]]]}
+{"t": "12:05:45", "kind": "question", "slot": "dyn:history.immunocompromised", "text": "I've noted she is 30 weeks pregnant. Has she ever been told she has a weakened immune system or is she currently being treated for any conditions like cancer or an organ transplant?", "fields": ["history.immunocompromised"], "offered": ["history.immunocompromised", "identity.name", "identity.dob"]}
+{"t": "12:05:45", "kind": "answer", "slot": "dyn:history.immunocompromised", "text": "I don't know."}
+{"t": "12:05:49", "kind": "extract", "writes": []}
+{"t": "12:05:49", "kind": "extract", "writes": [["history.immunocompromised", null]], "via": "dont-know"}
+{"t": "12:05:51", "kind": "question", "slot": "dyn:identity.name+identity.dob", "text": "I understand. Could you please tell me her full name and date of birth?", "fields": ["identity.name", "identity.dob"], "offered": ["identity.name", "identity.dob"]}

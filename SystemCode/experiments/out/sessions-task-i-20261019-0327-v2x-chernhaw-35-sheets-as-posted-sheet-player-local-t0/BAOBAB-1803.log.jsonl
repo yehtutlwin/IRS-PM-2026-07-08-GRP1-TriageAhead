@@ -1,0 +1,53 @@
+{"t": "03:19:59", "kind": "engine", "note": "session BAOBAB-1803 started (web)"}
+{"t": "03:20:01", "kind": "question", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "Is the patient awake and responding to you normally? Also, is he or she experiencing any chest pain, trouble breathing, or heavy bleeding right now?", "fields": ["danger_signs.responsive", "danger_signs.chest_pain_now"], "offered": ["danger_signs.responsive", "danger_signs.chest_pain_now", "danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text"]}
+{"t": "03:20:01", "kind": "answer", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "Yes, the patient is awake and responding normally. No, the patient is not having chest pain right now."}
+{"t": "03:20:06", "kind": "extract", "writes": [["danger_signs.responsive", true], ["danger_signs.chest_pain_now", false]]}
+{"t": "03:20:10", "kind": "question", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category+complaint.text", "text": "I'm glad to hear they are alert. Is the patient having any trouble breathing or heavy bleeding, and could you tell me what the main problem is that brings you in today?", "fields": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text"], "offered": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text", "complaint.onset", "E.mechanism"]}
+{"t": "03:20:10", "kind": "answer", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category+complaint.text", "text": "No, the patient is not having trouble breathing right now. No, the patient is not bleeding heavily right now. My child has a mildly sore outer ear after swimming."}
+{"t": "03:20:16", "kind": "extract", "writes": [["danger_signs.breathing_difficulty", false], ["danger_signs.heavy_bleeding", false], ["complaint.category", "ear_problem"], ["complaint.text", "My child has a mildly sore outer ear after swimming."]]}
+{"t": "03:20:16", "kind": "extract", "writes": [["E.mechanism", "none"]], "via": "derived-non-injury"}
+{"t": "03:20:19", "kind": "question", "slot": "dyn:complaint.onset+patient.age+patient.sex", "text": "I understand. How old is your child, and when did the ear pain start?", "fields": ["complaint.onset", "patient.age", "patient.sex"], "offered": ["complaint.onset", "patient.age", "patient.sex", "complaint.fever", "infection.rash", "infection.travel_14d"]}
+{"t": "03:20:19", "kind": "answer", "slot": "dyn:complaint.onset+patient.age+patient.sex", "text": "You came in because the ear has stayed sore since yesterday. The patient is 10 years old. The patient\u2019s sex has not been specified as male or female."}
+{"t": "03:20:24", "kind": "extract", "writes": [["complaint.onset", "since yesterday"], ["patient.age", 10]]}
+{"t": "03:20:26", "kind": "question", "slot": "dyn:patient.sex", "text": "Is your child a boy or a girl?", "fields": ["patient.sex"], "offered": ["patient.sex"]}
+{"t": "03:20:26", "kind": "answer", "slot": "dyn:patient.sex", "text": "The patient\u2019s sex has not been specified as male or female."}
+{"t": "03:20:29", "kind": "extract", "writes": []}
+{"t": "03:20:32", "kind": "question", "slot": "dyn:patient.sex", "text": "Is your child a boy or a girl?", "fields": ["patient.sex"], "offered": ["patient.sex"]}
+{"t": "03:20:32", "kind": "answer", "slot": "dyn:patient.sex", "text": "The patient\u2019s sex has not been specified as male or female."}
+{"t": "03:20:34", "kind": "extract", "writes": []}
+{"t": "03:20:36", "kind": "question", "slot": "dyn:history.pregnant", "text": "I understand. Is the child currently pregnant?", "fields": ["history.pregnant"], "offered": ["history.pregnant", "history.postpartum", "complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts"]}
+{"t": "03:20:36", "kind": "answer", "slot": "dyn:history.pregnant", "text": "I don't know."}
+{"t": "03:20:40", "kind": "extract", "writes": []}
+{"t": "03:20:40", "kind": "extract", "writes": [["history.pregnant", null]], "via": "dont-know"}
+{"t": "03:20:42", "kind": "question", "slot": "dyn:history.postpartum+complaint.fever", "text": "I see. Does your child have a fever or any new rashes?", "fields": ["history.postpartum", "complaint.fever"], "offered": ["history.postpartum", "complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts", "ams.changed_from_baseline"]}
+{"t": "03:20:42", "kind": "answer", "slot": "dyn:history.postpartum+complaint.fever", "text": "No, the patient does not have fever."}
+{"t": "03:20:46", "kind": "extract", "writes": [["complaint.fever", false]]}
+{"t": "03:20:49", "kind": "question", "slot": "dyn:history.postpartum", "text": "I understand. Has the child given birth in the last few weeks?", "fields": ["history.postpartum"], "offered": ["history.postpartum"]}
+{"t": "03:20:49", "kind": "answer", "slot": "dyn:history.postpartum", "text": "I don't know."}
+{"t": "03:20:52", "kind": "extract", "writes": []}
+{"t": "03:20:52", "kind": "extract", "writes": [["history.postpartum", null]], "via": "dont-know"}
+{"t": "03:20:55", "kind": "question", "slot": "dyn:infection.rash+infection.travel_14d", "text": "I understand. Does the child have any new rashes, or has he traveled abroad or been around anyone with a contagious illness in the last two weeks?", "fields": ["infection.rash", "infection.travel_14d"], "offered": ["infection.rash", "infection.travel_14d", "infection.contacts", "ams.changed_from_baseline", "complaint.pain_rating", "M.medications"]}
+{"t": "03:20:55", "kind": "answer", "slot": "dyn:infection.rash+infection.travel_14d", "text": "I do not know whether the patient has a rash. I do not know whether the patient travelled in the last 14 days."}
+{"t": "03:20:59", "kind": "extract", "writes": []}
+{"t": "03:21:01", "kind": "question", "slot": "dyn:infection.rash", "text": "I understand. Have you noticed any new rashes on the child's skin?", "fields": ["infection.rash"], "offered": ["infection.rash"]}
+{"t": "03:21:01", "kind": "answer", "slot": "dyn:infection.rash", "text": "I do not know whether the patient has a rash."}
+{"t": "03:21:04", "kind": "extract", "writes": []}
+{"t": "03:21:07", "kind": "question", "slot": "dyn:infection.rash", "text": "I understand. Have you noticed any new skin rashes or spots on the child?", "fields": ["infection.rash"], "offered": ["infection.rash"]}
+{"t": "03:21:07", "kind": "answer", "slot": "dyn:infection.rash", "text": "I do not know whether the patient has a rash."}
+{"t": "03:21:09", "kind": "extract", "writes": []}
+{"t": "03:21:12", "kind": "question", "slot": "dyn:infection.travel_14d", "text": "Has the child traveled outside of the country in the last two weeks?", "fields": ["infection.travel_14d"], "offered": ["infection.travel_14d"]}
+{"t": "03:21:12", "kind": "answer", "slot": "dyn:infection.travel_14d", "text": "I do not know whether the patient travelled in the last 14 days."}
+{"t": "03:21:16", "kind": "extract", "writes": []}
+{"t": "03:21:19", "kind": "question", "slot": "dyn:infection.travel_14d", "text": "I understand. To help the team, has the child been on any trips outside of the country in the last two weeks?", "fields": ["infection.travel_14d"], "offered": ["infection.travel_14d"]}
+{"t": "03:21:19", "kind": "answer", "slot": "dyn:infection.travel_14d", "text": "I do not know whether the patient travelled in the last 14 days."}
+{"t": "03:21:21", "kind": "extract", "writes": []}
+{"t": "03:21:24", "kind": "question", "slot": "dyn:infection.contacts", "text": "I understand. Has the child been in contact with anyone who has an infectious illness in the last two weeks?", "fields": ["infection.contacts"], "offered": ["infection.contacts", "ams.changed_from_baseline", "complaint.pain_rating", "M.medications", "A.allergies", "history.conditions"]}
+{"t": "03:21:24", "kind": "answer", "slot": "dyn:infection.contacts", "text": "I do not know of any sick contacts."}
+{"t": "03:21:28", "kind": "extract", "writes": [["infection.contacts", false]]}
+{"t": "03:21:31", "kind": "question", "slot": "dyn:ams.changed_from_baseline+complaint.pain_rating", "text": "How would you rate the child's pain on a scale of 0 to 10? Also, have you noticed any changes in their behavior, such as being unusually sleepy or confused?", "fields": ["ams.changed_from_baseline", "complaint.pain_rating"], "offered": ["ams.changed_from_baseline", "complaint.pain_rating", "M.medications", "A.allergies", "history.conditions", "history.immunocompromised"]}
+{"t": "03:21:31", "kind": "answer", "slot": "dyn:ams.changed_from_baseline+complaint.pain_rating", "text": "I do not know whether the patient is acting differently from usual. The value is 2."}
+{"t": "03:21:35", "kind": "extract", "writes": [["complaint.pain_rating", 2]]}
+{"t": "03:21:38", "kind": "question", "slot": "dyn:ams.changed_from_baseline", "text": "I understand. Does the child seem more confused, out of it, or unusually sleepy lately?", "fields": ["ams.changed_from_baseline"], "offered": ["ams.changed_from_baseline"]}
+{"t": "03:21:38", "kind": "answer", "slot": "dyn:ams.changed_from_baseline", "text": "I do not know whether the patient is acting differently from usual."}
+{"t": "03:21:42", "kind": "extract", "writes": []}
+{"t": "03:21:44", "kind": "question", "slot": "dyn:ams.changed_from_baseline", "text": "Is the child acting like themselves, or are they more sleepy or confused than usual?", "fields": ["ams.changed_from_baseline"], "offered": ["ams.changed_from_baseline"]}

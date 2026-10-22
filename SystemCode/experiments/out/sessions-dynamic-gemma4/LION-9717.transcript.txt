@@ -1,0 +1,24 @@
+session LION-9717   started 2026-09-26 03:35   (generated from messages)
+
+03:35:22  BOT  I'm here to help get you information to the hospital team. Is the patient awake and responding normally, and are they experiencing any severe chest pain, trouble breathing, or heavy bleeding right now?   [slot dyn:red_flags.responsive+red_flags.chest_pain_now+red_flags.breathing_difficulty+red_flags.heavy_bleeding]
+03:35:23  THEM He is awake and talking. No, he isn't having chest pain, trouble breathing, or heavy bleeding.   [slot dyn:red_flags.responsive+red_flags.chest_pain_now+red_flags.breathing_difficulty+red_flags.heavy_bleeding]
+03:35:28  BOT  I'm glad to hear he is awake and talking. Could you tell me what happened, when it started, and how severe the pain is on a scale of 0 to 10?   [slot dyn:complaint.category+complaint.text+complaint.onset+complaint.pain_rating]
+03:35:30  THEM He fell down 4 steps at home an hour ago and landed on his right hip. He can't stand and says his pain is a 7/10.   [slot dyn:complaint.category+complaint.text+complaint.onset+complaint.pain_rating]
+03:35:36  BOT  I'm sorry to hear about his fall and the pain he's in. At any point today, did you notice any drooping on one side of his face, weakness in his arms, or any slurred or strange speech?   [slot dyn:stroke.face_droop+stroke.arm_weakness+stroke.speech_change]
+03:35:37  THEM No, I haven't noticed any of those things. He is awake and talking.   [slot dyn:stroke.face_droop+stroke.arm_weakness+stroke.speech_change]
+03:35:42  BOT  I'm glad he's able to speak with you. Regarding his right hip, are his toes or feet numb, cold, or turning blue, and is he still able to move them?   [slot dyn:limb.numb_tingling+limb.cold_pale_blue+limb.cannot_move_digits]
+03:35:44  THEM I'm not sure if his toes or feet are numb or discolored, but I don't know if he can move them.   [slot dyn:limb.numb_tingling+limb.cold_pale_blue+limb.cannot_move_digits]
+03:35:47  BOT  I understand. Did he hit his head or lose consciousness at any point during the fall, and about how far did he fall?   [slot dyn:E.head_strike+E.loc]
+03:35:49  THEM No, he didn't hit his head or lose consciousness. He fell down 4 steps.   [slot dyn:E.head_strike+E.loc]
+03:35:53  BOT  Thank you for that information. Does he take any regular medications, and does he have any allergies or other medical conditions like heart problems or diabetes?   [slot dyn:M.medications+A.allergies+history.conditions+history.immunocompromised]
+03:35:55  THEM He takes a blood thinner called warfarin and a blood pressure pill. He has high blood pressure, an irregular heartbeat, and an allergy to penicillin which gives him a rash.   [slot dyn:M.medications+A.allergies+history.conditions+history.immunocompromised]
+03:35:58  SYS  floor: at least ESI-2  rules: ['B-30.anticoagulated-trauma'] (floor)
+03:36:00  BOT  Thank you for sharing those details. Is he currently pregnant or postpartum, and are there any other conditions that might affect his immune system?   [slot dyn:history.immunocompromised+history.pregnant_or_postpartum]
+03:36:01  THEM No, he is not pregnant. He has an irregular heartbeat and high blood pressure.   [slot dyn:history.immunocompromised+history.pregnant_or_postpartum]
+03:36:05  BOT  Thank you for that. Has he had a fever, traveled outside the country in the last two weeks, or been in contact with anyone who is sick?   [slot dyn:history.immunocompromised+infection.fever+infection.travel_14d+infection.contacts]
+03:36:07  THEM No, he hasn't had a fever, hasn't traveled, and hasn't been in contact with anyone sick.   [slot dyn:history.immunocompromised+infection.fever+infection.travel_14d+infection.contacts]
+03:36:11  BOT  I've noted that he hasn't had a fever or been in contact with anyone sick. To be sure, has he traveled outside the country in the last two weeks?   [slot dyn:infection.travel_14d+infection.contacts]
+03:36:12  THEM No, he hasn't traveled outside the country.   [slot dyn:infection.travel_14d+infection.contacts]
+03:36:16  BOT  Thank you for confirming that. To help the team prepare, could you tell me when he last had something to eat or drink, as well as his full name and date of birth?   [slot dyn:L.last_intake+identity.name+identity.dob]
+03:36:18  THEM He had porridge for lunch at 1pm. His name is Tan Ah Kow and his date of birth is 02 Jan 1939.   [slot dyn:L.last_intake+identity.name+identity.dob]
+03:36:20  BOT  Thank you - that's everything for now. Show the code LION-9717 at the counter when you arrive. (ack)

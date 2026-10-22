@@ -1,0 +1,3143 @@
+# ESI v4 practice cases (chapter 9, 100 cases) and competency cases (chapter 10, sets A and B, 25 each), AHRQ 2012,
+# written as engine test cases. All 150 are here since 10 Oct 2026 (issue #67). The 83 written in August are Set 1
+# (criteria unchanged between editions) and carry only the facts a rule reads; the 67 added on 10 Oct are complete
+# transcriptions (see the block header further down) and include the Set 2 cases, each saying how the fifth
+# edition changes the answer, if it does. The August 83 were completed to the same standard on 10 Oct 2026 (#67).
+# Two extra keys on a fact (11 Oct 2026, after the second reading #68): `from: answer` marks a clinician judgement the book
+# states in its ANSWER rather than in the case ("signs of shock", "requires a lifesaving intervention"), so number 1 can be
+# reported with and without them; `from: second-reading` marks a fact the second reader found that the first had skipped
+# (onset, free text, sex from a pronoun), kept after a glance at the printed case.
+#
+# STATUS: LLM-DRAFTED fact translations, UNVERIFIED. Per the diff-log protocol the fact
+# translation should be reviewed by a NON-ENCODER against the v4 vignette text (printed
+# pp.71-78) before the results are quoted anywhere. v4 official answers from pp.78-84.
+#
+# expect classes (engine = prototype/engine.py evaluate_tree; decision points A+B only —
+# C (resources) and D (vitals) are pending in the engine, so:
+#   esi1   -> esi1_indicators must include expect_rules (v4 answer 1)
+#   floor2 -> floor == "at least ESI-2" and fired must include expect_rules (v4 answer 2)
+#   none   -> floor None AND esi1 empty (v4 answer 2-5; consider-flags allowed and
+#             asserted via expect_consider). For v4 answers 3/4/5 this is the meaningful
+#             assertion: no A/B rule may fire (negative coverage / no false floor).
+#
+# Facts use the criteria.yaml field vocabulary. status defaults to "reported";
+# engine.derive() runs once after the writes (mirrors runtime: meds -> M.anticoagulant).
+
+# ---------- v4 answer 1 -> expect ESI-1 indicators ----------
+
+- case: 3
+  v4_answer: 1
+  book_span: "EMS arrived with an unresponsive 19-year-old male with a"
+  book_page: 71
+  answer_page: 78
+  synopsis: "19M self-inflicted GSW to head, GCS 3, intubated"
+  expect: esi1
+  expect_rules: [A-01.unresponsive, A-15.intubated, A-14.penetrating-trauma-unstable]
+  facts:
+    - {field: obs.avpu, value: U, status: observed}
+    - {field: obs.intubated, value: true, status: observed}
+    - {field: E.mechanism, value: penetrating_trauma}
+    - {field: E.body_region, value: head}
+    - {field: obs.requires_lifesaving_intervention, value: true, status: observed, from: answer}
+    - {field: patient.age, value: 19}
+    - {field: patient.sex, value: "male"}
+    - {field: complaint.category, value: "injury"}
+    - {field: complaint.text, value: "single self-inflicted gunshot wound to the head; Glasgow Coma Scale 3 before intubation"}
+
+- case: 7
+  v4_answer: 1
+  book_span: "\u201CI just turned my back for a minute,\u201D cried"
+  book_page: 71
+  answer_page: 78
+  synopsis: "4yo pulled from pool, breathing spontaneously, still unresponsive"
+  expect: esi1
+  expect_rules: [A-01.unresponsive]
+  facts:
+    - {field: obs.avpu, value: U, status: observed}
+    - {field: patient.age, value: 4}
+    - {field: patient.sex, value: "female"}
+    - {field: complaint.category, value: "other"}
+    - {field: complaint.text, value: "pulled out of the family pool by a neighbour who gave mouth-to-mouth; now breathing spontaneously but still unresponsive"}
+    - {field: vitals.heart_rate, value: 126, status: observed}
+    - {field: vitals.respiratory_rate, value: 28, status: observed}
+    - {field: vitals.sbp, value: 80, status: observed}
+    - {field: vitals.spo2, value: 96, status: observed}
+    - {field: obs.requires_lifesaving_intervention, value: true, status: observed, from: answer}
+
+- case: 30
+  v4_answer: 1
+  book_span: "The medical helicopter is en route to your facility"
+  book_page: 73
+  answer_page: 79
+  synopsis: "16M ski vs tree, intubated at scene, unresponsive"
+  expect: esi1
+  expect_rules: [A-01.unresponsive, A-15.intubated]
+  facts:
+    - {field: obs.avpu, value: U, status: observed}
+    - {field: obs.intubated, value: true, status: observed}
+    - {field: patient.age, value: 16}
+    - {field: patient.sex, value: "male"}
+    - {field: complaint.category, value: "head_injury"}
+    - {field: complaint.text, value: "downhill skiing, lost control and hit a tree with his head; intubated at the scene; remains unresponsive"}
+    - {field: E.mechanism, value: "assault"}
+    - {field: E.head_strike, value: true}
+
+- case: 42
+  v4_answer: 1
+  book_span: "A 26-year-old female is transported by EMS to the"
+  book_page: 74
+  answer_page: 80
+  synopsis: "26F 28wk pregnant, thunderclap headache, moaning, does not respond to voice"
+  note: "AVPU=P is the conservative read of 'moaning, does not respond to voice'."
+  expect: esi1
+  expect_rules: [A-01.unresponsive]
+  facts:
+    - {field: obs.avpu, value: P, status: observed}
+    - {field: history.pregnant, value: true}
+    - {field: patient.age, value: 26}
+    - {field: patient.sex, value: "female"}
+    - {field: complaint.category, value: "headache"}
+    - {field: complaint.text, value: "sudden severe headache that began after a bowel movement; 28 weeks pregnant; vomited 5 minutes ago; moaning, does not respond to voice"}
+    - {field: complaint.headache_thunderclap, value: true}
+    - {field: complaint.vomiting, value: true}
+    - {field: M.medications, value: [prenatal vitamins]}
+    - {field: A.allergies, value: []}
+    - {field: complaint.onset, value: "sudden onset", from: second-reading}
+
+- case: 51
+  v4_answer: 1
+  book_span: "A 58-year-old male collapsed while shoveling snow. Bystander CPR"
+  book_page: 74
+  answer_page: 81
+  synopsis: "58M cardiac arrest while shoveling, defibrillated, ROSC"
+  expect: esi1
+  expect_rules: [A-02.arrest-or-imminent]
+  facts:
+    - {field: obs.cardiac_or_pulmonary_arrest, value: true, status: observed}
+    - {field: patient.age, value: 58}
+    - {field: patient.sex, value: "male"}
+    - {field: complaint.category, value: "other"}
+    - {field: complaint.text, value: "collapsed shovelling snow; bystander CPR, defibrillated once by paramedics with return of a perfusing rhythm; cold saline infusing under the cardiac arrest protocol"}
+    - {field: obs.requires_lifesaving_intervention, value: true, status: observed, from: answer}
+
+# ---------- v4 answer 2 -> expect floor "at least ESI-2" ----------
+
+- case: 43
+  v4_answer: 2
+  book_span: "\u201CI think I\u2019m having a stroke,\u201D reports an anxious"
+  book_page: 74
+  answer_page: 80
+  synopsis: "40F facial droop, cannot close left eye ('I think I'm having a stroke')"
+  expect: floor2
+  expect_rules: [B-05.stroke-signs]
+  facts:
+    - {field: complaint.stroke_signs, value: true}
+    - {field: patient.age, value: 40}
+    - {field: patient.sex, value: "female"}
+    - {field: complaint.category, value: "neuro_symptoms"}
+    - {field: complaint.text, value: "thinks she is having a stroke: corner of the mouth drooping, cannot close the left eye"}
+    - {field: history.conditions, value: []}
+    - {field: M.medications, value: []}
+    - {field: complaint.onset, value: "this morning", from: second-reading}
+
+- case: 44
+  v4_answer: 2
+  book_span: "An 88-year-old female is brought to the ED by"
+  book_page: 74
+  answer_page: 80
+  synopsis: "88F 45-min episode of slurred speech + arm weakness, now resolved (TIA)"
+  note: "Translation judgment: resolved TIA encoded as stroke_signs=true (recent signs).
+         v4 rationale treats TIA as high risk; v5 identical."
+  expect: floor2
+  expect_rules: [B-05.stroke-signs]
+  facts:
+    - {field: complaint.stroke_signs, value: true}
+    - {field: patient.age, value: 88}
+    - {field: patient.sex, value: "female"}
+    - {field: complaint.category, value: "neuro_symptoms"}
+    - {field: complaint.text, value: "episode of slurred speech and left arm weakness this morning lasting about 45 minutes, now resolved; previous stroke; takes aspirin daily"}
+    - {field: history.conditions, value: [previous stroke]}
+    - {field: M.medications, value: [aspirin]}
+    - {field: complaint.onset, value: "This morning", from: second-reading}
+
+- case: 50
+  v4_answer: 2
+  book_span: "\u201CI was seen in the ED last night for"
+  book_page: 74
+  answer_page: 81
+  synopsis: "Cast too tight after wrist fracture; circulation/sensation/movement decreased"
+  expect: floor2
+  expect_rules: [B-24.extremity-neurovascular-compromise]
+  facts:
+    - {field: complaint.extremity_neurovascular_compromise, value: true}
+    - {field: complaint.category, value: "limb_pain_or_swelling"}
+    - {field: complaint.text, value: "cast put on last night for a fractured wrist; hand really swollen, cast cutting into the fingers, pain unbearable; circulation, sensation and movement decreased"}
+    - {field: E.mechanism, value: "fall"}
+
+- case: 76
+  v4_answer: 2
+  book_span: "Police escort a disheveled 23-year-old handcuffed male into the"
+  book_page: 76
+  answer_page: 82
+  synopsis: "23M psychotic, standing in highway traffic, delusional"
+  expect: floor2
+  expect_rules: [B-09.suicidal-or-homicidal]
+  facts:
+    - {field: complaint.danger_to_self_or_others, value: true}
+    - {field: patient.age, value: 23}
+    - {field: patient.sex, value: "male"}
+    - {field: complaint.category, value: "mental_health"}
+    - {field: complaint.text, value: "brought by police: was standing in traffic screaming about the end of the world; says he was sent from Mars as the saviour of the world; refuses questions and vital signs"}
+
+- case: 84
+  v4_answer: 2
+  book_span: "EMS arrives with a 75-year-old male with a self-"
+  book_page: 77
+  answer_page: 83
+  synopsis: "75M self-inflicted neck laceration, recently widowed"
+  expect: floor2
+  expect_rules: [B-09.suicidal-or-homicidal]
+  facts:
+    - {field: complaint.danger_to_self_or_others, value: true}
+    - {field: patient.age, value: 75}
+    - {field: patient.sex, value: "male"}
+    - {field: complaint.category, value: "wound"}
+    - {field: complaint.text, value: "self-inflicted 6-centimetre laceration to the neck, bleeding controlled; wife of 56 years died last week"}
+    - {field: danger_signs.heavy_bleeding, value: false}
+    - {field: M.medications, value: [aspirin]}
+    - {field: A.allergies, value: []}
+    - {field: vitals.sbp, value: 136, status: observed}
+    - {field: vitals.heart_rate, value: 74, status: observed}
+    - {field: vitals.respiratory_rate, value: 18, status: observed}
+    - {field: vitals.spo2, value: 98, status: observed}
+
+- case: 93
+  v4_answer: 2
+  book_span: "A 17-year-old handcuffed male walks into the ED accompanied"
+  book_page: 77
+  answer_page: 84
+  synopsis: "17M threatening to kill family, police custody"
+  expect: floor2
+  expect_rules: [B-09.suicidal-or-homicidal]
+  facts:
+    - {field: complaint.danger_to_self_or_others, value: true}
+    - {field: patient.age, value: 17}
+    - {field: patient.sex, value: "male"}
+    - {field: complaint.category, value: "mental_health"}
+    - {field: complaint.text, value: "out of control at home, verbally and physically acting out, threatening to kill the family; cooperative at triage; handcuffed, with police"}
+    - {field: history.conditions, value: []}
+    - {field: M.medications, value: []}
+    - {field: A.allergies, value: []}
+
+- case: 25
+  v4_answer: 2
+  book_span: "EMS arrives with an 87-year-old male who fell and"
+  book_page: 72
+  answer_page: 79
+  supplemented: true
+  synopsis: "87M fell and hit head, on warfarin (afib), alert, vitals normal"
+  note: "SCORES B-30 (supplemented, CDC/NICE), NOT the ESI-v5 encoding — see diff log.
+         The v4 answer key's own rationale ('warfarin + fall = high risk of internal
+         bleeding, needs head CT') corroborates the supplemented rule. Fires via meds
+         derivation: warfarin in M.medications -> M.anticoagulant confirmed.
+         B-27 (geriatric >=55, context note) also appears; expected."
+  expect: floor2
+  expect_rules: [B-30.anticoagulated-trauma]
+  expect_notes: [B-27.geriatric-trauma-caution]
+  facts:
+    - {field: E.mechanism, value: fall}
+    - {field: E.head_strike, value: true}
+    - {field: patient.age, value: 87}
+    - {field: M.medications, value: [warfarin, metoprolol]}
+    - {field: patient.sex, value: "male"}
+    - {field: complaint.category, value: "head_injury"}
+    - {field: complaint.text, value: "fell and hit his head; awake, alert, oriented and remembers the fall; atrial fibrillation; on multiple medications including warfarin"}
+    - {field: history.conditions, value: [atrial fibrillation]}
+    - {field: danger_signs.responsive, value: true}
+
+# ---------- consider-only: pain >=7 (B-02) fires as consider, floor stays None ----------
+# v4 answers vary (2/3/5): v4 gives the nurse pain-judgment discretion; our floor by
+# design does NOT auto-escalate on pain alone (handbook's own warning, both editions).
+# For cases 89/91 (v4 answer 2) this is divergence-by-design: the report surfaces the
+# consider-flag for the nurse instead of raising the floor.
+
+- case: 18
+  v4_answer: 5
+  book_span: "\u201CI have an awful toothache right here,\u201D a 38-"
+  book_page: 72
+  answer_page: 79
+  synopsis: "38M toothache, pain 9/10, no swelling"
+  expect: none
+  expect_consider: [B-02.severe-pain-consider]
+  facts:
+    - {field: complaint.pain_rating, value: 9}
+    - {field: patient.age, value: 38}
+    - {field: patient.sex, value: "male"}
+    - {field: complaint.category, value: "dental"}
+    - {field: complaint.text, value: "toothache in the right lower jaw; no dentist for a couple of years; no obvious swelling"}
+
+- case: 77
+  v4_answer: 5
+  book_span: "\u201CMy dentist can\u2019t see me until Monday, and my"
+  book_page: 76
+  answer_page: 83
+  synopsis: "38M toothache, pain 10/10, no facial swelling"
+  expect: none
+  expect_consider: [B-02.severe-pain-consider]
+  facts:
+    - {field: complaint.pain_rating, value: 10}
+    - {field: patient.age, value: 38}
+    - {field: patient.sex, value: "male"}
+    - {field: complaint.category, value: "dental"}
+    - {field: complaint.text, value: "toothache since yesterday, dentist cannot see him until Monday; no facial swelling"}
+    - {field: complaint.onset, value: "yesterday"}
+    - {field: A.allergies, value: [penicillin]}
+    - {field: vitals.temp_c, value: 37.7, status: observed}
+    - {field: vitals.heart_rate, value: 78, status: observed}
+    - {field: vitals.respiratory_rate, value: 16, status: observed}
+    - {field: vitals.sbp, value: 128, status: observed}
+
+- case: 83
+  v4_answer: 3
+  book_span: "\u201CHow long am I going to have to wait"
+  book_page: 76
+  answer_page: 83
+  synopsis: "27F migraine 2 days, '20/10' pain, vomited twice"
+  xfail: "As case 20: the August entry carried no complaint category; with the book's facts (a migraine, vomiting) rule B-34 assigns level 2 where the book rates a known migraine as level 3. For the clinician read (#66)."
+  expect: none
+  expect_consider: [B-02.severe-pain-consider]
+  facts:
+    - {field: complaint.category, value: headache}
+    - {field: complaint.pain_rating, value: 10}
+    - {field: patient.age, value: 27}
+    - {field: patient.sex, value: "female"}
+    - {field: complaint.text, value: "migraine for 2 days, vomited twice this morning; well known to the department; asks how long the wait is"}
+    - {field: complaint.onset, value: "2 days"}
+    - {field: complaint.vomiting, value: true}
+    - {field: history.conditions, value: [migraines]}
+    - {field: M.medications, value: [Fioricet]}
+    - {field: A.allergies, value: []}
+
+- case: 89
+  v4_answer: 2
+  book_span: "\u201CThis is so embarrassing,\u201D reports a 42-year-old male. \u201CWe"
+  book_page: 77
+  answer_page: 83
+  divergence_by_design: true
+  synopsis: "42M penile fracture, pain '20/10'"
+  expect: none
+  expect_consider: [B-02.severe-pain-consider]
+  facts:
+    - {field: complaint.pain_rating, value: 10}
+    - {field: patient.age, value: 42}
+    - {field: patient.sex, value: "male"}
+    - {field: complaint.category, value: "other"}
+    - {field: complaint.text, value: "heard a crack during sex; penis went flaccid with bruising; pain unbelievable"}
+    - {field: M.medications, value: []}
+    - {field: A.allergies, value: []}
+
+- case: 91
+  v4_answer: 2
+  book_span: "A 20-year-old male presents to the ED after being"
+  book_page: 77
+  answer_page: 83
+  divergence_by_design: true
+  synopsis: "20M shoulder dislocation, 10/10 pain, neurovascular intact"
+  expect: none
+  expect_consider: [B-02.severe-pain-consider]
+  facts:
+    - {field: complaint.pain_rating, value: 10}
+    - {field: complaint.extremity_neurovascular_compromise, value: false}
+    - {field: patient.age, value: 20}
+    - {field: patient.sex, value: "male"}
+    - {field: complaint.category, value: "limb_pain_or_swelling"}
+    - {field: complaint.text, value: "tackled playing football; obvious dislocation of the left shoulder; neurovascular status intact"}
+    - {field: E.mechanism, value: "assault"}
+    - {field: limb.numb_tingling, value: false}
+    - {field: limb.cold_pale_blue, value: false}
+    - {field: limb.cannot_move_digits, value: false}
+
+- case: 10
+  v4_answer: 4
+  book_span: "\u201CI slipped on the ice, and I hurt my"
+  book_page: 71
+  answer_page: 78
+  synopsis: "58F slipped on ice, wrist injury, pain 5/10"
+  note: "B-27 (V5-ONLY, context note) appears on age>=55 + fall; changes no level. v4 answer 4."
+  expect: none
+  expect_notes: [B-27.geriatric-trauma-caution]
+  facts:
+    - {field: E.mechanism, value: fall}
+    - {field: patient.age, value: 58}
+    - {field: complaint.pain_rating, value: 5}
+    - {field: patient.sex, value: "female"}
+    - {field: complaint.category, value: "injury"}
+    - {field: complaint.text, value: "slipped on the ice and hurt her wrist; no obvious deformity"}
+    - {field: E.fall_height_meters, value: 0}
+    - {field: history.conditions, value: [migraines]}
+
+- case: 36
+  v4_answer: 3
+  book_span: "A 68-year-old female presents to the ED with her"
+  book_page: 73
+  answer_page: 80
+  synopsis: "68F slipped on ice, deformed wrist, CSM good, pain 6/10"
+  note: "Same B-27 context-note pattern; negative for B-24 (CSM good)."
+  expect: none
+  expect_notes: [B-27.geriatric-trauma-caution]
+  facts:
+    - {field: E.mechanism, value: fall}
+    - {field: patient.age, value: 68}
+    - {field: complaint.extremity_neurovascular_compromise, value: false}
+    - {field: complaint.pain_rating, value: 6}
+    - {field: patient.sex, value: "female"}
+    - {field: complaint.category, value: "injury"}
+    - {field: complaint.text, value: "slipped on the ice walking to the mailbox, put her arm out to break the fall; did not hit her head; right arm deformed, circulation, sensation and movement good"}
+    - {field: E.fall_height_meters, value: 0}
+    - {field: E.head_strike, value: false}
+    - {field: history.conditions, value: [arthritis]}
+    - {field: M.medications, value: [ibuprofen]}
+    - {field: A.allergies, value: []}
+
+# ---------- v4 answer 3/4/5 -> expect NO floor, NO esi1 (negative coverage) ----------
+
+- case: 1
+  v4_answer: 5
+  book_span: "\u201CI was taking my contacts out last night, and"
+  book_page: 71
+  answer_page: 78
+  synopsis: "27F corneal scratch from contact lens, photophobia, pain 6/10"
+  note: "Negative for B-28: one ATSO element (eye trauma), threshold is >=2."
+  expect: none
+  facts:
+    - {field: complaint.category, value: eye_problem}
+    - {field: eye.red, value: true}
+    - {field: eye.injury, value: true}
+    - {field: complaint.pain_rating, value: 6}
+    - {field: patient.age, value: 27}
+    - {field: patient.sex, value: "female"}
+    - {field: complaint.text, value: "scratched her cornea taking out contact lenses; light bothers her eyes; right eye red and tearing"}
+
+- case: 4
+  v4_answer: 5
+  book_span: "\u201CI ran out of my blood pressure medicine, and"
+  book_page: 71
+  answer_page: 78
+  synopsis: "56M BP-medication refill, BP controlled"
+  expect: none
+  facts:
+    - {field: patient.age, value: 56}
+    - {field: complaint.category, value: request}
+    - {field: patient.sex, value: "male"}
+    - {field: complaint.text, value: "ran out of blood pressure medicine, doctor on vacation, wants a prescription"}
+    - {field: history.conditions, value: [hypertension]}
+    - {field: vitals.sbp, value: 128, status: observed}
+    - {field: vitals.heart_rate, value: 76, status: observed}
+    - {field: vitals.respiratory_rate, value: 16, status: observed}
+    - {field: vitals.temp_c, value: 36.1, status: observed}
+
+- case: 5
+  v4_answer: 3
+  book_span: "A 41-year-old male involved in a bicycle accident walks"
+  book_page: 71
+  answer_page: 78
+  synopsis: "41M bike fall, wrist pain + elbow laceration, helmeted"
+  expect: none
+  facts:
+    - {field: E.mechanism, value: fall}
+    - {field: patient.age, value: 41}
+    - {field: complaint.pain_rating, value: 5}
+    - {field: patient.sex, value: "male"}
+    - {field: complaint.category, value: "injury"}
+    - {field: complaint.text, value: "fell off his bike and landed on the right arm; wrist pain; 2-centimetre laceration on the left elbow; helmet worn; walked in"}
+    - {field: E.head_strike, value: false}
+
+- case: 9
+  v4_answer: 4
+  book_span: "A 6-year-old male tells you that he was running"
+  book_page: 71
+  answer_page: 78
+  synopsis: "6M playground fall, 3cm knee laceration"
+  expect: none
+  facts:
+    - {field: E.mechanism, value: fall}
+    - {field: patient.age, value: 6}
+    - {field: patient.sex, value: "male"}
+    - {field: complaint.category, value: "wound"}
+    - {field: complaint.text, value: "fell running across the playground; 3-centimetre laceration over the right knee; immunisations up to date"}
+    - {field: E.fall_height_meters, value: 0}
+    - {field: patient.immunizations_incomplete, value: false}
+    - {field: M.medications, value: []}
+    - {field: A.allergies, value: []}
+
+- case: 12
+  v4_answer: 3
+  book_span: "A 60-year-old man requests to see a doctor because"
+  book_page: 71
+  answer_page: 78
+  synopsis: "60M red hot swollen foot, type 2 diabetes"
+  expect: none
+  facts:
+    - {field: patient.age, value: 60}
+    - {field: complaint.category, value: skin_problem}
+    - {field: patient.sex, value: "male"}
+    - {field: complaint.text, value: "right foot hurts; great toe and foot red, warm, swollen and tender; denies injury"}
+    - {field: E.mechanism, value: "none"}
+    - {field: complaint.infection_signs, value: true}
+    - {field: history.conditions, value: [type 2 diabetes, psoriasis]}
+    - {field: vitals.temp_c, value: 37.4, status: observed}
+    - {field: vitals.respiratory_rate, value: 18, status: observed}
+    - {field: vitals.heart_rate, value: 82, status: observed}
+    - {field: vitals.sbp, value: 146, status: observed}
+    - {field: vitals.spo2, value: 99, status: observed}
+
+- case: 13
+  v4_answer: 4
+  book_span: "A 52-year-old female requests to see a doctor for"
+  book_page: 71
+  answer_page: 78
+  synopsis: "52F dysuria/frequency, no abdominal pain"
+  expect: none
+  facts:
+    - {field: complaint.category, value: urinary_problem}
+    - {field: patient.age, value: 52}
+    - {field: patient.sex, value: "female"}
+    - {field: complaint.text, value: "possible urinary tract infection: painful and frequent urination; no abdominal pain or vaginal discharge"}
+    - {field: complaint.uti_symptoms, value: true}
+    - {field: M.medications, value: [vitamins]}
+    - {field: A.allergies, value: []}
+    - {field: history.conditions, value: []}
+    - {field: vitals.temp_c, value: 36.3, status: observed}
+    - {field: vitals.heart_rate, value: 78, status: observed}
+    - {field: vitals.respiratory_rate, value: 14, status: observed}
+    - {field: vitals.sbp, value: 142, status: observed}
+
+- case: 19
+  v4_answer: 3
+  book_span: "\u201CI think I have food poisoning,\u201D reports an otherwise"
+  book_page: 72
+  answer_page: 79
+  synopsis: "33F vomiting + diarrhea, abdominal cramping 5/10, afebrile"
+  note: "Negative for the whole abdo cluster B-17..B-21."
+  expect: none
+  facts:
+    - {field: complaint.category, value: abdominal_pain}
+    - {field: complaint.pain_rating, value: 5}
+    - {field: history.pregnant, value: false}
+    - {field: history.postpartum, value: false}
+    - {field: complaint.fever, value: false}
+    - {field: patient.age, value: 33}
+    - {field: patient.sex, value: "female"}
+    - {field: complaint.text, value: "thinks it is food poisoning: vomiting all night, now diarrhoea; abdominal cramping; no fever or chills"}
+    - {field: complaint.vomiting, value: true}
+    - {field: complaint.chills_or_rigors, value: false}
+    - {field: vitals.temp_c, value: 36.0, status: observed}
+    - {field: vitals.heart_rate, value: 96, status: observed}
+    - {field: vitals.respiratory_rate, value: 16, status: observed}
+    - {field: vitals.sbp, value: 116, status: observed}
+    - {field: complaint.onset, value: "all night", from: second-reading}
+
+- case: 20
+  v4_answer: 3
+  book_span: "\u201CMy migraine started early this morning, and I can\u2019t"
+  book_page: 72
+  answer_page: 79
+  synopsis: "37F migraine since morning, vomiting, pain 6/10"
+  xfail: "Found when the case was completed (10 Oct 2026): with the vomiting the book states, rule B-34 fires (the fifth edition's sentence assigns level 2 to 'headache plus fever, vomiting, lower back pain, altered mental status, and/or signs and symptoms of stroke'), while the book rates a known migraine with vomiting as level 3. A literal sentence against the book's own practice; for the clinician read (#66)."
+  expect: none
+  facts:
+    - {field: complaint.category, value: headache}
+    - {field: complaint.pain_rating, value: 6}
+    - {field: patient.age, value: 37}
+    - {field: patient.sex, value: "female"}
+    - {field: complaint.text, value: "migraine since early morning, cannot get it under control, keeps vomiting; asks to lie down"}
+    - {field: complaint.vomiting, value: true}
+    - {field: history.conditions, value: [migraines]}
+    - {field: A.allergies, value: []}
+    - {field: vitals.temp_c, value: 36.7, status: observed}
+    - {field: vitals.respiratory_rate, value: 20, status: observed}
+    - {field: vitals.heart_rate, value: 102, status: observed}
+    - {field: vitals.sbp, value: 118, status: observed}
+    - {field: vitals.spo2, value: 98, status: observed}
+    - {field: complaint.onset, value: "early this morning", from: second-reading}
+
+- case: 21
+  v4_answer: 4
+  book_span: "\u201CI cut my finger trying to slice a bagel,\u201D"
+  book_page: 72
+  answer_page: 79
+  synopsis: "28M 2cm finger laceration, bleeding controlled"
+  expect: none
+  facts:
+    - {field: complaint.category, value: wound}
+    - {field: patient.age, value: 28}
+    - {field: patient.sex, value: "male"}
+    - {field: complaint.text, value: "cut his finger slicing a bagel; 2-centimetre laceration on the left first finger; bleeding controlled; last tetanus shot 10 years ago"}
+    - {field: danger_signs.heavy_bleeding, value: false}
+
+- case: 24
+  v4_answer: 3
+  book_span: "\u201CI have this aching pain in my left leg,\u201D"
+  book_page: 72
+  answer_page: 79
+  synopsis: "52F aching left leg after 2-day car ride (DVT workup)"
+  expect: none
+  facts:
+    - {field: patient.age, value: 52}
+    - {field: complaint.category, value: limb_pain_or_swelling}
+    - {field: patient.sex, value: "female"}
+    - {field: complaint.text, value: "aching pain in the left leg after two days sitting in a car; obese; no other complaints"}
+    - {field: vitals.sbp, value: 148, status: observed}
+    - {field: vitals.heart_rate, value: 86, status: observed}
+    - {field: vitals.respiratory_rate, value: 16, status: observed}
+    - {field: vitals.temp_c, value: 36.7, status: observed}
+
+- case: 26
+  v4_answer: 5
+  book_span: "\u201CI have this rash in my groin area,\u201D reports"
+  book_page: 72
+  answer_page: 79
+  synopsis: "20M groin rash"
+  expect: none
+  facts:
+    - {field: complaint.category, value: skin_problem}
+    - {field: patient.age, value: 20}
+    - {field: patient.sex, value: "male"}
+    - {field: complaint.text, value: "rash in the groin for a while, thinks it is jock rot; over-the-counter spray not working"}
+    - {field: infection.rash, value: true}
+    - {field: A.allergies, value: []}
+    - {field: vitals.temp_c, value: 36.7, status: observed}
+    - {field: vitals.heart_rate, value: 58, status: observed}
+    - {field: vitals.respiratory_rate, value: 16, status: observed}
+    - {field: vitals.sbp, value: 112, status: observed}
+
+- case: 29
+  v4_answer: 3
+  book_span: "EMS arrives with a 32-year-old female who fell off"
+  book_page: 73
+  answer_page: 79
+  synopsis: "32F fell off stepladder, open lower-leg fracture, neurovascular INTACT"
+  note: "Negative for B-24 on an explicit false; fall + age 32 keeps B-27 silent."
+  expect: none
+  facts:
+    - {field: E.mechanism, value: fall}
+    - {field: patient.age, value: 32}
+    - {field: complaint.extremity_neurovascular_compromise, value: false}
+    - {field: patient.sex, value: "female"}
+    - {field: complaint.category, value: "injury"}
+    - {field: complaint.text, value: "fell off a stepladder cleaning first-floor gutters; obvious open fracture of the right lower leg; pedal pulse present, toes warm, can wiggle them"}
+    - {field: history.conditions, value: []}
+    - {field: M.medications, value: []}
+    - {field: A.allergies, value: []}
+
+- case: 34
+  v4_answer: 5
+  book_span: "\u201CI think my son has swimmer\u2019s ear. He spends"
+  book_page: 73
+  answer_page: 80
+  synopsis: "10M swimmer's ear"
+  expect: none
+  facts:
+    - {field: patient.age, value: 10}
+    - {field: complaint.category, value: ear_problem}
+    - {field: patient.sex, value: "male"}
+    - {field: complaint.text, value: "painful itchy ears after days in the pool; no other complaints"}
+    - {field: vitals.temp_c, value: 36.1, status: observed}
+    - {field: vitals.heart_rate, value: 88, status: observed}
+    - {field: vitals.respiratory_rate, value: 18, status: observed}
+    - {field: vitals.sbp, value: 100, status: observed}
+
+- case: 40
+  v4_answer: 4
+  book_span: "\u201CIt hurts so much when I urinate,\u201D reports an"
+  book_page: 73
+  answer_page: 80
+  synopsis: "25F dysuria, no fever, no abdominal pain"
+  expect: none
+  facts:
+    - {field: complaint.category, value: urinary_problem}
+    - {field: complaint.fever, value: false}
+    - {field: patient.age, value: 25}
+    - {field: patient.sex, value: "female"}
+    - {field: complaint.text, value: "hurts so much to urinate; no fever, chills, abdominal pain or vaginal discharge"}
+    - {field: complaint.uti_symptoms, value: true}
+    - {field: vitals.temp_c, value: 36.8, status: observed}
+    - {field: vitals.heart_rate, value: 66, status: observed}
+    - {field: vitals.respiratory_rate, value: 14, status: observed}
+    - {field: vitals.sbp, value: 114, status: observed}
+
+- case: 46
+  v4_answer: 4
+  book_span: "A 42-year-old male presents to triage with a chief"
+  book_page: 74
+  answer_page: 81
+  synopsis: "42M foreign body sensation right eye, red/tearing, pain 4/10"
+  note: "Negative for B-28: one ATSO element (eye trauma)."
+  expect: none
+  facts:
+    - {field: complaint.category, value: eye_problem}
+    - {field: eye.red, value: true}
+    - {field: eye.injury, value: true}
+    - {field: complaint.pain_rating, value: 4}
+    - {field: patient.age, value: 42}
+    - {field: patient.sex, value: "male"}
+    - {field: complaint.text, value: "something went into his right eye while cutting tree limbs; eye reddened and tearing"}
+    - {field: history.conditions, value: []}
+    - {field: M.medications, value: []}
+    - {field: A.allergies, value: []}
+
+- case: 47
+  v4_answer: 3
+  book_span: "\u201COur pediatrician told us to bring the baby to"
+  book_page: 74
+  answer_page: 81
+  synopsis: "3-week-old projectile vomiting (pyloric stenosis workup), well-appearing, afebrile"
+  expect: none
+  facts:
+    - {field: patient.age, value: 0}
+    - {field: complaint.category, value: vomiting_or_diarrhoea}
+    - {field: obs.subtle_mental_status_change, value: false}
+    - {field: patient.age_days, value: 21}
+    - {field: patient.age_months, value: 0}
+    - {field: patient.sex, value: "male"}
+    - {field: complaint.text, value: "3-week-old vomits forcefully after every feed; healthy appearing; pediatrician sent them to see a surgeon"}
+    - {field: complaint.vomiting, value: true}
+
+- case: 54
+  v4_answer: 5
+  book_span: "\u201CI am so embarrassed!\u201D An 18-year-old tells you that"
+  book_page: 74
+  answer_page: 81
+  synopsis: "18F emergency contraception request"
+  expect: none
+  facts:
+    - {field: complaint.category, value: request}
+    - {field: patient.age, value: 18}
+    - {field: patient.sex, value: "female"}
+    - {field: complaint.text, value: "unprotected sex last night; wants the pill to prevent pregnancy"}
+    - {field: M.medications, value: []}
+    - {field: A.allergies, value: []}
+    - {field: vitals.temp_c, value: 36.1, status: observed}
+    - {field: vitals.heart_rate, value: 78, status: observed}
+    - {field: vitals.respiratory_rate, value: 16, status: observed}
+    - {field: vitals.sbp, value: 118, status: observed}
+    - {field: complaint.onset, value: "last night", from: second-reading}
+
+- case: 56
+  v4_answer: 3
+  book_span: "EMS arrives with a 42-year-old male who called 911"
+  book_page: 75
+  answer_page: 81
+  synopsis: "42M positional vertigo + vomiting"
+  expect: none
+  facts:
+    - {field: complaint.category, value: dizziness}
+    - {field: patient.age, value: 42}
+    - {field: patient.sex, value: "male"}
+    - {field: complaint.text, value: "dizziness and nausea every time he moves; fine lying still, the room spins when he sits up or turns his head"}
+    - {field: complaint.vomiting, value: true}
+    - {field: complaint.pain_rating, value: 0}
+    - {field: history.conditions, value: []}
+    - {field: vitals.temp_c, value: 36.2, status: observed}
+    - {field: vitals.respiratory_rate, value: 16, status: observed}
+    - {field: vitals.heart_rate, value: 90, status: observed}
+    - {field: vitals.sbp, value: 130, status: observed}
+    - {field: vitals.spo2, value: 99, status: observed}
+
+- case: 63
+  v4_answer: 5
+  book_span: "\u201CMy son needs a physical for camp,\u201D an anxious"
+  book_page: 75
+  answer_page: 82
+  synopsis: "9M camp physical"
+  expect: none
+  facts:
+    - {field: patient.age, value: 9}
+    - {field: complaint.category, value: request}
+    - {field: patient.sex, value: "male"}
+    - {field: complaint.text, value: "needs a physical for summer day camp; clinic cannot see him for 2 weeks; healthy"}
+
+- case: 94
+  v4_answer: 5
+  book_span: "\u201CI think I need a tetanus shot,\u201D a 29-year-old"
+  book_page: 77
+  answer_page: 84
+  synopsis: "29F stepped on rusty nail, wants tetanus shot"
+  expect: none
+  facts:
+    - {field: complaint.category, value: request}
+    - {field: patient.age, value: 29}
+    - {field: patient.sex, value: "female"}
+    - {field: complaint.text, value: "stepped on a rusty nail this morning; wants a tetanus shot"}
+    - {field: history.conditions, value: []}
+    - {field: M.medications, value: []}
+    - {field: A.allergies, value: []}
+    - {field: complaint.onset, value: "this morning", from: second-reading}
+
+- case: 95
+  v4_answer: 4
+  book_span: "A 63-year-old cachectic male is brought in from the"
+  book_page: 77
+  answer_page: 84
+  synopsis: "63M nursing-home resident, chronically unresponsive since old stroke, feeding tube out"
+  note: "Negative for B-01: altered mental status present but KNOWN baseline."
+  expect: none
+  facts:
+    - {field: obs.confusion_lethargy_disorientation, value: true, status: observed}
+    - {field: history.baseline_mental_status, value: known}
+    - {field: obs.new_confusion_lethargy_disorientation, value: false}
+    - {field: patient.age, value: 63}
+    - {field: patient.sex, value: "male"}
+    - {field: complaint.category, value: "request"}
+    - {field: complaint.text, value: "feeding tube fell out again; nursing-home resident since a massive stroke 4 years ago; usually unresponsive; cachectic"}
+    - {field: history.conditions, value: [massive stroke 4 years ago]}
+
+- case: 97
+  v4_answer: 5
+  book_span: "You are trying to triage an 18-month-old whose mother"
+  book_page: 77
+  answer_page: 84
+  synopsis: "18-month-old vomiting, active, well-hydrated, afebrile"
+  expect: none
+  facts:
+    - {field: patient.age, value: 1}
+    - {field: complaint.category, value: vomiting_or_diarrhoea}
+    - {field: obs.subtle_mental_status_change, value: false}
+    - {field: patient.age_months, value: 18}
+    - {field: patient.sex, value: "male"}
+    - {field: complaint.text, value: "brought in for vomiting; very active, trying to get off his mother's lap; sucking on a juice bottle; looks well hydrated; afebrile"}
+    - {field: complaint.vomiting, value: true}
+    - {field: complaint.fever, value: false}
+
+- case: 98
+  v4_answer: 3
+  book_span: "\u201CHe was running after his brother, fell, and cut"
+  book_page: 78
+  answer_page: 84
+  synopsis: "19-month-old lip laceration through vermilion border"
+  expect: none
+  facts:
+    - {field: patient.age, value: 1}
+    - {field: complaint.category, value: wound}
+    - {field: patient.age_months, value: 19}
+    - {field: patient.sex, value: "male"}
+    - {field: complaint.text, value: "fell chasing his brother and cut his lip on the coffee table; 2-centimetre lip laceration through the vermilion border; 'blood everywhere'"}
+    - {field: E.mechanism, value: "fall"}
+    - {field: E.fall_height_meters, value: 0}
+
+# ============ Ch.10 Competency Cases, Sets A & B (printed pp.85-91) — SET 1 ONLY ============
+# 40 of 50 encoded. Skipped with reasons:
+#   A3  (listless mottled 2-week-old -> 1): translation-ambiguous (listless vs flaccid; sepsis
+#        picture needs vitals) — human review before encoding.
+#   A6  (child petechiae -> 2): RULEBOOK COVERAGE GAP — no petechiae criterion encoded
+#        (v5 mentions petechial rash only in the Ch.6 isolation note). Candidate rule.
+#   A12 (8yo polyuria/polydipsia/weight loss -> 2): COVERAGE GAP — no new-onset-diabetes/DKA
+#        presentation rule. Candidate.
+#   B6  (asthma + fever, RR 26 -> 3): B-12 operationalization ambiguity — v4 grades A8 (RR 44,
+#        prior intubation) level 2 but B6 level 3; where "increasing respiratory effort" begins
+#        is a judgment line our field cannot yet draw. Expert review item.
+#   B23 (alcohol withdrawal, tremors -> 2): COVERAGE GAP — no withdrawal criterion. Candidate.
+#   B3/B8/B18/B19: near-duplicates of already-encoded Ch.9 cases 26/94/4/94.
+
+# ---------- Set A ----------
+
+- case: 1
+  set: A
+  v4_answer: 3
+  book_span: "I think I picked up a bug overseas,\u201D reports"
+  book_page: 85
+  answer_page: 88
+  synopsis: "34M traveler's diarrhea, dehydration signs, cramping"
+  expect: none
+  facts:
+    - {field: complaint.category, value: abdominal_pain}
+    - {field: history.pregnant, value: false}
+    - {field: history.postpartum, value: false}
+    - {field: patient.age, value: 34}
+    - {field: patient.sex, value: "male"}
+    - {field: complaint.text, value: "picked up a bug overseas: frequent watery stools and abdominal cramping; thinks he is dehydrated; lips dry and cracked"}
+    - {field: infection.travel_14d, value: true}
+    - {field: vitals.temp_c, value: 36.7, status: observed}
+    - {field: vitals.respiratory_rate, value: 22, status: observed}
+    - {field: vitals.heart_rate, value: 112, status: observed}
+    - {field: vitals.sbp, value: 120, status: observed}
+    - {field: vitals.spo2, value: 100, status: observed}
+
+- case: 2
+  set: A
+  v4_answer: 3
+  book_span: "\u201CI think he broke it,\u201D reports the mother of"
+  book_page: 85
+  answer_page: 88
+  synopsis: "9M fell 5 ft from tree, deformed forearm, good pulse (nurse mother splinted)"
+  expect: none
+  facts:
+    - {field: E.mechanism, value: fall}
+    - {field: patient.age, value: 9}
+    - {field: complaint.extremity_neurovascular_compromise, value: false}
+    - {field: complaint.pain_rating, value: 5}
+    - {field: patient.sex, value: "male"}
+    - {field: complaint.category, value: "injury"}
+    - {field: complaint.text, value: "fell about 5 feet from a tree onto his arm; mother, a nurse, splinted and iced it; good pulse; arm obviously deformed"}
+    - {field: E.fall_height_meters, value: 1.5}
+    - {field: vitals.temp_c, value: 36.7, status: observed}
+    - {field: vitals.respiratory_rate, value: 26, status: observed}
+    - {field: vitals.heart_rate, value: 90, status: observed}
+    - {field: vitals.spo2, value: 99, status: observed}
+
+- case: 4
+  set: A
+  v4_answer: 2
+  book_span: "\u201CMy pain medications are not working anymore. Last night"
+  book_page: 85
+  answer_page: 88
+  synopsis: "47F metastatic ovarian cancer, pain meds failing, 9/10"
+  expect: floor2
+  expect_rules: [B-03.severe-pain-systemic-cause]
+  expect_consider: [B-02.severe-pain-consider]
+  facts:
+    - {field: complaint.pain_rating, value: 9}
+    - {field: complaint.pain_cause_class, value: cancer}
+    - {field: patient.age, value: 47}
+    - {field: patient.sex, value: "female"}
+    - {field: complaint.category, value: "other"}
+    - {field: complaint.text, value: "metastatic ovarian cancer; pain medications no longer working, could not sleep for the pain; oncologist sent her in"}
+    - {field: history.conditions, value: [metastatic ovarian cancer]}
+
+- case: 5
+  set: A
+  v4_answer: 3
+  book_span: "A 48-year-old male tells you that he has a"
+  book_page: 85
+  answer_page: 88
+  synopsis: "48M known kidney stones, took a pain pill, now 3/10"
+  note: "Negative for B-03: systemic cause present but pain below 7 (v4's own answer notes
+         7/10+ unmanageable would be level 2)."
+  expect: none
+  facts:
+    - {field: complaint.pain_rating, value: 3}
+    - {field: complaint.pain_cause_class, value: renal_colic}
+    - {field: patient.age, value: 48}
+    - {field: patient.sex, value: "male"}
+    - {field: complaint.category, value: "abdominal_pain"}
+    - {field: complaint.text, value: "history of kidney stones, thinks he has another: right flank pain radiating to the front and groin; nauseous; took a pain pill, minimal pain now; no vomiting"}
+    - {field: complaint.vomiting, value: false}
+    - {field: history.conditions, value: [kidney stones]}
+    - {field: vitals.temp_c, value: 36.7, status: observed}
+    - {field: vitals.respiratory_rate, value: 16, status: observed}
+    - {field: vitals.heart_rate, value: 80, status: observed}
+    - {field: vitals.sbp, value: 136, status: observed}
+    - {field: vitals.spo2, value: 100, status: observed}
+
+- case: 7
+  set: A
+  v4_answer: "4 or 5"
+  book_span: "\u201CHer grandfather pulled her by the wrist up and"
+  book_page: 85
+  answer_page: 89
+  synopsis: "3F nursemaid's elbow (official dual answer — practice variation)"
+  expect: none
+  facts:
+    - {field: patient.age, value: 3}
+    - {field: complaint.category, value: injury}
+    - {field: patient.sex, value: "female"}
+    - {field: complaint.text, value: "grandfather pulled her by the wrist up and over a puddle; crying and refusing to move the left arm; healthy"}
+    - {field: complaint.pain_rating, value: 0}
+
+- case: 8
+  set: A
+  v4_answer: 2
+  book_span: "A 46-year-old asthmatic in significant respiratory distress presents v"
+  book_page: 85
+  answer_page: 89
+  synopsis: "46F asthma, significant distress, inhaler no relief, prior intubation, RR 44"
+  expect: floor2
+  expect_rules: [B-12.increasing-respiratory-effort]
+  facts:
+    - {field: complaint.increasing_respiratory_effort, value: true}
+    - {field: patient.age, value: 46}
+    - {field: patient.sex, value: "female"}
+    - {field: complaint.category, value: "breathing"}
+    - {field: complaint.text, value: "asthmatic in significant respiratory distress; wheezing since earlier today, inhaler no relief; intubated on her last admission; able to answer questions"}
+    - {field: complaint.respiratory_distress_signs, value: true}
+    - {field: history.conditions, value: ['asthma, intubated on a previous admission']}
+    - {field: vitals.respiratory_rate, value: 44, status: observed}
+    - {field: vitals.spo2, value: 93, status: observed}
+    - {field: vitals.heart_rate, value: 98, status: observed}
+    - {field: vitals.sbp, value: 154, status: observed}
+
+- case: 9
+  set: A
+  v4_answer: 2
+  book_span: "A 56-year-old male with a recent diagnosis of late-stage"
+  book_page: 85
+  answer_page: 89
+  synopsis: "56M lymphoma, face/arm swelling, increasing SOB worse lying (SVC syndrome)"
+  note: "Translation: 'increasing shortness of breath' -> increasing_respiratory_effort;
+         SVC syndrome itself has no criterion (rides on the respiratory rule)."
+  expect: floor2
+  expect_rules: [B-12.increasing-respiratory-effort]
+  facts:
+    - {field: complaint.increasing_respiratory_effort, value: true}
+    - {field: patient.age, value: 56}
+    - {field: patient.sex, value: "male"}
+    - {field: complaint.category, value: "breathing"}
+    - {field: complaint.text, value: "late-stage non-Hodgkin's lymphoma; facial and bilateral arm swelling, increasing shortness of breath, worse lying down; sent from the oncology clinic"}
+    - {field: complaint.shortness_of_breath, value: true}
+    - {field: history.conditions, value: [late-stage non-Hodgkin's lymphoma]}
+    - {field: vitals.sbp, value: 146, status: observed}
+    - {field: vitals.heart_rate, value: 122, status: observed}
+    - {field: vitals.respiratory_rate, value: 38, status: observed}
+    - {field: vitals.spo2, value: 98, status: observed}
+    - {field: vitals.temp_c, value: 37.0, status: observed}
+
+- case: 10
+  set: A
+  v4_answer: 1
+  book_span: "EMS arrives with a 28-year-old male who was stabbed"
+  book_page: 85
+  answer_page: 89
+  synopsis: "28M stab to neck, expanding hematoma, 'can't breathe'"
+  expect: esi1
+  expect_rules: [A-05.severe-respiratory-distress, A-14.penetrating-trauma-unstable]
+  facts:
+    - {field: obs.severe_respiratory_distress, value: true, status: observed, from: answer}
+    - {field: E.mechanism, value: penetrating_trauma}
+    - {field: E.body_region, value: neck}
+    - {field: obs.requires_lifesaving_intervention, value: true, status: observed, from: answer}
+    - {field: patient.age, value: 28}
+    - {field: patient.sex, value: "male"}
+    - {field: complaint.category, value: "injury"}
+    - {field: complaint.text, value: "stabbed in the left side of the neck in a fight; large haematoma around the wound; moaning that he cannot breathe"}
+    - {field: vitals.heart_rate, value: 110, status: observed}
+    - {field: vitals.respiratory_rate, value: 36, status: observed}
+    - {field: vitals.spo2, value: 89, status: observed}
+
+- case: 11
+  set: A
+  v4_answer: 5
+  book_span: "An 11-year-old presents to triage with his mother, who"
+  book_page: 85
+  answer_page: 89
+  synopsis: "11M cough/runny nose a week, running around waiting room"
+  expect: none
+  facts:
+    - {field: patient.age, value: 11}
+    - {field: complaint.category, value: breathing}
+    - {field: obs.subtle_mental_status_change, value: false}
+    - {field: patient.sex, value: "male"}
+    - {field: complaint.text, value: "cough and runny nose for a week; running around the waiting room asking for a snack"}
+    - {field: complaint.fever, value: false}
+    - {field: complaint.onset, value: "for a week", from: second-reading}
+
+- case: 13
+  set: A
+  v4_answer: 3
+  book_span: "\u201CHe has had diarrhea for 2 days, and he"
+  book_page: 86
+  answer_page: 89
+  synopsis: "19-month-old 2 days diarrhea, now vomiting, dry lips, quiet but alert"
+  expect: none
+  facts:
+    - {field: patient.age, value: 1}
+    - {field: complaint.category, value: vomiting_or_diarrhoea}
+    - {field: obs.subtle_mental_status_change, value: false}
+    - {field: patient.age_months, value: 19}
+    - {field: patient.sex, value: "male"}
+    - {field: complaint.text, value: "diarrhoea for 2 days, vomiting since this morning; going around the family; no longer wants to drink; awake and alert but quiet; lips dry and cracked"}
+    - {field: complaint.vomiting, value: true}
+    - {field: vitals.temp_c, value: 37.2, status: observed}
+    - {field: vitals.respiratory_rate, value: 30, status: observed}
+    - {field: vitals.heart_rate, value: 130, status: observed}
+    - {field: vitals.spo2, value: 100, status: observed}
+    - {field: complaint.onset, value: "for 2 days", from: second-reading}
+
+- case: 14
+  set: A
+  v4_answer: 3
+  book_span: "EMS arrives with an 87-year-old male who slipped on"
+  book_page: 86
+  answer_page: 89
+  synopsis: "87M slipped on ice, hip pain, leg shortened + externally rotated, 5/10"
+  note: "Both consider-flags fire (possible femur/hip fracture + geriatric fall); level
+         stays resource-driven — exactly the consider semantics."
+  expect: none
+  expect_consider: [B-25.pelvis-femur-fracture-consider]
+  expect_notes: [B-27.geriatric-trauma-caution]
+  facts:
+    - {field: E.mechanism, value: fall}
+    - {field: patient.age, value: 87}
+    - {field: complaint.possible_pelvis_femur_fracture_or_dislocation, value: true}
+    - {field: complaint.pain_rating, value: 5}
+    - {field: patient.sex, value: "male"}
+    - {field: complaint.category, value: "injury"}
+    - {field: complaint.text, value: "slipped on the ice and injured his right hip; right leg shortened and externally rotated; only complaint is hip pain"}
+    - {field: E.fall_height_meters, value: 0}
+
+- case: 15
+  set: A
+  v4_answer: 5
+  book_span: "\u201CMy baby is having a hard time drinking his"
+  book_page: 86
+  answer_page: 89
+  synopsis: "3-month-old with nasal congestion, feeding a bit hard, alert"
+  expect: none
+  facts:
+    - {field: patient.age, value: 0}
+    - {field: complaint.category, value: breathing}
+    - {field: obs.subtle_mental_status_change, value: false}
+    - {field: patient.age_months, value: 3}
+    - {field: patient.sex, value: "male"}
+    - {field: complaint.text, value: "3-month-old having a hard time drinking his bottle; alert and looking around; a lot of dried mucus around both nostrils"}
+    - {field: complaint.fever, value: false}
+    - {field: vitals.temp_c, value: 36.7, status: observed}
+    - {field: vitals.respiratory_rate, value: 40, status: observed}
+    - {field: vitals.heart_rate, value: 132, status: observed}
+    - {field: vitals.spo2, value: 99, status: observed}
+
+- case: 16
+  set: A
+  v4_answer: 2
+  book_span: "A 72-year-old female is brought in by ambulance from"
+  book_page: 86
+  answer_page: 89
+  synopsis: "72F nursing home, increasingly confused over 24h, normally independent"
+  expect: floor2
+  expect_rules: [B-01.new-altered-mental-status]
+  facts:
+    - {field: obs.new_confusion_lethargy_disorientation, value: true}
+    - {field: patient.age, value: 72}
+    - {field: patient.sex, value: "female"}
+    - {field: complaint.category, value: "neuro_symptoms"}
+    - {field: complaint.text, value: "increasingly confused over the last 24 hours; usually awake, alert, oriented and independent; from a nursing home"}
+    - {field: ams.changed_from_baseline, value: true}
+    - {field: history.baseline_mental_status, value: "known"}
+    - {field: vitals.temp_c, value: 37.6, status: observed}
+    - {field: vitals.heart_rate, value: 86, status: observed}
+    - {field: vitals.respiratory_rate, value: 28, status: observed}
+    - {field: vitals.sbp, value: 136, status: observed}
+    - {field: vitals.spo2, value: 94, status: observed}
+    - {field: complaint.onset, value: "over the last 24 hours", from: second-reading}
+
+- case: 17
+  set: A
+  v4_answer: 2
+  book_span: "Melissa, a 4-year-old with a ventriculo- peritoneal shunt (drains"
+  book_page: 86
+  answer_page: 89
+  synopsis: "4F with VP shunt, 'not acting right', sleepy but responds"
+  expect: floor2
+  expect_rules: [B-29.pediatric-subtle-ams]
+  facts:
+    - {field: patient.age, value: 4}
+    - {field: obs.subtle_mental_status_change, value: true}
+    - {field: patient.sex, value: "female"}
+    - {field: complaint.category, value: "neuro_symptoms"}
+    - {field: complaint.text, value: "4-year-old with a ventriculo-peritoneal shunt, 'not acting right', mother fears the shunt is blocked; sleepy but responds to voice; says her head hurts and she will throw up"}
+    - {field: ams.changed_from_baseline, value: true}
+    - {field: history.baseline_mental_status, value: "known"}
+    - {field: history.conditions, value: [ventriculo-peritoneal shunt]}
+    - {field: vitals.temp_c, value: 37.0, status: observed}
+    - {field: vitals.respiratory_rate, value: 22, status: observed}
+    - {field: vitals.heart_rate, value: 120, status: observed}
+    - {field: vitals.spo2, value: 99, status: observed}
+    - {field: vitals.sbp, value: 94, status: observed}
+
+- case: 18
+  set: A
+  v4_answer: 1
+  book_span: "The overhead page announces the arrival of the Code"
+  book_page: 86
+  answer_page: 89
+  synopsis: "62M Code STEMI, BP 72/53, cool clammy"
+  expect: esi1
+  expect_rules: [A-10.hypotension-with-hypoperfusion]
+  facts:
+    - {field: vitals.hypotension, value: true, status: observed, from: answer}
+    - {field: obs.hypoperfusion_signs, value: true, status: observed, from: answer}
+    - {field: complaint.category, value: chest_pain}
+    - {field: complaint.acs_suspicion, value: true}
+    - {field: patient.age, value: 62}
+    - {field: patient.sex, value: "male"}
+    - {field: complaint.text, value: "chest pressure for an hour; heart attack 4 years ago; field ECG shows ischaemic changes; skin cool and clammy"}
+    - {field: history.conditions, value: [myocardial infarction 4 years ago]}
+    - {field: vitals.heart_rate, value: 106, status: observed}
+    - {field: vitals.respiratory_rate, value: 28, status: observed}
+    - {field: vitals.sbp, value: 72, status: observed}
+    - {field: vitals.spo2, value: 95, status: observed}
+    - {field: vitals.ecg_abnormal, value: true, status: observed}
+    - {field: complaint.onset, value: "an hour ago", from: second-reading}
+
+- case: 19
+  set: A
+  v4_answer: 3
+  book_span: "\u201CI had a knee replacement 3 months ago. Now"
+  book_page: 86
+  answer_page: 89
+  synopsis: "64M red swollen knee 3 months post replacement"
+  expect: none
+  facts:
+    - {field: complaint.category, value: skin_problem}
+    - {field: complaint.pain_rating, value: 6}
+    - {field: patient.age, value: 64}
+    - {field: patient.sex, value: "male"}
+    - {field: complaint.text, value: "knee replacement 3 months ago; knee red, swollen and tender"}
+    - {field: complaint.infection_signs, value: true}
+    - {field: vitals.temp_c, value: 37.2, status: observed}
+    - {field: vitals.respiratory_rate, value: 20, status: observed}
+    - {field: vitals.heart_rate, value: 74, status: observed}
+    - {field: vitals.sbp, value: 164, status: observed}
+    - {field: vitals.spo2, value: 97, status: observed}
+
+- case: 20
+  set: A
+  v4_answer: 3
+  book_span: "\u201CThis is so embarrassing,\u201D reports a 29-year-old male. \u201CFor"
+  book_page: 86
+  answer_page: 89
+  synopsis: "29M rectal foreign body 12h, no abdominal pain"
+  expect: none
+  facts:
+    - {field: complaint.category, value: other}
+    - {field: complaint.pain_rating, value: 4}
+    - {field: patient.age, value: 29}
+    - {field: patient.sex, value: "male"}
+    - {field: complaint.text, value: "foreign body stuck in the rectum for 12 hours, could not remove it; denies abdominal pain or tenderness"}
+    - {field: complaint.onset, value: "for the last 12 hours", from: second-reading}
+
+- case: 21
+  set: A
+  v4_answer: 3
+  book_span: "EMS arrives with a 67-year-old female who lives alone."
+  book_page: 86
+  answer_page: 90
+  synopsis: "67F fever + productive cough 3 days, suspects pneumonia, denies SOB"
+  expect: none
+  facts:
+    - {field: patient.age, value: 67}
+    - {field: complaint.category, value: fever}
+    - {field: complaint.fever, value: true}
+    - {field: history.immunocompromised, value: false}
+    - {field: patient.sex, value: "female"}
+    - {field: complaint.text, value: "fever and cough for 3 days, coughing up thick green phlegm, worried about pneumonia; denies shortness of breath; lives alone, too sick to get to the doctor"}
+    - {field: complaint.shortness_of_breath, value: false}
+    - {field: history.conditions, value: [hypertension]}
+    - {field: vitals.temp_c, value: 38.9, status: observed}
+    - {field: vitals.respiratory_rate, value: 28, status: observed}
+    - {field: vitals.heart_rate, value: 86, status: observed}
+    - {field: vitals.sbp, value: 140, status: observed}
+    - {field: vitals.spo2, value: 94, status: observed}
+    - {field: complaint.onset, value: "for 3 days", from: second-reading}
+
+- case: 22
+  set: A
+  v4_answer: 2
+  book_span: "EMS arrives with a 14-year-old male who was snowboarding"
+  book_page: 86
+  answer_page: 90
+  synopsis: "14M snowboard vs tree, LUQ abdominal pain, femur appears broken"
+  xfail: "Since 5 Oct 2026 B-19 (abdominal pain after trauma) is a consider flag: the handbook lists it as a question for the nurse, not an assignment (four blind re-extractions agree). The engine shows consider flags B-19 and B-25 and no floor; the book's level 2 is the nurse's judgement on them."
+  expect: floor2
+  expect_rules: [B-19.abdo-pain-trauma]
+  expect_consider: [B-25.pelvis-femur-fracture-consider]
+  facts:
+    - {field: complaint.category, value: abdominal_pain}
+    - {field: E.abdominal_trauma, value: true}
+    - {field: complaint.possible_pelvis_femur_fracture_or_dislocation, value: true}
+    - {field: patient.age, value: 14}
+    - {field: patient.sex, value: "male"}
+    - {field: complaint.text, value: "snowboarding, lost control and ran into a tree; wearing a helmet; aware, alert and oriented; left upper-quadrant pain and left thigh pain; left femur appears broken"}
+    - {field: E.mechanism, value: "assault"}
+    - {field: danger_signs.responsive, value: true}
+    - {field: vitals.sbp, value: 112, status: observed}
+    - {field: vitals.heart_rate, value: 86, status: observed}
+    - {field: vitals.respiratory_rate, value: 14, status: observed}
+    - {field: vitals.spo2, value: 98, status: observed}
+    - {field: vitals.temp_c, value: 37.0, status: observed}
+    - {field: obs.hemodynamically_unstable, value: false, status: observed, from: answer}
+
+- case: 23
+  set: A
+  v4_answer: 4
+  book_span: "\u201CI woke up this morning, and there was a"
+  book_page: 86
+  answer_page: 90
+  synopsis: "48F bat in bedroom overnight, rabies concern, well"
+  expect: none
+  facts:
+    - {field: complaint.category, value: other}
+    - {field: patient.age, value: 48}
+    - {field: patient.sex, value: "female"}
+    - {field: complaint.text, value: "woke to a bat flying around the bedroom, worried about rabies; husband let it out; anxious"}
+    - {field: history.conditions, value: [ovarian cysts]}
+    - {field: M.medications, value: []}
+    - {field: A.allergies, value: []}
+    - {field: complaint.onset, value: "this morning", from: second-reading}
+
+- case: 24
+  set: A
+  v4_answer: 1
+  book_span: "The family of a 74-year-old male called 911 when"
+  book_page: 86
+  answer_page: 90
+  synopsis: "74M sudden severe mid-abdominal pain, HR 140, BP 72/56 (AAA picture)"
+  note: "Translation: shock vitals encoded as hypotension + hypoperfusion signs."
+  expect: esi1
+  expect_rules: [A-10.hypotension-with-hypoperfusion]
+  facts:
+    - {field: vitals.hypotension, value: true, status: observed, from: answer}
+    - {field: obs.hypoperfusion_signs, value: true, status: observed, from: answer}
+    - {field: complaint.category, value: abdominal_pain}
+    - {field: patient.age, value: 74}
+    - {field: patient.sex, value: "male"}
+    - {field: complaint.text, value: "severe mid-abdominal pain; 'not a complainer' says his wife; only medication is for high blood pressure"}
+    - {field: history.conditions, value: [hypertension]}
+    - {field: vitals.heart_rate, value: 140, status: observed}
+    - {field: vitals.respiratory_rate, value: 28, status: observed}
+    - {field: vitals.spo2, value: 94, status: observed}
+    - {field: vitals.sbp, value: 72, status: observed}
+
+- case: 25
+  set: A
+  v4_answer: 5
+  book_span: "\u201CI woke up this morning, and my eyes are"
+  book_page: 86
+  answer_page: 90
+  synopsis: "29F bilateral red crusty eyes (conjunctivitis), no pain or vision change"
+  note: "Negative for B-28: one ATSO element (red eye)."
+  expect: none
+  facts:
+    - {field: complaint.category, value: eye_problem}
+    - {field: eye.red, value: true}
+    - {field: eye.intolerable_pain, value: false}
+    - {field: stroke.vision_change, value: false}
+    - {field: patient.age, value: 29}
+    - {field: patient.sex, value: "female"}
+    - {field: complaint.text, value: "woke with both eyes red and crusty; kindergarten teacher; denies pain or visual disturbance"}
+    - {field: complaint.onset, value: "this morning", from: second-reading}
+
+# ---------- Set B ----------
+
+- case: 1
+  set: B
+  v4_answer: 3
+  book_span: "\u201CWithout the helmet, I would have been really hurt,\u201D"
+  book_page: 87
+  answer_page: 90
+  synopsis: "19M bike fall, arm laceration + clavicle pain, helmeted"
+  expect: none
+  facts:
+    - {field: E.mechanism, value: fall}
+    - {field: patient.age, value: 19}
+    - {field: complaint.pain_rating, value: 6}
+    - {field: patient.sex, value: "male"}
+    - {field: complaint.category, value: "injury"}
+    - {field: complaint.text, value: "bicycle accident, hit a pothole; helmet worn; 2-centimetre laceration on the arm; pain over the left clavicle"}
+    - {field: vitals.temp_c, value: 36.3, status: observed}
+    - {field: vitals.respiratory_rate, value: 18, status: observed}
+    - {field: vitals.heart_rate, value: 62, status: observed}
+    - {field: vitals.sbp, value: 122, status: observed}
+    - {field: vitals.spo2, value: 100, status: observed}
+
+- case: 2
+  set: B
+  v4_answer: 2
+  book_span: "When asked why she came to the emergency department"
+  book_page: 87
+  answer_page: 90
+  synopsis: "18F sexually assaulted last night"
+  expect: floor2
+  expect_rules: [B-11.sexual-assault]
+  facts:
+    - {field: complaint.sexual_assault, value: true}
+    - {field: patient.age, value: 18}
+    - {field: patient.sex, value: "female"}
+    - {field: complaint.category, value: "mental_health"}
+    - {field: complaint.text, value: "college student, crying; was sexually assaulted last night at an off-campus party"}
+    - {field: complaint.onset, value: "last night", from: second-reading}
+
+- case: 4
+  set: B
+  v4_answer: 5
+  book_span: "\u201CThe doctor told me to come back this morning"
+  book_page: 87
+  answer_page: 90
+  synopsis: "54M diabetic, boil-lancing recheck, feels much better"
+  expect: none
+  facts:
+    - {field: complaint.category, value: skin_problem}
+    - {field: complaint.pain_rating, value: 2}
+    - {field: patient.age, value: 54}
+    - {field: patient.sex, value: "male"}
+    - {field: complaint.text, value: "boil lanced and packed yesterday; told to come back for a wound check; feels much better; diabetic"}
+    - {field: history.conditions, value: [diabetes]}
+    - {field: vitals.temp_c, value: 36.7, status: observed}
+    - {field: vitals.respiratory_rate, value: 16, status: observed}
+    - {field: vitals.heart_rate, value: 64, status: observed}
+    - {field: vitals.sbp, value: 142, status: observed}
+    - {field: vitals.spo2, value: 98, status: observed}
+
+- case: 5
+  set: B
+  v4_answer: 1
+  book_span: "A 16-year-old high school hockey player collapsed on the"
+  book_page: 87
+  answer_page: 90
+  synopsis: "16M commotio cordis on ice, CPR + defibrillated x3, ROSC, arrives intubated"
+  expect: esi1
+  expect_rules: [A-02.arrest-or-imminent, A-15.intubated]
+  facts:
+    - {field: obs.cardiac_or_pulmonary_arrest, value: true, status: observed}
+    - {field: obs.intubated, value: true, status: observed}
+    - {field: patient.age, value: 16}
+    - {field: patient.sex, value: "male"}
+    - {field: complaint.category, value: "injury"}
+    - {field: complaint.text, value: "hockey player collapsed after a puck to the chest; CPR by the coaches, defibrillated three times with return of circulation; arrives intubated"}
+    - {field: E.mechanism, value: "assault"}
+
+- case: 7
+  set: B
+  v4_answer: 4
+  book_span: "\u201CThis sounds really strange. A bug flew into my"
+  book_page: 87
+  answer_page: 90
+  synopsis: "55F insect in ear, buzzing, distressed but well"
+  expect: none
+  facts:
+    - {field: complaint.category, value: ear_problem}
+    - {field: patient.age, value: 55}
+    - {field: patient.sex, value: "female"}
+    - {field: complaint.text, value: "a bug flew into the right ear while gardening; tried a cotton bud; buzzing noise"}
+    - {field: history.conditions, value: []}
+
+- case: 9
+  set: B
+  v4_answer: 2
+  book_span: "\u201CI was having breakfast with my wife, and all"
+  book_page: 87
+  answer_page: 90
+  synopsis: "56M sudden monocular vision loss lasting 5 minutes, resolved (amaurosis fugax)"
+  note: "The TIA class again — transient vision loss is a stroke sign (BE-FAST 'Eyes');
+         resolved episode still floors, same as P6/case 44."
+  expect: floor2
+  expect_rules: [B-05.stroke-signs]
+  facts:
+    - {field: complaint.stroke_signs, value: true}
+    - {field: patient.age, value: 56}
+    - {field: patient.sex, value: "male"}
+    - {field: complaint.category, value: "eye_problem"}
+    - {field: complaint.text, value: "sudden loss of vision in the right eye at breakfast, lasting about 5 minutes, never happened before; scared"}
+    - {field: stroke.vision_change, value: true}
+    - {field: history.conditions, value: [hypertension, high cholesterol]}
+    - {field: complaint.onset, value: "all of a sudden", from: second-reading}
+
+- case: 10
+  set: B
+  v4_answer: 4
+  book_span: "\u201CI was walking down the street and twisted my"
+  book_page: 87
+  answer_page: 90
+  synopsis: "43F twisted ankle, 8/10 pain, manageable at triage"
+  note: "v4's canonical pain lesson: >=7 considers, orthopedic pain manageable -> level 4."
+  expect: none
+  expect_consider: [B-02.severe-pain-consider]
+  facts:
+    - {field: complaint.category, value: injury}
+    - {field: complaint.pain_rating, value: 8}
+    - {field: complaint.extremity_neurovascular_compromise, value: false}
+    - {field: patient.age, value: 43}
+    - {field: patient.sex, value: "female"}
+    - {field: complaint.text, value: "twisted her ankle stepping off the kerb; does not think it is broken but it hurts"}
+    - {field: E.mechanism, value: "fall"}
+    - {field: E.fall_height_meters, value: 0}
+    - {field: history.conditions, value: [colitis]}
+    - {field: vitals.temp_c, value: 36.7, status: observed}
+    - {field: vitals.heart_rate, value: 72, status: observed}
+    - {field: vitals.respiratory_rate, value: 18, status: observed}
+    - {field: vitals.sbp, value: 134, status: observed}
+    - {field: vitals.spo2, value: 100, status: observed}
+
+- case: 11
+  set: B
+  v4_answer: 2
+  book_span: "A 16-year-old female is brought to the emergency department"
+  book_page: 87
+  answer_page: 91
+  synopsis: "16F took 30+ acetaminophen after breakup, tearful"
+  expect: floor2
+  expect_rules: [B-26.suspected-toxic-ingestion, B-09.suicidal-or-homicidal]
+  facts:
+    - {field: complaint.known_toxic_ingestion, value: true}
+    - {field: complaint.danger_to_self_or_others, value: true}
+    - {field: patient.age, value: 16}
+    - {field: patient.sex, value: "female"}
+    - {field: complaint.category, value: "poisoning_or_overdose"}
+    - {field: complaint.text, value: "took more than 30 acetaminophen tablets about 30 minutes ago after her boyfriend broke up with her; tearful"}
+    - {field: history.conditions, value: []}
+    - {field: M.medications, value: []}
+    - {field: A.allergies, value: []}
+    - {field: complaint.onset, value: "about 30 minutes before admission", from: second-reading}
+
+- case: 12
+  set: B
+  v4_answer: 3
+  book_span: "\u201CMy colitis is acting up,\u201D report a 26-year-old female."
+  book_page: 87
+  answer_page: 91
+  synopsis: "26F colitis flare, cramping, GI sent her in"
+  expect: none
+  facts:
+    - {field: complaint.category, value: abdominal_pain}
+    - {field: complaint.pain_rating, value: 6}
+    - {field: history.pregnant, value: false}
+    - {field: history.postpartum, value: false}
+    - {field: patient.age, value: 26}
+    - {field: patient.sex, value: "female"}
+    - {field: complaint.text, value: "colitis acting up: more stools, now cramping a lot; gastroenterologist sent her in"}
+    - {field: history.conditions, value: [colitis]}
+    - {field: vitals.temp_c, value: 36.1, status: observed}
+    - {field: vitals.respiratory_rate, value: 18, status: observed}
+    - {field: vitals.heart_rate, value: 68, status: observed}
+    - {field: vitals.sbp, value: 112, status: observed}
+    - {field: vitals.spo2, value: 100, status: observed}
+
+- case: 13
+  set: B
+  v4_answer: 4
+  book_span: "\u201CI was so disappointed about not making the varsity"
+  book_page: 87
+  answer_page: 91
+  synopsis: "15M punched a wall, swollen tender hand"
+  expect: none
+  facts:
+    - {field: patient.age, value: 15}
+    - {field: complaint.category, value: injury}
+    - {field: complaint.extremity_neurovascular_compromise, value: false}
+    - {field: complaint.pain_rating, value: 5}
+    - {field: patient.sex, value: "male"}
+    - {field: complaint.text, value: "punched a wall in disappointment; hand swollen and tender"}
+    - {field: E.mechanism, value: "assault"}
+    - {field: vitals.temp_c, value: 36.1, status: observed}
+    - {field: vitals.respiratory_rate, value: 16, status: observed}
+    - {field: vitals.heart_rate, value: 58, status: observed}
+    - {field: vitals.sbp, value: 106, status: observed}
+    - {field: vitals.spo2, value: 100, status: observed}
+
+- case: 14
+  set: B
+  v4_answer: 2
+  book_span: "A 46-year-old female with a history of sickle cell"
+  book_page: 87
+  answer_page: 91
+  synopsis: "46F sickle cell crisis, 8/10, home meds failing"
+  expect: floor2
+  expect_rules: [B-03.severe-pain-systemic-cause]
+  expect_consider: [B-02.severe-pain-consider]
+  facts:
+    - {field: complaint.pain_rating, value: 8}
+    - {field: complaint.pain_cause_class, value: sickle_cell_crisis}
+    - {field: patient.age, value: 46}
+    - {field: patient.sex, value: "female"}
+    - {field: complaint.category, value: "limb_pain_or_swelling"}
+    - {field: complaint.text, value: "sickle cell crisis: pain in both lower legs for 8 hours, pain medication not working"}
+    - {field: history.conditions, value: [sickle cell disease]}
+    - {field: M.medications, value: [folate, vicodin]}
+    - {field: complaint.onset, value: "8 hours ago", from: second-reading}
+
+- case: 15
+  set: B
+  v4_answer: 3
+  book_span: "\u201CI take a blood thinner because I have had"
+  book_page: 87
+  answer_page: 91
+  synopsis: "54M on a blood thinner for prior clots, leg pain + swelling, no trauma (DVT)"
+  note: "Negative for B-30: anticoagulant present (phrase-derived, PROBABLE) but no trauma
+         mechanism — neither condition of the supplemented rule is met."
+  expect: none
+  facts:
+    - {field: M.medications, value: ["a blood thinner for clots in my legs"]}
+    - {field: complaint.category, value: limb_pain_or_swelling}
+    - {field: patient.age, value: 54}
+    - {field: patient.sex, value: "male"}
+    - {field: complaint.text, value: "takes a blood thinner for previous clots in the legs; today pain and swelling in the lower leg, can hardly walk on it"}
+    - {field: M.anticoagulant, value: true}
+    - {field: history.conditions, value: [previous blood clots in the legs]}
+
+- case: 16
+  set: B
+  v4_answer: 3
+  book_span: "A 65-year-old female is brought in by ambulance from"
+  book_page: 88
+  answer_page: 91
+  synopsis: "65F PEG tube replacement; aphasic since stroke 3 years ago, UNCHANGED"
+  note: "Negative for B-05 and B-01: old stroke, known baseline, no new signs — the
+         counterpart to the P6/case-44 positives."
+  expect: none
+  facts:
+    - {field: complaint.stroke_signs, value: false}
+    - {field: obs.confusion_lethargy_disorientation, value: true, status: observed}
+    - {field: history.baseline_mental_status, value: known}
+    - {field: obs.new_confusion_lethargy_disorientation, value: false}
+    - {field: patient.age, value: 65}
+    - {field: patient.sex, value: "female"}
+    - {field: complaint.category, value: "request"}
+    - {field: complaint.text, value: "from a nursing home for replacement of her PEG tube; massive stroke 3 years ago, aphasic; condition unchanged; do not resuscitate"}
+    - {field: history.conditions, value: ['massive stroke 3 years ago, aphasic']}
+
+- case: 17
+  set: B
+  v4_answer: 2
+  book_span: "A 26-year-old female presents to the ED because she"
+  book_page: 88
+  answer_page: 91
+  synopsis: "26F suicidal ideation, no plan, prior attempts"
+  expect: floor2
+  expect_rules: [B-09.suicidal-or-homicidal]
+  facts:
+    - {field: complaint.danger_to_self_or_others, value: true}
+    - {field: patient.age, value: 26}
+    - {field: patient.sex, value: "female"}
+    - {field: complaint.category, value: "mental_health"}
+    - {field: complaint.text, value: "cannot get an appointment with her therapist; childhood issues brought back by a holiday visit; not sleeping, drinking more; thinking about hurting herself, no plan; previous suicide attempts"}
+    - {field: history.conditions, value: [previous suicide attempts]}
+
+- case: 20
+  set: B
+  v4_answer: 1
+  book_span: "EMS radios in that they are in route with"
+  book_page: 88
+  answer_page: 91
+  synopsis: "21M GSW left chest, BP 78/palp"
+  expect: esi1
+  expect_rules: [A-14.penetrating-trauma-unstable]
+  facts:
+    - {field: E.mechanism, value: penetrating_trauma}
+    - {field: E.body_region, value: chest}
+    - {field: obs.requires_lifesaving_intervention, value: true, status: observed, from: answer}
+    - {field: vitals.hypotension, value: true, status: observed, from: answer}
+    - {field: patient.age, value: 21}
+    - {field: patient.sex, value: "male"}
+    - {field: complaint.category, value: "injury"}
+    - {field: complaint.text, value: "single gunshot wound to the left chest"}
+    - {field: vitals.sbp, value: 78, status: observed}
+    - {field: vitals.heart_rate, value: 148, status: observed}
+    - {field: vitals.respiratory_rate, value: 36, status: observed}
+    - {field: vitals.spo2, value: 96, status: observed}
+    - {field: obs.hemodynamically_unstable, value: true, status: observed, from: answer}
+
+- case: 21
+  set: B
+  v4_answer: 3
+  book_span: "A 51-year-old presents to triage with redness and swelling"
+  book_page: 88
+  answer_page: 91
+  synopsis: "51M cat-scratch hand cellulitis, T 101.8, HR 118"
+  expect: none
+  facts:
+    - {field: complaint.category, value: skin_problem}
+    - {field: complaint.fever, value: true}
+    - {field: history.immunocompromised, value: false}
+    - {field: complaint.pain_rating, value: 5}
+    - {field: patient.age, value: 51}
+    - {field: patient.sex, value: "male"}
+    - {field: complaint.text, value: "redness and swelling of the right hand after a cat scratch yesterday"}
+    - {field: complaint.infection_signs, value: true}
+    - {field: history.conditions, value: [gastro-oesophageal reflux disease]}
+    - {field: vitals.sbp, value: 121, status: observed}
+    - {field: vitals.heart_rate, value: 118, status: observed}
+    - {field: vitals.respiratory_rate, value: 18, status: observed}
+    - {field: vitals.temp_c, value: 38.8, status: observed}
+    - {field: vitals.spo2, value: 98, status: observed}
+    - {field: complaint.onset, value: "yesterday", from: second-reading}
+
+- case: 22
+  set: B
+  v4_answer: 2
+  book_span: "EMS arrives with a 52-year-old female overdose. The patient"
+  book_page: 88
+  answer_page: 91
+  synopsis: "52F took 8 wellbutrin, 'wants to die', alert"
+  expect: floor2
+  expect_rules: [B-26.suspected-toxic-ingestion, B-09.suicidal-or-homicidal]
+  facts:
+    - {field: complaint.known_toxic_ingestion, value: true}
+    - {field: complaint.danger_to_self_or_others, value: true}
+    - {field: patient.age, value: 52}
+    - {field: patient.sex, value: "female"}
+    - {field: complaint.category, value: "poisoning_or_overdose"}
+    - {field: complaint.text, value: "took eight 75 mg Wellbutrin tablets 2 hours ago after her husband left her; wants to die; awake, alert and oriented"}
+    - {field: complaint.onset, value: "2 hours ago", from: second-reading}
+
+- case: 24
+  set: B
+  v4_answer: 3
+  book_span: "A healthy 10-year-old male is brought to the emergency"
+  book_page: 88
+  answer_page: 91
+  synopsis: "10M constipated a week, 7/10 generalized abdominal pain"
+  expect: none
+  expect_consider: [B-02.severe-pain-consider]
+  facts:
+    - {field: patient.age, value: 10}
+    - {field: complaint.category, value: abdominal_pain}
+    - {field: complaint.pain_rating, value: 7}
+    - {field: patient.sex, value: "male"}
+    - {field: complaint.text, value: "no bowel movement for a week; generalised abdominal pain, nausea, no appetite; healthy"}
+    - {field: vitals.sbp, value: 107, status: observed}
+    - {field: vitals.heart_rate, value: 75, status: observed}
+    - {field: vitals.respiratory_rate, value: 20, status: observed}
+    - {field: vitals.temp_c, value: 37.0, status: observed}
+    - {field: vitals.spo2, value: 99, status: observed}
+
+- case: 25
+  set: B
+  v4_answer: 1
+  book_span: "EMS arrives with a 22-year-old woman with asthma who"
+  book_page: 88
+  answer_page: 91
+  synopsis: "22F asthma, tiring out, can't answer questions, RR 48, prior intubations"
+  expect: esi1
+  expect_rules: [A-05.severe-respiratory-distress]
+  facts:
+    - {field: obs.severe_respiratory_distress, value: true, status: observed, from: answer}
+    - {field: patient.age, value: 22}
+    - {field: patient.sex, value: "female"}
+    - {field: complaint.category, value: "breathing"}
+    - {field: complaint.text, value: "asthma; wheezing since this morning; sitting upright leaning forward with a nebuliser running; sweating, working hard to breathe, unable to answer; paramedics think she is tiring; previous intubations"}
+    - {field: complaint.respiratory_distress_signs, value: true}
+    - {field: complaint.increasing_respiratory_effort, value: true}
+    - {field: history.conditions, value: ['asthma, previous intubations']}
+    - {field: vitals.respiratory_rate, value: 48, status: observed}
+    - {field: vitals.spo2, value: 94, status: observed}
+    - {field: complaint.onset, value: "earlier this morning", from: second-reading}
+
+# ============================================================================================================
+# Added 10 Oct 2026 (issue #67): the chapter 9 cases not transcribed in August, written to the "complete, not
+# minimal" standard: every fact the book states that has a field (age, sex, complaint, mechanism, vital signs,
+# history), with the printed page of the case (book_page) and of its answer (answer_page); PDF page = printed + 6.
+# Temperatures are converted from Fahrenheit to one decimal Celsius. Facts only a clinician can give carry
+# status: observed. Where the book's answer rests on a criterion the fifth edition changed (Set 2), the entry
+# says so (set2, v5_answer, v5_reasoning); where no fifth-edition sentence gives the book's level, the case is an
+# expected failure with the reason. LLM-DRAFTED, UNVERIFIED by a second reading (#68).
+# ============================================================================================================
+
+- case: 2
+  v4_answer: 1
+  book_span: "EMS presents to the ED with an 18-year-old female"
+  book_page: 71
+  answer_page: 78
+  synopsis: "18F suspected medication overdose, lethargic, wrist lacerations, RR 10, SpO2 86%"
+  note: "Level 1 for a failing airway and breathing (RR 10, SpO2 86%, cannot protect her airway). Set 2 for the A-08 qualifier (SpO2 under 90 with signs of respiratory compromise, not the patient's norm): same answer."
+  set2: true
+  v5_answer: 1
+  expect: esi1
+  expect_rules: [A-08.spo2-below-90-with-compromise]
+  facts:
+    - {field: patient.age, value: 18}
+    - {field: patient.sex, value: female}
+    - {field: complaint.category, value: poisoning_or_overdose}
+    - {field: complaint.text, value: "suspected medication overdose; roommates found her lethargic and not acting right; multiple superficial lacerations to both wrists"}
+    - {field: complaint.known_toxic_ingestion, value: true}
+    - {field: history.conditions, value: [depression]}
+    - {field: ams.changed_from_baseline, value: true}
+    - {field: vitals.respiratory_rate, value: 10, status: observed}
+    - {field: vitals.spo2, value: 86, status: observed}
+    - {field: vitals.spo2_is_patients_norm, value: false, status: observed, from: answer}
+    - {field: obs.respiratory_compromise_signs, value: true, status: observed, from: answer}
+    - {field: obs.requires_lifesaving_intervention, value: true, status: observed, from: answer}
+
+- case: 6
+  v4_answer: 2
+  book_span: "A 32-year-old female presents to the emergency department complaining"
+  book_page: 71
+  answer_page: 78
+  synopsis: "32F shortness of breath for hours, smoker on the pill, RR 32, SpO2 93%"
+  xfail: "The book's level 2 is a judgement: new shortness of breath in a smoker on the contraceptive pill, pulmonary embolus to be ruled out, with signs of respiratory distress. The fifth edition has no sentence for this picture; its signs of respiratory distress are a consider flag (B-54), not a floor."
+  expect: floor2
+  expect_consider: [B-54.respiratory-distress-signs-consider]
+  facts:
+    - {field: patient.age, value: 32}
+    - {field: patient.sex, value: female}
+    - {field: complaint.category, value: breathing}
+    - {field: complaint.text, value: "shortness of breath for several hours; smoker"}
+    - {field: complaint.onset, value: "several hours"}
+    - {field: complaint.shortness_of_breath, value: true}
+    - {field: complaint.respiratory_distress_signs, value: true}
+    - {field: M.medications, value: [vitamins, "birth control pills"]}
+    - {field: A.allergies, value: []}
+    - {field: history.conditions, value: []}
+    - {field: vitals.respiratory_rate, value: 32, status: observed}
+    - {field: vitals.heart_rate, value: 96, status: observed}
+    - {field: vitals.sbp, value: 126, status: observed}
+    - {field: vitals.spo2, value: 93, status: observed}
+    - {field: vitals.temp_c, value: 37.0, status: observed}
+
+- case: 8
+  v4_answer: 3
+  book_span: "A normal healthy 7-year-old walks into the emergency department"
+  book_page: 71
+  answer_page: 78
+  synopsis: "7M stomach ache, refuses to walk or eat, vomits at triage, T 38.0, pain 6/10"
+  expect: none
+  facts:
+    - {field: patient.age, value: 7}
+    - {field: patient.sex, value: male}
+    - {field: complaint.category, value: abdominal_pain}
+    - {field: complaint.text, value: "stomach ache since waking; refused to walk downstairs, not interested in eating or playing; vomited at triage"}
+    - {field: complaint.onset, value: "this morning"}
+    - {field: complaint.pain_rating, value: 6}
+    - {field: complaint.vomiting, value: true}
+    - {field: complaint.fever, value: true}
+    - {field: vitals.temp_c, value: 38.0, status: observed}
+    - {field: vitals.respiratory_rate, value: 22, status: observed}
+    - {field: vitals.heart_rate, value: 88, status: observed}
+    - {field: vitals.sbp, value: 84, status: observed}
+    - {field: vitals.spo2, value: 100, status: observed}
+
+- case: 11
+  v4_answer: 2
+  edition_differs: true   # the book's answer rests on a criterion the fifth edition changed or dropped; see note/xfail
+  book_span: "A 4-year-old female is transported to the ED following"
+  book_page: 71
+  answer_page: 78
+  synopsis: "4F fell 4 feet off the jungle gym, hit her head, unconscious a couple of minutes, now crying; HR 162, RR 38"
+  xfail: "The book's level 2 rests on a witnessed fall with loss of consciousness in a child. The fifth edition has no head-injury or loss-of-consciousness criterion (issue #10); the vital signs are decision point D."
+  expect: floor2
+  facts:
+    - {field: patient.age, value: 4}
+    - {field: patient.sex, value: female}
+    - {field: complaint.category, value: injury}
+    - {field: complaint.text, value: "fall of 4 feet off the jungle gym at preschool; hit her head, unconscious for a couple of minutes; now crying and asking for her mother; left arm splinted"}
+    - {field: E.mechanism, value: fall}
+    - {field: E.fall_height_meters, value: 1.2}
+    - {field: E.head_strike, value: true}
+    - {field: E.loc, value: true}
+    - {field: danger_signs.responsive, value: true}
+    - {field: vitals.heart_rate, value: 162, status: observed}
+    - {field: vitals.respiratory_rate, value: 38, status: observed}
+
+- case: 14
+  v4_answer: 2
+  book_span: "\u201CI called my pediatrician, and she told me to"
+  book_page: 72
+  answer_page: 79
+  synopsis: "2-week-old with fever 38.3, HR 154, RR 42, acting appropriately"
+  expect: floor2
+  expect_rules: [B-56.infant-under-28-days-fever]
+  facts:
+    - {field: patient.age, value: 0}
+    - {field: patient.age_days, value: 14}
+    - {field: patient.age_months, value: 0}
+    - {field: complaint.category, value: fever}
+    - {field: complaint.text, value: "pediatrician sent the baby in because of fever; uncomplicated vaginal delivery; acting appropriately"}
+    - {field: complaint.fever, value: true}
+    - {field: vitals.temp_c, value: 38.3, status: observed}
+    - {field: vitals.heart_rate, value: 154, status: observed}
+    - {field: vitals.respiratory_rate, value: 42, status: observed}
+    - {field: vitals.spo2, value: 100, status: observed}
+    - {field: patient.sex, value: "male", from: second-reading}
+
+- case: 15
+  v4_answer: 3
+  book_span: "\u201CMy right breast is so sore, my nipples are"
+  book_page: 72
+  answer_page: 79
+  synopsis: "34F 3 months postpartum, sore breast, cracked nipples, fever 39.3, pain 5/10"
+  note: "Postpartum recorded as the book states it (3 months); the interview's wording asks about the last few weeks."
+  expect: none
+  facts:
+    - {field: patient.age, value: 34}
+    - {field: patient.sex, value: female}
+    - {field: complaint.category, value: other}
+    - {field: complaint.text, value: "right breast sore, nipples cracked, now a fever; 3 months postpartum, breastfeeding, back at work part-time"}
+    - {field: complaint.pain_rating, value: 5}
+    - {field: complaint.fever, value: true}
+    - {field: complaint.infection_signs, value: true}
+    - {field: history.postpartum, value: true}
+    - {field: history.pregnant, value: false}
+    - {field: M.medications, value: [multivitamins]}
+    - {field: A.allergies, value: [penicillin]}
+    - {field: history.conditions, value: []}
+    - {field: vitals.temp_c, value: 39.3, status: observed}
+    - {field: vitals.heart_rate, value: 90, status: observed}
+    - {field: vitals.respiratory_rate, value: 18, status: observed}
+    - {field: vitals.sbp, value: 108, status: observed}
+
+- case: 16
+  v4_answer: 1
+  book_span: "Paramedics arrive with a 16-year-old unrestrained driver who hit"
+  book_page: 72
+  answer_page: 79
+  synopsis: "16M unrestrained driver hit a tree at 45 mph; BP 74/50, HR 132, RR 36"
+  note: "Level 1 for shock (hypotension, tachycardia, tachypnea) needing aggressive fluid resuscitation."
+  expect: esi1
+  expect_rules: [A-10.hypotension-with-hypoperfusion]
+  facts:
+    - {field: patient.age, value: 16}
+    - {field: patient.sex, value: male}
+    - {field: complaint.category, value: injury}
+    - {field: complaint.text, value: "unrestrained driver, hit a tree at about 45 mph, significant damage to the car; moaning but moving all extremities"}
+    - {field: E.mechanism, value: road_accident}
+    - {field: danger_signs.responsive, value: true}
+    - {field: vitals.sbp, value: 74, status: observed}
+    - {field: vitals.heart_rate, value: 132, status: observed}
+    - {field: vitals.respiratory_rate, value: 36, status: observed}
+    - {field: vitals.spo2, value: 99, status: observed}
+    - {field: vitals.temp_c, value: 37.0, status: observed}
+    - {field: vitals.hypotension, value: true, status: observed, from: answer}
+    - {field: obs.hypoperfusion_signs, value: true, status: observed, from: answer}
+    - {field: obs.hemodynamically_unstable, value: true, status: observed, from: answer}
+    - {field: obs.requires_lifesaving_intervention, value: true, status: observed, from: answer}
+
+- case: 17
+  v4_answer: 3
+  book_span: "EMS arrives with a 45-year-old woman with asthma who"
+  book_page: 72
+  answer_page: 79
+  synopsis: "45F asthma, cold for a week, wheeze, cough, fever 38.7; RR 24, SpO2 97%"
+  expect: none
+  facts:
+    - {field: patient.age, value: 45}
+    - {field: patient.sex, value: female}
+    - {field: complaint.category, value: breathing}
+    - {field: complaint.text, value: "cold for a week, wheezing for a few days, then cough and fever of 103; not in acute respiratory distress"}
+    - {field: complaint.fever, value: true}
+    - {field: history.conditions, value: [asthma]}
+    - {field: vitals.temp_c, value: 38.7, status: observed}
+    - {field: vitals.heart_rate, value: 92, status: observed}
+    - {field: vitals.respiratory_rate, value: 24, status: observed}
+    - {field: vitals.sbp, value: 148, status: observed}
+    - {field: vitals.spo2, value: 97, status: observed}
+
+- case: 22
+  v4_answer: 1
+  book_span: "\u201CThe smoke was so bad; I just couldn\u2019t breathe.\u201D"
+  book_page: 72
+  answer_page: 79
+  synopsis: "26F smoke inhalation rescuing her cat, hoarse, working hard to breathe, RR 40, HR 114"
+  note: "Level 1 for a significant airway injury needing immediate intubation."
+  expect: esi1
+  expect_rules: [A-05.severe-respiratory-distress]
+  facts:
+    - {field: patient.age, value: 26}
+    - {field: patient.sex, value: female}
+    - {field: complaint.category, value: breathing}
+    - {field: complaint.text, value: "entered a burning apartment building; hoarse, sore throat, cough, working hard at breathing"}
+    - {field: complaint.respiratory_distress_signs, value: true}
+    - {field: complaint.increasing_respiratory_effort, value: true}
+    - {field: history.conditions, value: [asthma]}
+    - {field: M.medications, value: ["inhalers when needed"]}
+    - {field: A.allergies, value: []}
+    - {field: vitals.temp_c, value: 36.7, status: observed}
+    - {field: vitals.respiratory_rate, value: 40, status: observed}
+    - {field: vitals.heart_rate, value: 114, status: observed}
+    - {field: vitals.sbp, value: 108, status: observed}
+    - {field: obs.severe_respiratory_distress, value: true, status: observed, from: answer}
+    - {field: obs.requires_lifesaving_intervention, value: true, status: observed, from: answer}
+
+- case: 23
+  v4_answer: 3
+  book_span: "\u201CI\u2019m 7 weeks pregnant, and every time I try"
+  book_page: 72
+  answer_page: 79
+  synopsis: "27F 7 weeks pregnant, vomits everything, dehydrated, HR 104"
+  expect: none
+  facts:
+    - {field: patient.age, value: 27}
+    - {field: patient.sex, value: female}
+    - {field: complaint.category, value: vomiting_or_diarrhoea}
+    - {field: complaint.text, value: "7 weeks pregnant, vomits every time she eats; doctor thinks she is getting dehydrated; lips dry and cracked"}
+    - {field: complaint.pain_rating, value: 0}
+    - {field: complaint.vomiting, value: true}
+    - {field: history.pregnant, value: true}
+    - {field: vitals.temp_c, value: 36.1, status: observed}
+    - {field: vitals.respiratory_rate, value: 18, status: observed}
+    - {field: vitals.heart_rate, value: 104, status: observed}
+    - {field: vitals.sbp, value: 104, status: observed}
+    - {field: vitals.spo2, value: 99, status: observed}
+
+- case: 27
+  v4_answer: 2
+  edition_differs: true   # the book's answer rests on a criterion the fifth edition changed or dropped; see note/xfail
+  book_span: "EMS arrives with a 17-year-old restrained driver involved in"
+  book_page: 72
+  answer_page: 79
+  synopsis: "17M restrained driver, high-speed crash, abdominal pain, arm lacerations; BP 102/60, HR 86, RR 28"
+  xfail: "The book's level 2 is the mechanism of injury (high-speed crash). The fifth edition's mechanism list is numeric (a fall of 6 metres or more, ejection, mechanical extrication) and names no speed; abdominal pain after trauma is a consider flag (B-19). Set 2 case (trauma mechanism changed between editions)."
+  set2: true
+  expect: floor2
+  expect_consider: [B-19.abdo-pain-trauma]
+  facts:
+    - {field: patient.age, value: 17}
+    - {field: patient.sex, value: male}
+    - {field: complaint.category, value: abdominal_pain}
+    - {field: complaint.text, value: "restrained driver in a high-speed motor vehicle crash; immobilised on a backboard; abdominal pain; multiple lacerations on the left arm"}
+    - {field: E.mechanism, value: road_accident}
+    - {field: E.abdominal_trauma, value: true}
+    - {field: vitals.sbp, value: 102, status: observed}
+    - {field: vitals.heart_rate, value: 86, status: observed}
+    - {field: vitals.respiratory_rate, value: 28, status: observed}
+    - {field: vitals.spo2, value: 96, status: observed}
+
+- case: 28
+  v4_answer: 5
+  book_span: "\u201CI just need another prescription for pain medication. I"
+  book_page: 73
+  answer_page: 79
+  synopsis: "27M back pain at work 10 days ago, wants another prescription, pain 10+/10"
+  note: "Pain 10/10 raises the severe-pain consider flag; the book gives no bed for it (level 5)."
+  expect: none
+  expect_consider: [B-02.severe-pain-consider]
+  facts:
+    - {field: patient.age, value: 27}
+    - {field: patient.sex, value: male}
+    - {field: complaint.category, value: back_pain}
+    - {field: complaint.text, value: "hurt his back at work, seen 10 days ago, ran out of pain medication; no numbness, tingling, bladder or bowel issues"}
+    - {field: complaint.pain_rating, value: 10}
+    - {field: complaint.onset, value: "10 days ago", from: second-reading}
+
+- case: 31
+  v4_answer: 3
+  edition_differs: true   # the book's answer rests on a criterion the fifth edition changed or dropped; see note/xfail
+  book_span: "A healthy middle-aged man presents to the emergency department"
+  book_page: 73
+  answer_page: 79
+  synopsis: "middle-aged man, table saw, lost a couple of fingertips, bleeding controlled, pain 6/10"
+  note: "Set 2: the fifth edition lists partial or complete amputation as high risk (p.15, rule B-47), so the level re-derived under v5 is 2; the fourth edition's answer (3, two resources) stands for v4."
+  set2: true
+  v5_answer: 2
+  v5_reasoning: "ESI v5 p.15: 'any extremity injury with compromised neurovascular function, symptoms of compartment syndrome, or partial or complete amputations' is high risk."
+  expect: floor2
+  expect_rules: [B-47.partial-or-complete-amputation]
+  facts:
+    - {field: patient.sex, value: male}
+    - {field: complaint.category, value: wound}
+    - {field: complaint.text, value: "hand slipped on a table saw; thinks he lost a couple of fingertips; left hand wrapped in a bloody cloth"}
+    - {field: complaint.pain_rating, value: 6}
+    - {field: complaint.amputation_partial_or_complete, value: true}
+    - {field: history.conditions, value: []}
+    - {field: M.medications, value: []}
+    - {field: A.allergies, value: []}
+
+- case: 32
+  v4_answer: 3
+  edition_differs: true   # the book's answer rests on a criterion the fifth edition changed or dropped; see note/xfail
+  book_span: "A 27-year-old female wants to be checked by a"
+  book_page: 73
+  answer_page: 80
+  synopsis: "27F low abdominal pain 4 days, spotting today, last period 7 weeks ago, previous ectopic, stable"
+  note: "Set 2: the fifth edition's high-risk examples include 'a possible ectopic pregnancy, hemodynamically stable' (p.12, rule B-06); the fourth edition rated this 3 with ectopic on the differential. Re-derived under v5: 2."
+  set2: true
+  v5_answer: 2
+  v5_reasoning: "ESI v5 p.12 lists a possible ectopic pregnancy, hemodynamically stable, among the level-2 examples."
+  expect: floor2
+  expect_rules: [B-06.possible-ectopic-stable]
+  expect_consider: [B-21.abdo-pain-vaginal-bleeding]
+  facts:
+    - {field: patient.age, value: 27}
+    - {field: patient.sex, value: female}
+    - {field: complaint.category, value: abdominal_pain}
+    - {field: complaint.text, value: "low abdominal pain for about 4 days, spotting since this morning; last menstrual period 7 weeks ago; previous ectopic pregnancy; no nausea, vomiting, diarrhoea or urinary symptoms"}
+    - {field: complaint.onset, value: "4 days"}
+    - {field: complaint.pain_rating, value: 6}
+    - {field: complaint.vaginal_bleeding, value: true}
+    - {field: complaint.possible_ectopic_pregnancy, value: true}
+    - {field: history.conditions, value: ["previous ectopic pregnancy"]}
+    - {field: vitals.temp_c, value: 36.7, status: observed}
+    - {field: vitals.heart_rate, value: 66, status: observed}
+    - {field: vitals.respiratory_rate, value: 14, status: observed}
+    - {field: vitals.sbp, value: 106, status: observed}
+
+- case: 33
+  v4_answer: 3
+  book_span: "\u201CMy right leg is swollen, and my calf hurts,\u201D"
+  book_page: 73
+  answer_page: 80
+  synopsis: "47F swollen right leg, calf pain, no chest pain or breathlessness, diabetes and HTN, pain 6/10"
+  expect: none
+  facts:
+    - {field: patient.age, value: 47}
+    - {field: patient.sex, value: female}
+    - {field: complaint.category, value: limb_pain_or_swelling}
+    - {field: complaint.text, value: "right leg swollen, calf hurts; morbidly obese, in a motorised scooter; denies chest pain or shortness of breath"}
+    - {field: complaint.pain_rating, value: 6}
+    - {field: complaint.shortness_of_breath, value: false}
+    - {field: danger_signs.chest_pain_now, value: false}
+    - {field: history.conditions, value: ["type 2 diabetes", hypertension]}
+    - {field: vitals.temp_c, value: 36.7, status: observed}
+    - {field: vitals.respiratory_rate, value: 24, status: observed}
+    - {field: vitals.heart_rate, value: 78, status: observed}
+    - {field: vitals.sbp, value: 158, status: observed}
+    - {field: vitals.spo2, value: 98, status: observed}
+
+- case: 35
+  v4_answer: 2
+  book_span: "EMS presents with a 54-year-old female with chronic renal"
+  book_page: 73
+  answer_page: 80
+  synopsis: "54F chronic renal failure, missed dialysis yesterday because too weak, normal vitals"
+  xfail: "The book's level 2 is a judgement: a dialysis patient who misses a treatment risks hyperkalaemia. No fifth-edition sentence covers it."
+  expect: floor2
+  facts:
+    - {field: patient.age, value: 54}
+    - {field: patient.sex, value: female}
+    - {field: complaint.category, value: other}
+    - {field: complaint.text, value: "chronic renal failure; did not go to dialysis yesterday because she felt too weak"}
+    - {field: history.conditions, value: ["chronic renal failure on dialysis"]}
+    - {field: complaint.onset, value: "yesterday", from: second-reading}
+
+- case: 37
+  v4_answer: 1
+  book_span: "\u201CI just don\u2019t feel right,\u201D reports a 21-year-old female"
+  book_page: 73
+  answer_page: 80
+  synopsis: "21F rapid heart rate 178, breathless, chest pressure, BP 82/60, cool and diaphoretic"
+  expect: esi1
+  expect_rules: [A-10.hypotension-with-hypoperfusion, A-12.severe-brady-or-tachycardia]
+  facts:
+    - {field: patient.age, value: 21}
+    - {field: patient.sex, value: female}
+    - {field: complaint.category, value: chest_pain}
+    - {field: complaint.text, value: "just does not feel right: rapid heart rate, can barely catch her breath, a pressure feeling in the chest"}
+    - {field: complaint.shortness_of_breath, value: true}
+    - {field: danger_signs.chest_pain_now, value: true}
+    - {field: vitals.heart_rate, value: 178, status: observed}
+    - {field: vitals.respiratory_rate, value: 32, status: observed}
+    - {field: vitals.sbp, value: 82, status: observed}
+    - {field: vitals.extreme_heart_rate, value: true, status: observed, from: answer}
+    - {field: vitals.hypotension, value: true, status: observed, from: answer}
+    - {field: obs.hypoperfusion_signs, value: true, status: observed, from: answer}
+    - {field: obs.hemodynamically_unstable, value: true, status: observed, from: answer}
+    - {field: obs.requires_lifesaving_intervention, value: true, status: observed, from: answer}
+
+- case: 38
+  v4_answer: 5
+  book_span: "Concerned parents arrive in the ED with their 4-day-old"
+  book_page: 73
+  answer_page: 80
+  synopsis: "4-day-old girl, a little blood on the diaper, nursing well, sleeping peacefully"
+  expect: none
+  facts:
+    - {field: patient.age, value: 0}
+    - {field: patient.age_days, value: 4}
+    - {field: patient.sex, value: female}
+    - {field: complaint.category, value: other}
+    - {field: complaint.text, value: "a little blood on the diaper; nursing well; birth weight 7 lb 2 oz; sleeping peacefully"}
+    - {field: complaint.fever, value: false}
+
+- case: 39
+  v4_answer: 4
+  book_span: "\u201CI was using my chainsaw without safety goggles, and"
+  book_page: 73
+  answer_page: 80
+  synopsis: "36M sawdust in the left eye, hurts and tearing, normal vitals"
+  note: "Negative for B-28: one eye finding (an eye injury); the count threshold is 2."
+  expect: none
+  facts:
+    - {field: patient.age, value: 36}
+    - {field: patient.sex, value: male}
+    - {field: complaint.category, value: eye_problem}
+    - {field: complaint.text, value: "chainsaw without goggles, sawdust in the left eye; hurts and will not stop tearing"}
+    - {field: eye.injury, value: true}
+
+- case: 41
+  v4_answer: 2
+  book_span: "\u201CI was smoking a cigarette and had this coughing"
+  book_page: 73
+  answer_page: 80
+  synopsis: "19M tall thin smoker, coughing fit then short of breath; RR 36, SpO2 92%, HR 102"
+  xfail: "The book's level 2 is the picture of a spontaneous pneumothorax with a raised breathing rate and low oxygen. The fifth edition's signs of respiratory distress are a consider flag (B-54); SpO2 92% is decision point D."
+  expect: floor2
+  expect_consider: [B-54.respiratory-distress-signs-consider]
+  facts:
+    - {field: patient.age, value: 19}
+    - {field: patient.sex, value: male}
+    - {field: complaint.category, value: breathing}
+    - {field: complaint.text, value: "coughing fit while smoking, now short of breath; tall, thin"}
+    - {field: complaint.shortness_of_breath, value: true}
+    - {field: complaint.respiratory_distress_signs, value: true}
+    - {field: complaint.pain_rating, value: 0}
+    - {field: history.conditions, value: []}
+    - {field: M.medications, value: []}
+    - {field: A.allergies, value: []}
+    - {field: vitals.temp_c, value: 36.7, status: observed}
+    - {field: vitals.heart_rate, value: 102, status: observed}
+    - {field: vitals.respiratory_rate, value: 36, status: observed}
+    - {field: vitals.sbp, value: 128, status: observed}
+    - {field: vitals.spo2, value: 92, status: observed}
+    - {field: complaint.onset, value: "now", from: second-reading}
+
+- case: 45
+  v4_answer: 3
+  book_span: "\u201CIt is like I have my period. I went"
+  book_page: 74
+  answer_page: 80
+  synopsis: "26F first pregnancy, bleeding like a period, crampy pain 1/10, stable"
+  expect: none
+  facts:
+    - {field: patient.age, value: 26}
+    - {field: patient.sex, value: female}
+    - {field: complaint.category, value: vaginal_bleeding}
+    - {field: complaint.text, value: "first pregnancy; bleeding like a period; crampy pain"}
+    - {field: complaint.pain_rating, value: 1}
+    - {field: complaint.vaginal_bleeding, value: true}
+    - {field: complaint.heavy_vaginal_bleeding, value: false}
+    - {field: history.pregnant, value: true}
+    - {field: vitals.sbp, value: 110, status: observed}
+    - {field: vitals.heart_rate, value: 72, status: observed}
+    - {field: vitals.respiratory_rate, value: 18, status: observed}
+    - {field: vitals.spo2, value: 99, status: observed}
+    - {field: vitals.temp_c, value: 37.0, status: observed}
+
+- case: 48
+  v4_answer: 1
+  book_span: "\u201CI suddenly started bleeding and passing clots the size"
+  book_page: 74
+  answer_page: 81
+  synopsis: "34F 10 days postpartum, passing orange-sized clots, pale, about to pass out; BP 86/40, HR 132"
+  expect: esi1
+  expect_rules: [A-18.pregnancy-hemodynamic-instability-lifesaving]
+  facts:
+    - {field: patient.age, value: 34}
+    - {field: patient.sex, value: female}
+    - {field: complaint.category, value: vaginal_bleeding}
+    - {field: complaint.text, value: "10 days postpartum; sudden bleeding, passing clots the size of oranges; pale; asks to lie down before she passes out"}
+    - {field: history.postpartum, value: true}
+    - {field: history.pregnant, value: false}
+    - {field: complaint.heavy_vaginal_bleeding, value: true}
+    - {field: complaint.vaginal_bleeding, value: true}
+    - {field: complaint.heavy_vaginal_bleeding, value: true}
+    - {field: vitals.sbp, value: 86, status: observed}
+    - {field: vitals.heart_rate, value: 132, status: observed}
+    - {field: vitals.respiratory_rate, value: 22, status: observed}
+    - {field: vitals.spo2, value: 98, status: observed}
+    - {field: vitals.hypotension, value: true, status: observed, from: answer}
+    - {field: obs.hypoperfusion_signs, value: true, status: observed, from: answer}
+    - {field: obs.hemodynamically_unstable, value: true, status: observed, from: answer}
+    - {field: obs.requires_lifesaving_intervention, value: true, status: observed, from: answer}
+
+- case: 49
+  v4_answer: 4
+  book_span: "\u201CI have had a cold for a few days"
+  book_page: 74
+  answer_page: 81
+  synopsis: "39F asthma, cold, wheezing today, no fever; RR 22, SpO2 99%"
+  expect: none
+  facts:
+    - {field: patient.age, value: 39}
+    - {field: patient.sex, value: female}
+    - {field: complaint.category, value: breathing}
+    - {field: complaint.text, value: "cold for a few days, started wheezing today; usually needs one breathing treatment"}
+    - {field: complaint.fever, value: false}
+    - {field: history.conditions, value: [asthma]}
+    - {field: M.medications, value: []}
+    - {field: A.allergies, value: []}
+    - {field: vitals.temp_c, value: 36.7, status: observed}
+    - {field: vitals.respiratory_rate, value: 22, status: observed}
+    - {field: vitals.heart_rate, value: 88, status: observed}
+    - {field: vitals.sbp, value: 130, status: observed}
+    - {field: vitals.spo2, value: 99, status: observed}
+    - {field: complaint.onset, value: "today", from: second-reading}
+
+- case: 52
+  v4_answer: 3
+  book_span: "\u201CMy doctor told me to come to the ED."
+  book_page: 74
+  answer_page: 81
+  synopsis: "33F 3 weeks after gastric bypass, vomiting and belly pain 6/10, normal vitals"
+  expect: none
+  facts:
+    - {field: patient.age, value: 33}
+    - {field: patient.sex, value: female}
+    - {field: complaint.category, value: abdominal_pain}
+    - {field: complaint.text, value: "gastric bypass 3 weeks ago; today vomiting and belly pain; obese"}
+    - {field: complaint.onset, value: today}
+    - {field: complaint.pain_rating, value: 6}
+    - {field: complaint.vomiting, value: true}
+    - {field: history.conditions, value: ["gastric bypass 3 weeks ago"]}
+    - {field: vitals.sbp, value: 126, status: observed}
+    - {field: vitals.heart_rate, value: 76, status: observed}
+    - {field: vitals.respiratory_rate, value: 14, status: observed}
+    - {field: vitals.temp_c, value: 36.7, status: observed}
+
+- case: 53
+  v4_answer: 2
+  book_span: "\u201CI had a baby 5 weeks ago, and I"
+  book_page: 74
+  answer_page: 81
+  synopsis: "23F 5 weeks postpartum, exhausted, breathless on the stairs, swollen ankles"
+  xfail: "The book's level 2 is peripartum cardiomyopathy, a judgement. The fifth edition's sentence behind B-38 says 'pregnant patients with chest pain and/or shortness of breath' and does not name the postpartum weeks; since the pregnant/postpartum split (10 Oct 2026) B-38 reads history.pregnant alone, so this case no longer fires it. Recorded for the clinician read (#66): whether postpartum breathlessness belongs under B-38."
+  expect: floor2
+  facts:
+    - {field: patient.age, value: 23}
+    - {field: patient.sex, value: female}
+    - {field: complaint.category, value: breathing}
+    - {field: complaint.text, value: "had a baby 5 weeks ago; exhausted; so short of breath at the top of the stairs she must sit down; ankles swollen; doctor said not anaemic; obese"}
+    - {field: complaint.shortness_of_breath, value: true}
+    - {field: history.postpartum, value: true}
+    - {field: history.pregnant, value: false}
+
+- case: 55
+  v4_answer: 5
+  book_span: "A 76-year-old male requests to see a doctor because"
+  book_page: 74
+  answer_page: 81
+  synopsis: "76M cannot cut his hard toenails, COPD on inhalers, normal vitals"
+  expect: none
+  expect_notes: [B-52.geriatric-vitals-medication-context-consider]
+  facts:
+    - {field: patient.age, value: 76}
+    - {field: patient.sex, value: male}
+    - {field: complaint.category, value: other}
+    - {field: complaint.text, value: "toenails too hard to cut himself; no breaks in the skin, no signs of infection"}
+    - {field: complaint.infection_signs, value: false}
+    - {field: history.conditions, value: ["chronic obstructive pulmonary disease"]}
+    - {field: M.medications, value: ["several metered-dose inhalers"]}
+
+- case: 57
+  v4_answer: 2
+  edition_differs: true   # the book's answer rests on a criterion the fifth edition changed or dropped; see note/xfail
+  book_span: "This patient is the restrained driver of an SUV"
+  book_page: 75
+  answer_page: 81
+  synopsis: "restrained SUV driver in a high-speed multicar crash, right thigh pain, hand laceration, knee abrasion, stable"
+  xfail: "The book's level 2 is the mechanism of injury alone. The fifth edition's mechanism list is numeric and names no speed (Set 2, as case 27)."
+  set2: true
+  expect: floor2
+  facts:
+    - {field: patient.sex, value: female}
+    - {field: complaint.category, value: injury}
+    - {field: complaint.text, value: "restrained driver of an SUV in a high-speed multicar accident; right thigh pain; laceration on the left hand; abrasion on the left knee"}
+    - {field: E.mechanism, value: road_accident}
+    - {field: history.conditions, value: []}
+    - {field: M.medications, value: []}
+    - {field: A.allergies, value: []}
+    - {field: vitals.sbp, value: 110, status: observed}
+    - {field: vitals.heart_rate, value: 72, status: observed}
+    - {field: vitals.respiratory_rate, value: 16, status: observed}
+
+- case: 58
+  v4_answer: 2
+  book_span: "\u201CMy wife called 911 because my internal defibrillator gave"
+  book_page: 75
+  answer_page: 81
+  synopsis: "man whose internal defibrillator shocked him at breakfast, cardiac history, medications changed days ago, normal vitals"
+  xfail: "The book's level 2 is a judgement: an implanted defibrillator that fired must be evaluated. No fifth-edition sentence covers it."
+  expect: floor2
+  facts:
+    - {field: patient.sex, value: male}
+    - {field: complaint.category, value: other}
+    - {field: complaint.text, value: "internal defibrillator gave him a shock this morning; significant cardiac history; doctor changed some medications a few days ago"}
+    - {field: history.conditions, value: ["significant cardiac history, implanted defibrillator"]}
+    - {field: M.medications, value: [amiodarone, "multiple other medications"]}
+    - {field: vitals.temp_c, value: 36.9, status: observed}
+    - {field: vitals.respiratory_rate, value: 20, status: observed}
+    - {field: vitals.heart_rate, value: 90, status: observed}
+    - {field: vitals.sbp, value: 120, status: observed}
+    - {field: complaint.onset, value: "this morning", from: second-reading}
+
+- case: 59
+  v4_answer: 1
+  book_span: "\u201CNurse, I have this pressure in my chest that"
+  book_page: 75
+  answer_page: 81
+  synopsis: "52M chest pressure 10/10 after shovelling snow, nauseous, breathless, cool clammy; BP 86/50, HR 52 irregular"
+  expect: esi1
+  expect_rules: [A-17.chest-pain-unstable-lifesaving, A-10.hypotension-with-hypoperfusion]
+  facts:
+    - {field: patient.age, value: 52}
+    - {field: patient.sex, value: male}
+    - {field: complaint.category, value: chest_pain}
+    - {field: complaint.text, value: "pressure in the chest for about an hour after shovelling wet snow; nauseous and short of breath; obese"}
+    - {field: complaint.onset, value: "about an hour ago"}
+    - {field: complaint.pain_rating, value: 10}
+    - {field: complaint.acs_suspicion, value: true}
+    - {field: complaint.shortness_of_breath, value: true}
+    - {field: danger_signs.chest_pain_now, value: true}
+    - {field: vitals.sbp, value: 86, status: observed}
+    - {field: vitals.heart_rate, value: 52, status: observed}
+    - {field: vitals.hypotension, value: true, status: observed, from: answer}
+    - {field: obs.hypoperfusion_signs, value: true, status: observed, from: answer}
+    - {field: obs.hemodynamically_unstable, value: true, status: observed, from: answer}
+    - {field: obs.requires_lifesaving_intervention, value: true, status: observed, from: answer}
+
+- case: 60
+  v4_answer: 2
+  book_span: "\u201CMy sister has metastatic breast cancer, and her doctor"
+  book_page: 75
+  answer_page: 81
+  synopsis: "42F metastatic breast cancer, fluid on the lungs, harder to breathe; RR 34, SpO2 95%"
+  expect: floor2
+  expect_rules: [B-12.increasing-respiratory-effort]
+  facts:
+    - {field: patient.age, value: 42}
+    - {field: patient.sex, value: female}
+    - {field: complaint.category, value: breathing}
+    - {field: complaint.text, value: "metastatic breast cancer; doctor suggested she come to have more fluid drained from her lungs; the fluid is making it harder to breathe; cachectic"}
+    - {field: complaint.increasing_respiratory_effort, value: true}
+    - {field: complaint.respiratory_distress_signs, value: true}
+    - {field: history.conditions, value: ["metastatic breast cancer"]}
+    - {field: M.medications, value: ["multiple medications"]}
+    - {field: vitals.temp_c, value: 37.0, status: observed}
+    - {field: vitals.respiratory_rate, value: 34, status: observed}
+    - {field: vitals.spo2, value: 95, status: observed}
+    - {field: vitals.heart_rate, value: 92, status: observed}
+    - {field: vitals.sbp, value: 114, status: observed}
+
+- case: 61
+  v4_answer: 3
+  book_span: "A 58-year-old male presents to the emergency department complaining"
+  book_page: 75
+  answer_page: 81
+  synopsis: "58M left lower abdominal pain for 3 days, T 37.8, pain 5/10, HTN"
+  expect: none
+  facts:
+    - {field: patient.age, value: 58}
+    - {field: patient.sex, value: male}
+    - {field: complaint.category, value: abdominal_pain}
+    - {field: complaint.text, value: "left lower-quadrant abdominal pain for 3 days; no nausea, vomiting or diarrhoea; appetite unchanged"}
+    - {field: complaint.onset, value: "3 days"}
+    - {field: complaint.pain_rating, value: 5}
+    - {field: complaint.unilateral_lower_quadrant_pain, value: true}
+    - {field: complaint.vomiting, value: false}
+    - {field: complaint.fever, value: false}
+    - {field: history.conditions, value: [hypertension]}
+    - {field: vitals.temp_c, value: 37.8, status: observed}
+    - {field: vitals.respiratory_rate, value: 18, status: observed}
+    - {field: vitals.heart_rate, value: 80, status: observed}
+    - {field: vitals.sbp, value: 140, status: observed}
+    - {field: vitals.spo2, value: 98, status: observed}
+
+- case: 62
+  v4_answer: 5
+  book_span: "\u201CI think he has another ear infection,\u201D the mother"
+  book_page: 75
+  answer_page: 82
+  synopsis: "2-year-old pulling at his right ear, T 37.9, playful, frequent ear infections"
+  expect: none
+  facts:
+    - {field: patient.age, value: 2}
+    - {field: patient.age_months, value: 24}
+    - {field: patient.sex, value: male}
+    - {field: complaint.category, value: ear_problem}
+    - {field: complaint.text, value: "pulling on his right ear; history of frequent ear infections; normal appetite and urine output; grabbing the stethoscope"}
+    - {field: complaint.fever, value: false}
+    - {field: M.medications, value: []}
+    - {field: vitals.temp_c, value: 37.9, status: observed}
+
+- case: 64
+  v4_answer: 5
+  book_span: "\u201CLast night I had sex, and we used a"
+  book_page: 75
+  answer_page: 82
+  synopsis: "18F condom broke last night, does not want to get pregnant, normal vitals"
+  expect: none
+  facts:
+    - {field: patient.age, value: 18}
+    - {field: patient.sex, value: female}
+    - {field: complaint.category, value: request}
+    - {field: complaint.text, value: "condom broke during sex last night; wants to prevent pregnancy"}
+    - {field: complaint.onset, value: "Last night", from: second-reading}
+
+- case: 65
+  v4_answer: 4
+  book_span: "\u201CI have a fever and a sore throat. I"
+  book_page: 75
+  answer_page: 82
+  synopsis: "19F fever and sore throat, worried about strep, drinking water; T 38.1"
+  expect: none
+  facts:
+    - {field: patient.age, value: 19}
+    - {field: patient.sex, value: female}
+    - {field: complaint.category, value: sore_throat}
+    - {field: complaint.text, value: "fever and sore throat; finals this week; sitting at triage drinking bottled water"}
+    - {field: complaint.fever, value: true}
+    - {field: history.conditions, value: []}
+    - {field: M.medications, value: ["birth control pills"]}
+    - {field: A.allergies, value: []}
+    - {field: vitals.temp_c, value: 38.1, status: observed}
+    - {field: vitals.heart_rate, value: 88, status: observed}
+    - {field: vitals.respiratory_rate, value: 18, status: observed}
+    - {field: vitals.sbp, value: 112, status: observed}
+
+- case: 66
+  v4_answer: 1
+  book_span: "\u201CThis 84-year-old male passed out in the bathroom,\u201D reports"
+  book_page: 75
+  answer_page: 82
+  synopsis: "84M passed out, third-degree heart block at a rate in the 20s with BP in the 60s, now externally paced and alert"
+  note: "Level 1: external pacing is a lifesaving intervention in progress."
+  expect: esi1
+  expect_rules: [A-22.requires-lifesaving-intervention]
+  facts:
+    - {field: patient.age, value: 84}
+    - {field: patient.sex, value: male}
+    - {field: complaint.category, value: dizziness}
+    - {field: complaint.text, value: "passed out in the bathroom; paramedics found third-degree heart block with a rate in the 20s and a blood pressure in the 60s; externally paced at 60; now alert, oriented, asking for his wife"}
+    - {field: danger_signs.responsive, value: true}
+    - {field: vitals.extreme_heart_rate, value: true, status: observed, from: answer}
+    - {field: vitals.profound_hypotension, value: true, status: observed, from: answer}
+    - {field: obs.requires_lifesaving_intervention, value: true, status: observed, from: answer}
+
+- case: 67
+  v4_answer: 2
+  book_span: "A 16-year-old male wearing a swimsuit walks into the"
+  book_page: 75
+  answer_page: 82
+  synopsis: "16M dove into a pool and struck his face on the bottom, abrasions on forehead and nose, tingling in both hands"
+  note: "The book's level 2 is a cervical-spine injury until proven otherwise. The fifth edition has no spine rule; the engine reaches level 2 through the limb-signs bridge (tingling below an injury -> B-24), which is the right floor for the wrong reason. Recorded for the clinician read."
+  expect: floor2
+  expect_rules: [B-24.extremity-neurovascular-compromise]
+  facts:
+    - {field: patient.age, value: 16}
+    - {field: patient.sex, value: male}
+    - {field: complaint.category, value: head_injury}
+    - {field: complaint.text, value: "dove into a pool, face struck the bottom; abrasions on forehead and nose; tingling in both hands; walked in"}
+    - {field: E.head_strike, value: true}
+    - {field: limb.numb_tingling, value: true}
+    - {field: danger_signs.responsive, value: true}
+
+- case: 68
+  v4_answer: 3
+  book_span: "A-25-year-old female presented to the emergency department because of"
+  book_page: 75
+  answer_page: 82
+  synopsis: "25F lower abdominal pain, fever and chills, 2 days after a termination, minimal bleeding; T 38.2, pain 5/10"
+  expect: none
+  expect_consider: [B-21.abdo-pain-vaginal-bleeding]
+  facts:
+    - {field: patient.age, value: 25}
+    - {field: patient.sex, value: female}
+    - {field: complaint.category, value: abdominal_pain}
+    - {field: complaint.text, value: "moderate lower abdominal pain with fever and chills; therapeutic abortion at a clinic two days ago; minimal vaginal bleeding"}
+    - {field: complaint.pain_rating, value: 5}
+    - {field: complaint.fever, value: true}
+    - {field: complaint.chills_or_rigors, value: true}
+    - {field: complaint.vaginal_bleeding, value: true}
+    - {field: complaint.heavy_vaginal_bleeding, value: false}
+    - {field: history.pregnant, value: false}
+    - {field: history.postpartum, value: false}
+    - {field: vitals.temp_c, value: 38.2, status: observed}
+    - {field: vitals.respiratory_rate, value: 20, status: observed}
+    - {field: vitals.heart_rate, value: 92, status: observed}
+    - {field: vitals.sbp, value: 118, status: observed}
+    - {field: vitals.spo2, value: 99, status: observed}
+    - {field: complaint.onset, value: "Two days ago", from: second-reading}
+
+- case: 69
+  v4_answer: 1
+  book_span: "EMS radios in that they are in route with"
+  book_page: 75
+  answer_page: 82
+  synopsis: "17M single gunshot wound to the left chest, BP 78/palp, HR 130"
+  expect: esi1
+  expect_rules: [A-14.penetrating-trauma-unstable]
+  facts:
+    - {field: patient.age, value: 17}
+    - {field: patient.sex, value: male}
+    - {field: complaint.category, value: injury}
+    - {field: complaint.text, value: "single gunshot wound to the left chest; alert and oriented on scene; two large-bore IVs inserted; BP 78/palp two minutes before arrival"}
+    - {field: E.mechanism, value: penetrating_trauma}
+    - {field: E.body_region, value: chest}
+    - {field: danger_signs.responsive, value: true}
+    - {field: vitals.sbp, value: 78, status: observed}
+    - {field: vitals.heart_rate, value: 130, status: observed}
+    - {field: vitals.hypotension, value: true, status: observed, from: answer}
+    - {field: obs.hemodynamically_unstable, value: true, status: observed, from: answer}
+    - {field: obs.requires_lifesaving_intervention, value: true, status: observed, from: answer}
+
+- case: 70
+  v4_answer: 4
+  book_span: "\u201CI was at a family reunion, and we were"
+  book_page: 75
+  answer_page: 82
+  synopsis: "34F baseball to the eye, vision fine, periorbital redness and swelling, no loss of consciousness"
+  note: "Negative for B-28: one eye finding (an eye injury)."
+  expect: none
+  facts:
+    - {field: patient.age, value: 34}
+    - {field: patient.sex, value: female}
+    - {field: complaint.category, value: eye_problem}
+    - {field: complaint.text, value: "hit in the eye by a baseball; vision fine, it just hurts; redness and swelling around the eye, no sign of injury to the eyeball"}
+    - {field: eye.injury, value: true}
+    - {field: stroke.vision_change, value: false}
+    - {field: E.mechanism, value: assault}
+    - {field: E.loc, value: false}
+
+- case: 71
+  v4_answer: 1
+  book_span: "A 76-year-old male is brought to the ED because"
+  book_page: 76
+  answer_page: 82
+  synopsis: "76M severe abdominal pain 'ripping me apart' 20/10 for 30 minutes, cool diaphoretic; HR 122, BP 88/68"
+  expect: esi1
+  expect_rules: [A-10.hypotension-with-hypoperfusion]
+  expect_consider: [B-02.severe-pain-consider]
+  facts:
+    - {field: patient.age, value: 76}
+    - {field: patient.sex, value: male}
+    - {field: complaint.category, value: abdominal_pain}
+    - {field: complaint.text, value: "severe abdominal pain, 'like someone is ripping me apart', for about 30 minutes; sitting in a wheelchair moaning"}
+    - {field: complaint.onset, value: "30 minutes ago"}
+    - {field: complaint.pain_rating, value: 10}
+    - {field: complaint.pain_refractory_constant_or_maximal_onset, value: true}
+    - {field: history.conditions, value: [hypertension]}
+    - {field: M.medications, value: ["a diuretic"]}
+    - {field: A.allergies, value: []}
+    - {field: vitals.heart_rate, value: 122, status: observed}
+    - {field: vitals.sbp, value: 88, status: observed}
+    - {field: vitals.respiratory_rate, value: 24, status: observed}
+    - {field: vitals.spo2, value: 94, status: observed}
+    - {field: vitals.hypotension, value: true, status: observed, from: answer}
+    - {field: obs.hypoperfusion_signs, value: true, status: observed, from: answer}
+    - {field: obs.hemodynamically_unstable, value: true, status: observed, from: answer}
+    - {field: obs.requires_lifesaving_intervention, value: true, status: observed, from: answer}
+
+- case: 72
+  v4_answer: 3
+  book_span: "The patient states that she is 6 weeks post"
+  book_page: 76
+  answer_page: 82
+  synopsis: "woman 6 weeks after gastric bypass, abdominal pain with vomiting for 2 days, pain 4/10"
+  expect: none
+  facts:
+    - {field: patient.sex, value: female}
+    - {field: complaint.category, value: abdominal_pain}
+    - {field: complaint.text, value: "6 weeks after laparoscopic gastric bypass; abdominal pain with nausea and vomiting of pureed food for two days; drinking less, cannot keep supplements down"}
+    - {field: complaint.onset, value: "2 days"}
+    - {field: complaint.pain_rating, value: 4}
+    - {field: complaint.vomiting, value: true}
+    - {field: vitals.temp_c, value: 36.6, status: observed}
+    - {field: vitals.respiratory_rate, value: 20, status: observed}
+    - {field: vitals.heart_rate, value: 90, status: observed}
+    - {field: vitals.sbp, value: 110, status: observed}
+    - {field: vitals.spo2, value: 99, status: observed}
+
+- case: 73
+  v4_answer: 4
+  book_span: "A 26-year-old female walks into the triage room and"
+  book_page: 76
+  answer_page: 82
+  synopsis: "26F using heroin again for 2 weeks, wants detox, denies suicidal or homicidal thoughts, calm"
+  expect: none
+  facts:
+    - {field: patient.age, value: 26}
+    - {field: patient.sex, value: female}
+    - {field: complaint.category, value: mental_health}
+    - {field: complaint.text, value: "clean 18 months, using heroin again for 2 weeks since a break-up; needs a detox bed; calm and cooperative"}
+    - {field: complaint.danger_to_self_or_others, value: false}
+    - {field: complaint.psychotic_or_violent, value: false}
+    - {field: complaint.onset, value: "2 weeks ago", from: second-reading}
+
+- case: 74
+  v4_answer: 2
+  book_span: "\u201CMy throat is on fire,\u201D reports a 19-year-old female."
+  book_page: 76
+  answer_page: 82
+  synopsis: "19F throat on fire for days, can barely swallow, voice changed, swelling on one side of the throat; T 38.7, RR 24"
+  xfail: "The book's level 2 is a possible peritonsillar abscess with a threatened airway, a judgement. The fifth edition's airway sentence (B-14) needs drooling or inability to manage secretions, or stridor, which the case does not state."
+  expect: floor2
+  facts:
+    - {field: patient.age, value: 19}
+    - {field: patient.sex, value: female}
+    - {field: complaint.category, value: sore_throat}
+    - {field: complaint.text, value: "throat on fire for a couple of days, getting worse; can barely swallow; friends say her voice is different; a big swelling on one side of the throat"}
+    - {field: complaint.onset, value: "a couple of days"}
+    - {field: complaint.fever, value: true}
+    - {field: history.conditions, value: []}
+    - {field: M.medications, value: []}
+    - {field: A.allergies, value: []}
+    - {field: vitals.temp_c, value: 38.7, status: observed}
+    - {field: vitals.respiratory_rate, value: 24, status: observed}
+    - {field: vitals.heart_rate, value: 92, status: observed}
+    - {field: vitals.sbp, value: 122, status: observed}
+    - {field: vitals.spo2, value: 100, status: observed}
+
+- case: 75
+  v4_answer: 3
+  book_span: "\u201CMy doctor told me to come to the ED."
+  book_page: 76
+  answer_page: 82
+  synopsis: "76F infected open area on the palm, afebrile; arthritis, renal failure, diabetes"
+  expect: none
+  expect_notes: [B-52.geriatric-vitals-medication-context-consider]
+  facts:
+    - {field: patient.age, value: 76}
+    - {field: patient.sex, value: female}
+    - {field: complaint.category, value: wound}
+    - {field: complaint.text, value: "open area on the palm of the hand, red, tender and swollen; doctor thinks it is infected; afebrile"}
+    - {field: complaint.infection_signs, value: true}
+    - {field: complaint.fever, value: false}
+    - {field: history.conditions, value: [arthritis, "chronic renal failure", diabetes]}
+    - {field: M.medications, value: ["a list of medications"]}
+    - {field: A.allergies, value: []}
+    - {field: vitals.heart_rate, value: 72, status: observed}
+    - {field: vitals.respiratory_rate, value: 16, status: observed}
+    - {field: vitals.sbp, value: 102, status: observed}
+
+- case: 78
+  v4_answer: 3
+  book_span: ", RR 16, BP 128/74. 78. \u201CI have been"
+  book_page: 76
+  answer_page: 83
+  synopsis: "34F mastitis on antibiotics 5 days, fever 39.0, chills, new red area, breastfeeding; pain 6/10"
+  expect: none
+  facts:
+    - {field: patient.age, value: 34}
+    - {field: patient.sex, value: female}
+    - {field: complaint.category, value: skin_problem}
+    - {field: complaint.text, value: "on antibiotics 5 days for mastitis; still pain and tenderness in the right breast, a new reddened area; fever, chills, run down; nursing her baby"}
+    - {field: complaint.pain_rating, value: 6}
+    - {field: complaint.fever, value: true}
+    - {field: complaint.chills_or_rigors, value: true}
+    - {field: complaint.infection_signs, value: true}
+    - {field: history.postpartum, value: true}
+    - {field: history.pregnant, value: false}
+    - {field: M.medications, value: [antibiotics]}
+    - {field: vitals.temp_c, value: 39.0, status: observed}
+    - {field: vitals.respiratory_rate, value: 20, status: observed}
+    - {field: vitals.sbp, value: 122, status: observed}
+    - {field: vitals.spo2, value: 98, status: observed}
+
+- case: 79
+  v4_answer: 2
+  book_span: "A young male walks into triage and tells you"
+  book_page: 76
+  answer_page: 83
+  synopsis: "young man shot, two wounds in the left leg, heard three shots, alert, normal vitals"
+  xfail: "The book's level 2 rests on a possible third wound and a possibly injured vessel. The fifth edition's penetrating-trauma sentence (B-23) covers the head, neck, chest and abdomen, not a limb."
+  expect: floor2
+  facts:
+    - {field: patient.sex, value: male}
+    - {field: complaint.category, value: injury}
+    - {field: complaint.text, value: "walked in saying he has been shot; two wounds on the left leg; heard three shots; alert and answering appropriately"}
+    - {field: E.mechanism, value: penetrating_trauma}
+    - {field: E.body_region, value: other}
+    - {field: danger_signs.responsive, value: true}
+    - {field: danger_signs.heavy_bleeding, value: false}
+    - {field: vitals.temp_c, value: 36.8, status: observed}
+    - {field: vitals.heart_rate, value: 78, status: observed}
+    - {field: vitals.respiratory_rate, value: 16, status: observed}
+    - {field: vitals.sbp, value: 118, status: observed}
+    - {field: obs.hemodynamically_unstable, value: false, status: observed, from: answer}
+
+- case: 80
+  v4_answer: 2
+  book_span: "An 82-year-old resident of a local assisted living facility"
+  book_page: 76
+  answer_page: 83
+  synopsis: "82F excruciating generalised abdominal pain 10/10 and vomiting for hours, previous heart attack; RR 28, HR 102"
+  xfail: "The book's level 2 is high risk plus severe pain in an elderly patient, a judgement. The fifth edition's severe-pain sentence is 'consider' (B-02); abdominal pain alone has no assigning sentence."
+  expect: floor2
+  expect_consider: [B-02.severe-pain-consider]
+  expect_notes: [B-52.geriatric-vitals-medication-context-consider]
+  facts:
+    - {field: patient.age, value: 82}
+    - {field: patient.sex, value: female}
+    - {field: complaint.category, value: abdominal_pain}
+    - {field: complaint.text, value: "excruciating generalised abdominal pain and vomiting that started a few hours ago; moaning in pain; assisted living resident"}
+    - {field: complaint.onset, value: "a few hours ago"}
+    - {field: complaint.pain_rating, value: 10}
+    - {field: complaint.vomiting, value: true}
+    - {field: history.conditions, value: ["heart attack 6 years ago"]}
+    - {field: vitals.temp_c, value: 36.7, status: observed}
+    - {field: vitals.respiratory_rate, value: 28, status: observed}
+    - {field: vitals.heart_rate, value: 102, status: observed}
+    - {field: vitals.sbp, value: 146, status: observed}
+    - {field: vitals.spo2, value: 98, status: observed}
+
+- case: 81
+  v4_answer: 4
+  book_span: "\u201CI should have paid more attention to what I"
+  book_page: 76
+  answer_page: 83
+  synopsis: "37M carpenter, 3 cm thumb laceration wrapped in a rag, wants a tetanus shot"
+  expect: none
+  facts:
+    - {field: patient.age, value: 37}
+    - {field: patient.sex, value: male}
+    - {field: complaint.category, value: wound}
+    - {field: complaint.text, value: "3-centimetre laceration to the right thumb, wrapped in a clean rag; knows he needs a tetanus shot"}
+    - {field: danger_signs.heavy_bleeding, value: false}
+    - {field: vitals.sbp, value: 142, status: observed}
+    - {field: vitals.respiratory_rate, value: 16, status: observed}
+    - {field: vitals.temp_c, value: 37.0, status: observed}
+
+- case: 82
+  v4_answer: 5
+  book_span: "\u201CMy son woke me up about 3 hours ago"
+  book_page: 76
+  answer_page: 83
+  synopsis: "4-year-old right earache for 3 hours, paracetamol did not help, no fever"
+  expect: none
+  facts:
+    - {field: patient.age, value: 4}
+    - {field: patient.sex, value: male}
+    - {field: complaint.category, value: ear_problem}
+    - {field: complaint.text, value: "woke his mother 3 hours ago with a right earache; acetaminophen did not help"}
+    - {field: complaint.onset, value: "3 hours ago"}
+    - {field: complaint.fever, value: false}
+
+- case: 85
+  v4_answer: 2
+  book_span: "\u201CMy mother is just not acting herself,\u201D reports the"
+  book_page: 77
+  answer_page: 83
+  synopsis: "72F not herself, sleeping more, hurts to pee, T 38.2; responds to voice, disoriented to time and place"
+  expect: floor2
+  expect_rules: [B-01.new-altered-mental-status, B-43.uti-elderly-or-urosepsis-signs]
+  facts:
+    - {field: patient.age, value: 72}
+    - {field: patient.sex, value: female}
+    - {field: complaint.category, value: neuro_symptoms}
+    - {field: complaint.text, value: "daughter says her mother is just not acting herself: sleeping more than usual; says it hurts to pee; responds to voice but disoriented to time and place"}
+    - {field: ams.changed_from_baseline, value: true}
+    - {field: history.baseline_mental_status, value: known}
+    - {field: complaint.uti_symptoms, value: true}
+    - {field: complaint.fever, value: true}
+    - {field: vitals.temp_c, value: 38.2, status: observed}
+    - {field: vitals.heart_rate, value: 98, status: observed}
+    - {field: vitals.respiratory_rate, value: 22, status: observed}
+    - {field: vitals.sbp, value: 122, status: observed}
+
+- case: 86
+  v4_answer: 4
+  book_span: "EMS arrives in the ED with a 57-year-old female"
+  book_page: 77
+  answer_page: 83
+  synopsis: "57F multiple sclerosis, bedridden, urinary catheter came out, on antibiotics for a urine infection, normal vitals"
+  expect: none
+  facts:
+    - {field: patient.age, value: 57}
+    - {field: patient.sex, value: female}
+    - {field: complaint.category, value: request}
+    - {field: complaint.text, value: "Foley catheter came out this morning; bedridden with multiple sclerosis, cared for at home; no other complaints"}
+    - {field: history.conditions, value: ["multiple sclerosis", "urinary tract infection on antibiotics"]}
+    - {field: M.medications, value: [antibiotics]}
+    - {field: complaint.onset, value: "this morning", from: second-reading}
+
+- case: 87
+  v4_answer: 3
+  book_span: "\u201CI got my belly button pierced a month ago"
+  book_page: 77
+  answer_page: 83
+  synopsis: "19F navel piercing a month ago, red swollen with pus, T 37.8, pain 8/10, chatting with her roommate"
+  expect: none
+  expect_consider: [B-02.severe-pain-consider]
+  facts:
+    - {field: patient.age, value: 19}
+    - {field: patient.sex, value: female}
+    - {field: complaint.category, value: skin_problem}
+    - {field: complaint.text, value: "belly button pierced a month ago, now red, tender, swollen with pus oozing from the site; chatting about plans for the evening"}
+    - {field: complaint.pain_rating, value: 8}
+    - {field: complaint.infection_signs, value: true}
+    - {field: complaint.fever, value: false}
+    - {field: vitals.temp_c, value: 37.8, status: observed}
+    - {field: vitals.heart_rate, value: 74, status: observed}
+    - {field: vitals.respiratory_rate, value: 18, status: observed}
+    - {field: vitals.sbp, value: 102, status: observed}
+    - {field: vitals.spo2, value: 100, status: observed}
+    - {field: complaint.onset, value: "a month ago", from: second-reading}
+
+- case: 88
+  v4_answer: 2
+  book_span: "\u201CWhy the hell don\u2019t you just leave me alone?\u201D"
+  book_page: 77
+  answer_page: 83
+  synopsis: "73M dishevelled, drinking vodka on the kerb, 4 cm forehead laceration oozing, oriented, GCS 14"
+  xfail: "The book's level 2 is a judgement: an unclear mechanism (fall? assault?), age and alcohol. The fifth edition's trauma sentences need a known mechanism; none is stated."
+  expect: floor2
+  facts:
+    - {field: patient.age, value: 73}
+    - {field: patient.sex, value: male}
+    - {field: complaint.category, value: head_injury}
+    - {field: complaint.text, value: "found sitting on the kerb drinking vodka, blood oozing from a 4-centimetre forehead laceration; oriented to person, place and time; Glasgow Coma Scale 14; how it happened is unknown"}
+    - {field: E.head_strike, value: true}
+    - {field: danger_signs.responsive, value: true}
+
+- case: 90
+  v4_answer: 4
+  book_span: "\u201CI have this infection in my cuticle,\u201D reports a"
+  book_page: 77
+  answer_page: 83
+  synopsis: "26F small paronychia on the right second finger with pus, afebrile"
+  expect: none
+  facts:
+    - {field: patient.age, value: 26}
+    - {field: patient.sex, value: female}
+    - {field: complaint.category, value: skin_problem}
+    - {field: complaint.text, value: "infection in the cuticle of the right second finger, hurting for 2 days, pus today"}
+    - {field: complaint.infection_signs, value: true}
+    - {field: complaint.fever, value: false}
+    - {field: A.allergies, value: []}
+    - {field: vitals.temp_c, value: 37.1, status: observed}
+    - {field: vitals.respiratory_rate, value: 14, status: observed}
+    - {field: vitals.heart_rate, value: 62, status: observed}
+    - {field: vitals.sbp, value: 108, status: observed}
+    - {field: complaint.onset, value: "2 days ago", from: second-reading}
+
+- case: 92
+  v4_answer: 1
+  book_span: "A 72-year-old female with obvious chronic obstructive pulmonary diseas"
+  book_page: 77
+  answer_page: 83
+  synopsis: "72F COPD, increased work of breathing, fever since yesterday, SpO2 79%, appears to be tiring"
+  note: "Set 2 (A-08 qualifier): the fifth edition excludes a low SpO2 that is the patient's norm. The book treats 79% as not her norm and assigns 1; recorded as such."
+  set2: true
+  v5_answer: 1
+  expect: esi1
+  expect_rules: [A-08.spo2-below-90-with-compromise, A-05.severe-respiratory-distress]
+  facts:
+    - {field: patient.age, value: 72}
+    - {field: patient.sex, value: female}
+    - {field: complaint.category, value: breathing}
+    - {field: complaint.text, value: "obvious COPD, increased work of breathing; a hard time breathing and a fever since yesterday; speaks between breaths; appears to be tiring"}
+    - {field: complaint.fever, value: true}
+    - {field: complaint.increasing_respiratory_effort, value: true}
+    - {field: complaint.respiratory_distress_signs, value: true}
+    - {field: history.conditions, value: ["chronic obstructive pulmonary disease"]}
+    - {field: vitals.spo2, value: 79, status: observed}
+    - {field: vitals.spo2_is_patients_norm, value: false, status: observed, from: answer}
+    - {field: obs.respiratory_compromise_signs, value: true, status: observed, from: answer}
+    - {field: obs.severe_respiratory_distress, value: true, status: observed, from: answer}
+    - {field: obs.requires_lifesaving_intervention, value: true, status: observed, from: answer}
+    - {field: complaint.onset, value: "yesterday", from: second-reading}
+
+- case: 96
+  v4_answer: 2
+  book_span: "A 28-year-old male presents to the ED requesting to"
+  book_page: 77
+  answer_page: 84
+  synopsis: "28M shellfish allergy, throat started to close, used his EpiPen, now feels okay; HR 108"
+  xfail: "The book's level 2 is an allergic reaction treated before arrival that may recur. The fifth edition names anaphylaxis itself (A-09, a clinician's finding) and nothing for a treated reaction. Same gap as Appendix A chapter 6 question 4."
+  expect: floor2
+  facts:
+    - {field: patient.age, value: 28}
+    - {field: patient.sex, value: male}
+    - {field: complaint.category, value: allergic_reaction}
+    - {field: complaint.text, value: "severe shellfish allergy, ate a dip with shrimp by mistake; felt his throat start to close and used his EpiPen; now feels okay; no wheeze or rash"}
+    - {field: A.allergies, value: [shellfish]}
+    - {field: complaint.respiratory_distress_signs, value: false}
+    - {field: vitals.sbp, value: 136, status: observed}
+    - {field: vitals.heart_rate, value: 108, status: observed}
+    - {field: vitals.respiratory_rate, value: 20, status: observed}
+    - {field: vitals.spo2, value: 97, status: observed}
+    - {field: vitals.temp_c, value: 36.1, status: observed}
+    - {field: complaint.onset, value: "immediately", from: second-reading}
+
+- case: 99
+  v4_answer: 2
+  book_span: "A 44-year-old female is retching continuously into a large"
+  book_page: 78
+  answer_page: 84
+  synopsis: "44F diabetic, vomiting 5 hours, no food or insulin, retching; HR 126, RR 24"
+  xfail: "The book's level 2 is the risk of diabetic ketoacidosis with a raised heart and breathing rate, a judgement; the vital signs are decision point D. No fifth-edition sentence covers it."
+  expect: floor2
+  facts:
+    - {field: patient.age, value: 44}
+    - {field: patient.sex, value: female}
+    - {field: complaint.category, value: vomiting_or_diarrhoea}
+    - {field: complaint.text, value: "vomiting for 5 hours, now just yellow fluid; retching continuously; has not eaten or taken her insulin; diabetic"}
+    - {field: complaint.onset, value: "5 hours"}
+    - {field: complaint.vomiting, value: true}
+    - {field: history.conditions, value: [diabetes]}
+    - {field: M.medications, value: [insulin]}
+    - {field: A.allergies, value: []}
+    - {field: vitals.sbp, value: 148, status: observed}
+    - {field: vitals.heart_rate, value: 126, status: observed}
+    - {field: vitals.respiratory_rate, value: 24, status: observed}
+
+- case: 100
+  v4_answer: 1
+  book_span: "EMS arrives with a 76-year-old male found on the"
+  book_page: 78
+  answer_page: 84
+  synopsis: "76M found on the bathroom floor, maroon stool, BP 70/palp, HR 128, RR 40, atrial fibrillation, 'a little blue pill to thin his blood'"
+  expect: esi1
+  expect_rules: [A-16.profound-hypotension, A-10.hypotension-with-hypoperfusion]
+  facts:
+    - {field: patient.age, value: 76}
+    - {field: patient.sex, value: male}
+    - {field: complaint.category, value: other}
+    - {field: complaint.text, value: "family heard a loud crash and found him on the bathroom floor in his underwear; toilet bowl full of maroon-coloured stool"}
+    - {field: E.mechanism, value: fall}
+    - {field: history.conditions, value: ["atrial fibrillation"]}
+    - {field: M.medications, value: ["a little blue pill to thin his blood"]}
+    - {field: vitals.sbp, value: 70, status: observed}
+    - {field: vitals.heart_rate, value: 128, status: observed}
+    - {field: vitals.respiratory_rate, value: 40, status: observed}
+    - {field: vitals.hypotension, value: true, status: observed, from: answer}
+    - {field: vitals.profound_hypotension, value: true, status: observed, from: answer}
+    - {field: obs.hypoperfusion_signs, value: true, status: observed, from: answer}
+    - {field: obs.hemodynamically_unstable, value: true, status: observed, from: answer}
+    - {field: obs.requires_lifesaving_intervention, value: true, status: observed, from: answer}
+
+# ---------- chapter 10 competency cases not transcribed in August (same standard) ----------
+
+- case: 3
+  set: A
+  v4_answer: 1
+  book_span: "\u201CI don\u2019t know what\u2019s wrong with my baby girl,\u201D"
+  book_page: 85
+  answer_page: 88
+  synopsis: "2-week-old girl not acting right, not feeding, listless, skin mottled"
+  note: "Level 1: possible aggressive fluid resuscitation; mottled skin is a sign of poor perfusion."
+  expect: esi1
+  expect_rules: [A-22.requires-lifesaving-intervention]
+  facts:
+    - {field: patient.age, value: 0}
+    - {field: patient.age_days, value: 14}
+    - {field: patient.sex, value: female}
+    - {field: complaint.category, value: other}
+    - {field: complaint.text, value: "mother does not know what is wrong; baby not acting right, not interested in eating; listless; skin mottled"}
+    - {field: ams.changed_from_baseline, value: true}
+    - {field: obs.hypoperfusion_signs, value: true, status: observed, from: answer}
+    - {field: obs.requires_lifesaving_intervention, value: true, status: observed, from: answer}
+
+- case: 6
+  set: A
+  v4_answer: 2
+  book_span: "\u201CAfter my pediatrician saw my son\u2019s rash, he said"
+  book_page: 85
+  answer_page: 89
+  synopsis: "boy with a cold and cough, new rash on face and chest with petechiae, sent in by his pediatrician"
+  xfail: "The book's level 2 is petechiae as a possible sign of meningococcal infection, a judgement the fifth edition does not state as a rule (it names petechial rash only in the isolation prompt). Recorded for the clinician read."
+  expect: floor2
+  facts:
+    - {field: patient.sex, value: male}
+    - {field: complaint.category, value: skin_problem}
+    - {field: complaint.text, value: "rash on the face and chest that started today with pinpoint purplish spots (petechiae); a cold for a couple of days and a cough; pediatrician sent him in immediately"}
+    - {field: complaint.onset, value: today}
+    - {field: infection.rash, value: true}
+
+- case: 12
+  set: A
+  v4_answer: 2
+  book_span: "\u201CI don\u2019t know what is wrong with my son,\u201D"
+  book_page: 85
+  answer_page: 89
+  synopsis: "8M losing weight, cranky, up every hour to urinate, cannot drink enough; RR 30, HR 98, BP 92/78"
+  xfail: "The book's level 2 is the picture of diabetic ketoacidosis (polyuria, polydipsia, weight loss) with raised rates, a judgement; the vital signs are decision point D. No fifth-edition sentence covers it."
+  expect: floor2
+  facts:
+    - {field: patient.age, value: 8}
+    - {field: patient.sex, value: male}
+    - {field: complaint.category, value: other}
+    - {field: complaint.text, value: "losing weight, acting cranky; up to the bathroom every hour last night; cannot get enough to drink; alert, oriented, answers appropriately"}
+    - {field: complaint.uti_symptoms, value: true}
+    - {field: vitals.temp_c, value: 37.0, status: observed}
+    - {field: vitals.respiratory_rate, value: 30, status: observed}
+    - {field: vitals.heart_rate, value: 98, status: observed}
+    - {field: vitals.sbp, value: 92, status: observed}
+    - {field: vitals.spo2, value: 98, status: observed}
+    - {field: complaint.onset, value: "last night", from: second-reading}
+
+- case: 3
+  set: B
+  v4_answer: 5
+  book_span: "\u201CI have this skin rash in my crotch. It"
+  book_page: 87
+  answer_page: 90
+  synopsis: "19M rash in the groin, thinks it is jock itch, normal vitals"
+  expect: none
+  facts:
+    - {field: patient.age, value: 19}
+    - {field: patient.sex, value: male}
+    - {field: complaint.category, value: skin_problem}
+    - {field: complaint.text, value: "skin rash in the crotch, looks like jock rot, probably from unwashed gym clothes"}
+    - {field: infection.rash, value: true}
+
+- case: 6
+  set: B
+  v4_answer: 3
+  book_span: "\u201CI have been wheezing for a few days, and"
+  book_page: 87
+  answer_page: 90
+  synopsis: "43F asthma, wheezing for days, fever 38.6 today, inhaler not helping; RR 26, SpO2 95%"
+  expect: none
+  facts:
+    - {field: patient.age, value: 43}
+    - {field: patient.sex, value: female}
+    - {field: complaint.category, value: breathing}
+    - {field: complaint.text, value: "wheezing for a few days, woke with a fever today; rescue inhaler not helping"}
+    - {field: complaint.fever, value: true}
+    - {field: history.conditions, value: [asthma]}
+    - {field: vitals.temp_c, value: 38.6, status: observed}
+    - {field: vitals.respiratory_rate, value: 26, status: observed}
+    - {field: vitals.heart_rate, value: 90, status: observed}
+    - {field: vitals.sbp, value: 138, status: observed}
+    - {field: vitals.spo2, value: 95, status: observed}
+    - {field: complaint.onset, value: "a few days", from: second-reading}
+
+- case: 8
+  set: B
+  v4_answer: 5
+  book_span: "\u201CThis morning, I stepped on a rusty nail, and"
+  book_page: 87
+  answer_page: 90
+  synopsis: "stepped on a rusty nail through the shoe, washed it, wants a tetanus shot, normal vitals"
+  expect: none
+  facts:
+    - {field: complaint.category, value: wound}
+    - {field: complaint.text, value: "stepped on a rusty nail this morning, went through the shoe into the foot; washed it well; wants a tetanus shot"}
+    - {field: complaint.onset, value: "this morning"}
+    - {field: history.conditions, value: []}
+
+- case: 18
+  set: B
+  v4_answer: 5
+  book_span: "\u201CI am here on business for a week, and"
+  book_page: 88
+  answer_page: 91
+  synopsis: "58M forgot his blood pressure medication on a business trip, 2 days without it; BP 154/88"
+  expect: none
+  facts:
+    - {field: patient.age, value: 58}
+    - {field: patient.sex, value: male}
+    - {field: complaint.category, value: request}
+    - {field: complaint.text, value: "on business for a week, forgot to pack his blood pressure medication, has not taken it for 2 days; asks for a prescription"}
+    - {field: history.conditions, value: [hypertension]}
+    - {field: vitals.sbp, value: 154, status: observed}
+    - {field: vitals.heart_rate, value: 64, status: observed}
+    - {field: vitals.respiratory_rate, value: 18, status: observed}
+    - {field: vitals.temp_c, value: 36.7, status: observed}
+    - {field: vitals.spo2, value: 99, status: observed}
+    - {field: complaint.onset, value: "2 days", from: second-reading}
+
+- case: 19
+  set: B
+  v4_answer: 5
+  book_span: "\u201CI fell running for the bus,\u201D reports a 42-year-"
+  book_page: 88
+  answer_page: 91
+  synopsis: "42F fell running for the bus, road burn on both knees, nothing hurts, wants a tetanus booster"
+  expect: none
+  facts:
+    - {field: patient.age, value: 42}
+    - {field: patient.sex, value: female}
+    - {field: complaint.category, value: wound}
+    - {field: complaint.text, value: "fell running for the bus; road burn on both knees; nothing hurts; thinks she needs a tetanus booster"}
+    - {field: E.mechanism, value: fall}
+    - {field: E.fall_height_meters, value: 0}
+    - {field: E.head_strike, value: false}
+
+- case: 23
+  set: B
+  v4_answer: 2
+  book_span: "The local police arrive with a 48-year-old male who"
+  book_page: 88
+  answer_page: 91
+  synopsis: "48M arrested for public intoxication, restless and tremulous after a night in jail; BP 172/124, HR 122"
+  xfail: "The book's level 2 is alcohol withdrawal (restless, tremulous, tachycardic, hypertensive), a judgement; the vital signs are decision point D. No fifth-edition sentence covers withdrawal."
+  expect: floor2
+  facts:
+    - {field: patient.age, value: 48}
+    - {field: patient.sex, value: male}
+    - {field: complaint.category, value: mental_health}
+    - {field: complaint.text, value: "arrested last night for public intoxication; this morning restless with tremors; usually drinks a case of beer a day, nothing since 7 pm"}
+    - {field: complaint.pain_rating, value: 0}
+    - {field: vitals.sbp, value: 172, status: observed}
+    - {field: vitals.heart_rate, value: 122, status: observed}
+    - {field: vitals.respiratory_rate, value: 18, status: observed}
+    - {field: vitals.temp_c, value: 37.0, status: observed}
+    - {field: vitals.spo2, value: 97, status: observed}

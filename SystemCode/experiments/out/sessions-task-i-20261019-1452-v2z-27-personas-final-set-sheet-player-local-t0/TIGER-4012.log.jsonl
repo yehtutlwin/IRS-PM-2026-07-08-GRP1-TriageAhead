@@ -1,0 +1,59 @@
+{"t": "14:28:50", "kind": "engine", "note": "session TIGER-4012 started (web)"}
+{"t": "14:28:52", "kind": "question", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "Is the patient awake and responding to you normally? Also, is he or she experiencing any chest pain, trouble breathing, or heavy bleeding right now?", "fields": ["danger_signs.responsive", "danger_signs.chest_pain_now"], "offered": ["danger_signs.responsive", "danger_signs.chest_pain_now", "danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text"]}
+{"t": "14:28:52", "kind": "answer", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "Yes, she's awake and talking. No."}
+{"t": "14:28:57", "kind": "extract", "writes": [["danger_signs.responsive", true], ["danger_signs.chest_pain_now", false]]}
+{"t": "14:29:00", "kind": "question", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category", "text": "I'm glad she's awake. Is she having any trouble breathing or is there any heavy bleeding? Also, what is the main reason you are bringing her in today?", "fields": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category"], "offered": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text", "complaint.onset", "E.mechanism"]}
+{"t": "14:29:00", "kind": "answer", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category", "text": "No. My mother has a headache."}
+{"t": "14:29:05", "kind": "extract", "writes": [["danger_signs.breathing_difficulty", false], ["danger_signs.heavy_bleeding", false], ["complaint.category", "headache"]]}
+{"t": "14:29:05", "kind": "extract", "writes": [["E.mechanism", "none"]], "via": "derived-non-injury"}
+{"t": "14:29:08", "kind": "question", "slot": "dyn:complaint.text+complaint.onset", "text": "I understand she has a headache. Could you tell me more about the pain and when it started?", "fields": ["complaint.text", "complaint.onset"], "offered": ["complaint.text", "complaint.onset", "patient.age", "patient.sex", "complaint.fever", "infection.rash"]}
+{"t": "14:29:08", "kind": "answer", "slot": "dyn:complaint.text+complaint.onset", "text": "My mother has a headache."}
+{"t": "14:29:12", "kind": "extract", "writes": [["complaint.text", "headache"]]}
+{"t": "14:29:14", "kind": "question", "slot": "dyn:complaint.onset", "text": "Could you tell me when her headache first began?", "fields": ["complaint.onset"], "offered": ["complaint.onset"]}
+{"t": "14:29:14", "kind": "answer", "slot": "dyn:complaint.onset", "text": "I don't know."}
+{"t": "14:29:17", "kind": "extract", "writes": []}
+{"t": "14:29:20", "kind": "question", "slot": "dyn:complaint.onset", "text": "I understand. Do you have any idea roughly what time the headache started?", "fields": ["complaint.onset"], "offered": ["complaint.onset"]}
+{"t": "14:29:20", "kind": "answer", "slot": "dyn:complaint.onset", "text": "I don't know."}
+{"t": "14:29:22", "kind": "extract", "writes": []}
+{"t": "14:29:25", "kind": "question", "slot": "dyn:patient.age+patient.sex", "text": "I understand. Could you tell me her age and if she is a girl or a woman?", "fields": ["patient.age", "patient.sex"], "offered": ["patient.age", "patient.sex", "complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts"]}
+{"t": "14:29:25", "kind": "answer", "slot": "dyn:patient.age+patient.sex", "text": "She's 52. She's a woman, my mother."}
+{"t": "14:29:29", "kind": "extract", "writes": [["patient.age", 52], ["patient.sex", "female"]]}
+{"t": "14:29:32", "kind": "question", "slot": "dyn:history.pregnant", "text": "Is she currently pregnant?", "fields": ["history.pregnant"], "offered": ["history.pregnant", "history.postpartum", "complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts"]}
+{"t": "14:29:32", "kind": "answer", "slot": "dyn:history.pregnant", "text": "I don't know."}
+{"t": "14:29:35", "kind": "extract", "writes": []}
+{"t": "14:29:35", "kind": "extract", "writes": [["history.pregnant", null]], "via": "dont-know"}
+{"t": "14:29:38", "kind": "question", "slot": "dyn:history.postpartum+complaint.fever", "text": "I see. Has she given birth in the last few weeks, and does she have a fever?", "fields": ["history.postpartum", "complaint.fever"], "offered": ["history.postpartum", "complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts", "stroke.vision_change"]}
+{"t": "14:29:38", "kind": "answer", "slot": "dyn:history.postpartum+complaint.fever", "text": "I don't know."}
+{"t": "14:29:41", "kind": "extract", "writes": []}
+{"t": "14:29:41", "kind": "extract", "writes": [["history.postpartum", null], ["complaint.fever", null]], "via": "dont-know"}
+{"t": "14:29:44", "kind": "question", "slot": "dyn:infection.rash+infection.travel_14d", "text": "I understand. Does she have any new rashes, or has she traveled outside the country in the last two weeks?", "fields": ["infection.rash", "infection.travel_14d"], "offered": ["infection.rash", "infection.travel_14d", "infection.contacts", "stroke.vision_change", "ams.changed_from_baseline", "complaint.pain_rating"]}
+{"t": "14:29:44", "kind": "answer", "slot": "dyn:infection.rash+infection.travel_14d", "text": "I don't know."}
+{"t": "14:29:47", "kind": "extract", "writes": []}
+{"t": "14:29:48", "kind": "extract", "writes": [["infection.rash", null], ["infection.travel_14d", null]], "via": "dont-know"}
+{"t": "14:29:51", "kind": "question", "slot": "dyn:infection.contacts+stroke.vision_change", "text": "I understand. Has she been in contact with anyone who has an infectious illness lately, or has she had any sudden changes in her vision?", "fields": ["infection.contacts", "stroke.vision_change"], "offered": ["infection.contacts", "stroke.vision_change", "ams.changed_from_baseline", "complaint.pain_rating", "complaint.back_pain", "stroke.face_droop"]}
+{"t": "14:29:51", "kind": "answer", "slot": "dyn:infection.contacts+stroke.vision_change", "text": "I don't know."}
+{"t": "14:29:54", "kind": "extract", "writes": []}
+{"t": "14:29:54", "kind": "extract", "writes": [["infection.contacts", null], ["stroke.vision_change", null]], "via": "dont-know"}
+{"t": "14:29:57", "kind": "question", "slot": "dyn:ams.changed_from_baseline+complaint.pain_rating", "text": "Is she acting differently than usual, such as being more confused or sleepy? Also, on a scale of 0 to 10, how bad is her headache right now?", "fields": ["ams.changed_from_baseline", "complaint.pain_rating"], "offered": ["ams.changed_from_baseline", "complaint.pain_rating", "complaint.back_pain", "stroke.face_droop", "stroke.arm_weakness", "stroke.speech_change"]}
+{"t": "14:29:57", "kind": "answer", "slot": "dyn:ams.changed_from_baseline+complaint.pain_rating", "text": "I don't know."}
+{"t": "14:30:01", "kind": "extract", "writes": []}
+{"t": "14:30:01", "kind": "extract", "writes": [["ams.changed_from_baseline", null]], "via": "dont-know"}
+{"t": "14:30:04", "kind": "question", "slot": "dyn:complaint.pain_rating", "text": "I understand. To help the team, how severe would you say her headache is on a scale of 0 to 10?", "fields": ["complaint.pain_rating"], "offered": ["complaint.pain_rating"]}
+{"t": "14:30:04", "kind": "answer", "slot": "dyn:complaint.pain_rating", "text": "I don't know."}
+{"t": "14:30:07", "kind": "extract", "writes": []}
+{"t": "14:30:10", "kind": "question", "slot": "dyn:complaint.pain_rating", "text": "I understand it's hard to say. If you had to pick a number from 0 to 10, with 10 being the worst pain possible, how would you rate her headache?", "fields": ["complaint.pain_rating"], "offered": ["complaint.pain_rating"]}
+{"t": "14:30:10", "kind": "answer", "slot": "dyn:complaint.pain_rating", "text": "I don't know."}
+{"t": "14:30:12", "kind": "extract", "writes": []}
+{"t": "14:30:16", "kind": "question", "slot": "dyn:complaint.back_pain+stroke.face_droop+stroke.arm_weakness", "text": "I understand. Does she have any back pain, and have you noticed any drooping on one side of her face or weakness in her arms or legs?", "fields": ["complaint.back_pain", "stroke.face_droop", "stroke.arm_weakness"], "offered": ["complaint.back_pain", "stroke.face_droop", "stroke.arm_weakness", "stroke.speech_change", "stroke.balance_loss", "obs.confusion_lethargy_disorientation"]}
+{"t": "14:30:16", "kind": "answer", "slot": "dyn:complaint.back_pain+stroke.face_droop+stroke.arm_weakness", "text": "I don't know."}
+{"t": "14:30:20", "kind": "extract", "writes": []}
+{"t": "14:30:20", "kind": "extract", "writes": [["complaint.back_pain", null], ["stroke.face_droop", null], ["stroke.arm_weakness", null]], "via": "dont-know"}
+{"t": "14:30:23", "kind": "question", "slot": "dyn:stroke.speech_change+stroke.balance_loss", "text": "I understand. Has her speech become slurred or strange, or has she suddenly lost her balance?", "fields": ["stroke.speech_change", "stroke.balance_loss"], "offered": ["stroke.speech_change", "stroke.balance_loss", "obs.confusion_lethargy_disorientation", "complaint.headache_thunderclap", "complaint.neck_pain", "complaint.vomiting"]}
+{"t": "14:30:23", "kind": "answer", "slot": "dyn:stroke.speech_change+stroke.balance_loss", "text": "I don't know."}
+{"t": "14:30:26", "kind": "extract", "writes": []}
+{"t": "14:30:26", "kind": "extract", "writes": [["stroke.speech_change", null], ["stroke.balance_loss", null]], "via": "dont-know"}
+{"t": "14:30:29", "kind": "question", "slot": "dyn:obs.confusion_lethargy_disorientation", "text": "Is she currently confused, very drowsy, or having trouble making sense?", "fields": ["obs.confusion_lethargy_disorientation"], "offered": ["obs.confusion_lethargy_disorientation", "complaint.headache_thunderclap", "complaint.neck_pain", "complaint.vomiting", "M.medications", "A.allergies"]}
+{"t": "14:30:29", "kind": "answer", "slot": "dyn:obs.confusion_lethargy_disorientation", "text": "I don't know."}
+{"t": "14:30:32", "kind": "extract", "writes": []}
+{"t": "14:30:32", "kind": "extract", "writes": [["obs.confusion_lethargy_disorientation", null]], "via": "dont-know"}
+{"t": "14:30:35", "kind": "question", "slot": "dyn:complaint.headache_thunderclap+complaint.neck_pain", "text": "Did she have a sudden, severe headache that hit like a blow, and does she have a stiff or painful neck?", "fields": ["complaint.headache_thunderclap", "complaint.neck_pain"], "offered": ["complaint.headache_thunderclap", "complaint.neck_pain", "complaint.vomiting", "M.medications", "A.allergies", "history.conditions"]}

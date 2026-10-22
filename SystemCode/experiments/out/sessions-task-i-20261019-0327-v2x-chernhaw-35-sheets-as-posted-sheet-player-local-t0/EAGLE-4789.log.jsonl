@@ -1,0 +1,55 @@
+{"t": "01:40:04", "kind": "engine", "note": "session EAGLE-4789 started (web)"}
+{"t": "01:40:54", "kind": "question", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "Is the patient awake and responding to you normally? Also, is he or she experiencing any chest pain, trouble breathing, or heavy bleeding right now?", "fields": ["danger_signs.responsive", "danger_signs.chest_pain_now"], "offered": ["danger_signs.responsive", "danger_signs.chest_pain_now", "danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text"]}
+{"t": "01:40:54", "kind": "answer", "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now", "text": "Yes, the patient is awake and responding normally. No, the patient is not having chest pain right now."}
+{"t": "01:41:16", "kind": "extract", "writes": [["danger_signs.responsive", true], ["danger_signs.chest_pain_now", false]]}
+{"t": "01:42:06", "kind": "question", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category", "text": "I'm glad to hear they are alert. Is the patient having any trouble breathing or heavy bleeding right now? Also, what is the main reason you are bringing them in?", "fields": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category"], "offered": ["danger_signs.breathing_difficulty", "danger_signs.heavy_bleeding", "complaint.category", "complaint.text", "complaint.onset", "E.mechanism"]}
+{"t": "01:42:06", "kind": "answer", "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category", "text": "No, the patient is not having trouble breathing right now. No, the patient is not bleeding heavily right now. I accidentally stuck my finger with a used needle at work."}
+{"t": "01:42:30", "kind": "extract", "writes": [["danger_signs.heavy_bleeding", false, "quote not in the answer"]], "via": "guard-dropped"}
+{"t": "01:42:30", "kind": "extract", "writes": [["danger_signs.breathing_difficulty", false], ["complaint.category", "wound"]]}
+{"t": "01:43:18", "kind": "question", "slot": "dyn:danger_signs.heavy_bleeding", "text": "I understand about the needle. Just to confirm, is there any heavy bleeding from the wound right now?", "fields": ["danger_signs.heavy_bleeding"], "offered": ["danger_signs.heavy_bleeding"]}
+{"t": "01:43:18", "kind": "answer", "slot": "dyn:danger_signs.heavy_bleeding", "text": "No, the patient is not bleeding heavily right now."}
+{"t": "01:43:40", "kind": "extract", "writes": [["danger_signs.heavy_bleeding", false]]}
+{"t": "01:44:28", "kind": "question", "slot": "dyn:complaint.text+complaint.onset", "text": "I've noted the needle stick. Could you tell me more about the wound and exactly when it happened?", "fields": ["complaint.text", "complaint.onset"], "offered": ["complaint.text", "complaint.onset", "E.mechanism", "patient.age", "patient.sex", "complaint.fever"]}
+{"t": "01:44:28", "kind": "answer", "slot": "dyn:complaint.text+complaint.onset", "text": "I accidentally stuck my finger with a used needle at work. About 25 minutes ago, after drawing blood from a patient, you accidentally stuck your left index finger with the used hollow-bore needle."}
+{"t": "01:44:57", "kind": "extract", "writes": [["complaint.needle_stick_healthcare_worker", true, "quote not in the answer"]], "via": "guard-dropped"}
+{"t": "01:44:57", "kind": "extract", "writes": [["complaint.text", "stuck my finger with a used needle at work"], ["complaint.onset", "25 minutes ago"]]}
+{"t": "01:45:45", "kind": "question", "slot": "dyn:E.mechanism+patient.age+patient.sex", "text": "I've noted that it happened while drawing blood. Could you tell me the patient's age and if they are male or female?", "fields": ["E.mechanism", "patient.age", "patient.sex"], "offered": ["E.mechanism", "patient.age", "patient.sex", "complaint.fever", "infection.rash", "infection.travel_14d"]}
+{"t": "01:45:45", "kind": "answer", "slot": "dyn:E.mechanism+patient.age+patient.sex", "text": "The patient is 32 years old. The patient\u2019s sex has not been specified as male or female."}
+{"t": "01:46:06", "kind": "extract", "writes": [["E.mechanism", "penetrating_trauma", "quote not in the answer"]], "via": "guard-dropped"}
+{"t": "01:46:06", "kind": "extract", "writes": []}
+{"t": "01:46:53", "kind": "question", "slot": "dyn:E.mechanism", "text": "Could you tell me more about how the needle actually entered the skin?", "fields": ["E.mechanism"], "offered": ["E.mechanism"]}
+{"t": "01:46:53", "kind": "answer", "slot": "dyn:E.mechanism", "text": "I don't know."}
+{"t": "01:47:14", "kind": "extract", "writes": []}
+{"t": "01:47:14", "kind": "extract", "writes": [["E.mechanism", null]], "via": "dont-know"}
+{"t": "01:48:01", "kind": "question", "slot": "dyn:patient.age", "text": "Could you tell me the patient's age?", "fields": ["patient.age"], "offered": ["patient.age"]}
+{"t": "01:48:01", "kind": "answer", "slot": "dyn:patient.age", "text": "The patient is 32 years old."}
+{"t": "01:48:22", "kind": "extract", "writes": [["patient.age", 32]]}
+{"t": "01:49:09", "kind": "question", "slot": "dyn:patient.sex", "text": "Is the patient a man or a woman?", "fields": ["patient.sex"], "offered": ["patient.sex"]}
+{"t": "01:49:09", "kind": "answer", "slot": "dyn:patient.sex", "text": "The patient\u2019s sex has not been specified as male or female."}
+{"t": "01:49:29", "kind": "extract", "writes": []}
+{"t": "01:50:17", "kind": "question", "slot": "dyn:patient.sex", "text": "Is the patient a man or a woman?", "fields": ["patient.sex"], "offered": ["patient.sex"]}
+{"t": "01:50:17", "kind": "answer", "slot": "dyn:patient.sex", "text": "The patient\u2019s sex has not been specified as male or female."}
+{"t": "01:50:38", "kind": "extract", "writes": []}
+{"t": "01:51:26", "kind": "question", "slot": "dyn:history.pregnant+history.postpartum", "text": "Is the patient pregnant or has she given birth in the last few weeks?", "fields": ["history.pregnant", "history.postpartum"], "offered": ["history.pregnant", "history.postpartum", "complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts"]}
+{"t": "01:51:26", "kind": "answer", "slot": "dyn:history.pregnant+history.postpartum", "text": "I don't know."}
+{"t": "01:51:47", "kind": "extract", "writes": []}
+{"t": "01:51:48", "kind": "extract", "writes": [["history.pregnant", null], ["history.postpartum", null]], "via": "dont-know"}
+{"t": "01:52:36", "kind": "question", "slot": "dyn:complaint.fever+infection.rash", "text": "I understand. Does the patient have a fever or any new rashes?", "fields": ["complaint.fever", "infection.rash"], "offered": ["complaint.fever", "infection.rash", "infection.travel_14d", "infection.contacts", "ams.changed_from_baseline", "complaint.pain_rating"]}
+{"t": "01:52:36", "kind": "answer", "slot": "dyn:complaint.fever+infection.rash", "text": "No, the patient does not have fever. I do not know whether the patient has a rash."}
+{"t": "01:52:57", "kind": "extract", "writes": [["complaint.fever", false]]}
+{"t": "01:53:46", "kind": "question", "slot": "dyn:infection.rash", "text": "I understand. Is there any new rash on the patient's skin?", "fields": ["infection.rash"], "offered": ["infection.rash"]}
+{"t": "01:53:46", "kind": "answer", "slot": "dyn:infection.rash", "text": "I do not know whether the patient has a rash."}
+{"t": "01:54:07", "kind": "extract", "writes": []}
+{"t": "01:54:55", "kind": "question", "slot": "dyn:infection.rash", "text": "I understand. Can you check if there are any new rashes or spots on the skin?", "fields": ["infection.rash"], "offered": ["infection.rash"]}
+{"t": "01:54:55", "kind": "answer", "slot": "dyn:infection.rash", "text": "I do not know whether the patient has a rash."}
+{"t": "01:55:15", "kind": "extract", "writes": []}
+{"t": "01:56:04", "kind": "question", "slot": "dyn:infection.travel_14d+infection.contacts", "text": "I understand. Has the patient traveled outside the country or been in contact with anyone who is sick in the last two weeks?", "fields": ["infection.travel_14d", "infection.contacts"], "offered": ["infection.travel_14d", "infection.contacts", "ams.changed_from_baseline", "complaint.pain_rating", "complaint.infection_signs", "M.medications"]}
+{"t": "01:56:04", "kind": "answer", "slot": "dyn:infection.travel_14d+infection.contacts", "text": "I do not know whether the patient travelled in the last 14 days. I do not know of any sick contacts."}
+{"t": "01:56:25", "kind": "extract", "writes": []}
+{"t": "01:57:13", "kind": "question", "slot": "dyn:infection.travel_14d", "text": "To help the team, has the patient traveled outside of the country in the last two weeks?", "fields": ["infection.travel_14d"], "offered": ["infection.travel_14d"]}
+{"t": "01:57:13", "kind": "answer", "slot": "dyn:infection.travel_14d", "text": "I do not know whether the patient travelled in the last 14 days."}
+{"t": "01:57:34", "kind": "extract", "writes": []}
+{"t": "01:58:23", "kind": "question", "slot": "dyn:infection.travel_14d", "text": "I understand. To be clear, has the patient been on any trips outside the country in the last 14 days?", "fields": ["infection.travel_14d"], "offered": ["infection.travel_14d"]}
+{"t": "01:58:23", "kind": "answer", "slot": "dyn:infection.travel_14d", "text": "I do not know whether the patient travelled in the last 14 days."}
+{"t": "01:58:44", "kind": "extract", "writes": []}
+{"t": "01:59:34", "kind": "question", "slot": "dyn:infection.contacts", "text": "Has the patient been around anyone who has been sick or had a contagious illness lately?", "fields": ["infection.contacts"], "offered": ["infection.contacts"]}

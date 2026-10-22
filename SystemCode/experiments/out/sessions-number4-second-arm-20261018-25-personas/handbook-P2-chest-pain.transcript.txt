@@ -1,0 +1,49 @@
+arm B, form handbook, persona P2-chest-pain, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  What is the main reason the patient is seeking care today?
+A1  I have pressure in the middle of my chest spreading to my left arm, and I feel sweaty.
+
+Q2  Are you having any difficulty breathing or feeling like you are going to pass out?
+A2  I'm a bit breathless when I walk, but I can talk. I'm clear-headed.
+
+Q3  Are you currently experiencing any severe pain or distress?
+A3  Yes, I have pressure in the middle of my chest right now. It feels like pressure and it goes into my left arm, and I'm sweaty.
+
+Q4  Are you currently experiencing any other symptoms like a sudden severe headache, confusion, or a feeling of being very weak or heavy in your limbs?
+A4  No, I'm clear-headed.
+
+Q5  Are you currently experiencing any other symptoms like a sudden severe headache, confusion, or a feeling of being very weak or heavy in your limbs?
+A5  No, I'm clear-headed.
+
+Q6  Are you currently experiencing any other symptoms like a sudden severe headache, confusion, or a feeling of being very weak or heavy in your limbs?
+A6  No, I'm clear-headed.
+
+Q7  Are you currently experiencing any other symptoms like a sudden severe headache, confusion, or a feeling of being very weak or heavy in your limbs?
+A7  No, I'm clear-headed.
+
+Q8  Can you tell me your age and your current heart rate and blood pressure if you have a way to check them?
+A8  I'm 51. I don't know.
+
+Q9  On a scale of 0 to 10, how would you rate your chest pain?
+A9  It's a 6 out of 10.
+
+Q10  Is the chest pressure you are feeling a new symptom, or has it been constant or worsening recently?
+A10  It's about the same as when it started.
+
+Q11  Are you currently experiencing any other symptoms like a sudden severe headache, confusion, or a feeling of being very weak or heavy in your limbs?
+A11  No, I'm clear-headed.
+
+Q12  Is the chest pressure you are feeling a result of a recent injury or a known medical condition?
+A12  No, there is no injury and I have no known conditions.
+
+Q13  Is the chest pressure you are feeling accompanied by any other symptoms like sweating, nausea, or feeling very weak?
+A13  I feel sweaty. I don't know.
+
+Q14  Are you currently experiencing any other symptoms like a sudden severe headache, confusion, or a feeling of being very weak or heavy in your limbs?
+A14  No, I'm clear-headed.
+
+Q15  Are you currently experiencing any other symptoms like a sudden severe headache, confusion, or a feeling of being very weak or heavy in your limbs?
+A15  No, I'm clear-headed.
+
+DECISION {"done": true, "decision": "level 2", "reason": "The patient presents with active chest pain and sweating, which is a high-risk situation (potential ACS) that does not meet the criteria for immediate life-saving intervention.", "citation": "page 12, 13, 14"}
+OUTCOME level 2 or floor | expected at least ESI-2 | pass True | label None | max prompt tokens 30282

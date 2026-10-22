@@ -1,0 +1,66 @@
+========================================================================
+PRE-ARRIVAL INTAKE REPORT       session VANDA-4878   (prototype output)
+========================================================================
+Patient AS DECLARED by caregiver: Tan Ah Kow, DOB 2 jan 1939
+>> NOT verified by the system - confirm name/DOB against the patient. <<
+------------------------------------------------------------------------
+FLOOR: AT LEAST ESI-2 - computed WITHOUT vitals
+    rule B-30.anticoagulated-trauma
+      source: CDC Field Triage Guidelines (MMWR 2012 vol. 61 no. 1), Step Four special considerations, p.14 of the report (PDF p.16) · NICE NG232 (2023), recommendation 1.5.13 (PDF p.21)
+CONSIDER FLAGS (handbook: judgment, not automatic):
+    B-02.severe-pain-consider  [ESI v5 p.12 (Severe Pain or Distress)]
+    B-25.pelvis-femur-fracture-consider  [ESI v5 p.15]
+CONTEXT NOTES (handbook background for reading other findings; not a flag):
+    B-27.geriatric-trauma-caution  "Occult hypoperfusion with normal vital signs is associated with age greater than 55, and so a careful assessment should be made in the older patient"  [ESI v5 p.15 (Trauma, older adults)]
+    B-52.geriatric-vitals-medication-context-consider  "Consider vital signs in the context of medications before assigning an ESI level"  [ESI v5 p.11 (Geriatric Considerations note)]
+Pending decision points: C (resources), D (vitals not available pre-arrival)
+This is a floor, not a final level. Nurse assessment prevails.
+PRACTICE SIGNAL (learned from past visits; does not change the floor above):
+    Most similar past visits (age 87, injury, fall, anticoagulated) were ESI 1 or 2.
+------------------------------------------------------------------------
+COMPLAINTS (in order reported; first = presenting)
+  1. injury  (presenting)                [caregiver - turn 3 - reported]
+       text              = 'fell down the stairs, 4 steps, landed on his hip. cant stand up' [caregiver - turn 3 - reported]
+       onset             = 'about an hour ago'               [caregiver - turn 4 - reported]
+       pain_rating       = 7                                 [caregiver - turn 9 - reported]
+
+PATIENT
+  age                    = 87                                     [caregiver - turn 4 - reported]
+  sex                    = 'male'                                 [caregiver - turn 5 - reported]
+
+EVENTS & CONTEXT
+  mechanism              = 'fall'                                 [caregiver - turn 3 - reported]
+  head_strike            = False                                  [caregiver - turn 18 - reported]
+  loc                    = False                                  [caregiver - turn 19 - reported]
+
+A - ALLERGIES
+  allergies              = not known to the caregiver             [caregiver - turn 13 - unknown]
+
+M - MEDICATIONS
+  medications            = not known to the caregiver             [caregiver - turn 13 - unknown]
+  anticoagulant          = True                                   [caregiver - turn 12 - confirmed]
+
+P - PAST HISTORY
+  conditions             = ['irregular heartbeat', 'high bp']     [caregiver - turn 14 - reported]
+
+L - LAST INTAKE
+  last_intake            = 'porridge for lunch, around 1'         [caregiver - turn 20 - reported]
+
+INFECTION SCREEN
+  fever                  = False                                  [caregiver - turn 6 - reported]
+  rash                   = False                                  [caregiver - turn 6 - reported]
+  travel_14d             = False                                  [caregiver - turn 7 - reported]
+  contacts               = False                                  [caregiver - turn 8 - reported]
+
+DANGER SIGNS (asked first)
+  responsive             = True                                   [caregiver - turn 1 - reported]
+  chest_pain_now         = False                                  [caregiver - turn 2 - reported]
+  breathing_difficulty   = False                                  [caregiver - turn 3 - reported]
+  heavy_bleeding         = False                                  [caregiver - turn 3 - reported]
+
+NOT COLLECTED (not asked, or not answered):
+  history.immunocompromised
+
+Advisory only. All items caregiver/patient-reported unless marked confirmed.
+This report never assigns a final triage level; only the nurse does.
+========================================================================

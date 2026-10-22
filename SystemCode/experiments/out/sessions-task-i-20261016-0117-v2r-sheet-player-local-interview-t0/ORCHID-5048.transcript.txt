@@ -1,0 +1,31 @@
+session ORCHID-5048   started 2026-10-16 01:06   (generated from messages)
+
+01:07:01  BOT  Is the patient awake and responding to you normally? Also, is he or she experiencing any chest pain, trouble breathing, or heavy bleeding right now?   [slot dyn:danger_signs.responsive+danger_signs.chest_pain_now]
+01:07:01  THEM Yes, she's awake and talking. No chest pain.   [slot dyn:danger_signs.responsive+danger_signs.chest_pain_now]
+01:07:09  BOT  I'm glad she's awake. Is she having any trouble breathing or is there any heavy bleeding? Also, what is the main reason you are bringing her in today?   [slot dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category]
+01:07:09  THEM No trouble breathing. No. She's had a fever since this afternoon, 38.6 on our thermometer, shivering and very tired. She's on chemotherapy for breast cancer.   [slot dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category]
+01:07:27  SYS  floor: at least ESI-2  rules: ['B-07.immunocompromised-fever'] (floor)
+01:07:31  BOT  I see she has a fever. How old is she, and exactly when did the fever start?   [slot dyn:complaint.onset+patient.age]
+01:07:31  THEM Since this afternoon. She's 51.   [slot dyn:complaint.onset+patient.age]
+01:07:38  BOT  I understand. To help the team prepare, could you tell me her full name and date of birth?   [slot dyn:patient.sex]
+01:07:38  THEM Female.   [slot dyn:patient.sex]
+01:07:44  BOT  I've noted her age. Could you please provide her full name and date of birth?   [slot dyn:M.medications+identity.name+identity.dob]
+01:07:44  THEM The chemo tablets, capecitabine, and omeprazole. Chen Li Hua. 30 June 1975.   [slot dyn:M.medications+identity.name+identity.dob]
+01:07:53  BOT  I have her details. Does she have any allergies, especially to medications?   [slot dyn:A.allergies]
+01:07:53  THEM None.   [slot dyn:A.allergies]
+01:07:59  BOT  I've noted she has no allergies. Does she have any other ongoing medical conditions?   [slot dyn:history.conditions]
+01:07:59  THEM Breast cancer, on chemotherapy.   [slot dyn:history.conditions]
+01:08:11  BOT  That's enough for the hospital team to prepare. Show the code ORCHID-5048 at the counter when you arrive. I'll ask a few more things while you're on the way; tell me straight away if anything changes. (ack)
+01:08:14  BOT  Is she currently pregnant or has she given birth in the last few weeks?   [slot dyn:history.pregnant+history.postpartum]
+01:08:14  THEM No.   [slot dyn:history.pregnant+history.postpartum]
+01:08:21  BOT  Has she developed any new rashes, or has she traveled outside the country in the last two weeks?   [slot dyn:infection.rash+infection.travel_14d]
+01:08:21  THEM No rash. No.   [slot dyn:infection.rash+infection.travel_14d]
+01:08:28  BOT  Has she been in contact with anyone who has an infectious illness in the last two weeks?   [slot dyn:infection.contacts]
+01:08:28  THEM No.   [slot dyn:infection.contacts]
+01:08:34  BOT  I'm sorry to hear that. If you have a thermometer, what was her temperature?   [slot dyn:vitals.temp_c]
+01:08:34  THEM 38.6.   [slot dyn:vitals.temp_c]
+01:08:41  BOT  On a scale of 0 to 10, where 10 is the worst pain imaginable, how bad is her pain right now?   [slot dyn:complaint.pain_rating]
+01:08:41  THEM She has no pain, 0.   [slot dyn:complaint.pain_rating]
+01:08:48  BOT  I've noted that she isn't in any pain. When was the last time she had something to eat or drink?   [slot dyn:L.last_intake]
+01:08:48  THEM Some tea at 4pm.   [slot dyn:L.last_intake]
+01:08:59  BOT  Thank you - that's everything. Show the code ORCHID-5048 at the counter when you arrive. (ack)

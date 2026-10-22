@@ -1,0 +1,49 @@
+arm B, form rules, persona P4-sore-throat, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  Is the patient awake and responding normally?
+A1  Yes, I'm fine.
+
+Q2  Is the patient experiencing any chest pain right now?
+A2  No.
+
+Q3  Is the patient having any trouble breathing right now?
+A3  No, I'm breathing normally.
+
+Q4  Is the patient bleeding heavily right now?
+A4  No.
+
+Q5  What is the main reason you are seeking medical attention today?
+A5  I have a sore throat that has lasted for two days and it hurts to swallow.
+
+Q6  How would you describe the pain in your throat? For example, is it a sharp pain, a dull ache, or is it accompanied by any other symptoms like a fever or a rash?
+A6  I have a sore throat that has lasted for two days and it hurts to swallow. There is no rash.
+
+Q7  Do you have a fever or feel very hot?
+A7  I think I had a slight temperature yesterday, but none today, it was 37.1 when I checked.
+
+Q8  How would you describe the pain in your throat? For example, is it a sharp pain, a dull ache, or is it accompanied by any other symptoms like a fever or a rash?
+A8  I have a sore throat that has lasted for two days and it hurts to swallow. There is no rash.
+
+Q9  Are you experiencing any other symptoms, such as a cough, runny nose, or any swelling or changes to your voice?
+A9  No.
+
+Q10  How would you describe the pain in your throat? For example, is it a sharp pain, a dull ache, or is it accompanied by any other symptoms like a fever or a rash?
+A10  I have a sore throat that has lasted for two days and it hurts to swallow. There is no rash.
+
+Q11  Are you having any difficulty swallowing your own saliva or any drooling?
+A11  No.
+
+Q12  How many different types of treatments or tests do you think you will need today? (For example, a simple check-up and a prescription is one; a blood test and an X-ray would be two.)
+A12  I don't know.
+
+Q13  How would you describe the pain in your throat? For example, is it a sharp pain, a dull ache, or is it accompanied by any other symptoms like a fever or a rash?
+A13  I have a sore throat that has lasted for two days and it hurts to swallow. There is no rash.
+
+Q14  Are you experiencing any other symptoms, such as a cough, runny nose, or any swelling or changes to your voice?
+A14  No.
+
+Q15  How many different types of treatments or tests do you think you will need today? (For example, a simple check-up and a prescription is one; a blood test and an X-ray would be two.)
+A15  I don't know.
+
+DECISION {"decision": "no floor", "reason": "The triage process is still in the early stages of determining the patient's stability and resource needs.", "citation": "N/A"}
+OUTCOME no floor | expected None | pass True | label None | max prompt tokens 44259

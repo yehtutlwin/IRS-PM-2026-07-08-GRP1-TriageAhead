@@ -1,0 +1,52 @@
+arm B, form rules, persona P18-fall-no-floor, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  Is the patient awake and responding normally?
+A1  Yes, she's awake and talking.
+
+Q2  Is the patient having any chest pain right now?
+A2  I don't know.
+
+Q3  Is the patient having any trouble breathing right now?
+A3  I don't know.
+
+Q4  Is the patient bleeding heavily right now?
+A4  I don't know.
+
+Q5  What is the main reason the patient is coming to the emergency department?
+A5  My wife fell today and hurt herself.
+
+Q6  How high was the fall, and did she hit her head or any other part of her body?
+A6  I don't know.
+
+Q7  Is she currently showing any signs of a stroke, such as a drooping face, weak arm, or slurred speech?
+A7  I don't know.
+
+Q8  Is she in severe pain or in distress?
+A8  I don't know.
+
+Q9  Was the fall from a height of 20 feet (about 6 meters) or more, or was she thrown from a vehicle?
+A9  I don't know.
+
+Q10  Is she currently experiencing any other symptoms, such as a severe headache, a wound that won't stop bleeding, or a very painful area that is swollen or bruised?
+A10  I don't know.
+
+Q11  Is she currently experiencing any severe pain or distress?
+A11  I don't know.
+
+Q12  Is she currently experiencing any severe pain or distress?
+A12  I don't know.
+
+Q13  Is the area that was hurt by the fall swollen, bruised, or does it have a deep cut or wound?
+A13  I don't know.
+
+Q14  Is the area that was hurt by the fall swollen, bruised, or does it have a deep cut or wound?
+A14  I don't know.
+
+Q15  Is the area that was hurt by the fall swollen, bruised, or does it have a deep cut or wound?
+A15  I don't know.
+
+Q16  Can you describe the injury or the area that was hurt by the fall?
+A16  I don't know.
+
+DECISION {"decision": "unparsed", "reason": "turn limit reached without a decision"}
+OUTCOME no decision in 16 questions | expected None | pass False | label model error (over-call) | max prompt tokens 44084

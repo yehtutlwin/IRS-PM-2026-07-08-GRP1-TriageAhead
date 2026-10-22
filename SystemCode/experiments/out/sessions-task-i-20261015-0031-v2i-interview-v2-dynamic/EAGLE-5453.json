@@ -1,0 +1,664 @@
+{
+ "sid": "EAGLE-5453",
+ "facts": {
+  "danger_signs.responsive": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-10-15 00:24"
+  },
+  "danger_signs.chest_pain_now": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 1,
+   "ts": "2026-10-15 00:24"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "neuro_symptoms",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "persona",
+      "turn": 2,
+      "ts": "2026-10-15 00:24"
+     },
+     "text": {
+      "value": "He is only responding with confused words.",
+      "status": "reported",
+      "who": "persona",
+      "turn": 18,
+      "ts": "2026-10-15 00:26"
+     },
+     "onset": {
+      "value": "after working for about four hours",
+      "status": "reported",
+      "who": "persona",
+      "turn": 5,
+      "ts": "2026-10-15 00:25"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 2
+  },
+  "complaint.category": {
+   "value": [
+    "neuro_symptoms"
+   ],
+   "status": "reported",
+   "who": "persona",
+   "turn": 18,
+   "ts": "2026-10-15 00:26"
+  },
+  "complaint.text": {
+   "value": "He is only responding with confused words.",
+   "status": "reported",
+   "who": "persona",
+   "turn": 18,
+   "ts": "2026-10-15 00:26"
+  },
+  "E.mechanism": {
+   "value": "none",
+   "status": "reported",
+   "who": "derived",
+   "turn": 2,
+   "ts": "2026-10-15 00:24"
+  },
+  "danger_signs.breathing_difficulty": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-15 00:25"
+  },
+  "danger_signs.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "persona",
+   "turn": 4,
+   "ts": "2026-10-15 00:25"
+  },
+  "complaint.onset": {
+   "value": "after working for about four hours",
+   "status": "reported",
+   "who": "persona",
+   "turn": 5,
+   "ts": "2026-10-15 00:25"
+  },
+  "patient.age": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 5,
+   "ts": "2026-10-15 00:25"
+  },
+  "patient.sex": {
+   "value": "male",
+   "status": "reported",
+   "who": "persona",
+   "turn": 6,
+   "ts": "2026-10-15 00:25"
+  },
+  "complaint.fever": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 6,
+   "ts": "2026-10-15 00:25"
+  },
+  "infection.rash": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 7,
+   "ts": "2026-10-15 00:25"
+  },
+  "infection.travel_14d": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 8,
+   "ts": "2026-10-15 00:25"
+  },
+  "infection.contacts": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 8,
+   "ts": "2026-10-15 00:25"
+  },
+  "complaint.uti_symptoms": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 9,
+   "ts": "2026-10-15 00:25"
+  },
+  "vitals.temp_c": {
+   "value": 40.4,
+   "status": "reported",
+   "who": "persona",
+   "turn": 10,
+   "ts": "2026-10-15 00:25"
+  },
+  "ams.changed_from_baseline": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 11,
+   "ts": "2026-10-15 00:26"
+  },
+  "obs.confusion_lethargy_disorientation": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 11,
+   "ts": "2026-10-15 00:26"
+  },
+  "obs.new_confusion_lethargy_disorientation": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 15,
+   "ts": "2026-10-15 00:26"
+  },
+  "obs.subtle_mental_status_change": {
+   "value": true,
+   "status": "reported",
+   "who": "derived",
+   "turn": 11,
+   "ts": "2026-10-15 00:26"
+  },
+  "stroke.vision_change": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 11,
+   "ts": "2026-10-15 00:26"
+  },
+  "M.medications": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 12,
+   "ts": "2026-10-15 00:26"
+  },
+  "A.allergies": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 12,
+   "ts": "2026-10-15 00:26"
+  },
+  "history.conditions": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 13,
+   "ts": "2026-10-15 00:26"
+  },
+  "identity.name": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 14,
+   "ts": "2026-10-15 00:26"
+  },
+  "identity.dob": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 14,
+   "ts": "2026-10-15 00:26"
+  },
+  "complaint.infection_signs": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 18,
+   "ts": "2026-10-15 00:26"
+  },
+  "stroke.face_droop": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 18,
+   "ts": "2026-10-15 00:26"
+  },
+  "stroke.arm_weakness": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 19,
+   "ts": "2026-10-15 00:26"
+  },
+  "stroke.speech_change": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 19,
+   "ts": "2026-10-15 00:26"
+  },
+  "complaint.stroke_signs": {
+   "value": true,
+   "status": "reported",
+   "who": "derived",
+   "turn": 19,
+   "ts": "2026-10-15 00:26"
+  },
+  "stroke.balance_loss": {
+   "value": true,
+   "status": "reported",
+   "who": "persona",
+   "turn": 20,
+   "ts": "2026-10-15 00:27"
+  },
+  "complaint.danger_to_self_or_others": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 20,
+   "ts": "2026-10-15 00:27"
+  },
+  "complaint.known_toxic_ingestion": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 21,
+   "ts": "2026-10-15 00:27"
+  },
+  "complaint.chills_or_rigors": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 22,
+   "ts": "2026-10-15 00:27"
+  },
+  "complaint.post_ictal_after_seizure": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 22,
+   "ts": "2026-10-15 00:27"
+  }
+ },
+ "attempts": {
+  "danger_signs.responsive": 1,
+  "danger_signs.chest_pain_now": 1,
+  "danger_signs.breathing_difficulty": 2,
+  "danger_signs.heavy_bleeding": 2,
+  "complaint.category": 1,
+  "complaint.text": 1,
+  "complaint.onset": 1,
+  "patient.age": 1,
+  "patient.sex": 1,
+  "complaint.fever": 1,
+  "infection.rash": 1,
+  "infection.travel_14d": 1,
+  "infection.contacts": 1,
+  "complaint.uti_symptoms": 1,
+  "vitals.temp_c": 1,
+  "stroke.vision_change": 1,
+  "ams.changed_from_baseline": 1,
+  "M.medications": 1,
+  "A.allergies": 1,
+  "history.conditions": 1,
+  "identity.name": 1,
+  "identity.dob": 1,
+  "complaint.pain_rating": 3,
+  "complaint.infection_signs": 1,
+  "stroke.face_droop": 1,
+  "stroke.arm_weakness": 1,
+  "stroke.speech_change": 1,
+  "stroke.balance_loss": 1,
+  "complaint.danger_to_self_or_others": 1,
+  "complaint.known_toxic_ingestion": 1,
+  "complaint.chills_or_rigors": 1,
+  "complaint.post_ictal_after_seizure": 1,
+  "history.immunocompromised": 1
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "I'm here to help get information for the medical team. Is the person awake and responding to you, and are they currently experiencing any chest pain, trouble breathing, or heavy bleeding?",
+   "ts": "2026-10-15 00:24:46",
+   "kind": "question",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "caregiver",
+   "text": "He is awake but only responding with confused words. No, he is not experiencing chest pain, trouble breathing, or heavy bleeding.",
+   "ts": "2026-10-15 00:24:48",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear he is confused. To help the team, could you tell me what the main problem is and describe what is happening in your own words?",
+   "ts": "2026-10-15 00:24:54",
+   "kind": "question",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category+complaint.text"
+  },
+  {
+   "role": "caregiver",
+   "text": "He collapsed while working in the sun and is now very hot and confused. He's been vomiting and only responding with confused words.",
+   "ts": "2026-10-15 00:24:55",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category+complaint.text"
+  },
+  {
+   "role": "bot",
+   "text": "I understand he is very confused. Is he having any trouble breathing right now?",
+   "ts": "2026-10-15 00:25:02",
+   "kind": "question",
+   "slot": "dyn:danger_signs.breathing_difficulty"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-15 00:25:03",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.breathing_difficulty"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Is he bleeding heavily anywhere right now?",
+   "ts": "2026-10-15 00:25:08",
+   "kind": "question",
+   "slot": "dyn:danger_signs.heavy_bleeding"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, he is not bleeding.",
+   "ts": "2026-10-15 00:25:09",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.heavy_bleeding"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear about his condition. When did these symptoms first begin, and how old is he?",
+   "ts": "2026-10-15 00:25:14",
+   "kind": "question",
+   "slot": "dyn:complaint.onset+patient.age"
+  },
+  {
+   "role": "caregiver",
+   "text": "He started feeling sick after working for about four hours. I don't know his age.",
+   "ts": "2026-10-15 00:25:15",
+   "kind": "answer",
+   "slot": "dyn:complaint.onset+patient.age"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear he's feeling so unwell. Is the person who collapsed a man or a woman, and have you noticed if they have a fever?",
+   "ts": "2026-10-15 00:25:21",
+   "kind": "question",
+   "slot": "dyn:patient.sex+complaint.fever"
+  },
+  {
+   "role": "caregiver",
+   "text": "He is a man. He is very hot and his temperature is 40.4 degrees Celsius.",
+   "ts": "2026-10-15 00:25:23",
+   "kind": "answer",
+   "slot": "dyn:patient.sex+complaint.fever"
+  },
+  {
+   "role": "bot",
+   "text": "I understand he has a high temperature. Have you noticed any new rashes on his skin?",
+   "ts": "2026-10-15 00:25:28",
+   "kind": "question",
+   "slot": "dyn:infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-15 00:25:29",
+   "kind": "answer",
+   "slot": "dyn:infection.rash"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Has he traveled outside the country in the last two weeks, or been in contact with anyone who has been sick recently?",
+   "ts": "2026-10-15 00:25:35",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-15 00:25:37",
+   "kind": "answer",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear you aren't sure about the other details. Has he had any pain or burning when passing urine, or have you noticed his urine looking cloudy or smelling strong?",
+   "ts": "2026-10-15 00:25:42",
+   "kind": "question",
+   "slot": "dyn:complaint.uti_symptoms"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-15 00:25:45",
+   "kind": "answer",
+   "slot": "dyn:complaint.uti_symptoms"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Do you have a thermometer nearby to tell me his temperature?",
+   "ts": "2026-10-15 00:25:50",
+   "kind": "question",
+   "slot": "dyn:vitals.temp_c"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, the infrared thermometer shows his temperature is 40.4 degrees Celsius.",
+   "ts": "2026-10-15 00:25:51",
+   "kind": "answer",
+   "slot": "dyn:vitals.temp_c"
+  },
+  {
+   "role": "bot",
+   "text": "Thank you for providing his temperature. Has he had any sudden changes in his vision, or does he seem more confused or sleepy than usual?",
+   "ts": "2026-10-15 00:25:57",
+   "kind": "question",
+   "slot": "dyn:stroke.vision_change+ams.changed_from_baseline"
+  },
+  {
+   "role": "caregiver",
+   "text": "He is very confused and only responding with confused words. I don't know if his vision has changed.",
+   "ts": "2026-10-15 00:25:59",
+   "kind": "answer",
+   "slot": "dyn:stroke.vision_change+ams.changed_from_baseline"
+  },
+  {
+   "role": "system",
+   "text": "floor: at least ESI-2  rules: ['B-01.new-altered-mental-status']",
+   "ts": "2026-10-15 00:26:02",
+   "kind": "floor"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear he is so confused. To help the team prepare, could you tell me what medications he takes regularly and if he has any allergies, especially to medicines?",
+   "ts": "2026-10-15 00:26:05",
+   "kind": "question",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know his medications or any allergies.",
+   "ts": "2026-10-15 00:26:06",
+   "kind": "answer",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. To help the medical team, could you tell me if he has any ongoing medical conditions?",
+   "ts": "2026-10-15 00:26:11",
+   "kind": "question",
+   "slot": "dyn:history.conditions"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know his medical history.",
+   "ts": "2026-10-15 00:26:13",
+   "kind": "answer",
+   "slot": "dyn:history.conditions"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Could you please tell me your father's full name and his date of birth?",
+   "ts": "2026-10-15 00:26:18",
+   "kind": "question",
+   "slot": "dyn:identity.name+identity.dob"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-15 00:26:19",
+   "kind": "answer",
+   "slot": "dyn:identity.name+identity.dob"
+  },
+  {
+   "role": "bot",
+   "text": "That's enough for the hospital team to prepare. Show the code EAGLE-5453 at the counter when you arrive. I'll ask a few more things while you're on the way; tell me straight away if anything changes.",
+   "ts": "2026-10-15 00:26:21",
+   "kind": "ack"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. On a scale from 0 to 10, where 10 is the worst pain imaginable, how bad is his pain right now?",
+   "ts": "2026-10-15 00:26:24",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know. He is only responding with confused words.",
+   "ts": "2026-10-15 00:26:26",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "I understand he is very confused. Can you tell me how much pain he seems to be in on a scale of 0 to 10?",
+   "ts": "2026-10-15 00:26:31",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know. He is only responding with confused words.",
+   "ts": "2026-10-15 00:26:34",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "I understand he is very confused. Since he can't speak, does it seem like he is in a lot of physical pain?",
+   "ts": "2026-10-15 00:26:39",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know. He is just responding with confused words.",
+   "ts": "2026-10-15 00:26:41",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear he's having such a hard time communicating. Does he have any signs of infection like a red or swollen wound, and have you noticed any drooping in his face, weakness in his limbs, or slurred speech?",
+   "ts": "2026-10-15 00:26:46",
+   "kind": "question",
+   "slot": "dyn:complaint.infection_signs+stroke.face_droop"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know if he has any wounds or infections. He is only responding with confused words.",
+   "ts": "2026-10-15 00:26:47",
+   "kind": "answer",
+   "slot": "dyn:complaint.infection_signs+stroke.face_droop"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Does he have any weakness or numbness in his arms or legs, and is his speech slurred or is he having trouble understanding you?",
+   "ts": "2026-10-15 00:26:53",
+   "kind": "question",
+   "slot": "dyn:stroke.arm_weakness+stroke.speech_change"
+  },
+  {
+   "role": "caregiver",
+   "text": "He is very weak and is only responding with confused words. I don't know if he has numbness.",
+   "ts": "2026-10-15 00:26:55",
+   "kind": "answer",
+   "slot": "dyn:stroke.arm_weakness+stroke.speech_change"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear he's so confused. Has he suddenly lost his balance or coordination, and has he done anything that makes you concerned he might hurt himself or someone else?",
+   "ts": "2026-10-15 00:27:01",
+   "kind": "question",
+   "slot": "dyn:stroke.balance_loss+complaint.danger_to_self_or_others"
+  },
+  {
+   "role": "caregiver",
+   "text": "He fell to the ground and is now very weak and only saying confused words. I don't know if he's a danger to anyone else.",
+   "ts": "2026-10-15 00:27:03",
+   "kind": "answer",
+   "slot": "dyn:stroke.balance_loss+complaint.danger_to_self_or_others"
+  },
+  {
+   "role": "bot",
+   "text": "I'm so sorry he's going through this. Has he swallowed or taken any medications or anything else that could be poisonous?",
+   "ts": "2026-10-15 00:27:09",
+   "kind": "question",
+   "slot": "dyn:complaint.known_toxic_ingestion"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know his medications or medical history.",
+   "ts": "2026-10-15 00:27:10",
+   "kind": "answer",
+   "slot": "dyn:complaint.known_toxic_ingestion"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Has he had any shivering or shaking chills, or did he have a seizure or fit just before this happened?",
+   "ts": "2026-10-15 00:27:15",
+   "kind": "question",
+   "slot": "dyn:complaint.chills_or_rigors+complaint.post_ictal_after_seizure"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-15 00:27:17",
+   "kind": "answer",
+   "slot": "dyn:complaint.chills_or_rigors+complaint.post_ictal_after_seizure"
+  },
+  {
+   "role": "bot",
+   "text": "I understand you're not sure about his history. Has he ever been told by a doctor that his immune system is weak or that he's undergoing treatment like chemotherapy?",
+   "ts": "2026-10-15 00:27:22",
+   "kind": "question",
+   "slot": "dyn:history.immunocompromised"
+  }
+ ],
+ "stage": "rest",
+ "floor": "at least ESI-2",
+ "phase": "enroute",
+ "opened": [],
+ "created": "2026-10-15 00:24",
+ "pending_slot": "dyn:history.immunocompromised",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {},
+ "qr_ready": true,
+ "qr_turn": 14
+}

@@ -1,0 +1,16 @@
+session DURIAN-7266   started 2026-09-26 03:47   (generated from messages)
+
+03:47:32  BOT  Is the person awake and responding normally right now? Also, are they having severe chest pain, trouble breathing, or heavy bleeding?   [slot dyn:red_flags.responsive+red_flags.chest_pain_now+red_flags.breathing_difficulty+red_flags.heavy_bleeding]
+03:47:33  THEM Yes, he is awake and talking. He has no chest pain, trouble breathing, or heavy bleeding.   [slot dyn:red_flags.responsive+red_flags.chest_pain_now+red_flags.breathing_difficulty+red_flags.heavy_bleeding]
+03:47:36  BOT  Great, thank you for confirming that. Could you please tell us what happened to him, when it started, and how bad the pain is on a scale from 0 to 10?   [slot dyn:complaint.category+complaint.text+complaint.onset]
+03:47:37  THEM He fell down four steps at home about an hour ago and landed on his right hip. His pain is currently a 7 out of 10.   [slot dyn:complaint.category+complaint.text+complaint.onset]
+03:47:40  BOT  Can you check if his fingers or toes on the injured side feel numb, cold, look pale or blue, and can he still move them?   [slot dyn:limb.numb_tingling+limb.cold_pale_blue+limb.cannot_move_digits]
+03:47:41  THEM I don't know about the color or temperature of his fingers or toes. He can still move them.   [slot dyn:limb.numb_tingling+limb.cold_pale_blue+limb.cannot_move_digits]
+03:47:44  BOT  Could you please tell us what happened, when it started, and how bad the pain is on a scale from 0 to 10? Also, does he take any regular medications, have any allergies to medicines, or do you know of any other medical conditions like heart problems, diabetes, pregnancy, or anything affecting his immune system?   [slot dyn:E.mechanism+M.medications+A.allergies+history.conditions]
+03:47:46  THEM He fell down four steps at home an hour ago and landed on his right hip. His pain is 7 out of 10. He takes warfarin and a blood pressure pill, has a penicillin allergy, and conditions include irregular heartbeat and high blood pressure.   [slot dyn:E.mechanism+M.medications+A.allergies+history.conditions]
+03:47:48  SYS  floor: at least ESI-2  rules: ['B-30.anticoagulated-trauma'] (floor)
+03:47:50  BOT  Thank you for sharing those details about his fall and medications. To help the team prepare, could you also tell us if he has any fever, rash, recent overseas travel, or close contact with anyone who is sick?   [slot dyn:history.immunocompromised+infection.fever+infection.rash+infection.travel_14d]
+03:47:51  THEM No, he does not have a fever, rash, or recent overseas travel. He has had no contact with anyone who is sick.   [slot dyn:history.immunocompromised+infection.fever+infection.rash+infection.travel_14d]
+03:47:54  BOT  Could you also let us know if he has any other conditions like diabetes or pregnancy, when he last ate or drank, and his name and date of birth for our records?   [slot dyn:history.immunocompromised+history.pregnant_or_postpartum+L.last_intake+identity.name]
+03:47:55  THEM He is not pregnant as he is an elderly man; he had porridge at 1pm. His name is Mr. Tan Ah Kow and his date of birth is 02 Jan 1939.   [slot dyn:history.immunocompromised+history.pregnant_or_postpartum+L.last_intake+identity.name]
+03:47:57  BOT  Thank you - that's everything for now. Show the code DURIAN-7266 at the counter when you arrive. (ack)

@@ -1,0 +1,52 @@
+arm B, form handbook, persona CH-I29-09-child-increasing-work-of-breathing, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  What is the main reason the patient is seeking care today?
+A1  My son is having a harder time breathing and has to pause while speaking.
+
+Q2  Is your son currently struggling to breathe, making gasping noises, or is he unresponsive?
+A2  Yes, he is having trouble breathing right now and has to pause while speaking. He is awake and responding normally.
+
+Q3  How old is your son?
+A3  My son is 6 years old.
+
+Q4  Is your son's breathing difficult enough that he is making gasping noises, using extra muscles to breathe, or showing signs of severe respiratory distress?
+A4  My son is having a harder time breathing and has to pause while speaking.
+
+Q5  Is your son's breathing difficult enough that he is making gasping noises, using extra muscles to breathe, or showing signs of severe respiratory distress?
+A5  My son is having a harder time breathing and has to pause while speaking.
+
+Q6  Is your son's breathing difficult enough that he is using extra muscles to breathe, such as grunting, belly breathing, or rib retractions?
+A6  I don't know.
+
+Q7  Is your son's breathing difficult enough that he is making gasping noises, or is he using extra muscles to breathe, such as grunting, belly breathing, or rib retractions?
+A7  My son is having a harder time breathing and has to pause while speaking.
+
+Q8  Is your son's oxygen level low, or is he very pale, sweaty, or turning blue?
+A8  I don't know.
+
+Q9  Is your son's breathing difficulty accompanied by a high-pitched whistling sound (stridor) or a rattling sound (wheezing)?
+A9  I don't know.
+
+Q10  Is your son's breathing difficulty accompanied by a high-pitched whistling sound (stridor) or a rattling sound (wheezing)?
+A10  I don't know.
+
+Q11  Is your son's breathing difficulty accompanied by a high-pitched whistling sound (stridor) or a rattling sound (wheezing)?
+A11  I don't know.
+
+Q12  Is your son's breathing difficulty accompanied by a high-pitched whistling sound (stridor) or a rattling sound (wheezing)?
+A12  I don't know.
+
+Q13  Is your son's breathing difficulty accompanied by any other symptoms like a high fever, a cough, or a known medical condition like asthma?
+A13  He has asthma, but he does not have a fever.
+
+Q14  Is your son's breathing difficulty causing him to use extra muscles to breathe, such as grunting, belly breathing, or rib retractions?
+A14  I don't know.
+
+Q15  Is your son's breathing difficulty causing him to speak in short, 2-to-3-word sentences?
+A15  My son is having a harder time breathing and has to pause while speaking.
+
+Q16  Is your son's breathing difficulty causing him to speak in short, 2-to-3-word sentences?
+A16  My son is having a harder time breathing and has to pause while speaking.
+
+DECISION {"decision": "unparsed", "reason": "turn limit reached without a decision"}
+OUTCOME no decision in 16 questions | expected at least ESI-2 | pass False | label missing fact | max prompt tokens 30283

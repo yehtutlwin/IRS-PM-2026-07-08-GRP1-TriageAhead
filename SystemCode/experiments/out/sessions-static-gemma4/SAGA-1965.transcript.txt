@@ -1,0 +1,24 @@
+session SAGA-1965   started 2026-09-26 03:28   (generated from messages)
+
+03:28:53  BOT  Is the patient awake and responding normally, and are they experiencing any severe chest pain, trouble breathing, or heavy bleeding right now?   [slot red_flags.screen]
+03:28:54  THEM I'm awake, but I have pressure in the center of my chest and I'm a bit breathless. It's a 6/10 pain.   [slot red_flags.screen]
+03:28:58  SYS  floor: at least ESI-2  rules: ['B-04.chest-pain-acs-suspect'] (floor)
+03:28:59  BOT  Is the chest pain or any bleeding getting worse right now?   [slot red_flags.screen]
+03:29:01  THEM Yes, the pressure in my chest is still there. It's a 6 out of 10.   [slot red_flags.screen]
+03:29:05  BOT  Are you experiencing any heavy bleeding right now?   [slot red_flags.screen]
+03:29:05  THEM No, I'm not bleeding.   [slot red_flags.screen]
+03:29:08  BOT  When did the pain start?   [slot complaint.main]
+03:29:09  THEM It started about 40 minutes ago.   [slot complaint.main]
+03:29:12  BOT  At any point today, did you notice any drooping on one side of the face, weakness or numbness in an arm, or slurred or strange speech?   [slot stroke.screen]
+03:29:13  THEM No, I didn't notice any of those things.   [slot stroke.screen]
+03:29:17  BOT  Do you take any regular medications?   [slot M.medications]
+03:29:18  THEM No, I don't take any regular medications.   [slot M.medications]
+03:29:21  BOT  Do you have any allergies to medicine or other medical conditions, such as heart problems, diabetes, or are you currently pregnant?   [slot allergies_and_history]
+03:29:21  THEM No, I don't have any known conditions or allergies.   [slot allergies_and_history]
+03:29:25  BOT  Could you please let me know if you have any conditions that affect your immune system?   [slot allergies_and_history]
+03:29:26  THEM No, I don't have any known conditions.   [slot allergies_and_history]
+03:29:29  BOT  Have you had a fever, any rashes, traveled overseas in the last two weeks, or been in contact with anyone who is infectious?   [slot infection.screen]
+03:29:30  THEM No, I haven't had a fever or any rashes, and I haven't traveled or been in contact with anyone infectious.   [slot infection.screen]
+03:29:34  BOT  Could you please tell me when you last ate or drank, and provide your name and date of birth for the hospital's records?   [slot wrapup]
+03:29:36  THEM I had toast for breakfast at 8am. My name is not provided, but my date of birth is 14 May 1975.   [slot wrapup]
+03:29:38  BOT  Thank you - that's everything for now. Show the code SAGA-1965 at the counter when you arrive. (ack)

@@ -1,0 +1,35 @@
+<!doctype html><html><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ED Pre-Arrival Intake</title><style>
+body { font-family: system-ui, sans-serif; margin:0; background:#f4f6f9; color:#1a2b45; }
+.wrap { max-width: 520px; margin: 0 auto; padding: 24px 16px; }
+.card { background:#fff; border-radius:10px; padding:20px; margin:14px 0; box-shadow:0 1px 4px rgba(0,0,0,.08); }
+.btn { background:#3e8e4f; color:#fff; border:0; border-radius:8px; padding:14px 20px; font-size:17px; cursor:pointer; width:100%; }
+.btn.gray { background:#5a6a82; }
+.muted { color:#5a6a82; font-size:13px; }
+h1 { font-size:21px; }
+</style></head><body><div class="wrap">
+<h1>Emergency Department - Pre-Arrival Intake</h1>
+<div class="card" id="gate">
+  <p><b>Is an ambulance on the way, or are you already heading to the emergency department?</b></p>
+  <p class="muted">This service only collects information for the hospital while you travel.
+  It never advises whether to seek emergency care.</p>
+  <button class="btn" onclick="start(true)">Yes - we are coming in</button>
+  <p></p>
+  <button class="btn gray" onclick="start(false)">No</button>
+</div>
+<div class="card" id="no" style="display:none">
+  <p>This service is only for people already coming to the emergency department.</p>
+  <p><b>If this is an emergency, call 995 now.</b></p>
+</div>
+<p class="muted">Prototype - NUS-ISS IRS practice module. Not a medical service.</p>
+<script>
+async function start(coming) {
+  if (!coming) { document.getElementById('gate').style.display='none';
+                 document.getElementById('no').style.display='block'; return; }
+  const r = await fetch('/api/start', {method:'POST', headers:{'Content-Type':'application/json'},
+                                       body: JSON.stringify({coming_in:true})});
+  const j = await r.json();
+  if (j.sid) location.href = '/chat/' + j.sid;
+}
+</script></div></body></html>

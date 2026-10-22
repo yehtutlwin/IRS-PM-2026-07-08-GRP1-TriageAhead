@@ -1,0 +1,448 @@
+{
+ "sid": "EAGLE-3217",
+ "facts": {
+  "danger_signs.responsive": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-18 21:21"
+  },
+  "danger_signs.chest_pain_now": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-18 21:21"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "mental_health",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 2,
+      "ts": "2026-10-18 21:21"
+     },
+     "text": {
+      "value": "out of control at home tonight, shouting and hitting things and threatening to kill the family",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 5,
+      "ts": "2026-10-18 21:22"
+     },
+     "onset": {
+      "value": "Tonight, a couple of hours ago",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 5,
+      "ts": "2026-10-18 21:22"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 2
+  },
+  "complaint.category": {
+   "value": [
+    "mental_health"
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 5,
+   "ts": "2026-10-18 21:22"
+  },
+  "E.mechanism": {
+   "value": "none",
+   "status": "reported",
+   "who": "derived",
+   "turn": 2,
+   "ts": "2026-10-18 21:21"
+  },
+  "danger_signs.breathing_difficulty": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-18 21:21"
+  },
+  "danger_signs.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 4,
+   "ts": "2026-10-18 21:21"
+  },
+  "complaint.text": {
+   "value": "out of control at home tonight, shouting and hitting things and threatening to kill the family",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 5,
+   "ts": "2026-10-18 21:22"
+  },
+  "complaint.onset": {
+   "value": "Tonight, a couple of hours ago",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 5,
+   "ts": "2026-10-18 21:22"
+  },
+  "patient.age": {
+   "value": 17,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 16,
+   "ts": "2026-10-18 21:23"
+  },
+  "patient.sex": {
+   "value": "male",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 6,
+   "ts": "2026-10-18 21:22"
+  },
+  "patient.age_group": {
+   "value": "child",
+   "status": "reported",
+   "who": "derived",
+   "turn": 6,
+   "ts": "2026-10-18 21:22"
+  },
+  "complaint.fever": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 7,
+   "ts": "2026-10-18 21:22"
+  },
+  "infection.rash": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 7,
+   "ts": "2026-10-18 21:22"
+  },
+  "infection.travel_14d": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 8,
+   "ts": "2026-10-18 21:22"
+  },
+  "infection.contacts": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 8,
+   "ts": "2026-10-18 21:22"
+  },
+  "ams.changed_from_baseline": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 9,
+   "ts": "2026-10-18 21:22"
+  },
+  "complaint.danger_to_self_or_others": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 10,
+   "ts": "2026-10-18 21:22"
+  },
+  "M.medications": {
+   "value": [],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 11,
+   "ts": "2026-10-18 21:22"
+  },
+  "A.allergies": {
+   "value": [],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 11,
+   "ts": "2026-10-18 21:22"
+  },
+  "identity.name": {
+   "value": "Marcus Wong",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 15,
+   "ts": "2026-10-18 21:23"
+  }
+ },
+ "attempts": {
+  "danger_signs.responsive": 1,
+  "danger_signs.chest_pain_now": 1,
+  "danger_signs.breathing_difficulty": 2,
+  "danger_signs.heavy_bleeding": 2,
+  "complaint.category": 1,
+  "complaint.text": 1,
+  "complaint.onset": 1,
+  "patient.age": 1,
+  "patient.sex": 1,
+  "complaint.fever": 1,
+  "infection.rash": 1,
+  "infection.travel_14d": 1,
+  "infection.contacts": 1,
+  "ams.changed_from_baseline": 1,
+  "complaint.pain_rating": 1,
+  "complaint.danger_to_self_or_others": 1,
+  "complaint.known_toxic_ingestion": 1,
+  "M.medications": 1,
+  "A.allergies": 1,
+  "history.conditions": 3,
+  "identity.name": 1,
+  "identity.dob": 3
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "Is the patient awake and responding to you normally? Also, is he or she experiencing any chest pain, trouble breathing, or heavy bleeding right now?",
+   "ts": "2026-10-18 21:21:16",
+   "kind": "question",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, he's awake and answering, he's calm now. No.",
+   "ts": "2026-10-18 21:21:16",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "bot",
+   "text": "I'm glad he's calm. Is he having any trouble breathing or is there any heavy bleeding right now? Also, what is the main reason you are bringing him in?",
+   "ts": "2026-10-18 21:21:24",
+   "kind": "question",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category"
+  },
+  {
+   "role": "caregiver",
+   "text": "No. He was out of control at home tonight, shouting and hitting things and threatening to kill us. The police brought him.",
+   "ts": "2026-10-18 21:21:24",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding+complaint.category"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Is he having any difficulty breathing at the moment?",
+   "ts": "2026-10-18 21:21:38",
+   "kind": "question",
+   "slot": "dyn:danger_signs.breathing_difficulty"
+  },
+  {
+   "role": "caregiver",
+   "text": "No.",
+   "ts": "2026-10-18 21:21:38",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.breathing_difficulty"
+  },
+  {
+   "role": "bot",
+   "text": "Is he bleeding heavily anywhere right now?",
+   "ts": "2026-10-18 21:21:44",
+   "kind": "question",
+   "slot": "dyn:danger_signs.heavy_bleeding"
+  },
+  {
+   "role": "caregiver",
+   "text": "No.",
+   "ts": "2026-10-18 21:21:44",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.heavy_bleeding"
+  },
+  {
+   "role": "bot",
+   "text": "I'm glad to hear that. Can you tell me what's happening with him and when it started?",
+   "ts": "2026-10-18 21:21:50",
+   "kind": "question",
+   "slot": "dyn:complaint.text+complaint.onset"
+  },
+  {
+   "role": "caregiver",
+   "text": "My son was out of control at home tonight, shouting and hitting things and threatening to kill the family. We called the police and they brought him here. He's calm now. Tonight, a couple of hours ago.",
+   "ts": "2026-10-18 21:21:50",
+   "kind": "answer",
+   "slot": "dyn:complaint.text+complaint.onset"
+  },
+  {
+   "role": "bot",
+   "text": "I understand he is calmer now. How old is your son?",
+   "ts": "2026-10-18 21:22:05",
+   "kind": "question",
+   "slot": "dyn:patient.age+patient.sex"
+  },
+  {
+   "role": "caregiver",
+   "text": "He's 17. He's a boy, my son.",
+   "ts": "2026-10-18 21:22:05",
+   "kind": "answer",
+   "slot": "dyn:patient.age+patient.sex"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Does he have a fever or any new rashes on his body?",
+   "ts": "2026-10-18 21:22:12",
+   "kind": "question",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 21:22:12",
+   "kind": "answer",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Has he traveled outside the country or been in contact with anyone who has been sick in the last two weeks?",
+   "ts": "2026-10-18 21:22:19",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 21:22:19",
+   "kind": "answer",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "bot",
+   "text": "Is he acting differently than usual, such as being more confused, not making sense, or unusually sleepy?",
+   "ts": "2026-10-18 21:22:25",
+   "kind": "question",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 21:22:25",
+   "kind": "answer",
+   "slot": "dyn:ams.changed_from_baseline"
+  },
+  {
+   "role": "bot",
+   "text": "I understand you aren't sure about those details. Has he mentioned hurting himself or others, or did he take any medication or substances that could be harmful?",
+   "ts": "2026-10-18 21:22:32",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating+complaint.danger_to_self_or_others+complaint.known_toxic_ingestion"
+  },
+  {
+   "role": "caregiver",
+   "text": "Yes, he threatened to kill the family.",
+   "ts": "2026-10-18 21:22:32",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_rating+complaint.danger_to_self_or_others+complaint.known_toxic_ingestion"
+  },
+  {
+   "role": "system",
+   "text": "floor: at least ESI-2  rules: ['B-09.suicidal-or-homicidal']",
+   "ts": "2026-10-18 21:22:37",
+   "kind": "floor"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Does he take any regular medications or have any known allergies?",
+   "ts": "2026-10-18 21:22:39",
+   "kind": "question",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "caregiver",
+   "text": "He doesn't take any medicines. No allergies.",
+   "ts": "2026-10-18 21:22:39",
+   "kind": "answer",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "bot",
+   "text": "Does he have any ongoing medical conditions?",
+   "ts": "2026-10-18 21:22:46",
+   "kind": "question",
+   "slot": "dyn:history.conditions"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, he's never had any medical problems.",
+   "ts": "2026-10-18 21:22:46",
+   "kind": "answer",
+   "slot": "dyn:history.conditions"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Does he have any other health conditions or medical problems?",
+   "ts": "2026-10-18 21:22:59",
+   "kind": "question",
+   "slot": "dyn:history.conditions"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, he's never had any medical problems.",
+   "ts": "2026-10-18 21:22:59",
+   "kind": "answer",
+   "slot": "dyn:history.conditions"
+  },
+  {
+   "role": "bot",
+   "text": "To make sure we have everything, does he have any chronic illnesses or regular medical conditions?",
+   "ts": "2026-10-18 21:23:11",
+   "kind": "question",
+   "slot": "dyn:history.conditions"
+  },
+  {
+   "role": "caregiver",
+   "text": "No, he's never had any medical problems.",
+   "ts": "2026-10-18 21:23:11",
+   "kind": "answer",
+   "slot": "dyn:history.conditions"
+  },
+  {
+   "role": "bot",
+   "text": "I've noted that. Could you please tell me his full name and date of birth?",
+   "ts": "2026-10-18 21:23:23",
+   "kind": "question",
+   "slot": "dyn:identity.name+identity.dob"
+  },
+  {
+   "role": "caregiver",
+   "text": "Marcus Wong. I don't have it to hand, he's 17.",
+   "ts": "2026-10-18 21:23:23",
+   "kind": "answer",
+   "slot": "dyn:identity.name+identity.dob"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Could you please provide his date of birth?",
+   "ts": "2026-10-18 21:23:30",
+   "kind": "question",
+   "slot": "dyn:identity.dob"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't have it to hand, he's 17.",
+   "ts": "2026-10-18 21:23:30",
+   "kind": "answer",
+   "slot": "dyn:identity.dob"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Could you tell me the day and month he was born?",
+   "ts": "2026-10-18 21:23:36",
+   "kind": "question",
+   "slot": "dyn:identity.dob"
+  }
+ ],
+ "stage": "floor",
+ "floor": "at least ESI-2",
+ "phase": "enroute",
+ "created": "2026-10-18 21:21",
+ "pending_slot": "dyn:identity.dob",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {}
+}

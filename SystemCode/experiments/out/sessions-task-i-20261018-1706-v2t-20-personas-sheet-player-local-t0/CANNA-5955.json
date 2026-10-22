@@ -1,0 +1,499 @@
+{
+ "sid": "CANNA-5955",
+ "facts": {
+  "danger_signs.responsive": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 1,
+   "ts": "2026-10-18 16:41"
+  },
+  "obs.new_confusion_lethargy_disorientation": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 4,
+   "ts": "2026-10-18 16:41"
+  },
+  "danger_signs.chest_pain_now": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 2,
+   "ts": "2026-10-18 16:41"
+  },
+  "danger_signs.breathing_difficulty": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-18 16:41"
+  },
+  "danger_signs.heavy_bleeding": {
+   "value": false,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 3,
+   "ts": "2026-10-18 16:41"
+  },
+  "complaints": {
+   "value": [
+    {
+     "category": "other",
+     "opened": {
+      "value": true,
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 4,
+      "ts": "2026-10-18 16:41"
+     },
+     "text": {
+      "value": "He collapsed working outdoors in the sun. He had a headache, nausea and dizziness, then got confused and fell. He's very hot and weak now.",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 4,
+      "ts": "2026-10-18 16:41"
+     },
+     "onset": {
+      "value": "About half an hour ago",
+      "status": "reported",
+      "who": "caregiver",
+      "turn": 5,
+      "ts": "2026-10-18 16:41"
+     },
+     "onset_abs": {
+      "value": "~2026-10-18 16:11",
+      "status": "reported",
+      "who": "derived",
+      "turn": 5,
+      "ts": "2026-10-18 16:41"
+     }
+    }
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 4
+  },
+  "complaint.category": {
+   "value": [
+    "other"
+   ],
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 5,
+   "ts": "2026-10-18 16:41"
+  },
+  "complaint.text": {
+   "value": "He collapsed working outdoors in the sun. He had a headache, nausea and dizziness, then got confused and fell. He's very hot and weak now.",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 4,
+   "ts": "2026-10-18 16:41"
+  },
+  "E.mechanism": {
+   "value": "fall",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 4,
+   "ts": "2026-10-18 16:41"
+  },
+  "complaint.onset": {
+   "value": "About half an hour ago",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 5,
+   "ts": "2026-10-18 16:41"
+  },
+  "patient.age": {
+   "value": 39,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 5,
+   "ts": "2026-10-18 16:41"
+  },
+  "complaint.onset_abs": {
+   "value": "~2026-10-18 16:11 (from 'About half an hour ago' said 16:41)",
+   "status": "reported",
+   "who": "derived",
+   "turn": 5,
+   "ts": "2026-10-18 16:41"
+  },
+  "patient.age_group": {
+   "value": "adult",
+   "status": "reported",
+   "who": "derived",
+   "turn": 5,
+   "ts": "2026-10-18 16:41"
+  },
+  "patient.sex": {
+   "value": "male",
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 6,
+   "ts": "2026-10-18 16:42"
+  },
+  "M.medications": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 7,
+   "ts": "2026-10-18 16:42"
+  },
+  "A.allergies": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 7,
+   "ts": "2026-10-18 16:42"
+  },
+  "history.conditions": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 8,
+   "ts": "2026-10-18 16:42"
+  },
+  "identity.name": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 9,
+   "ts": "2026-10-18 16:42"
+  },
+  "identity.dob": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 9,
+   "ts": "2026-10-18 16:42"
+  },
+  "complaint.fever": {
+   "value": true,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 10,
+   "ts": "2026-10-18 16:42"
+  },
+  "infection.rash": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 11,
+   "ts": "2026-10-18 16:42"
+  },
+  "infection.travel_14d": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 12,
+   "ts": "2026-10-18 16:42"
+  },
+  "infection.contacts": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 12,
+   "ts": "2026-10-18 16:42"
+  },
+  "vitals.temp_c": {
+   "value": 40.4,
+   "status": "reported",
+   "who": "caregiver",
+   "turn": 13,
+   "ts": "2026-10-18 16:42"
+  },
+  "complaint.testicular_or_scrotal_pain": {
+   "value": null,
+   "status": "unknown",
+   "who": "caregiver",
+   "turn": 14,
+   "ts": "2026-10-18 16:42"
+  }
+ },
+ "attempts": {
+  "danger_signs.responsive": 1,
+  "danger_signs.chest_pain_now": 2,
+  "danger_signs.breathing_difficulty": 1,
+  "danger_signs.heavy_bleeding": 1,
+  "complaint.category": 1,
+  "complaint.text": 1,
+  "complaint.onset": 1,
+  "patient.age": 1,
+  "patient.sex": 1,
+  "M.medications": 1,
+  "A.allergies": 1,
+  "history.conditions": 1,
+  "identity.name": 1,
+  "identity.dob": 1,
+  "complaint.fever": 1,
+  "infection.rash": 2,
+  "infection.travel_14d": 1,
+  "infection.contacts": 1,
+  "vitals.temp_c": 1,
+  "complaint.pain_rating": 3,
+  "complaint.testicular_or_scrotal_pain": 1,
+  "complaint.possible_pelvis_femur_fracture_or_dislocation": 1,
+  "E.abdominal_trauma": 1
+ },
+ "messages": [
+  {
+   "role": "bot",
+   "text": "Is the patient awake and responding to you normally? Also, is he or she experiencing any chest pain, trouble breathing, or heavy bleeding right now?",
+   "ts": "2026-10-18 16:41:13",
+   "kind": "question",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "caregiver",
+   "text": "He's awake but only answers with confused words.",
+   "ts": "2026-10-18 16:41:13",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.responsive+danger_signs.chest_pain_now"
+  },
+  {
+   "role": "system",
+   "text": "floor: at least ESI-2  rules: ['B-01.new-altered-mental-status']",
+   "ts": "2026-10-18 16:41:18",
+   "kind": "floor"
+  },
+  {
+   "role": "bot",
+   "text": "Based on what you just told me, please call 995 NOW if you are not already with paramedics. I have put this at the top of the hospital report.",
+   "ts": "2026-10-18 16:41:18",
+   "kind": "advice"
+  },
+  {
+   "role": "bot",
+   "text": "Is he experiencing any chest pain at this moment?",
+   "ts": "2026-10-18 16:41:20",
+   "kind": "question",
+   "slot": "dyn:danger_signs.chest_pain_now"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 16:41:20",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.chest_pain_now"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Is he having any trouble breathing or is there any heavy bleeding?",
+   "ts": "2026-10-18 16:41:26",
+   "kind": "question",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding"
+  },
+  {
+   "role": "caregiver",
+   "text": "He's breathing, not struggling that I can see. No bleeding.",
+   "ts": "2026-10-18 16:41:26",
+   "kind": "answer",
+   "slot": "dyn:danger_signs.breathing_difficulty+danger_signs.heavy_bleeding"
+  },
+  {
+   "role": "bot",
+   "text": "I've noted that he is breathing well. Could you tell me what the main problem is and what's happening with him?",
+   "ts": "2026-10-18 16:41:33",
+   "kind": "question",
+   "slot": "dyn:complaint.category+complaint.text"
+  },
+  {
+   "role": "caregiver",
+   "text": "He collapsed working outdoors in the sun. He had a headache, nausea and dizziness, then got confused and fell. He's very hot and weak now.",
+   "ts": "2026-10-18 16:41:33",
+   "kind": "answer",
+   "slot": "dyn:complaint.category+complaint.text"
+  },
+  {
+   "role": "bot",
+   "text": "I'm sorry to hear about his collapse. When did these symptoms first start and how old is he?",
+   "ts": "2026-10-18 16:41:53",
+   "kind": "question",
+   "slot": "dyn:complaint.onset+patient.age"
+  },
+  {
+   "role": "caregiver",
+   "text": "About half an hour ago, after four hours in the sun. 39.",
+   "ts": "2026-10-18 16:41:53",
+   "kind": "answer",
+   "slot": "dyn:complaint.onset+patient.age"
+  },
+  {
+   "role": "bot",
+   "text": "I've noted his age. Is he a man or a woman?",
+   "ts": "2026-10-18 16:42:00",
+   "kind": "question",
+   "slot": "dyn:patient.sex"
+  },
+  {
+   "role": "caregiver",
+   "text": "Male.",
+   "ts": "2026-10-18 16:42:00",
+   "kind": "answer",
+   "slot": "dyn:patient.sex"
+  },
+  {
+   "role": "bot",
+   "text": "I've noted that he is a man. Does he take any regular medications or have any known allergies?",
+   "ts": "2026-10-18 16:42:07",
+   "kind": "question",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 16:42:07",
+   "kind": "answer",
+   "slot": "dyn:M.medications+A.allergies"
+  },
+  {
+   "role": "bot",
+   "text": "Does he have any ongoing medical conditions, like heart problems or diabetes?",
+   "ts": "2026-10-18 16:42:13",
+   "kind": "question",
+   "slot": "dyn:history.conditions"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 16:42:13",
+   "kind": "answer",
+   "slot": "dyn:history.conditions"
+  },
+  {
+   "role": "bot",
+   "text": "I understand. Could you please tell me his full name and his date of birth?",
+   "ts": "2026-10-18 16:42:20",
+   "kind": "question",
+   "slot": "dyn:identity.name+identity.dob"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 16:42:20",
+   "kind": "answer",
+   "slot": "dyn:identity.name+identity.dob"
+  },
+  {
+   "role": "bot",
+   "text": "That's enough for the hospital team to prepare. Show the code CANNA-5955 at the counter when you arrive. I'll ask a few more things while you're on the way; tell me straight away if anything changes.",
+   "ts": "2026-10-18 16:42:23",
+   "kind": "ack"
+  },
+  {
+   "role": "bot",
+   "text": "Does he have a fever or any new rashes on his skin?",
+   "ts": "2026-10-18 16:42:26",
+   "kind": "question",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "The thermometer reads 40.4.",
+   "ts": "2026-10-18 16:42:26",
+   "kind": "answer",
+   "slot": "dyn:complaint.fever+infection.rash"
+  },
+  {
+   "role": "bot",
+   "text": "I see the temperature is high. Does he have any new rashes on his skin?",
+   "ts": "2026-10-18 16:42:33",
+   "kind": "question",
+   "slot": "dyn:infection.rash"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 16:42:33",
+   "kind": "answer",
+   "slot": "dyn:infection.rash"
+  },
+  {
+   "role": "bot",
+   "text": "I've noted the high temperature. Has he traveled abroad or been in contact with anyone who is sick in the last two weeks?",
+   "ts": "2026-10-18 16:42:40",
+   "kind": "question",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 16:42:40",
+   "kind": "answer",
+   "slot": "dyn:infection.travel_14d+infection.contacts"
+  },
+  {
+   "role": "bot",
+   "text": "If you have a thermometer handy, what was his temperature reading?",
+   "ts": "2026-10-18 16:42:46",
+   "kind": "question",
+   "slot": "dyn:vitals.temp_c"
+  },
+  {
+   "role": "caregiver",
+   "text": "40.4.",
+   "ts": "2026-10-18 16:42:46",
+   "kind": "answer",
+   "slot": "dyn:vitals.temp_c"
+  },
+  {
+   "role": "bot",
+   "text": "I've noted the temperature. On a scale of 0 to 10, how bad is his pain right now, and is he experiencing any pain in his testicles or scrotum?",
+   "ts": "2026-10-18 16:42:53",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating+complaint.testicular_or_scrotal_pain"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 16:42:53",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_rating+complaint.testicular_or_scrotal_pain"
+  },
+  {
+   "role": "bot",
+   "text": "I understand you're not sure about the specific location. On a scale of 0 to 10, how much pain is he in overall?",
+   "ts": "2026-10-18 16:43:01",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 16:43:01",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "I understand it's hard to say. If you had to estimate, how much pain is he in on a scale of 0 to 10?",
+   "ts": "2026-10-18 16:43:07",
+   "kind": "question",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "caregiver",
+   "text": "I don't know.",
+   "ts": "2026-10-18 16:43:07",
+   "kind": "answer",
+   "slot": "dyn:complaint.pain_rating"
+  },
+  {
+   "role": "bot",
+   "text": "I understand it's hard to judge the pain. Can he put any weight on his leg, and was there any blow or injury to his belly?",
+   "ts": "2026-10-18 16:43:13",
+   "kind": "question",
+   "slot": "dyn:complaint.possible_pelvis_femur_fracture_or_dislocation+E.abdominal_trauma"
+  }
+ ],
+ "stage": "rest",
+ "floor": "at least ESI-2",
+ "phase": "enroute",
+ "created": "2026-10-18 16:41",
+ "pending_slot": "dyn:complaint.possible_pelvis_femur_fracture_or_dislocation+E.abdominal_trauma",
+ "checkins_unanswered": 0,
+ "volunteer_credit": {},
+ "advised995": true,
+ "qr_ready": true,
+ "qr_turn": 9
+}

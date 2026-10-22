@@ -1,0 +1,52 @@
+arm B, form rules, persona P1-fall-anticoag, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  Is the patient awake and responding normally?
+A1  Yes, he's awake and talking. He's as alert as usual.
+
+Q2  Is the patient experiencing any chest pain right now?
+A2  No chest pain.
+
+Q3  Is the patient having any trouble breathing right now?
+A3  No, he's breathing fine.
+
+Q4  Is the patient bleeding heavily right now?
+A4  No bleeding.
+
+Q5  What is the main reason the patient is coming to the emergency department?
+A5  He fell down 4 steps at home and landed on his right hip. He can't stand.
+
+Q6  How high was the fall from the steps?
+A6  He fell down 4 steps, about a metre.
+
+Q7  Is the patient's hip or leg area numb, tingling, cold, or pale, or is he unable to move his toes or foot?
+A7  I don't know.
+
+Q8  Is the patient's hip or leg area numb, tingling, cold, or pale, or is he unable to move his toes or foot?
+A8  I don't know.
+
+Q9  Is the patient's hip or leg area numb, tingling, cold, or pale, or is he unable to move his toes or foot?
+A9  I don't know.
+
+Q10  Is the patient's hip or leg area numb, tingling, cold, or pale, or is he unable to move his toes or foot?
+A10  I don't know.
+
+Q11  Is the patient's hip or leg area numb, tingling, cold, or pale, or is he unable to move his toes or foot?
+A11  I don't know.
+
+Q12  Is the patient's hip or leg area numb, tingling, cold, or pale, or is he unable to move his toes or foot?
+A12  I don't know.
+
+Q13  Is the patient's hip or leg area numb, tingling, cold, or pale, or is he unable to move his toes or foot?
+A13  I don't know.
+
+Q14  Is the patient's hip or leg area numb, tingling, cold, or pale, or is he unable to move his toes or foot?
+A14  I don't know.
+
+Q15  Is the patient's hip or leg area numb, tingling, cold, or pale, or is he unable to move his toes or foot?
+A15  I don't know.
+
+Q16  Is the patient's hip or leg area numb, tingling, cold, or pale, or is he unable to move his toes or foot?
+A16  I don't know.
+
+DECISION {"decision": "unparsed", "reason": "turn limit reached without a decision"}
+OUTCOME no decision in 16 questions | expected at least ESI-2 | pass False | label missing fact | max prompt tokens 44173

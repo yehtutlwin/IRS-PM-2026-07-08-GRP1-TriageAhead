@@ -1,0 +1,104 @@
+{
+ "backend": "codex-cli",
+ "label": "gpt",
+ "model": null,
+ "chunks": [
+  {
+   "pages": [
+    1,
+    2,
+    5
+   ],
+   "ok": true,
+   "entries": 18,
+   "model": "codex-default"
+  },
+  {
+   "pages": [
+    6,
+    7
+   ],
+   "ok": true,
+   "entries": 53,
+   "model": "codex-default"
+  },
+  {
+   "pages": [
+    9,
+    10
+   ],
+   "ok": true,
+   "entries": 38,
+   "model": "codex-default"
+  },
+  {
+   "pages": [
+    11,
+    12
+   ],
+   "ok": true,
+   "entries": 75,
+   "model": "codex-default"
+  },
+  {
+   "pages": [
+    13
+   ],
+   "ok": true,
+   "entries": 16,
+   "model": "codex-default"
+  },
+  {
+   "pages": [
+    14
+   ],
+   "ok": true,
+   "entries": 17,
+   "model": "codex-default"
+  },
+  {
+   "pages": [
+    15
+   ],
+   "ok": true,
+   "entries": 26,
+   "model": "codex-default"
+  },
+  {
+   "pages": [
+    19,
+    20
+   ],
+   "ok": true,
+   "entries": 39,
+   "model": "codex-default"
+  },
+  {
+   "pages": [
+    23
+   ],
+   "ok": false
+  },
+  {
+   "pages": [
+    23
+   ],
+   "ok": false
+  },
+  {
+   "pages": [
+    24,
+    25
+   ],
+   "ok": false
+  },
+  {
+   "pages": [
+    27,
+    29,
+    30
+   ],
+   "ok": false
+  }
+ ]
+}

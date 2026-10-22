@@ -1,0 +1,25 @@
+arm B, form handbook, persona ND-P28-postpartum-bleeding, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  What is the main reason the patient is seeking care today?
+A1  My partner gave birth eight days ago and is bleeding heavily.
+
+Q2  Is the bleeding heavy enough to soak through a pad in an hour, or are there large clots or bright red bleeding that does not slow down?
+A2  She is bleeding heavily after childbirth. I can check how fast the pads are soaking, but I cannot estimate the volume.
+
+Q3  Is the patient currently alert and able to follow commands, or is she showing any signs of confusion or distress?
+A3  Yes, the patient is awake and can respond.
+
+Q4  Is the patient's blood pressure currently low (e.g., systolic less than 90) or is she showing signs of shock, such as being pale, sweaty, or having a very fast heart rate?
+A4  I don't know.
+
+Q5  Is the patient's heart rate very fast (over 100 beats per minute) or is she having any trouble breathing?
+A5  She is breathing normally. I don't know.
+
+Q6  Is the patient's bleeding a result of a recent delivery (within the last 24 hours) or is she currently experiencing heavy vaginal bleeding (soaking a pad in an hour, large clots, or bright red bleeding that doesn't slow down)?
+A6  She gave birth eight days ago and is bleeding heavily. I can check how fast the pads are soaking, but I cannot estimate the volume.
+
+Q7  Can you tell me if she is currently experiencing heavy vaginal bleeding, specifically soaking through a pad in an hour, having large clots, or having bright red bleeding that does not slow down?
+A7  Yes, she is experiencing heavy vaginal bleeding. I can check how fast the pads are soaking, but I cannot estimate the volume.
+
+DECISION {"decision": "level 2", "reason": "The patient is a postpartum patient presenting with heavy vaginal bleeding, which is a high-risk situation requiring rapid assessment.", "citation": "page 14"}
+OUTCOME level 2 or floor | expected at least ESI-2 | pass True | label None | max prompt tokens 30013

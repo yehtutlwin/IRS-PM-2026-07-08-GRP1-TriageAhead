@@ -1,0 +1,26 @@
+{"t": "03:45:20", "kind": "engine", "note": "session DURIAN-6969 started (web)"}
+{"t": "03:45:21", "kind": "question", "slot": "red_flags.screen", "text": "Are you currently experiencing severe chest pain, trouble breathing, or heavy bleeding?"}
+{"t": "03:45:22", "kind": "answer", "slot": "red_flags.screen", "text": "No, I am not experiencing chest pain, trouble breathing, or heavy bleeding right now. My symptoms resolved completely after about 45 minutes and I feel normal again."}
+{"t": "03:45:23", "kind": "extract", "writes": [["red_flags.chest_pain_now", false], ["red_flags.breathing_difficulty", false], ["red_flags.heavy_bleeding", false]]}
+{"t": "03:45:24", "kind": "question", "slot": "red_flags.screen", "text": "You haven't answered whether you are awake and responding normally yet; could you please let me know?"}
+{"t": "03:45:24", "kind": "answer", "slot": "red_flags.screen", "text": "Yes, I am awake and talking clearly now since the symptoms resolved after about 45 minutes."}
+{"t": "03:45:26", "kind": "extract", "writes": [["red_flags.responsive", true], ["ams.changed_from_baseline", false], ["complaint.text", "symptoms resolved"], ["complaint.onset", "about 45 minutes ago"]]}
+{"t": "03:45:27", "kind": "question", "slot": "complaint.main", "text": "Could you please tell us what kind of pain it was, how it started, and rate it from 0 to 10?"}
+{"t": "03:45:28", "kind": "answer", "slot": "complaint.main", "text": "There is no pain right now, so I would rate it a 0/10. The episode started this morning around 9am when her speech suddenly went slurred and her left arm became weak."}
+{"t": "03:45:30", "kind": "extract", "writes": [["complaint.pain_rating", 0, "chest_pain"], ["complaint.text", "no pain right now", "chest_pain"], ["complaint.onset", "this morning around 9am", "chest_pain"], ["stroke.speech_change", true], ["stroke.arm_weakness", true]]}
+{"t": "03:45:30", "kind": "floor", "floor": "at least ESI-2", "fired": ["B-05.stroke-signs"], "sources": ["ESI v5 p.12"]}
+{"t": "03:45:30", "kind": "extract", "writes": [["E.mechanism", "none"]], "via": "derived-non-injury"}
+{"t": "03:45:30", "kind": "question", "slot": "M.medications", "text": "Could you please tell us if she takes any regular medications?"}
+{"t": "03:45:31", "kind": "answer", "slot": "M.medications", "text": "She takes one aspirin daily because of an old stroke two years ago. She does not take anything else."}
+{"t": "03:45:32", "kind": "extract", "writes": [["M.medications", ["aspirin"]], ["confirm.M.anticoagulant", null]]}
+{"t": "03:45:33", "kind": "question", "slot": "allergies_and_history", "text": "Do you have any allergies to medicines or other medical conditions such as heart problems, diabetes, pregnancy, or issues affecting your immune system?"}
+{"t": "03:45:34", "kind": "answer", "slot": "allergies_and_history", "text": "No, I do not have any allergies. My only other condition is the stroke I had two years ago."}
+{"t": "03:45:36", "kind": "extract", "writes": [["A.allergies", []], ["history.conditions", ["stroke"]], ["history.immunocompromised", false], ["history.pregnant_or_postpartum", false]]}
+{"t": "03:45:36", "kind": "question", "slot": "infection.screen", "text": "Do you have any fever, rash, recent overseas travel, or contact with someone who is infectious?"}
+{"t": "03:45:37", "kind": "answer", "slot": "infection.screen", "text": "No, there is no fever, rash, recent travel, or infectious contact."}
+{"t": "03:45:39", "kind": "extract", "writes": [["infection.fever", false], ["infection.rash", false], ["infection.travel_14d", false], ["infection.contacts", false]]}
+{"t": "03:45:40", "kind": "question", "slot": "wrapup", "text": "Could you please tell me when you last ate or drank, along with your name and date of birth for the hospital's records?"}
+{"t": "03:45:40", "kind": "answer", "slot": "wrapup", "text": "I had breakfast at 8am. My name is [Name] and my date of birth is March 15, 1938."}
+{"t": "03:45:42", "kind": "extract", "writes": [["L.last_intake", "breakfast at 8am"], ["identity.name", "[Name]"], ["identity.dob", "March 15, 1938"]]}
+{"t": "03:45:42", "kind": "engine", "consider": ["B-52.geriatric-vitals-medication-context-consider"]}
+{"t": "03:45:42", "kind": "engine", "note": "interview complete - no open slots"}

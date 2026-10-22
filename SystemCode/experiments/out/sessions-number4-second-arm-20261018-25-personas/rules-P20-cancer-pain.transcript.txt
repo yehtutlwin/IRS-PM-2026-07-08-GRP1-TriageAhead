@@ -1,0 +1,43 @@
+arm B, form rules, persona P20-cancer-pain, model gemma4:12b, temperature 0, seed 42, num_ctx 49152
+
+Q1  Is the patient awake and responding normally?
+A1  Yes, I'm awake, it's me talking.
+
+Q2  Is the patient experiencing any chest pain right now?
+A2  No.
+
+Q3  Is the patient having any trouble breathing right now?
+A3  I don't know.
+
+Q4  Is the patient bleeding heavily right now?
+A4  I don't know.
+
+Q5  Can you tell me more about why you aren't sure if they are having trouble breathing? For example, are they breathing very fast, making a gasping sound, or struggling to speak?
+A5  I don't know.
+
+Q6  Can you describe the patient's current symptoms or the reason they need to go to the emergency department?
+A6  My pain medications are not working anymore. I have metastatic ovarian cancer and my oncologist told me to come in.
+
+Q7  Is the patient's pain very severe, perhaps a 7 out of 10 or higher?
+A7  It's 9 out of 10.
+
+Q8  Is the patient's pain caused by a body-wide issue like a cancer, a kidney stone, or a blood disorder?
+A8  Yes, it's from my cancer. I have metastatic ovarian cancer.
+
+Q9  Are you currently experiencing any other symptoms, such as a fever, a cough, or feeling very weak or dizzy?
+A9  I don't know.
+
+Q10  Are you currently feeling any other symptoms, such as a fever, a cough, or feeling very weak or dizzy?
+A10  I don't know.
+
+Q11  Are you currently feeling any other symptoms, such as a fever, a cough, or feeling very weak or dizzy?
+A11  I don't know.
+
+Q12  Are you currently feeling any other symptoms, such as a fever, a cough, or feeling very weak or dizzy?
+A12  I don't know.
+
+Q13  Are you currently feeling any other symptoms, such as a fever, a cough, or feeling very weak or dizzy?
+A13  I don't know.
+
+DECISION {"decision": "at least ESI-2", "reason": "The patient is experiencing severe pain (9/10) caused by a systemic condition (metastatic ovarian cancer), which meets the criteria for a high-risk situation.", "citation": "ESI v5 p.12 (Severe Pain or Distress); B-03.severe-pain-systemic-cause"}
+OUTCOME level 2 or floor | expected at least ESI-2 | pass True | label None | max prompt tokens 44084

@@ -1,0 +1,5319 @@
+entries:
+- id: N-001
+  page: 1
+  span: The ESI does not define expected time intervals to physician evaluation.
+  decision_point: none
+  kind: usage
+  effect: none
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: ESI levels carry no target time to physician.
+- id: C-001
+  page: 1
+  span: For patients determined to be stable, prediction of resources necessary to move the patient to a final disposition
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: Resource prediction differentiates acuity only among stable patients.
+- id: N-002
+  page: 2
+  span: While patient throughput and flow is outside the scope of ESI
+  decision_point: none
+  kind: usage
+  effect: none
+  who_can_supply: n/a
+  interpretation: verbatim
+- id: N-003
+  page: 5
+  span: The decision points must be performed in order, but higher acuity patients will only require one or two decision points
+  decision_point: none
+  kind: usage
+  effect: none
+  who_can_supply: n/a
+  interpretation: verbatim
+- id: N-004
+  page: 5
+  span: The ESI is intended for use by nurses with both emergency nursing and triage experience.
+  decision_point: none
+  kind: usage
+  effect: none
+  who_can_supply: n/a
+  interpretation: verbatim
+- id: C-002
+  page: 5
+  span: If a patient does not meet high risk instability criteria (ESI level 1 or 2), the triage nurse then evaluates expected resource needs
+  decision_point: C
+  kind: usage
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+- id: A-001
+  page: 5
+  span: Decision point A is the only one needed for ESI level-1 patients, who are defined as in need of immediate lifesaving intervention.
+  decision_point: A
+  kind: rule
+  effect: assign_level_1
+  who_can_supply: observed
+  when:
+    all:
+    - fact: needs_immediate_lifesaving_intervention
+      is: true
+  interpretation: verbatim
+- id: B-001
+  page: 5
+  span: Decision point B is used to determine whether the patient is likely to deteriorate and/or require more immediate care
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: observed
+  when:
+    all:
+    - fact: is_likely_to_deteriorate
+      is: true
+  interpretation: verbatim
+  note: Followed by 'These patients are assigned an ESI level of 2.' Based on symptom presentation and patient risk factors.
+- id: N-005
+  page: 5
+  span: Both of these decisions may require a full set of vital signs and a focused assessment prior to reaching such a determination.
+  decision_point: none
+  kind: usage
+  effect: none
+  who_can_supply: n/a
+  interpretation: verbatim
+- id: C-003
+  page: 5
+  span: Decision point C is used only after level 1 and 2 are excluded and patients are determined to be physiologically stable
+  decision_point: C
+  kind: usage
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+- id: C-004
+  page: 5
+  span: ESI levels 3, 4, and 5 are based on how many resources the nurse anticipates will be used to reach a disposition decision.
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+- id: D-001
+  page: 5
+  span: Decision point D incorporates vital signs to identify more subtle high- risk presentations
+  decision_point: D
+  kind: definition
+  effect: reassess_uptriage
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: D can identify subtle high-risk presentations or need for lifesaving intervention, potentially resulting in a higher acuity level.
+- id: D-002
+  page: 5
+  span: Do the patient’s vital signs warrant a reassessment of the acuity level?
+  decision_point: D
+  kind: definition
+  effect: reassess_uptriage
+  who_can_supply: n/a
+  interpretation: verbatim
+- id: A-002
+  page: 5
+  span: Requires lifesaving intervention?
+  decision_point: A
+  kind: rule
+  effect: assign_level_1
+  who_can_supply: observed
+  when:
+    all:
+    - fact: needs_immediate_lifesaving_intervention
+      is: true
+  interpretation: verbatim
+  note: 'Algorithm figure, decision point A: yes leads to level 1.'
+- id: B-002
+  page: 5
+  span: High risk-confused/distress?
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: observed
+  when:
+    all:
+    - fact: is_high_risk_situation
+      is: true
+  interpretation: verbatim
+  note: 'Algorithm figure, decision point B: yes leads to level 2.'
+- id: B-003
+  page: 5
+  span: High risk-confused/distress?
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: has_new_altered_mental_status
+      is: true
+  interpretation: interpreted
+  note: Conceptual figure merges 'high risk-confused/distress' into one box; the confusion element is read as new altered mental status.
+- id: B-004
+  page: 5
+  span: High risk-confused/distress?
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: has_severe_pain
+      is: true
+  interpretation: interpreted
+  note: 'Algorithm figure, decision point B (severe pain/distress): yes leads to level 2.'
+- id: B-005
+  page: 5
+  span: High risk-confused/distress?
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: has_severe_distress
+      is: true
+  interpretation: interpreted
+  note: 'Algorithm figure, decision point B (severe pain/distress): yes leads to level 2.'
+- id: C-005
+  page: 5
+  span: None One Many
+  decision_point: C
+  kind: rule
+  effect: resource_band
+  who_can_supply: observed
+  when:
+    all:
+    - fact: predicted_resource_count
+      gte: 2
+  interpretation: interpreted
+  note: 'Figure: ''Many'' resources leads to level 3. ''Many'' read as two or more (stated in text on p.19).'
+- id: C-006
+  page: 5
+  span: None One Many
+  decision_point: C
+  kind: rule
+  effect: resource_band
+  who_can_supply: observed
+  when:
+    all:
+    - fact: predicted_resource_count
+      is: 1
+  interpretation: verbatim
+  note: 'Figure: one resource leads to level 4.'
+- id: C-007
+  page: 5
+  span: None One Many
+  decision_point: C
+  kind: rule
+  effect: resource_band
+  who_can_supply: observed
+  when:
+    all:
+    - fact: predicted_resource_count
+      is: 0
+  interpretation: verbatim
+  note: 'Figure: no resources leads to level 5.'
+- id: D-003
+  page: 5
+  span: High-risk vital signs?
+  decision_point: D
+  kind: rule
+  effect: reassess_uptriage
+  who_can_supply: vitals
+  when:
+    all:
+    - fact: high_risk_vital_sign_exceeded
+      is: true
+  interpretation: verbatim
+  note: 'Conceptual figure: yes leads to ''Reassess acuity decision''.'
+- id: N-006
+  page: 6
+  span: The algorithm assumes the user has sufficient clinical knowledge to identify physiologic instability
+  decision_point: none
+  kind: usage
+  effect: none
+  who_can_supply: n/a
+  interpretation: verbatim
+- id: A-003
+  page: 6
+  span: Requires immediate lifesaving intervention?
+  decision_point: A
+  kind: rule
+  effect: assign_level_1
+  who_can_supply: observed
+  when:
+    all:
+    - fact: needs_immediate_lifesaving_intervention
+      is: true
+  interpretation: verbatim
+  note: 'Algorithm figure, decision point A: yes leads to level 1.'
+- id: B-006
+  page: 6
+  span: High-risk situation?
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: observed
+  when:
+    all:
+    - fact: is_high_risk_situation
+      is: true
+  interpretation: verbatim
+  note: 'Algorithm figure, decision point B: yes leads to level 2.'
+- id: B-007
+  page: 6
+  span: Confused/lethargic/disoriented?
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: has_new_altered_mental_status
+      is: true
+  interpretation: verbatim
+  note: 'Algorithm figure, decision point B (confused/lethargic/disoriented): yes leads to level 2.'
+- id: B-008
+  page: 6
+  span: Severe pain/distress?
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: has_severe_pain
+      is: true
+  interpretation: verbatim
+  note: 'Algorithm figure, decision point B (severe pain/distress): yes leads to level 2.'
+- id: B-009
+  page: 6
+  span: Severe pain/distress?
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: has_severe_distress
+      is: true
+  interpretation: verbatim
+  note: 'Algorithm figure, decision point B (severe pain/distress): yes leads to level 2.'
+- id: C-008
+  page: 6
+  span: None One Many
+  decision_point: C
+  kind: rule
+  effect: resource_band
+  who_can_supply: observed
+  when:
+    all:
+    - fact: predicted_resource_count
+      gte: 2
+  interpretation: interpreted
+  note: 'Figure: ''Many'' resources leads to level 3. ''Many'' read as two or more (stated in text on p.19).'
+- id: C-009
+  page: 6
+  span: None One Many
+  decision_point: C
+  kind: rule
+  effect: resource_band
+  who_can_supply: observed
+  when:
+    all:
+    - fact: predicted_resource_count
+      is: 1
+  interpretation: verbatim
+  note: 'Figure: one resource leads to level 4.'
+- id: C-010
+  page: 6
+  span: None One Many
+  decision_point: C
+  kind: rule
+  effect: resource_band
+  who_can_supply: observed
+  when:
+    all:
+    - fact: predicted_resource_count
+      is: 0
+  interpretation: verbatim
+  note: 'Figure: no resources leads to level 5.'
+- id: D-004
+  page: 6
+  span: '> 190 > 180 > 140 > 120 > 120 > 100 > 100'
+  decision_point: D
+  kind: rule
+  effect: reassess_uptriage
+  who_can_supply: vitals
+  when:
+    all:
+    - &id001
+      fact: age_months
+      lt: 1
+    - fact: heart_rate_bpm
+      gt: 190
+  interpretation: interpreted
+  note: 'Danger-zone figure, age band ''< 1 mo'': HR > 190. Column-to-row mapping read from the figure layout; band edges (inclusive lower, exclusive upper) are my reading because the printed bands share endpoints.'
+- id: D-005
+  page: 6
+  span: '> 60 > 55 > 40 > 35 > 30 > 20 > 20'
+  decision_point: D
+  kind: rule
+  effect: reassess_uptriage
+  who_can_supply: vitals
+  when:
+    all:
+    - *id001
+    - fact: respiratory_rate_per_min
+      gt: 60
+  interpretation: interpreted
+  note: 'Danger-zone figure, age band ''< 1 mo'': RR > 60. Same layout reading as the HR entries.'
+- id: D-006
+  page: 6
+  span: '> 190 > 180 > 140 > 120 > 120 > 100 > 100'
+  decision_point: D
+  kind: rule
+  effect: reassess_uptriage
+  who_can_supply: vitals
+  when:
+    all:
+    - &id002
+      fact: age_months
+      gte: 1
+    - &id003
+      fact: age_months
+      lt: 12
+    - fact: heart_rate_bpm
+      gt: 180
+  interpretation: interpreted
+  note: 'Danger-zone figure, age band ''1-12 mo'': HR > 180. Column-to-row mapping read from the figure layout; band edges (inclusive lower, exclusive upper) are my reading because the printed bands share endpoints.'
+- id: D-007
+  page: 6
+  span: '> 60 > 55 > 40 > 35 > 30 > 20 > 20'
+  decision_point: D
+  kind: rule
+  effect: reassess_uptriage
+  who_can_supply: vitals
+  when:
+    all:
+    - *id002
+    - *id003
+    - fact: respiratory_rate_per_min
+      gt: 55
+  interpretation: interpreted
+  note: 'Danger-zone figure, age band ''1-12 mo'': RR > 55. Same layout reading as the HR entries.'
+- id: D-008
+  page: 6
+  span: '> 190 > 180 > 140 > 120 > 120 > 100 > 100'
+  decision_point: D
+  kind: rule
+  effect: reassess_uptriage
+  who_can_supply: vitals
+  when:
+    all:
+    - &id004
+      fact: age_years
+      gte: 1
+    - &id005
+      fact: age_years
+      lt: 3
+    - fact: heart_rate_bpm
+      gt: 140
+  interpretation: interpreted
+  note: 'Danger-zone figure, age band ''1-3 y'': HR > 140. Column-to-row mapping read from the figure layout; band edges (inclusive lower, exclusive upper) are my reading because the printed bands share endpoints.'
+- id: D-009
+  page: 6
+  span: '> 60 > 55 > 40 > 35 > 30 > 20 > 20'
+  decision_point: D
+  kind: rule
+  effect: reassess_uptriage
+  who_can_supply: vitals
+  when:
+    all:
+    - *id004
+    - *id005
+    - fact: respiratory_rate_per_min
+      gt: 40
+  interpretation: interpreted
+  note: 'Danger-zone figure, age band ''1-3 y'': RR > 40. Same layout reading as the HR entries.'
+- id: D-010
+  page: 6
+  span: '> 190 > 180 > 140 > 120 > 120 > 100 > 100'
+  decision_point: D
+  kind: rule
+  effect: reassess_uptriage
+  who_can_supply: vitals
+  when:
+    all:
+    - &id006
+      fact: age_years
+      gte: 3
+    - &id007
+      fact: age_years
+      lt: 5
+    - fact: heart_rate_bpm
+      gt: 120
+  interpretation: interpreted
+  note: 'Danger-zone figure, age band ''3-5 y'': HR > 120. Column-to-row mapping read from the figure layout; band edges (inclusive lower, exclusive upper) are my reading because the printed bands share endpoints.'
+- id: D-011
+  page: 6
+  span: '> 60 > 55 > 40 > 35 > 30 > 20 > 20'
+  decision_point: D
+  kind: rule
+  effect: reassess_uptriage
+  who_can_supply: vitals
+  when:
+    all:
+    - *id006
+    - *id007
+    - fact: respiratory_rate_per_min
+      gt: 35
+  interpretation: interpreted
+  note: 'Danger-zone figure, age band ''3-5 y'': RR > 35. Same layout reading as the HR entries.'
+- id: D-012
+  page: 6
+  span: '> 190 > 180 > 140 > 120 > 120 > 100 > 100'
+  decision_point: D
+  kind: rule
+  effect: reassess_uptriage
+  who_can_supply: vitals
+  when:
+    all:
+    - &id008
+      fact: age_years
+      gte: 5
+    - &id009
+      fact: age_years
+      lt: 12
+    - fact: heart_rate_bpm
+      gt: 120
+  interpretation: interpreted
+  note: 'Danger-zone figure, age band ''5-12 y'': HR > 120. Column-to-row mapping read from the figure layout; band edges (inclusive lower, exclusive upper) are my reading because the printed bands share endpoints.'
+- id: D-013
+  page: 6
+  span: '> 60 > 55 > 40 > 35 > 30 > 20 > 20'
+  decision_point: D
+  kind: rule
+  effect: reassess_uptriage
+  who_can_supply: vitals
+  when:
+    all:
+    - *id008
+    - *id009
+    - fact: respiratory_rate_per_min
+      gt: 30
+  interpretation: interpreted
+  note: 'Danger-zone figure, age band ''5-12 y'': RR > 30. Same layout reading as the HR entries.'
+- id: D-014
+  page: 6
+  span: '> 190 > 180 > 140 > 120 > 120 > 100 > 100'
+  decision_point: D
+  kind: rule
+  effect: reassess_uptriage
+  who_can_supply: vitals
+  when:
+    all:
+    - &id010
+      fact: age_years
+      gte: 12
+    - &id011
+      fact: age_years
+      lte: 18
+    - fact: heart_rate_bpm
+      gt: 100
+  interpretation: interpreted
+  note: 'Danger-zone figure, age band ''12-18 y'': HR > 100. Column-to-row mapping read from the figure layout; band edges (inclusive lower, exclusive upper) are my reading because the printed bands share endpoints.'
+- id: D-015
+  page: 6
+  span: '> 60 > 55 > 40 > 35 > 30 > 20 > 20'
+  decision_point: D
+  kind: rule
+  effect: reassess_uptriage
+  who_can_supply: vitals
+  when:
+    all:
+    - *id010
+    - *id011
+    - fact: respiratory_rate_per_min
+      gt: 20
+  interpretation: interpreted
+  note: 'Danger-zone figure, age band ''12-18 y'': RR > 20. Same layout reading as the HR entries.'
+- id: D-016
+  page: 6
+  span: '> 190 > 180 > 140 > 120 > 120 > 100 > 100'
+  decision_point: D
+  kind: rule
+  effect: reassess_uptriage
+  who_can_supply: vitals
+  when:
+    all:
+    - &id012
+      fact: age_years
+      gt: 18
+    - fact: heart_rate_bpm
+      gt: 100
+  interpretation: interpreted
+  note: 'Danger-zone figure, age band ''> 18 y'': HR > 100. Column-to-row mapping read from the figure layout; band edges (inclusive lower, exclusive upper) are my reading because the printed bands share endpoints.'
+- id: D-017
+  page: 6
+  span: '> 60 > 55 > 40 > 35 > 30 > 20 > 20'
+  decision_point: D
+  kind: rule
+  effect: reassess_uptriage
+  who_can_supply: vitals
+  when:
+    all:
+    - *id012
+    - fact: respiratory_rate_per_min
+      gt: 20
+  interpretation: interpreted
+  note: 'Danger-zone figure, age band ''> 18 y'': RR > 20. Same layout reading as the HR entries.'
+- id: D-018
+  page: 6
+  span: SpO2 < 92%
+  decision_point: D
+  kind: rule
+  effect: reassess_uptriage
+  who_can_supply: vitals
+  when:
+    all:
+    - fact: spo2_percent
+      lt: 92
+  interpretation: verbatim
+  note: 'Danger-zone figure: SpO2 < 92% for all ages. p.23 text says SpO2 is included ''for patients with potential respiratory compromise''.'
+- id: A-004
+  page: 6
+  span: 'Immediate life-saving intervention required: Airway or respiratory support, emergency medications, hemodynamic interventions'
+  decision_point: A
+  kind: definition
+  effect: assign_level_1
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: 'Defines immediate lifesaving intervention: airway or respiratory support, emergency medications, hemodynamic interventions (fluid resuscitation, blood products).'
+- id: A-005
+  page: 6
+  span: 'Clinical presentations requiring lifesaving interventions include the following: intubated, unresponsive, pulselessness, apneic, severe respiratory distress, profound hypotension or hypoglycemia.'
+  decision_point: A
+  kind: rule
+  effect: assign_level_1
+  who_can_supply: observed
+  when:
+    all:
+    - fact: is_intubated
+      is: true
+  interpretation: verbatim
+  note: 'Clinical presentation requiring lifesaving intervention: Intubated patient.'
+- id: A-006
+  page: 6
+  span: 'Clinical presentations requiring lifesaving interventions include the following: intubated, unresponsive, pulselessness, apneic, severe respiratory distress, profound hypotension or hypoglycemia.'
+  decision_point: A
+  kind: rule
+  effect: assign_level_1
+  who_can_supply: observed
+  when:
+    all:
+    - fact: is_unresponsive
+      is: true
+  interpretation: verbatim
+  note: 'Clinical presentation requiring lifesaving intervention: Unresponsive patient (defined in the next two entries).'
+- id: A-007
+  page: 6
+  span: 'Clinical presentations requiring lifesaving interventions include the following: intubated, unresponsive, pulselessness, apneic, severe respiratory distress, profound hypotension or hypoglycemia.'
+  decision_point: A
+  kind: rule
+  effect: assign_level_1
+  who_can_supply: observed
+  when:
+    all:
+    - fact: is_pulseless
+      is: true
+  interpretation: verbatim
+  note: 'Clinical presentation requiring lifesaving intervention: Pulselessness.'
+- id: A-008
+  page: 6
+  span: 'Clinical presentations requiring lifesaving interventions include the following: intubated, unresponsive, pulselessness, apneic, severe respiratory distress, profound hypotension or hypoglycemia.'
+  decision_point: A
+  kind: rule
+  effect: assign_level_1
+  who_can_supply: observed
+  when:
+    all:
+    - fact: is_apneic
+      is: true
+  interpretation: verbatim
+  note: 'Clinical presentation requiring lifesaving intervention: Apneic (not breathing).'
+- id: A-009
+  page: 6
+  span: 'Clinical presentations requiring lifesaving interventions include the following: intubated, unresponsive, pulselessness, apneic, severe respiratory distress, profound hypotension or hypoglycemia.'
+  decision_point: A
+  kind: rule
+  effect: assign_level_1
+  who_can_supply: observed
+  when:
+    all:
+    - fact: respiratory_distress_severity
+      is: severe
+  interpretation: verbatim
+  note: 'Clinical presentation requiring lifesaving intervention: severe respiratory distress.'
+- id: A-010
+  page: 6
+  span: 'Clinical presentations requiring lifesaving interventions include the following: intubated, unresponsive, pulselessness, apneic, severe respiratory distress, profound hypotension or hypoglycemia.'
+  decision_point: A
+  kind: rule
+  effect: assign_level_1
+  who_can_supply: vitals
+  when:
+    all:
+    - fact: is_profoundly_hypotensive
+      is: true
+  interpretation: verbatim
+  note: 'Clinical presentation requiring lifesaving intervention: profound hypotension.'
+- id: A-011
+  page: 6
+  span: 'Clinical presentations requiring lifesaving interventions include the following: intubated, unresponsive, pulselessness, apneic, severe respiratory distress, profound hypotension or hypoglycemia.'
+  decision_point: A
+  kind: rule
+  effect: assign_level_1
+  who_can_supply: vitals
+  when:
+    all:
+    - fact: has_hypoglycemia
+      is: true
+  interpretation: interpreted
+  note: '''profound hypotension or hypoglycemia'': unclear whether ''profound'' also qualifies hypoglycemia; read as hypoglycemia (needing a lifesaving intervention), matching the bare ''Hypoglycemia'' bullet on p.9.'
+- id: A-012
+  page: 6
+  span: Is nonverbal and not following commands (acutely)
+  decision_point: A
+  kind: definition
+  effect: assign_level_1
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: 'Unresponsiveness criterion 1: acutely nonverbal and not following commands.'
+- id: A-013
+  page: 6
+  span: Requires noxious stimulus (P or U on AVPU scale)
+  decision_point: A
+  kind: definition
+  effect: assign_level_1
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: 'Unresponsiveness criterion 2: requires noxious stimulus (P or U on AVPU).'
+- id: B-010
+  page: 6
+  span: 'High-risk situation: May become unstable, have high risk for deterioration, or exhibit newly altered mental status.'
+  decision_point: B
+  kind: definition
+  effect: assign_level_2
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: 'Defines high-risk situation: may become unstable, high risk for deterioration, or newly altered mental status.'
+- id: B-011
+  page: 6
+  span: Severe pain or distress is determined by patient report, corroborated with clinical observation.
+  decision_point: B
+  kind: definition
+  effect: assign_level_2
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: Severe pain or distress is established by patient report corroborated with clinical observation.
+- id: C-011
+  page: 6
+  span: Count the number of different types of resources, not the individual tests or radiographs.
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: Count different types of resources, not individual tests or radiographs.
+- id: C-012
+  page: 6
+  span: complete blood count, electrolytes, and coagulant studies equal one resource because they are all laboratory tests
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: CBC + electrolytes + coagulation studies = 1 resource (all labs); CBC + chest radiograph = 2 resources.
+- id: C-013
+  page: 6
+  span: Labs (blood, urine)
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: Labs (blood, urine) count as a resource.
+- id: C-014
+  page: 6
+  span: Electrocardiogram, radiographs
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: ECG and radiographs count as a resource.
+- id: C-015
+  page: 6
+  span: Computed tomography, magnetic resonance imaging, ultrasound, angiography
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: CT, MRI, ultrasound, angiography count as a resource.
+- id: C-016
+  page: 6
+  span: Intravenous fluids (hydration)
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: IV fluids for hydration count as a resource.
+- id: C-017
+  page: 6
+  span: Intravenous, intramuscular, or nebulized medications
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: IV, IM or nebulized medications count as a resource.
+- id: C-018
+  page: 6
+  span: Specialty consultation
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: Specialty consultation counts as a resource.
+- id: C-019
+  page: 6
+  span: Simple procedure = 1 (laceration repair, urinary catheter)
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: Simple procedure counts as 1 resource.
+- id: C-020
+  page: 6
+  span: Complex procedure = 2 (procedural sedation)
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: Complex procedure counts as 2 resources.
+- id: C-021
+  page: 6
+  span: History and physicaI exam (Including pelvic)
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: History and physical exam (including pelvic) is NOT a resource.
+- id: C-022
+  page: 6
+  span: Point-of-care testing
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: Point-of-care testing is NOT a resource.
+- id: C-023
+  page: 6
+  span: Saline or heparin lock
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: Saline or heparin lock is NOT a resource.
+- id: C-024
+  page: 6
+  span: Oral medications
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: Oral medications are NOT a resource.
+- id: C-025
+  page: 6
+  span: Tetanus immunization
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: Tetanus immunization is NOT a resource.
+- id: C-026
+  page: 6
+  span: Prescription refills
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: Prescription refills are NOT a resource.
+- id: C-027
+  page: 6
+  span: Phone call to primary care physician
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: Phone call to the primary care physician is NOT a resource.
+- id: C-028
+  page: 6
+  span: Simple wound care (dressings, recheck)
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: Simple wound care (dressings, recheck) is NOT a resource.
+- id: C-029
+  page: 6
+  span: Crutches, splints, slings
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: Crutches, splints, slings are NOT a resource.
+- id: D-019
+  page: 6
+  span: Reassess to determine whether the patient warrants a higher acuity level if a patient has one or more vital signs outside the normal parameters for the patient.
+  decision_point: D
+  kind: rule
+  effect: reassess_uptriage
+  who_can_supply: vitals
+  when:
+    all:
+    - fact: vital_sign_outside_normal_for_patient
+      is: true
+  interpretation: verbatim
+  note: Any one or more vital signs outside the normal parameters for this patient triggers reassessment for a higher level.
+- id: D-020
+  page: 6
+  span: '1-28 days of age: Assign at least ESI 2 if T > 38° C'
+  decision_point: D
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: vitals
+  when:
+    all:
+    - fact: age_days
+      gte: 1
+    - fact: age_days
+      lte: 28
+    - fact: temperature_celsius
+      gt: 38
+  interpretation: verbatim
+  note: '''Assign at least ESI 2'' (level 1 still possible). Placed under D because the box sits with the vital-signs criteria; it is a level-2 rule.'
+- id: D-021
+  page: 6
+  span: '1-3 months: Consider assigning ESI 2 if T > 38 ° C'
+  decision_point: D
+  kind: rule
+  effect: consider_level_2
+  who_can_supply: vitals
+  when:
+    all:
+    - fact: age_months
+      gte: 1
+    - fact: age_months
+      lte: 3
+    - fact: temperature_celsius
+      gt: 38
+  interpretation: verbatim
+  note: '''Consider assigning ESI 2''. Overlaps with p.24 rule (under 90 days, >38 C, assign at least 2).'
+- id: D-022
+  page: 6
+  span: T > 39°C (102.2°F) or < 36°C (96.8°F)
+  decision_point: D
+  kind: rule
+  effect: consider_level_2
+  who_can_supply: vitals
+  when:
+    all:
+    - &id013
+      fact: age_months
+      gte: 3
+    - &id014
+      fact: age_years
+      lt: 18
+    - fact: temperature_celsius
+      gt: 39
+  interpretation: interpreted
+  note: '''Consider assigning ESI 2 or 3''. Upper age bound (<18 y) assumed from ''Pediatric''.'
+- id: D-023
+  page: 6
+  span: T > 39°C (102.2°F) or < 36°C (96.8°F)
+  decision_point: D
+  kind: rule
+  effect: consider_level_2
+  who_can_supply: vitals
+  when:
+    all:
+    - *id013
+    - *id014
+    - fact: temperature_celsius
+      lt: 36
+  interpretation: interpreted
+  note: '''Consider assigning ESI 2 or 3''. Upper age bound (<18 y) assumed from ''Pediatric''.'
+- id: D-024
+  page: 6
+  span: Incomplete immunizations
+  decision_point: D
+  kind: rule
+  effect: consider_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - *id013
+    - *id014
+    - fact: has_fever
+      is: true
+    - fact: has_incomplete_immunizations
+      is: true
+  interpretation: interpreted
+  note: '''Consider assigning ESI 2 or 3''. Fever assumed present because the box is ''Pediatric Fever Considerations''; <18 y assumed.'
+- id: D-025
+  page: 6
+  span: No obvious source of fever
+  decision_point: D
+  kind: rule
+  effect: consider_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - *id013
+    - *id014
+    - fact: has_fever
+      is: true
+    - fact: has_identifiable_fever_source
+      is: false
+  interpretation: interpreted
+  note: '''Consider assigning ESI 2 or 3''. Fever assumed present (box heading); <18 y assumed. ''No obvious source'' read as no identifiable source.'
+- id: N-007
+  page: 7
+  span: it was not developed to be a means of updating or communicating a change in patient condition after the provider has seen the patient
+  decision_point: none
+  kind: usage
+  effect: none
+  who_can_supply: n/a
+  interpretation: verbatim
+- id: N-008
+  page: 7
+  span: Prior to a provider evaluation, a patient change in condition can be reflected in an amended ESI level.
+  decision_point: none
+  kind: usage
+  effect: none
+  who_can_supply: n/a
+  interpretation: verbatim
+- id: N-009
+  page: 7
+  span: What is critical to this process is documentation of the change in condition, the reason for the change in ESI level, and the resultant action by the nurse.
+  decision_point: none
+  kind: usage
+  effect: none
+  who_can_supply: n/a
+  interpretation: verbatim
+- id: N-010
+  page: 7
+  span: A dangerous but not uncommon practice is for colleagues to question the assigned acuity level or pressure the triage nurse to downgrade
+  decision_point: none
+  kind: usage
+  effect: none
+  who_can_supply: n/a
+  interpretation: verbatim
+- id: N-011
+  page: 7
+  span: The ESI level assigned by the nurse should reflect the patient’s current risk, not the environmental conditions of the ED.
+  decision_point: none
+  kind: usage
+  effect: none
+  who_can_supply: n/a
+  interpretation: verbatim
+- id: N-012
+  page: 7
+  span: Nor should the ESI level be used to manipulate metrics such as door-to-ECG or door-to-CT times.
+  decision_point: none
+  kind: usage
+  effect: none
+  who_can_supply: n/a
+  interpretation: verbatim
+- id: N-013
+  page: 7
+  span: the nurse follows decision points A through D to objectively assess them and assign an appropriate ESI acuity level
+  decision_point: none
+  kind: usage
+  effect: none
+  who_can_supply: n/a
+  interpretation: verbatim
+- id: A-014
+  page: 9
+  span: Signs of instability requiring immediate, lifesaving intervention include unresponsiveness, active seizure, occluded airway, ineffective gas exchange, and ineffective/ decreased perfusion
+  decision_point: A
+  kind: rule
+  effect: assign_level_1
+  who_can_supply: observed
+  when:
+    all:
+    - fact: is_unresponsive
+      is: true
+  interpretation: verbatim
+  note: Followed by 'When these signs are present, the patient is assigned an ESI level of 1.'
+- id: A-015
+  page: 9
+  span: Signs of instability requiring immediate, lifesaving intervention include unresponsiveness, active seizure, occluded airway, ineffective gas exchange, and ineffective/ decreased perfusion
+  decision_point: A
+  kind: rule
+  effect: assign_level_1
+  who_can_supply: observed
+  when:
+    all:
+    - fact: has_active_seizure
+      is: true
+  interpretation: verbatim
+  note: Followed by 'When these signs are present, the patient is assigned an ESI level of 1.'
+- id: A-016
+  page: 9
+  span: Signs of instability requiring immediate, lifesaving intervention include unresponsiveness, active seizure, occluded airway, ineffective gas exchange, and ineffective/ decreased perfusion
+  decision_point: A
+  kind: rule
+  effect: assign_level_1
+  who_can_supply: observed
+  when:
+    all:
+    - fact: has_occluded_airway
+      is: true
+  interpretation: verbatim
+  note: Followed by 'When these signs are present, the patient is assigned an ESI level of 1.'
+- id: A-017
+  page: 9
+  span: Signs of instability requiring immediate, lifesaving intervention include unresponsiveness, active seizure, occluded airway, ineffective gas exchange, and ineffective/ decreased perfusion
+  decision_point: A
+  kind: rule
+  effect: assign_level_1
+  who_can_supply: observed
+  when:
+    all:
+    - fact: has_impaired_gas_exchange
+      is: true
+  interpretation: verbatim
+  note: Followed by 'When these signs are present, the patient is assigned an ESI level of 1.' 'Ineffective gas exchange' and 'Impaired gas exchange' (bullet) share one fact.
+- id: A-018
+  page: 9
+  span: Signs of instability requiring immediate, lifesaving intervention include unresponsiveness, active seizure, occluded airway, ineffective gas exchange, and ineffective/ decreased perfusion
+  decision_point: A
+  kind: rule
+  effect: assign_level_1
+  who_can_supply: observed
+  when:
+    all:
+    - fact: has_ineffective_perfusion
+      is: true
+  interpretation: verbatim
+  note: Followed by 'When these signs are present, the patient is assigned an ESI level of 1.' Shares a fact with the bullet 'Ineffective tissue perfusion'.
+- id: A-019
+  page: 9
+  span: Requires immediate life-saving intervention?
+  decision_point: A
+  kind: rule
+  effect: assign_level_1
+  who_can_supply: observed
+  when:
+    all:
+    - fact: needs_immediate_lifesaving_intervention
+      is: true
+  interpretation: verbatim
+  note: 'Algorithm figure, decision point A: yes leads to level 1.'
+- id: A-020
+  page: 9
+  span: Ineffective airway clearance
+  decision_point: A
+  kind: rule
+  effect: assign_level_1
+  who_can_supply: observed
+  when:
+    all:
+    - fact: has_ineffective_airway_clearance
+      is: true
+  interpretation: verbatim
+  note: Example of level-1 criteria.
+- id: A-021
+  page: 9
+  span: Ineffective respiratory pattern
+  decision_point: A
+  kind: rule
+  effect: assign_level_1
+  who_can_supply: observed
+  when:
+    all:
+    - fact: has_ineffective_respiratory_pattern
+      is: true
+  interpretation: verbatim
+  note: Example of level-1 criteria.
+- id: A-022
+  page: 9
+  span: Impaired gas exchange
+  decision_point: A
+  kind: rule
+  effect: assign_level_1
+  who_can_supply: observed
+  when:
+    all:
+    - fact: has_impaired_gas_exchange
+      is: true
+  interpretation: verbatim
+  note: Example of level-1 criteria.
+- id: A-023
+  page: 9
+  span: Ineffective tissue perfusion
+  decision_point: A
+  kind: rule
+  effect: assign_level_1
+  who_can_supply: observed
+  when:
+    all:
+    - fact: has_ineffective_perfusion
+      is: true
+  interpretation: verbatim
+  note: Example of level-1 criteria.
+- id: A-024
+  page: 9
+  span: Obtunded/unresponsive patient
+  decision_point: A
+  kind: rule
+  effect: assign_level_1
+  who_can_supply: observed
+  when:
+    any:
+    - fact: is_obtunded
+      is: true
+    - fact: is_unresponsive
+      is: true
+  interpretation: verbatim
+  note: Example of level-1 criteria.
+- id: A-025
+  page: 9
+  span: SpO2 < 90% that is not the patient’s norm, with other signs of respiratory compromise
+  decision_point: A
+  kind: rule
+  effect: assign_level_1
+  who_can_supply: vitals
+  when:
+    all:
+    - fact: spo2_percent
+      lt: 90
+    - fact: low_spo2_is_patients_norm
+      is: false
+    - fact: has_other_signs_of_respiratory_compromise
+      is: true
+  interpretation: verbatim
+  note: Example of level-1 criteria.
+- id: A-026
+  page: 9
+  span: Anaphylaxis
+  decision_point: A
+  kind: rule
+  effect: assign_level_1
+  who_can_supply: observed
+  when:
+    all:
+    - fact: has_anaphylaxis
+      is: true
+  interpretation: verbatim
+  note: Example of level-1 criteria.
+- id: A-027
+  page: 9
+  span: Hypotension with signs of hypoperfusion
+  decision_point: A
+  kind: rule
+  effect: assign_level_1
+  who_can_supply: vitals
+  when:
+    all:
+    - fact: is_hypotensive
+      is: true
+    - fact: has_signs_of_hypoperfusion
+      is: true
+  interpretation: verbatim
+  note: Example of level-1 criteria.
+- id: A-028
+  page: 9
+  span: Chest pain with signs of hypoperfusion and systolic blood pressure of 80 mm Hg
+  decision_point: A
+  kind: example
+  effect: assign_level_1
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: Worked illustration of 'hypotension with signs of hypoperfusion' -> level 1.
+- id: A-029
+  page: 9
+  span: Hypoglycemia
+  decision_point: A
+  kind: rule
+  effect: assign_level_1
+  who_can_supply: vitals
+  when:
+    all:
+    - fact: has_hypoglycemia
+      is: true
+  interpretation: verbatim
+  note: Example of level-1 criteria (needs a glucose measurement).
+- id: A-030
+  page: 9
+  span: Severe bradycardia or tachycardia
+  decision_point: A
+  kind: rule
+  effect: assign_level_1
+  who_can_supply: vitals
+  when:
+    all:
+    - fact: has_severe_bradycardia
+      is: true
+  interpretation: interpreted
+  note: No heart-rate threshold given for 'severe'; kept as a yes/no fact.
+- id: A-031
+  page: 9
+  span: Severe bradycardia or tachycardia
+  decision_point: A
+  kind: rule
+  effect: assign_level_1
+  who_can_supply: vitals
+  when:
+    all:
+    - fact: has_severe_tachycardia
+      is: true
+  interpretation: interpreted
+  note: No heart-rate threshold given for 'severe'; kept as a yes/no fact.
+- id: A-032
+  page: 9
+  span: Flaccid infant
+  decision_point: A
+  kind: rule
+  effect: assign_level_1
+  who_can_supply: observed
+  when:
+    all:
+    - fact: age_months
+      lt: 12
+    - fact: is_flaccid
+      is: true
+  interpretation: interpreted
+  note: '''Infant'' read as under 12 months (Table 6-1 uses ''Infant, 1-12 months'').'
+- id: A-033
+  page: 9
+  span: Cardiac and/or pulmonary arrest (or appears to be imminent)
+  decision_point: A
+  kind: rule
+  effect: assign_level_1
+  who_can_supply: observed
+  when:
+    all:
+    - fact: is_pulseless
+      is: true
+  interpretation: interpreted
+  note: Cardiac arrest shares the fact for 'pulselessness'.
+- id: A-034
+  page: 9
+  span: Cardiac and/or pulmonary arrest (or appears to be imminent)
+  decision_point: A
+  kind: rule
+  effect: assign_level_1
+  who_can_supply: observed
+  when:
+    all:
+    - fact: is_apneic
+      is: true
+  interpretation: interpreted
+  note: Pulmonary (respiratory) arrest shares the fact for 'apneic'.
+- id: A-035
+  page: 9
+  span: Cardiac and/or pulmonary arrest (or appears to be imminent)
+  decision_point: A
+  kind: rule
+  effect: assign_level_1
+  who_can_supply: observed
+  when:
+    all:
+    - fact: arrest_appears_imminent
+      is: true
+  interpretation: verbatim
+- id: A-036
+  page: 9
+  span: Penetrating trauma of head, neck, abdomen, chest requiring a lifesaving intervention
+  decision_point: A
+  kind: rule
+  effect: assign_level_1
+  who_can_supply: observed
+  when:
+    all:
+    - fact: has_penetrating_trauma_head_neck_chest_abdomen
+      is: true
+    - fact: needs_immediate_lifesaving_intervention
+      is: true
+  interpretation: verbatim
+- id: A-037
+  page: 9
+  span: Assisted ventilation Intubation Surgical airway Emergent non-invasive positive pressure ventilation
+  decision_point: A
+  kind: definition
+  effect: assign_level_1
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: Table 3-1 lifesaving interventions, airway/breathing.
+- id: A-038
+  page: 9
+  span: Defibrillation Emergent cardioversion External pacing
+  decision_point: A
+  kind: definition
+  effect: assign_level_1
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: Table 3-1, electrical therapy.
+- id: A-039
+  page: 9
+  span: Chest needle decompression Pericardiocentesis Open thoracotomy
+  decision_point: A
+  kind: definition
+  effect: assign_level_1
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: Table 3-1, procedures.
+- id: A-040
+  page: 9
+  span: Significant intravenous fluid resuscitation Blood administration Control of external hemorrhage
+  decision_point: A
+  kind: definition
+  effect: assign_level_1
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: Table 3-1, hemodynamics.
+- id: A-041
+  page: 9
+  span: Adenosine Atropine Dextrose Dopamine Epinephrine (including IM for anaphylaxis) Naloxone
+  decision_point: A
+  kind: definition
+  effect: assign_level_1
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: Table 3-1, medications.
+- id: A-042
+  page: 9
+  span: Note that diagnostics are not interventions.
+  decision_point: A
+  kind: definition
+  effect: none
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: Diagnostics (e.g., CT for stroke, cath lab for hemodynamically stable patients) are not lifesaving interventions and do not make a patient level 1.
+- id: N-014
+  page: 10
+  span: The triage nurse should not consider the method of arrival as a barrier to assigning the appropriate ESI level.
+  decision_point: none
+  kind: usage
+  effect: none
+  who_can_supply: n/a
+  interpretation: verbatim
+- id: A-043
+  page: 10
+  span: There are certain ESI level-1 patients who may be discharged from the ED if they have a reversible cause
+  decision_point: A
+  kind: usage
+  effect: assign_level_1
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: 'Examples: hypoglycemia, alcohol intoxication, overdose, anaphylaxis.'
+- id: A-044
+  page: 10
+  span: The likelihood of discharge does not have an impact on assigning ESI 1.
+  decision_point: A
+  kind: usage
+  effect: assign_level_1
+  who_can_supply: n/a
+  interpretation: verbatim
+- id: B-012
+  page: 11
+  span: it is determined that the patient does not meet ESI level-1 criteria, the nurse moves to decision point B
+  decision_point: B
+  kind: usage
+  effect: none
+  who_can_supply: n/a
+  interpretation: verbatim
+- id: B-013
+  page: 11
+  span: If the situation is high-risk or the patient is at elevated risk for physical or psychological deterioration, the patient is triaged as ESI level 2.
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: observed
+  when:
+    all:
+    - fact: is_high_risk_situation
+      is: true
+  interpretation: verbatim
+- id: B-014
+  page: 11
+  span: If the situation is high-risk or the patient is at elevated risk for physical or psychological deterioration, the patient is triaged as ESI level 2.
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: observed
+  when:
+    all:
+    - fact: is_likely_to_deteriorate
+      is: true
+  interpretation: verbatim
+  note: '''Elevated risk for physical or psychological deterioration'' shares the fact ''likely to deteriorate''.'
+- id: B-015
+  page: 11
+  span: High-risk situation?
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: observed
+  when:
+    all:
+    - fact: is_high_risk_situation
+      is: true
+  interpretation: verbatim
+  note: 'Algorithm figure, decision point B: yes leads to level 2.'
+- id: B-016
+  page: 11
+  span: Confused/lethargic/disoriented?
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: has_new_altered_mental_status
+      is: true
+  interpretation: verbatim
+  note: 'Algorithm figure, decision point B (confused/lethargic/disoriented): yes leads to level 2.'
+- id: B-017
+  page: 11
+  span: Severe pain/distress?
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: has_severe_pain
+      is: true
+  interpretation: verbatim
+  note: 'Algorithm figure, decision point B (severe pain/distress): yes leads to level 2.'
+- id: B-018
+  page: 11
+  span: Severe pain/distress?
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: has_severe_distress
+      is: true
+  interpretation: verbatim
+  note: 'Algorithm figure, decision point B (severe pain/distress): yes leads to level 2.'
+- id: B-019
+  page: 11
+  span: Is the situation high-risk?
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: observed
+  when:
+    all:
+    - fact: is_high_risk_situation
+      is: true
+  interpretation: verbatim
+  note: Level-2 question list.
+- id: B-020
+  page: 11
+  span: Is the patient likely to deteriorate?
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: observed
+  when:
+    all:
+    - fact: is_likely_to_deteriorate
+      is: true
+  interpretation: verbatim
+  note: Level-2 question list.
+- id: B-021
+  page: 11
+  span: Does the patient have an acute change in mental status?
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: has_new_altered_mental_status
+      is: true
+  interpretation: verbatim
+  note: Level-2 question list.
+- id: B-022
+  page: 11
+  span: Is the patient in severe pain or distress (physiological or psychological)?
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: has_severe_pain
+      is: true
+  interpretation: verbatim
+  note: Level-2 question list.
+- id: B-023
+  page: 11
+  span: Is the patient in severe pain or distress (physiological or psychological)?
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: has_severe_distress
+      is: true
+  interpretation: verbatim
+  note: Level-2 question list; distress may be physiological or psychological.
+- id: B-024
+  page: 11
+  span: A high- risk patient is one whose condition could easily deteriorate or who presents with symptoms suggestive of a condition requiring time- sensitive treatment.
+  decision_point: B
+  kind: definition
+  effect: assign_level_2
+  who_can_supply: n/a
+  interpretation: verbatim
+- id: B-025
+  page: 11
+  span: This is a patient who has a potential threat to life, limb, sight, or organ.
+  decision_point: B
+  kind: definition
+  effect: assign_level_2
+  who_can_supply: n/a
+  interpretation: verbatim
+- id: B-026
+  page: 11
+  span: Consider vital signs in the context of medications before assigning an ESI level.
+  decision_point: B
+  kind: usage
+  effect: none
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: 'Geriatric note: older patients may not mount compensatory responses because of age or medications.'
+- id: B-027
+  page: 12
+  span: Active chest pain, suspicious for acute coronary syndrome but does not require an immediate lifesaving intervention.
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: observed
+  when:
+    all:
+    - fact: has_chest_pain
+      is: true
+    - fact: chest_pain_suspicious_for_acs
+      is: true
+    - fact: needs_immediate_lifesaving_intervention
+      is: false
+  interpretation: verbatim
+  note: Example of a high-risk situation.
+- id: B-028
+  page: 12
+  span: Signs of a stroke but does not meet level-1 criteria.
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: observed
+  when:
+    all:
+    - fact: has_signs_of_stroke
+      is: true
+    - fact: needs_immediate_lifesaving_intervention
+      is: false
+  interpretation: verbatim
+  note: Example of a high-risk situation. 'Does not meet level-1 criteria' encoded as no immediate lifesaving intervention needed.
+- id: B-029
+  page: 12
+  span: A possible ectopic pregnancy, hemodynamically stable.
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: observed
+  when:
+    all:
+    - fact: possible_ectopic_pregnancy
+      is: true
+    - fact: is_hemodynamically_stable
+      is: true
+  interpretation: verbatim
+  note: Example of a high-risk situation.
+- id: B-030
+  page: 12
+  span: A patient on chemotherapy, and therefore immunocompromised, with a fever.
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: is_on_chemotherapy
+      is: true
+    - fact: has_fever
+      is: true
+  interpretation: verbatim
+  note: Example of a high-risk situation.
+- id: B-031
+  page: 12
+  span: Transplant recipient presenting with a fever or other indication of infection.
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: is_transplant_recipient
+      is: true
+    - fact: has_fever
+      is: true
+  interpretation: verbatim
+  note: Example of a high-risk situation.
+- id: B-032
+  page: 12
+  span: Transplant recipient presenting with a fever or other indication of infection.
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: observed
+  when:
+    all:
+    - fact: is_transplant_recipient
+      is: true
+    - fact: has_signs_of_infection
+      is: true
+  interpretation: verbatim
+  note: Example of a high-risk situation.
+- id: B-033
+  page: 12
+  span: Actively suicidal or homicidal patient
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: is_suicidal
+      is: true
+  interpretation: verbatim
+  note: Example of a high-risk situation.
+- id: B-034
+  page: 12
+  span: Actively suicidal or homicidal patient
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: is_homicidal
+      is: true
+  interpretation: verbatim
+  note: Example of a high-risk situation.
+- id: B-035
+  page: 12
+  span: A needle stick in a health care worker (time sensitive to postexposure prophylaxis treatment)
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: is_health_care_worker
+      is: true
+    - fact: has_needle_stick_injury
+      is: true
+  interpretation: verbatim
+  note: Example of a high-risk situation.
+- id: B-036
+  page: 12
+  span: Sexual assault survivor
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: is_sexual_assault_survivor
+      is: true
+  interpretation: verbatim
+  note: Example of a high-risk situation.
+- id: B-037
+  page: 12
+  span: Increasing respiratory effort
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: observed
+  when:
+    all:
+    - fact: has_increasing_respiratory_effort
+      is: true
+  interpretation: verbatim
+  note: Example of a high-risk situation.
+- id: B-038
+  page: 12
+  span: Postpartum hemorrhage
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: is_postpartum
+      is: true
+    - fact: has_heavy_vaginal_bleeding
+      is: true
+  interpretation: interpreted
+  note: Postpartum hemorrhage encoded as postpartum + heavy vaginal bleeding (as worded on p.14).
+- id: B-039
+  page: 12
+  span: the presence of confusion, lethargy, or disorientation refers to a new onset or an altered mental status (AMS).
+  decision_point: B
+  kind: definition
+  effect: assign_level_2
+  who_can_supply: n/a
+  interpretation: verbatim
+- id: B-040
+  page: 12
+  span: AMS indicates a change in the level of consciousness and/or orientation from a patient’s baseline mental status.
+  decision_point: B
+  kind: definition
+  effect: assign_level_2
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: 'Also: confusion, somnolence, agitation, belligerence are commonly referred to as AMS.'
+- id: B-041
+  page: 12
+  span: AMS is a high-risk complaint
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: has_new_altered_mental_status
+      is: true
+  interpretation: interpreted
+  note: High-risk complaint read as level 2 via the decision-point-B rule.
+- id: B-042
+  page: 12
+  span: If the patient’s history is unknown, and the patient presents as confused, lethargic, or disoriented, the nurse should assume this condition is new and assign an ESI level 2.
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: observed
+  when:
+    all:
+    - fact: baseline_mental_status_unknown
+      is: true
+    - fact: is_confused_lethargic_or_disoriented
+      is: true
+  interpretation: verbatim
+- id: B-043
+  page: 12
+  span: All patients who have a pain rating of 7/10 or greater should be considered for meeting ESI level-2 criteria.
+  decision_point: B
+  kind: rule
+  effect: consider_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: pain_score
+      gte: 7
+  interpretation: verbatim
+- id: B-044
+  page: 12
+  span: not all patients with a pain score greater than 7 should be triaged as ESI level 2
+  decision_point: B
+  kind: negative
+  effect: none
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: Pain score alone does not force level 2; every severe-pain patient must be thoroughly assessed.
+- id: B-045
+  page: 12
+  span: However, this patient can wait to be seen, and the resources needed to reach a disposition should be determined.
+  decision_point: B
+  kind: negative
+  effect: none
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: 'Orthopedic-injury pain without neurovascular compromise, even rated 10/10: comfort measures at triage, then go to resource counting (decision point C).'
+- id: B-046
+  page: 12
+  span: Patients experiencing severe pain or distress as a result of a systemic disruption, for example, renal colic, cancer, or sickle cell crisis, should be triaged as ESI level 2
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: has_severe_pain
+      is: true
+    - fact: pain_from_systemic_disruption
+      is: true
+  interpretation: verbatim
+  note: 'Examples of systemic disruption: renal colic, cancer, sickle cell crisis.'
+- id: B-047
+  page: 12
+  span: Patients experiencing severe pain or distress as a result of a systemic disruption, for example, renal colic, cancer, or sickle cell crisis, should be triaged as ESI level 2
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: has_severe_distress
+      is: true
+    - fact: pain_from_systemic_disruption
+      is: true
+  interpretation: verbatim
+- id: B-048
+  page: 12
+  span: In consideration of assigning an ESI level 2, the nurse must assess for severe distress, which can be physiological or psychological.
+  decision_point: B
+  kind: definition
+  effect: assign_level_2
+  who_can_supply: n/a
+  interpretation: verbatim
+- id: B-049
+  page: 12
+  span: Distraught after experiencing a sexual assault
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: is_sexual_assault_survivor
+      is: true
+    - fact: is_distraught
+      is: true
+  interpretation: interpreted
+  note: Listed as reflecting severe psychological distress; level 2 follows via the 'severe distress' criterion at decision point B.
+- id: B-050
+  page: 12
+  span: Behavioral outbursts at triage
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: observed
+  when:
+    all:
+    - fact: has_behavioral_outburst_at_triage
+      is: true
+  interpretation: interpreted
+  note: Listed as reflecting severe psychological distress; level 2 follows via the 'severe distress' criterion at decision point B.
+- id: B-051
+  page: 12
+  span: Combativeness
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: observed
+  when:
+    all:
+    - fact: is_combative
+      is: true
+  interpretation: interpreted
+  note: Listed as reflecting severe psychological distress; level 2 follows via the 'severe distress' criterion at decision point B.
+- id: B-052
+  page: 12
+  span: Survivor of sexual violence
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: is_survivor_of_sexual_violence
+      is: true
+  interpretation: interpreted
+  note: Listed as reflecting severe psychological distress; level 2 follows via the 'severe distress' criterion at decision point B.
+- id: B-053
+  page: 12
+  span: Survivor of domestic violence
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: is_survivor_of_domestic_violence
+      is: true
+  interpretation: interpreted
+  note: Listed as reflecting severe psychological distress; level 2 follows via the 'severe distress' criterion at decision point B.
+- id: B-054
+  page: 12
+  span: Acute grief reaction
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: has_acute_grief_reaction
+      is: true
+  interpretation: interpreted
+  note: Listed as reflecting severe psychological distress; level 2 follows via the 'severe distress' criterion at decision point B.
+- id: B-055
+  page: 12
+  span: Suicidal ideation, plan, or attempt
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: has_suicidal_ideation_plan_or_attempt
+      is: true
+  interpretation: interpreted
+  note: Listed as reflecting severe psychological distress; level 2 follows via the 'severe distress' criterion at decision point B.
+- id: B-056
+  page: 12
+  span: Prenatal loss
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: has_prenatal_loss
+      is: true
+  interpretation: interpreted
+  note: Listed as reflecting severe psychological distress; level 2 follows via the 'severe distress' criterion at decision point B.
+- id: B-057
+  page: 12
+  span: The following sections provides a nonexhaustive list of examples of other presenting symptoms and red flags that would warrant an ESI level-2 assignment.
+  decision_point: B
+  kind: usage
+  effect: assign_level_2
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: Frames the neurological to mental-health sections as level-2 red flags.
+- id: B-058
+  page: 12
+  span: Most concerning is the “thunderclap headache” (a severe, rapid-onset headache)
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: has_thunderclap_headache
+      is: true
+  interpretation: interpreted
+  note: Text says it 'warrants immediate evaluation'; level 2 inferred from the next sentence ('Other presentations of concern that warrant an ESI 2') and the red-flag framing.
+- id: B-059
+  page: 12
+  span: Any headache accompanied by neck pain or nuchal rigidity falls into this category.
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: has_headache
+      is: true
+    - fact: has_neck_pain
+      is: true
+  interpretation: interpreted
+  note: '''This category'' = thunderclap-type headache needing immediate evaluation; read as level 2.'
+- id: B-060
+  page: 12
+  span: Any headache accompanied by neck pain or nuchal rigidity falls into this category.
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: observed
+  when:
+    all:
+    - fact: has_headache
+      is: true
+    - fact: has_nuchal_rigidity
+      is: true
+  interpretation: interpreted
+  note: Same reading as the neck-pain entry.
+- id: B-061
+  page: 12
+  span: Other presentations of concern that warrant an ESI 2 designation include headache plus fever, vomiting, lower back pain, altered mental status
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: has_headache
+      is: true
+    - fact: has_fever
+      is: true
+  interpretation: verbatim
+- id: B-062
+  page: 12
+  span: Other presentations of concern that warrant an ESI 2 designation include headache plus fever, vomiting, lower back pain, altered mental status
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: has_headache
+      is: true
+    - fact: is_vomiting
+      is: true
+  interpretation: verbatim
+- id: B-063
+  page: 12
+  span: Other presentations of concern that warrant an ESI 2 designation include headache plus fever, vomiting, lower back pain, altered mental status
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: has_headache
+      is: true
+    - fact: has_lower_back_pain
+      is: true
+  interpretation: verbatim
+- id: B-064
+  page: 12
+  span: Other presentations of concern that warrant an ESI 2 designation include headache plus fever, vomiting, lower back pain, altered mental status
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: has_headache
+      is: true
+    - fact: has_new_altered_mental_status
+      is: true
+  interpretation: verbatim
+- id: B-065
+  page: 12
+  span: and/or signs and symptoms of stroke, including gross deficits such as aphasia, apraxia, agnosia, or dysarthria
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: observed
+  when:
+    all:
+    - fact: has_headache
+      is: true
+    - fact: has_signs_of_stroke
+      is: true
+  interpretation: verbatim
+  note: Part of the 'headache plus ...' list.
+- id: B-066
+  page: 12
+  span: Patients presenting post-ictal are triaged as ESI level 2 (altered mental status).
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: observed
+  when:
+    all:
+    - fact: is_post_ictal
+      is: true
+  interpretation: verbatim
+- id: B-067
+  page: 12
+  span: Patients with a known seizure history who are alert and oriented after having a seizure prior to ED presentation can be triaged according to their physiological presentation and expected resource needs.
+  decision_point: B
+  kind: negative
+  effect: none
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: 'Known seizure history + seizure before arrival + now alert and oriented: not automatically level 2.'
+- id: B-068
+  page: 13
+  span: Pediatric patients presenting as alert and appropriate after a febrile seizure can be triaged based on their physiological assessment and anticipated resource needs.
+  decision_point: B
+  kind: negative
+  effect: none
+  who_can_supply: n/a
+  interpretation: verbatim
+- id: B-069
+  page: 13
+  span: A subtle change in a pediatric patient’s mental status can be suggestive of a change in hemodynamics and should be immediately investigated as high risk.
+  decision_point: B
+  kind: rule
+  effect: consider_level_2
+  who_can_supply: observed
+  when:
+    all:
+    - fact: age_years
+      lt: 18
+    - fact: has_subtle_mental_status_change
+      is: true
+  interpretation: interpreted
+  note: '''Investigated as high risk'' read as consider level 2 (not a firm assignment). Pediatric read as under 18.'
+- id: B-070
+  page: 13
+  span: the elements of the score that predict urgency include the presence of altered vision; sudden diplopia, anisocoria, or exophthalmos; red eye
+  decision_point: B
+  kind: definition
+  effect: none
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: ATSO ocular elements (also distress/intolerable pain, eye trauma, floaters and flashers); more in constellation = more emergent. No ESI level named.
+- id: B-071
+  page: 13
+  span: few of these merit an ESI level-2 designation
+  decision_point: B
+  kind: negative
+  effect: none
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: Common pediatric eye diagnoses (conjunctivitis, corneal erosion, allergic conjunctivitis) rarely merit level 2.
+- id: B-072
+  page: 13
+  span: Patients who are unable to manage their own secretions and/or exhibit respiratory stridor are extremely high-risk patients and should be assigned an ESI level of 2.
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: observed
+  when:
+    all:
+    - fact: unable_to_manage_secretions
+      is: true
+  interpretation: verbatim
+- id: B-073
+  page: 13
+  span: Patients who are unable to manage their own secretions and/or exhibit respiratory stridor are extremely high-risk patients and should be assigned an ESI level of 2.
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: observed
+  when:
+    all:
+    - fact: has_stridor
+      is: true
+  interpretation: verbatim
+- id: B-074
+  page: 13
+  span: Examples include brisk bleeding secondary to posterior nosebleed or when experienced by a patient with known thrombocytopenia, clotting dyscrasias, and use of warfarin or other anti-coagulants
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: observed
+  when:
+    all:
+    - fact: has_brisk_nosebleed
+      is: true
+    - fact: is_posterior_nosebleed
+      is: true
+  interpretation: interpreted
+  note: Followed by 'In these situations, patients are assigned an ESI level of 2.' 'Brisk bleeding' read as applying to every listed case.
+- id: B-075
+  page: 13
+  span: Examples include brisk bleeding secondary to posterior nosebleed or when experienced by a patient with known thrombocytopenia, clotting dyscrasias, and use of warfarin or other anti-coagulants
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: has_brisk_nosebleed
+      is: true
+    - fact: has_thrombocytopenia
+      is: true
+  interpretation: interpreted
+  note: Followed by 'In these situations, patients are assigned an ESI level of 2.' 'Brisk bleeding' read as applying to every listed case.
+- id: B-076
+  page: 13
+  span: Examples include brisk bleeding secondary to posterior nosebleed or when experienced by a patient with known thrombocytopenia, clotting dyscrasias, and use of warfarin or other anti-coagulants
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: has_brisk_nosebleed
+      is: true
+    - fact: has_clotting_disorder
+      is: true
+  interpretation: interpreted
+  note: Followed by 'In these situations, patients are assigned an ESI level of 2.' 'Brisk bleeding' read as applying to every listed case.
+- id: B-077
+  page: 13
+  span: Examples include brisk bleeding secondary to posterior nosebleed or when experienced by a patient with known thrombocytopenia, clotting dyscrasias, and use of warfarin or other anti-coagulants
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: has_brisk_nosebleed
+      is: true
+    - fact: takes_anticoagulant
+      is: true
+  interpretation: interpreted
+  note: Followed by 'In these situations, patients are assigned an ESI level of 2.' 'Brisk bleeding' read as applying to every listed case.
+- id: B-078
+  page: 13
+  span: Esophageal button battery ingestion has a high risk of complication
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: swallowed_button_battery
+      is: true
+  interpretation: interpreted
+  note: No level named; 'high risk' and 'extremely time sensitive' match the high-risk definition, so read as level 2. Especially children under 6 years and batteries over 20 mm.
+- id: B-079
+  page: 13
+  span: The high-risk patient is one who is currently ventilating and oxygenating adequately but is in respiratory distress and has the potential to rapidly deteriorate.
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: observed
+  when:
+    all:
+    - fact: ventilating_and_oxygenating_adequately
+      is: true
+    - fact: respiratory_distress_severity
+      in:
+      - mild
+      - moderate
+      - severe
+    - fact: is_likely_to_deteriorate
+      is: true
+  interpretation: interpreted
+  note: Defines the respiratory high-risk patient; level 2 via decision point B.
+- id: B-080
+  page: 13
+  span: Signs of distress can include tachypnea, tachycardia, tripoding, speaking in short, 2-to-3-word sentences; audible stridor; wheezing; or congestion.
+  decision_point: B
+  kind: definition
+  effect: none
+  who_can_supply: n/a
+  interpretation: verbatim
+- id: B-081
+  page: 13
+  span: Patients with mild to moderate distress should be further evaluated for respiratory rate and pulse oximetry to determine whether they should be categorized as ESI level 2.
+  decision_point: B
+  kind: rule
+  effect: consider_level_2
+  who_can_supply: vitals
+  when:
+    all:
+    - fact: respiratory_distress_severity
+      in:
+      - mild
+      - moderate
+  interpretation: verbatim
+- id: A-045
+  page: 13
+  span: Patients in severe respiratory distress who require immediate lifesaving intervention, such as intubation, meet level-1 criteria.
+  decision_point: A
+  kind: rule
+  effect: assign_level_1
+  who_can_supply: observed
+  when:
+    all:
+    - fact: respiratory_distress_severity
+      is: severe
+    - fact: needs_immediate_lifesaving_intervention
+      is: true
+  interpretation: verbatim
+- id: B-082
+  page: 13
+  span: Grunting, belly breathing, and retractions suggest respiratory distress.
+  decision_point: B
+  kind: definition
+  effect: none
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: Pediatric signs of respiratory distress.
+- id: A-046
+  page: 13
+  span: Patients with chest pain who are physiologically unstable and require immediate interventions such as intubation or hemodynamic support should be triaged as ESI level 1.
+  decision_point: A
+  kind: rule
+  effect: assign_level_1
+  who_can_supply: observed
+  when:
+    all:
+    - fact: has_chest_pain
+      is: true
+    - fact: needs_immediate_lifesaving_intervention
+      is: true
+  interpretation: verbatim
+  note: '''Physiologically unstable'' folded into the need for immediate intervention.'
+- id: B-083
+  page: 13
+  span: If the ECG is abnormal, patients would be assigned level 2.
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: vitals
+  when:
+    all:
+    - fact: has_chest_pain
+      is: true
+    - fact: ecg_abnormal
+      is: true
+  interpretation: verbatim
+  note: ECG within 10 minutes for chest-pain concerns; needs a measurement read by a clinician.
+- id: B-084
+  page: 14
+  span: Is the patient pregnant or postpartum?
+  decision_point: B
+  kind: rule
+  effect: consider_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: has_abdominal_pain
+      is: true
+    - any:
+      - fact: is_pregnant
+        is: true
+      - fact: is_postpartum
+        is: true
+  interpretation: interpreted
+  note: Assessment question that 'can help the triage nurse determine whether or not the patient meets high-risk criteria'; read as consider level 2.
+- id: B-085
+  page: 14
+  span: Does the patient show signs of sepsis?
+  decision_point: B
+  kind: rule
+  effect: consider_level_2
+  who_can_supply: observed
+  when:
+    all:
+    - fact: has_abdominal_pain
+      is: true
+    - fact: has_signs_of_sepsis
+      is: true
+  interpretation: interpreted
+  note: Assessment question that 'can help the triage nurse determine whether or not the patient meets high-risk criteria'; read as consider level 2.
+- id: B-086
+  page: 14
+  span: Does the patient show signs of hypoperfusion?
+  decision_point: B
+  kind: rule
+  effect: consider_level_2
+  who_can_supply: observed
+  when:
+    all:
+    - fact: has_abdominal_pain
+      is: true
+    - fact: has_signs_of_hypoperfusion
+      is: true
+  interpretation: interpreted
+  note: Assessment question that 'can help the triage nurse determine whether or not the patient meets high-risk criteria'; read as consider level 2.
+- id: B-087
+  page: 14
+  span: Was there blunt or penetrating trauma to the abdomen?
+  decision_point: B
+  kind: rule
+  effect: consider_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: has_abdominal_pain
+      is: true
+    - fact: has_abdominal_trauma
+      is: true
+  interpretation: interpreted
+  note: Assessment question that 'can help the triage nurse determine whether or not the patient meets high-risk criteria'; read as consider level 2.
+- id: B-088
+  page: 14
+  span: Is the patient’s pain refractory to analgesia, constant, and /or maximal on onset?
+  decision_point: B
+  kind: rule
+  effect: consider_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: has_abdominal_pain
+      is: true
+    - fact: abdominal_pain_refractory_constant_or_maximal_at_onset
+      is: true
+  interpretation: interpreted
+  note: Assessment question that 'can help the triage nurse determine whether or not the patient meets high-risk criteria'; read as consider level 2.
+- id: B-089
+  page: 14
+  span: Differentiation between ESI 2 and ESI 3 in the context of abdominal pain may depend on vital signs, patient age, and previous history.
+  decision_point: B
+  kind: usage
+  effect: none
+  who_can_supply: n/a
+  interpretation: verbatim
+- id: B-090
+  page: 14
+  span: Button battery or earth magnet ingestion are time sensitive presentations, with high morbidity
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: swallowed_button_battery
+      is: true
+  interpretation: interpreted
+  note: Pediatric consideration; no level named; time-sensitive matches high-risk definition.
+- id: B-091
+  page: 14
+  span: Button battery or earth magnet ingestion are time sensitive presentations, with high morbidity
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: swallowed_earth_magnet
+      is: true
+  interpretation: interpreted
+  note: Same reading as button battery.
+- id: B-092
+  page: 14
+  span: Abdominal pain with vaginal bleeding can suggest ectopic pregnancy or other emergent pregnancy complications.
+  decision_point: B
+  kind: rule
+  effect: consider_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: has_abdominal_pain
+      is: true
+    - fact: has_vaginal_bleeding
+      is: true
+  interpretation: interpreted
+  note: No level named; links to possible ectopic pregnancy (level 2 if stable, p.12).
+- id: B-093
+  page: 14
+  span: Critical determinants of acuity include blood pressure; bleeding; and abdominal, head, or chest pain.
+  decision_point: B
+  kind: definition
+  effect: none
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: Obstetric/gynecological context.
+- id: B-094
+  page: 14
+  span: The pregnant or postpartum patient with a SBP of < 90 or > 150 should be designated an ESI 2 even in the absence of other symptoms
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: vitals
+  when:
+    all:
+    - any:
+      - fact: is_pregnant
+        is: true
+      - fact: is_postpartum
+        is: true
+    - fact: systolic_bp_mmhg
+      lt: 90
+  interpretation: verbatim
+- id: B-095
+  page: 14
+  span: The pregnant or postpartum patient with a SBP of < 90 or > 150 should be designated an ESI 2 even in the absence of other symptoms
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: vitals
+  when:
+    all:
+    - any:
+      - fact: is_pregnant
+        is: true
+      - fact: is_postpartum
+        is: true
+    - fact: systolic_bp_mmhg
+      gt: 150
+  interpretation: verbatim
+- id: B-096
+  page: 14
+  span: Pregnant patients with chest pain and/or shortness of breath, abdominal pain, or headache
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: is_pregnant
+      is: true
+    - fact: has_chest_pain
+      is: true
+  interpretation: verbatim
+  note: Sentence continues '... should be triaged as ESI 2'.
+- id: B-097
+  page: 14
+  span: Pregnant patients with chest pain and/or shortness of breath, abdominal pain, or headache
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: is_pregnant
+      is: true
+    - fact: has_shortness_of_breath
+      is: true
+  interpretation: verbatim
+  note: Sentence continues '... should be triaged as ESI 2'.
+- id: B-098
+  page: 14
+  span: Pregnant patients with chest pain and/or shortness of breath, abdominal pain, or headache
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: is_pregnant
+      is: true
+    - fact: has_abdominal_pain
+      is: true
+  interpretation: verbatim
+  note: Sentence continues '... should be triaged as ESI 2'.
+- id: B-099
+  page: 14
+  span: Pregnant patients with chest pain and/or shortness of breath, abdominal pain, or headache
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: is_pregnant
+      is: true
+    - fact: has_headache
+      is: true
+  interpretation: verbatim
+  note: Sentence continues '... should be triaged as ESI 2'.
+- id: B-100
+  page: 14
+  span: Pregnant patients who present with heavy vaginal bleeding and abnormal vitals with suspicion of infection should be categorized at ESI level 2.
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: vitals
+  when:
+    all:
+    - fact: is_pregnant
+      is: true
+    - fact: has_heavy_vaginal_bleeding
+      is: true
+    - fact: has_abnormal_vital_signs
+      is: true
+    - fact: has_signs_of_infection
+      is: true
+  interpretation: interpreted
+  note: Read as all three together (bleeding AND abnormal vitals AND suspected infection); the sentence could also be read as separate criteria. 'Suspicion of infection' shares the signs-of-infection fact.
+- id: B-101
+  page: 14
+  span: Heavy vaginal bleeding generally means soaking through a pad an hour, plum-sized clots, bright red bleeding that does not slow down
+  decision_point: B
+  kind: definition
+  effect: none
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: 'Also: bleeding that has increased after a decrease.'
+- id: B-102
+  page: 14
+  span: Postpartum patients presenting with heavy vaginal bleeding should also be assigned ESI level 2
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: is_postpartum
+      is: true
+    - fact: has_heavy_vaginal_bleeding
+      is: true
+  interpretation: verbatim
+- id: A-047
+  page: 14
+  span: Any pregnancy-capable patient, whether pregnant or postpartum, who presents with significant hemodynamic instability and who needs immediate lifesaving interventions should be triaged as ESI level 1.
+  decision_point: A
+  kind: rule
+  effect: assign_level_1
+  who_can_supply: observed
+  when:
+    all:
+    - any:
+      - fact: is_pregnant
+        is: true
+      - fact: is_postpartum
+        is: true
+    - fact: is_hemodynamically_stable
+      is: false
+    - fact: needs_immediate_lifesaving_intervention
+      is: true
+  interpretation: verbatim
+- id: B-103
+  page: 14
+  span: Testicular or scrotal pain should be immediately evaluated for testicular torsion
+  decision_point: B
+  kind: rule
+  effect: consider_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: has_testicular_or_scrotal_pain
+      is: true
+  interpretation: interpreted
+  note: No level named; 'immediately evaluated' and 'time-sensitive' read as consider level 2.
+- id: B-104
+  page: 14
+  span: unilateral lower quadrant pain in patients with ovaries should be evaluated for ovarian torsion and ectopic pregnancy
+  decision_point: B
+  kind: rule
+  effect: consider_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: has_unilateral_lower_quadrant_pain
+      is: true
+    - fact: has_ovaries
+      is: true
+  interpretation: interpreted
+  note: No level named; read as consider level 2.
+- id: B-105
+  page: 14
+  span: The patient with symptoms of a UTI who is elderly (Liang, 2017) or who also complains of back pain, chills, and rigors may have urosepsis and should also be assigned to ESI 2.
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: has_uti_symptoms
+      is: true
+    - fact: is_elderly
+      is: true
+  interpretation: verbatim
+  note: '''Elderly'' has no age threshold in the text; kept as a yes/no fact.'
+- id: B-106
+  page: 14
+  span: The patient with symptoms of a UTI who is elderly (Liang, 2017) or who also complains of back pain, chills, and rigors may have urosepsis and should also be assigned to ESI 2.
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: has_uti_symptoms
+      is: true
+    - fact: has_back_pain
+      is: true
+    - fact: has_chills
+      is: true
+    - fact: has_rigors
+      is: true
+  interpretation: interpreted
+  note: '''back pain, chills, and rigors'' read as all three required; could be read as any one.'
+- id: B-107
+  page: 14
+  span: Patients presenting with severe flank pain receive a level-2 designation
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: has_severe_flank_pain
+      is: true
+  interpretation: verbatim
+- id: B-108
+  page: 15
+  span: Mechanisms of injury that warrant an ESI 2 designation include falls of 20 feet (6 meters) or more, ejection from a vehicle, or removal from a vehicle with mechanical extrication tools, and sexual assault.
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: fall_height_meters
+      gte: 6
+  interpretation: verbatim
+  note: 20 feet = 6 meters as printed.
+- id: B-109
+  page: 15
+  span: Mechanisms of injury that warrant an ESI 2 designation include falls of 20 feet (6 meters) or more, ejection from a vehicle, or removal from a vehicle with mechanical extrication tools, and sexual assault.
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: ejected_from_vehicle
+      is: true
+  interpretation: verbatim
+- id: B-110
+  page: 15
+  span: Mechanisms of injury that warrant an ESI 2 designation include falls of 20 feet (6 meters) or more, ejection from a vehicle, or removal from a vehicle with mechanical extrication tools, and sexual assault.
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: required_mechanical_extrication
+      is: true
+  interpretation: verbatim
+- id: B-111
+  page: 15
+  span: Mechanisms of injury that warrant an ESI 2 designation include falls of 20 feet (6 meters) or more, ejection from a vehicle, or removal from a vehicle with mechanical extrication tools, and sexual assault.
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: is_sexual_assault_survivor
+      is: true
+  interpretation: verbatim
+- id: B-112
+  page: 15
+  span: Injuries that warrant an ESI level of 2 may include penetrating trauma of the head, neck, chest, and abdomen without signs of hemodynamic instability.
+  decision_point: B
+  kind: rule
+  effect: consider_level_2
+  who_can_supply: observed
+  when:
+    all:
+    - fact: has_penetrating_trauma_head_neck_chest_abdomen
+      is: true
+    - fact: is_hemodynamically_stable
+      is: true
+  interpretation: interpreted
+  note: '''may include'' read as consider; with instability needing intervention it is level 1 (p.9).'
+- id: N-015
+  page: 15
+  span: Occult hypoperfusion with normal vital signs is associated with age greater than 55, and so a careful assessment should be made in the older patient
+  decision_point: none
+  kind: usage
+  effect: none
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: 'Trauma in patients over 55: normal vitals do not exclude hypoperfusion; no level named.'
+- id: B-113
+  page: 15
+  span: Patients with high-risk orthopedic injuries include those presenting with any extremity injury with compromised neurovascular function, symptoms of compartment syndrome, or partial or complete amputations.
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: observed
+  when:
+    all:
+    - fact: has_extremity_injury
+      is: true
+    - fact: has_neurovascular_compromise
+      is: true
+  interpretation: interpreted
+  note: High-risk read as level 2.
+- id: B-114
+  page: 15
+  span: Patients with high-risk orthopedic injuries include those presenting with any extremity injury with compromised neurovascular function, symptoms of compartment syndrome, or partial or complete amputations.
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: observed
+  when:
+    all:
+    - fact: has_symptoms_of_compartment_syndrome
+      is: true
+  interpretation: interpreted
+  note: High-risk read as level 2.
+- id: B-115
+  page: 15
+  span: Patients with high-risk orthopedic injuries include those presenting with any extremity injury with compromised neurovascular function, symptoms of compartment syndrome, or partial or complete amputations.
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: has_amputation
+      is: true
+  interpretation: interpreted
+  note: Partial or complete amputation; high-risk read as level 2.
+- id: B-116
+  page: 15
+  span: Patients with possible fractures of the pelvis, femur, or dislocations should be carefully evaluated and vital signs considered.
+  decision_point: B
+  kind: rule
+  effect: consider_level_2
+  who_can_supply: observed
+  when:
+    all:
+    - fact: possible_pelvic_fracture
+      is: true
+  interpretation: interpreted
+  note: No level named; risk of blood loss and neurovascular compromise; read as consider level 2.
+- id: B-117
+  page: 15
+  span: Patients with possible fractures of the pelvis, femur, or dislocations should be carefully evaluated and vital signs considered.
+  decision_point: B
+  kind: rule
+  effect: consider_level_2
+  who_can_supply: observed
+  when:
+    all:
+    - fact: possible_femur_fracture
+      is: true
+  interpretation: interpreted
+  note: No level named; risk of blood loss and neurovascular compromise; read as consider level 2.
+- id: B-118
+  page: 15
+  span: Patients with possible fractures of the pelvis, femur, or dislocations should be carefully evaluated and vital signs considered.
+  decision_point: B
+  kind: rule
+  effect: consider_level_2
+  who_can_supply: observed
+  when:
+    all:
+    - fact: has_dislocation
+      is: true
+  interpretation: interpreted
+  note: No level named; risk of blood loss and neurovascular compromise; read as consider level 2.
+- id: B-119
+  page: 15
+  span: Toxic ingestion is a high-risk presentation which needs to be rapidly evaluated.
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: toxic_ingestion
+      is: true
+  interpretation: interpreted
+  note: High-risk presentation read as level 2.
+- id: B-120
+  page: 15
+  span: Patients who present with alterations in mental status, difficulty breathing, changes in breathing pattern, or changes in heart rate and/or rhythm without an obvious cause should be evaluated as a possible toxic ingestion
+  decision_point: B
+  kind: definition
+  effect: none
+  who_can_supply: n/a
+  interpretation: verbatim
+- id: B-121
+  page: 15
+  span: Patients presenting with a fever or other indication of infection or rejection should be designated ESI level 2 due to their immunocompromised status.
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: is_transplant_recipient
+      is: true
+    - fact: has_fever
+      is: true
+  interpretation: verbatim
+- id: B-122
+  page: 15
+  span: Patients presenting with a fever or other indication of infection or rejection should be designated ESI level 2 due to their immunocompromised status.
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: observed
+  when:
+    all:
+    - fact: is_transplant_recipient
+      is: true
+    - fact: has_signs_of_infection
+      is: true
+  interpretation: verbatim
+- id: B-123
+  page: 15
+  span: Patients presenting with a fever or other indication of infection or rejection should be designated ESI level 2 due to their immunocompromised status.
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: observed
+  when:
+    all:
+    - fact: is_transplant_recipient
+      is: true
+    - fact: has_signs_of_transplant_rejection
+      is: true
+  interpretation: verbatim
+- id: B-124
+  page: 15
+  span: Patients who are on a transplant list are also usually considered high-risk.
+  decision_point: B
+  kind: rule
+  effect: consider_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: is_on_transplant_list
+      is: true
+  interpretation: verbatim
+  note: '''usually considered high-risk'' -> consider.'
+- id: B-125
+  page: 15
+  span: Patients who present with specific mental health concerns are at high risk if they are a danger either to themselves, others, or the environment.
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: is_danger_to_self
+      is: true
+  interpretation: interpreted
+  note: High risk read as level 2.
+- id: B-126
+  page: 15
+  span: Patients who present with specific mental health concerns are at high risk if they are a danger either to themselves, others, or the environment.
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: is_danger_to_others
+      is: true
+  interpretation: interpreted
+  note: High risk read as level 2.
+- id: B-127
+  page: 15
+  span: Patients who present with specific mental health concerns are at high risk if they are a danger either to themselves, others, or the environment.
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: is_danger_to_environment
+      is: true
+  interpretation: interpreted
+  note: High risk read as level 2.
+- id: B-128
+  page: 15
+  span: Patients who are suicidal, homicidal, psychotic, or violent should be assigned an ESI level of 2
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: is_suicidal
+      is: true
+  interpretation: verbatim
+- id: B-129
+  page: 15
+  span: Patients who are suicidal, homicidal, psychotic, or violent should be assigned an ESI level of 2
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: is_homicidal
+      is: true
+  interpretation: verbatim
+- id: B-130
+  page: 15
+  span: Patients who are suicidal, homicidal, psychotic, or violent should be assigned an ESI level of 2
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: observed
+  when:
+    all:
+    - fact: is_psychotic
+      is: true
+  interpretation: verbatim
+- id: B-131
+  page: 15
+  span: Patients who are suicidal, homicidal, psychotic, or violent should be assigned an ESI level of 2
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: is_violent
+      is: true
+  interpretation: verbatim
+- id: N-016
+  page: 15
+  span: ESI level-2 patients remain a high priority, and placement and treatment should be initiated rapidly.
+  decision_point: none
+  kind: usage
+  effect: none
+  who_can_supply: n/a
+  interpretation: verbatim
+- id: C-030
+  page: 19
+  span: an ESI 1 or 2 designation has been ruled out, the presumed stability of the patient enables the nurse to move to the next decision point
+  decision_point: C
+  kind: usage
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+- id: C-031
+  page: 19
+  span: Patients who require two or more resources are assigned level 3
+  decision_point: C
+  kind: rule
+  effect: resource_band
+  who_can_supply: observed
+  when:
+    all:
+    - fact: predicted_resource_count
+      gte: 2
+  interpretation: verbatim
+- id: C-032
+  page: 19
+  span: those who require one resource are assigned level 4
+  decision_point: C
+  kind: rule
+  effect: resource_band
+  who_can_supply: observed
+  when:
+    all:
+    - fact: predicted_resource_count
+      is: 1
+  interpretation: verbatim
+- id: C-033
+  page: 19
+  span: those who require no resources are assigned level 5
+  decision_point: C
+  kind: rule
+  effect: resource_band
+  who_can_supply: observed
+  when:
+    all:
+    - fact: predicted_resource_count
+      is: 0
+  interpretation: verbatim
+- id: C-034
+  page: 19
+  span: Resource prediction requires the nurse to determine how many resources are likely to be used in order for the provider to reach a disposition decision
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+- id: C-035
+  page: 19
+  span: Resource determination is independent of type of hospital (teaching versus nonteaching) and location of the hospital (urban versus rural).
+  decision_point: C
+  kind: usage
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+- id: C-036
+  page: 19
+  span: None One Many
+  decision_point: C
+  kind: rule
+  effect: resource_band
+  who_can_supply: observed
+  when:
+    all:
+    - fact: predicted_resource_count
+      gte: 2
+  interpretation: interpreted
+  note: 'Figure: ''Many'' resources leads to level 3. ''Many'' read as two or more (stated in text on p.19).'
+- id: C-037
+  page: 19
+  span: None One Many
+  decision_point: C
+  kind: rule
+  effect: resource_band
+  who_can_supply: observed
+  when:
+    all:
+    - fact: predicted_resource_count
+      is: 1
+  interpretation: verbatim
+  note: 'Figure: one resource leads to level 4.'
+- id: C-038
+  page: 19
+  span: None One Many
+  decision_point: C
+  kind: rule
+  effect: resource_band
+  who_can_supply: observed
+  when:
+    all:
+    - fact: predicted_resource_count
+      is: 0
+  interpretation: verbatim
+  note: 'Figure: no resources leads to level 5.'
+- id: C-039
+  page: 19
+  span: the ED nurse should count the number of different types of resources needed to determine the patient’s disposition, not the number of individual tests.
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+- id: C-040
+  page: 19
+  span: A complete blood count and electrolyte panel comprise one resource (lab test).
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: Resource-counting illustration.
+- id: C-041
+  page: 19
+  span: A complete blood count and chest radiograph are two resources (lab test, radiograph).
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: Resource-counting illustration.
+- id: C-042
+  page: 19
+  span: A complete blood count and a urinalysis are both lab tests and together count as only one resource.
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: Resource-counting illustration.
+- id: C-043
+  page: 19
+  span: A chest radiograph and abdominal radiograph are one resource (radiograph).
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: Resource-counting illustration.
+- id: C-044
+  page: 19
+  span: Cervical-spine films and a computed tomography scan of the head are two resources (radiograph and computed tomography scan).
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: Resource-counting illustration.
+- id: C-045
+  page: 19
+  span: it is important to realize that resources are defined by presentational acuity
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+- id: C-046
+  page: 19
+  span: Consideration of resources is included in the triage level assignment for ESI levels 3, 4, and 5, while ESI level 1 and 2 decisions are based only on patient acuity.
+  decision_point: C
+  kind: usage
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+- id: C-047
+  page: 20
+  span: Labs (blood, urine)
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: Labs (blood, urine) count as a resource.
+- id: C-048
+  page: 20
+  span: Electrocardiogram, radiographs
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: ECG and radiographs count as a resource.
+- id: C-049
+  page: 20
+  span: Computed tomography, magnetic resonance imaging, ultrasound, angiography
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: CT, MRI, ultrasound, angiography count as a resource.
+- id: C-050
+  page: 20
+  span: Intravenous fluids (hydration)
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: IV fluids for hydration count as a resource.
+- id: C-051
+  page: 20
+  span: Intravenous, intramuscular, or nebulized medications
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: IV, IM or nebulized medications count as a resource.
+- id: C-052
+  page: 20
+  span: Specialty consultation
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: Specialty consultation counts as a resource.
+- id: C-053
+  page: 20
+  span: Simple procedure = 1 (laceration repair, urinary catheter)
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: Simple procedure counts as 1 resource.
+- id: C-054
+  page: 20
+  span: Complex procedure = 2 (procedural sedation
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: Complex procedure counts as 2 resources.
+- id: C-055
+  page: 20
+  span: History and physical exam (including pelvic)
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: History and physical exam (including pelvic) is NOT a resource.
+- id: C-056
+  page: 20
+  span: Point-of-care testing
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: Point-of-care testing is NOT a resource.
+- id: C-057
+  page: 20
+  span: Saline or heparin lock
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: Saline or heparin lock is NOT a resource.
+- id: C-058
+  page: 20
+  span: Oral medications
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: Oral medications are NOT a resource.
+- id: C-059
+  page: 20
+  span: Tetanus immunization
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: Tetanus immunization is NOT a resource.
+- id: C-060
+  page: 20
+  span: Prescription refills
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: Prescription refills are NOT a resource.
+- id: C-061
+  page: 20
+  span: Phone call to primary care physician
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: Phone call to the primary care physician is NOT a resource.
+- id: C-062
+  page: 20
+  span: Simple wound care (dressings, recheck)
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: Simple wound care (dressings, recheck) is NOT a resource.
+- id: C-063
+  page: 20
+  span: Crutches, splints, slings
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: Crutches, splints, slings are NOT a resource.
+- id: C-064
+  page: 20
+  span: Healthy 3-year-old patient with right ear pain, up to date on immunizations. Vital signs WNL.
+  decision_point: C
+  kind: example
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: 'Level 5: exam and prescription, no resources.'
+- id: C-065
+  page: 20
+  span: A 42-year-old patient who lost their rescue inhaler and needs a new prescription
+  decision_point: C
+  kind: example
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: 'Level 5: exam and prescription, no resources.'
+- id: C-066
+  page: 20
+  span: Healthy 19-year-old patient with a sore throat. Vital signs WNL
+  decision_point: C
+  kind: example
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: 'Level 4: exam, culture, prescriptions = one resource (culture; see footnote *).'
+- id: C-067
+  page: 20
+  span: Healthy 29-year-old assigned female at birth with dysuria.
+  decision_point: C
+  kind: example
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: 'Level 4: urine, urine culture, maybe urine pregnancy = one resource (labs).'
+- id: C-068
+  page: 20
+  span: A 22-year-old assigned male at birth with right lower quadrant abdominal pain since early this morning
+  decision_point: C
+  kind: example
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: 'Level 3: labs, IV fluid, abdominal CT, perhaps surgical consult = two or more.'
+- id: C-069
+  page: 20
+  span: A 45-year-old patient with left lower leg pain and swelling
+  decision_point: C
+  kind: example
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: 'Level 3: labs, lower-extremity non-invasive vascular studies = two or more.'
+- id: C-070
+  page: 20
+  span: Follow the institution’s policy on what constitutes a resource.
+  decision_point: C
+  kind: usage
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: 'Example: where throat cultures are not routinely done, the sore-throat patient would be level 5.'
+- id: C-071
+  page: 20
+  span: If that is the case the patient would be an ESI level 5.
+  decision_point: C
+  kind: example
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+- id: C-072
+  page: 20
+  span: All three tests count as one resource (labs)
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+- id: D-026
+  page: 23
+  span: For patients not meeting ESI level-1 or 2- criteria, a complete set of vital signs needs to be obtained
+  decision_point: D
+  kind: usage
+  effect: reassess_uptriage
+  who_can_supply: n/a
+  interpretation: verbatim
+- id: D-027
+  page: 23
+  span: Obtain a full set of vital signs to assist in determining patient acuity.
+  decision_point: D
+  kind: usage
+  effect: reassess_uptriage
+  who_can_supply: n/a
+  interpretation: verbatim
+- id: D-028
+  page: 23
+  span: '> 190 > 180 > 140 > 120 > 120 > 100 > 100'
+  decision_point: D
+  kind: rule
+  effect: reassess_uptriage
+  who_can_supply: vitals
+  when:
+    all:
+    - *id001
+    - fact: heart_rate_bpm
+      gt: 190
+  interpretation: interpreted
+  note: 'Danger-zone figure, age band ''< 1 mo'': HR > 190. Column-to-row mapping read from the figure layout; band edges (inclusive lower, exclusive upper) are my reading because the printed bands share endpoints.'
+- id: D-029
+  page: 23
+  span: '> 60 > 55 > 40 > 35 > 30 > 20 > 20'
+  decision_point: D
+  kind: rule
+  effect: reassess_uptriage
+  who_can_supply: vitals
+  when:
+    all:
+    - *id001
+    - fact: respiratory_rate_per_min
+      gt: 60
+  interpretation: interpreted
+  note: 'Danger-zone figure, age band ''< 1 mo'': RR > 60. Same layout reading as the HR entries.'
+- id: D-030
+  page: 23
+  span: '> 190 > 180 > 140 > 120 > 120 > 100 > 100'
+  decision_point: D
+  kind: rule
+  effect: reassess_uptriage
+  who_can_supply: vitals
+  when:
+    all:
+    - *id002
+    - *id003
+    - fact: heart_rate_bpm
+      gt: 180
+  interpretation: interpreted
+  note: 'Danger-zone figure, age band ''1-12 mo'': HR > 180. Column-to-row mapping read from the figure layout; band edges (inclusive lower, exclusive upper) are my reading because the printed bands share endpoints.'
+- id: D-031
+  page: 23
+  span: '> 60 > 55 > 40 > 35 > 30 > 20 > 20'
+  decision_point: D
+  kind: rule
+  effect: reassess_uptriage
+  who_can_supply: vitals
+  when:
+    all:
+    - *id002
+    - *id003
+    - fact: respiratory_rate_per_min
+      gt: 55
+  interpretation: interpreted
+  note: 'Danger-zone figure, age band ''1-12 mo'': RR > 55. Same layout reading as the HR entries.'
+- id: D-032
+  page: 23
+  span: '> 190 > 180 > 140 > 120 > 120 > 100 > 100'
+  decision_point: D
+  kind: rule
+  effect: reassess_uptriage
+  who_can_supply: vitals
+  when:
+    all:
+    - *id004
+    - *id005
+    - fact: heart_rate_bpm
+      gt: 140
+  interpretation: interpreted
+  note: 'Danger-zone figure, age band ''1-3 y'': HR > 140. Column-to-row mapping read from the figure layout; band edges (inclusive lower, exclusive upper) are my reading because the printed bands share endpoints.'
+- id: D-033
+  page: 23
+  span: '> 60 > 55 > 40 > 35 > 30 > 20 > 20'
+  decision_point: D
+  kind: rule
+  effect: reassess_uptriage
+  who_can_supply: vitals
+  when:
+    all:
+    - *id004
+    - *id005
+    - fact: respiratory_rate_per_min
+      gt: 40
+  interpretation: interpreted
+  note: 'Danger-zone figure, age band ''1-3 y'': RR > 40. Same layout reading as the HR entries.'
+- id: D-034
+  page: 23
+  span: '> 190 > 180 > 140 > 120 > 120 > 100 > 100'
+  decision_point: D
+  kind: rule
+  effect: reassess_uptriage
+  who_can_supply: vitals
+  when:
+    all:
+    - *id006
+    - *id007
+    - fact: heart_rate_bpm
+      gt: 120
+  interpretation: interpreted
+  note: 'Danger-zone figure, age band ''3-5 y'': HR > 120. Column-to-row mapping read from the figure layout; band edges (inclusive lower, exclusive upper) are my reading because the printed bands share endpoints.'
+- id: D-035
+  page: 23
+  span: '> 60 > 55 > 40 > 35 > 30 > 20 > 20'
+  decision_point: D
+  kind: rule
+  effect: reassess_uptriage
+  who_can_supply: vitals
+  when:
+    all:
+    - *id006
+    - *id007
+    - fact: respiratory_rate_per_min
+      gt: 35
+  interpretation: interpreted
+  note: 'Danger-zone figure, age band ''3-5 y'': RR > 35. Same layout reading as the HR entries.'
+- id: D-036
+  page: 23
+  span: '> 190 > 180 > 140 > 120 > 120 > 100 > 100'
+  decision_point: D
+  kind: rule
+  effect: reassess_uptriage
+  who_can_supply: vitals
+  when:
+    all:
+    - *id008
+    - *id009
+    - fact: heart_rate_bpm
+      gt: 120
+  interpretation: interpreted
+  note: 'Danger-zone figure, age band ''5-12 y'': HR > 120. Column-to-row mapping read from the figure layout; band edges (inclusive lower, exclusive upper) are my reading because the printed bands share endpoints.'
+- id: D-037
+  page: 23
+  span: '> 60 > 55 > 40 > 35 > 30 > 20 > 20'
+  decision_point: D
+  kind: rule
+  effect: reassess_uptriage
+  who_can_supply: vitals
+  when:
+    all:
+    - *id008
+    - *id009
+    - fact: respiratory_rate_per_min
+      gt: 30
+  interpretation: interpreted
+  note: 'Danger-zone figure, age band ''5-12 y'': RR > 30. Same layout reading as the HR entries.'
+- id: D-038
+  page: 23
+  span: '> 190 > 180 > 140 > 120 > 120 > 100 > 100'
+  decision_point: D
+  kind: rule
+  effect: reassess_uptriage
+  who_can_supply: vitals
+  when:
+    all:
+    - *id010
+    - *id011
+    - fact: heart_rate_bpm
+      gt: 100
+  interpretation: interpreted
+  note: 'Danger-zone figure, age band ''12-18 y'': HR > 100. Column-to-row mapping read from the figure layout; band edges (inclusive lower, exclusive upper) are my reading because the printed bands share endpoints.'
+- id: D-039
+  page: 23
+  span: '> 60 > 55 > 40 > 35 > 30 > 20 > 20'
+  decision_point: D
+  kind: rule
+  effect: reassess_uptriage
+  who_can_supply: vitals
+  when:
+    all:
+    - *id010
+    - *id011
+    - fact: respiratory_rate_per_min
+      gt: 20
+  interpretation: interpreted
+  note: 'Danger-zone figure, age band ''12-18 y'': RR > 20. Same layout reading as the HR entries.'
+- id: D-040
+  page: 23
+  span: '> 190 > 180 > 140 > 120 > 120 > 100 > 100'
+  decision_point: D
+  kind: rule
+  effect: reassess_uptriage
+  who_can_supply: vitals
+  when:
+    all:
+    - *id012
+    - fact: heart_rate_bpm
+      gt: 100
+  interpretation: interpreted
+  note: 'Danger-zone figure, age band ''> 18 y'': HR > 100. Column-to-row mapping read from the figure layout; band edges (inclusive lower, exclusive upper) are my reading because the printed bands share endpoints.'
+- id: D-041
+  page: 23
+  span: '> 60 > 55 > 40 > 35 > 30 > 20 > 20'
+  decision_point: D
+  kind: rule
+  effect: reassess_uptriage
+  who_can_supply: vitals
+  when:
+    all:
+    - *id012
+    - fact: respiratory_rate_per_min
+      gt: 20
+  interpretation: interpreted
+  note: 'Danger-zone figure, age band ''> 18 y'': RR > 20. Same layout reading as the HR entries.'
+- id: D-042
+  page: 23
+  span: SpO2 < 92%
+  decision_point: D
+  kind: rule
+  effect: reassess_uptriage
+  who_can_supply: vitals
+  when:
+    all:
+    - fact: spo2_percent
+      lt: 92
+  interpretation: verbatim
+  note: 'Danger-zone figure: SpO2 < 92% for all ages. p.23 text says SpO2 is included ''for patients with potential respiratory compromise''.'
+- id: D-043
+  page: 23
+  span: Patients who are immediately recognized and categorized as an ESI level 1 or 2 do not need vitals taken if it is going to delay initiation of care.
+  decision_point: D
+  kind: usage
+  effect: none
+  who_can_supply: n/a
+  interpretation: verbatim
+- id: D-044
+  page: 23
+  span: The nurse can obtain vital signs if it may assist in confirming the triage acuity level.
+  decision_point: D
+  kind: usage
+  effect: none
+  who_can_supply: n/a
+  interpretation: verbatim
+- id: D-045
+  page: 23
+  span: Some patients may not be identified as ESI level 1 or 2 until vital signs are taken.
+  decision_point: D
+  kind: usage
+  effect: none
+  who_can_supply: n/a
+  interpretation: verbatim
+- id: A-048
+  page: 23
+  span: the patient is unstable and should be assigned ESI level 1 no matter how “good” the patient appears
+  decision_point: A
+  kind: example
+  effect: assign_level_1
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: Awake, alert elderly patient with dizziness found to have HR 32 or 180 -> level 1.
+- id: D-046
+  page: 23
+  span: Vital signs explicitly included in the ESI algorithm include heart rate, respiratory rate, and oxygen saturation (for patients with potential respiratory compromise).
+  decision_point: D
+  kind: definition
+  effect: reassess_uptriage
+  who_can_supply: n/a
+  interpretation: verbatim
+- id: D-047
+  page: 23
+  span: vital signs must be contextualized in light of the patient’s history, medications, and presentation.
+  decision_point: D
+  kind: usage
+  effect: none
+  who_can_supply: n/a
+  interpretation: verbatim
+- id: D-048
+  page: 23
+  span: Medications that affect tachycardic compensation for hypotension, such as beta blockers, need to be accounted for.
+  decision_point: D
+  kind: usage
+  effect: none
+  who_can_supply: n/a
+  interpretation: verbatim
+- id: D-049
+  page: 23
+  span: Medications that blunt a robust immune response, such as corticosteroids, must also be noted.
+  decision_point: D
+  kind: usage
+  effect: none
+  who_can_supply: n/a
+  interpretation: verbatim
+- id: D-050
+  page: 23
+  span: Patients may present with medication-mediated “normal” vital signs, yet still be quite ill.
+  decision_point: D
+  kind: usage
+  effect: none
+  who_can_supply: n/a
+  interpretation: verbatim
+- id: D-051
+  page: 23
+  span: A full set of vital signs should be attempted in triage.
+  decision_point: D
+  kind: usage
+  effect: none
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: Pediatric patients.
+- id: D-052
+  page: 23
+  span: An infant less than 28 days old with a fever is considered high risk and is assigned to at least ESI level 2.
+  decision_point: D
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: age_days
+      lt: 28
+    - fact: has_fever
+      is: true
+  interpretation: verbatim
+  note: '''At least'' level 2. Fever threshold not given here (p.6 gives > 38 C).'
+- id: N-017
+  page: 23
+  span: The patient presenting with a fever, non-petechial rash, and incomplete immunizations should prompt the triage nurse to consider isolation.
+  decision_point: none
+  kind: rule
+  effect: consider_isolation
+  who_can_supply: reported
+  when:
+    all:
+    - fact: has_fever
+      is: true
+    - fact: has_non_petechial_rash
+      is: true
+    - fact: has_incomplete_immunizations
+      is: true
+  interpretation: verbatim
+- id: D-053
+  page: 23
+  span: If the patient has an identifiable source for the fever and his or her immunizations are up-to-date, then a rating of 4 or 5 may be appropriate.
+  decision_point: D
+  kind: negative
+  effect: none
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: 'Pediatric fever with identifiable source and up-to-date immunizations: level 4 or 5 may be appropriate.'
+- id: D-054
+  page: 23
+  span: a 10-month-old who is up-to-date on immunizations, who presents with fever and pulling on his ear, could be assigned to ESI level 5
+  decision_point: D
+  kind: example
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+- id: D-055
+  page: 24
+  span: Term neonate to <1 month 90–190 35–60 67–84
+  decision_point: D
+  kind: definition
+  effect: reassess_uptriage
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: 'Normal ranges <1 month: HR 90-190, RR 35-60, SBP 67-84. Table 6-1; defines ''normal parameters'' for the D reassessment.'
+- id: D-056
+  page: 24
+  span: Infant, 1–12 months 90–180 30–55 72–104
+  decision_point: D
+  kind: definition
+  effect: reassess_uptriage
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: 'Normal ranges 1-12 months: HR 90-180, RR 30-55, SBP 72-104. Table 6-1; defines ''normal parameters'' for the D reassessment.'
+- id: D-057
+  page: 24
+  span: Toddler, 1–3 years 80–140 22–40 86–104
+  decision_point: D
+  kind: definition
+  effect: reassess_uptriage
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: 'Normal ranges 1-3 years: HR 80-140, RR 22-40, SBP 86-104. Table 6-1; defines ''normal parameters'' for the D reassessment.'
+- id: D-058
+  page: 24
+  span: Preschooler, 3–5 years 65–120 18–35 89–112
+  decision_point: D
+  kind: definition
+  effect: reassess_uptriage
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: 'Normal ranges 3-5 years: HR 65-120, RR 18-35, SBP 89-112. Table 6-1; defines ''normal parameters'' for the D reassessment.'
+- id: D-059
+  page: 24
+  span: School age, 5–12 years 70–120 16–30 90–115
+  decision_point: D
+  kind: definition
+  effect: reassess_uptriage
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: 'Normal ranges 5-12 years: HR 70-120, RR 16-30, SBP 90-115. Table 6-1; defines ''normal parameters'' for the D reassessment.'
+- id: D-060
+  page: 24
+  span: Adolescent, 12–18 years 60–100 12–20 100–130
+  decision_point: D
+  kind: definition
+  effect: reassess_uptriage
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: 'Normal ranges 12-18 years: HR 60-100, RR 12-20, SBP 100-130. Table 6-1; defines ''normal parameters'' for the D reassessment.'
+- id: D-061
+  page: 24
+  span: Temperature greater than 38°C (100.4°F) in an infant younger than 90 days old is a red flag and the patient should be considered high risk and assigned at least ESI level 2.
+  decision_point: D
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: vitals
+  when:
+    all:
+    - fact: age_days
+      lt: 90
+    - fact: temperature_celsius
+      gt: 38
+  interpretation: verbatim
+  note: '''At least'' level 2. Conflicts with p.6/p.30 box, which says only ''consider'' for 1-3 months.'
+- id: D-062
+  page: 24
+  span: A temperature less than 36°C (96.8°F) in a child of any age is hypothermic and concerning for sepsis
+  decision_point: D
+  kind: rule
+  effect: consider_level_2
+  who_can_supply: vitals
+  when:
+    all:
+    - fact: age_years
+      lt: 18
+    - fact: temperature_celsius
+      lt: 36
+  interpretation: interpreted
+  note: No level named; 'concerning for sepsis' and listed as a red flag; read as consider level 2. Child read as under 18.
+- id: D-063
+  page: 24
+  span: < 90 days > 38°C (100.4°F) or < 36°C (96.8°F)
+  decision_point: D
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: vitals
+  when:
+    all:
+    - fact: age_days
+      lt: 90
+    - fact: temperature_celsius
+      gt: 38
+  interpretation: interpreted
+  note: Table 6-2 red flag; level from the preceding paragraph ('assigned at least ESI level 2').
+- id: D-064
+  page: 24
+  span: < 90 days > 38°C (100.4°F) or < 36°C (96.8°F)
+  decision_point: D
+  kind: rule
+  effect: consider_level_2
+  who_can_supply: vitals
+  when:
+    all:
+    - fact: age_days
+      lt: 90
+    - fact: temperature_celsius
+      lt: 36
+  interpretation: interpreted
+  note: Table 6-2 red flag; no level stated for hypothermia; read as consider level 2.
+- id: D-065
+  page: 24
+  span: '> 3 months old > 38.5 °C (101.3°F) or < 36°C (96.8°F)'
+  decision_point: D
+  kind: rule
+  effect: consider_level_2
+  who_can_supply: vitals
+  when:
+    all:
+    - fact: age_months
+      gt: 3
+    - fact: age_years
+      lt: 18
+    - fact: temperature_celsius
+      gt: 38.5
+  interpretation: interpreted
+  note: 'Table 6-2 red flag; no level stated; read as consider level 2. Note gap: days 90 to 3 months are covered by the first row; upper age <18 assumed.'
+- id: D-066
+  page: 24
+  span: '> 3 months old > 38.5 °C (101.3°F) or < 36°C (96.8°F)'
+  decision_point: D
+  kind: rule
+  effect: consider_level_2
+  who_can_supply: vitals
+  when:
+    all:
+    - fact: age_months
+      gt: 3
+    - fact: age_years
+      lt: 18
+    - fact: temperature_celsius
+      lt: 36
+  interpretation: interpreted
+  note: Table 6-2 red flag; no level stated; read as consider level 2.
+- id: D-067
+  page: 24
+  span: examples of the need for vital signs on every patient
+  decision_point: D
+  kind: usage
+  effect: none
+  who_can_supply: n/a
+  interpretation: verbatim
+- id: D-068
+  page: 24
+  span: This patient meets the criteria for being uptriaged from level 3 to level 2 based on her vital signs.
+  decision_point: D
+  kind: example
+  effect: assign_level_2
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: 'Example One: 28-year-old, abdominal pain, LMP 8 weeks, HR 120, RR 22, BP 92/50 -> 3 to 2.'
+- id: D-069
+  page: 24
+  span: Based on vital sign assessment, the nurse should triage them to an ESI level 2.
+  decision_point: D
+  kind: example
+  effect: assign_level_2
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: 'Example Two: 15-month-old, HR 158, RR 42 (tachypneic, tachycardic for age) -> 3 to 2.'
+- id: D-070
+  page: 25
+  span: After assessing vital signs, the nurse should uptriage the patient to an ESI level 2.
+  decision_point: D
+  kind: example
+  effect: assign_level_2
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: 'Example Three: 57-year-old, cough, T 38.5, RR 26, HR 100, SpO2 90% -> level 2.'
+- id: D-071
+  page: 25
+  span: The heart rate falls just outside the accepted parameter for the age of the patient, but other vital signs are within expected limits.
+  decision_point: D
+  kind: example
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: 'Example Four: HR 102 only slightly outside; stays level 3 (no uptriage). Followed by ''the decision should be to assign the patient to ESI level 3''.'
+- id: D-072
+  page: 25
+  span: it is critical to consider that as a cause of her elevated heart rate and respiratory rate and uptriage the patient to an ESI 2
+  decision_point: D
+  kind: example
+  effect: assign_level_2
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: 'Example Five: 72-year-old COPD on inhaled steroids, infected cat bite, HR 105, RR 24, SpO2 91% (her norm) -> 3 to 2; vitals read in light of immunosuppression and possible sepsis.'
+- id: D-073
+  page: 25
+  span: If any of the high-risk vital signs are exceeded, it is recommended that the triage nurse reassess the patient and uptriage the patient from level 3 to level 2 if the vital signs remain out of range.
+  decision_point: D
+  kind: rule
+  effect: reassess_uptriage
+  who_can_supply: vitals
+  when:
+    all:
+    - fact: high_risk_vital_sign_exceeded
+      is: true
+  interpretation: verbatim
+- id: D-074
+  page: 25
+  span: If any of the high-risk vital signs are exceeded, it is recommended that the triage nurse reassess the patient and uptriage the patient from level 3 to level 2 if the vital signs remain out of range.
+  decision_point: D
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: vitals
+  when:
+    all:
+    - fact: current_esi_level
+      is: 3
+    - fact: high_risk_vital_sign_exceeded
+      is: true
+    - fact: vitals_remain_out_of_range_on_reassessment
+      is: true
+  interpretation: verbatim
+  note: '''Recommended'' uptriage from 3 to 2 when vitals stay out of range after reassessment.'
+- id: N-018
+  page: 27
+  span: that ESI level should not be changed, unless the patient condition changes before they are placed from the waiting area
+  decision_point: none
+  kind: usage
+  effect: none
+  who_can_supply: n/a
+  interpretation: verbatim
+- id: N-019
+  page: 27
+  span: The only change that should be made is to increase acuity
+  decision_point: none
+  kind: usage
+  effect: none
+  who_can_supply: n/a
+  interpretation: verbatim
+- id: N-020
+  page: 27
+  span: an appropriate note should be made in the medical record reflecting the patient’s change in condition and change in ESI level
+  decision_point: none
+  kind: usage
+  effect: none
+  who_can_supply: n/a
+  interpretation: verbatim
+- id: N-021
+  page: 27
+  span: ESI is not intended as an ongoing measurement of patient acuity.
+  decision_point: none
+  kind: usage
+  effect: none
+  who_can_supply: n/a
+  interpretation: verbatim
+- id: N-022
+  page: 27
+  span: it is not appropriate to change the ESI once a patient has been seen by a physician or advanced practice provider
+  decision_point: none
+  kind: usage
+  effect: none
+  who_can_supply: n/a
+  interpretation: verbatim
+- id: N-023
+  page: 27
+  span: if they are appropriately trained in the use of ESI, can assess patients at the initial encounter and assign an ESI level
+  decision_point: none
+  kind: usage
+  effect: none
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: Physicians, PAs and advanced practice RNs may assign ESI if trained.
+- id: N-024
+  page: 27
+  span: It is not appropriate for a physician or advanced practice provider to assign a second ESI after the patient has been triaged by a nurse.
+  decision_point: none
+  kind: usage
+  effect: none
+  who_can_supply: n/a
+  interpretation: verbatim
+- id: N-025
+  page: 27
+  span: Assigning an ESI level without an assessment may result in significant undertriage.
+  decision_point: none
+  kind: usage
+  effect: none
+  who_can_supply: n/a
+  interpretation: verbatim
+- id: N-026
+  page: 27
+  span: Unless the patient is in extremis, an assessment including a full set of vital signs should be made before assigning an ESI level.
+  decision_point: none
+  kind: usage
+  effect: none
+  who_can_supply: n/a
+  interpretation: verbatim
+- id: N-027
+  page: 27
+  span: it should not be used to calculate billing
+  decision_point: none
+  kind: usage
+  effect: none
+  who_can_supply: n/a
+  interpretation: verbatim
+- id: N-028
+  page: 27
+  span: ESI levels are ordinal data, not interval data, and so cannot be meaningfully averaged.
+  decision_point: none
+  kind: usage
+  effect: none
+  who_can_supply: n/a
+  interpretation: verbatim
+- id: N-029
+  page: 27
+  span: In tracking acuity in each department, distribution by percentage should be used.
+  decision_point: none
+  kind: usage
+  effect: none
+  who_can_supply: n/a
+  interpretation: verbatim
+- id: A-049
+  page: 29
+  span: Requires immediate lifesaving intervention?
+  decision_point: A
+  kind: rule
+  effect: assign_level_1
+  who_can_supply: observed
+  when:
+    all:
+    - fact: needs_immediate_lifesaving_intervention
+      is: true
+  interpretation: verbatim
+  note: 'Algorithm figure, decision point A: yes leads to level 1.'
+- id: B-132
+  page: 29
+  span: High-risk situation?
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: observed
+  when:
+    all:
+    - fact: is_high_risk_situation
+      is: true
+  interpretation: verbatim
+  note: 'Algorithm figure, decision point B: yes leads to level 2.'
+- id: B-133
+  page: 29
+  span: Confused/lethargic/disoriented?
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: has_new_altered_mental_status
+      is: true
+  interpretation: verbatim
+  note: 'Algorithm figure, decision point B (confused/lethargic/disoriented): yes leads to level 2.'
+- id: B-134
+  page: 29
+  span: Severe pain/distress?
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: has_severe_pain
+      is: true
+  interpretation: verbatim
+  note: 'Algorithm figure, decision point B (severe pain/distress): yes leads to level 2.'
+- id: B-135
+  page: 29
+  span: Severe pain/distress?
+  decision_point: B
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - fact: has_severe_distress
+      is: true
+  interpretation: verbatim
+  note: 'Algorithm figure, decision point B (severe pain/distress): yes leads to level 2.'
+- id: C-073
+  page: 29
+  span: None One Many
+  decision_point: C
+  kind: rule
+  effect: resource_band
+  who_can_supply: observed
+  when:
+    all:
+    - fact: predicted_resource_count
+      gte: 2
+  interpretation: interpreted
+  note: 'Figure: ''Many'' resources leads to level 3. ''Many'' read as two or more (stated in text on p.19).'
+- id: C-074
+  page: 29
+  span: None One Many
+  decision_point: C
+  kind: rule
+  effect: resource_band
+  who_can_supply: observed
+  when:
+    all:
+    - fact: predicted_resource_count
+      is: 1
+  interpretation: verbatim
+  note: 'Figure: one resource leads to level 4.'
+- id: C-075
+  page: 29
+  span: None One Many
+  decision_point: C
+  kind: rule
+  effect: resource_band
+  who_can_supply: observed
+  when:
+    all:
+    - fact: predicted_resource_count
+      is: 0
+  interpretation: verbatim
+  note: 'Figure: no resources leads to level 5.'
+- id: D-075
+  page: 29
+  span: '> 190 > 180 > 140 > 120 > 120 > 100 > 100'
+  decision_point: D
+  kind: rule
+  effect: reassess_uptriage
+  who_can_supply: vitals
+  when:
+    all:
+    - *id001
+    - fact: heart_rate_bpm
+      gt: 190
+  interpretation: interpreted
+  note: 'Danger-zone figure, age band ''< 1 mo'': HR > 190. Column-to-row mapping read from the figure layout; band edges (inclusive lower, exclusive upper) are my reading because the printed bands share endpoints.'
+- id: D-076
+  page: 29
+  span: '> 60 > 55 > 40 > 35 > 30 > 20 > 20'
+  decision_point: D
+  kind: rule
+  effect: reassess_uptriage
+  who_can_supply: vitals
+  when:
+    all:
+    - *id001
+    - fact: respiratory_rate_per_min
+      gt: 60
+  interpretation: interpreted
+  note: 'Danger-zone figure, age band ''< 1 mo'': RR > 60. Same layout reading as the HR entries.'
+- id: D-077
+  page: 29
+  span: '> 190 > 180 > 140 > 120 > 120 > 100 > 100'
+  decision_point: D
+  kind: rule
+  effect: reassess_uptriage
+  who_can_supply: vitals
+  when:
+    all:
+    - *id002
+    - *id003
+    - fact: heart_rate_bpm
+      gt: 180
+  interpretation: interpreted
+  note: 'Danger-zone figure, age band ''1-12 mo'': HR > 180. Column-to-row mapping read from the figure layout; band edges (inclusive lower, exclusive upper) are my reading because the printed bands share endpoints.'
+- id: D-078
+  page: 29
+  span: '> 60 > 55 > 40 > 35 > 30 > 20 > 20'
+  decision_point: D
+  kind: rule
+  effect: reassess_uptriage
+  who_can_supply: vitals
+  when:
+    all:
+    - *id002
+    - *id003
+    - fact: respiratory_rate_per_min
+      gt: 55
+  interpretation: interpreted
+  note: 'Danger-zone figure, age band ''1-12 mo'': RR > 55. Same layout reading as the HR entries.'
+- id: D-079
+  page: 29
+  span: '> 190 > 180 > 140 > 120 > 120 > 100 > 100'
+  decision_point: D
+  kind: rule
+  effect: reassess_uptriage
+  who_can_supply: vitals
+  when:
+    all:
+    - *id004
+    - *id005
+    - fact: heart_rate_bpm
+      gt: 140
+  interpretation: interpreted
+  note: 'Danger-zone figure, age band ''1-3 y'': HR > 140. Column-to-row mapping read from the figure layout; band edges (inclusive lower, exclusive upper) are my reading because the printed bands share endpoints.'
+- id: D-080
+  page: 29
+  span: '> 60 > 55 > 40 > 35 > 30 > 20 > 20'
+  decision_point: D
+  kind: rule
+  effect: reassess_uptriage
+  who_can_supply: vitals
+  when:
+    all:
+    - *id004
+    - *id005
+    - fact: respiratory_rate_per_min
+      gt: 40
+  interpretation: interpreted
+  note: 'Danger-zone figure, age band ''1-3 y'': RR > 40. Same layout reading as the HR entries.'
+- id: D-081
+  page: 29
+  span: '> 190 > 180 > 140 > 120 > 120 > 100 > 100'
+  decision_point: D
+  kind: rule
+  effect: reassess_uptriage
+  who_can_supply: vitals
+  when:
+    all:
+    - *id006
+    - *id007
+    - fact: heart_rate_bpm
+      gt: 120
+  interpretation: interpreted
+  note: 'Danger-zone figure, age band ''3-5 y'': HR > 120. Column-to-row mapping read from the figure layout; band edges (inclusive lower, exclusive upper) are my reading because the printed bands share endpoints.'
+- id: D-082
+  page: 29
+  span: '> 60 > 55 > 40 > 35 > 30 > 20 > 20'
+  decision_point: D
+  kind: rule
+  effect: reassess_uptriage
+  who_can_supply: vitals
+  when:
+    all:
+    - *id006
+    - *id007
+    - fact: respiratory_rate_per_min
+      gt: 35
+  interpretation: interpreted
+  note: 'Danger-zone figure, age band ''3-5 y'': RR > 35. Same layout reading as the HR entries.'
+- id: D-083
+  page: 29
+  span: '> 190 > 180 > 140 > 120 > 120 > 100 > 100'
+  decision_point: D
+  kind: rule
+  effect: reassess_uptriage
+  who_can_supply: vitals
+  when:
+    all:
+    - *id008
+    - *id009
+    - fact: heart_rate_bpm
+      gt: 120
+  interpretation: interpreted
+  note: 'Danger-zone figure, age band ''5-12 y'': HR > 120. Column-to-row mapping read from the figure layout; band edges (inclusive lower, exclusive upper) are my reading because the printed bands share endpoints.'
+- id: D-084
+  page: 29
+  span: '> 60 > 55 > 40 > 35 > 30 > 20 > 20'
+  decision_point: D
+  kind: rule
+  effect: reassess_uptriage
+  who_can_supply: vitals
+  when:
+    all:
+    - *id008
+    - *id009
+    - fact: respiratory_rate_per_min
+      gt: 30
+  interpretation: interpreted
+  note: 'Danger-zone figure, age band ''5-12 y'': RR > 30. Same layout reading as the HR entries.'
+- id: D-085
+  page: 29
+  span: '> 190 > 180 > 140 > 120 > 120 > 100 > 100'
+  decision_point: D
+  kind: rule
+  effect: reassess_uptriage
+  who_can_supply: vitals
+  when:
+    all:
+    - *id010
+    - *id011
+    - fact: heart_rate_bpm
+      gt: 100
+  interpretation: interpreted
+  note: 'Danger-zone figure, age band ''12-18 y'': HR > 100. Column-to-row mapping read from the figure layout; band edges (inclusive lower, exclusive upper) are my reading because the printed bands share endpoints.'
+- id: D-086
+  page: 29
+  span: '> 60 > 55 > 40 > 35 > 30 > 20 > 20'
+  decision_point: D
+  kind: rule
+  effect: reassess_uptriage
+  who_can_supply: vitals
+  when:
+    all:
+    - *id010
+    - *id011
+    - fact: respiratory_rate_per_min
+      gt: 20
+  interpretation: interpreted
+  note: 'Danger-zone figure, age band ''12-18 y'': RR > 20. Same layout reading as the HR entries.'
+- id: D-087
+  page: 29
+  span: '> 190 > 180 > 140 > 120 > 120 > 100 > 100'
+  decision_point: D
+  kind: rule
+  effect: reassess_uptriage
+  who_can_supply: vitals
+  when:
+    all:
+    - *id012
+    - fact: heart_rate_bpm
+      gt: 100
+  interpretation: interpreted
+  note: 'Danger-zone figure, age band ''> 18 y'': HR > 100. Column-to-row mapping read from the figure layout; band edges (inclusive lower, exclusive upper) are my reading because the printed bands share endpoints.'
+- id: D-088
+  page: 29
+  span: '> 60 > 55 > 40 > 35 > 30 > 20 > 20'
+  decision_point: D
+  kind: rule
+  effect: reassess_uptriage
+  who_can_supply: vitals
+  when:
+    all:
+    - *id012
+    - fact: respiratory_rate_per_min
+      gt: 20
+  interpretation: interpreted
+  note: 'Danger-zone figure, age band ''> 18 y'': RR > 20. Same layout reading as the HR entries.'
+- id: D-089
+  page: 29
+  span: SpO2 < 92%
+  decision_point: D
+  kind: rule
+  effect: reassess_uptriage
+  who_can_supply: vitals
+  when:
+    all:
+    - fact: spo2_percent
+      lt: 92
+  interpretation: verbatim
+  note: 'Danger-zone figure: SpO2 < 92% for all ages. p.23 text says SpO2 is included ''for patients with potential respiratory compromise''.'
+- id: A-050
+  page: 30
+  span: 'Immediate life-saving intervention required: Airway or respiratory support, emergency medications, hemodynamic interventions'
+  decision_point: A
+  kind: definition
+  effect: assign_level_1
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: 'Defines immediate lifesaving intervention: airway or respiratory support, emergency medications, hemodynamic interventions (fluid resuscitation, blood products).'
+- id: A-051
+  page: 30
+  span: 'Clinical presentations requiring lifesaving interventions include the following: intubated, unresponsive, pulselessness, apneic, severe respiratory distress, profound hypotension or hypoglycemia.'
+  decision_point: A
+  kind: rule
+  effect: assign_level_1
+  who_can_supply: observed
+  when:
+    all:
+    - fact: is_intubated
+      is: true
+  interpretation: verbatim
+  note: 'Clinical presentation requiring lifesaving intervention: Intubated patient.'
+- id: A-052
+  page: 30
+  span: 'Clinical presentations requiring lifesaving interventions include the following: intubated, unresponsive, pulselessness, apneic, severe respiratory distress, profound hypotension or hypoglycemia.'
+  decision_point: A
+  kind: rule
+  effect: assign_level_1
+  who_can_supply: observed
+  when:
+    all:
+    - fact: is_unresponsive
+      is: true
+  interpretation: verbatim
+  note: 'Clinical presentation requiring lifesaving intervention: Unresponsive patient (defined in the next two entries).'
+- id: A-053
+  page: 30
+  span: 'Clinical presentations requiring lifesaving interventions include the following: intubated, unresponsive, pulselessness, apneic, severe respiratory distress, profound hypotension or hypoglycemia.'
+  decision_point: A
+  kind: rule
+  effect: assign_level_1
+  who_can_supply: observed
+  when:
+    all:
+    - fact: is_pulseless
+      is: true
+  interpretation: verbatim
+  note: 'Clinical presentation requiring lifesaving intervention: Pulselessness.'
+- id: A-054
+  page: 30
+  span: 'Clinical presentations requiring lifesaving interventions include the following: intubated, unresponsive, pulselessness, apneic, severe respiratory distress, profound hypotension or hypoglycemia.'
+  decision_point: A
+  kind: rule
+  effect: assign_level_1
+  who_can_supply: observed
+  when:
+    all:
+    - fact: is_apneic
+      is: true
+  interpretation: verbatim
+  note: 'Clinical presentation requiring lifesaving intervention: Apneic (not breathing).'
+- id: A-055
+  page: 30
+  span: 'Clinical presentations requiring lifesaving interventions include the following: intubated, unresponsive, pulselessness, apneic, severe respiratory distress, profound hypotension or hypoglycemia.'
+  decision_point: A
+  kind: rule
+  effect: assign_level_1
+  who_can_supply: observed
+  when:
+    all:
+    - fact: respiratory_distress_severity
+      is: severe
+  interpretation: verbatim
+  note: 'Clinical presentation requiring lifesaving intervention: severe respiratory distress.'
+- id: A-056
+  page: 30
+  span: 'Clinical presentations requiring lifesaving interventions include the following: intubated, unresponsive, pulselessness, apneic, severe respiratory distress, profound hypotension or hypoglycemia.'
+  decision_point: A
+  kind: rule
+  effect: assign_level_1
+  who_can_supply: vitals
+  when:
+    all:
+    - fact: is_profoundly_hypotensive
+      is: true
+  interpretation: verbatim
+  note: 'Clinical presentation requiring lifesaving intervention: profound hypotension.'
+- id: A-057
+  page: 30
+  span: 'Clinical presentations requiring lifesaving interventions include the following: intubated, unresponsive, pulselessness, apneic, severe respiratory distress, profound hypotension or hypoglycemia.'
+  decision_point: A
+  kind: rule
+  effect: assign_level_1
+  who_can_supply: vitals
+  when:
+    all:
+    - fact: has_hypoglycemia
+      is: true
+  interpretation: interpreted
+  note: '''profound hypotension or hypoglycemia'': unclear whether ''profound'' also qualifies hypoglycemia; read as hypoglycemia (needing a lifesaving intervention), matching the bare ''Hypoglycemia'' bullet on p.9.'
+- id: A-058
+  page: 30
+  span: Is nonverbal and not following commands (acutely)
+  decision_point: A
+  kind: definition
+  effect: assign_level_1
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: 'Unresponsiveness criterion 1: acutely nonverbal and not following commands.'
+- id: A-059
+  page: 30
+  span: Requires noxious stimulus (P or U on AVPU scale)
+  decision_point: A
+  kind: definition
+  effect: assign_level_1
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: 'Unresponsiveness criterion 2: requires noxious stimulus (P or U on AVPU).'
+- id: B-136
+  page: 30
+  span: 'High-risk situation: May become unstable, have high risk for deterioration, or exhibit newly altered mental status.'
+  decision_point: B
+  kind: definition
+  effect: assign_level_2
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: 'Defines high-risk situation: may become unstable, high risk for deterioration, or newly altered mental status.'
+- id: B-137
+  page: 30
+  span: Severe pain or distress is determined by patient report, corroborated with clinical observation.
+  decision_point: B
+  kind: definition
+  effect: assign_level_2
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: Severe pain or distress is established by patient report corroborated with clinical observation.
+- id: C-076
+  page: 30
+  span: Count the number of different types of resources, not the individual tests or radiographs.
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: Count different types of resources, not individual tests or radiographs.
+- id: C-077
+  page: 30
+  span: complete blood count, electrolytes, and coagulant studies equal one resource because they are all laboratory tests
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: CBC + electrolytes + coagulation studies = 1 resource (all labs); CBC + chest radiograph = 2 resources.
+- id: C-078
+  page: 30
+  span: Labs (blood, urine)
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: Labs (blood, urine) count as a resource.
+- id: C-079
+  page: 30
+  span: Electrocardiogram, radiographs
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: ECG and radiographs count as a resource.
+- id: C-080
+  page: 30
+  span: Computed tomography, magnetic resonance imaging, ultrasound, angiography
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: CT, MRI, ultrasound, angiography count as a resource.
+- id: C-081
+  page: 30
+  span: Intravenous fluids (hydration)
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: IV fluids for hydration count as a resource.
+- id: C-082
+  page: 30
+  span: Intravenous, intramuscular, or nebulized medications
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: IV, IM or nebulized medications count as a resource.
+- id: C-083
+  page: 30
+  span: Specialty consultation
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: Specialty consultation counts as a resource.
+- id: C-084
+  page: 30
+  span: Simple procedure = 1 (laceration repair, urinary catheter)
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: Simple procedure counts as 1 resource.
+- id: C-085
+  page: 30
+  span: Complex procedure = 2 (procedural sedation)
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: Complex procedure counts as 2 resources.
+- id: C-086
+  page: 30
+  span: History and physicaI exam (Including pelvic)
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: History and physical exam (including pelvic) is NOT a resource.
+- id: C-087
+  page: 30
+  span: Point-of-care testing
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: Point-of-care testing is NOT a resource.
+- id: C-088
+  page: 30
+  span: Saline or heparin lock
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: Saline or heparin lock is NOT a resource.
+- id: C-089
+  page: 30
+  span: Oral medications
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: Oral medications are NOT a resource.
+- id: C-090
+  page: 30
+  span: Tetanus immunization
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: Tetanus immunization is NOT a resource.
+- id: C-091
+  page: 30
+  span: Prescription refills
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: Prescription refills are NOT a resource.
+- id: C-092
+  page: 30
+  span: Phone call to primary care physician
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: Phone call to the primary care physician is NOT a resource.
+- id: C-093
+  page: 30
+  span: Simple wound care (dressings, recheck)
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: Simple wound care (dressings, recheck) is NOT a resource.
+- id: C-094
+  page: 30
+  span: Crutches, splints, slings
+  decision_point: C
+  kind: definition
+  effect: resource_band
+  who_can_supply: n/a
+  interpretation: verbatim
+  note: Crutches, splints, slings are NOT a resource.
+- id: D-090
+  page: 30
+  span: Reassess to determine whether the patient warrants a higher acuity level if a patient has one or more vital signs outside the normal parameters for the patient.
+  decision_point: D
+  kind: rule
+  effect: reassess_uptriage
+  who_can_supply: vitals
+  when:
+    all:
+    - fact: vital_sign_outside_normal_for_patient
+      is: true
+  interpretation: verbatim
+  note: Any one or more vital signs outside the normal parameters for this patient triggers reassessment for a higher level.
+- id: D-091
+  page: 30
+  span: '1-28 days of age: Assign at least ESI 2 if T > 38° C'
+  decision_point: D
+  kind: rule
+  effect: assign_level_2
+  who_can_supply: vitals
+  when:
+    all:
+    - fact: age_days
+      gte: 1
+    - fact: age_days
+      lte: 28
+    - fact: temperature_celsius
+      gt: 38
+  interpretation: verbatim
+  note: '''Assign at least ESI 2'' (level 1 still possible). Placed under D because the box sits with the vital-signs criteria; it is a level-2 rule.'
+- id: D-092
+  page: 30
+  span: '1-3 months: Consider assigning ESI 2 if T > 38 ° C'
+  decision_point: D
+  kind: rule
+  effect: consider_level_2
+  who_can_supply: vitals
+  when:
+    all:
+    - fact: age_months
+      gte: 1
+    - fact: age_months
+      lte: 3
+    - fact: temperature_celsius
+      gt: 38
+  interpretation: verbatim
+  note: '''Consider assigning ESI 2''. Overlaps with p.24 rule (under 90 days, >38 C, assign at least 2).'
+- id: D-093
+  page: 30
+  span: T > 39°C (102.2°F) or < 36°C (96.8°F)
+  decision_point: D
+  kind: rule
+  effect: consider_level_2
+  who_can_supply: vitals
+  when:
+    all:
+    - &id015
+      fact: age_months
+      gte: 3
+    - &id016
+      fact: age_years
+      lt: 18
+    - fact: temperature_celsius
+      gt: 39
+  interpretation: interpreted
+  note: '''Consider assigning ESI 2 or 3''. Upper age bound (<18 y) assumed from ''Pediatric''.'
+- id: D-094
+  page: 30
+  span: T > 39°C (102.2°F) or < 36°C (96.8°F)
+  decision_point: D
+  kind: rule
+  effect: consider_level_2
+  who_can_supply: vitals
+  when:
+    all:
+    - *id015
+    - *id016
+    - fact: temperature_celsius
+      lt: 36
+  interpretation: interpreted
+  note: '''Consider assigning ESI 2 or 3''. Upper age bound (<18 y) assumed from ''Pediatric''.'
+- id: D-095
+  page: 30
+  span: Incomplete immunizations
+  decision_point: D
+  kind: rule
+  effect: consider_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - *id015
+    - *id016
+    - fact: has_fever
+      is: true
+    - fact: has_incomplete_immunizations
+      is: true
+  interpretation: interpreted
+  note: '''Consider assigning ESI 2 or 3''. Fever assumed present because the box is ''Pediatric Fever Considerations''; <18 y assumed.'
+- id: D-096
+  page: 30
+  span: No obvious source of fever
+  decision_point: D
+  kind: rule
+  effect: consider_level_2
+  who_can_supply: reported
+  when:
+    all:
+    - *id015
+    - *id016
+    - fact: has_fever
+      is: true
+    - fact: has_identifiable_fever_source
+      is: false
+  interpretation: interpreted
+  note: '''Consider assigning ESI 2 or 3''. Fever assumed present (box heading); <18 y assumed. ''No obvious source'' read as no identifiable source.'
+facts:
+- name: abdominal_pain_refractory_constant_or_maximal_at_onset
+  meaning: The belly pain does not respond to painkillers, is constant, or was at its worst from the start.
+  type: bool
+- name: age_days
+  meaning: The patient's age in days.
+  type: number
+- name: age_months
+  meaning: The patient's age in months.
+  type: number
+- name: age_years
+  meaning: The patient's age in years.
+  type: number
+- name: arrest_appears_imminent
+  meaning: The patient looks about to stop breathing or have their heart stop.
+  type: bool
+- name: baseline_mental_status_unknown
+  meaning: Nobody knows what the patient's usual mental state is.
+  type: bool
+- name: chest_pain_suspicious_for_acs
+  meaning: The chest pain looks like it could be a heart attack or related heart condition.
+  type: bool
+- name: current_esi_level
+  meaning: The ESI level the patient has been given so far.
+  type: enum
+  values:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+- name: ecg_abnormal
+  meaning: The patient's ECG (heart tracing) is abnormal.
+  type: bool
+- name: ejected_from_vehicle
+  meaning: The patient was thrown out of a vehicle in a crash.
+  type: bool
+- name: fall_height_meters
+  meaning: The height the patient fell from, in meters.
+  type: number
+- name: has_abdominal_pain
+  meaning: The patient has abdominal (belly) pain.
+  type: bool
+- name: has_abdominal_trauma
+  meaning: The patient had a blunt or penetrating injury to the abdomen.
+  type: bool
+- name: has_abnormal_vital_signs
+  meaning: One or more of the patient's vital signs are abnormal.
+  type: bool
+- name: has_active_seizure
+  meaning: The patient is having a seizure (fit) right now.
+  type: bool
+- name: has_acute_grief_reaction
+  meaning: The patient is having an acute grief reaction.
+  type: bool
+- name: has_amputation
+  meaning: Part or all of a limb or digit has been cut off.
+  type: bool
+- name: has_anaphylaxis
+  meaning: The patient has a severe, whole-body allergic reaction.
+  type: bool
+- name: has_back_pain
+  meaning: The patient has back pain.
+  type: bool
+- name: has_behavioral_outburst_at_triage
+  meaning: The patient has a behavioral outburst at the triage desk.
+  type: bool
+- name: has_brisk_nosebleed
+  meaning: The patient has a fast-bleeding nosebleed.
+  type: bool
+- name: has_chest_pain
+  meaning: The patient has chest pain.
+  type: bool
+- name: has_chills
+  meaning: The patient has chills.
+  type: bool
+- name: has_clotting_disorder
+  meaning: The patient has a known blood-clotting disorder.
+  type: bool
+- name: has_dislocation
+  meaning: The patient has a dislocated joint.
+  type: bool
+- name: has_extremity_injury
+  meaning: The patient has an injury to an arm or leg.
+  type: bool
+- name: has_fever
+  meaning: The patient has a fever.
+  type: bool
+- name: has_headache
+  meaning: The patient has a headache.
+  type: bool
+- name: has_heavy_vaginal_bleeding
+  meaning: The patient has heavy vaginal bleeding (e.g., soaking a pad an hour, plum-sized clots).
+  type: bool
+- name: has_hypoglycemia
+  meaning: The patient's blood sugar is dangerously low.
+  type: bool
+- name: has_identifiable_fever_source
+  meaning: An obvious cause for the fever can be identified (e.g., ear infection).
+  type: bool
+- name: has_impaired_gas_exchange
+  meaning: The patient's lungs are not getting enough oxygen in or carbon dioxide out.
+  type: bool
+- name: has_incomplete_immunizations
+  meaning: The patient is not up to date on vaccinations.
+  type: bool
+- name: has_increasing_respiratory_effort
+  meaning: The patient is working harder and harder to breathe.
+  type: bool
+- name: has_ineffective_airway_clearance
+  meaning: The patient cannot keep their airway clear (e.g., cannot cough out secretions).
+  type: bool
+- name: has_ineffective_perfusion
+  meaning: Blood flow to the patient's organs and tissues is inadequate or decreased.
+  type: bool
+- name: has_ineffective_respiratory_pattern
+  meaning: The patient's breathing pattern is not moving enough air.
+  type: bool
+- name: has_lower_back_pain
+  meaning: The patient has lower back pain.
+  type: bool
+- name: has_neck_pain
+  meaning: The patient has neck pain.
+  type: bool
+- name: has_needle_stick_injury
+  meaning: The patient has been stuck by a used needle.
+  type: bool
+- name: has_neurovascular_compromise
+  meaning: Nerve function or blood supply beyond an injury is impaired (e.g., numb, cold or pale limb).
+  type: bool
+- name: has_new_altered_mental_status
+  meaning: The patient is newly confused, lethargic or disoriented compared with their usual self.
+  type: bool
+- name: has_non_petechial_rash
+  meaning: The patient has a rash that is not made of tiny pin-point bleeding spots.
+  type: bool
+- name: has_nuchal_rigidity
+  meaning: The patient's neck is stiff and cannot bend forward easily.
+  type: bool
+- name: has_occluded_airway
+  meaning: The patient's airway is blocked.
+  type: bool
+- name: has_other_signs_of_respiratory_compromise
+  meaning: Besides a low oxygen reading, the patient shows other signs of failing breathing.
+  type: bool
+- name: has_ovaries
+  meaning: The patient has ovaries.
+  type: bool
+- name: has_penetrating_trauma_head_neck_chest_abdomen
+  meaning: The patient has a penetrating wound (e.g., stab or gunshot) to the head, neck, chest or abdomen.
+  type: bool
+- name: has_prenatal_loss
+  meaning: The patient has lost a pregnancy.
+  type: bool
+- name: has_rigors
+  meaning: The patient has episodes of violent shivering.
+  type: bool
+- name: has_severe_bradycardia
+  meaning: The patient's heart rate is dangerously slow.
+  type: bool
+- name: has_severe_distress
+  meaning: The patient is in severe physical or psychological distress.
+  type: bool
+- name: has_severe_flank_pain
+  meaning: The patient has severe pain in the side, between ribs and hip.
+  type: bool
+- name: has_severe_pain
+  meaning: The patient reports severe pain, and this fits what the nurse observes.
+  type: bool
+- name: has_severe_tachycardia
+  meaning: The patient's heart rate is dangerously fast.
+  type: bool
+- name: has_shortness_of_breath
+  meaning: The patient is short of breath.
+  type: bool
+- name: has_signs_of_hypoperfusion
+  meaning: The patient shows signs that blood is not reaching the body's tissues well (e.g., cold, pale, clammy skin, confusion).
+  type: bool
+- name: has_signs_of_infection
+  meaning: The patient shows signs of an infection, or an infection is suspected.
+  type: bool
+- name: has_signs_of_sepsis
+  meaning: The patient shows signs of sepsis (a body-wide reaction to infection).
+  type: bool
+- name: has_signs_of_stroke
+  meaning: The patient shows signs of a stroke (e.g., face droop, weakness, trouble speaking).
+  type: bool
+- name: has_signs_of_transplant_rejection
+  meaning: The patient shows signs that their body is rejecting a transplanted organ.
+  type: bool
+- name: has_stridor
+  meaning: The patient makes a high-pitched noise when breathing in.
+  type: bool
+- name: has_subtle_mental_status_change
+  meaning: A child's mental state has changed subtly from normal.
+  type: bool
+- name: has_suicidal_ideation_plan_or_attempt
+  meaning: The patient has thoughts of suicide, a suicide plan, or has made an attempt.
+  type: bool
+- name: has_symptoms_of_compartment_syndrome
+  meaning: The patient has signs of dangerous pressure build-up in a limb (e.g., severe pain, tight swelling).
+  type: bool
+- name: has_testicular_or_scrotal_pain
+  meaning: The patient has pain in the testicle or scrotum.
+  type: bool
+- name: has_thrombocytopenia
+  meaning: The patient is known to have a low platelet count.
+  type: bool
+- name: has_thunderclap_headache
+  meaning: The patient has a sudden, severe headache that peaked within moments.
+  type: bool
+- name: has_unilateral_lower_quadrant_pain
+  meaning: The patient has pain on one side of the lower belly.
+  type: bool
+- name: has_uti_symptoms
+  meaning: The patient has symptoms of a urinary tract infection (e.g., burning on urination).
+  type: bool
+- name: has_vaginal_bleeding
+  meaning: The patient has any vaginal bleeding.
+  type: bool
+- name: heart_rate_bpm
+  meaning: The patient's measured heart rate in beats per minute.
+  type: number
+- name: high_risk_vital_sign_exceeded
+  meaning: At least one vital sign is past the ESI danger-zone threshold for the patient's age.
+  type: bool
+- name: is_apneic
+  meaning: The patient is not breathing (respiratory arrest).
+  type: bool
+- name: is_combative
+  meaning: The patient is physically combative.
+  type: bool
+- name: is_confused_lethargic_or_disoriented
+  meaning: The patient is currently confused, unusually drowsy or disoriented (whether or not this is new).
+  type: bool
+- name: is_danger_to_environment
+  meaning: The patient is a danger to their surroundings.
+  type: bool
+- name: is_danger_to_others
+  meaning: The patient is a danger to other people.
+  type: bool
+- name: is_danger_to_self
+  meaning: The patient is a danger to themselves.
+  type: bool
+- name: is_distraught
+  meaning: The patient is extremely upset.
+  type: bool
+- name: is_elderly
+  meaning: The patient is elderly (the text gives no age cut-off).
+  type: bool
+- name: is_flaccid
+  meaning: The patient is limp, with no muscle tone.
+  type: bool
+- name: is_health_care_worker
+  meaning: The patient is a health care worker.
+  type: bool
+- name: is_hemodynamically_stable
+  meaning: The patient's blood pressure and circulation are stable.
+  type: bool
+- name: is_high_risk_situation
+  meaning: 'The nurse judges the situation high-risk: a possible threat to life, limb, sight or organ, or a condition needing time-sensitive treatment.'
+  type: bool
+- name: is_homicidal
+  meaning: The patient intends to kill someone.
+  type: bool
+- name: is_hypotensive
+  meaning: The patient's blood pressure is low.
+  type: bool
+- name: is_intubated
+  meaning: The patient arrives with a breathing tube already in place.
+  type: bool
+- name: is_likely_to_deteriorate
+  meaning: The patient is likely to get worse quickly, physically or psychologically.
+  type: bool
+- name: is_obtunded
+  meaning: The patient is severely drowsy and hard to rouse.
+  type: bool
+- name: is_on_chemotherapy
+  meaning: The patient is receiving chemotherapy for cancer.
+  type: bool
+- name: is_on_transplant_list
+  meaning: The patient is on a waiting list for an organ transplant.
+  type: bool
+- name: is_post_ictal
+  meaning: The patient is in the drowsy, confused state that follows a seizure.
+  type: bool
+- name: is_posterior_nosebleed
+  meaning: The nosebleed comes from the back of the nose.
+  type: bool
+- name: is_postpartum
+  meaning: The patient has recently given birth.
+  type: bool
+- name: is_pregnant
+  meaning: The patient is pregnant.
+  type: bool
+- name: is_profoundly_hypotensive
+  meaning: The patient's blood pressure is extremely low.
+  type: bool
+- name: is_psychotic
+  meaning: The patient has lost touch with reality (e.g., hallucinations, delusions).
+  type: bool
+- name: is_pulseless
+  meaning: The patient has no pulse (cardiac arrest).
+  type: bool
+- name: is_sexual_assault_survivor
+  meaning: The patient has been sexually assaulted.
+  type: bool
+- name: is_suicidal
+  meaning: The patient is actively suicidal.
+  type: bool
+- name: is_survivor_of_domestic_violence
+  meaning: The patient has experienced domestic violence.
+  type: bool
+- name: is_survivor_of_sexual_violence
+  meaning: The patient has experienced sexual violence.
+  type: bool
+- name: is_transplant_recipient
+  meaning: The patient has received an organ transplant.
+  type: bool
+- name: is_unresponsive
+  meaning: The patient does not speak or follow commands, or only reacts to pain.
+  type: bool
+- name: is_violent
+  meaning: The patient is violent.
+  type: bool
+- name: is_vomiting
+  meaning: The patient is vomiting.
+  type: bool
+- name: low_spo2_is_patients_norm
+  meaning: The patient's low oxygen reading is their usual level (for example, because of chronic lung disease).
+  type: bool
+- name: needs_immediate_lifesaving_intervention
+  meaning: The patient needs an immediate lifesaving intervention (airway or breathing support, emergency drugs, fluids or blood) right now.
+  type: bool
+- name: pain_from_systemic_disruption
+  meaning: The pain or distress comes from a body-wide illness process such as kidney stone, cancer or sickle cell crisis.
+  type: bool
+- name: pain_score
+  meaning: The pain rating the patient gives on a 0 to 10 scale.
+  type: number
+- name: possible_ectopic_pregnancy
+  meaning: The patient may have a pregnancy growing outside the womb.
+  type: bool
+- name: possible_femur_fracture
+  meaning: The patient may have a broken thigh bone.
+  type: bool
+- name: possible_pelvic_fracture
+  meaning: The patient may have a broken pelvis.
+  type: bool
+- name: predicted_resource_count
+  meaning: How many different types of ED resources (labs, imaging, IV drugs, consults, procedures) the nurse expects this patient to need.
+  type: number
+- name: required_mechanical_extrication
+  meaning: Rescuers had to use cutting or prying tools to get the patient out of a vehicle.
+  type: bool
+- name: respiratory_distress_severity
+  meaning: How much difficulty the patient is having breathing.
+  type: enum
+  values:
+  - none
+  - mild
+  - moderate
+  - severe
+- name: respiratory_rate_per_min
+  meaning: The patient's measured breathing rate in breaths per minute.
+  type: number
+- name: spo2_percent
+  meaning: Oxygen saturation measured by a finger probe, in percent.
+  type: number
+- name: swallowed_button_battery
+  meaning: The patient has swallowed a button battery.
+  type: bool
+- name: swallowed_earth_magnet
+  meaning: The patient has swallowed a strong (rare-earth) magnet.
+  type: bool
+- name: systolic_bp_mmhg
+  meaning: The top number of the patient's blood pressure, in mm Hg.
+  type: number
+- name: takes_anticoagulant
+  meaning: The patient takes warfarin or another blood thinner.
+  type: bool
+- name: temperature_celsius
+  meaning: The patient's measured body temperature in degrees Celsius.
+  type: number
+- name: toxic_ingestion
+  meaning: The patient has swallowed or taken a poisonous substance or overdose.
+  type: bool
+- name: unable_to_manage_secretions
+  meaning: The patient cannot swallow or clear their own saliva.
+  type: bool
+- name: ventilating_and_oxygenating_adequately
+  meaning: The patient is currently moving enough air and keeping enough oxygen.
+  type: bool
+- name: vital_sign_outside_normal_for_patient
+  meaning: At least one vital sign is outside the normal range for this patient.
+  type: bool
+- name: vitals_remain_out_of_range_on_reassessment
+  meaning: When the nurse rechecks, the vital signs are still out of range.
+  type: bool
